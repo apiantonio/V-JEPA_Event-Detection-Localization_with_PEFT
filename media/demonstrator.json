@@ -1,13 +1,28 @@
 {
-  "source_video": "Arson016_x264.mp4",
+  "source_video": "Shoplifting049_x264",
+  "source_collection": "runs/localization-class-routing-20261021/render_best_20261025",
+  "source_movie": "videos/ucf_crime/Shoplifting049_x264/best-mean/movie.mp4",
+  "source_identity": "c18a12fea77014a68ef7c29ac30124af0ba3e298b577d81b3efe7f45cb2db677",
+  "source_sha256": "ccb05e678120d9713359c2984bbe6d64a497b732ce50395a1a134e1b5a14bc0a",
+  "published_sha256": "ccb05e678120d9713359c2984bbe6d64a497b732ce50395a1a134e1b5a14bc0a",
+  "modifications": "None: original cluster movie copied byte for byte, without trimming or re-encoding.",
+  "selection": "Behavioural anomaly: taking and concealing a phone in a shop. Selected as a qualitative illustration.",
   "run_id": "e3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42",
   "method": "B2-A2-phase1",
-  "start_frame": 900,
-  "end_frame_exclusive": 1620,
+  "method_label": "MultiClasse-Completa→Concetti-TuttiChunk, soglia 55%",
+  "renderer": "apps.demo.localization_video over apps.demo.run_demo.payload_for (replay)",
+  "codec": "h264",
+  "size": [
+    1280,
+    894
+  ],
   "fps": 30.0,
-  "frames": 720,
-  "frames_with_method_boxes": 720,
-  "renderer": "apps.demo.localization_video.compose",
-  "mode": "saved replay",
-  "note": "Offline localization excerpt; saved boxes are limited to annotated intervals. No spatial ground truth distributed."
+  "frames": 2149,
+  "duration_seconds": 71.63333333333334,
+  "poster_frame": 1200,
+  "poster_time_seconds": 40.0,
+  "frames_with_method_boxes": 331,
+  "frames_with_truth_boxes": 331,
+  "mode": "Saved offline localization replay with causal anomaly score.",
+  "note": "Method boxes and dashed reference boxes are shown within annotated intervals; localization is not an online latency demonstration. No ground-truth coordinate files are distributed."
 }

@@ -20,23 +20,28 @@ ground truth, an interactive demonstrator and a spatial annotation tool.
 ---
 
 
-![End-to-end detection and localization pipeline](media/pipeline.svg)
+![End-to-end detection and localization pipeline](media/pipeline.png)
 
 ## Demonstrator video
 
 [![EVD Studio: video, localization boxes, anomaly score and timeline](media/demonstrator.jpg)](https://github.com/apiantonio/V-JEPA_Event-Detection-Localization_with_PEFT/releases/download/demo-v1/demonstrator.mp4)
 
-**[Watch the rendered demonstrator (MP4, 24 seconds)](https://github.com/apiantonio/V-JEPA_Event-Detection-Localization_with_PEFT/releases/download/demo-v1/demonstrator.mp4).**
-The clip shows FS-UCF-Crime `Arson016`, VPT-shallow on merged LoRA r32, and the B2
-class head with all-chunk VTCD dictionaries and the 55% IG-mass rule. It uses the current
-EVD Studio movie renderer, with model and method, native video, numbered boxes, score,
-threshold, alarms and the full-video timeline. This is saved **offline replay**: boxes
-are displayed inside annotated intervals and can precede the causal alarm. It is an
-illustration, not an online localization latency measurement. Source frames and settings
-are recorded in [media/demonstrator.json](media/demonstrator.json).
+**[Watch the original cluster rendering (MP4, 72 seconds)](https://github.com/apiantonio/V-JEPA_Event-Detection-Localization_with_PEFT/releases/download/demo-v1/demonstrator.mp4).**
+FS-UCF-Crime `Shoplifting049`: taking and concealing a phone in a shop. This is the
+complete, unmodified movie from the latest existing cluster rendering collection,
+`render_best_20261025`, with the updated EVD Studio interface: anomaly score and alarm,
+chunk verdict, event and frame IoU, method boxes, dashed reference boxes and timeline.
+The model is VPT-shallow on merged LoRA r32; localization uses B2, all-chunk VTCD
+dictionaries and the 55% IG-mass rule. The screenshot is frame 1200 (40 s) of the same movie.
 
-The pipeline figure is supplied as editable vector [SVG](media/pipeline.svg) and
-high-resolution [PNG](media/pipeline.png).
+This is a qualitative **offline replay**: localization boxes are limited to annotated
+intervals and can precede the causal alarm. It is not an online localization timing
+measurement. Source identity, checksum and screenshot timestamp are recorded in
+[media/demonstrator.json](media/demonstrator.json).
+
+The [pipeline figure](media/pipeline.png) summarizes sampling, PEFT adaptation,
+detection and class-routed IG + VTCD localization. Its frames and attribution maps are
+schematic illustrations; the demonstrator above shows actual saved model outputs.
 
 
 ## Highlights
