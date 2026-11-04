@@ -24,7 +24,7 @@ ground truth, an interactive demonstrator and a spatial annotation tool.
 
 ## Demonstrator video
 
-[![EVD Studio: video, localization boxes, anomaly score and timeline](media/demonstrator.jpg)](https://github.com/apiantonio/V-JEPA_Event-Detection-Localization_with_PEFT/releases/download/demo-v1/demonstrator.mp4)
+https://github.com/user-attachments/assets/74534ebc-41f0-4f3d-ade6-0285338d5040
 
 **[Watch the original cluster rendering (MP4, 72 seconds)](https://github.com/apiantonio/V-JEPA_Event-Detection-Localization_with_PEFT/releases/download/demo-v1/demonstrator.mp4).**
 FS-UCF-Crime `Shoplifting049`: taking and concealing a phone in a shop. This is the
@@ -32,7 +32,7 @@ complete, unmodified movie from the latest existing cluster rendering collection
 `render_best_20261025`, with the updated EVD Studio interface: anomaly score and alarm,
 chunk verdict, event and frame IoU, method boxes, dashed reference boxes and timeline.
 The model is VPT-shallow on merged LoRA r32; localization uses B2, all-chunk VTCD
-dictionaries and the 55% IG-mass rule. The screenshot is frame 1200 (40 s) of the same movie.
+dictionaries and the 55% IG-mass rule. The embedded player replaces the static screenshot; the complete movie is also available as a release asset.
 
 This is a qualitative **offline replay**: localization boxes are limited to annotated
 intervals and can precede the causal alarm. It is not an online localization timing
@@ -83,16 +83,15 @@ deviation over seeds 42, 67 and 104; *AUC_a* / *AP_a* are restricted to the 140 
 videos. The full leaderboard (42 models, 100 runs, every metric, per class and per video)
 is in [`evd-vfm/runs/classifiche/classifiche.md`](https://github.com/apiantonio/V-JEPA_Event-Detection-Localization_with_PEFT/blob/main/evd-vfm/runs/classifiche/classifiche.md).
 
-| Model | Family | Trainable adapter params | Chunk AUC | Chunk AP | AUC_a | AP_a | Video F1 |
-|---|---|---:|---:|---:|---:|---:|---:|
-| Linear probe (4 ep.) ¹ | frozen | 0 | 0.8587 | 0.5333 | 0.6807 | 0.5732 | 0.8418 |
-| Attentive probe (1 ep.) | frozen | 0 | 0.9310 ± 0.0080 | 0.7632 ± 0.0092 | 0.8355 | 0.7873 | 0.8884 |
-| VPT-shallow n=8 (1 ep.) | prompt | 8,192 | 0.9360 ± 0.0030 | 0.7690 ± 0.0081 | 0.8378 | 0.7901 | 0.9068 |
-| VPT-deep n=8 (4 ep.) | prompt | 196,608 | 0.9325 ± 0.0039 | 0.7731 ± 0.0094 | 0.8409 | 0.7970 | 0.8952 |
-| VPT-deep n=576 (1 ep.) | prompt | 14,155,776 | 0.8882 ± 0.0083 | 0.6279 ± 0.0201 | 0.7549 | 0.6779 | 0.8501 |
-| LoRA r=32 (3 ep.) | reparam. | 14,155,776 | 0.9386 ± 0.0064 | 0.7803 ± 0.0186 | 0.8646 | 0.8275 | 0.9099 |
-| **DoRA r=32 (1 ep.)** | reparam. | 14,376,960 | **0.9422 ± 0.0017** | **0.7947 ± 0.0037** | 0.8669 | 0.8305 | **0.9306** |
-| DoRA r=32 + VPT-shallow n=8 (3 cycles) | joint | 14,385,152 | 0.9405 ± 0.0016 | 0.7914 ± 0.0037 | 0.8674 | 0.8313 | 0.9019 |
+| Metric / attribute | Linear probe (4 ep.) ¹ | Attentive probe (1 ep.) | VPT-shallow n=8 (1 ep.) | VPT-deep n=8 (4 ep.) | VPT-deep n=576 (1 ep.) | LoRA r=32 (3 ep.) | DoRA r=32 (1 ep.) | DoRA r=32 + VPT-shallow n=8 (3 cycles) |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Family | frozen | frozen | prompt | prompt | prompt | reparam. | reparam. | joint |
+| Trainable adapter params | 0 | 0 | 8,192 | 196,608 | 14,155,776 | 14,155,776 | 14,376,960 | 14,385,152 |
+| Chunk AUC | 0.8587 | 0.9310 ± 0.0080 | 0.9360 ± 0.0030 | 0.9325 ± 0.0039 | 0.8882 ± 0.0083 | 0.9386 ± 0.0064 | 0.9422 ± 0.0017 | 0.9405 ± 0.0016 |
+| Chunk AP | 0.5333 | 0.7632 ± 0.0092 | 0.7690 ± 0.0081 | 0.7731 ± 0.0094 | 0.6279 ± 0.0201 | 0.7803 ± 0.0186 | 0.7947 ± 0.0037 | 0.7914 ± 0.0037 |
+| AUC_a | 0.6807 | 0.8355 | 0.8378 | 0.8409 | 0.7549 | 0.8646 | 0.8669 | 0.8674 |
+| AP_a | 0.5732 | 0.7873 | 0.7901 | 0.7970 | 0.6779 | 0.8275 | 0.8305 | 0.8313 |
+| Video F1 | 0.8418 | 0.8884 | 0.9068 | 0.8952 | 0.8501 | 0.9099 | 0.9306 | 0.9019 |
 
 The single models trained for one, three and four epochs in continuation are reported once,
 in the version with the higher seed-42 chunk AUC on the **test** set: a choice declared in
@@ -106,6 +105,129 @@ never seen in training, with the decision threshold transferred from UCF-Crime: 
 goes from 0.9441 to 0.9029 chunk AUC, the other models lose 0.02–0.05. MIVIA-Crime has
 30.65% positive chunks against 16.36% on UCF-Crime, so its AP is read through the lift.
 See section 6 of the leaderboard and `cross_dataset_mivia.csv`.
+
+### Comparison with supplied SOTA: 8-second chunk protocol
+
+Metrics are rows; methods are columns. All values below are percentages, at the Youden
+threshold estimated on UCF validation and transferred to MIVIA. Windows are 8 s, hop 4 s.
+Thesis results here are **seed 42**, not the three-seed means above. Attentive and DoRA
+use one epoch; the sequential models use a one-epoch prior followed by three VPT cycles;
+Gigantic uses five LoRA epochs. The supplied methods were evaluated by the laboratory,
+not reproduced here. Training supervision and weights are not equally documented for
+all supplied methods; these tables do not isolate the effect of the backbone.
+
+
+**FS-UCF-Crime test — chunk protocol**
+
+| Metric | VadCLIP | Lab method | Ours: Attentive | Ours: DoRA r32 | Ours: LoRA → VPT-s | Ours: DoRA → VPT-s | Ours: Gigantic LoRA |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Chunk AUC | 85.52 | 84.19 | 93.85 | 94.41 | 94.13 | 94.77 | 94.86 |
+| Chunk AP | 49.34 | 56.04 | 77.37 | 79.71 | 79.82 | 80.90 | 81.63 |
+| Chunk AUC, anomalous videos | 60.71 | 66.03 | 84.09 | 87.04 | 87.17 | 87.74 | 87.85 |
+| Chunk AP, anomalous videos | 51.36 | 60.66 | 79.09 | 83.00 | 83.57 | 83.77 | 84.26 |
+| Chunk precision | 41.54 | 34.06 | 60.42 | 58.66 | 49.94 | 60.20 | 58.99 |
+| Chunk recall | 75.25 | 85.45 | 79.95 | 82.90 | 88.60 | 83.30 | 84.51 |
+| Chunk F1 | 53.53 | 48.70 | 68.82 | 68.70 | 63.88 | 69.89 | 69.48 |
+| Event recall ‡ | 84.33 | 87.00 | 89.49 | 92.75 | 96.74 | 92.75 | 90.94 |
+| Video precision | 84.25 | 76.07 | 90.97 | 91.84 | 81.55 | 90.48 | 83.65 |
+| Video recall | 87.86 | 88.57 | 93.57 | 96.43 | 97.86 | 95.00 | 95.00 |
+| Video F1 | 86.01 | 81.85 | 92.25 | 94.08 | 88.96 | 92.68 | 88.96 |
+
+
+**MIVIA-Crime test — chunk protocol**
+
+| Metric | Lab method | PEL4VAD | GlanceVAD | UR-DMU | Holmes-VAU | VadCLIP | Ours: Attentive | Ours: DoRA r32 | Ours: LoRA → VPT-s | Ours: DoRA → VPT-s | Ours: Gigantic LoRA |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Chunk AUC | 81.69 | 65.84 | 72.13 | 68.10 | 57.39 | 79.90 | 89.91 | 90.29 | 90.56 | 90.09 | 91.40 |
+| Chunk AP | 64.06 | 43.57 | 54.41 | 47.58 | 34.82 | 63.60 | 82.27 | 83.35 | 84.08 | 83.62 | 85.22 |
+| Chunk AUC, anomalous videos | 67.45 | 56.41 | 63.26 | 56.77 | 56.53 | 66.08 | 82.35 | 82.93 | 83.64 | 83.66 | 84.16 |
+| Chunk AP, anomalous videos | 72.46 | 62.19 | 69.07 | 62.80 | 60.96 | 73.05 | 87.42 | 88.13 | 88.58 | 88.55 | 88.97 |
+| Chunk precision | 55.92 | 44.05 | 52.66 | 44.55 | 35.34 | 59.05 | 83.38 | 80.19 | 73.16 | 79.09 | 80.43 |
+| Chunk recall | 74.00 | 52.10 | 48.84 | 58.25 | 53.49 | 55.64 | 61.52 | 64.79 | 77.34 | 69.76 | 73.88 |
+| Chunk F1 | 63.70 | 47.74 | 50.68 | 50.48 | 42.57 | 57.29 | 70.80 | 71.67 | 75.19 | 74.13 | 77.01 |
+| Event recall ‡ | 80.80 | 73.19 | 73.71 | 82.11 | 73.90 | 67.67 | 78.05 | 75.61 | 88.78 | 78.54 | 79.51 |
+| Video precision | 71.79 | 68.71 | 72.73 | 66.28 | 56.35 | 72.73 | 87.12 | 85.51 | 80.75 | 83.92 | 86.96 |
+| Video recall | 82.96 | 74.81 | 77.04 | 84.44 | 75.56 | 71.11 | 85.19 | 87.41 | 96.30 | 88.89 | 88.89 |
+| Video F1 | 76.98 | 71.63 | 74.82 | 74.27 | 64.56 | 71.91 | 86.14 | 86.45 | 87.84 | 86.33 | 87.91 |
+
+
+Only VadCLIP and the laboratory method were supplied for UCF at 8 s; the other
+8-second SOTA results are available only for MIVIA. **‡ Event recall is reported as
+supplied, but the laboratory event definition is undocumented in these tables and
+need not match EDP-v2; it is not a controlled event-level comparison.**
+
+
+### Comparison with supplied SOTA: OVAD row protocol
+
+This is a separate protocol: row scores, row/video decisions and event recall are
+not the chunk metrics above. All methods use a 4 s hop, rows up to 32 s, a 30 s guard
+and UCF-validation Youden thresholds transferred to MIVIA. **Supplied SOTA uses 30 s
+input windows; our models use 8 s chunks.** Valid-row populations and supervision
+also differ. The comparison is informative, not a matched-window training experiment.
+
+Thesis detectors are at seed 42. Reported continuation versions are selected by the mean
+of UCF and MIVIA Protocol Mean on the **test sets**; this is exploratory selection.
+In particular, OVAD DoRA and VPT-deep below use four-epoch versions, whereas the
+DoRA checkpoint in the 8-second table and the principal weight release is the one-epoch
+run. Exact run IDs, unrounded metrics and supplied source tables are in
+[comparisons/](comparisons/README.md).
+
+
+**UCF-Crime test — OVAD rows**
+
+| Metric | UR-DMU | PEL4VAD | GlanceVAD | Holmes-VAU | AnomalyCLIP | VadCLIP | OVadCLIP | Ours: Attentive | Ours: LoRA r32 | Ours: DoRA r32 (4 ep.) | Ours: VPT-s n8 | Ours: VPT-d n8 (4 ep.) | Ours: LoRA → VPT-s | Ours: DoRA → VPT-s |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Input window (s) | 30 | 30 | 30 | 30 | 30 | 30 | 30 | 8 | 8 | 8 | 8 | 8 | 8 | 8 |
+| Protocol mean | 73.36 | 77.75 | 75.87 | 61.22 | 77.69 | 77.47 | 74.93 | 85.52 | 85.45 | 85.46 | 85.71 | 86.04 | 85.89 | 85.77 |
+| Row AUC * | 84.82 | 88.09 | 87.26 | 66.91 | 89.41 | 88.23 | 86.00 | 94.30 | 94.55 | 95.32 | 94.46 | 94.10 | 94.67 | 95.31 |
+| Row AP | 58.25 | 64.56 | 71.32 | 37.42 | 68.26 | 66.22 | 66.19 | 85.81 | 86.00 | 88.33 | 85.82 | 85.09 | 86.62 | 87.52 |
+| Row AUC_a macro * | 75.83 | 81.17 | 85.23 | 77.70 | 82.54 | 77.60 | 78.88 | 90.79 | 90.79 | 89.97 | 89.71 | 90.59 | 91.39 | 91.67 |
+| Row AP_a macro | 71.56 | 81.11 | 85.46 | 79.64 | 81.87 | 78.70 | 83.48 | 91.60 | 91.44 | 90.50 | 90.60 | 92.12 | 91.78 | 92.59 |
+| Row AUC_a micro | 70.08 | 71.26 | 75.29 | 66.06 | 71.13 | 66.01 | 70.07 | 87.07 | 89.77 | 90.00 | 86.96 | 87.08 | 90.19 | 90.65 |
+| Row AP_a micro | 66.65 | 69.29 | 78.78 | 66.27 | 70.11 | 67.51 | 73.35 | 87.57 | 89.94 | 90.51 | 87.71 | 87.08 | 90.38 | 90.44 |
+| Row precision | 47.40 | 51.12 | 57.55 | 35.82 | 59.04 | 53.74 | 50.67 | 68.84 | 64.25 | 67.92 | 68.50 | 69.95 | 68.36 | 64.69 |
+| Row recall | 79.76 | 89.43 | 72.51 | 63.75 | 74.02 | 84.59 | 80.36 | 86.10 | 88.52 | 87.01 | 86.71 | 85.80 | 85.50 | 89.12 |
+| Row F1 * | 59.46 | 65.05 | 64.17 | 45.87 | 65.68 | 65.73 | 62.15 | 76.51 | 74.46 | 76.29 | 76.53 | 77.07 | 75.97 | 74.97 |
+| Row FPR ↓ * | 27.54 | 26.60 | 16.64 | 35.53 | 15.98 | 22.87 | 24.37 | 11.79 | 14.90 | 12.43 | 12.07 | 11.15 | 11.97 | 14.72 |
+| Video precision | 63.13 | 58.80 | 64.05 | 43.87 | 67.74 | 65.17 | 62.86 | 71.43 | 72.32 | 70.79 | 72.99 | 73.30 | 74.42 | 71.27 |
+| Video recall | 80.71 | 90.71 | 70.00 | 66.43 | 75.00 | 82.86 | 78.57 | 89.29 | 91.43 | 90.00 | 90.71 | 92.14 | 91.43 | 92.14 |
+| Video F1 * | 70.85 | 71.35 | 66.89 | 52.84 | 71.19 | 72.96 | 69.84 | 79.37 | 80.76 | 79.25 | 80.89 | 81.65 | 82.05 | 80.37 |
+| Video FPR ↓ | 29.07 | 39.21 | 24.23 | 52.42 | 22.03 | 27.56 | 28.76 | 20.41 | 20.00 | 21.22 | 19.18 | 19.18 | 17.96 | 21.22 |
+| Event recall * | 76.72 | 87.40 | 68.32 | 59.54 | 73.28 | 83.21 | 77.10 | 83.97 | 87.02 | 84.35 | 84.73 | 83.97 | 83.21 | 87.02 |
+| Valid rows (#) | 1395 | 1395 | 1395 | 1395 | 1395 | 1385 | 1394 | 1425 | 1425 | 1425 | 1425 | 1425 | 1425 | 1425 |
+| Unjudgeable rows (#) | 285 | 285 | 285 | 285 | 285 | 286 | 286 | 255 | 255 | 255 | 255 | 255 | 255 | 255 |
+
+
+**MIVIA-Crime test — OVAD rows**
+
+| Metric | UR-DMU | PEL4VAD | GlanceVAD | Holmes-VAU | AnomalyCLIP | VadCLIP | OVadCLIP | Ours: Attentive | Ours: LoRA r32 | Ours: DoRA r32 (4 ep.) | Ours: VPT-s n8 | Ours: VPT-d n8 (4 ep.) | Ours: LoRA → VPT-s | Ours: DoRA → VPT-s |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Input window (s) | 30 | 30 | 30 | 30 | 30 | 30 | 30 | 8 | 8 | 8 | 8 | 8 | 8 | 8 |
+| Protocol mean | 68.30 | 71.23 | 66.66 | 58.72 | 74.50 | 69.81 | 77.30 | 82.82 | 85.43 | 84.96 | 83.24 | 82.67 | 86.49 | 84.00 |
+| Row AUC * | 77.27 | 76.57 | 80.13 | 61.29 | 85.24 | 82.06 | 84.86 | 91.84 | 92.78 | 92.15 | 91.73 | 90.82 | 92.85 | 91.75 |
+| Row AP | 64.23 | 63.46 | 72.04 | 50.82 | 78.64 | 74.37 | 76.12 | 87.97 | 89.39 | 89.56 | 88.12 | 86.62 | 89.93 | 88.64 |
+| Row AUC_a macro * | 76.03 | 69.91 | 69.22 | 69.38 | 79.29 | 80.75 | 82.72 | 88.00 | 93.10 | 93.30 | 88.22 | 88.11 | 92.40 | 93.34 |
+| Row AP_a macro | 76.20 | 75.98 | 75.00 | 76.20 | 81.50 | 85.18 | 84.25 | 92.63 | 94.64 | 95.13 | 92.87 | 92.08 | 94.34 | 94.87 |
+| Row AUC_a micro | 63.99 | 64.69 | 68.18 | 62.72 | 69.42 | 68.40 | 75.84 | 87.07 | 88.27 | 88.26 | 86.70 | 87.45 | 88.43 | 87.66 |
+| Row AP_a micro | 79.29 | 81.70 | 83.47 | 78.90 | 85.02 | 85.66 | 87.10 | 93.91 | 94.57 | 94.76 | 93.73 | 93.97 | 94.61 | 94.38 |
+| Row precision | 66.84 | 63.12 | 72.15 | 48.34 | 68.89 | 71.86 | 70.66 | 83.42 | 84.54 | 83.98 | 86.53 | 87.36 | 85.38 | 80.37 |
+| Row recall | 54.89 | 70.64 | 48.51 | 55.74 | 65.96 | 51.06 | 72.77 | 70.64 | 74.47 | 73.62 | 71.06 | 67.66 | 77.02 | 74.89 |
+| Row F1 * | 60.28 | 66.67 | 58.02 | 51.78 | 67.39 | 59.70 | 71.70 | 76.50 | 79.19 | 78.46 | 78.04 | 76.26 | 80.98 | 77.53 |
+| Row FPR ↓ * | 17.25 | 26.15 | 11.86 | 37.74 | 18.87 | 12.77 | 19.19 | 8.53 | 8.27 | 8.53 | 6.72 | 5.94 | 8.01 | 11.11 |
+| Video precision | 67.57 | 65.58 | 78.05 | 57.50 | 72.09 | 73.00 | 70.42 | 79.70 | 81.69 | 81.43 | 82.68 | 84.00 | 82.76 | 76.00 |
+| Video recall | 55.56 | 74.81 | 47.41 | 51.11 | 68.89 | 54.07 | 74.07 | 78.52 | 85.93 | 84.44 | 77.78 | 77.78 | 88.89 | 84.44 |
+| Video F1 * | 60.98 | 69.90 | 58.99 | 54.12 | 70.45 | 62.13 | 72.20 | 79.10 | 83.75 | 82.91 | 80.15 | 80.77 | 85.71 | 80.00 |
+| Video FPR ↓ | 21.18 | 31.18 | 10.59 | 30.00 | 21.18 | 16.07 | 24.85 | 14.75 | 14.21 | 14.21 | 12.02 | 10.93 | 13.66 | 19.67 |
+| Event recall * | 52.50 | 70.50 | 45.50 | 53.50 | 63.50 | 47.00 | 71.50 | 70.00 | 72.00 | 71.50 | 68.00 | 66.00 | 75.00 | 72.50 |
+| Valid rows (#) | 606 | 606 | 606 | 606 | 606 | 603 | 605 | 622 | 622 | 622 | 622 | 622 | 622 | 622 |
+| Unjudgeable rows (#) | 258 | 258 | 258 | 258 | 258 | 261 | 259 | 242 | 242 | 242 | 242 | 242 | 242 | 242 |
+
+
+\* Protocol Mean is the average of row AUC, anomalous-video macro AUC, row F1,
+1 − row FPR, video F1 and event recall. Lower FPR is better; all other displayed
+percentage measures are higher-is-better. Macro averages per anomalous video; micro
+pools their rows. The supplied SOTA results and their inference settings are preserved
+in [comparisons/sources/](comparisons/sources/ovad-supplied.md).
 
 **Efficiency (A100, bf16, one 32-frame window at 384×384, batch 1).**
 
@@ -192,6 +314,30 @@ P07 is flat between 10% and 50% of the IG mass, where it almost always keeps a s
 concept. With DoRA r=32 (seed 42) as detector the same methods localize better in 67 of 75
 experiments on UCF-Crime: P07 reaches 0.346. The winner is chosen on the test set, so the
 comparison is exploratory; MIVIA-Crime is reported and never used to choose.
+
+## Reviewed spatial annotations
+
+The spatial annotations prepared with **Forma** are now included for both test datasets:
+
+| Coverage | FS-UCF-Crime test | MIVIA-Crime test |
+|---|---:|---:|
+| Reviewed videos | 140 | 39 |
+| Completed events | 276 | 44 |
+| Reviewed native frames | 131,428 | 9,051 |
+| Reviewed frames with no box | 542 | 10 |
+| Frame-level box instances | 351,511 | 22,400 |
+
+UCF covers all anomalous test videos; MIVIA covers **39 of 135 anomalous videos**, not
+the entire test set. Annotations are manually reviewed, with model-assisted proposals;
+this provenance can bias the evaluation. Only the evaluator reads these boxes.
+
+Browse [spatial-annotations/](spatial-annotations/README.md) or download the dataset
+archives from the [annotation release](https://github.com/apiantonio/V-JEPA_Event-Detection-Localization_with_PEFT/releases/tag/annotations-v1).
+The format stores zero-based native-pixel inclusive `xyxy` boxes on explicitly reviewed
+frame intervals. **Unannotated frames are not negatives**; reviewed empty intervals are
+preserved. Each JSON identifies the source video by SHA-256 and native geometry.
+The export was expanded and checked frame by frame against a consistent Forma snapshot.
+Videos, draft work, personal notes, caches and the working database are not included.
 
 ## Method
 
@@ -286,7 +432,7 @@ Set `EVD_RUNS_DIR` to the project `runs/` folder, `EVD_DATA_DIR` to your data ro
 `EVD_RAW_DIR` to your videos and `EVD_ANNOT_DIR` to your temporal annotations.
 `python -m evd.utils.env` prints the resolved paths. UCF-Crime videos must be obtained
 from their authors; FS-UCF-Crime annotations and MIVIA-Crime are supplied by the laboratory.
-The GitHub repositories do not redistribute those datasets or private spatial annotations.
+The GitHub repositories do not redistribute those datasets or third-party temporal annotation datasets.
 
 ## Model weights
 
@@ -338,9 +484,9 @@ The public delivery retains selected run configurations, metrics, scores, locali
 box exports, the localization comparison table without B4, leaderboards and model cost
 statistics. Training checkpoints are release assets. The development repository contains
 the complete source and tests; its ignored local `runs/` is not automatically committed.
-Private tests, spatial ground truth, environments, archives, video datasets and restricted
+Private tests, working annotation databases, environments, intermediate archives, video datasets and restricted
 RBDC code are excluded from the public repository. AP-only evaluation remains available
-with `--ap-only`; full spatial evaluation requires the private annotations.
+with `--ap-only`; full spatial evaluation can use the reviewed spatial annotations included in this repository.
 
 Every run records its configuration, seed, Git SHA, protocol hash and environment.
 Means and standard deviations use seeds 42, 67 and 104 where stated; localization uses
