@@ -1,0 +1,867 @@
+{
+  "run_id": "e3g_ucf_vjepa21gigantic_lora-r32-qkvomlp_s42",
+  "chunk_auc": 0.9486289100724566,
+  "chunk_ap": 0.8162956838046614,
+  "chunk_auc_anomalous": 0.878516775898888,
+  "chunk_ap_anomalous": 0.8425909796675046,
+  "n_video_anomalous": 140,
+  "chunk_prf": {
+    "precision": 0.5898876404494382,
+    "recall": 0.8450704225352113,
+    "f1": 0.6947890818858561,
+    "threshold": 0.031618766486644745,
+    "source": "val_youden",
+    "n_pred_pos": 2136,
+    "n_true_pos": 1491
+  },
+  "per_class_chunk": {
+    "Abuse": {
+      "auc": 0.9088743169398906,
+      "ap": 0.004907713635434767,
+      "n_pos": 6
+    },
+    "Arrest": {
+      "auc": 0.9324009480545131,
+      "ap": 0.2525763121010727,
+      "n_pos": 166
+    },
+    "Arson": {
+      "auc": 0.9584631147540984,
+      "ap": 0.5169804850057865,
+      "n_pos": 240
+    },
+    "Assault": {
+      "auc": 0.9612750455373407,
+      "ap": 0.5082329408092485,
+      "n_pos": 99
+    },
+    "Burglary": {
+      "auc": 0.9636451441084216,
+      "ap": 0.6274957874629136,
+      "n_pos": 277
+    },
+    "Explosion": {
+      "auc": 0.969335966818092,
+      "ap": 0.46541720738323394,
+      "n_pos": 83
+    },
+    "Fighting": {
+      "auc": 0.9973523043612743,
+      "ap": 0.7959510099207867,
+      "n_pos": 53
+    },
+    "RoadAccidents": {
+      "auc": 0.9770546448087432,
+      "ap": 0.604049309506296,
+      "n_pos": 60
+    },
+    "Robbery": {
+      "auc": 0.9446292291594002,
+      "ap": 0.3627803652698292,
+      "n_pos": 94
+    },
+    "Shooting": {
+      "auc": 0.9648687169760195,
+      "ap": 0.5261323544861405,
+      "n_pos": 121
+    },
+    "Shoplifting": {
+      "auc": 0.831411422527763,
+      "ap": 0.04985348072139373,
+      "n_pos": 124
+    },
+    "Stealing": {
+      "auc": 0.9533869372885765,
+      "ap": 0.4731773832173366,
+      "n_pos": 126
+    },
+    "Vandalism": {
+      "auc": 0.9843559718969555,
+      "ap": 0.36881379711886925,
+      "n_pos": 42
+    }
+  },
+  "detection_latency": {
+    "regola": "endpoint_dentro",
+    "mediana_s": 2.433333333333333,
+    "p90_s": 3.966666666666667,
+    "n_eventi": 276,
+    "n_senza_latenza_misurabile": 90
+  },
+  "detection_latency_intersezione": {
+    "regola": "intersezione",
+    "mediana_s": 2.8,
+    "p90_s": 5.266666666666667,
+    "n_eventi": 276,
+    "n_senza_latenza_misurabile": 25
+  },
+  "video_prf": {
+    "precision": 0.8364779874213837,
+    "recall": 0.95,
+    "f1": 0.8896321070234113,
+    "threshold": 0.031618766486644745,
+    "source": "val_youden",
+    "n_pred_pos": 159,
+    "n_true_pos": 140
+  },
+  "threshold_sensitivity": [
+    {
+      "quantile": 0.8,
+      "threshold": 0.0032730652019381523,
+      "chunk_prf": {
+        "precision": 0.47393526405451447,
+        "recall": 0.9329309188464118,
+        "f1": 0.6285585178490736,
+        "threshold": 0.0032730652019381523,
+        "source": "val",
+        "n_pred_pos": 2935,
+        "n_true_pos": 1491
+      }
+    },
+    {
+      "quantile": 0.9,
+      "threshold": 0.022977370768785477,
+      "chunk_prf": {
+        "precision": 0.5718096931969764,
+        "recall": 0.8625083836351441,
+        "f1": 0.6877005347593582,
+        "threshold": 0.022977370768785477,
+        "source": "val",
+        "n_pred_pos": 2249,
+        "n_true_pos": 1491
+      }
+    },
+    {
+      "quantile": 0.95,
+      "threshold": 0.13716284036636303,
+      "chunk_prf": {
+        "precision": 0.6695652173913044,
+        "recall": 0.7746478873239436,
+        "f1": 0.7182835820895522,
+        "threshold": 0.13716284036636303,
+        "source": "val",
+        "n_pred_pos": 1725,
+        "n_true_pos": 1491
+      }
+    },
+    {
+      "quantile": 0.975,
+      "threshold": 0.5275477468967439,
+      "chunk_prf": {
+        "precision": 0.7527272727272727,
+        "recall": 0.6941649899396378,
+        "f1": 0.7222609909281228,
+        "threshold": 0.5275477468967439,
+        "source": "val",
+        "n_pred_pos": 1375,
+        "n_true_pos": 1491
+      }
+    },
+    {
+      "quantile": 0.99,
+      "threshold": 0.9504110217094421,
+      "chunk_prf": {
+        "precision": 0.8651115618661258,
+        "recall": 0.5720992622401073,
+        "f1": 0.6887363746467501,
+        "threshold": 0.9504110217094421,
+        "source": "val",
+        "n_pred_pos": 986,
+        "n_true_pos": 1491
+      }
+    }
+  ],
+  "event_prf": {
+    "precision": 0.5157894736842106,
+    "recall": 0.9094202898550725,
+    "f1": 0.6582461398485376,
+    "threshold": 0.031618766486644745,
+    "source": "val_youden",
+    "n_eventi": 276,
+    "n_eventi_rilevati": 251,
+    "n_allarmi": 380,
+    "n_allarmi_veri": 196,
+    "n_eventi_irraggiungibili": 0
+  },
+  "strata": {
+    "threshold": 0.031618766486644745,
+    "source": "val_youden",
+    "riferimento_negativi": {
+      "n": 7625,
+      "n_sopra_soglia": 876,
+      "score_mediano": 0.00041731575038284063
+    },
+    "chunk": {
+      "copertura": {
+        "<=25%": {
+          "n_pos": 192,
+          "auc": 0.896505806010929,
+          "ap": 0.270006664311363,
+          "recall": 0.6770833333333334,
+          "precision": 0.12922465208747516,
+          "f1": 0.21702838063439067,
+          "score_mediano": 0.32510650157928467
+        },
+        "25-50%": {
+          "n_pos": 234,
+          "auc": 0.9407162673392182,
+          "ap": 0.506314881393166,
+          "recall": 0.8290598290598291,
+          "precision": 0.18130841121495328,
+          "f1": 0.29754601226993865,
+          "score_mediano": 0.9830656349658966
+        },
+        "50-75%": {
+          "n_pos": 186,
+          "auc": 0.9350921910805571,
+          "ap": 0.49163945420428234,
+          "recall": 0.7688172043010753,
+          "precision": 0.14033366045142295,
+          "f1": 0.23734439834024895,
+          "score_mediano": 0.990722119808197
+        },
+        ">75%": {
+          "n_pos": 879,
+          "auc": 0.9649850239653855,
+          "ap": 0.7978428007174391,
+          "recall": 0.9021615472127418,
+          "precision": 0.4751348112642301,
+          "f1": 0.6224489795918366,
+          "score_mediano": 0.9976769089698792
+        }
+      }
+    },
+    "livello_evento": true,
+    "regola_latenza": "intersezione",
+    "bordi": {
+      "copertura": [
+        0.25,
+        0.5,
+        0.75
+      ],
+      "durata_s": [
+        4.0,
+        8.0,
+        32.0
+      ],
+      "quota_anomala_video": [
+        0.05,
+        0.2,
+        0.5
+      ]
+    },
+    "evento": {
+      "classe": {
+        "Abuse": {
+          "n_eventi": 2,
+          "n_rilevati": 2,
+          "recall": 1.0,
+          "n_allarmi_veri": 2,
+          "precision": 0.010752688172043012,
+          "f1": 0.021276595744680854,
+          "latenza_mediana_s": 3.25,
+          "n_senza_latenza_misurabile": 0
+        },
+        "Arrest": {
+          "n_eventi": 14,
+          "n_rilevati": 13,
+          "recall": 0.9285714285714286,
+          "n_allarmi_veri": 17,
+          "precision": 0.0845771144278607,
+          "f1": 0.1550333216415293,
+          "latenza_mediana_s": 2.4,
+          "n_senza_latenza_misurabile": 1
+        },
+        "Arson": {
+          "n_eventi": 31,
+          "n_rilevati": 29,
+          "recall": 0.9354838709677419,
+          "n_allarmi_veri": 29,
+          "precision": 0.13615023474178403,
+          "f1": 0.23770491803278687,
+          "latenza_mediana_s": 2.3,
+          "n_senza_latenza_misurabile": 2
+        },
+        "Assault": {
+          "n_eventi": 9,
+          "n_rilevati": 8,
+          "recall": 0.8888888888888888,
+          "n_allarmi_veri": 9,
+          "precision": 0.046632124352331605,
+          "f1": 0.08861538461538461,
+          "latenza_mediana_s": 2.6833333333333336,
+          "n_senza_latenza_misurabile": 1
+        },
+        "Burglary": {
+          "n_eventi": 27,
+          "n_rilevati": 25,
+          "recall": 0.9259259259259259,
+          "n_allarmi_veri": 27,
+          "precision": 0.12796208530805686,
+          "f1": 0.22485009993337773,
+          "latenza_mediana_s": 2.966666666666667,
+          "n_senza_latenza_misurabile": 2
+        },
+        "Explosion": {
+          "n_eventi": 27,
+          "n_rilevati": 27,
+          "recall": 1.0,
+          "n_allarmi_veri": 20,
+          "precision": 0.09803921568627451,
+          "f1": 0.17857142857142855,
+          "latenza_mediana_s": 2.933333333333333,
+          "n_senza_latenza_misurabile": 0
+        },
+        "Fighting": {
+          "n_eventi": 10,
+          "n_rilevati": 10,
+          "recall": 1.0,
+          "n_allarmi_veri": 8,
+          "precision": 0.041666666666666664,
+          "f1": 0.07999999999999999,
+          "latenza_mediana_s": 3.0166666666666666,
+          "n_senza_latenza_misurabile": 0
+        },
+        "RoadAccidents": {
+          "n_eventi": 24,
+          "n_rilevati": 24,
+          "recall": 1.0,
+          "n_allarmi_veri": 24,
+          "precision": 0.11538461538461539,
+          "f1": 0.20689655172413793,
+          "latenza_mediana_s": 3.2,
+          "n_senza_latenza_misurabile": 0
+        },
+        "Robbery": {
+          "n_eventi": 16,
+          "n_rilevati": 16,
+          "recall": 1.0,
+          "n_allarmi_veri": 17,
+          "precision": 0.0845771144278607,
+          "f1": 0.1559633027522936,
+          "latenza_mediana_s": 2.666666666666667,
+          "n_senza_latenza_misurabile": 0
+        },
+        "Shooting": {
+          "n_eventi": 46,
+          "n_rilevati": 44,
+          "recall": 0.9565217391304348,
+          "n_allarmi_veri": 27,
+          "precision": 0.12796208530805686,
+          "f1": 0.22572677180315406,
+          "latenza_mediana_s": 3.25,
+          "n_senza_latenza_misurabile": 2
+        },
+        "Shoplifting": {
+          "n_eventi": 40,
+          "n_rilevati": 24,
+          "recall": 0.6,
+          "n_allarmi_veri": 23,
+          "precision": 0.1111111111111111,
+          "f1": 0.18750000000000003,
+          "latenza_mediana_s": 3.0,
+          "n_senza_latenza_misurabile": 16
+        },
+        "Stealing": {
+          "n_eventi": 16,
+          "n_rilevati": 15,
+          "recall": 0.9375,
+          "n_allarmi_veri": 12,
+          "precision": 0.061224489795918366,
+          "f1": 0.1149425287356322,
+          "latenza_mediana_s": 3.2666666666666666,
+          "n_senza_latenza_misurabile": 1
+        },
+        "Vandalism": {
+          "n_eventi": 14,
+          "n_rilevati": 14,
+          "recall": 1.0,
+          "n_allarmi_veri": 9,
+          "precision": 0.046632124352331605,
+          "f1": 0.08910891089108912,
+          "latenza_mediana_s": 1.8666666666666667,
+          "n_senza_latenza_misurabile": 0
+        }
+      },
+      "durata": {
+        "<=4 s": {
+          "n_eventi": 89,
+          "n_rilevati": 79,
+          "recall": 0.8876404494382022,
+          "n_allarmi_veri": 65,
+          "precision": 0.26104417670682734,
+          "f1": 0.4034412319296041,
+          "latenza_mediana_s": 3.2,
+          "n_senza_latenza_misurabile": 10
+        },
+        "4-8 s": {
+          "n_eventi": 77,
+          "n_rilevati": 67,
+          "recall": 0.8701298701298701,
+          "n_allarmi_veri": 64,
+          "precision": 0.25806451612903225,
+          "f1": 0.3980690679539547,
+          "latenza_mediana_s": 2.566666666666667,
+          "n_senza_latenza_misurabile": 10
+        },
+        "8-32 s": {
+          "n_eventi": 79,
+          "n_rilevati": 74,
+          "recall": 0.9367088607594937,
+          "n_allarmi_veri": 68,
+          "precision": 0.2698412698412698,
+          "f1": 0.41898417985012487,
+          "latenza_mediana_s": 2.7333333333333334,
+          "n_senza_latenza_misurabile": 5
+        },
+        ">32 s": {
+          "n_eventi": 31,
+          "n_rilevati": 31,
+          "recall": 1.0,
+          "n_allarmi_veri": 46,
+          "precision": 0.2,
+          "f1": 0.33333333333333337,
+          "latenza_mediana_s": 2.4,
+          "n_senza_latenza_misurabile": 0
+        }
+      },
+      "quota_anomala_video": {
+        "<=5%": {
+          "n_eventi": 17,
+          "n_rilevati": 15,
+          "recall": 0.8823529411764706,
+          "n_allarmi_veri": 15,
+          "precision": 0.07537688442211055,
+          "f1": 0.13888888888888887,
+          "latenza_mediana_s": 3.0,
+          "n_senza_latenza_misurabile": 2
+        },
+        "5-20%": {
+          "n_eventi": 91,
+          "n_rilevati": 74,
+          "recall": 0.8131868131868132,
+          "n_allarmi_veri": 65,
+          "precision": 0.26104417670682734,
+          "f1": 0.3952179450310177,
+          "latenza_mediana_s": 2.9833333333333334,
+          "n_senza_latenza_misurabile": 17
+        },
+        "20-50%": {
+          "n_eventi": 118,
+          "n_rilevati": 114,
+          "recall": 0.9661016949152542,
+          "n_allarmi_veri": 69,
+          "precision": 0.2727272727272727,
+          "f1": 0.4253731343283582,
+          "latenza_mediana_s": 2.7,
+          "n_senza_latenza_misurabile": 4
+        },
+        ">50%": {
+          "n_eventi": 50,
+          "n_rilevati": 48,
+          "recall": 0.96,
+          "n_allarmi_veri": 47,
+          "precision": 0.20346320346320346,
+          "f1": 0.3357642506325346,
+          "latenza_mediana_s": 2.466666666666667,
+          "n_senza_latenza_misurabile": 2
+        }
+      }
+    }
+  },
+  "per_class_chunk_prf": {
+    "Abuse": {
+      "precision": 0.004545454545454545,
+      "recall": 0.6666666666666666,
+      "f1": 0.009029345372460496,
+      "threshold": 0.031618766486644745,
+      "source": "val_youden",
+      "n_pred_pos": 880,
+      "n_true_pos": 6
+    },
+    "Arrest": {
+      "precision": 0.1300893743793446,
+      "recall": 0.7891566265060241,
+      "f1": 0.2233589087809037,
+      "threshold": 0.031618766486644745,
+      "source": "val_youden",
+      "n_pred_pos": 1007,
+      "n_true_pos": 166
+    },
+    "Arson": {
+      "precision": 0.1948529411764706,
+      "recall": 0.8833333333333333,
+      "f1": 0.31927710843373497,
+      "threshold": 0.031618766486644745,
+      "source": "val_youden",
+      "n_pred_pos": 1088,
+      "n_true_pos": 240
+    },
+    "Assault": {
+      "precision": 0.0912863070539419,
+      "recall": 0.8888888888888888,
+      "f1": 0.16556914393226715,
+      "threshold": 0.031618766486644745,
+      "source": "val_youden",
+      "n_pred_pos": 964,
+      "n_true_pos": 99
+    },
+    "Burglary": {
+      "precision": 0.2206405693950178,
+      "recall": 0.8953068592057761,
+      "f1": 0.35403283369022126,
+      "threshold": 0.031618766486644745,
+      "source": "val_youden",
+      "n_pred_pos": 1124,
+      "n_true_pos": 277
+    },
+    "Explosion": {
+      "precision": 0.08463949843260188,
+      "recall": 0.9759036144578314,
+      "f1": 0.15576923076923077,
+      "threshold": 0.031618766486644745,
+      "source": "val_youden",
+      "n_pred_pos": 957,
+      "n_true_pos": 83
+    },
+    "Fighting": {
+      "precision": 0.05705059203444564,
+      "recall": 1.0,
+      "f1": 0.10794297352342157,
+      "threshold": 0.031618766486644745,
+      "source": "val_youden",
+      "n_pred_pos": 929,
+      "n_true_pos": 53
+    },
+    "RoadAccidents": {
+      "precision": 0.060085836909871244,
+      "recall": 0.9333333333333333,
+      "f1": 0.11290322580645161,
+      "threshold": 0.031618766486644745,
+      "source": "val_youden",
+      "n_pred_pos": 932,
+      "n_true_pos": 60
+    },
+    "Robbery": {
+      "precision": 0.08463949843260188,
+      "recall": 0.8617021276595744,
+      "f1": 0.15413891531874405,
+      "threshold": 0.031618766486644745,
+      "source": "val_youden",
+      "n_pred_pos": 957,
+      "n_true_pos": 94
+    },
+    "Shooting": {
+      "precision": 0.10975609756097561,
+      "recall": 0.8925619834710744,
+      "f1": 0.19547511312217195,
+      "threshold": 0.031618766486644745,
+      "source": "val_youden",
+      "n_pred_pos": 984,
+      "n_true_pos": 121
+    },
+    "Shoplifting": {
+      "precision": 0.05297297297297297,
+      "recall": 0.3951612903225806,
+      "f1": 0.09342230695900856,
+      "threshold": 0.031618766486644745,
+      "source": "val_youden",
+      "n_pred_pos": 925,
+      "n_true_pos": 124
+    },
+    "Stealing": {
+      "precision": 0.10975609756097561,
+      "recall": 0.8571428571428571,
+      "f1": 0.19459459459459458,
+      "threshold": 0.031618766486644745,
+      "source": "val_youden",
+      "n_pred_pos": 984,
+      "n_true_pos": 126
+    },
+    "Vandalism": {
+      "precision": 0.04471101417666303,
+      "recall": 0.9761904761904762,
+      "f1": 0.08550573514077163,
+      "threshold": 0.031618766486644745,
+      "source": "val_youden",
+      "n_pred_pos": 917,
+      "n_true_pos": 42
+    }
+  },
+  "eval_split": "test",
+  "eval_precision": "bf16",
+  "n_eval_videos": 290,
+  "n_chunk_eval": 9116,
+  "threshold": {
+    "value": 0.031618766486644745,
+    "source": "val_youden",
+    "n_scores": 8383,
+    "n_negativi": 7389,
+    "scores_from": "selected_step"
+  },
+  "n_test_videos": 290,
+  "n_chunk_test": 9116,
+  "seed": 42,
+  "protocol_version": "edp_v2",
+  "split_sha": "5e82820a94a7d8aa7b70c6905334e92d39ab4f8128a6aa0e3692663942e89ade",
+  "chunks": {
+    "train": {
+      "n_chunk": 88371,
+      "n_positivi": 9475,
+      "n_video": 1303,
+      "tasso_positivi_uniforme": 0.10721843138586187,
+      "tasso_positivi_pesato": 0.23773669393537278
+    },
+    "val": {
+      "n_chunk": 8383,
+      "n_positivi": 994,
+      "n_video": 306,
+      "tasso_positivi_uniforme": 0.11857330311344387,
+      "tasso_positivi_pesato": 0.15474208694416813
+    },
+    "test": {
+      "n_chunk": 9116,
+      "n_positivi": 1491,
+      "n_video": 290,
+      "tasso_positivi_uniforme": 0.16355857832382623,
+      "tasso_positivi_pesato": 0.15065221000705442
+    }
+  },
+  "n_chunk_train": 88371,
+  "n_chunk_val": 8383,
+  "train_sampling": "static",
+  "final_loss": 0.013420047396721202,
+  "trainable_params": 180954497,
+  "trainable_params_adapter": 50724864,
+  "lr": 0.0001,
+  "lr_selection": {
+    "lr": 0.0001,
+    "regime": "griglia_a_un_valore",
+    "provenance": "la griglia ha un solo punto: niente da scegliere",
+    "trials": [],
+    "n_val": 0
+  },
+  "steps": 27620,
+  "max_steps": 27620,
+  "budget_epochs": null,
+  "budget_cap_attivo": false,
+  "stopped_early": false,
+  "resumed_from": 27383,
+  "model_selection": {
+    "metric": "val_auroc",
+    "step": 16560,
+    "value": 0.963748453639689,
+    "eval_every": 920
+  },
+  "val_auroc_finale": 0.9534246349663824,
+  "adapt": {
+    "family": "reparam",
+    "method": "lora",
+    "n_targets": 192,
+    "n_trainable": 50724864,
+    "extra_tokens": 0,
+    "targets": [
+      "blocks.0.attn.qkv",
+      "blocks.0.attn.proj",
+      "blocks.0.mlp.fc1",
+      "blocks.0.mlp.fc2",
+      "blocks.1.attn.qkv",
+      "blocks.1.attn.proj",
+      "blocks.1.mlp.fc1",
+      "blocks.1.mlp.fc2",
+      "blocks.2.attn.qkv",
+      "blocks.2.attn.proj",
+      "blocks.2.mlp.fc1",
+      "blocks.2.mlp.fc2",
+      "blocks.3.attn.qkv",
+      "blocks.3.attn.proj",
+      "blocks.3.mlp.fc1",
+      "blocks.3.mlp.fc2",
+      "blocks.4.attn.qkv",
+      "blocks.4.attn.proj",
+      "blocks.4.mlp.fc1",
+      "blocks.4.mlp.fc2",
+      "blocks.5.attn.qkv",
+      "blocks.5.attn.proj",
+      "blocks.5.mlp.fc1",
+      "blocks.5.mlp.fc2",
+      "blocks.6.attn.qkv",
+      "blocks.6.attn.proj",
+      "blocks.6.mlp.fc1",
+      "blocks.6.mlp.fc2",
+      "blocks.7.attn.qkv",
+      "blocks.7.attn.proj",
+      "blocks.7.mlp.fc1",
+      "blocks.7.mlp.fc2",
+      "blocks.8.attn.qkv",
+      "blocks.8.attn.proj",
+      "blocks.8.mlp.fc1",
+      "blocks.8.mlp.fc2",
+      "blocks.9.attn.qkv",
+      "blocks.9.attn.proj",
+      "blocks.9.mlp.fc1",
+      "blocks.9.mlp.fc2",
+      "blocks.10.attn.qkv",
+      "blocks.10.attn.proj",
+      "blocks.10.mlp.fc1",
+      "blocks.10.mlp.fc2",
+      "blocks.11.attn.qkv",
+      "blocks.11.attn.proj",
+      "blocks.11.mlp.fc1",
+      "blocks.11.mlp.fc2",
+      "blocks.12.attn.qkv",
+      "blocks.12.attn.proj",
+      "blocks.12.mlp.fc1",
+      "blocks.12.mlp.fc2",
+      "blocks.13.attn.qkv",
+      "blocks.13.attn.proj",
+      "blocks.13.mlp.fc1",
+      "blocks.13.mlp.fc2",
+      "blocks.14.attn.qkv",
+      "blocks.14.attn.proj",
+      "blocks.14.mlp.fc1",
+      "blocks.14.mlp.fc2",
+      "blocks.15.attn.qkv",
+      "blocks.15.attn.proj",
+      "blocks.15.mlp.fc1",
+      "blocks.15.mlp.fc2",
+      "blocks.16.attn.qkv",
+      "blocks.16.attn.proj",
+      "blocks.16.mlp.fc1",
+      "blocks.16.mlp.fc2",
+      "blocks.17.attn.qkv",
+      "blocks.17.attn.proj",
+      "blocks.17.mlp.fc1",
+      "blocks.17.mlp.fc2",
+      "blocks.18.attn.qkv",
+      "blocks.18.attn.proj",
+      "blocks.18.mlp.fc1",
+      "blocks.18.mlp.fc2",
+      "blocks.19.attn.qkv",
+      "blocks.19.attn.proj",
+      "blocks.19.mlp.fc1",
+      "blocks.19.mlp.fc2",
+      "blocks.20.attn.qkv",
+      "blocks.20.attn.proj",
+      "blocks.20.mlp.fc1",
+      "blocks.20.mlp.fc2",
+      "blocks.21.attn.qkv",
+      "blocks.21.attn.proj",
+      "blocks.21.mlp.fc1",
+      "blocks.21.mlp.fc2",
+      "blocks.22.attn.qkv",
+      "blocks.22.attn.proj",
+      "blocks.22.mlp.fc1",
+      "blocks.22.mlp.fc2",
+      "blocks.23.attn.qkv",
+      "blocks.23.attn.proj",
+      "blocks.23.mlp.fc1",
+      "blocks.23.mlp.fc2",
+      "blocks.24.attn.qkv",
+      "blocks.24.attn.proj",
+      "blocks.24.mlp.fc1",
+      "blocks.24.mlp.fc2",
+      "blocks.25.attn.qkv",
+      "blocks.25.attn.proj",
+      "blocks.25.mlp.fc1",
+      "blocks.25.mlp.fc2",
+      "blocks.26.attn.qkv",
+      "blocks.26.attn.proj",
+      "blocks.26.mlp.fc1",
+      "blocks.26.mlp.fc2",
+      "blocks.27.attn.qkv",
+      "blocks.27.attn.proj",
+      "blocks.27.mlp.fc1",
+      "blocks.27.mlp.fc2",
+      "blocks.28.attn.qkv",
+      "blocks.28.attn.proj",
+      "blocks.28.mlp.fc1",
+      "blocks.28.mlp.fc2",
+      "blocks.29.attn.qkv",
+      "blocks.29.attn.proj",
+      "blocks.29.mlp.fc1",
+      "blocks.29.mlp.fc2",
+      "blocks.30.attn.qkv",
+      "blocks.30.attn.proj",
+      "blocks.30.mlp.fc1",
+      "blocks.30.mlp.fc2",
+      "blocks.31.attn.qkv",
+      "blocks.31.attn.proj",
+      "blocks.31.mlp.fc1",
+      "blocks.31.mlp.fc2",
+      "blocks.32.attn.qkv",
+      "blocks.32.attn.proj",
+      "blocks.32.mlp.fc1",
+      "blocks.32.mlp.fc2",
+      "blocks.33.attn.qkv",
+      "blocks.33.attn.proj",
+      "blocks.33.mlp.fc1",
+      "blocks.33.mlp.fc2",
+      "blocks.34.attn.qkv",
+      "blocks.34.attn.proj",
+      "blocks.34.mlp.fc1",
+      "blocks.34.mlp.fc2",
+      "blocks.35.attn.qkv",
+      "blocks.35.attn.proj",
+      "blocks.35.mlp.fc1",
+      "blocks.35.mlp.fc2",
+      "blocks.36.attn.qkv",
+      "blocks.36.attn.proj",
+      "blocks.36.mlp.fc1",
+      "blocks.36.mlp.fc2",
+      "blocks.37.attn.qkv",
+      "blocks.37.attn.proj",
+      "blocks.37.mlp.fc1",
+      "blocks.37.mlp.fc2",
+      "blocks.38.attn.qkv",
+      "blocks.38.attn.proj",
+      "blocks.38.mlp.fc1",
+      "blocks.38.mlp.fc2",
+      "blocks.39.attn.qkv",
+      "blocks.39.attn.proj",
+      "blocks.39.mlp.fc1",
+      "blocks.39.mlp.fc2",
+      "blocks.40.attn.qkv",
+      "blocks.40.attn.proj",
+      "blocks.40.mlp.fc1",
+      "blocks.40.mlp.fc2",
+      "blocks.41.attn.qkv",
+      "blocks.41.attn.proj",
+      "blocks.41.mlp.fc1",
+      "blocks.41.mlp.fc2",
+      "blocks.42.attn.qkv",
+      "blocks.42.attn.proj",
+      "blocks.42.mlp.fc1",
+      "blocks.42.mlp.fc2",
+      "blocks.43.attn.qkv",
+      "blocks.43.attn.proj",
+      "blocks.43.mlp.fc1",
+      "blocks.43.mlp.fc2",
+      "blocks.44.attn.qkv",
+      "blocks.44.attn.proj",
+      "blocks.44.mlp.fc1",
+      "blocks.44.mlp.fc2",
+      "blocks.45.attn.qkv",
+      "blocks.45.attn.proj",
+      "blocks.45.mlp.fc1",
+      "blocks.45.mlp.fc2",
+      "blocks.46.attn.qkv",
+      "blocks.46.attn.proj",
+      "blocks.46.mlp.fc1",
+      "blocks.46.mlp.fc2",
+      "blocks.47.attn.qkv",
+      "blocks.47.attn.proj",
+      "blocks.47.mlp.fc1",
+      "blocks.47.mlp.fc2"
+    ],
+    "notes": {
+      "placement": "attn_mlp",
+      "factorization": "separate",
+      "r": 32,
+      "alpha": 64,
+      "use_rslora": false
+    }
+  },
+  "figura_training": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/e3g_ucf_vjepa21gigantic_lora-r32-qkvomlp_s42/training.png",
+  "figura_lr": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/e3g_ucf_vjepa21gigantic_lora-r32-qkvomlp_s42/lr.png"
+}

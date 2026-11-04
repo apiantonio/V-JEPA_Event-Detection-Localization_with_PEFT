@@ -20,3 +20,6 @@ Project contributions follow ../LICENSE; upstream model terms continue to apply.
 From the repository root, list models with `python weights/download.py`; install one
 with `python weights/download.py --model <run_id>`, or all with `--all`. Every download
 is verified before replacing checkpoint.pt. For private assets use GitHub CLI with authentication.
+
+`run-configs/` contains the resolved config and run receipts of each asset. The downloader
+installs missing metadata beside the checkpoint without overwriting existing run files.

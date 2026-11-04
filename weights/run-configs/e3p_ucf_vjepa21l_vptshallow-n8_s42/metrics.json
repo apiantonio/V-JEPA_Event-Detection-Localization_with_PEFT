@@ -1,0 +1,263 @@
+{
+  "run_id": "e3p_ucf_vjepa21l_vptshallow-n8_s42",
+  "chunk_auc": 0.9394011720596805,
+  "chunk_ap": 0.7783418739552204,
+  "chunk_auc_anomalous": 0.8384821211028345,
+  "chunk_ap_anomalous": 0.7945127168057674,
+  "n_video_anomalous": 140,
+  "chunk_prf": {
+    "precision": 0.5921305182341651,
+    "recall": 0.8276324614352784,
+    "f1": 0.6903496503496505,
+    "threshold": 0.06560483574867249,
+    "source": "val_youden",
+    "n_pred_pos": 2084,
+    "n_true_pos": 1491
+  },
+  "per_class_chunk": {
+    "Abuse": {
+      "auc": 0.9529726775956284,
+      "ap": 0.011717572738135876,
+      "n_pos": 6
+    },
+    "Arrest": {
+      "auc": 0.9028003160181709,
+      "ap": 0.2172816642362127,
+      "n_pos": 166
+    },
+    "Arson": {
+      "auc": 0.9647857923497268,
+      "ap": 0.5230149746070261,
+      "n_pos": 240
+    },
+    "Assault": {
+      "auc": 0.9373161119390628,
+      "ap": 0.36888030660409843,
+      "n_pos": 99
+    },
+    "Burglary": {
+      "auc": 0.9585382020477009,
+      "ap": 0.5765767286228485,
+      "n_pos": 277
+    },
+    "Explosion": {
+      "auc": 0.9673355717953782,
+      "ap": 0.32865670944993963,
+      "n_pos": 83
+    },
+    "Fighting": {
+      "auc": 0.9859140117537891,
+      "ap": 0.5377301382717714,
+      "n_pos": 53
+    },
+    "RoadAccidents": {
+      "auc": 0.943111475409836,
+      "ap": 0.16194736985652652,
+      "n_pos": 60
+    },
+    "Robbery": {
+      "auc": 0.9184394837809557,
+      "ap": 0.17472316302807245,
+      "n_pos": 94
+    },
+    "Shooting": {
+      "auc": 0.9547855304159328,
+      "ap": 0.399371135026411,
+      "n_pos": 121
+    },
+    "Shoplifting": {
+      "auc": 0.825034902168165,
+      "ap": 0.07005891309827317,
+      "n_pos": 124
+    },
+    "Stealing": {
+      "auc": 0.9654910226385637,
+      "ap": 0.4639803942408087,
+      "n_pos": 126
+    },
+    "Vandalism": {
+      "auc": 0.9585464480874317,
+      "ap": 0.1241709004855075,
+      "n_pos": 42
+    }
+  },
+  "detection_latency": {
+    "mediana_s": 2.466666666666667,
+    "p90_s": 4.593333333333333,
+    "n_eventi": 276,
+    "n_senza_latenza_misurabile": 91
+  },
+  "video_prf": {
+    "precision": 0.9361702127659575,
+    "recall": 0.9428571428571428,
+    "f1": 0.9395017793594306,
+    "threshold": 0.06560483574867249,
+    "source": "val_youden",
+    "n_pred_pos": 141,
+    "n_true_pos": 140
+  },
+  "eval_split": "test",
+  "eval_precision": "bf16",
+  "n_eval_videos": 290,
+  "n_chunk_eval": 9116,
+  "threshold": {
+    "value": 0.06560483574867249,
+    "source": "val_youden",
+    "n_scores": 8383,
+    "n_negativi": 7389,
+    "scores_from": "selected_step"
+  },
+  "threshold_sensitivity": [
+    {
+      "quantile": 0.8,
+      "threshold": 0.0222861859947443,
+      "chunk_prf": {
+        "precision": 0.5218934911242603,
+        "recall": 0.8873239436619719,
+        "f1": 0.6572280178837555,
+        "threshold": 0.0222861859947443,
+        "source": "val",
+        "n_pred_pos": 2535,
+        "n_true_pos": 1491
+      }
+    },
+    {
+      "quantile": 0.9,
+      "threshold": 0.1201911404728888,
+      "chunk_prf": {
+        "precision": 0.6312095032397408,
+        "recall": 0.784037558685446,
+        "f1": 0.6993718217170206,
+        "threshold": 0.1201911404728888,
+        "source": "val",
+        "n_pred_pos": 1852,
+        "n_true_pos": 1491
+      }
+    },
+    {
+      "quantile": 0.95,
+      "threshold": 0.4649015963077545,
+      "chunk_prf": {
+        "precision": 0.7413394919168591,
+        "recall": 0.6458752515090543,
+        "f1": 0.6903225806451613,
+        "threshold": 0.4649015963077545,
+        "source": "val",
+        "n_pred_pos": 1299,
+        "n_true_pos": 1491
+      }
+    },
+    {
+      "quantile": 0.975,
+      "threshold": 0.8568122982978821,
+      "chunk_prf": {
+        "precision": 0.8518518518518519,
+        "recall": 0.4782025486250838,
+        "f1": 0.6125429553264605,
+        "threshold": 0.8568122982978821,
+        "source": "val",
+        "n_pred_pos": 837,
+        "n_true_pos": 1491
+      }
+    },
+    {
+      "quantile": 0.99,
+      "threshold": 0.9711290597915649,
+      "chunk_prf": {
+        "precision": 0.92,
+        "recall": 0.323943661971831,
+        "f1": 0.4791666666666667,
+        "threshold": 0.9711290597915649,
+        "source": "val",
+        "n_pred_pos": 525,
+        "n_true_pos": 1491
+      }
+    }
+  ],
+  "event_prf": {
+    "precision": 0.599406528189911,
+    "recall": 0.9057971014492754,
+    "f1": 0.7214182654533507,
+    "threshold": 0.06560483574867249,
+    "source": "val_youden",
+    "n_eventi": 276,
+    "n_eventi_rilevati": 250,
+    "n_allarmi": 337,
+    "n_allarmi_veri": 202,
+    "n_eventi_irraggiungibili": 0
+  },
+  "n_test_videos": 290,
+  "n_chunk_test": 9116,
+  "seed": 42,
+  "protocol_version": "edp_v2",
+  "split_sha": "5e82820a94a7d8aa7b70c6905334e92d39ab4f8128a6aa0e3692663942e89ade",
+  "chunks": {
+    "train": {
+      "n_chunk": 88371,
+      "n_positivi": 9475,
+      "n_video": 1303,
+      "tasso_positivi_uniforme": 0.10721843138586187,
+      "tasso_positivi_pesato": 0.23773669393537278
+    },
+    "val": {
+      "n_chunk": 8383,
+      "n_positivi": 994,
+      "n_video": 306,
+      "tasso_positivi_uniforme": 0.11857330311344387,
+      "tasso_positivi_pesato": 0.15474208694416813
+    },
+    "test": {
+      "n_chunk": 9116,
+      "n_positivi": 1491,
+      "n_video": 290,
+      "tasso_positivi_uniforme": 0.16355857832382623,
+      "tasso_positivi_pesato": 0.15065221000705442
+    }
+  },
+  "n_chunk_train": 88371,
+  "n_chunk_val": 8383,
+  "train_sampling": "static",
+  "final_loss": 0.03161711794382427,
+  "trainable_params": 49347585,
+  "trainable_params_adapter": 8192,
+  "lr": 0.0001,
+  "lr_selection": {
+    "lr": 0.0001,
+    "regime": "griglia_a_un_valore",
+    "provenance": "la griglia ha un solo punto: niente da scegliere",
+    "trials": [],
+    "n_val": 0
+  },
+  "steps": 5524,
+  "max_steps": 5524,
+  "budget_epochs": null,
+  "budget_cap_attivo": false,
+  "stopped_early": false,
+  "resumed_from": 3562,
+  "model_selection": {
+    "metric": "val_auroc",
+    "step": 5520,
+    "value": 0.9320216194991031,
+    "eval_every": 920
+  },
+  "val_auroc_finale": 0.9320216194991031,
+  "adapt": {
+    "family": "prompt",
+    "method": "vpt_shallow",
+    "n_targets": 24,
+    "n_trainable": 8192,
+    "extra_tokens": 8,
+    "targets": [
+      "blocks.0"
+    ],
+    "notes": {
+      "n_tokens": 8,
+      "start_block": 0,
+      "n_banchi": 1,
+      "pos_policy": "rope_identity",
+      "norm": "none",
+      "init": "xavier_uniform"
+    }
+  },
+  "figura_training": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/e3p_ucf_vjepa21l_vptshallow-n8_s42/training.png"
+}

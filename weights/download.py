@@ -5,6 +5,7 @@ import argparse
 import hashlib
 import json
 import os
+import shutil
 from pathlib import Path
 from urllib.request import Request, urlopen
 
@@ -41,6 +42,11 @@ def main() -> None:
         if count != record["bytes"] or digest.hexdigest() != record["sha256"]:
             raise ValueError(f"Checksum mismatch: {pending}; the existing checkpoint was not replaced")
         os.replace(pending, target)
+        metadata = root / "weights" / "run-configs" / record["run_id"]
+        for source in metadata.glob("*"):
+            destination = target.parent.parent / source.name
+            if source.is_file() and not destination.exists():
+                shutil.copyfile(source, destination)
         print(f"Verified and installed {target}")
 
 
