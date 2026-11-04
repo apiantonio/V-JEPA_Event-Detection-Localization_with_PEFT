@@ -1,0 +1,4 @@
+# @package _global_
+defaults:
+  - e3p_vpt
+  - override /adapt: vpt_deep_n64

@@ -1,0 +1,1205 @@
+<title>Configurazioni LoRA su V-JEPA 2.1</title>
+
+<style>
+  :root{
+    --bg:#F1F3F5;
+    --surface:#FFFFFF;
+    --surface-2:#E9EDF0;
+    --ink:#14181D;
+    --ink-2:#4A555F;
+    --ink-3:#78848F;
+    --rule:#D5DCE1;
+    --rule-2:#E4E9ED;
+    --frozen-fill:#DCE3E8;
+    --frozen-stroke:#93A1AC;
+    --a:#0F6E78;
+    --a-fill:#C6E2E4;
+    --b:#7A2E86;
+    --b-fill:#E4D0E8;
+    --dw-fill:#F6F8F9;
+    --warn:#A3541B;
+    --warn-fill:#F6E9DD;
+    --display:Constantia,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    --body:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+    --mono:"Cascadia Mono","JetBrains Mono",Consolas,"SF Mono",ui-monospace,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0F1317;
+      --surface:#161B21;
+      --surface-2:#1D242B;
+      --ink:#E7ECF0;
+      --ink-2:#A7B3BC;
+      --ink-3:#7C8892;
+      --rule:#2C343C;
+      --rule-2:#232A31;
+      --frozen-fill:#242C34;
+      --frozen-stroke:#5C6873;
+      --a:#4EC3CB;
+      --a-fill:#123F44;
+      --b:#D08BD8;
+      --b-fill:#3E1D45;
+      --dw-fill:#1A2027;
+      --warn:#E0995A;
+      --warn-fill:#33241A;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0F1317;
+    --surface:#161B21;
+    --surface-2:#1D242B;
+    --ink:#E7ECF0;
+    --ink-2:#A7B3BC;
+    --ink-3:#7C8892;
+    --rule:#2C343C;
+    --rule-2:#232A31;
+    --frozen-fill:#242C34;
+    --frozen-stroke:#5C6873;
+    --a:#4EC3CB;
+    --a-fill:#123F44;
+    --b:#D08BD8;
+    --b-fill:#3E1D45;
+    --dw-fill:#1A2027;
+    --warn:#E0995A;
+    --warn-fill:#33241A;
+  }
+
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:48px 24px 96px;
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+  }
+
+  /* ---------- header ---------- */
+  header{display:flex;flex-direction:column;gap:14px;}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:11.5px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--a);
+  }
+  h1{
+    font-family:var(--display);
+    font-size:clamp(30px,4.4vw,46px);
+    line-height:1.08;
+    letter-spacing:-.015em;
+    text-wrap:balance;
+    font-weight:700;
+  }
+  .lede{
+    font-size:17px;
+    color:var(--ink-2);
+    max-width:66ch;
+    text-wrap:pretty;
+  }
+  .meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 10px;
+    padding-top:6px;
+  }
+  .chip{
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:var(--ink-2);
+    background:var(--surface);
+    border:1px solid var(--rule);
+    border-radius:2px;
+    padding:4px 9px;
+    font-variant-numeric:tabular-nums;
+  }
+
+  /* ---------- legend ---------- */
+  .legend{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 26px;
+    align-items:center;
+    background:var(--surface);
+    border:1px solid var(--rule);
+    border-left:3px solid var(--a);
+    padding:14px 18px;
+  }
+  .lg{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--ink-2);}
+  .lg span.sw{width:22px;height:14px;border:1px solid var(--rule);display:inline-block;flex:none;}
+  .sw-w{background:var(--frozen-fill);border-color:var(--frozen-stroke);}
+  .sw-a{background:var(--a-fill);border-color:var(--a);}
+  .sw-b{background:var(--b-fill);border-color:var(--b);}
+  .sw-z{background:repeating-linear-gradient(45deg,transparent,transparent 3px,var(--ink-3) 3px,var(--ink-3) 4px);}
+  .lg code{font-family:var(--mono);font-size:12px;color:var(--ink);}
+
+  /* ---------- sections ---------- */
+  section{display:flex;flex-direction:column;gap:18px;}
+  .shead{display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--rule);padding-top:18px;}
+  .snum{
+    font-family:var(--mono);
+    font-size:11.5px;
+    letter-spacing:.12em;
+    color:var(--ink-3);
+    text-transform:uppercase;
+  }
+  h2{
+    font-family:var(--display);
+    font-size:clamp(21px,2.4vw,27px);
+    line-height:1.2;
+    font-weight:700;
+    letter-spacing:-.01em;
+    text-wrap:balance;
+  }
+  .sdek{font-size:15px;color:var(--ink-2);max-width:74ch;text-wrap:pretty;}
+
+  figure{
+    background:var(--surface);
+    border:1px solid var(--rule);
+    padding:22px 22px 18px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .scroll{overflow-x:auto;}
+  figure svg{display:block;max-width:100%;height:auto;min-width:520px;}
+  figcaption{
+    font-size:13.5px;
+    line-height:1.6;
+    color:var(--ink-2);
+    max-width:82ch;
+    border-top:1px solid var(--rule-2);
+    padding-top:12px;
+    text-wrap:pretty;
+  }
+  figcaption b{color:var(--ink);font-weight:600;}
+  figcaption code, p code, li code, td code, th code{
+    font-family:var(--mono);
+    font-size:.92em;
+    color:var(--ink);
+    background:var(--surface-2);
+    padding:1px 4px;
+    border-radius:2px;
+  }
+
+  .duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(430px,1fr));gap:20px;align-items:start;}
+  .duo figure{height:100%;}
+
+  /* ---------- svg classes ---------- */
+  svg text{font-family:var(--mono);fill:var(--ink);font-variant-numeric:tabular-nums;}
+  .s8{font-size:8px} .s9{font-size:9px} .s10{font-size:10px} .s11{font-size:11px}
+  .s12{font-size:12px} .s13{font-size:13px} .s14{font-size:14px} .s16{font-size:16px}
+  .bd{font-weight:700}
+  .t2{fill:var(--ink-2)} .t3{fill:var(--ink-3)}
+  .ta{fill:var(--a)} .tb{fill:var(--b)} .tw{fill:var(--warn)}
+  .mid{text-anchor:middle} .end{text-anchor:end}
+  .mW{fill:var(--frozen-fill);stroke:var(--frozen-stroke);stroke-width:1}
+  .mA{fill:var(--a-fill);stroke:var(--a);stroke-width:1.2}
+  .mB{fill:var(--b-fill);stroke:var(--b);stroke-width:1.2}
+  .mD{fill:var(--dw-fill);stroke:var(--rule);stroke-width:1}
+  .mS{fill:var(--surface);stroke:var(--rule);stroke-width:1}
+  .mZ{fill:url(#hz);stroke:var(--rule);stroke-width:1}
+  .mZ2{fill:url(#hz2);stroke:var(--rule);stroke-width:1}
+  .mWarn{fill:var(--warn-fill);stroke:var(--warn);stroke-width:1.2}
+  .tgt{fill:var(--surface);stroke:var(--a);stroke-width:1.4}
+  .ntgt{fill:var(--surface);stroke:var(--frozen-stroke);stroke-width:1;stroke-dasharray:4 3}
+  .ln{fill:none;stroke:var(--ink-2);stroke-width:1.3}
+  .lnf{fill:none;stroke:var(--ink-3);stroke-width:1;stroke-dasharray:3 3}
+  .sep{stroke:var(--rule);stroke-width:1}
+  .sepd{stroke:var(--rule);stroke-width:1;stroke-dasharray:4 4}
+  .ah{fill:var(--ink-2)}
+  .hzl{stroke:var(--ink-3);stroke-width:1;opacity:.55}
+
+  /* ---------- tables ---------- */
+  .tbl{overflow-x:auto;border:1px solid var(--rule);background:var(--surface);}
+  table{border-collapse:collapse;width:100%;min-width:640px;font-size:13px;}
+  caption{
+    text-align:left;
+    padding:14px 16px 10px;
+    font-size:12px;
+    font-family:var(--mono);
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    border-bottom:1px solid var(--rule-2);
+  }
+  th,td{padding:8px 14px;text-align:right;border-bottom:1px solid var(--rule-2);white-space:nowrap;}
+  th:first-child,td:first-child{text-align:left;}
+  thead th{
+    font-size:11.5px;
+    font-weight:600;
+    color:var(--ink-3);
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    border-bottom:1px solid var(--rule);
+    white-space:normal;
+  }
+  tbody td{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--ink-2);}
+  tbody td:first-child{color:var(--ink);font-weight:600;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:hover td{background:var(--surface-2);}
+  .tnote{font-size:12.5px;color:var(--ink-3);padding:10px 16px;border-top:1px solid var(--rule-2);}
+
+  /* ---------- prose blocks ---------- */
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:18px;}
+  .card{
+    background:var(--surface);
+    border:1px solid var(--rule);
+    padding:18px 20px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .card h3{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    font-weight:600;
+  }
+  .card.ok{border-left:3px solid var(--a);}
+  .card.warn{border-left:3px solid var(--warn);}
+  .card.warn h3{color:var(--warn);}
+  ul{display:flex;flex-direction:column;gap:9px;list-style:none;}
+  ul li{position:relative;padding-left:18px;font-size:14px;color:var(--ink-2);line-height:1.5;}
+  ul li::before{
+    content:"";
+    position:absolute;
+    left:0;top:.55em;
+    width:7px;height:7px;
+    border:1.5px solid var(--a);
+  }
+  .card.warn ul li::before{border-color:var(--warn);border-radius:50%;}
+  ul li b{color:var(--ink);font-weight:600;}
+
+  footer{
+    border-top:1px solid var(--rule);
+    padding-top:16px;
+    font-size:12.5px;
+    color:var(--ink-3);
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px 20px;
+  }
+  footer code{font-family:var(--mono);}
+</style>
+
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Sessione S3 · lab/notes/03_target_modules.md</div>
+    <h1>Configurazioni LoRA su V-JEPA 2.1</h1>
+    <p class="lede">Dove si attacca un adattatore in un backbone a QKV fusa, quali fattorizzazioni della stessa <code>ΔW</code> sono possibili, e quanto costa ciascuna sulle quattro varianti rilasciate. Tutte le forme sono quelle verificate eseguendo, in fp32 e con <code>strict=True</code>.</p>
+    <div class="meta">
+      <span class="chip">d = embed_dim</span>
+      <span class="chip">L = blocchi</span>
+      <span class="chip">r = rango (16 nei numeri)</span>
+      <span class="chip">4 varianti: B / L / g / G</span>
+      <span class="chip">PyTorch puro, senza peft (ADR-019)</span>
+    </div>
+  </header>
+
+  <div class="legend">
+    <div class="lg"><span class="sw sw-w"></span>peso congelato <code>W₀</code></div>
+    <div class="lg"><span class="sw sw-a"></span>fattore <code>A</code> — lato ingresso, addestrabile</div>
+    <div class="lg"><span class="sw sw-b"></span>fattore <code>B</code> — lato uscita, addestrabile</div>
+    <div class="lg"><span class="sw sw-z"></span>blocco identicamente nullo (vincolo strutturale)</div>
+  </div>
+
+  <!-- ==================== 1. ANATOMIA ==================== -->
+  <section>
+    <div class="shead">
+      <div class="snum">1 — Superficie adattabile</div>
+      <h2>I quattro <code>nn.Linear</code> di un blocco</h2>
+      <p class="sdek">Ogni blocco espone esattamente quattro moduli lineari, sempre gli stessi su tutte e quattro le varianti: <code>4 × L</code> in totale, e nessun <code>nn.Linear</code> fuori dai blocchi.</p>
+    </div>
+
+    <figure>
+      <div class="scroll">
+        <svg viewBox="0 0 1180 268" role="img" aria-label="Diagramma di un blocco transformer di V-JEPA 2.1: norm1, attn.qkv Linear(d a 3d), attenzione, attn.proj Linear(d a d), somma residua, norm2, mlp.fc1 Linear(d a h), GELU, mlp.fc2 Linear(h a d), somma residua. I quattro Linear sono i bersagli adattabili.">
+          <defs>
+            <marker id="a1" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="8" markerHeight="7" orient="auto">
+              <polygon class="ah" points="0,0 10,4 0,8"/>
+            </marker>
+          </defs>
+
+          <text class="s11 t3" x="44" y="26">blocchi identici, i = 0 … L−1</text>
+          <rect class="mS" x="44" y="40" width="1080" height="184" rx="4" fill="none"/>
+
+          <!-- residual paths -->
+          <polyline class="ln" points="56,134 56,62 596,62 596,121" marker-end="url(#a1)"/>
+          <polyline class="ln" points="620,134 620,76 1078,76 1078,121" marker-end="url(#a1)"/>
+          <text class="s10 t3 mid" x="326" y="55">residuo</text>
+          <text class="s10 t3 mid" x="850" y="69">residuo</text>
+
+          <!-- main line -->
+          <text class="s14 bd" x="18" y="139">x</text>
+          <line class="ln" x1="30" y1="134" x2="60" y2="134" marker-end="url(#a1)"/>
+
+          <rect class="ntgt" x="66" y="110" width="46" height="48"/>
+          <text class="s10 t2 mid" x="89" y="138">norm1</text>
+          <line class="ln" x1="112" y1="134" x2="124" y2="134" marker-end="url(#a1)"/>
+
+          <rect class="tgt" x="128" y="98" width="142" height="72"/>
+          <rect x="128" y="98" width="4" height="72" fill="var(--a)"/>
+          <text class="s13 bd mid" x="199" y="120">attn.qkv</text>
+          <text class="s11 t2 mid" x="199" y="139">Linear(d → 3·d)</text>
+          <text class="s11 ta mid" x="199" y="157">768 → 2304</text>
+          <line class="ln" x1="270" y1="134" x2="282" y2="134" marker-end="url(#a1)"/>
+
+          <rect class="ntgt" x="286" y="98" width="128" height="72"/>
+          <text class="s12 t2 mid" x="350" y="120">attenzione</text>
+          <text class="s10 t3 mid" x="350" y="139">H teste · head_dim 64</text>
+          <text class="s10 t3 mid" x="350" y="156">RoPE calcolata al volo</text>
+          <line class="ln" x1="414" y1="134" x2="426" y2="134" marker-end="url(#a1)"/>
+
+          <rect class="tgt" x="430" y="98" width="142" height="72"/>
+          <rect x="430" y="98" width="4" height="72" fill="var(--a)"/>
+          <text class="s13 bd mid" x="501" y="120">attn.proj</text>
+          <text class="s11 t2 mid" x="501" y="139">Linear(d → d)</text>
+          <text class="s11 ta mid" x="501" y="157">768 → 768</text>
+          <line class="ln" x1="572" y1="134" x2="584" y2="134" marker-end="url(#a1)"/>
+
+          <circle class="mS" cx="596" cy="134" r="11"/>
+          <text class="s13 mid" x="596" y="139">+</text>
+          <line class="ln" x1="607" y1="134" x2="624" y2="134" marker-end="url(#a1)"/>
+
+          <rect class="ntgt" x="628" y="110" width="46" height="48"/>
+          <text class="s10 t2 mid" x="651" y="138">norm2</text>
+          <line class="ln" x1="674" y1="134" x2="686" y2="134" marker-end="url(#a1)"/>
+
+          <rect class="tgt" x="690" y="98" width="142" height="72"/>
+          <rect x="690" y="98" width="4" height="72" fill="var(--a)"/>
+          <text class="s13 bd mid" x="761" y="120">mlp.fc1</text>
+          <text class="s11 t2 mid" x="761" y="139">Linear(d → h)</text>
+          <text class="s11 ta mid" x="761" y="157">768 → 3072</text>
+          <line class="ln" x1="832" y1="134" x2="844" y2="134" marker-end="url(#a1)"/>
+
+          <rect class="ntgt" x="848" y="110" width="48" height="48"/>
+          <text class="s10 t2 mid" x="872" y="138">GELU</text>
+          <line class="ln" x1="896" y1="134" x2="908" y2="134" marker-end="url(#a1)"/>
+
+          <rect class="tgt" x="912" y="98" width="142" height="72"/>
+          <rect x="912" y="98" width="4" height="72" fill="var(--a)"/>
+          <text class="s13 bd mid" x="983" y="120">mlp.fc2</text>
+          <text class="s11 t2 mid" x="983" y="139">Linear(h → d)</text>
+          <text class="s11 ta mid" x="983" y="157">3072 → 768</text>
+          <line class="ln" x1="1054" y1="134" x2="1066" y2="134" marker-end="url(#a1)"/>
+
+          <circle class="mS" cx="1078" cy="134" r="11"/>
+          <text class="s13 mid" x="1078" y="139">+</text>
+          <line class="ln" x1="1089" y1="134" x2="1122" y2="134" marker-end="url(#a1)"/>
+          <text class="s14 bd" x="1132" y="139">y</text>
+
+          <text class="s11 t3" x="44" y="245">bordo pieno = <tspan class="ta">nn.Linear adattabile</tspan> · bordo tratteggiato = non parametrico o non lineare · valori concreti: ViT-B (d = 768, h = 3072)</text>
+        </svg>
+      </div>
+      <figcaption><b>Nomi qualificati:</b> <code>blocks.{i}.attn.qkv</code>, <code>blocks.{i}.attn.proj</code>, <code>blocks.{i}.mlp.fc1</code>, <code>blocks.{i}.mlp.fc2</code> — e sono i soli <code>nn.Linear</code> dell'encoder: niente pooler, niente testa, niente predictor (modulo separato, che questo percorso non costruisce). Tutte e quattro le varianti usano <code>MLP</code> (<code>fc1</code>/<code>fc2</code>) e non <code>SwiGLUFFN</code>, perché upstream passa <code>use_SiLU</code> con la maiuscola sbagliata e il flag viene inghiottito da <code>**kwargs</code>. I lineari sono dal 97,9% (ViT-B) al 99,8% (ViT-G) dei parametri dell'encoder.</figcaption>
+    </figure>
+
+    <div class="tbl">
+      <table>
+        <caption>Le quattro varianti · costruzione e geometria</caption>
+        <thead>
+          <tr><th>variante</th><th>factory</th><th>chiave ckpt</th><th>d</th><th>L</th><th>teste H</th><th>head_dim</th><th>mlp_ratio</th><th>h</th><th>parametri</th><th>Linear</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>ViT-B</td><td>vit_base</td><td>ema_encoder</td><td>768</td><td>12</td><td>12</td><td>64</td><td>4</td><td>3072</td><td>86.833.152</td><td>48</td></tr>
+          <tr><td>ViT-L</td><td>vit_large</td><td>ema_encoder</td><td>1024</td><td>24</td><td>16</td><td>64</td><td>4</td><td>4096</td><td>304.680.960</td><td>96</td></tr>
+          <tr><td>ViT-g</td><td>vit_giant_xformers</td><td>target_encoder</td><td>1408</td><td>40</td><td>22</td><td>64</td><td>48/11</td><td>6144</td><td>1.013.267.968</td><td>160</td></tr>
+          <tr><td>ViT-G</td><td>vit_gigantic_xformers</td><td>target_encoder</td><td>1664</td><td>48</td><td>26</td><td>64</td><td>64/13</td><td>8192</td><td>1.845.216.768</td><td>192</td></tr>
+        </tbody>
+      </table>
+      <p class="tnote"><code>mlp_ratio</code> non è 4 sui due teacher: il budget del placement <code>attn_mlp</code> non si estrapola da una variante all'altra, si conta. <code>head_dim = 64</code> su tutte, ed è l'unico invariante che <code>strict=True</code> non verifica — <code>num_heads</code> non compare in nessuna shape di parametro, quindi una factory sbagliata carica in silenzio e cambia la RoPE.</p>
+    </div>
+
+    <div class="tbl">
+      <table>
+        <caption>Forma dei quattro Linear, per variante</caption>
+        <thead><tr><th>modulo</th><th>forma</th><th>ViT-B</th><th>ViT-L</th><th>ViT-g</th><th>ViT-G</th></tr></thead>
+        <tbody>
+          <tr><td>attn.qkv</td><td>d → 3·d</td><td>768 → 2304</td><td>1024 → 3072</td><td>1408 → 4224</td><td>1664 → 4992</td></tr>
+          <tr><td>attn.proj</td><td>d → d</td><td>768 → 768</td><td>1024 → 1024</td><td>1408 → 1408</td><td>1664 → 1664</td></tr>
+          <tr><td>mlp.fc1</td><td>d → h</td><td>768 → 3072</td><td>1024 → 4096</td><td>1408 → 6144</td><td>1664 → 8192</td></tr>
+          <tr><td>mlp.fc2</td><td>h → d</td><td>3072 → 768</td><td>4096 → 1024</td><td>6144 → 1408</td><td>8192 → 1664</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ==================== 2. QKV FUSA ==================== -->
+  <section>
+    <div class="shead">
+      <div class="snum">2 — Il vincolo che decide tutto</div>
+      <h2>Q, K e V non sono moduli: sono fette di righe</h2>
+      <p class="sdek">Su tutte e quattro le varianti la proiezione è una sola matrice. Non esistono <code>q_proj</code>/<code>k_proj</code>/<code>v_proj</code> — sono i nomi del port Hugging Face, non di questo codice.</p>
+    </div>
+
+    <figure>
+      <div class="scroll">
+        <svg viewBox="0 0 820 470" role="img" aria-label="La matrice qkv ha forma 3d per d, disegnata in proporzione tre a uno, ed è divisa in tre bande di righe contigue: Q nelle righe da 0 a d meno 1, K da d a 2d meno 1, V da 2d a 3d meno 1.">
+          <defs>
+            <marker id="a2" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="6" orient="auto">
+              <polygon class="ah" points="0,0 10,4 0,8"/>
+            </marker>
+            <marker id="a2s" viewBox="0 0 10 8" refX="1" refY="4" markerWidth="7" markerHeight="6" orient="auto-start-reverse">
+              <polygon class="ah" points="0,0 10,4 0,8"/>
+            </marker>
+          </defs>
+
+          <text class="s12 bd" x="24" y="30">W_qkv = self.qkv.weight</text>
+          <text class="s10 t3" x="24" y="48">modules.py:149 — nn.Linear(dim, dim*3, bias=qkv_bias)</text>
+
+          <!-- top dim arrow -->
+          <line class="ln" x1="220" y1="72" x2="330" y2="72" marker-start="url(#a2s)" marker-end="url(#a2)"/>
+          <text class="s11 t2 mid" x="275" y="64">d — feature di ingresso</text>
+
+          <!-- left dim arrow -->
+          <line class="ln" x1="204" y1="84" x2="204" y2="414" marker-start="url(#a2s)" marker-end="url(#a2)"/>
+          <text class="s11 t2 mid" x="188" y="249" transform="rotate(-90 188 249)">3·d — righe di uscita</text>
+
+          <rect class="mW" x="220" y="84" width="110" height="330"/>
+          <line class="sep" x1="220" y1="194" x2="330" y2="194"/>
+          <line class="sep" x1="220" y1="304" x2="330" y2="304"/>
+          <text class="s16 bd mid" x="275" y="145">Q</text>
+          <text class="s16 bd mid" x="275" y="255">K</text>
+          <text class="s16 bd mid" x="275" y="365">V</text>
+          <text class="s10 t2 mid" x="275" y="163">d × d</text>
+          <text class="s10 t2 mid" x="275" y="273">d × d</text>
+          <text class="s10 t2 mid" x="275" y="383">d × d</text>
+
+          <line class="lnf" x1="330" y1="139" x2="366" y2="139"/>
+          <line class="lnf" x1="330" y1="249" x2="366" y2="249"/>
+          <line class="lnf" x1="330" y1="359" x2="366" y2="359"/>
+
+          <text class="s12" x="374" y="135">righe 0 … d−1</text>
+          <text class="s11 t3" x="374" y="152">ViT-B 0…767 · ViT-G 0…1663</text>
+          <text class="s12" x="374" y="245">righe d … 2·d−1</text>
+          <text class="s11 t3" x="374" y="262">ViT-B 768…1535 · ViT-G 1664…3327</text>
+          <text class="s12" x="374" y="355">righe 2·d … 3·d−1</text>
+          <text class="s11 t3" x="374" y="372">ViT-B 1536…2303 · ViT-G 3328…4991</text>
+
+          <text class="s10 t3" x="24" y="444">la partizione esiste solo sull'asse di uscita: l'ingresso è un solo vettore di d canali, lo stesso per tutte e tre le proiezioni</text>
+          <text class="s10 t3" x="24" y="460">layout a blocchi contigui confermato bit a bit contro l'uscita reale del modulo, su tutte e quattro le varianti</text>
+        </svg>
+      </div>
+      <figcaption>Il layout <code>[q|k|v]</code> è una deduzione da <code>modules.py:212</code> (<code>unflatten(-1,(3,H,-1)).permute(2,0,3,1,4)</code>) promossa a osservazione: lo script confronta le fette dell'uscita grezza con l'uscita reale del modulo. <b>Conseguenza diretta:</b> un <code>TargetModuleMap</code> non può risolvere in stringhe, deve risolvere in <code>(nome_qualificato, slice)</code> — lo stesso <code>Linear</code> compare una volta per proiezione richiesta.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ==================== 3. LE QUATTRO PARAMETRIZZAZIONI ==================== -->
+  <section>
+    <div class="shead">
+      <div class="snum">3 — La domanda centrale</div>
+      <h2>Cinque modi di fattorizzare la stessa <code>ΔW ∈ R<sup>3d×d</sup></code></h2>
+      <p class="sdek">Un adattatore di rango r sulla QKV fusa <b>non</b> equivale a tre adattatori di rango r su Q, K, V separati. Tutte le parametrizzazioni descrivono la stessa matrice di aggiornamento e differiscono solo per la forma dei due fattori: <code>A</code> sul lato ingresso, <code>B</code> sul lato uscita.</p>
+    </div>
+
+    <figure>
+      <div class="scroll">
+        <svg viewBox="0 0 1060 608" role="img" aria-label="Cinque parametrizzazioni di Delta W sulla qkv fusa, con i lati d e 3d disegnati in proporzione: fusa-r con una sola A condivisa, B condivisa con una sola B, qk-only con il blocco V nullo, separate-r con tutti i fattori indipendenti, fusa-3r con B densa. Le prime tre costano lo stesso e sono tre restrizioni diverse di separate-r.">
+          <defs>
+            <marker id="a3" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="6" orient="auto">
+              <polygon class="ah" points="0,0 10,4 0,8"/>
+            </marker>
+            <pattern id="hz" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <line class="hzl" x1="0" y1="0" x2="0" y2="7"/>
+            </pattern>
+          </defs>
+
+          <!-- ---------- panel 1: fusa-r ---------- -->
+          <g transform="translate(24,0)">
+            <text class="s14 bd mid" x="88" y="24">fusa-r</text>
+            <text class="s10 t3 mid" x="88" y="40">1 adattatore, rango r</text>
+
+            <rect class="mA" x="34" y="96" width="108" height="20"/>
+            <text class="s10 mid" x="88" y="110">A · (r × d)</text>
+
+            <rect class="mB" x="0" y="130" width="20" height="324"/>
+            <text class="s10 mid" x="10" y="292" transform="rotate(-90 10 292)">B · (3d × r)</text>
+
+            <rect class="mD" x="34" y="130" width="108" height="324"/>
+            <line class="sep" x1="34" y1="238" x2="142" y2="238"/>
+            <line class="sep" x1="34" y1="346" x2="142" y2="346"/>
+            <text class="s13 bd mid" x="88" y="180">ΔW_q</text><text class="s10 t2 mid" x="88" y="198">rango ≤ r</text>
+            <text class="s13 bd mid" x="88" y="288">ΔW_k</text><text class="s10 t2 mid" x="88" y="306">rango ≤ r</text>
+            <text class="s13 bd mid" x="88" y="396">ΔW_v</text><text class="s10 t2 mid" x="88" y="414">rango ≤ r</text>
+
+            <text class="s11 mid" x="88" y="478">rango(ΔW) ≤ r</text>
+            <text class="s12 bd ta mid" x="88" y="498">4·r·d = 49.152</text>
+            <text class="s9 t2 mid" x="88" y="518">una sola A: Q, K e V</text>
+            <text class="s9 t2 mid" x="88" y="530">leggono lo stesso</text>
+            <text class="s9 t2 mid" x="88" y="542">sottospazio di ingresso</text>
+          </g>
+
+          <!-- ---------- panel 2: B condivisa ---------- -->
+          <g transform="translate(190,0)">
+            <text class="s14 bd mid" x="128" y="24">B condivisa</text>
+            <text class="s10 t3 mid" x="128" y="40">3 A, una sola B — il duale</text>
+
+            <rect class="mA" x="74" y="56" width="108" height="20"/>
+            <text class="s10 mid" x="128" y="70">A_q · (r × d)</text>
+            <rect class="mA" x="74" y="76" width="108" height="20"/>
+            <text class="s10 mid" x="128" y="90">A_k · (r × d)</text>
+            <rect class="mA" x="74" y="96" width="108" height="20"/>
+            <text class="s10 mid" x="128" y="110">A_v · (r × d)</text>
+
+            <rect class="mB" x="0"  y="130" width="20" height="108"/>
+            <text class="s10 mid" x="10" y="184" transform="rotate(-90 10 184)">B</text>
+            <rect class="mZ" x="20" y="130" width="20" height="108"/><text class="s10 t3 mid" x="30" y="188">0</text>
+            <rect class="mZ" x="40" y="130" width="20" height="108"/><text class="s10 t3 mid" x="50" y="188">0</text>
+            <rect class="mZ" x="0"  y="238" width="20" height="108"/><text class="s10 t3 mid" x="10" y="296">0</text>
+            <rect class="mB" x="20" y="238" width="20" height="108"/>
+            <text class="s10 mid" x="30" y="292" transform="rotate(-90 30 292)">B</text>
+            <rect class="mZ" x="40" y="238" width="20" height="108"/><text class="s10 t3 mid" x="50" y="296">0</text>
+            <rect class="mZ" x="0"  y="346" width="20" height="108"/><text class="s10 t3 mid" x="10" y="404">0</text>
+            <rect class="mZ" x="20" y="346" width="20" height="108"/><text class="s10 t3 mid" x="30" y="404">0</text>
+            <rect class="mB" x="40" y="346" width="20" height="108"/>
+            <text class="s10 mid" x="50" y="400" transform="rotate(-90 50 400)">B</text>
+
+            <rect class="mD" x="74" y="130" width="108" height="324"/>
+            <line class="sep" x1="74" y1="238" x2="182" y2="238"/>
+            <line class="sep" x1="74" y1="346" x2="182" y2="346"/>
+            <text class="s13 bd mid" x="128" y="180">ΔW_q</text><text class="s10 t2 mid" x="128" y="198">rango ≤ r</text>
+            <text class="s13 bd mid" x="128" y="288">ΔW_k</text><text class="s10 t2 mid" x="128" y="306">rango ≤ r</text>
+            <text class="s13 bd mid" x="128" y="396">ΔW_v</text><text class="s10 t2 mid" x="128" y="414">rango ≤ r</text>
+
+            <text class="s11 mid" x="128" y="478">rango(ΔW) ≤ 3r</text>
+            <text class="s12 bd ta mid" x="128" y="498">4·r·d = 49.152</text>
+            <text class="s9 t2 mid" x="128" y="518">una sola B: le tre bande</text>
+            <text class="s9 t2 mid" x="128" y="530">scrivono nelle stesse</text>
+            <text class="s9 t2 mid" x="128" y="542">direzioni di uscita</text>
+          </g>
+
+          <!-- ---------- panel 3: qk_only ---------- -->
+          <g transform="translate(396,0)">
+            <text class="s14 bd mid" x="108" y="24">qk_only</text>
+            <text class="s10 t3 mid" x="108" y="40">2 adattatori: fette Q e K</text>
+
+            <rect class="mA" x="54" y="76" width="108" height="20"/>
+            <text class="s10 mid" x="108" y="90">A_q · (r × d)</text>
+            <rect class="mA" x="54" y="96" width="108" height="20"/>
+            <text class="s10 mid" x="108" y="110">A_k · (r × d)</text>
+
+            <rect class="mB" x="0"  y="130" width="20" height="108"/>
+            <text class="s9 mid" x="10" y="184" transform="rotate(-90 10 184)">B_q</text>
+            <rect class="mZ" x="20" y="130" width="20" height="108"/><text class="s10 t3 mid" x="30" y="188">0</text>
+            <rect class="mZ" x="0"  y="238" width="20" height="108"/><text class="s10 t3 mid" x="10" y="296">0</text>
+            <rect class="mB" x="20" y="238" width="20" height="108"/>
+            <text class="s9 mid" x="30" y="292" transform="rotate(-90 30 292)">B_k</text>
+            <rect class="mZ" x="0"  y="346" width="20" height="108"/><text class="s10 t3 mid" x="10" y="404">0</text>
+            <rect class="mZ" x="20" y="346" width="20" height="108"/><text class="s10 t3 mid" x="30" y="404">0</text>
+
+            <rect class="mD" x="54" y="130" width="108" height="216"/>
+            <rect class="mZ" x="54" y="346" width="108" height="108"/>
+            <line class="sep" x1="54" y1="238" x2="162" y2="238"/>
+            <text class="s13 bd mid" x="108" y="180">ΔW_q</text><text class="s10 t2 mid" x="108" y="198">rango ≤ r</text>
+            <text class="s13 bd mid" x="108" y="288">ΔW_k</text><text class="s10 t2 mid" x="108" y="306">rango ≤ r</text>
+            <text class="s13 bd mid" x="108" y="396">ΔW_v = 0</text><text class="s10 t2 mid" x="108" y="414">rango 0</text>
+
+            <text class="s11 mid" x="108" y="478">rango(ΔW) ≤ 2r</text>
+            <text class="s12 bd ta mid" x="108" y="498">4·r·d = 49.152</text>
+            <text class="s9 t2 mid" x="108" y="518">B_v = 0: la fetta V</text>
+            <text class="s9 t2 mid" x="108" y="530">resta esattamente</text>
+            <text class="s9 t2 mid" x="108" y="542">invariata</text>
+          </g>
+
+          <!-- inclusion 1 -->
+          <text class="s16 bd mid t2" x="586" y="298">⊊</text>
+          <text class="s10 t3 mid" x="586" y="272">×1,50</text>
+          <text class="s9 t3 mid" x="586" y="324">vincolo</text>
+          <text class="s9 t3 mid" x="586" y="336">rimosso</text>
+
+          <!-- ---------- panel 4: separate-r ---------- -->
+          <g transform="translate(614,0)">
+            <text class="s14 bd mid" x="128" y="24">separate-r</text>
+            <text class="s10 t3 mid" x="128" y="40">3 adattatori, uno per fetta</text>
+
+            <rect class="mA" x="74" y="56" width="108" height="20"/>
+            <text class="s10 mid" x="128" y="70">A_q · (r × d)</text>
+            <rect class="mA" x="74" y="76" width="108" height="20"/>
+            <text class="s10 mid" x="128" y="90">A_k · (r × d)</text>
+            <rect class="mA" x="74" y="96" width="108" height="20"/>
+            <text class="s10 mid" x="128" y="110">A_v · (r × d)</text>
+
+            <rect class="mB" x="0"  y="130" width="20" height="108"/>
+            <text class="s9 mid" x="10" y="184" transform="rotate(-90 10 184)">B_q</text>
+            <rect class="mZ" x="20" y="130" width="20" height="108"/><text class="s10 t3 mid" x="30" y="188">0</text>
+            <rect class="mZ" x="40" y="130" width="20" height="108"/><text class="s10 t3 mid" x="50" y="188">0</text>
+            <rect class="mZ" x="0"  y="238" width="20" height="108"/><text class="s10 t3 mid" x="10" y="296">0</text>
+            <rect class="mB" x="20" y="238" width="20" height="108"/>
+            <text class="s9 mid" x="30" y="292" transform="rotate(-90 30 292)">B_k</text>
+            <rect class="mZ" x="40" y="238" width="20" height="108"/><text class="s10 t3 mid" x="50" y="296">0</text>
+            <rect class="mZ" x="0"  y="346" width="20" height="108"/><text class="s10 t3 mid" x="10" y="404">0</text>
+            <rect class="mZ" x="20" y="346" width="20" height="108"/><text class="s10 t3 mid" x="30" y="404">0</text>
+            <rect class="mB" x="40" y="346" width="20" height="108"/>
+            <text class="s9 mid" x="50" y="400" transform="rotate(-90 50 400)">B_v</text>
+
+            <rect class="mD" x="74" y="130" width="108" height="324"/>
+            <line class="sep" x1="74" y1="238" x2="182" y2="238"/>
+            <line class="sep" x1="74" y1="346" x2="182" y2="346"/>
+            <text class="s13 bd mid" x="128" y="180">ΔW_q</text><text class="s10 t2 mid" x="128" y="198">rango ≤ r</text>
+            <text class="s13 bd mid" x="128" y="288">ΔW_k</text><text class="s10 t2 mid" x="128" y="306">rango ≤ r</text>
+            <text class="s13 bd mid" x="128" y="396">ΔW_v</text><text class="s10 t2 mid" x="128" y="414">rango ≤ r</text>
+
+            <text class="s11 mid" x="128" y="478">rango(ΔW) ≤ 3r</text>
+            <text class="s12 bd ta mid" x="128" y="498">6·r·d = 73.728</text>
+            <text class="s9 t2 mid" x="128" y="518">A_q, A_k, A_v e</text>
+            <text class="s9 t2 mid" x="128" y="530">B_q, B_k, B_v tutti</text>
+            <text class="s9 t2 mid" x="128" y="542">indipendenti</text>
+          </g>
+
+          <!-- inclusion 2 -->
+          <text class="s16 bd mid t2" x="824" y="298">⊊</text>
+          <text class="s10 t3 mid" x="824" y="272">×2,00</text>
+          <text class="s9 t3 mid" x="824" y="324">B densa</text>
+
+          <!-- ---------- panel 5: fusa-3r ---------- -->
+          <g transform="translate(852,0)">
+            <text class="s14 bd mid" x="128" y="24">fusa-3r</text>
+            <text class="s10 t3 mid" x="128" y="40">1 adattatore, rango 3r</text>
+
+            <rect class="mA" x="74" y="56" width="108" height="60"/>
+            <line class="sepd" x1="74" y1="76" x2="182" y2="76"/>
+            <line class="sepd" x1="74" y1="96" x2="182" y2="96"/>
+            <text class="s10 mid" x="128" y="90">A · (3r × d)</text>
+
+            <rect class="mB" x="0" y="130" width="60" height="324"/>
+            <line class="sepd" x1="20" y1="130" x2="20" y2="454"/>
+            <line class="sepd" x1="40" y1="130" x2="40" y2="454"/>
+            <text class="s10 mid" x="30" y="292" transform="rotate(-90 30 292)">B densa · (3d × 3r)</text>
+
+            <rect class="mD" x="74" y="130" width="108" height="324"/>
+            <line class="sep" x1="74" y1="238" x2="182" y2="238"/>
+            <line class="sep" x1="74" y1="346" x2="182" y2="346"/>
+            <text class="s13 bd mid" x="128" y="180">ΔW_q</text><text class="s10 t2 mid" x="128" y="198">rango ≤ 3r</text>
+            <text class="s13 bd mid" x="128" y="288">ΔW_k</text><text class="s10 t2 mid" x="128" y="306">rango ≤ 3r</text>
+            <text class="s13 bd mid" x="128" y="396">ΔW_v</text><text class="s10 t2 mid" x="128" y="414">rango ≤ 3r</text>
+
+            <text class="s11 mid" x="128" y="478">rango(ΔW) ≤ 3r</text>
+            <text class="s12 bd ta mid" x="128" y="498">12·r·d = 147.456</text>
+            <text class="s9 t2 mid" x="128" y="518">stessa A di separate-r,</text>
+            <text class="s9 t2 mid" x="128" y="530">B densa: nessuno zero</text>
+            <text class="s9 t2 mid" x="128" y="542">imposto</text>
+          </g>
+
+          <!-- bracket: le tre restrizioni allo stesso costo -->
+          <polyline class="ln" points="24,566 24,558 558,558 558,566"/>
+          <text class="s11 t2 mid" x="291" y="582">tre restrizioni di separate-r · stesso costo esatto 4·r·d · vincoli diversi</text>
+
+          <text class="s10 t3" x="24" y="602">i lati d e 3·d sono in proporzione; l'asse del rango (r = 16 contro d = 768) è ingrandito per leggibilità · conteggi: ViT-B, r = 16, una sola qkv</text>
+        </svg>
+      </div>
+      <figcaption><b>La catena <code>fusa-r ⊊ separate-r ⊊ fusa-3r</code> è di inclusione stretta</b>, in algebra e nei numeri, e non dipende dalla variante. Spezzando la <code>B</code> della fusa in tre blocchi da d righe si ottengono <code>ΔW_q = B_q A</code>, <code>ΔW_k = B_k A</code>, <code>ΔW_v = B_v A</code>: tre aggiornamenti che condividono la <b>stessa A</b>, cioè lo stesso sottospazio di ingresso di dimensione r. I rapporti <b>1,50</b> e <b>2,00</b> sono esatti su tutte le varianti, perché la <code>B</code> fusa e le tre <code>B</code> separate hanno lo stesso numero totale di righe. Su <code>qk_only</code> il vincolo <code>B_v = 0</code> è strutturale — verificato: blocco V di <code>ΔW</code> esattamente nullo, ranghi dei blocchi <code>[16, 16, 0]</code> — e la parametrizzazione di <code>peft</code> su un modulo fuso non lo esprime. <b>Nota sulla provenienza:</b> <code>fusa-r</code>, <code>separate-r</code>, <code>fusa-3r</code> e <code>qk_only</code> sono implementate e misurate in S3; <b><code>B condivisa</code> è algebra, aggiunta l'11 agosto 2026</b> — non è implementata né misurata, e i suoi due numeri (costo e rango) sono conti chiusi, non run.</figcaption>
+    </figure>
+
+    <div class="duo">
+      <figure>
+        <div class="scroll">
+          <svg viewBox="0 0 560 346" role="img" aria-label="Reticolo di inclusione delle parametrizzazioni: fusa-3r in cima, separate-r sotto, e alla base tre restrizioni incomparabili fra loro e tutte di costo 4 r d — fusa-r con A unica, B condivisa con B unica, qk_only con B v nulla.">
+            <defs>
+              <marker id="a7" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="8" markerHeight="7" orient="auto">
+                <polygon class="ah" points="0,0 10,4 0,8"/>
+              </marker>
+            </defs>
+
+            <!-- edges -->
+            <line class="ln" x1="280" y1="226" x2="280" y2="170" marker-end="url(#a7)"/>
+            <line class="ln" x1="95"  y1="226" x2="232" y2="170" marker-end="url(#a7)"/>
+            <line class="ln" x1="465" y1="226" x2="328" y2="170" marker-end="url(#a7)"/>
+            <line class="ln" x1="280" y1="118" x2="280" y2="76" marker-end="url(#a7)"/>
+
+            <text class="s10 t3" x="290" y="100">×2,00</text>
+            <text class="s10 t3" x="290" y="204">×1,50</text>
+
+            <!-- nodes -->
+            <rect class="mS" x="215" y="24" width="130" height="44"/>
+            <text class="s12 bd mid" x="280" y="46">fusa-3r</text>
+            <text class="s10 t2 mid" x="280" y="61">12·r·d</text>
+
+            <rect class="mS" x="215" y="118" width="130" height="44"/>
+            <text class="s12 bd mid" x="280" y="140">separate-r</text>
+            <text class="s10 t2 mid" x="280" y="155">6·r·d</text>
+
+            <rect class="mS" x="30" y="226" width="130" height="54"/>
+            <rect x="30" y="226" width="3" height="54" fill="var(--a)"/>
+            <text class="s12 bd mid" x="95" y="244">fusa-r</text>
+            <text class="s10 t2 mid" x="95" y="258">4·r·d</text>
+            <text class="s9 ta mid" x="95" y="272">A unica</text>
+
+            <rect class="mS" x="215" y="226" width="130" height="54"/>
+            <rect x="215" y="226" width="3" height="54" fill="var(--b)"/>
+            <text class="s12 bd mid" x="280" y="244">B condivisa</text>
+            <text class="s10 t2 mid" x="280" y="258">4·r·d</text>
+            <text class="s9 tb mid" x="280" y="272">B unica</text>
+
+            <rect class="mS" x="400" y="226" width="130" height="54"/>
+            <rect x="400" y="226" width="3" height="54" fill="var(--warn)"/>
+            <text class="s12 bd mid" x="465" y="244">qk_only</text>
+            <text class="s10 t2 mid" x="465" y="258">4·r·d</text>
+            <text class="s9 tw mid" x="465" y="272">B_v = 0</text>
+
+            <text class="s10 t3" x="20" y="306">la freccia sale verso il più espressivo (⊊)</text>
+            <text class="s10 t2" x="20" y="322">i tre nodi in basso sono incomparabili fra loro e costano lo stesso:</text>
+            <text class="s10 t2" x="20" y="338">49.152 par. su ViT-B a r = 16 — cambia solo il vincolo imposto</text>
+          </svg>
+        </div>
+        <figcaption><b>Il reticolo, non la catena.</b> <code>separate-r</code> ha tre restrizioni naturali, non una: si può condividere la <code>A</code> (leggere lo stesso sottospazio), condividere la <code>B</code> (scrivere nelle stesse direzioni) o annullare un blocco (<code>qk_only</code>). Tutte e tre costano <code>4·r·d</code> per <code>qkv</code>, e nessuna contiene le altre. <b>Conseguenza per E3-R.1:</b> a parità esatta di budget esistono tre configurazioni diverse, e sceglierne una è una decisione di protocollo — non un dettaglio implementativo.</figcaption>
+      </figure>
+
+      <figure>
+        <div class="scroll">
+          <svg viewBox="0 0 620 340" role="img" aria-label="Confronto fra attn.qkv, che ha l'uscita partizionata in Q K V e l'ingresso no, e attn.proj, che ha l'ingresso partizionato per testa e l'uscita no. Il vincolo a blocchi va sul fattore che tocca l'asse partizionato.">
+            <defs>
+              <marker id="a8" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="6" orient="auto">
+                <polygon class="ah" points="0,0 10,4 0,8"/>
+              </marker>
+            </defs>
+
+            <!-- riga 1: qkv -->
+            <text class="s12 bd" x="24" y="32">attn.qkv</text>
+            <text class="s9 t3" x="24" y="62">ingresso: un solo vettore</text>
+            <rect class="mW" x="24" y="70" width="110" height="28"/>
+            <text class="s11 mid" x="79" y="89">d — nessun confine</text>
+            <line class="ln" x1="140" y1="84" x2="164" y2="84" marker-end="url(#a8)"/>
+            <rect class="tgt" x="170" y="62" width="104" height="44"/>
+            <text class="s11 mid" x="222" y="82">Linear</text>
+            <text class="s10 t2 mid" x="222" y="98">d → 3·d</text>
+            <line class="ln" x1="278" y1="84" x2="302" y2="84" marker-end="url(#a8)"/>
+            <text class="s9 t3" x="310" y="34">uscita: 3 bande</text>
+            <rect class="mW" x="310" y="42" width="28" height="84"/>
+            <line class="sep" x1="310" y1="70" x2="338" y2="70"/>
+            <line class="sep" x1="310" y1="98" x2="338" y2="98"/>
+            <text class="s10 bd mid" x="324" y="60">Q</text>
+            <text class="s10 bd mid" x="324" y="88">K</text>
+            <text class="s10 bd mid" x="324" y="116">V</text>
+            <text class="s10" x="356" y="64">l'uscita è partizionata, l'ingresso no</text>
+            <text class="s10 tb" x="356" y="82">→ il vincolo a blocchi può stare</text>
+            <text class="s10 tb" x="356" y="98">solo sulla B</text>
+
+            <line class="sepd" x1="24" y1="152" x2="596" y2="152"/>
+
+            <!-- riga 2: proj -->
+            <text class="s12 bd" x="24" y="182">attn.proj</text>
+            <text class="s9 t3" x="24" y="212">ingresso: d = H × 64, un chunk per testa</text>
+            <rect class="mW" x="24" y="220" width="108" height="28"/>
+            <line class="sep" x1="42" y1="220" x2="42" y2="248"/>
+            <line class="sep" x1="60" y1="220" x2="60" y2="248"/>
+            <line class="sep" x1="78" y1="220" x2="78" y2="248"/>
+            <line class="sep" x1="96" y1="220" x2="96" y2="248"/>
+            <line class="sep" x1="114" y1="220" x2="114" y2="248"/>
+            <line class="ln" x1="138" y1="234" x2="162" y2="234" marker-end="url(#a8)"/>
+            <rect class="tgt" x="170" y="212" width="104" height="44"/>
+            <text class="s11 mid" x="222" y="232">Linear</text>
+            <text class="s10 t2 mid" x="222" y="248">d → d</text>
+            <line class="ln" x1="278" y1="234" x2="302" y2="234" marker-end="url(#a8)"/>
+            <text class="s9 t3" x="310" y="212">uscita: d</text>
+            <rect class="mW" x="310" y="220" width="28" height="28"/>
+            <text class="s10" x="356" y="222">qui l'ingresso È partizionato</text>
+            <text class="s10 ta" x="356" y="240">→ una A a blocchi significa</text>
+            <text class="s10 ta" x="356" y="256">un adattatore per testa</text>
+
+            <text class="s10 t2" x="24" y="300">Sulla qkv una A diagonale a blocchi direbbe «A_q legge solo i canali 0 … d/3−1»:</text>
+            <text class="s10 t2" x="24" y="316">sparsità sui canali di ingresso, senza alcun referente nell'architettura.</text>
+          </svg>
+        </div>
+        <figcaption><b>Perché il vincolo a blocchi sta sulla <code>B</code> e non sulla <code>A</code>.</b> La diagonalità a blocchi serve a dire «questo adattatore tocca solo una parte dell'asse partizionato»; sulla <code>qkv</code> l'asse partizionato è quello di uscita, quindi il vincolo cade sulla <code>B</code>. L'ingresso è un solo vettore di token dopo <code>norm1</code>: non esiste «la parte Q dell'ingresso». <b>Dove invece una <code>A</code> a blocchi ha senso:</b> su <code>attn.proj</code>, il cui ingresso è la concatenazione delle teste — <code>d = H × 64</code> esatto su tutte e quattro le varianti. Sarebbe un adattatore per testa: struttura sensata, ma è una voce nuova del vocabolario dei placement, non un caso mancante di questa figura, e S3 non l'ha misurata.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ==================== 4. LORA / rsLoRA / DoRA ==================== -->
+  <section>
+    <div class="shead">
+      <div class="snum">4 — Parametrizzazione del singolo bersaglio</div>
+      <h2>LoRA, rsLoRA e DoRA sullo stesso <code>Linear</code></h2>
+      <p class="sdek">Tre riparametrizzazioni del medesimo modulo. Cambia dove finisce l'aggiornamento — accanto al peso o dentro il peso — e questo decide se l'inizializzazione parte dal modello congelato e se il merge è esatto.</p>
+    </div>
+
+    <div class="duo">
+      <figure>
+        <div class="scroll">
+          <svg viewBox="0 0 600 330" role="img" aria-label="Percorso di LoRA: x passa nel peso congelato W zero e in parallelo nel ramo A, B, scala s; le due uscite si sommano. B vale zero all'inizializzazione, quindi l'uscita coincide bit a bit con il modello base.">
+            <defs>
+              <marker id="a4" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="6" orient="auto">
+                <polygon class="ah" points="0,0 10,4 0,8"/>
+              </marker>
+            </defs>
+
+            <text class="s14 bd" x="20" y="26">LoRA · rsLoRA</text>
+            <text class="s10 t3" x="20" y="43">y = W₀x + s·B·A·x — W₀ resta separato</text>
+
+            <text class="s14 bd" x="22" y="105">x</text>
+            <line class="ln" x1="36" y1="100" x2="80" y2="100" marker-end="url(#a4)"/>
+
+            <rect class="mW" x="84" y="72" width="150" height="56"/>
+            <text class="s13 bd mid" x="159" y="96">W₀</text>
+            <text class="s10 t2 mid" x="159" y="114">congelato · requires_grad=False</text>
+
+            <line class="ln" x1="234" y1="100" x2="456" y2="100" marker-end="url(#a4)"/>
+
+            <!-- branch -->
+            <polyline class="ln" points="62,100 62,196 96,196" marker-end="url(#a4)"/>
+            <circle cx="62" cy="100" r="3" fill="var(--ink-2)"/>
+
+            <rect class="mA" x="100" y="170" width="104" height="52"/>
+            <text class="s13 bd mid" x="152" y="190">A</text>
+            <text class="s10 mid" x="152" y="206">(r × d_in)</text>
+            <text class="s9 t2 mid" x="152" y="218">kaiming_uniform</text>
+
+            <line class="ln" x1="204" y1="196" x2="228" y2="196" marker-end="url(#a4)"/>
+
+            <rect class="mB" x="232" y="170" width="104" height="52"/>
+            <text class="s13 bd mid" x="284" y="190">B</text>
+            <text class="s10 mid" x="284" y="206">(d_out × r)</text>
+            <text class="s9 tb mid" x="284" y="218">= 0 a t = 0</text>
+
+            <line class="ln" x1="336" y1="196" x2="360" y2="196" marker-end="url(#a4)"/>
+
+            <rect class="mS" x="364" y="176" width="92" height="40" rx="20"/>
+            <text class="s12 mid" x="410" y="201">× s</text>
+
+            <polyline class="ln" points="456,196 470,196 470,113" marker-end="url(#a4)"/>
+
+            <circle class="mS" cx="470" cy="100" r="13"/>
+            <text class="s14 mid" x="470" y="106">+</text>
+            <line class="ln" x1="483" y1="100" x2="524" y2="100" marker-end="url(#a4)"/>
+            <text class="s14 bd" x="532" y="105">y</text>
+
+            <line class="sep" x1="20" y1="248" x2="580" y2="248"/>
+            <text class="s11" x="20" y="270">s = α / r</text><text class="s11 t2" x="120" y="270">LoRA</text>
+            <text class="s11" x="20" y="290">s = α / √r</text><text class="s11 t2" x="120" y="290">rsLoRA — stessa struttura, sola scala diversa</text>
+            <text class="s10 t3" x="20" y="314">2 tensori addestrabili per bersaglio · 0 parametri del backbone ricevono gradiente · r = 0 è un no-op</text>
+          </svg>
+        </div>
+        <figcaption><b>Init bitwise.</b> Con <code>B = 0</code> il termine aggiunto è esattamente zero, quindi l'uscita è identica a quella del modello congelato secondo <code>torch.equal</code>, non "quasi". <b>Merge non esatto:</b> fondere sposta la somma nei pesi, dove <code>ΔW ≪ W₀</code> perde cifre — <code>rel_L2</code> 8,1e-06 su ViT-B a 16f/384px, e in calo monotono di 6,9× fino a ViT-G. <code>applica_lora</code> deve prendere un <code>seed</code> esplicito: <code>kaiming_uniform_</code> pesca dall'RNG globale.</figcaption>
+      </figure>
+
+      <figure>
+        <div class="scroll">
+          <svg viewBox="0 0 600 330" role="img" aria-label="DoRA: il peso viene materializzato come V diviso per la sua norma e riscalato per la magnitudine m. Due ordini di operazioni: moltiplicare prima per m e poi dividere introduce due arrotondamenti per elemento; dividere prima produce un fattore per colonna che a t uguale zero vale esattamente uno.">
+            <defs>
+              <marker id="a5" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="6" orient="auto">
+                <polygon class="ah" points="0,0 10,4 0,8"/>
+              </marker>
+            </defs>
+
+            <text class="s14 bd" x="20" y="26">DoRA</text>
+            <text class="s10 t3" x="20" y="43">W viene materializzato a ogni forward — direzione × magnitudine</text>
+
+            <rect class="mW" x="20" y="64" width="196" height="46"/>
+            <text class="s12 mid" x="118" y="84">V = W₀ + s·B·A</text>
+            <text class="s9 t2 mid" x="118" y="100">a t = 0 è W₀ bit a bit</text>
+
+            <rect class="mB" x="240" y="64" width="150" height="46"/>
+            <text class="s12 mid" x="315" y="84">m</text>
+            <text class="s9 mid" x="315" y="100">addestrabile · init ‖W₀‖</text>
+
+            <rect class="mS" x="414" y="64" width="166" height="46"/>
+            <text class="s12 mid" x="497" y="84">‖V‖</text>
+            <text class="s9 t2 mid" x="497" y="100">stessa operazione, stessi valori</text>
+
+            <!-- forma sbagliata -->
+            <rect class="mS" x="20" y="140" width="560" height="70"/>
+            <text class="s12 bd" x="34" y="162">✗ scala_dopo</text>
+            <text class="s13" x="150" y="162">(m · V) / ‖V‖</text>
+            <line class="ln" x1="292" y1="157" x2="330" y2="157" marker-end="url(#a5)"/>
+            <text class="s11 tw" x="340" y="162">residuo ≈ 2,8e-08 sui pesi</text>
+            <text class="s10 t2" x="34" y="184">due arrotondamenti su ciascun elemento di V; i blocchi lo amplificano</text>
+            <text class="s10 t2" x="34" y="200">fino a 206× (ViT-B) → 6,7e-04 sull'uscita a 16f/384px</text>
+
+            <!-- forma giusta -->
+            <rect class="mA" x="20" y="222" width="560" height="70"/>
+            <text class="s12 bd" x="34" y="244">✓ scala_prima</text>
+            <text class="s13" x="150" y="244">V · (m / ‖V‖)</text>
+            <line class="ln" x1="292" y1="239" x2="330" y2="239" marker-end="url(#a5)"/>
+            <text class="s11 ta bd" x="340" y="244">0 — bitwise, in float32</text>
+            <text class="s10 t2" x="34" y="266">un fattore per riga, che a t = 0 vale esattamente 1,0 — e x · 1,0 = x in IEEE 754</text>
+            <text class="s10 t2" x="34" y="282">è anche la forma di peft: mag_norm_scale = magnitude / weight_norm</text>
+
+            <text class="s10 t3" x="20" y="316">float64 non serve: calcolare la sola m in fp64 rompe la cancellazione e peggiora il residuo di 65× su ViT-B</text>
+          </svg>
+        </div>
+        <figcaption><b>Merge esatto, init no — nella forma sbagliata.</b> DoRA materializza già il peso completo a ogni forward, quindi fondere significa riscrivere lo stesso tensore: differenza <b>0,0</b>. L'asimmetria all'inizializzazione, invece, non era un problema di precisione ma di ordine dei fattori: <code>evd/adapt/reparam.py</code> deve scrivere <code>V · (m/‖V‖)</code>. Regola generale che vale oltre DoRA: <b>quando due quantità devono cancellarsi, la cancellazione va scritta esplicitamente</b>, e non va "aiutata" alzando la precisione di una sola delle due.</figcaption>
+      </figure>
+    </div>
+
+    <figure>
+      <div class="scroll">
+        <svg viewBox="0 0 900 452" role="img" aria-label="L'asse su cui DoRA prende la norma: dim uguale zero riduce lungo le colonne e produce una magnitudine per feature di ingresso; dim uguale uno riduce lungo le righe e produce una magnitudine per feature di uscita, che è la convenzione di peft e del paper.">
+          <defs>
+            <marker id="a6" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="6" orient="auto">
+              <polygon class="ah" points="0,0 10,4 0,8"/>
+            </marker>
+          </defs>
+
+          <text class="s14 bd" x="20" y="26">Su quale asse si prende la magnitudine</text>
+          <text class="s10 t3" x="20" y="44">peso di attn.qkv su ViT-B: (out, in) = (2304, 768) — disegnato in proporzione</text>
+
+          <!-- left: dim=0 -->
+          <text class="s12 bd tw" x="40" y="76">dim = 0 — codice attuale (DoRALinear)</text>
+          <text class="s10 t2 mid" x="180" y="104">in = 768</text>
+          <rect class="mW" x="138" y="112" width="84" height="252"/>
+          <line class="ln" x1="159" y1="120" x2="159" y2="356" marker-end="url(#a6)"/>
+          <line class="ln" x1="180" y1="120" x2="180" y2="356" marker-end="url(#a6)"/>
+          <line class="ln" x1="201" y1="120" x2="201" y2="356" marker-end="url(#a6)"/>
+          <text class="s10 t2 mid" x="122" y="238" transform="rotate(-90 122 238)">out = 2304</text>
+          <rect class="mWarn" x="138" y="378" width="84" height="20"/>
+          <text class="s10 mid" x="180" y="392">m ∈ R^768</text>
+          <text class="s11 mid" x="180" y="420">una per feature di INGRESSO</text>
+          <text class="s10 t3 mid" x="180" y="438">qkvo su ViT-B: 18.432 magnitudini</text>
+
+          <!-- right: dim=1 -->
+          <text class="s12 bd ta" x="470" y="76">dim = 1 — peft 0.20.0, NVlabs, paper</text>
+          <text class="s10 t2 mid" x="610" y="104">in = 768</text>
+          <rect class="mW" x="568" y="112" width="84" height="252"/>
+          <line class="ln" x1="576" y1="160" x2="664" y2="160" marker-end="url(#a6)"/>
+          <line class="ln" x1="576" y1="238" x2="664" y2="238" marker-end="url(#a6)"/>
+          <line class="ln" x1="576" y1="316" x2="664" y2="316" marker-end="url(#a6)"/>
+          <text class="s10 t2 mid" x="552" y="238" transform="rotate(-90 552 238)">out = 2304</text>
+          <rect class="mA" x="672" y="112" width="20" height="252"/>
+          <text class="s10 mid" x="682" y="238" transform="rotate(-90 682 238)">m ∈ R^2304</text>
+          <text class="s11 mid" x="610" y="420">una per feature di USCITA</text>
+          <text class="s10 t3 mid" x="610" y="438">qkvo su ViT-B: 36.864 — esattamente 2×</text>
+        </svg>
+      </div>
+      <figcaption><b>Non sono la stessa parametrizzazione.</b> L'asse di uscita è quello coerente con la weight normalization da cui DoRA deriva, dove la magnitudine è una per unità di uscita. Verificato eseguendo: su un <code>Linear(8 → 24)</code> il <code>lora_magnitude_vector</code> di peft ha 24 componenti, non 8. Il fattore 2 esatto viene dalla QKV fusa, che contribuisce <code>3·d</code> invece di <code>d</code> (le <code>attn.proj</code> contribuiscono <code>d</code> in entrambi i casi). Sulla scelta dell'ordine dei fattori l'asse non cambia niente — <code>scala_prima</code> è bitwise su entrambi — ma sul conteggio dei parametri sì, e i risultati di E3-R su DoRA non sarebbero confrontabili con la letteratura.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ==================== 5. PLACEMENT ==================== -->
+  <section>
+    <div class="shead">
+      <div class="snum">5 — Placement</div>
+      <h2>Quali moduli, su quali blocchi</h2>
+      <p class="sdek">Ogni placement è una selezione nella griglia <code>L × 4</code>. Solo <code>last_n_blocks</code> ha un costo che non dipende dalla profondità; solo <code>qk_only</code> seleziona fette invece di moduli interi.</p>
+    </div>
+
+    <figure>
+      <div class="scroll">
+        <svg viewBox="0 0 1000 336" role="img" aria-label="Cinque griglie da 12 blocchi per 4 moduli che mostrano quali celle seleziona ciascun placement: qkvo prende qkv e attn.proj su tutti i blocchi, attn_mlp tutti e quattro, last_4_blocks solo l'attenzione degli ultimi quattro blocchi, qk_only due fette su tre della qkv, e il pattern proj nudo che cattura anche i due patch embed Conv3d.">
+          <defs>
+            <pattern id="hz2" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <line class="hzl" x1="0" y1="0" x2="0" y2="7"/>
+            </pattern>
+          </defs>
+
+          <!-- row index axis -->
+          <text class="s9 t3 end" x="34" y="52">blocco</text>
+          <g class="s8 t3">
+            <text class="end" x="34" y="72">0</text><text class="end" x="34" y="87">1</text>
+            <text class="end" x="34" y="102">2</text><text class="end" x="34" y="117">3</text>
+            <text class="end" x="34" y="132">4</text><text class="end" x="34" y="147">5</text>
+            <text class="end" x="34" y="162">6</text><text class="end" x="34" y="177">7</text>
+            <text class="end" x="34" y="192">8</text><text class="end" x="34" y="207">9</text>
+            <text class="end" x="34" y="222">10</text><text class="end" x="34" y="237">11</text>
+          </g>
+
+          <!-- ============ panel 1: qkvo ============ -->
+          <g transform="translate(44,0)">
+            <text class="s13 bd" x="0" y="20">qkvo</text>
+            <text class="s9 t3" x="0" y="35">attn.qkv + attn.proj</text>
+            <g class="s9 t3 mid"><text x="11" y="56">qkv</text><text x="35" y="56">proj</text><text x="59" y="56">fc1</text><text x="83" y="56">fc2</text></g>
+            <g>
+              <rect class="mA" x="0"  y="60" width="22" height="13"/><rect class="mA" x="24" y="60" width="22" height="13"/><rect class="mS" x="48" y="60" width="22" height="13"/><rect class="mS" x="72" y="60" width="22" height="13"/>
+              <rect class="mA" x="0"  y="75" width="22" height="13"/><rect class="mA" x="24" y="75" width="22" height="13"/><rect class="mS" x="48" y="75" width="22" height="13"/><rect class="mS" x="72" y="75" width="22" height="13"/>
+              <rect class="mA" x="0"  y="90" width="22" height="13"/><rect class="mA" x="24" y="90" width="22" height="13"/><rect class="mS" x="48" y="90" width="22" height="13"/><rect class="mS" x="72" y="90" width="22" height="13"/>
+              <rect class="mA" x="0"  y="105" width="22" height="13"/><rect class="mA" x="24" y="105" width="22" height="13"/><rect class="mS" x="48" y="105" width="22" height="13"/><rect class="mS" x="72" y="105" width="22" height="13"/>
+              <rect class="mA" x="0"  y="120" width="22" height="13"/><rect class="mA" x="24" y="120" width="22" height="13"/><rect class="mS" x="48" y="120" width="22" height="13"/><rect class="mS" x="72" y="120" width="22" height="13"/>
+              <rect class="mA" x="0"  y="135" width="22" height="13"/><rect class="mA" x="24" y="135" width="22" height="13"/><rect class="mS" x="48" y="135" width="22" height="13"/><rect class="mS" x="72" y="135" width="22" height="13"/>
+              <rect class="mA" x="0"  y="150" width="22" height="13"/><rect class="mA" x="24" y="150" width="22" height="13"/><rect class="mS" x="48" y="150" width="22" height="13"/><rect class="mS" x="72" y="150" width="22" height="13"/>
+              <rect class="mA" x="0"  y="165" width="22" height="13"/><rect class="mA" x="24" y="165" width="22" height="13"/><rect class="mS" x="48" y="165" width="22" height="13"/><rect class="mS" x="72" y="165" width="22" height="13"/>
+              <rect class="mA" x="0"  y="180" width="22" height="13"/><rect class="mA" x="24" y="180" width="22" height="13"/><rect class="mS" x="48" y="180" width="22" height="13"/><rect class="mS" x="72" y="180" width="22" height="13"/>
+              <rect class="mA" x="0"  y="195" width="22" height="13"/><rect class="mA" x="24" y="195" width="22" height="13"/><rect class="mS" x="48" y="195" width="22" height="13"/><rect class="mS" x="72" y="195" width="22" height="13"/>
+              <rect class="mA" x="0"  y="210" width="22" height="13"/><rect class="mA" x="24" y="210" width="22" height="13"/><rect class="mS" x="48" y="210" width="22" height="13"/><rect class="mS" x="72" y="210" width="22" height="13"/>
+              <rect class="mA" x="0"  y="225" width="22" height="13"/><rect class="mA" x="24" y="225" width="22" height="13"/><rect class="mS" x="48" y="225" width="22" height="13"/><rect class="mS" x="72" y="225" width="22" height="13"/>
+            </g>
+            <text class="s12 bd" x="0" y="262">24 moduli = 2·L</text>
+            <text class="s10 t2" x="0" y="279">884.736 par. — 1,019% di ViT-B</text>
+            <text class="s10 t3" x="0" y="295">il placement di riferimento di S3</text>
+          </g>
+
+          <!-- ============ panel 2: attn_mlp ============ -->
+          <g transform="translate(244,0)">
+            <text class="s13 bd" x="0" y="20">attn_mlp</text>
+            <text class="s9 t3" x="0" y="35">tutti e quattro i Linear</text>
+            <g class="s9 t3 mid"><text x="11" y="56">qkv</text><text x="35" y="56">proj</text><text x="59" y="56">fc1</text><text x="83" y="56">fc2</text></g>
+            <g>
+              <rect class="mA" x="0" y="60" width="22" height="13"/><rect class="mA" x="24" y="60" width="22" height="13"/><rect class="mA" x="48" y="60" width="22" height="13"/><rect class="mA" x="72" y="60" width="22" height="13"/>
+              <rect class="mA" x="0" y="75" width="22" height="13"/><rect class="mA" x="24" y="75" width="22" height="13"/><rect class="mA" x="48" y="75" width="22" height="13"/><rect class="mA" x="72" y="75" width="22" height="13"/>
+              <rect class="mA" x="0" y="90" width="22" height="13"/><rect class="mA" x="24" y="90" width="22" height="13"/><rect class="mA" x="48" y="90" width="22" height="13"/><rect class="mA" x="72" y="90" width="22" height="13"/>
+              <rect class="mA" x="0" y="105" width="22" height="13"/><rect class="mA" x="24" y="105" width="22" height="13"/><rect class="mA" x="48" y="105" width="22" height="13"/><rect class="mA" x="72" y="105" width="22" height="13"/>
+              <rect class="mA" x="0" y="120" width="22" height="13"/><rect class="mA" x="24" y="120" width="22" height="13"/><rect class="mA" x="48" y="120" width="22" height="13"/><rect class="mA" x="72" y="120" width="22" height="13"/>
+              <rect class="mA" x="0" y="135" width="22" height="13"/><rect class="mA" x="24" y="135" width="22" height="13"/><rect class="mA" x="48" y="135" width="22" height="13"/><rect class="mA" x="72" y="135" width="22" height="13"/>
+              <rect class="mA" x="0" y="150" width="22" height="13"/><rect class="mA" x="24" y="150" width="22" height="13"/><rect class="mA" x="48" y="150" width="22" height="13"/><rect class="mA" x="72" y="150" width="22" height="13"/>
+              <rect class="mA" x="0" y="165" width="22" height="13"/><rect class="mA" x="24" y="165" width="22" height="13"/><rect class="mA" x="48" y="165" width="22" height="13"/><rect class="mA" x="72" y="165" width="22" height="13"/>
+              <rect class="mA" x="0" y="180" width="22" height="13"/><rect class="mA" x="24" y="180" width="22" height="13"/><rect class="mA" x="48" y="180" width="22" height="13"/><rect class="mA" x="72" y="180" width="22" height="13"/>
+              <rect class="mA" x="0" y="195" width="22" height="13"/><rect class="mA" x="24" y="195" width="22" height="13"/><rect class="mA" x="48" y="195" width="22" height="13"/><rect class="mA" x="72" y="195" width="22" height="13"/>
+              <rect class="mA" x="0" y="210" width="22" height="13"/><rect class="mA" x="24" y="210" width="22" height="13"/><rect class="mA" x="48" y="210" width="22" height="13"/><rect class="mA" x="72" y="210" width="22" height="13"/>
+              <rect class="mA" x="0" y="225" width="22" height="13"/><rect class="mA" x="24" y="225" width="22" height="13"/><rect class="mA" x="48" y="225" width="22" height="13"/><rect class="mA" x="72" y="225" width="22" height="13"/>
+            </g>
+            <text class="s12 bd" x="0" y="262">48 moduli = 4·L</text>
+            <text class="s10 t2" x="0" y="279">budget non estrapolabile:</text>
+            <text class="s10 t3" x="0" y="295">h ≠ 4·d sui due teacher</text>
+          </g>
+
+          <!-- ============ panel 3: last_4_blocks ============ -->
+          <g transform="translate(444,0)">
+            <text class="s13 bd" x="0" y="20">last_4_blocks</text>
+            <text class="s9 t3" x="0" y="35">attn degli ultimi 4</text>
+            <g class="s9 t3 mid"><text x="11" y="56">qkv</text><text x="35" y="56">proj</text><text x="59" y="56">fc1</text><text x="83" y="56">fc2</text></g>
+            <g>
+              <rect class="mS" x="0" y="60" width="22" height="13"/><rect class="mS" x="24" y="60" width="22" height="13"/><rect class="mS" x="48" y="60" width="22" height="13"/><rect class="mS" x="72" y="60" width="22" height="13"/>
+              <rect class="mS" x="0" y="75" width="22" height="13"/><rect class="mS" x="24" y="75" width="22" height="13"/><rect class="mS" x="48" y="75" width="22" height="13"/><rect class="mS" x="72" y="75" width="22" height="13"/>
+              <rect class="mS" x="0" y="90" width="22" height="13"/><rect class="mS" x="24" y="90" width="22" height="13"/><rect class="mS" x="48" y="90" width="22" height="13"/><rect class="mS" x="72" y="90" width="22" height="13"/>
+              <rect class="mS" x="0" y="105" width="22" height="13"/><rect class="mS" x="24" y="105" width="22" height="13"/><rect class="mS" x="48" y="105" width="22" height="13"/><rect class="mS" x="72" y="105" width="22" height="13"/>
+              <rect class="mS" x="0" y="120" width="22" height="13"/><rect class="mS" x="24" y="120" width="22" height="13"/><rect class="mS" x="48" y="120" width="22" height="13"/><rect class="mS" x="72" y="120" width="22" height="13"/>
+              <rect class="mS" x="0" y="135" width="22" height="13"/><rect class="mS" x="24" y="135" width="22" height="13"/><rect class="mS" x="48" y="135" width="22" height="13"/><rect class="mS" x="72" y="135" width="22" height="13"/>
+              <rect class="mS" x="0" y="150" width="22" height="13"/><rect class="mS" x="24" y="150" width="22" height="13"/><rect class="mS" x="48" y="150" width="22" height="13"/><rect class="mS" x="72" y="150" width="22" height="13"/>
+              <rect class="mS" x="0" y="165" width="22" height="13"/><rect class="mS" x="24" y="165" width="22" height="13"/><rect class="mS" x="48" y="165" width="22" height="13"/><rect class="mS" x="72" y="165" width="22" height="13"/>
+              <rect class="mA" x="0" y="180" width="22" height="13"/><rect class="mA" x="24" y="180" width="22" height="13"/><rect class="mS" x="48" y="180" width="22" height="13"/><rect class="mS" x="72" y="180" width="22" height="13"/>
+              <rect class="mA" x="0" y="195" width="22" height="13"/><rect class="mA" x="24" y="195" width="22" height="13"/><rect class="mS" x="48" y="195" width="22" height="13"/><rect class="mS" x="72" y="195" width="22" height="13"/>
+              <rect class="mA" x="0" y="210" width="22" height="13"/><rect class="mA" x="24" y="210" width="22" height="13"/><rect class="mS" x="48" y="210" width="22" height="13"/><rect class="mS" x="72" y="210" width="22" height="13"/>
+              <rect class="mA" x="0" y="225" width="22" height="13"/><rect class="mA" x="24" y="225" width="22" height="13"/><rect class="mS" x="48" y="225" width="22" height="13"/><rect class="mS" x="72" y="225" width="22" height="13"/>
+            </g>
+            <text class="s12 bd" x="0" y="262">8 moduli — costante</text>
+            <text class="s10 t2" x="0" y="279">identico su tutte e quattro</text>
+            <text class="s10 t3" x="0" y="295">l'unico indipendente da L</text>
+          </g>
+
+          <!-- ============ panel 4: qk_only ============ -->
+          <g transform="translate(644,0)">
+            <text class="s13 bd" x="0" y="20">qk_only</text>
+            <text class="s9 t3" x="0" y="35">fette Q, K della qkv</text>
+            <g class="s9 t3 mid"><text x="11" y="56">qkv</text><text x="35" y="56">proj</text><text x="59" y="56">fc1</text><text x="83" y="56">fc2</text></g>
+            <g>
+              <rect class="mA" x="0" y="60" width="15" height="13"/><rect class="mZ2" x="15" y="60" width="7" height="13"/><rect class="mS" x="24" y="60" width="22" height="13"/><rect class="mS" x="48" y="60" width="22" height="13"/><rect class="mS" x="72" y="60" width="22" height="13"/>
+              <rect class="mA" x="0" y="75" width="15" height="13"/><rect class="mZ2" x="15" y="75" width="7" height="13"/><rect class="mS" x="24" y="75" width="22" height="13"/><rect class="mS" x="48" y="75" width="22" height="13"/><rect class="mS" x="72" y="75" width="22" height="13"/>
+              <rect class="mA" x="0" y="90" width="15" height="13"/><rect class="mZ2" x="15" y="90" width="7" height="13"/><rect class="mS" x="24" y="90" width="22" height="13"/><rect class="mS" x="48" y="90" width="22" height="13"/><rect class="mS" x="72" y="90" width="22" height="13"/>
+              <rect class="mA" x="0" y="105" width="15" height="13"/><rect class="mZ2" x="15" y="105" width="7" height="13"/><rect class="mS" x="24" y="105" width="22" height="13"/><rect class="mS" x="48" y="105" width="22" height="13"/><rect class="mS" x="72" y="105" width="22" height="13"/>
+              <rect class="mA" x="0" y="120" width="15" height="13"/><rect class="mZ2" x="15" y="120" width="7" height="13"/><rect class="mS" x="24" y="120" width="22" height="13"/><rect class="mS" x="48" y="120" width="22" height="13"/><rect class="mS" x="72" y="120" width="22" height="13"/>
+              <rect class="mA" x="0" y="135" width="15" height="13"/><rect class="mZ2" x="15" y="135" width="7" height="13"/><rect class="mS" x="24" y="135" width="22" height="13"/><rect class="mS" x="48" y="135" width="22" height="13"/><rect class="mS" x="72" y="135" width="22" height="13"/>
+              <rect class="mA" x="0" y="150" width="15" height="13"/><rect class="mZ2" x="15" y="150" width="7" height="13"/><rect class="mS" x="24" y="150" width="22" height="13"/><rect class="mS" x="48" y="150" width="22" height="13"/><rect class="mS" x="72" y="150" width="22" height="13"/>
+              <rect class="mA" x="0" y="165" width="15" height="13"/><rect class="mZ2" x="15" y="165" width="7" height="13"/><rect class="mS" x="24" y="165" width="22" height="13"/><rect class="mS" x="48" y="165" width="22" height="13"/><rect class="mS" x="72" y="165" width="22" height="13"/>
+              <rect class="mA" x="0" y="180" width="15" height="13"/><rect class="mZ2" x="15" y="180" width="7" height="13"/><rect class="mS" x="24" y="180" width="22" height="13"/><rect class="mS" x="48" y="180" width="22" height="13"/><rect class="mS" x="72" y="180" width="22" height="13"/>
+              <rect class="mA" x="0" y="195" width="15" height="13"/><rect class="mZ2" x="15" y="195" width="7" height="13"/><rect class="mS" x="24" y="195" width="22" height="13"/><rect class="mS" x="48" y="195" width="22" height="13"/><rect class="mS" x="72" y="195" width="22" height="13"/>
+              <rect class="mA" x="0" y="210" width="15" height="13"/><rect class="mZ2" x="15" y="210" width="7" height="13"/><rect class="mS" x="24" y="210" width="22" height="13"/><rect class="mS" x="48" y="210" width="22" height="13"/><rect class="mS" x="72" y="210" width="22" height="13"/>
+              <rect class="mA" x="0" y="225" width="15" height="13"/><rect class="mZ2" x="15" y="225" width="7" height="13"/><rect class="mS" x="24" y="225" width="22" height="13"/><rect class="mS" x="48" y="225" width="22" height="13"/><rect class="mS" x="72" y="225" width="22" height="13"/>
+            </g>
+            <text class="s12 bd" x="0" y="262">12 moduli · 24 fette</text>
+            <text class="s10 t2" x="0" y="279">589.824 par. su ViT-B</text>
+            <text class="s10 t3" x="0" y="295">la cella è divisa: V resta intatta</text>
+          </g>
+
+          <!-- ============ panel 5: proj nudo ============ -->
+          <g transform="translate(844,0)">
+            <text class="s13 bd tw" x="0" y="20">proj  ⚠ nudo</text>
+            <text class="s9 t3" x="0" y="35">match per suffisso</text>
+            <g class="s9 t3 mid"><text x="11" y="56">qkv</text><text x="35" y="56">proj</text><text x="59" y="56">fc1</text><text x="83" y="56">fc2</text></g>
+            <g>
+              <rect class="mS" x="0" y="60" width="22" height="13"/><rect class="mA" x="24" y="60" width="22" height="13"/><rect class="mS" x="48" y="60" width="22" height="13"/><rect class="mS" x="72" y="60" width="22" height="13"/>
+              <rect class="mS" x="0" y="75" width="22" height="13"/><rect class="mA" x="24" y="75" width="22" height="13"/><rect class="mS" x="48" y="75" width="22" height="13"/><rect class="mS" x="72" y="75" width="22" height="13"/>
+              <rect class="mS" x="0" y="90" width="22" height="13"/><rect class="mA" x="24" y="90" width="22" height="13"/><rect class="mS" x="48" y="90" width="22" height="13"/><rect class="mS" x="72" y="90" width="22" height="13"/>
+              <rect class="mS" x="0" y="105" width="22" height="13"/><rect class="mA" x="24" y="105" width="22" height="13"/><rect class="mS" x="48" y="105" width="22" height="13"/><rect class="mS" x="72" y="105" width="22" height="13"/>
+              <rect class="mS" x="0" y="120" width="22" height="13"/><rect class="mA" x="24" y="120" width="22" height="13"/><rect class="mS" x="48" y="120" width="22" height="13"/><rect class="mS" x="72" y="120" width="22" height="13"/>
+              <rect class="mS" x="0" y="135" width="22" height="13"/><rect class="mA" x="24" y="135" width="22" height="13"/><rect class="mS" x="48" y="135" width="22" height="13"/><rect class="mS" x="72" y="135" width="22" height="13"/>
+              <rect class="mS" x="0" y="150" width="22" height="13"/><rect class="mA" x="24" y="150" width="22" height="13"/><rect class="mS" x="48" y="150" width="22" height="13"/><rect class="mS" x="72" y="150" width="22" height="13"/>
+              <rect class="mS" x="0" y="165" width="22" height="13"/><rect class="mA" x="24" y="165" width="22" height="13"/><rect class="mS" x="48" y="165" width="22" height="13"/><rect class="mS" x="72" y="165" width="22" height="13"/>
+              <rect class="mS" x="0" y="180" width="22" height="13"/><rect class="mA" x="24" y="180" width="22" height="13"/><rect class="mS" x="48" y="180" width="22" height="13"/><rect class="mS" x="72" y="180" width="22" height="13"/>
+              <rect class="mS" x="0" y="195" width="22" height="13"/><rect class="mA" x="24" y="195" width="22" height="13"/><rect class="mS" x="48" y="195" width="22" height="13"/><rect class="mS" x="72" y="195" width="22" height="13"/>
+              <rect class="mS" x="0" y="210" width="22" height="13"/><rect class="mA" x="24" y="210" width="22" height="13"/><rect class="mS" x="48" y="210" width="22" height="13"/><rect class="mS" x="72" y="210" width="22" height="13"/>
+              <rect class="mS" x="0" y="225" width="22" height="13"/><rect class="mA" x="24" y="225" width="22" height="13"/><rect class="mS" x="48" y="225" width="22" height="13"/><rect class="mS" x="72" y="225" width="22" height="13"/>
+            </g>
+            <rect class="mWarn" x="24" y="243" width="22" height="13"/>
+            <text class="s9 tw" x="52" y="253">patch_embed.proj</text>
+            <rect class="mWarn" x="24" y="258" width="22" height="13"/>
+            <text class="s9 tw" x="52" y="268">patch_embed_img.proj</text>
+            <text class="s12 bd tw" x="0" y="288">14 invece di 12</text>
+            <text class="s10 t2" x="0" y="304">sempre +2, sono Conv3d</text>
+            <text class="s10 t3" x="0" y="320">il pattern giusto è attn.proj</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>Griglia disegnata su ViT-B (L = 12); su L, g e G cambiano solo le righe. <b>Il pattern <code>proj</code> non si usa mai nudo</b>: con la semantica di match per suffisso porta dentro i due patch embed su ogni variante — 14 moduli invece di 12 su ViT-B, 50 invece di 48 su ViT-G, sempre <b>+2</b> indipendentemente dalla profondità. Il test di conteggio moduli deve contare anche i non-<code>Linear</code> matchati, altrimenti la trappola resta invisibile.</figcaption>
+    </figure>
+
+    <div class="tbl">
+      <table>
+        <caption>Budget · placement qkvo, r = 16, adattatore unico per modulo</caption>
+        <thead>
+          <tr>
+            <th>variante</th><th>bersagli</th><th>LoRA addestrabili</th><th>% encoder</th>
+            <th>extra DoRA<br>asse ingresso</th><th>extra DoRA<br>asse uscita †</th>
+            <th>fusa-r<br>(1 qkv)</th><th>separate-r<br>(1 qkv)</th><th>fusa-3r<br>(1 qkv)</th><th>qk_only<br>(tutti)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>ViT-B</td><td>24</td><td>884.736</td><td>1,019</td><td>18.432</td><td>36.864</td><td>49.152</td><td>73.728</td><td>147.456</td><td>589.824</td></tr>
+          <tr><td>ViT-L</td><td>48</td><td>2.359.296</td><td>0,774</td><td>49.152</td><td>98.304</td><td>65.536</td><td>98.304</td><td>196.608</td><td>1.572.864</td></tr>
+          <tr><td>ViT-g</td><td>80</td><td>5.406.720</td><td>0,534</td><td>112.640</td><td>225.280</td><td>90.112</td><td>135.168</td><td>270.336</td><td>3.604.480</td></tr>
+          <tr><td>ViT-G</td><td>96</td><td>7.667.712</td><td>0,416</td><td>159.744</td><td>319.488</td><td>106.496</td><td>159.744</td><td>319.488</td><td>5.111.808</td></tr>
+        </tbody>
+      </table>
+      <p class="tnote">Tutti i conteggi coincidono con la formula chiusa <code>Σ r·(d_in + d_out)</code>. <b>† colonna derivata:</b> l'asse di uscita è misurato nella nota solo su ViT-B (36.864); sulle altre è calcolato dalla stessa regola — la <code>qkv</code> contribuisce <code>3·d</code> invece di <code>d</code>, la <code>attn.proj</code> <code>d</code> in entrambi i casi, quindi il rapporto è esattamente 2× su ogni variante.</p>
+    </div>
+
+    <div class="grid2">
+      <div class="card ok">
+        <h3>Il numero da portare via</h3>
+        <p style="font-size:14px;color:var(--ink-2)"><b style="color:var(--ink)">«LoRA addestra circa l'1% dei parametri» non è una proprietà del metodo: è una proprietà di ViT-B a r = 16.</b> A rango e placement identici la frazione va da 1,019% a 0,416% — si divide per 2,5 fra la variante più piccola e la più grande. Se il protocollo fissa un budget PEFT, va detto in che unità: «stesso rango» e «stessa percentuale del backbone» sono due protocolli diversi appena si confrontano due backbone.</p>
+      </div>
+      <div class="card ok">
+        <h3>Parità di budget, in pratica</h3>
+        <p style="font-size:14px;color:var(--ink-2)">A rango uguale, <code>fusa</code> e <code>separate</code> differiscono del 50% sulla stessa <code>qkv</code>. La parità di <code>peft_budget_a</code> va quindi espressa <b style="color:var(--ink)">in parametri addestrabili</b> — non in rango, e nemmeno in percentuale del backbone — o E3-R.1 confronta rank non commensurabili. E fissato il budget la scelta non è chiusa: <code>fusa-r</code>, <code>B condivisa</code> e <code>qk_only</code> costano <b style="color:var(--ink)">esattamente lo stesso</b> e impongono vincoli diversi.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 6. PROPRIETÀ ==================== -->
+  <section>
+    <div class="shead">
+      <div class="snum">6 — Cosa è verificato e cosa no</div>
+      <h2>Proprietà delle configurazioni</h2>
+      <p class="sdek">Sedici controlli per run, passati su tutte e quattro le varianti (geometria 4f/128px), più undici sull'init di DoRA.</p>
+    </div>
+
+    <div class="grid2">
+      <div class="card ok">
+        <h3>Verificato eseguendo</h3>
+        <ul>
+          <li><b>Init LoRA bitwise:</b> con <code>B = 0</code> l'uscita è identica al modello congelato secondo <code>torch.equal</code>, non "quasi".</li>
+          <li><b>Init DoRA bitwise</b> con <code>V·(m/‖V‖)</code>, in float32, su ogni bersaglio e ogni variante — 96 su 96 su ViT-G.</li>
+          <li><b>Gradiente isolato:</b> arriva a tutti e soli i tensori dell'adattatore (2 per bersaglio) e a <b>0 parametri</b> del backbone.</li>
+          <li><b>Merge di DoRA esatto</b> (differenza 0,0); quello di LoRA no, ma l'errore <b>cala</b> di 6,9× da ViT-B a ViT-G — l'unica tendenza fra varianti che superi la propria escursione.</li>
+          <li><b><code>r = 0</code> è un no-op</b> e la doppia iniezione solleva.</li>
+          <li><b><code>separate-r ≡ fusa-3r</code> con B a blocchi</b>, entro l'epsilon di float32 — bitwise solo su ViT-B e ViT-g, e quello era un accidente di dimensioni.</li>
+        </ul>
+      </div>
+      <div class="card warn">
+        <h3>Da sapere prima di usare questi numeri</h3>
+        <ul>
+          <li><b>L'asse di DoRA non è ancora stato cambiato</b> né rimisurato: la colonna <em>extra DoRA</em> misurata usa una convenzione che la letteratura non usa. Correzione in <code>evd/adapt/reparam.py</code>, poi quattro run da rifare.</li>
+          <li><b>I test numerici si scrivono su <code>rel_L2</code>, mai su <code>max</code>:</b> fra clip di ingresso diversi un <code>max</code> balla di 2–5×, una <code>rel_L2</code> di 1,1–1,2×. Il criterio robusto è sempre un rapporto fra due quantità misurate nello stesso run.</li>
+          <li><b><code>strict=True</code> non valida il backbone:</b> su ViT-g e ViT-G una factory sbagliata passa in silenzio e cambia <code>head_dim</code> (88 invece di 64) e la RoPE. Serve un assert su <code>(embed_dim, depth, num_heads)</code>.</li>
+          <li><b>ViT-g e ViT-G solo a 4f/128px:</b> alla geometria vera di eval il backward non sta in 13,7 GB. Le loro asimmetrie numeriche a 16f/384px restano non misurate.</li>
+          <li><b>La scala <code>s</code></b> è riportata nella convenzione standard (<code>α/r</code>, <code>α/√r</code>): il valore di α non è fissato in S3 ed è una scelta di matrice sperimentale.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Fonte: <code>lab/notes/03_target_modules.md</code> — sessione S3, 1–2 agosto 2026</span>
+    <span>Script: <code>s3_target_modules.py</code> · <code>s3_confronto_varianti.py</code> · <code>s3_dora_init.py</code> · <code>s3_estrai_encoder.py</code></span>
+    <span>Tutti i run: CPU, fp32, <code>strict=True</code>, senza <code>peft</code> (ADR-019)</span>
+  </footer>
+
+</div>

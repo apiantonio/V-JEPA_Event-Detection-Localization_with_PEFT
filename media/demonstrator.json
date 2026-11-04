@@ -1,0 +1,13 @@
+{
+  "source_video": "Arson016_x264.mp4",
+  "run_id": "e3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42",
+  "method": "B2-A2-phase1",
+  "start_frame": 900,
+  "end_frame_exclusive": 1620,
+  "fps": 30.0,
+  "frames": 720,
+  "frames_with_method_boxes": 720,
+  "renderer": "apps.demo.localization_video.compose",
+  "mode": "saved replay",
+  "note": "Offline localization excerpt; saved boxes are limited to annotated intervals. No spatial ground truth distributed."
+}

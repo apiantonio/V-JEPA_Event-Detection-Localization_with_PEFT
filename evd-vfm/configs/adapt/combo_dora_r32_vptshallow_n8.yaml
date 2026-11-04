@@ -1,0 +1,27 @@
+family: composite
+name: dora-r32-vptshallow-n8
+
+componenti:
+  # da configs/adapt/dora_r32_qkvomlp.yaml
+  reparam:
+    family: reparam
+    name: dora-r32-qkvomlp
+    method: dora
+    r: 32
+    alpha: 64
+    placement: attn_mlp
+    factorization: separate
+    use_rslora: false
+    dropout: 0.0
+    init: kaiming_b_zero
+
+  # da configs/adapt/vpt_shallow_n8.yaml
+  prompt:
+    family: prompt
+    name: vptshallow-n8
+    variant: vpt_shallow
+    n_tokens: 8
+    start_block: 0
+    pos_policy: rope_identity
+    init: xavier_uniform
+    dropout: 0.0

@@ -1,0 +1,339 @@
+{
+  "shape": [
+    3,
+    24,
+    2,
+    1,
+    44,
+    19
+  ],
+  "mode": "online",
+  "configuration": [
+    "Global",
+    "B3-A1",
+    "B3-A2"
+  ],
+  "variant": [
+    "union",
+    "component",
+    "concept-union",
+    "concept-box",
+    "component-concept-score",
+    "largest-component",
+    "nms30-component",
+    "nms50-component",
+    "nms70-component",
+    "nms30-concept-box",
+    "nms50-concept-box",
+    "nms70-concept-box",
+    "softnms-component",
+    "softnms-concept-box",
+    "wbf-component",
+    "wbf-concept-box",
+    "component4",
+    "concept-union4",
+    "component4-concept-score",
+    "largest-component4",
+    "region",
+    "region-concept-score",
+    "region-combos-nms50",
+    "region-combos-nms50-concept"
+  ],
+  "score": [
+    "mass",
+    "share"
+  ],
+  "gt": [
+    "union"
+  ],
+  "event": [
+    {
+      "event_id": "mivia_crime/abuse_004/event000",
+      "class": "Abuse",
+      "images": 4
+    },
+    {
+      "event_id": "mivia_crime/abuse_004/event001",
+      "class": "Abuse",
+      "images": 2
+    },
+    {
+      "event_id": "mivia_crime/abuse_006/event000",
+      "class": "Abuse",
+      "images": 14
+    },
+    {
+      "event_id": "mivia_crime/abuse_010/event000",
+      "class": "Abuse",
+      "images": 10
+    },
+    {
+      "event_id": "mivia_crime/arrest_004/event000",
+      "class": "Arrest",
+      "images": 19
+    },
+    {
+      "event_id": "mivia_crime/arrest_005/event000",
+      "class": "Arrest",
+      "images": 30
+    },
+    {
+      "event_id": "mivia_crime/arrest_007/event000",
+      "class": "Arrest",
+      "images": 31
+    },
+    {
+      "event_id": "mivia_crime/arson_002/event000",
+      "class": "Arson",
+      "images": 28
+    },
+    {
+      "event_id": "mivia_crime/arson_003/event000",
+      "class": "Arson",
+      "images": 34
+    },
+    {
+      "event_id": "mivia_crime/arson_010/event000",
+      "class": "Arson",
+      "images": 23
+    },
+    {
+      "event_id": "mivia_crime/assault_001/event000",
+      "class": "Assault",
+      "images": 37
+    },
+    {
+      "event_id": "mivia_crime/assault_003/event000",
+      "class": "Assault",
+      "images": 9
+    },
+    {
+      "event_id": "mivia_crime/assault_006/event000",
+      "class": "Assault",
+      "images": 48
+    },
+    {
+      "event_id": "mivia_crime/burglary_002/event000",
+      "class": "Burglary",
+      "images": 7
+    },
+    {
+      "event_id": "mivia_crime/burglary_003/event000",
+      "class": "Burglary",
+      "images": 18
+    },
+    {
+      "event_id": "mivia_crime/burglary_004/event000",
+      "class": "Burglary",
+      "images": 44
+    },
+    {
+      "event_id": "mivia_crime/explosion_003/event000",
+      "class": "Explosion",
+      "images": 8
+    },
+    {
+      "event_id": "mivia_crime/explosion_005/event000",
+      "class": "Explosion",
+      "images": 6
+    },
+    {
+      "event_id": "mivia_crime/explosion_011/event000",
+      "class": "Explosion",
+      "images": 5
+    },
+    {
+      "event_id": "mivia_crime/fighting_001/event000",
+      "class": "Fighting",
+      "images": 4
+    },
+    {
+      "event_id": "mivia_crime/fighting_005/event000",
+      "class": "Fighting",
+      "images": 2
+    },
+    {
+      "event_id": "mivia_crime/fighting_005/event001",
+      "class": "Fighting",
+      "images": 8
+    },
+    {
+      "event_id": "mivia_crime/fighting_009/event000",
+      "class": "Fighting",
+      "images": 12
+    },
+    {
+      "event_id": "mivia_crime/road_accident_005/event000",
+      "class": "RoadAccidents",
+      "images": 2
+    },
+    {
+      "event_id": "mivia_crime/road_accident_007/event000",
+      "class": "RoadAccidents",
+      "images": 2
+    },
+    {
+      "event_id": "mivia_crime/road_accident_013/event000",
+      "class": "RoadAccidents",
+      "images": 4
+    },
+    {
+      "event_id": "mivia_crime/robbery_002/event000",
+      "class": "Robbery",
+      "images": 32
+    },
+    {
+      "event_id": "mivia_crime/robbery_005/event000",
+      "class": "Robbery",
+      "images": 18
+    },
+    {
+      "event_id": "mivia_crime/robbery_008/event000",
+      "class": "Robbery",
+      "images": 24
+    },
+    {
+      "event_id": "mivia_crime/shooting_003/event000",
+      "class": "Shooting",
+      "images": 1
+    },
+    {
+      "event_id": "mivia_crime/shooting_003/event001",
+      "class": "Shooting",
+      "images": 15
+    },
+    {
+      "event_id": "mivia_crime/shooting_007/event000",
+      "class": "Shooting",
+      "images": 14
+    },
+    {
+      "event_id": "mivia_crime/shooting_008/event000",
+      "class": "Shooting",
+      "images": 14
+    },
+    {
+      "event_id": "mivia_crime/shoplifting_001/event000",
+      "class": "Shoplifting",
+      "images": 6
+    },
+    {
+      "event_id": "mivia_crime/shoplifting_007/event000",
+      "class": "Shoplifting",
+      "images": 10
+    },
+    {
+      "event_id": "mivia_crime/shoplifting_009/event000",
+      "class": "Shoplifting",
+      "images": 4
+    },
+    {
+      "event_id": "mivia_crime/shoplifting_009/event001",
+      "class": "Shoplifting",
+      "images": 2
+    },
+    {
+      "event_id": "mivia_crime/shoplifting_009/event002",
+      "class": "Shoplifting",
+      "images": 3
+    },
+    {
+      "event_id": "mivia_crime/stealing_002/event000",
+      "class": "Stealing",
+      "images": 4
+    },
+    {
+      "event_id": "mivia_crime/stealing_004/event000",
+      "class": "Stealing",
+      "images": 1
+    },
+    {
+      "event_id": "mivia_crime/stealing_008/event000",
+      "class": "Stealing",
+      "images": 18
+    },
+    {
+      "event_id": "mivia_crime/vandalism_002/event000",
+      "class": "Vandalism",
+      "images": 3
+    },
+    {
+      "event_id": "mivia_crime/vandalism_006/event000",
+      "class": "Vandalism",
+      "images": 8
+    },
+    {
+      "event_id": "mivia_crime/vandalism_007/event000",
+      "class": "Vandalism",
+      "images": 6
+    }
+  ],
+  "iou_threshold": [
+    0.05,
+    0.1,
+    0.15000000000000002,
+    0.2,
+    0.25,
+    0.3,
+    0.35000000000000003,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.8999999999999999,
+    0.95
+  ],
+  "arrays": {
+    "ap": [
+      3,
+      24,
+      2,
+      1,
+      44,
+      19
+    ],
+    "rbdc": [
+      3,
+      24,
+      2,
+      1,
+      44,
+      19
+    ],
+    "rbdr": [
+      3,
+      24,
+      2,
+      1,
+      44,
+      19
+    ],
+    "pooled_ap": [
+      3,
+      24,
+      2,
+      1,
+      19
+    ],
+    "pooled_rbdc": [
+      3,
+      24,
+      2,
+      1,
+      19
+    ],
+    "pooled_rbdr": [
+      3,
+      24,
+      2,
+      1,
+      19
+    ]
+  }
+}

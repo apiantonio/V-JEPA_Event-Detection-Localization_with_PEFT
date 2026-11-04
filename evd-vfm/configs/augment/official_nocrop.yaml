@@ -1,0 +1,8 @@
+# LA CATENA ufficiale del probe V-JEPA 2.1, MENO il ritaglio.
+id: official_nocrop
+crop: false             # <- il campo che disattiva davvero il ritaglio
+random_resize_scale: [1.0, 1.0]   # inerti con crop=false, e devono restare (1,1)
+random_resize_ratio: [1.0, 1.0]
+rand_augment: rand-m7-n4-mstd0.5-inc1
+horizontal_flip: false
+reprob: 0.25

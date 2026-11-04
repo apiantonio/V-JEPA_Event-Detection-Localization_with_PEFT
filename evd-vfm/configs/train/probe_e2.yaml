@@ -1,0 +1,15 @@
+max_steps: 500
+batch_size: 32
+grad_accum: 1
+
+lr_grid: [3.0e-4, 1.0e-3, 3.0e-3]
+weight_decay: 0.0
+
+precision: bf16
+tf32: true
+attn: sdpa
+
+early_stop_patience: 5
+eval_every: 25
+
+checkpoint_every: 0

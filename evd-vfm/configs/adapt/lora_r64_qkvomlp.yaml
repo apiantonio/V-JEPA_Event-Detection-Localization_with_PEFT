@@ -1,0 +1,5 @@
+defaults:
+  - lora_r32_qkvomlp
+name: lora-r64-qkvomlp
+r: 64
+alpha: 128

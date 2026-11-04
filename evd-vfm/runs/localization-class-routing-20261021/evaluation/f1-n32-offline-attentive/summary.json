@@ -1,0 +1,153 @@
+{
+  "stage": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/localization-class-routing-20261021/stages/ign-n32-attentive",
+  "mode": "offline",
+  "variants": [
+    "union",
+    "component",
+    "concept-union",
+    "concept-box",
+    "component-concept-score",
+    "largest-component",
+    "nms30-component",
+    "nms50-component",
+    "nms70-component",
+    "nms30-concept-box",
+    "nms50-concept-box",
+    "nms70-concept-box",
+    "softnms-component",
+    "softnms-concept-box",
+    "wbf-component",
+    "wbf-concept-box",
+    "component4",
+    "concept-union4",
+    "component4-concept-score",
+    "largest-component4",
+    "region",
+    "region-concept-score",
+    "region-combos-nms50",
+    "region-combos-nms50-concept"
+  ],
+  "gt_modes": [
+    "union"
+  ],
+  "ap_only": true,
+  "datasets": {
+    "ucf_test": {
+      "events": 276,
+      "events_without_images": 0,
+      "images": 4370,
+      "images_per_event": {
+        "min": 1,
+        "median": 6.0,
+        "max": 230,
+        "events_with_one_image": 32,
+        "events_with_at_most_three": 79
+      },
+      "ground_truth": {
+        "images": 4370,
+        "objects": {
+          "union": 4370,
+          "instances": 11706,
+          "touching": 6606
+        },
+        "images_with_several_boxes": 2623,
+        "images_where_touching_joins_boxes": 1992,
+        "images_where_touching_keeps_several_objects": 1528
+      },
+      "configurations": [
+        "Global"
+      ],
+      "extra_frames": {
+        "events": 5,
+        "short_events": 5,
+        "frames": {
+          "ucf_crime/Explosion020_x264/event001": {
+            "frame": 345,
+            "extent": [
+              343,
+              347
+            ],
+            "short": true
+          },
+          "ucf_crime/Explosion020_x264/event003": {
+            "frame": 830,
+            "extent": [
+              829,
+              832
+            ],
+            "short": true
+          },
+          "ucf_crime/Explosion035_x264/event003": {
+            "frame": 2861,
+            "extent": [
+              2858,
+              2864
+            ],
+            "short": true
+          },
+          "ucf_crime/Fighting018_x264/event000": {
+            "frame": 52,
+            "extent": [
+              49,
+              56
+            ],
+            "short": true
+          },
+          "ucf_crime/Fighting033_x264/event000": {
+            "frame": 188,
+            "extent": [
+              184,
+              192
+            ],
+            "short": true
+          }
+        }
+      }
+    },
+    "mivia_test": {
+      "events": 44,
+      "events_without_images": 0,
+      "images": 316,
+      "images_per_event": {
+        "min": 1,
+        "median": 4.5,
+        "max": 24,
+        "events_with_one_image": 7,
+        "events_with_at_most_three": 17
+      },
+      "ground_truth": {
+        "images": 316,
+        "objects": {
+          "union": 316,
+          "instances": 789,
+          "touching": 413
+        },
+        "images_with_several_boxes": 204,
+        "images_where_touching_joins_boxes": 156,
+        "images_where_touching_keeps_several_objects": 79
+      },
+      "configurations": [
+        "Global"
+      ],
+      "extra_frames": {
+        "events": 1,
+        "short_events": 1,
+        "frames": {
+          "mivia_crime/shooting_003/event000": {
+            "frame": 85,
+            "extent": [
+              82,
+              89
+            ],
+            "short": true
+          }
+        }
+      }
+    }
+  },
+  "intervals": {
+    "path": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/localization-class-routing-20261021/plan/real_use/intervals.json",
+    "sha256": "4d57959191d4203e86f9362f6965f608cb492507d35677c50686189ea389832b"
+  },
+  "frames": "1fps"
+}

@@ -1,0 +1,14 @@
+# Profiler di efficienza
+primary_unit: chunk
+normal_idx: ${protocol.classes.normal_idx}
+metrics:
+  chunk_auc: true
+  chunk_ap: true
+  frame_auc: true
+  frame_ap: true
+efficiency: true
+warmup_iters: 10        # la prima iterazione misura l'allocatore non il modello
+measure_iters: 50
+sync_cuda: true         
+measure_merged: true    
+batch_size: 1           

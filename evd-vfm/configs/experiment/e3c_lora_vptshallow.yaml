@@ -1,0 +1,6 @@
+# @package _global_
+defaults:
+  - e3r_lora
+  - override /adapt: combo_lora_r32_vptshallow_n8
+  - override /train: peft_budget_v2_3ep
+exp_id: e3c

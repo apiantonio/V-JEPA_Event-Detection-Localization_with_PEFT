@@ -1,0 +1,19 @@
+# @package _global_
+
+defaults:
+  - override /backbone: vjepa21_l
+  - override /adapt: lora_r32_qkvomlp
+  - override /head: detection
+  - override /data: ucf_crime
+  - override /protocol: edp_v2
+  - override /train: peft_budget_v2
+  - override /eval: chunk_lab
+  - override /augment: photometric
+
+exp_id: e3r
+official: true
+
+seed: ???
+layer: 23
+train:
+  lr_grid: [1.0e-4]

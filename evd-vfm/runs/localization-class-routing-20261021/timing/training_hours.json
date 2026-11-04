@@ -1,0 +1,187 @@
+{
+ "train-b3s-stage1": {
+  "hours": 13.29861111111111,
+  "attempts": [
+   {
+    "job_id": "802161_0",
+    "node": "ainode02",
+    "hardware": "H100",
+    "state": "FAILED",
+    "hours": 6.9158333333333335
+   },
+   {
+    "job_id": "802262_0",
+    "node": "gnode04",
+    "hardware": "A100",
+    "state": "COMPLETED",
+    "hours": 6.382777777777778
+   }
+  ]
+ },
+ "train-b3g-stage1": {
+  "hours": 14.499722222222221,
+  "attempts": [
+   {
+    "job_id": "802162_0",
+    "node": "ainode02",
+    "hardware": "H100",
+    "state": "FAILED",
+    "hours": 6.916388888888889
+   },
+   {
+    "job_id": "802263_0",
+    "node": "gnode04",
+    "hardware": "A100",
+    "state": "TIMEOUT",
+    "hours": 7.006111111111111
+   },
+   {
+    "job_id": "802550_0",
+    "node": "gnode10",
+    "hardware": "A100",
+    "state": "COMPLETED",
+    "hours": 0.5772222222222222
+   }
+  ]
+ },
+ "train-b1": {
+  "hours": 21.385277777777777,
+  "attempts": [
+   {
+    "job_id": "802163_0",
+    "node": "gnode07",
+    "hardware": "A100",
+    "state": "CANCELLED",
+    "hours": 0.020277777777777777
+   },
+   {
+    "job_id": "802170_0",
+    "node": "gnode04",
+    "hardware": "A100",
+    "state": "FAILED",
+    "hours": 7.001388888888889
+   },
+   {
+    "job_id": "802271_0",
+    "node": "gnode04",
+    "hardware": "A100",
+    "state": "FAILED",
+    "hours": 6.916666666666667
+   },
+   {
+    "job_id": "802551_0",
+    "node": "gnode09",
+    "hardware": "A100",
+    "state": "TIMEOUT",
+    "hours": 7.005277777777778
+   },
+   {
+    "job_id": "802803_0",
+    "node": "ainode01",
+    "hardware": "H100",
+    "state": "COMPLETED",
+    "hours": 0.44166666666666665
+   }
+  ]
+ },
+ "train-b2": {
+  "hours": 19.343333333333334,
+  "attempts": [
+   {
+    "job_id": "802164_0",
+    "node": "gnode07",
+    "hardware": "A100",
+    "state": "CANCELLED",
+    "hours": 0.020277777777777777
+   },
+   {
+    "job_id": "802171_0",
+    "node": "gnode09",
+    "hardware": "A100",
+    "state": "FAILED",
+    "hours": 6.915
+   },
+   {
+    "job_id": "802275_0",
+    "node": "gnode01",
+    "hardware": "A100",
+    "state": "TIMEOUT",
+    "hours": 7.005833333333333
+   },
+   {
+    "job_id": "802556_0",
+    "node": "ainode02",
+    "hardware": "H100",
+    "state": "COMPLETED",
+    "hours": 5.402222222222222
+   }
+  ]
+ },
+ "train-b3s-stage2": {
+  "hours": 27.312499999999996,
+  "attempts": [
+   {
+    "job_id": "802529_0",
+    "node": "gnode10",
+    "hardware": "A100",
+    "state": "FAILED",
+    "hours": 6.9127777777777775
+   },
+   {
+    "job_id": "802817_0",
+    "node": "gnode09",
+    "hardware": "A100",
+    "state": "FAILED",
+    "hours": 6.912222222222222
+   },
+   {
+    "job_id": "803324_0",
+    "node": "ainode02",
+    "hardware": "H100",
+    "state": "FAILED",
+    "hours": 6.914722222222222
+   },
+   {
+    "job_id": "803399_0",
+    "node": "ainode02",
+    "hardware": "H100",
+    "state": "COMPLETED",
+    "hours": 6.572777777777778
+   }
+  ]
+ },
+ "train-b3g-stage2": {
+  "hours": 26.02027777777778,
+  "attempts": [
+   {
+    "job_id": "802676_0",
+    "node": "gnode01",
+    "hardware": "A100",
+    "state": "FAILED",
+    "hours": 6.9127777777777775
+   },
+   {
+    "job_id": "803310_0",
+    "node": "ainode02",
+    "hardware": "H100",
+    "state": "FAILED",
+    "hours": 6.914444444444444
+   },
+   {
+    "job_id": "803388_0",
+    "node": "ainode02",
+    "hardware": "H100",
+    "state": "FAILED",
+    "hours": 6.9175
+   },
+   {
+    "job_id": "803444_0",
+    "node": "ainode01",
+    "hardware": "H100",
+    "state": "COMPLETED",
+    "hours": 5.275555555555556
+   }
+  ]
+ },
+ "_source": "elapsed of every SLURM attempt in operations/cluster/state.json (the supervisor reads it from sacct)"
+}

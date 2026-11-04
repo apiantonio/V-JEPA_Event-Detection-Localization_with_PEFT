@@ -1,0 +1,4 @@
+# @package _global_
+defaults:
+  - e3r_lora
+  - override /adapt: lora_r8_qkvomlp

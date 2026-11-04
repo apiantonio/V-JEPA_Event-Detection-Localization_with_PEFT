@@ -1,0 +1,12 @@
+# @package _global_
+defaults:
+  - e3r_lora
+  - override /adapt: combo_lora_r32_vptdeep_n8
+  - override /train: peft_budget_v2_3ep
+
+exp_id: e3s
+
+preadattamento:
+  modo: congela
+  slot: prompt
+  from: runs/e3p_ucf_vjepa21l_vptdeep-n8_s${seed}/checkpoint/checkpoint.pt

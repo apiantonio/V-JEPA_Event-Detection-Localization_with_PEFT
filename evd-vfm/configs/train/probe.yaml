@@ -1,0 +1,9 @@
+max_steps: 20
+batch_size: 4
+grad_accum: 1
+lr_grid: [1.0e-3]
+weight_decay: 0.0
+precision: fp32    
+early_stop_patience: null
+eval_every: 1       
+checkpoint_every: 0 

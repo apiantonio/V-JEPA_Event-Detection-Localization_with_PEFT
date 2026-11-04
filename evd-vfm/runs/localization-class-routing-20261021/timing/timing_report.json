@@ -1,0 +1,1036 @@
+{
+  "chains": {},
+  "fit": {
+    "fits\\campaign\\fit_receipts.json": {
+      "receipts": {
+        "global": {
+          "source": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/localization-auto-20261016/fits/vtcd_models.npz"
+        },
+        "a1": {
+          "source": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/localization-auto-20261016/fits/vtcd_models.npz"
+        },
+        "a2": {
+          "Abuse": [
+            {
+              "chunks": 373,
+              "regions": 9427,
+              "converged": true,
+              "iterations": 1811,
+              "relative_squared_error": 0.39130213184290635,
+              "outcome": "fitted",
+              "seconds": 102.41176236490719,
+              "peak_memory_mb": 3409.67578125
+            }
+          ],
+          "Arrest": [
+            {
+              "chunks": 930,
+              "regions": 23219,
+              "converged": true,
+              "iterations": 3351,
+              "relative_squared_error": 0.36840997004838627,
+              "outcome": "fitted",
+              "seconds": 978.2295826280024,
+              "peak_memory_mb": 17426.59375
+            }
+          ],
+          "Arson": [
+            {
+              "chunks": 431,
+              "regions": 10559,
+              "converged": true,
+              "iterations": 3481,
+              "relative_squared_error": 0.31515004516529704,
+              "outcome": "fitted",
+              "seconds": 460.25292638898827,
+              "peak_memory_mb": 17426.59375
+            }
+          ],
+          "Assault": [
+            {
+              "chunks": 199,
+              "regions": 4901,
+              "converged": true,
+              "iterations": 1991,
+              "relative_squared_error": 0.34126080195254016,
+              "outcome": "fitted",
+              "seconds": 49.947599093895406,
+              "peak_memory_mb": 17426.59375
+            }
+          ],
+          "Burglary": [
+            {
+              "chunks": 878,
+              "regions": 21835,
+              "converged": true,
+              "iterations": 4021,
+              "relative_squared_error": 0.36777360177780416,
+              "outcome": "fitted",
+              "seconds": 965.3832874428481,
+              "peak_memory_mb": 17426.59375
+            }
+          ],
+          "Explosion": [
+            {
+              "outcome": "a1_dictionary",
+              "reason": "fewer than 16 pure"
+            }
+          ],
+          "Fighting": [
+            {
+              "chunks": 510,
+              "regions": 12402,
+              "converged": true,
+              "iterations": 2231,
+              "relative_squared_error": 0.3374326333320826,
+              "outcome": "fitted",
+              "seconds": 203.32938850694336,
+              "peak_memory_mb": 17426.59375
+            }
+          ],
+          "RoadAccidents": [
+            {
+              "chunks": 37,
+              "regions": 907,
+              "converged": true,
+              "iterations": 2951,
+              "relative_squared_error": 0.1568752486301352,
+              "outcome": "fitted",
+              "seconds": 3.2012543259188533,
+              "peak_memory_mb": 17426.59375
+            }
+          ],
+          "Robbery": [
+            {
+              "chunks": 1042,
+              "regions": 25954,
+              "converged": true,
+              "iterations": 2801,
+              "relative_squared_error": 0.3383774311714473,
+              "outcome": "fitted",
+              "seconds": 1179.8482395110186,
+              "peak_memory_mb": 21623.453125
+            }
+          ],
+          "Shooting": [
+            {
+              "outcome": "a1_dictionary",
+              "reason": "fewer than 16 pure"
+            }
+          ],
+          "Shoplifting": [
+            {
+              "chunks": 20,
+              "regions": 494,
+              "converged": true,
+              "iterations": 3051,
+              "relative_squared_error": 0.2963427350788801,
+              "outcome": "fitted",
+              "seconds": 2.1637925149407238,
+              "peak_memory_mb": 21623.453125
+            }
+          ],
+          "Stealing": [
+            {
+              "chunks": 1224,
+              "regions": 30921,
+              "converged": true,
+              "iterations": 2371,
+              "relative_squared_error": 0.36526229629347007,
+              "outcome": "fitted",
+              "seconds": 1167.47676954302,
+              "peak_memory_mb": 30333.26171875
+            }
+          ],
+          "Vandalism": [
+            {
+              "chunks": 135,
+              "regions": 3267,
+              "converged": true,
+              "iterations": 1691,
+              "relative_squared_error": 0.32018474048478657,
+              "outcome": "fitted",
+              "seconds": 11.516002252930775,
+              "peak_memory_mb": 30333.26171875
+            }
+          ]
+        }
+      },
+      "references_sha256": "8c06ea3b6df35b476d29daccedae757dfda4ed9f6357e9f89fe0d86b2ab77290",
+      "pure_sha256": "ecbdcfb503ee6072074cdd4e4f78ce47732f478f94c0f964e79fd18baf8f42c6"
+    },
+    "fits\\b3_sum\\fit_receipts.json": {
+      "receipts": {
+        "global": {
+          "chunks": 208,
+          "iterations": 1321,
+          "seconds": 29.086590103106573,
+          "peak_memory_mb": 1439.078125
+        },
+        "a1": {
+          "Abuse": {
+            "chunks": 16,
+            "iterations": 1011,
+            "seconds": 0.6447878980543464,
+            "peak_memory_mb": 1439.078125
+          },
+          "Arrest": {
+            "chunks": 16,
+            "iterations": 2231,
+            "seconds": 1.4983450318686664,
+            "peak_memory_mb": 1439.078125
+          },
+          "Arson": {
+            "chunks": 16,
+            "iterations": 1211,
+            "seconds": 0.7422728510573506,
+            "peak_memory_mb": 1439.078125
+          },
+          "Assault": {
+            "chunks": 16,
+            "iterations": 1231,
+            "seconds": 0.7496786881238222,
+            "peak_memory_mb": 1439.078125
+          },
+          "Burglary": {
+            "chunks": 16,
+            "iterations": 1111,
+            "seconds": 0.702368674101308,
+            "peak_memory_mb": 1439.078125
+          },
+          "Explosion": {
+            "chunks": 16,
+            "iterations": 881,
+            "seconds": 0.5792335090227425,
+            "peak_memory_mb": 1439.078125
+          },
+          "Fighting": {
+            "chunks": 16,
+            "iterations": 1071,
+            "seconds": 0.6650455559138209,
+            "peak_memory_mb": 1439.078125
+          },
+          "RoadAccidents": {
+            "chunks": 16,
+            "iterations": 1591,
+            "seconds": 0.9940075250342488,
+            "peak_memory_mb": 1439.078125
+          },
+          "Robbery": {
+            "chunks": 16,
+            "iterations": 1221,
+            "seconds": 0.7531838999129832,
+            "peak_memory_mb": 1439.078125
+          },
+          "Shooting": {
+            "chunks": 16,
+            "iterations": 2381,
+            "seconds": 1.4977319571189582,
+            "peak_memory_mb": 1439.078125
+          },
+          "Shoplifting": {
+            "chunks": 16,
+            "iterations": 1201,
+            "seconds": 0.7585706058889627,
+            "peak_memory_mb": 1439.078125
+          },
+          "Stealing": {
+            "chunks": 16,
+            "iterations": 1701,
+            "seconds": 1.0688072189223021,
+            "peak_memory_mb": 1439.078125
+          },
+          "Vandalism": {
+            "chunks": 16,
+            "iterations": 1301,
+            "seconds": 0.8195487959310412,
+            "peak_memory_mb": 1439.078125
+          }
+        },
+        "a2": {
+          "Abuse": [
+            {
+              "chunks": 373,
+              "regions": 9375,
+              "converged": true,
+              "iterations": 1431,
+              "relative_squared_error": 0.5390137379436871,
+              "outcome": "fitted",
+              "seconds": 64.90175658720545,
+              "peak_memory_mb": 3395.55078125
+            }
+          ],
+          "Arrest": [
+            {
+              "chunks": 930,
+              "regions": 23019,
+              "converged": true,
+              "iterations": 1801,
+              "relative_squared_error": 0.5202454126988304,
+              "outcome": "fitted",
+              "seconds": 713.5491014819127,
+              "peak_memory_mb": 17140.76171875
+            }
+          ],
+          "Arson": [
+            {
+              "chunks": 431,
+              "regions": 10548,
+              "converged": true,
+              "iterations": 1721,
+              "relative_squared_error": 0.42353865314444666,
+              "outcome": "fitted",
+              "seconds": 167.05021269898862,
+              "peak_memory_mb": 17140.76171875
+            }
+          ],
+          "Assault": [
+            {
+              "chunks": 199,
+              "regions": 4867,
+              "converged": true,
+              "iterations": 1701,
+              "relative_squared_error": 0.4916550430299871,
+              "outcome": "fitted",
+              "seconds": 36.80203779786825,
+              "peak_memory_mb": 17140.76171875
+            }
+          ],
+          "Burglary": [
+            {
+              "chunks": 878,
+              "regions": 21719,
+              "converged": true,
+              "iterations": 3461,
+              "relative_squared_error": 0.5336871856563365,
+              "outcome": "fitted",
+              "seconds": 1829.5092364440206,
+              "peak_memory_mb": 17140.76171875
+            }
+          ],
+          "Explosion": [
+            {
+              "outcome": "a1_dictionary",
+              "reason": "fewer than 16 pure"
+            }
+          ],
+          "Fighting": [
+            {
+              "chunks": 510,
+              "regions": 12353,
+              "converged": true,
+              "iterations": 1681,
+              "relative_squared_error": 0.468793484768447,
+              "outcome": "fitted",
+              "seconds": 122.48933235299774,
+              "peak_memory_mb": 17140.76171875
+            }
+          ],
+          "RoadAccidents": [
+            {
+              "chunks": 37,
+              "regions": 894,
+              "converged": true,
+              "iterations": 2541,
+              "relative_squared_error": 0.17544289590421971,
+              "outcome": "fitted",
+              "seconds": 2.8243836970068514,
+              "peak_memory_mb": 17140.76171875
+            }
+          ],
+          "Robbery": [
+            {
+              "chunks": 1042,
+              "regions": 25959,
+              "converged": true,
+              "iterations": 2731,
+              "relative_squared_error": 0.50249834466647,
+              "outcome": "fitted",
+              "seconds": 1583.2477543489076,
+              "peak_memory_mb": 21629.2578125
+            }
+          ],
+          "Shooting": [
+            {
+              "outcome": "a1_dictionary",
+              "reason": "fewer than 16 pure"
+            }
+          ],
+          "Shoplifting": [
+            {
+              "chunks": 20,
+              "regions": 485,
+              "converged": true,
+              "iterations": 1361,
+              "relative_squared_error": 0.3894844832423097,
+              "outcome": "fitted",
+              "seconds": 0.997949942946434,
+              "peak_memory_mb": 21629.2578125
+            }
+          ],
+          "Stealing": [
+            {
+              "chunks": 1224,
+              "regions": 30694,
+              "converged": true,
+              "iterations": 1891,
+              "relative_squared_error": 0.49245840512390593,
+              "outcome": "fitted",
+              "seconds": 1754.1663047040347,
+              "peak_memory_mb": 29904.28515625
+            }
+          ],
+          "Vandalism": [
+            {
+              "chunks": 135,
+              "regions": 3261,
+              "converged": true,
+              "iterations": 1401,
+              "relative_squared_error": 0.48589870369773636,
+              "outcome": "fitted",
+              "seconds": 10.58296815585345,
+              "peak_memory_mb": 29904.28515625
+            }
+          ]
+        }
+      },
+      "references_sha256": "8c06ea3b6df35b476d29daccedae757dfda4ed9f6357e9f89fe0d86b2ab77290",
+      "pure_sha256": "ecbdcfb503ee6072074cdd4e4f78ce47732f478f94c0f964e79fd18baf8f42c6"
+    },
+    "fits\\b3_gradnorm\\fit_receipts.json": {
+      "receipts": {
+        "global": {
+          "chunks": 208,
+          "iterations": 1301,
+          "seconds": 23.35397548810579,
+          "peak_memory_mb": 1430.609375
+        },
+        "a1": {
+          "Abuse": {
+            "chunks": 16,
+            "iterations": 591,
+            "seconds": 0.4286185528617352,
+            "peak_memory_mb": 1430.609375
+          },
+          "Arrest": {
+            "chunks": 16,
+            "iterations": 1241,
+            "seconds": 0.834737243829295,
+            "peak_memory_mb": 1430.609375
+          },
+          "Arson": {
+            "chunks": 16,
+            "iterations": 1361,
+            "seconds": 0.8928302759304643,
+            "peak_memory_mb": 1430.609375
+          },
+          "Assault": {
+            "chunks": 16,
+            "iterations": 691,
+            "seconds": 0.4548362798523158,
+            "peak_memory_mb": 1430.609375
+          },
+          "Burglary": {
+            "chunks": 16,
+            "iterations": 1391,
+            "seconds": 0.9254931060131639,
+            "peak_memory_mb": 1430.609375
+          },
+          "Explosion": {
+            "chunks": 16,
+            "iterations": 1911,
+            "seconds": 1.321596106979996,
+            "peak_memory_mb": 1430.609375
+          },
+          "Fighting": {
+            "chunks": 16,
+            "iterations": 791,
+            "seconds": 0.5552164460532367,
+            "peak_memory_mb": 1430.609375
+          },
+          "RoadAccidents": {
+            "chunks": 16,
+            "iterations": 1571,
+            "seconds": 1.0580009899567813,
+            "peak_memory_mb": 1430.609375
+          },
+          "Robbery": {
+            "chunks": 16,
+            "iterations": 1221,
+            "seconds": 0.7738202749751508,
+            "peak_memory_mb": 1430.609375
+          },
+          "Shooting": {
+            "chunks": 16,
+            "iterations": 891,
+            "seconds": 0.5827809029724449,
+            "peak_memory_mb": 1430.609375
+          },
+          "Shoplifting": {
+            "chunks": 16,
+            "iterations": 1941,
+            "seconds": 1.2721272769849747,
+            "peak_memory_mb": 1430.609375
+          },
+          "Stealing": {
+            "chunks": 16,
+            "iterations": 1341,
+            "seconds": 0.87896808097139,
+            "peak_memory_mb": 1430.609375
+          },
+          "Vandalism": {
+            "chunks": 16,
+            "iterations": 1391,
+            "seconds": 0.8802283371333033,
+            "peak_memory_mb": 1430.609375
+          }
+        },
+        "a2": {
+          "Abuse": [
+            {
+              "chunks": 373,
+              "regions": 9367,
+              "converged": true,
+              "iterations": 1701,
+              "relative_squared_error": 0.5384214537056525,
+              "outcome": "fitted",
+              "seconds": 100.33748570084572,
+              "peak_memory_mb": 3392.82421875
+            }
+          ],
+          "Arrest": [
+            {
+              "chunks": 930,
+              "regions": 23150,
+              "converged": true,
+              "iterations": 1731,
+              "relative_squared_error": 0.5348371417156387,
+              "outcome": "fitted",
+              "seconds": 549.3872518450953,
+              "peak_memory_mb": 17324.82421875
+            }
+          ],
+          "Arson": [
+            {
+              "chunks": 431,
+              "regions": 10539,
+              "converged": true,
+              "iterations": 1851,
+              "relative_squared_error": 0.44001486993482974,
+              "outcome": "fitted",
+              "seconds": 183.61511959997006,
+              "peak_memory_mb": 17324.82421875
+            }
+          ],
+          "Assault": [
+            {
+              "chunks": 199,
+              "regions": 4805,
+              "converged": true,
+              "iterations": 1431,
+              "relative_squared_error": 0.5026979171582413,
+              "outcome": "fitted",
+              "seconds": 35.331878973171115,
+              "peak_memory_mb": 17324.82421875
+            }
+          ],
+          "Burglary": [
+            {
+              "chunks": 878,
+              "regions": 21828,
+              "converged": true,
+              "iterations": 2321,
+              "relative_squared_error": 0.5425618873530175,
+              "outcome": "fitted",
+              "seconds": 681.9837492278311,
+              "peak_memory_mb": 17324.82421875
+            }
+          ],
+          "Explosion": [
+            {
+              "outcome": "a1_dictionary",
+              "reason": "fewer than 16 pure"
+            }
+          ],
+          "Fighting": [
+            {
+              "chunks": 510,
+              "regions": 12371,
+              "converged": true,
+              "iterations": 2331,
+              "relative_squared_error": 0.48824287983272685,
+              "outcome": "fitted",
+              "seconds": 265.16697064996697,
+              "peak_memory_mb": 17324.82421875
+            }
+          ],
+          "RoadAccidents": [
+            {
+              "chunks": 37,
+              "regions": 885,
+              "converged": true,
+              "iterations": 3121,
+              "relative_squared_error": 0.1758076975605582,
+              "outcome": "fitted",
+              "seconds": 3.3178464549127966,
+              "peak_memory_mb": 17324.82421875
+            }
+          ],
+          "Robbery": [
+            {
+              "chunks": 1042,
+              "regions": 26097,
+              "converged": true,
+              "iterations": 4511,
+              "relative_squared_error": 0.5086891315878881,
+              "outcome": "fitted",
+              "seconds": 1682.6409638400655,
+              "peak_memory_mb": 21850.03515625
+            }
+          ],
+          "Shooting": [
+            {
+              "outcome": "a1_dictionary",
+              "reason": "fewer than 16 pure"
+            }
+          ],
+          "Shoplifting": [
+            {
+              "chunks": 20,
+              "regions": 488,
+              "converged": true,
+              "iterations": 1141,
+              "relative_squared_error": 0.40291213930500236,
+              "outcome": "fitted",
+              "seconds": 0.8189971868414432,
+              "peak_memory_mb": 21850.03515625
+            }
+          ],
+          "Stealing": [
+            {
+              "chunks": 1224,
+              "regions": 30625,
+              "converged": true,
+              "iterations": 2961,
+              "relative_squared_error": 0.5016123380375967,
+              "outcome": "fitted",
+              "seconds": 2660.26343733212,
+              "peak_memory_mb": 29770.50390625
+            }
+          ],
+          "Vandalism": [
+            {
+              "chunks": 135,
+              "regions": 3262,
+              "converged": true,
+              "iterations": 1221,
+              "relative_squared_error": 0.49420495228994255,
+              "outcome": "fitted",
+              "seconds": 9.055188346887007,
+              "peak_memory_mb": 29770.50390625
+            }
+          ]
+        }
+      },
+      "references_sha256": "8c06ea3b6df35b476d29daccedae757dfda4ed9f6357e9f89fe0d86b2ab77290",
+      "pure_sha256": "ecbdcfb503ee6072074cdd4e4f78ce47732f478f94c0f964e79fd18baf8f42c6"
+    },
+    "timing\\fit-campaign\\parts\\a1-Abuse.json": {
+      "identity": {
+        "pass_root": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/localization-class-routing-20261021/passes/campaign",
+        "references_sha256": "8c06ea3b6df35b476d29daccedae757dfda4ed9f6357e9f89fe0d86b2ab77290",
+        "pure_sha256": "ecbdcfb503ee6072074cdd4e4f78ce47732f478f94c0f964e79fd18baf8f42c6",
+        "existing": null,
+        "part": "a1-Abuse"
+      },
+      "receipt": {
+        "chunks": 16,
+        "iterations": 1401,
+        "seconds": 0.8644016471225768,
+        "peak_memory_mb": 1434.12109375
+      }
+    },
+    "timing\\fit-campaign\\parts\\a1-Arrest.json": {
+      "identity": {
+        "pass_root": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/localization-class-routing-20261021/passes/campaign",
+        "references_sha256": "8c06ea3b6df35b476d29daccedae757dfda4ed9f6357e9f89fe0d86b2ab77290",
+        "pure_sha256": "ecbdcfb503ee6072074cdd4e4f78ce47732f478f94c0f964e79fd18baf8f42c6",
+        "existing": null,
+        "part": "a1-Arrest"
+      },
+      "receipt": {
+        "chunks": 16,
+        "iterations": 1161,
+        "seconds": 0.7445862570311874,
+        "peak_memory_mb": 1434.12109375
+      }
+    },
+    "timing\\fit-campaign\\parts\\a1-Arson.json": {
+      "identity": {
+        "pass_root": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/localization-class-routing-20261021/passes/campaign",
+        "references_sha256": "8c06ea3b6df35b476d29daccedae757dfda4ed9f6357e9f89fe0d86b2ab77290",
+        "pure_sha256": "ecbdcfb503ee6072074cdd4e4f78ce47732f478f94c0f964e79fd18baf8f42c6",
+        "existing": null,
+        "part": "a1-Arson"
+      },
+      "receipt": {
+        "chunks": 16,
+        "iterations": 1541,
+        "seconds": 0.9790033418685198,
+        "peak_memory_mb": 1434.12109375
+      }
+    },
+    "timing\\fit-campaign\\parts\\a1-Assault.json": {
+      "identity": {
+        "pass_root": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/localization-class-routing-20261021/passes/campaign",
+        "references_sha256": "8c06ea3b6df35b476d29daccedae757dfda4ed9f6357e9f89fe0d86b2ab77290",
+        "pure_sha256": "ecbdcfb503ee6072074cdd4e4f78ce47732f478f94c0f964e79fd18baf8f42c6",
+        "existing": null,
+        "part": "a1-Assault"
+      },
+      "receipt": {
+        "chunks": 16,
+        "iterations": 3141,
+        "seconds": 2.073278952157125,
+        "peak_memory_mb": 1434.12109375
+      }
+    },
+    "timing\\fit-campaign\\parts\\a1-Burglary.json": {
+      "identity": {
+        "pass_root": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/localization-class-routing-20261021/passes/campaign",
+        "references_sha256": "8c06ea3b6df35b476d29daccedae757dfda4ed9f6357e9f89fe0d86b2ab77290",
+        "pure_sha256": "ecbdcfb503ee6072074cdd4e4f78ce47732f478f94c0f964e79fd18baf8f42c6",
+        "existing": null,
+        "part": "a1-Burglary"
+      },
+      "receipt": {
+        "chunks": 16,
+        "iterations": 4231,
+        "seconds": 2.753822733880952,
+        "peak_memory_mb": 1434.12109375
+      }
+    },
+    "timing\\fit-campaign\\parts\\a1-Explosion.json": {
+      "identity": {
+        "pass_root": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/localization-class-routing-20261021/passes/campaign",
+        "references_sha256": "8c06ea3b6df35b476d29daccedae757dfda4ed9f6357e9f89fe0d86b2ab77290",
+        "pure_sha256": "ecbdcfb503ee6072074cdd4e4f78ce47732f478f94c0f964e79fd18baf8f42c6",
+        "existing": null,
+        "part": "a1-Explosion"
+      },
+      "receipt": {
+        "chunks": 16,
+        "iterations": 1931,
+        "seconds": 1.2058099790010601,
+        "peak_memory_mb": 1434.12109375
+      }
+    },
+    "timing\\fit-campaign\\parts\\a1-Fighting.json": {
+      "identity": {
+        "pass_root": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/localization-class-routing-20261021/passes/campaign",
+        "references_sha256": "8c06ea3b6df35b476d29daccedae757dfda4ed9f6357e9f89fe0d86b2ab77290",
+        "pure_sha256": "ecbdcfb503ee6072074cdd4e4f78ce47732f478f94c0f964e79fd18baf8f42c6",
+        "existing": null,
+        "part": "a1-Fighting"
+      },
+      "receipt": {
+        "chunks": 16,
+        "iterations": 1331,
+        "seconds": 0.8684496299829334,
+        "peak_memory_mb": 1434.12109375
+      }
+    },
+    "timing\\fit-campaign\\parts\\a1-RoadAccidents.json": {
+      "identity": {
+        "pass_root": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/localization-class-routing-20261021/passes/campaign",
+        "references_sha256": "8c06ea3b6df35b476d29daccedae757dfda4ed9f6357e9f89fe0d86b2ab77290",
+        "pure_sha256": "ecbdcfb503ee6072074cdd4e4f78ce47732f478f94c0f964e79fd18baf8f42c6",
+        "existing": null,
+        "part": "a1-RoadAccidents"
+      },
+      "receipt": {
+        "chunks": 16,
+        "iterations": 2481,
+        "seconds": 1.522608176106587,
+        "peak_memory_mb": 1434.12109375
+      }
+    },
+    "timing\\fit-campaign\\parts\\a1-Robbery.json": {
+      "identity": {
+        "pass_root": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/localization-class-routing-20261021/passes/campaign",
+        "references_sha256": "8c06ea3b6df35b476d29daccedae757dfda4ed9f6357e9f89fe0d86b2ab77290",
+        "pure_sha256": "ecbdcfb503ee6072074cdd4e4f78ce47732f478f94c0f964e79fd18baf8f42c6",
+        "existing": null,
+        "part": "a1-Robbery"
+      },
+      "receipt": {
+        "chunks": 16,
+        "iterations": 2581,
+        "seconds": 1.6498417549300939,
+        "peak_memory_mb": 1434.12109375
+      }
+    },
+    "timing\\fit-campaign\\parts\\a1-Shooting.json": {
+      "identity": {
+        "pass_root": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/localization-class-routing-20261021/passes/campaign",
+        "references_sha256": "8c06ea3b6df35b476d29daccedae757dfda4ed9f6357e9f89fe0d86b2ab77290",
+        "pure_sha256": "ecbdcfb503ee6072074cdd4e4f78ce47732f478f94c0f964e79fd18baf8f42c6",
+        "existing": null,
+        "part": "a1-Shooting"
+      },
+      "receipt": {
+        "chunks": 16,
+        "iterations": 1661,
+        "seconds": 1.0348329530097544,
+        "peak_memory_mb": 1434.12109375
+      }
+    },
+    "timing\\fit-campaign\\parts\\a1-Shoplifting.json": {
+      "identity": {
+        "pass_root": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/localization-class-routing-20261021/passes/campaign",
+        "references_sha256": "8c06ea3b6df35b476d29daccedae757dfda4ed9f6357e9f89fe0d86b2ab77290",
+        "pure_sha256": "ecbdcfb503ee6072074cdd4e4f78ce47732f478f94c0f964e79fd18baf8f42c6",
+        "existing": null,
+        "part": "a1-Shoplifting"
+      },
+      "receipt": {
+        "chunks": 16,
+        "iterations": 2711,
+        "seconds": 1.6507021668367088,
+        "peak_memory_mb": 1434.12109375
+      }
+    },
+    "timing\\fit-campaign\\parts\\a1-Stealing.json": {
+      "identity": {
+        "pass_root": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/localization-class-routing-20261021/passes/campaign",
+        "references_sha256": "8c06ea3b6df35b476d29daccedae757dfda4ed9f6357e9f89fe0d86b2ab77290",
+        "pure_sha256": "ecbdcfb503ee6072074cdd4e4f78ce47732f478f94c0f964e79fd18baf8f42c6",
+        "existing": null,
+        "part": "a1-Stealing"
+      },
+      "receipt": {
+        "chunks": 16,
+        "iterations": 1411,
+        "seconds": 0.8581971700768918,
+        "peak_memory_mb": 1434.12109375
+      }
+    },
+    "timing\\fit-campaign\\parts\\a1-Vandalism.json": {
+      "identity": {
+        "pass_root": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/localization-class-routing-20261021/passes/campaign",
+        "references_sha256": "8c06ea3b6df35b476d29daccedae757dfda4ed9f6357e9f89fe0d86b2ab77290",
+        "pure_sha256": "ecbdcfb503ee6072074cdd4e4f78ce47732f478f94c0f964e79fd18baf8f42c6",
+        "existing": null,
+        "part": "a1-Vandalism"
+      },
+      "receipt": {
+        "chunks": 16,
+        "iterations": 2191,
+        "seconds": 1.361357631161809,
+        "peak_memory_mb": 1434.12109375
+      }
+    },
+    "timing\\fit-campaign\\parts\\global.json": {
+      "identity": {
+        "pass_root": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/localization-class-routing-20261021/passes/campaign",
+        "references_sha256": "8c06ea3b6df35b476d29daccedae757dfda4ed9f6357e9f89fe0d86b2ab77290",
+        "pure_sha256": "ecbdcfb503ee6072074cdd4e4f78ce47732f478f94c0f964e79fd18baf8f42c6",
+        "existing": null,
+        "part": "global"
+      },
+      "receipt": {
+        "chunks": 208,
+        "iterations": 2171,
+        "seconds": 134.08967955806293,
+        "peak_memory_mb": 1434.12109375
+      }
+    }
+  },
+  "training_hours": {
+    "train-b3s-stage1": {
+      "hours": 13.29861111111111,
+      "attempts": [
+        {
+          "job_id": "802161_0",
+          "node": "ainode02",
+          "hardware": "H100",
+          "state": "FAILED",
+          "hours": 6.9158333333333335
+        },
+        {
+          "job_id": "802262_0",
+          "node": "gnode04",
+          "hardware": "A100",
+          "state": "COMPLETED",
+          "hours": 6.382777777777778
+        }
+      ]
+    },
+    "train-b3g-stage1": {
+      "hours": 14.499722222222221,
+      "attempts": [
+        {
+          "job_id": "802162_0",
+          "node": "ainode02",
+          "hardware": "H100",
+          "state": "FAILED",
+          "hours": 6.916388888888889
+        },
+        {
+          "job_id": "802263_0",
+          "node": "gnode04",
+          "hardware": "A100",
+          "state": "TIMEOUT",
+          "hours": 7.006111111111111
+        },
+        {
+          "job_id": "802550_0",
+          "node": "gnode10",
+          "hardware": "A100",
+          "state": "COMPLETED",
+          "hours": 0.5772222222222222
+        }
+      ]
+    },
+    "train-b1": {
+      "hours": 21.385277777777777,
+      "attempts": [
+        {
+          "job_id": "802163_0",
+          "node": "gnode07",
+          "hardware": "A100",
+          "state": "CANCELLED",
+          "hours": 0.020277777777777777
+        },
+        {
+          "job_id": "802170_0",
+          "node": "gnode04",
+          "hardware": "A100",
+          "state": "FAILED",
+          "hours": 7.001388888888889
+        },
+        {
+          "job_id": "802271_0",
+          "node": "gnode04",
+          "hardware": "A100",
+          "state": "FAILED",
+          "hours": 6.916666666666667
+        },
+        {
+          "job_id": "802551_0",
+          "node": "gnode09",
+          "hardware": "A100",
+          "state": "TIMEOUT",
+          "hours": 7.005277777777778
+        },
+        {
+          "job_id": "802803_0",
+          "node": "ainode01",
+          "hardware": "H100",
+          "state": "COMPLETED",
+          "hours": 0.44166666666666665
+        }
+      ]
+    },
+    "train-b2": {
+      "hours": 19.343333333333334,
+      "attempts": [
+        {
+          "job_id": "802164_0",
+          "node": "gnode07",
+          "hardware": "A100",
+          "state": "CANCELLED",
+          "hours": 0.020277777777777777
+        },
+        {
+          "job_id": "802171_0",
+          "node": "gnode09",
+          "hardware": "A100",
+          "state": "FAILED",
+          "hours": 6.915
+        },
+        {
+          "job_id": "802275_0",
+          "node": "gnode01",
+          "hardware": "A100",
+          "state": "TIMEOUT",
+          "hours": 7.005833333333333
+        },
+        {
+          "job_id": "802556_0",
+          "node": "ainode02",
+          "hardware": "H100",
+          "state": "COMPLETED",
+          "hours": 5.402222222222222
+        }
+      ]
+    },
+    "train-b3s-stage2": {
+      "hours": 27.312499999999996,
+      "attempts": [
+        {
+          "job_id": "802529_0",
+          "node": "gnode10",
+          "hardware": "A100",
+          "state": "FAILED",
+          "hours": 6.9127777777777775
+        },
+        {
+          "job_id": "802817_0",
+          "node": "gnode09",
+          "hardware": "A100",
+          "state": "FAILED",
+          "hours": 6.912222222222222
+        },
+        {
+          "job_id": "803324_0",
+          "node": "ainode02",
+          "hardware": "H100",
+          "state": "FAILED",
+          "hours": 6.914722222222222
+        },
+        {
+          "job_id": "803399_0",
+          "node": "ainode02",
+          "hardware": "H100",
+          "state": "COMPLETED",
+          "hours": 6.572777777777778
+        }
+      ]
+    },
+    "train-b3g-stage2": {
+      "hours": 26.02027777777778,
+      "attempts": [
+        {
+          "job_id": "802676_0",
+          "node": "gnode01",
+          "hardware": "A100",
+          "state": "FAILED",
+          "hours": 6.9127777777777775
+        },
+        {
+          "job_id": "803310_0",
+          "node": "ainode02",
+          "hardware": "H100",
+          "state": "FAILED",
+          "hours": 6.914444444444444
+        },
+        {
+          "job_id": "803388_0",
+          "node": "ainode02",
+          "hardware": "H100",
+          "state": "FAILED",
+          "hours": 6.9175
+        },
+        {
+          "job_id": "803444_0",
+          "node": "ainode01",
+          "hardware": "H100",
+          "state": "COMPLETED",
+          "hours": 5.275555555555556
+        }
+      ]
+    },
+    "_source": "elapsed of every SLURM attempt in operations/cluster/state.json (the supervisor reads it from sacct)"
+  }
+}

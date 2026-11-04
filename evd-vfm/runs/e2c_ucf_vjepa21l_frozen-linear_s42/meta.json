@@ -1,0 +1,90 @@
+{
+  "run_id": "e2c_ucf_vjepa21l_frozen-linear_s42",
+  "official": true,
+  "started_at": "2026-08-31T22:05:48+00:00",
+  "git": {
+    "sha": "8ad0cf820cfa3d6e693d8f63f0a837e550624db0",
+    "branch": "freeze-protocollo-e-store",
+    "dirty": false,
+    "available": true
+  },
+  "env": {
+    "host": "gnode12",
+    "platform": "Linux-6.8.0-51-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "cuda": "12.4",
+    "cuda_available": true,
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "requirements_ref": "hpc/setup/requisiti-hpc.txt",
+    "slurm_job_id": "541396"
+  },
+  "env_vars": {
+    "resolved": {
+      "EVD_VJEPA_DIR": "/home/A.APICELLA97/evd/vjepa2",
+      "EVD_SHARED_ROOT": "/shared/tesi_mllm",
+      "EVD_STORE_ROOT": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it",
+      "EVD_DATA_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/data",
+      "EVD_RAW_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/data/raw",
+      "EVD_CKPT_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/data/checkpoints",
+      "EVD_UCF_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/data/raw/ucf_crime/UCF_Crimes",
+      "EVD_ANNOT_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/data/annotations",
+      "EVD_FEATURES_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/features",
+      "EVD_RUNS_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs",
+      "EVD_CACHE_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/cache",
+      "EVD_PRECISION": "fp32",
+      "EVD_ALLOW_BF16": "0",
+      "EVD_TF32": "0",
+      "EVD_BATCH_SIZE": "1",
+      "EVD_SEED": "0"
+    },
+    "deduced": {
+      "TORCH_DEVICE": "cuda",
+      "EVD_CPUS": "14",
+      "EVD_NUM_WORKERS": "14",
+      "EVD_SHARD": "0/1",
+      "repo_root": "/home/A.APICELLA97/evd/evd-vfm"
+    }
+  },
+  "regime": {
+    "precision": "bf16",
+    "tf32": true,
+    "attn": "sdpa",
+    "device": "cuda",
+    "torch": "2.6.0+cu124",
+    "size": 384
+  },
+  "protocol_sha": "5e82820a94a7d8aa7b70c6905334e92d39ab4f8128a6aa0e3692663942e89ade",
+  "adapt": {
+    "family": "none",
+    "method": "frozen",
+    "n_targets": 0,
+    "n_trainable": 0,
+    "extra_tokens": 0,
+    "targets": [],
+    "notes": {}
+  },
+  "chunks": {
+    "train": {
+      "n_chunk": 88371,
+      "n_positivi": 9475,
+      "n_video": 1303,
+      "tasso_positivi_uniforme": 0.10721843138586187,
+      "tasso_positivi_pesato": 0.23773669393537278
+    },
+    "val": {
+      "n_chunk": 8383,
+      "n_positivi": 994,
+      "n_video": 306,
+      "tasso_positivi_uniforme": 0.11857330311344387,
+      "tasso_positivi_pesato": 0.15474208694416813
+    },
+    "test": {
+      "n_chunk": 9116,
+      "n_positivi": 1491,
+      "n_video": 290,
+      "tasso_positivi_uniforme": 0.16355857832382623,
+      "tasso_positivi_pesato": 0.15065221000705442
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "run_id": "e3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42",
+  "split": "test",
+  "threshold": 0.04401864856481552,
+  "origine": "diagnostica_post_hoc",
+  "annotation_source": "ucf_lab@5d83069e67e1cff28de478b2d9845f40c254f2d07f79fee1d38c2f4be401b3c3",
+  "data_path_overrides": [
+    "root=data/ucf_crime_mirror",
+    "inventory=data/ucf_crime_inventory/inventory.csv",
+    "annotations.path=data/annotations/fs_ucf_crime",
+    "splits_dir=data/ucf_crime_mirror/Anomaly_Detection_splits"
+  ],
+  "coerenza_verificata": true,
+  "script_sha256": "81bb410aaa9940cc31122b8e2e1acc04da42420fb06c18ff26bfa4f726663896",
+  "n_verifiche": 152,
+  "sha256": {
+    "metrics.json": "b0e3d7fb03aca82e0c713cb2024ee4f745338f0f781ecf63a662f7767dd731b8",
+    "scores.jsonl": "2e8390bde2e5ed596c534884e97ade8952a402fe4338d2074ac3bfd756fb2b0b",
+    "config.yaml": "9167cfbd60824ef62f790602c238034da6b760b406a4d404bfb608f1e03ec195"
+  }
+}

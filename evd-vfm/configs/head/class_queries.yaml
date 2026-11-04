@@ -1,0 +1,11 @@
+# Testa multiclasse a query per classe (B2 del piano del 21 ottobre 2026,
+# docs/varie/piano_localizzazione_per_classe_20261021.md §5.4).
+# 14 query apprese (13 classi anomale + Normal), una per classe; il logit della
+# classe c legge solo la query c (una riga dei pesi per classe). Stessa profondita'
+# della testa binaria: normalizzazione, 3 blocchi di self-attention, 1 di cross.
+# `n_classes` e' verificato dal runner contro il dataset (14 su UCF-Crime).
+id: class_queries
+n_heads: 16
+depth: 4
+norm: true
+n_classes: 14

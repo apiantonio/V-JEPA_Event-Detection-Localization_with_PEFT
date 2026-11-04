@@ -1,0 +1,18 @@
+# V-JEPA 2.1 ViT-B
+id: vjepa21b
+arch: vit_base
+checkpoint: ${oc.env:EVD_CKPT_DIR}/vjepa2_1_vitb_dist_vitG_384.pt
+strict: true
+repo: null
+state_dict_key: ema_encoder
+expected:
+  embed_dim: 768
+  depth: 12
+  num_heads: 12
+  head_dim: 64
+hierarchical_layers: [2, 5, 8, 11]
+size: ???
+num_frames: 16
+preprocess_variant: ???
+preprocess_fps: ???
+preprocess_dtype: ???

@@ -1,0 +1,4 @@
+defaults:
+  - vpt_shallow_n8
+name: vptshallow-n576
+n_tokens: 576

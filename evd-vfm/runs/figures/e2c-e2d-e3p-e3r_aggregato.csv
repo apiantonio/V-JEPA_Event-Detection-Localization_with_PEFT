@@ -1,0 +1,16 @@
+exp,dataset,backbone,adapt,metric,mean,std,n,n_expected,complete,seeds
+e2c,ucf,vjepa21l,frozen-linear,chunk_ap,0.478813314496664,0.004390979710223407,3,,True,42;67;104
+e2c,ucf,vjepa21l,frozen-linear,chunk_ap_anomalous,0.5204948130934327,0.005437903016947679,3,,True,42;67;104
+e2c,ucf,vjepa21l,frozen-linear,chunk_auc,0.8472932751334968,0.0034148773060043492,3,,True,42;67;104
+e2d,ucf,vjepa21l,frozen-attentive,chunk_ap,0.7632249937360038,0.009219553322257346,3,,True,42;67;104
+e2d,ucf,vjepa21l,frozen-attentive,chunk_ap_anomalous,0.7872655074823451,0.004082780133836574,3,,True,42;67;104
+e2d,ucf,vjepa21l,frozen-attentive,chunk_auc,0.9310026424484978,0.007999980694604818,3,,True,42;67;104
+e3p,ucf,vjepa21l,vptdeep-n576,chunk_ap,0.6278817252830172,0.02010483322726393,3,,True,42;67;104
+e3p,ucf,vjepa21l,vptdeep-n576,chunk_ap_anomalous,0.6779338379563694,0.014109362944601819,3,,True,42;67;104
+e3p,ucf,vjepa21l,vptdeep-n576,chunk_auc,0.888238677969456,0.008277405680426012,3,,True,42;67;104
+e3r,ucf,vjepa21l,dora-r32-qkvomlp,chunk_ap,0.794663347309366,0.0037322072744553924,3,,True,42;67;104
+e3r,ucf,vjepa21l,dora-r32-qkvomlp,chunk_ap_anomalous,0.8304767812226235,0.00369536727618705,3,,True,42;67;104
+e3r,ucf,vjepa21l,dora-r32-qkvomlp,chunk_auc,0.9422000417807391,0.001722837169448846,3,,True,42;67;104
+e3r,ucf,vjepa21l,lora-r32-qkvomlp,chunk_ap,0.7889330838818976,0.005478291333083066,3,,True,42;67;104
+e3r,ucf,vjepa21l,lora-r32-qkvomlp,chunk_ap_anomalous,0.8269661202819383,0.005878408379041888,3,,True,42;67;104
+e3r,ucf,vjepa21l,lora-r32-qkvomlp,chunk_auc,0.9391957281026779,0.0015163648836772983,3,,True,42;67;104

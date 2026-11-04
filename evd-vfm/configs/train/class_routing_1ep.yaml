@@ -1,0 +1,28 @@
+# Budget delle teste multiclasse della campagna di localizzazione con scelta della
+# classe: 1 epoca (stadio 1 di B3, LoRA). Piano del 21 ottobre 2026 (docs/varie/
+# piano_localizzazione_per_classe_20261021.md §5.5). Uguale ai budget PEFT di
+# edp_v2 tranne tre righe:
+#   · model_selection: val_balanced_accuracy (decisione di Antonio): accuratezza
+#     bilanciata sulle 13 classi anomale, chunk positivi di validazione, Normal
+#     escluso dall'argmax;
+#   · class_balance: equal (decisione di Antonio): le 14 classi alla pari nei
+#     pescaggi. ⚠️ Deviazione dichiarata dall'invariante 6;
+#   · max_steps: 5524 (epoche da 5524 passi, coseno ciclico di un'epoca).
+max_steps: 5524
+batch_size: 2
+grad_accum: 8
+lr_grid: [1.0e-4]
+lr_schedule: cosine_cyclic
+lr_cycle_steps: 5524
+weight_decay: 0.01
+precision: bf16
+tf32: true
+attn: sdpa
+model_selection: val_balanced_accuracy
+eval_every: 920
+early_stop_patience: null
+checkpoint_every: 100
+num_workers: 12
+pin_memory: true
+persistent_workers: true
+class_balance: equal

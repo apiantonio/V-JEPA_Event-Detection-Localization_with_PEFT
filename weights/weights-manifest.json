@@ -1,0 +1,136 @@
+{
+  "release": "models-v1",
+  "format": "Inference-only checkpoint; preserves selected and last weights, excludes optimizer, RNG, history and cached validation scores. Not for training resumption.",
+  "weights": [
+    {
+      "run_id": "e2d_ucf_vjepa21l_frozen-attentive_s42",
+      "asset": "e2d_ucf_vjepa21l_frozen-attentive_s42.pt",
+      "bytes": 394754626,
+      "sha256": "ecda2ceffc1083b654215b678c2d2ae345e0ce659cc083e74e2662b5d50c6214",
+      "source_sha256": "d903645999ab5a0e823cc10996628e71d7bd9350e7cf2db44945b41c4e1f88ad",
+      "selected_step": 4600,
+      "last_step": 5524,
+      "destination": "evd-vfm/runs/e2d_ucf_vjepa21l_frozen-attentive_s42/checkpoint/checkpoint.pt"
+    },
+    {
+      "run_id": "e3r_ucf_vjepa21l_lora-r32-qkvomlp_s42",
+      "asset": "e3r_ucf_vjepa21l_lora-r32-qkvomlp_s42.pt",
+      "bytes": 508194562,
+      "sha256": "db5ffe09d22244b4850ac388e42fcf432d61b64894086bc76f5f3eb00b395da4",
+      "source_sha256": "2812cadb5bc8ff61d95aa69916fa773ba9ebc37850efbe64378080e1f7f9345e",
+      "selected_step": 5520,
+      "last_step": 5524,
+      "destination": "evd-vfm/runs/e3r_ucf_vjepa21l_lora-r32-qkvomlp_s42/checkpoint/checkpoint.pt"
+    },
+    {
+      "run_id": "e3r_ucf_vjepa21l_dora-r32-qkvomlp_s42",
+      "asset": "e3r_ucf_vjepa21l_dora-r32-qkvomlp_s42.pt",
+      "bytes": 510066050,
+      "sha256": "431e309fc1a18985592f206358b4f3965256790bb17499b452aa605ed57d9ab5",
+      "source_sha256": "bd840d553f08bc36d291b840b7c2d4851c5bfed8baf834f875918704cb4423eb",
+      "selected_step": 5520,
+      "last_step": 5524,
+      "destination": "evd-vfm/runs/e3r_ucf_vjepa21l_dora-r32-qkvomlp_s42/checkpoint/checkpoint.pt"
+    },
+    {
+      "run_id": "e3p_ucf_vjepa21l_vptshallow-n8_s42",
+      "asset": "e3p_ucf_vjepa21l_vptshallow-n8_s42.pt",
+      "bytes": 394820458,
+      "sha256": "486bc73ea99d4a6de257c6f314afba61c78a8e57daf7bd0a83ee25fa656e8c35",
+      "source_sha256": "b200821680a290736a39c904e1ce7faddc49850fe061f9fc7056d3987d658126",
+      "selected_step": 5520,
+      "last_step": 5524,
+      "destination": "evd-vfm/runs/e3p_ucf_vjepa21l_vptshallow-n8_s42/checkpoint/checkpoint.pt"
+    },
+    {
+      "run_id": "e3p_ucf_vjepa21l_vptdeep-n8_s42",
+      "asset": "e3p_ucf_vjepa21l_vptdeep-n8_s42.pt",
+      "bytes": 396342158,
+      "sha256": "838e3f5e8d0fd214d10928bf6cac90d66679e94a436e0659ca41438ec6754b56",
+      "source_sha256": "6c2ec531adcfad49e99da82d7b55d8f739d0faaa2abcf04c0158842b08be606f",
+      "selected_step": 3680,
+      "last_step": 5524,
+      "destination": "evd-vfm/runs/e3p_ucf_vjepa21l_vptdeep-n8_s42/checkpoint/checkpoint.pt"
+    },
+    {
+      "run_id": "e3p_ucf_vjepa21l_vptdeep-n576_s42",
+      "asset": "e3p_ucf_vjepa21l_vptdeep-n576_s42.pt",
+      "bytes": 508015946,
+      "sha256": "3d382e765dfc382bb05a66aa2e159d0c63f60b729927b281e47b193e59f079cb",
+      "source_sha256": "d26186ed7656dcc644aa573db5c519136254c62941804414358bf89c326192ed",
+      "selected_step": 3680,
+      "last_step": 5524,
+      "destination": "evd-vfm/runs/e3p_ucf_vjepa21l_vptdeep-n576_s42/checkpoint/checkpoint.pt"
+    },
+    {
+      "run_id": "e3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42",
+      "asset": "e3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42.pt",
+      "bytes": 394821866,
+      "sha256": "cb99bebdec7b2f667aecfc63012c9deb18da3c3887a28a4af8d8441a0ca845c8",
+      "source_sha256": "9d1901dfb4d95c361d2aa6258977a8b069a97a7530df467aec056ef562635625",
+      "selected_step": 12880,
+      "last_step": 16572,
+      "destination": "evd-vfm/runs/e3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42/checkpoint/checkpoint.pt"
+    },
+    {
+      "run_id": "e3s_ucf_vjepa21l_vptshallow-n8-su-dora-r32_s42",
+      "asset": "e3s_ucf_vjepa21l_vptshallow-n8-su-dora-r32_s42.pt",
+      "bytes": 394821866,
+      "sha256": "abdbe07688f1304b687c18b88d7003a87a97bd9be69bb3e3e488b8d8846859ef",
+      "source_sha256": "aec524ff2f0a1de585f7d960c5c321dce36ddc8b1e4c1ce7b9c5d72b06784ead",
+      "selected_step": 11960,
+      "last_step": 16572,
+      "destination": "evd-vfm/runs/e3s_ucf_vjepa21l_vptshallow-n8-su-dora-r32_s42/checkpoint/checkpoint.pt"
+    },
+    {
+      "run_id": "lcb1_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42",
+      "asset": "lcb1_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42.pt",
+      "bytes": 395034970,
+      "sha256": "a02ec67edcdb46bf70955827feea1e24405a89f7f47767fecb897ee3c083fb30",
+      "source_sha256": "229723781e773424d63e299cced9d5c22b7bf0d1c13871054ceff9584a91c2b8",
+      "selected_step": 22080,
+      "last_step": 22096,
+      "destination": "evd-vfm/runs/lcb1_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42/checkpoint/checkpoint.pt"
+    },
+    {
+      "run_id": "lcb2_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42",
+      "asset": "lcb2_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42.pt",
+      "bytes": 395035098,
+      "sha256": "ff8eadbadafc473791efa59f8d55bf2d6b3627e7d9be35b5f3bfc8cef7f03f3b",
+      "source_sha256": "67070d9724b3b3bea43e73b51cfb4e3f3fb3b8bd67ece60fae46c490d317984c",
+      "selected_step": 3680,
+      "last_step": 22096,
+      "destination": "evd-vfm/runs/lcb2_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42/checkpoint/checkpoint.pt"
+    },
+    {
+      "run_id": "lcb3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42",
+      "asset": "lcb3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42.pt",
+      "bytes": 789792496,
+      "sha256": "5542a66aaa66aa4444fcc35fdadbe7d690ca2a3c10031712f4007ec635fbdf39",
+      "source_sha256": "5c3d0baa4ca6927830185c33b9d66f740fda700317c18f420aa5f1751d889ce3",
+      "selected_step": 8280,
+      "last_step": 16572,
+      "destination": "evd-vfm/runs/lcb3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42/checkpoint/checkpoint.pt"
+    },
+    {
+      "run_id": "lcb3g_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42",
+      "asset": "lcb3g_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42.pt",
+      "bytes": 789793804,
+      "sha256": "12025194a7d72b79d91b76a95b96da77ed727c69cee8e4eca48c72a9fd4995f7",
+      "source_sha256": "a3f51126f7c5a4dc17bb618487e7460006bfc9fa6c7b1cf1f3664373b5894931",
+      "selected_step": 16560,
+      "last_step": 16572,
+      "destination": "evd-vfm/runs/lcb3g_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42/checkpoint/checkpoint.pt"
+    },
+    {
+      "run_id": "e3g_ucf_vjepa21gigantic_lora-r32-qkvomlp_s42",
+      "asset": "e3g_ucf_vjepa21gigantic_lora-r32-qkvomlp_s42.pt",
+      "bytes": 1448072454,
+      "sha256": "8edbc5fda8a5fac0fb31c6064e7f060502ade71010e63cb39383cfe99ea46b62",
+      "source_sha256": "42060289bd0f2a42f0c1910316822ba3920ea79182d1a2067096fbec24aa48dd",
+      "selected_step": 16560,
+      "last_step": 27620,
+      "destination": "evd-vfm/runs/e3g_ucf_vjepa21gigantic_lora-r32-qkvomlp_s42/checkpoint/checkpoint.pt"
+    }
+  ]
+}

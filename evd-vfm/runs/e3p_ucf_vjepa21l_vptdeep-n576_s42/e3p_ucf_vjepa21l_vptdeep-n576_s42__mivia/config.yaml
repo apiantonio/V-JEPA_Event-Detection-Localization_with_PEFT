@@ -1,0 +1,166 @@
+backbone:
+  id: vjepa21l
+  arch: vit_large
+  checkpoint: /shared/tesi_mllm/a.apicella97@studenti.unisa.it/data/checkpoints/vjepa2_1_vitl_dist_vitG_384.pt
+  strict: true
+  repo: null
+  state_dict_key: ema_encoder
+  expected:
+    embed_dim: 1024
+    depth: 24
+    num_heads: 16
+    head_dim: 64
+  hierarchical_layers:
+  - 5
+  - 11
+  - 17
+  - 23
+  size: 384
+  num_frames: 32
+  preprocess_variant: squash
+  preprocess_fps: 4.0
+  preprocess_dtype: fp32
+adapt:
+  family: prompt
+  name: vptdeep-n576
+  variant: vpt_deep
+  n_tokens: 576
+  depth: null
+  start_block: 0
+  pos_policy: rope_identity
+  init: xavier_uniform
+  dropout: 0.0
+head:
+  id: detection
+  n_queries: 1
+  n_heads: 16
+  depth: 4
+  norm: true
+  n_classes: 1
+data:
+  id: mivia
+  name: mivia_crime
+  decoder: pyav
+  root: /mnt/beegfs/mmarseglia/OFFICIAL_MIVIA_TEST_(USED_ALSO_FOR_CDC_CONTEST)
+  inventory: /shared/tesi_mllm/a.apicella97@studenti.unisa.it/data/mivia_crime_inventory/inventory.csv
+  n_classes: 14
+  annotations:
+    source: mivia_lab
+    path: /mnt/beegfs/mmarseglia/OFFICIAL_MIVIA_TEST_(USED_ALSO_FOR_CDC_CONTEST)
+  feature_store:
+    enabled: false
+    root: /shared/tesi_mllm/a.apicella97@studenti.unisa.it/features
+    layers:
+    - 23
+    storage_dtype: fp16
+protocol:
+  id: edp_v2
+  protocol_version: edp_v2
+  approved: true
+  approved_by: prof. Greco + laboratorio MIVIA (protocollo e split, 2026-08-31, ADR-047);
+    Antonio (campionamento di training, budget, catena di augmentation)
+  split_file: manifests/edp_v2/ucf_crime/split.json
+  temporal:
+    window_grid: fixed
+    window_s: 8.0
+    hop_s: 4.0
+    val_hop_s: 8.0
+    num_frames: 32
+    target_fps: 4.0
+    span_s: 7.75
+    chunk_label: any_overlap
+    frame_mapping: causal
+    train_sampling: static
+  geometry:
+    size: 384
+    preprocess_variant: squash
+  sampling:
+    video_balance: inverse_chunk_count
+    overlap_weight_floor: 0.1
+    class_balance: none
+  dedup: declared
+  seed_schedule:
+  - 42
+  - 43
+  - 44
+  - 45
+  - 46
+  output: binary
+  classes:
+    normal_idx: 13
+  video_policy: max
+  validation:
+    source: laboratory
+  threshold:
+    source: val
+    rule: youden
+    sensitivity_quantiles:
+    - 0.8
+    - 0.9
+    - 0.95
+    - 0.975
+    - 0.99
+train:
+  max_steps: 5524
+  batch_size: 2
+  grad_accum: 8
+  lr_grid:
+  - 0.0001
+  lr_schedule: cosine
+  weight_decay: 0.01
+  precision: bf16
+  tf32: true
+  attn: sdpa
+  model_selection: val_auroc
+  eval_every: 920
+  early_stop_patience: null
+  checkpoint_every: 100
+  num_workers: 12
+  pin_memory: true
+  persistent_workers: true
+eval:
+  primary_unit: chunk
+  chunk_label: any_overlap
+  normal_idx: 13
+  metrics:
+    chunk_auc: true
+    chunk_ap: true
+    chunk_prf: true
+    per_class_chunk: true
+    video_auc: false
+    video_ap: false
+    video_prf: true
+    detection_latency: true
+    event_level: true
+  efficiency: false
+  batch_size: 1
+  num_workers: 8
+  precision: bf16
+augment:
+  id: photometric
+  crop: false
+  random_resize_scale:
+  - 1.0
+  - 1.0
+  random_resize_ratio:
+  - 1.0
+  - 1.0
+  rand_augment: rand-m7-n4-mstd0.5-inc1
+  rand_augment_exclude:
+  - Rotate
+  - ShearX
+  - ShearY
+  - TranslateXRel
+  - TranslateYRel
+  horizontal_flip: false
+  reprob: 0.0
+exp_id: e3p
+k: na
+seed: 42
+device: null
+runs_dir: null
+official: true
+layer: 23
+valutazione_esterna:
+  run_sorgente: e3p_ucf_vjepa21l_vptdeep-n576_s42
+  dataset: mivia_crime

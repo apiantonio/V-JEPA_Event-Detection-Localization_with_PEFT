@@ -1,0 +1,8 @@
+# Testa binaria e testa multiclasse separate, addestrate insieme (B3-somma, piano
+# del 21 ottobre 2026 §5.4): loss = BCE + cross-entropy, peso 1 ciascuna. `forward`
+# restituisce il logit binario: valutazione, soglia e IG vedono il rivelatore binario.
+id: binary_and_classes
+n_heads: 16
+depth: 4
+balance: sum
+n_classes: 14

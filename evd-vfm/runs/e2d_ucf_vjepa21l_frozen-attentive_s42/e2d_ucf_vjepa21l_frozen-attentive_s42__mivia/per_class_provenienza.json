@@ -1,0 +1,20 @@
+{
+  "run_id": "e2d_ucf_vjepa21l_frozen-attentive_s42__mivia",
+  "split": "test",
+  "threshold": 0.14687739312648773,
+  "origine": "diagnostica_post_hoc",
+  "annotation_source": "mivia_lab@7d65080073f9ed79967c7709b0307b9916071385677e0f35173b98e392d6af21",
+  "data_path_overrides": [
+    "root=C:\\Users\\antonio\\OneDrive\\Desktop\\Corsi UNISA\\Magistrale\\TESI\\codice\\data\\mivia_crime",
+    "inventory=C:\\Users\\antonio\\OneDrive\\Desktop\\Corsi UNISA\\Magistrale\\TESI\\codice\\data\\mivia_crime_inventory\\inventory.csv",
+    "annotations.path=C:\\Users\\antonio\\OneDrive\\Desktop\\Corsi UNISA\\Magistrale\\TESI\\codice\\data\\mivia_crime"
+  ],
+  "coerenza_verificata": true,
+  "script_sha256": "dfdf226c15760f17a9dd1877caee0aff3891f02556619ecf0836fcdcb83d3142",
+  "n_verifiche": 152,
+  "sha256": {
+    "metrics.json": "99bd3873c7eea22c3ac2e8a1a64410c06cca5b82a08df09cf8e70766e92e7165",
+    "scores.jsonl": "32710dad5b9a10c1eb00b0f922377b025e8ea0ee30391a70841116c72734f50d",
+    "config.yaml": "aff5ae0dfdfd5f052b62a0b85e7cafa0e41c2e3ae56e0fa91a1838aec0101103"
+  }
+}

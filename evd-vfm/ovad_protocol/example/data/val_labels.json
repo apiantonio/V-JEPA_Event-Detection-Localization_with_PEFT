@@ -1,0 +1,227 @@
+{
+ "val_video_000": {
+  "duration": 67.09,
+  "anomalies": [
+   [
+    59.96,
+    66.45,
+    "Robbery"
+   ]
+  ]
+ },
+ "val_video_001": {
+  "duration": 101.62,
+  "anomalies": []
+ },
+ "val_video_002": {
+  "duration": 22.49,
+  "anomalies": [
+   [
+    12.12,
+    22.49,
+    "Assault"
+   ]
+  ]
+ },
+ "val_video_003": {
+  "duration": 142.84,
+  "anomalies": []
+ },
+ "val_video_004": {
+  "duration": 30.13,
+  "anomalies": [
+   [
+    10.81,
+    30.13,
+    "Arrest"
+   ]
+  ]
+ },
+ "val_video_005": {
+  "duration": 144.54,
+  "anomalies": []
+ },
+ "val_video_006": {
+  "duration": 77.26,
+  "anomalies": [
+   [
+    4.65,
+    17.04,
+    "Fighting"
+   ]
+  ]
+ },
+ "val_video_007": {
+  "duration": 52.85,
+  "anomalies": []
+ },
+ "val_video_008": {
+  "duration": 99.26,
+  "anomalies": [
+   [
+    8.45,
+    12.12,
+    "Shooting"
+   ],
+   [
+    36.95,
+    45.04,
+    "Shooting"
+   ]
+  ]
+ },
+ "val_video_009": {
+  "duration": 76.63,
+  "anomalies": []
+ },
+ "val_video_010": {
+  "duration": 110.62,
+  "anomalies": [
+   [
+    86.06,
+    101.87,
+    "Assault"
+   ]
+  ]
+ },
+ "val_video_011": {
+  "duration": 93.37,
+  "anomalies": []
+ },
+ "val_video_012": {
+  "duration": 62.66,
+  "anomalies": [
+   [
+    1.38,
+    14.8,
+    "Abuse"
+   ]
+  ]
+ },
+ "val_video_013": {
+  "duration": 30.59,
+  "anomalies": []
+ },
+ "val_video_014": {
+  "duration": 66.93,
+  "anomalies": [
+   [
+    4.23,
+    23.01,
+    "Vandalism"
+   ]
+  ]
+ },
+ "val_video_015": {
+  "duration": 25.61,
+  "anomalies": []
+ },
+ "val_video_016": {
+  "duration": 60.92,
+  "anomalies": [
+   [
+    49.72,
+    60.92,
+    "Fighting"
+   ]
+  ]
+ },
+ "val_video_017": {
+  "duration": 72.83,
+  "anomalies": []
+ },
+ "val_video_018": {
+  "duration": 97.44,
+  "anomalies": [
+   [
+    36.96,
+    46.69,
+    "Vandalism"
+   ],
+   [
+    57.05,
+    60.13,
+    "Vandalism"
+   ]
+  ]
+ },
+ "val_video_019": {
+  "duration": 111.69,
+  "anomalies": []
+ },
+ "val_video_020": {
+  "duration": 114.88,
+  "anomalies": [
+   [
+    56.57,
+    77.69,
+    "Shooting"
+   ]
+  ]
+ },
+ "val_video_021": {
+  "duration": 143.46,
+  "anomalies": []
+ },
+ "val_video_022": {
+  "duration": 124.02,
+  "anomalies": [
+   [
+    95.95,
+    100.73,
+    "Robbery"
+   ],
+   [
+    109.79,
+    118.19,
+    "Robbery"
+   ]
+  ]
+ },
+ "val_video_023": {
+  "duration": 111.05,
+  "anomalies": []
+ },
+ "val_video_024": {
+  "duration": 121.7,
+  "anomalies": [
+   [
+    59.87,
+    72.91,
+    "Vandalism"
+   ]
+  ]
+ },
+ "val_video_025": {
+  "duration": 91.85,
+  "anomalies": []
+ },
+ "val_video_026": {
+  "duration": 102.23,
+  "anomalies": [
+   [
+    17.03,
+    31.3,
+    "Robbery"
+   ]
+  ]
+ },
+ "val_video_027": {
+  "duration": 126.31,
+  "anomalies": []
+ },
+ "val_video_028": {
+  "duration": 45.08,
+  "anomalies": [
+   [
+    30.91,
+    45.08,
+    "Assault"
+   ]
+  ]
+ },
+ "val_video_029": {
+  "duration": 112.24,
+  "anomalies": []
+ }
+}

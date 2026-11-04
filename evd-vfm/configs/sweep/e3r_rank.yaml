@@ -1,0 +1,13 @@
+experiment: e3r_lora
+official: true
+assi:
+  adapt: [lora_r8_qkvomlp, lora_r16_qkvomlp, lora_r32_qkvomlp, lora_r64_qkvomlp]
+  seed: [42]
+paralleli: 4
+fetta_massima: 4
+risorse:
+  p: aiq
+  t: "07:00:00"
+  c: "14"
+  g: "1"
+  m: "128G"

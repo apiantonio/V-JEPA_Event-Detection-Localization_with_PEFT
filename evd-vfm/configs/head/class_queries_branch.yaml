@@ -1,0 +1,9 @@
+# Ramo multiclasse sopra la radice congelata della testa binaria (B1, piano del
+# 21 ottobre 2026 §5.4). La radice (normalizzazione e i primi 2 blocchi di
+# self-attention) arriva dal rivelatore con `inherit.head` e resta congelata; il
+# ramo nuovo ha 1 blocco di self-attention e 1 di cross-attention con 14 query.
+id: class_queries_branch
+n_heads: 16
+root_blocks: 2
+branch_depth: 2
+n_classes: 14

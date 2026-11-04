@@ -1,0 +1,358 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1400" height="1250" viewBox="0 0 1400 1250">
+  <title>Da video a token in V-JEPA 2.1: segmenti, clip, tubelet — e dove il chunk se ne stacca</title>
+  <style>
+    text { font-family: "Segoe UI", Helvetica, Arial, sans-serif; fill: #16181d; }
+    .h1     { font-size: 20px; font-weight: 700; }
+    .h2     { font-size: 16px; font-weight: 700; }
+    .stage  { font-size: 14px; font-weight: 700; letter-spacing: 0.4px; }
+    .sub    { font-size: 12px; fill: #6b7280; }
+    .subi   { font-size: 12px; fill: #6b7280; font-style: italic; }
+    .body   { font-size: 11.5px; fill: #16181d; }
+    .small  { font-size: 10.5px; fill: #6b7280; }
+    .tiny   { font-size: 9px;    fill: #6b7280; }
+    .mono   { font-family: "Consolas", "Courier New", monospace; font-size: 11px; fill: #374151; }
+    .acc    { fill: #b5451b; }
+    .accb   { fill: #b5451b; font-weight: 700; }
+    .blu    { fill: #2c527a; font-weight: 700; }
+  </style>
+
+  <defs>
+    <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#4b5563"/>
+    </marker>
+    <marker id="arwS" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+      <path d="M0,1.5 L9,5 L0,8.5 z" fill="#8a4415"/>
+    </marker>
+    <g id="warn">
+      <path d="M0,-6 L6.2,5 L-6.2,5 Z" fill="#e6a817" stroke="#8a6410" stroke-width="0.9" stroke-linejoin="round"/>
+      <path d="M0,-2.6 L0,1.4" stroke="#3d2c00" stroke-width="1.4" stroke-linecap="round"/>
+      <circle cx="0" cy="3.1" r="0.75" fill="#3d2c00"/>
+    </g>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="1250" fill="#ffffff"/>
+
+  <!-- ============================ INTESTAZIONE ============================ -->
+  <text x="55" y="46" class="h1">Da video a token: come V-JEPA 2.1 costruisce il suo ingresso — e dove il nostro chunk se ne stacca</text>
+  <text x="55" y="68" class="sub">Sorgenti: vjepa2/src/datasets/video_dataset.py · vjepa2/src/models/utils/patch_embed.py · configs/eval_2_1/vitb-384/k400.yaml</text>
+  <text x="55" y="86" class="sub">Esempio numerico: Arrest013_x264.mp4, 1116 frame, 320×240 — gli stessi numeri della nota 02_preprocessing.md</text>
+
+  <!-- ============================ PIPELINE ============================ -->
+  <line x1="55" y1="104" x2="1345" y2="104" stroke="#e5e7eb" stroke-width="1.5"/>
+
+  <!--intestazioni di fase -->
+  <g>
+    <circle cx="66" cy="132" r="11" fill="#2c527a"/><text x="66" y="136" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">1</text>
+    <text x="86" y="137" class="stage">VIDEO</text>
+    <circle cx="426" cy="132" r="11" fill="#2c527a"/><text x="426" y="136" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">2</text>
+    <text x="446" y="137" class="stage">SEGMENTO</text>
+    <circle cx="786" cy="132" r="11" fill="#2c527a"/><text x="786" y="136" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">3</text>
+    <text x="806" y="137" class="stage">CLIP</text>
+    <circle cx="1110" cy="132" r="11" fill="#2c527a"/><text x="1110" y="136" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">4</text>
+    <text x="1130" y="137" class="stage">TOKEN</text>
+  </g>
+
+  <!--FASE 1 · video partizionato in 8 segmenti -->
+  <g stroke-width="1">
+    <!-- facce superiori, una per segmento -->
+    <polygon points="55,245 85,225 115,225 85,245"    fill="#f2c391" stroke="#8a4415"/>
+    <polygon points="85,245 115,225 145,225 115,245"  fill="#9dc3dc" stroke="#2c527a"/>
+    <polygon points="115,245 145,225 175,225 145,245" fill="#b3d2e6" stroke="#2c527a"/>
+    <polygon points="145,245 175,225 205,225 175,245" fill="#9dc3dc" stroke="#2c527a"/>
+    <polygon points="175,245 205,225 235,225 205,245" fill="#b3d2e6" stroke="#2c527a"/>
+    <polygon points="205,245 235,225 265,225 235,245" fill="#9dc3dc" stroke="#2c527a"/>
+    <polygon points="235,245 265,225 295,225 265,245" fill="#b3d2e6" stroke="#2c527a"/>
+    <polygon points="265,245 295,225 325,225 295,245" fill="#9dc3dc" stroke="#2c527a"/>
+    <!-- faccia destra -->
+    <polygon points="295,245 295,315 325,295 325,225" fill="#24435f" stroke="#16181d"/>
+    <!-- facce frontali -->
+    <rect x="55"  y="245" width="30" height="70" fill="#d9772e" stroke="#8a4415" stroke-width="1.6"/>
+    <rect x="85"  y="245" width="30" height="70" fill="#5b8fb9" stroke="#2c527a"/>
+    <rect x="115" y="245" width="30" height="70" fill="#7aa8cc" stroke="#2c527a"/>
+    <rect x="145" y="245" width="30" height="70" fill="#5b8fb9" stroke="#2c527a"/>
+    <rect x="175" y="245" width="30" height="70" fill="#7aa8cc" stroke="#2c527a"/>
+    <rect x="205" y="245" width="30" height="70" fill="#5b8fb9" stroke="#2c527a"/>
+    <rect x="235" y="245" width="30" height="70" fill="#7aa8cc" stroke="#2c527a"/>
+    <rect x="265" y="245" width="30" height="70" fill="#5b8fb9" stroke="#2c527a"/>
+  </g>
+  <g class="tiny" text-anchor="middle">
+    <text x="70" y="331" class="accb" font-size="9">0</text>
+    <text x="100" y="331">1</text><text x="130" y="331">2</text><text x="160" y="331">3</text>
+    <text x="190" y="331">4</text><text x="220" y="331">5</text><text x="250" y="331">6</text><text x="280" y="331">7</text>
+  </g>
+  <text x="55" y="400" class="body" font-weight="700">1116 frame decodificati</text>
+  <text x="55" y="418" class="small">num_segments = 8 (k400.yaml)</text>
+  <text x="55" y="436" class="mono">partition_len = 1116 // 8 = 139</text>
+  <text x="55" y="454" class="tiny">4 frame in coda restano fuori · in arancio il segmento 0, espanso a destra</text>
+
+  <!-- freccia 1 → 2 -->
+  <line x1="338" y1="280" x2="404" y2="280" stroke="#4b5563" stroke-width="1.6" marker-end="url(#arw)"/>
+  <text x="370" y="252" text-anchor="middle" class="small">partiziona</text>
+  <text x="370" y="266" text-anchor="middle" class="mono" font-size="10">len(vr) // 8</text>
+
+  <!--FASE 2 · finestra clip_len dentro il segmento -->
+  <g stroke-width="1">
+    <!-- faccia superiore: finestra + resto -->
+    <polygon points="415,245 445,225 555.5,225 525.5,245" fill="#f2c391" stroke="#8a4415"/>
+    <polygon points="525.5,245 555.5,225 685,225 655,245" fill="#e3e6ea" stroke="#9aa1ab"/>
+    <!-- faccia destra -->
+    <polygon points="655,245 655,315 685,295 685,225" fill="#9aa1ab" stroke="#6b7280"/>
+    <!-- facce frontali -->
+    <rect x="415" y="245" width="110.5" height="70" fill="#d9772e" stroke="#8a4415" stroke-width="1.6"/>
+    <rect x="525.5" y="245" width="129.5" height="70" fill="#eceef1" stroke="#9aa1ab"/>
+    <!-- 16 indici campionati dentro la finestra -->
+    <g fill="#7a2c10" opacity="0.85">
+      <rect x="415.0" y="245" width="2" height="70"/><rect x="421.9" y="245" width="2" height="70"/>
+      <rect x="428.8" y="245" width="2" height="70"/><rect x="435.7" y="245" width="2" height="70"/>
+      <rect x="444.4" y="245" width="2" height="70"/><rect x="451.3" y="245" width="2" height="70"/>
+      <rect x="458.2" y="245" width="2" height="70"/><rect x="465.1" y="245" width="2" height="70"/>
+      <rect x="473.7" y="245" width="2" height="70"/><rect x="480.6" y="245" width="2" height="70"/>
+      <rect x="487.5" y="245" width="2" height="70"/><rect x="494.4" y="245" width="2" height="70"/>
+      <rect x="503.1" y="245" width="2" height="70"/><rect x="510.0" y="245" width="2" height="70"/>
+      <rect x="516.9" y="245" width="2" height="70"/><rect x="523.5" y="245" width="2" height="70"/>
+    </g>
+  </g>
+  <!-- finestra fantasma: random_clip_sampling -->
+  <rect x="544.5" y="245" width="110.5" height="70" fill="none" stroke="#b5451b" stroke-width="1.3" stroke-dasharray="5,4" opacity="0.75"/>
+  <line x1="470" y1="332" x2="600" y2="332" stroke="#8a4415" stroke-width="1.2" marker-start="url(#arwS)" marker-end="url(#arwS)"/>
+  <use href="#warn" xlink:href="#warn" transform="translate(421,353)"/>
+  <text x="433" y="350" class="small" fill="#8a4415">random_clip_sampling = True per default:</text>
+  <text x="433" y="364" class="small" fill="#8a4415">la finestra scivola a caso nel segmento</text>
+
+  <text x="415" y="400" class="body" font-weight="700">139 frame · finestra di 64</text>
+  <text x="415" y="418" class="small">clip_len = frames_per_clip(16) × frame_step(4)</text>
+  <text x="415" y="436" class="mono">= 64 frame · restano fuori 75</text>
+  <text x="415" y="454" class="tiny">frame_step NON è lo stride: fissa la lunghezza della finestra, non il passo</text>
+
+  <!-- freccia 2 → 3 -->
+  <line x1="698" y1="280" x2="764" y2="280" stroke="#4b5563" stroke-width="1.6" marker-end="url(#arw)"/>
+  <text x="731" y="252" text-anchor="middle" class="small">campiona 16</text>
+  <text x="731" y="266" text-anchor="middle" class="mono" font-size="10">np.linspace</text>
+
+  <!--FASE 3 · clip (16, 384, 384) -->
+  <g stroke="#2c527a" stroke-width="1">
+    <polygon points="775,190 829,154 1009,154 955,190" fill="#9dc3dc"/>
+    <polygon points="955,190 955,370 1009,334 1009,154" fill="#3f6d92"/>
+    <rect x="775" y="190" width="180" height="180" fill="#6fa0c4"/>
+  </g>
+  <!-- 15 divisori = 16 frame -->
+  <g stroke="#2c527a" stroke-width="0.45" stroke-opacity="0.55">
+    <line x1="778.4" y1="187.8" x2="958.4" y2="187.8"/><line x1="781.8" y1="185.5" x2="961.8" y2="185.5"/>
+    <line x1="785.1" y1="183.3" x2="965.1" y2="183.3"/><line x1="788.5" y1="181.0" x2="968.5" y2="181.0"/>
+    <line x1="791.9" y1="178.8" x2="971.9" y2="178.8"/><line x1="795.3" y1="176.5" x2="975.3" y2="176.5"/>
+    <line x1="798.6" y1="174.3" x2="978.6" y2="174.3"/><line x1="802.0" y1="172.0" x2="982.0" y2="172.0"/>
+    <line x1="805.4" y1="169.8" x2="985.4" y2="169.8"/><line x1="808.8" y1="167.5" x2="988.8" y2="167.5"/>
+    <line x1="812.1" y1="165.3" x2="992.1" y2="165.3"/><line x1="815.5" y1="163.0" x2="995.5" y2="163.0"/>
+    <line x1="818.9" y1="160.8" x2="998.9" y2="160.8"/><line x1="822.3" y1="158.5" x2="1002.3" y2="158.5"/>
+    <line x1="825.6" y1="156.3" x2="1005.6" y2="156.3"/>
+  </g>
+  <text x="865" y="388" text-anchor="middle" class="tiny">384 px (W)</text>
+  <text x="789" y="280" text-anchor="middle" class="tiny" fill="#ffffff" transform="rotate(-90 789 280)">384 px (H)</text>
+  <text x="1014" y="150" class="tiny">16 frame (T)</text>
+
+  <text x="775" y="418" class="body" font-weight="700">(16, 384, 384) float32</text>
+  <text x="775" y="436" class="small">320×240 → resize lato corto 384 → 384×512 → crop</text>
+  <use href="#warn" xlink:href="#warn" transform="translate(781,452)"/>
+  <text x="793" y="456" class="tiny" fill="#8a4415">catena A: 3 viste (inizio 0/64/128), qui la centrale</text>
+
+  <!-- freccia 3 → 4 -->
+  <line x1="1022" y1="280" x2="1088" y2="280" stroke="#4b5563" stroke-width="1.6" marker-end="url(#arw)"/>
+  <text x="1055" y="252" text-anchor="middle" class="small">PatchEmbed3D</text>
+  <text x="1055" y="266" text-anchor="middle" class="mono" font-size="10">Conv3d</text>
+
+  <!--FASE 4 · griglia di tubelet -->
+  <g stroke="#2c527a" stroke-width="1">
+    <polygon points="1099,190 1153,154 1333,154 1279,190" fill="#9dc3dc"/>
+    <polygon points="1279,190 1279,370 1333,334 1333,154" fill="#3f6d92"/>
+    <rect x="1099" y="190" width="180" height="180" fill="#6fa0c4"/>
+  </g>
+  <g stroke="#ffffff" stroke-opacity="0.6" stroke-width="0.6">
+    <line x1="1106.5" y1="190" x2="1106.5" y2="370"/><line x1="1114" y1="190" x2="1114" y2="370"/>
+    <line x1="1121.5" y1="190" x2="1121.5" y2="370"/><line x1="1129" y1="190" x2="1129" y2="370"/>
+    <line x1="1136.5" y1="190" x2="1136.5" y2="370"/><line x1="1144" y1="190" x2="1144" y2="370"/>
+    <line x1="1151.5" y1="190" x2="1151.5" y2="370"/><line x1="1159" y1="190" x2="1159" y2="370"/>
+    <line x1="1166.5" y1="190" x2="1166.5" y2="370"/><line x1="1174" y1="190" x2="1174" y2="370"/>
+    <line x1="1181.5" y1="190" x2="1181.5" y2="370"/><line x1="1189" y1="190" x2="1189" y2="370"/>
+    <line x1="1196.5" y1="190" x2="1196.5" y2="370"/><line x1="1204" y1="190" x2="1204" y2="370"/>
+    <line x1="1211.5" y1="190" x2="1211.5" y2="370"/><line x1="1219" y1="190" x2="1219" y2="370"/>
+    <line x1="1226.5" y1="190" x2="1226.5" y2="370"/><line x1="1234" y1="190" x2="1234" y2="370"/>
+    <line x1="1241.5" y1="190" x2="1241.5" y2="370"/><line x1="1249" y1="190" x2="1249" y2="370"/>
+    <line x1="1256.5" y1="190" x2="1256.5" y2="370"/><line x1="1264" y1="190" x2="1264" y2="370"/>
+    <line x1="1271.5" y1="190" x2="1271.5" y2="370"/>
+    <line x1="1099" y1="197.5" x2="1279" y2="197.5"/><line x1="1099" y1="205" x2="1279" y2="205"/>
+    <line x1="1099" y1="212.5" x2="1279" y2="212.5"/><line x1="1099" y1="220" x2="1279" y2="220"/>
+    <line x1="1099" y1="227.5" x2="1279" y2="227.5"/><line x1="1099" y1="235" x2="1279" y2="235"/>
+    <line x1="1099" y1="242.5" x2="1279" y2="242.5"/><line x1="1099" y1="250" x2="1279" y2="250"/>
+    <line x1="1099" y1="257.5" x2="1279" y2="257.5"/><line x1="1099" y1="265" x2="1279" y2="265"/>
+    <line x1="1099" y1="272.5" x2="1279" y2="272.5"/><line x1="1099" y1="280" x2="1279" y2="280"/>
+    <line x1="1099" y1="287.5" x2="1279" y2="287.5"/><line x1="1099" y1="295" x2="1279" y2="295"/>
+    <line x1="1099" y1="302.5" x2="1279" y2="302.5"/><line x1="1099" y1="310" x2="1279" y2="310"/>
+    <line x1="1099" y1="317.5" x2="1279" y2="317.5"/><line x1="1099" y1="325" x2="1279" y2="325"/>
+    <line x1="1099" y1="332.5" x2="1279" y2="332.5"/><line x1="1099" y1="340" x2="1279" y2="340"/>
+    <line x1="1099" y1="347.5" x2="1279" y2="347.5"/><line x1="1099" y1="355" x2="1279" y2="355"/>
+    <line x1="1099" y1="362.5" x2="1279" y2="362.5"/>
+  </g>
+  <g stroke="#2c527a" stroke-width="0.7" stroke-opacity="0.8">
+    <line x1="1105.75" y1="185.5" x2="1285.75" y2="185.5"/><line x1="1112.5" y1="181" x2="1292.5" y2="181"/>
+    <line x1="1119.25" y1="176.5" x2="1299.25" y2="176.5"/><line x1="1126" y1="172" x2="1306" y2="172"/>
+    <line x1="1132.75" y1="167.5" x2="1312.75" y2="167.5"/><line x1="1139.5" y1="163" x2="1319.5" y2="163"/>
+    <line x1="1146.25" y1="158.5" x2="1326.25" y2="158.5"/>
+  </g>
+  <rect x="1099" y="190" width="7.5" height="7.5" fill="#d9772e" stroke="#8a4415" stroke-width="1.4"/>
+  <text x="1189" y="388" text-anchor="middle" class="tiny">24 celle × 16 px</text>
+  <text x="1336" y="148" text-anchor="end" class="tiny">8 livelli (T)</text>
+
+  <text x="1099" y="418" class="body" font-weight="700">8 × 24 × 24 = 4608 token</text>
+  <text x="1099" y="436" class="small">embed_dim 768 (ViT-B) → (1, 4608, 768)</text>
+  <text x="1099" y="454" class="tiny">un tubelet = un token (dettaglio a destra)</text>
+
+  <!--linee guida verso gli zoom -->
+  <path d="M 470 366 L 470 470 L 300 470 L 300 505" fill="none" stroke="#b5451b" stroke-width="1" stroke-dasharray="4,4" opacity="0.55"/>
+  <path d="M 1103 197 L 1072 212 L 1072 478 L 1000 478 L 1000 505" fill="none" stroke="#b5451b" stroke-width="1" stroke-dasharray="4,4" opacity="0.55"/>
+
+  <!-- ============================ ZOOM A · campionamento ============================ -->
+  <rect x="55" y="505" width="630" height="258" rx="9" fill="#f8fafc" stroke="#d5dde5" stroke-width="1.2"/>
+  <text x="76" y="532" class="h2">Zoom · come nascono i 16 indici</text>
+  <text x="76" y="551" class="subi">il passo effettivo è 4,27 e non è costante</text>
+
+  <rect x="85" y="572" width="570" height="38" fill="#f2c391" stroke="#b5451b" stroke-width="1.3"/>
+  <g fill="#7a2c10">
+    <rect x="83.5"  y="566" width="3" height="50"/><rect x="119.1" y="566" width="3" height="50"/>
+    <rect x="154.8" y="566" width="3" height="50"/><rect x="190.4" y="566" width="3" height="50"/>
+    <rect x="234.9" y="566" width="3" height="50"/><rect x="270.5" y="566" width="3" height="50"/>
+    <rect x="306.1" y="566" width="3" height="50"/><rect x="341.8" y="566" width="3" height="50"/>
+    <rect x="386.3" y="566" width="3" height="50"/><rect x="421.9" y="566" width="3" height="50"/>
+    <rect x="457.6" y="566" width="3" height="50"/><rect x="493.2" y="566" width="3" height="50"/>
+    <rect x="537.7" y="566" width="3" height="50"/><rect x="573.3" y="566" width="3" height="50"/>
+    <rect x="608.9" y="566" width="3" height="50"/><rect x="644.6" y="566" width="3" height="50"/>
+  </g>
+  <!-- brackets sui salti -->
+  <path d="M85,622 L85,628 L120.6,628 L120.6,622" fill="none" stroke="#6b7280" stroke-width="1"/>
+  <text x="102.8" y="641" text-anchor="middle" class="tiny">+4</text>
+  <path d="M191.9,622 L191.9,628 L236.4,628 L236.4,622" fill="none" stroke="#b5451b" stroke-width="1.4"/>
+  <text x="214.2" y="641" text-anchor="middle" class="tiny accb" font-size="9.5">+5</text>
+  <path d="M343.3,622 L343.3,628 L387.8,628 L387.8,622" fill="none" stroke="#b5451b" stroke-width="1.4"/>
+  <text x="365.6" y="641" text-anchor="middle" class="tiny accb" font-size="9.5">+5</text>
+  <path d="M494.7,622 L494.7,628 L539.2,628 L539.2,622" fill="none" stroke="#b5451b" stroke-width="1.4"/>
+  <text x="517.0" y="641" text-anchor="middle" class="tiny accb" font-size="9.5">+5</text>
+
+  <text x="85" y="666" class="body">np.linspace(0, 64, num=16) → .astype(int64): troncamento, non arrotondamento</text>
+  <text x="85" y="686" class="mono">0, 4, 8, 12, 17, 21, 25, 29, 34, 38, 42, 46, 51, 55, 59, 63</text>
+  <text x="85" y="708" class="small">tre salti da 5 su quindici — 12·4 + 3·5 = 63</text>
+  <use href="#warn" xlink:href="#warn" transform="translate(91,730)"/>
+  <text x="103" y="734" class="tiny" fill="#8a4415">ramo partition_len &gt; clip_len (Arrest013). Su segmenti corti (Abuse029)</text>
+  <text x="103" y="748" class="tiny" fill="#8a4415">il ramo è un altro e l'ultimo indice si duplica: … 58, 62, 62</text>
+
+  <!-- ============================ ZOOM B · tubelet ============================ -->
+  <rect x="715" y="505" width="630" height="258" rx="9" fill="#f8fafc" stroke="#d5dde5" stroke-width="1.2"/>
+  <text x="736" y="532" class="h2">Zoom · un tubelet = un token</text>
+  <text x="736" y="551" class="subi">Conv3d con kernel = stride: blocchi non sovrapposti</text>
+
+  <g stroke="#8a4415" stroke-width="1.2">
+    <polygon points="785,590 812,572 902,572 875,590" fill="#f6d5aa"/>
+    <polygon points="875,590 875,680 902,662 902,572" fill="#c07a2e"/>
+    <rect x="785" y="590" width="90" height="90" fill="#f2c391"/>
+  </g>
+  <line x1="798.5" y1="581" x2="888.5" y2="581" stroke="#8a4415" stroke-width="0.8" stroke-opacity="0.8"/>
+  <text x="830" y="700" text-anchor="middle" class="tiny">16 px (W)</text>
+  <text x="773" y="635" text-anchor="middle" class="tiny" transform="rotate(-90 773 635)">16 px (H)</text>
+  <text x="907" y="568" class="tiny">2 frame (T)</text>
+  <text x="830" y="718" text-anchor="middle" class="body accb">2 × 16 × 16</text>
+
+  <line x1="925" y1="632" x2="988" y2="632" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arw)"/>
+  <text x="956" y="622" text-anchor="middle" class="tiny">Conv3d</text>
+
+  <rect x="1000" y="578" width="26" height="108" rx="4" fill="#2c527a"/>
+  <rect x="1000" y="578" width="26" height="108" rx="4" fill="none" stroke="#16181d" stroke-width="0.8"/>
+  <text x="1013" y="704" text-anchor="middle" class="tiny blu" font-size="10">1 token</text>
+  <text x="1013" y="718" text-anchor="middle" class="tiny">768 dim</text>
+
+  <text x="1065" y="592" class="body" font-weight="700">griglia dei tubelet</text>
+  <text x="1065" y="616" class="mono">T:  16 / 2  =  8</text>
+  <text x="1065" y="636" class="mono">H: 384 / 16 = 24</text>
+  <text x="1065" y="656" class="mono">W: 384 / 16 = 24</text>
+  <line x1="1065" y1="668" x2="1255" y2="668" stroke="#c3ccd6" stroke-width="1"/>
+  <text x="1065" y="690" class="accb" font-size="13.5">8 × 24 × 24 = 4608</text>
+
+  <text x="736" y="742" class="tiny">Il tubelet è l'unità interna dell'encoder — non è il «chunk» del nostro lessico, che è il riquadro qui sotto.</text>
+
+  <!-- ============================ CONFRONTO CHUNK vs CLIP ============================ -->
+  <line x1="55" y1="800" x2="1345" y2="800" stroke="#e5e7eb" stroke-width="1.5"/>
+  <text x="55" y="833" class="h1" font-size="17">Chunk (finestra causale) ≠ clip di Meta — la differenza si dichiara, non si appiattisce dietro «16 frame, stride 4»</text>
+  <text x="55" y="855" class="sub">evd-vfm/docs/04 §1: «finestra causale, sinonimo di chunk» — è l'unità che il modello consuma in un forward e per cui emette uno score, e l'unità delle metriche primarie (§4.1)</text>
+
+  <!--sinistra: clip -->
+  <rect x="55" y="875" width="635" height="292" rx="9" fill="#eef4f9" stroke="#2c527a" stroke-width="1.3"/>
+  <text x="76" y="903" class="h2 blu">CLIP · Meta, offline</text>
+
+  <g stroke-width="1">
+    <polygon points="85,930 105,916 675,916 655,930" fill="#dfe4ea" stroke="#9aa1ab"/>
+    <polygon points="655,930 655,962 675,948 675,916" fill="#9aa1ab" stroke="#6b7280"/>
+    <rect x="85" y="930" width="570" height="32" fill="#eceef1" stroke="#9aa1ab"/>
+    <g fill="#5b8fb9" stroke="#2c527a" stroke-width="0.8">
+      <rect x="85"     y="930" width="32.8" height="32"/>
+      <rect x="156.25" y="930" width="32.8" height="32"/>
+      <rect x="227.5"  y="930" width="32.8" height="32"/>
+      <rect x="298.75" y="930" width="32.8" height="32"/>
+      <rect x="370"    y="930" width="32.8" height="32"/>
+      <rect x="441.25" y="930" width="32.8" height="32"/>
+      <rect x="512.5"  y="930" width="32.8" height="32"/>
+      <rect x="583.75" y="930" width="32.8" height="32"/>
+    </g>
+    <g stroke="#6b7280" stroke-width="0.8" stroke-dasharray="2,2">
+      <line x1="156.25" y1="930" x2="156.25" y2="962"/><line x1="227.5" y1="930" x2="227.5" y2="962"/>
+      <line x1="298.75" y1="930" x2="298.75" y2="962"/><line x1="370" y1="930" x2="370" y2="962"/>
+      <line x1="441.25" y1="930" x2="441.25" y2="962"/><line x1="512.5" y1="930" x2="512.5" y2="962"/>
+      <line x1="583.75" y1="930" x2="583.75" y2="962"/>
+    </g>
+  </g>
+  <text x="85" y="1000" class="small">8 segmenti disgiunti · una clip campionata per ciascuno</text>
+
+  <g class="body">
+    <text x="85" y="1032">•  partiziona il video sapendo dove finisce</text>
+    <text x="85" y="1056">•  16 indici su una finestra di 64 frame, np.linspace troncato</text>
+    <text x="85" y="1080">•  passo effettivo 4,27 e non costante; l'ultimo indice a volte si duplica</text>
+    <text x="85" y="1104">•  stocastica: random_clip_sampling = True anche in validazione</text>
+    <text x="85" y="1128">•  è la geometria da cui vengono i numeri pubblicati (catena A)</text>
+  </g>
+  <text x="85" y="1152" class="tiny">vjepa2/src/datasets/video_dataset.py:330-386</text>
+
+  <!--destra: chunk -->
+  <rect x="710" y="875" width="635" height="292" rx="9" fill="#fdf3ea" stroke="#b5451b" stroke-width="1.3"/>
+  <text x="731" y="903" class="h2 accb">CHUNK = FINESTRA CAUSALE · nostro, online</text>
+
+  <g stroke-width="1">
+    <polygon points="740,930 760,916 1330,916 1310,930" fill="#dfe4ea" stroke="#9aa1ab"/>
+    <polygon points="1310,930 1310,962 1330,948 1330,916" fill="#9aa1ab" stroke="#6b7280"/>
+    <rect x="740" y="930" width="570" height="32" fill="#eceef1" stroke="#9aa1ab"/>
+  </g>
+  <g stroke="#b5451b" stroke-width="1" stroke-dasharray="3,3">
+    <line x1="950" y1="962" x2="950" y2="975"/>
+    <line x1="990" y1="962" x2="990" y2="992"/>
+    <line x1="1030" y1="962" x2="1030" y2="1009"/>
+  </g>
+  <g fill="#d9772e" stroke="#8a4415" stroke-width="1">
+    <rect x="830" y="975"  width="120" height="11" rx="2"/>
+    <rect x="870" y="992"  width="120" height="11" rx="2"/>
+    <rect x="910" y="1009" width="120" height="11" rx="2"/>
+  </g>
+  <text x="958" y="985"  class="tiny accb" font-size="9.5">→ t</text>
+  <text x="998" y="1002" class="tiny accb" font-size="9.5">→ t + hop</text>
+  <text x="1038" y="1019" class="tiny accb" font-size="9.5">→ t + 2·hop</text>
+
+  <g class="body">
+    <text x="740" y="1052">•  termina esattamente al frame t, mai centrata su t</text>
+    <text x="740" y="1076">•  non sa cosa viene dopo t: simulazione fedele del deployment online</text>
+    <text x="740" y="1100">•  griglia temporale assoluta; indici nativi quantizzati half-up</text>
+  </g>
+  <use href="#warn" xlink:href="#warn" transform="translate(746,1120)"/>
+  <text x="758" y="1124" class="body" fill="#8a4415">ADR-024: 16 timestamp a 7,5 fps target → span esatto 2,0 s</text>
+  <use href="#warn" xlink:href="#warn" transform="translate(746,1144)"/>
+  <text x="758" y="1148" class="body" fill="#8a4415">hop 1 s · geometria 256 px eval_center (E0e-bis)</text>
+
+  <!-- ============================ PIÈ DI PAGINA ============================ -->
+  <line x1="55" y1="1190" x2="1345" y2="1190" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="55" y="1208" class="tiny">Config: frame_step=4, frames_per_clip=16, num_segments=8, resolution=384, patch_size=16, tubelet_size=2 (configs/eval_2_1/vitb-384/k400.yaml).</text>
+  <text x="55" y="1222" class="tiny">Le fasi 1-4 descrivono il campionamento ufficiale di Meta, non la finestra causale della tesi: quella è il riquadro arancione, e sarà l'unità di InferenceEngine (evd/infer, fase F6).</text>
+  <text x="55" y="1236" class="tiny">Scritta a mano — non generata da script: se cambiano i parametri qui sopra o si chiudono Q21/Q22/D1, va aggiornata a mano.</text>
+</svg>

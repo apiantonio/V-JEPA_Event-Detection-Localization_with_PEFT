@@ -1,0 +1,10 @@
+family: reparam
+name: lora-r16-qkvo-fused
+method: lora
+r: 16
+alpha: 32
+placement: qkvo
+factorization: fused
+use_rslora: false
+dropout: 0.0
+init: kaiming_b_zero

@@ -1,0 +1,144 @@
+{
+  "target": 0.9,
+  "global": {
+    "fraction": 0.55,
+    "chunks": 994,
+    "single_concept_share": 0.9024144869215291
+  },
+  "a1": {
+    "Fighting": {
+      "fraction": 0.49,
+      "chunks": 52,
+      "single_concept_share": 0.9230769230769231
+    },
+    "Explosion": {
+      "fraction": 0.51,
+      "chunks": 52,
+      "single_concept_share": 0.9038461538461539
+    },
+    "Burglary": {
+      "fraction": 0.67,
+      "chunks": 308,
+      "single_concept_share": 0.9123376623376623
+    },
+    "Vandalism": {
+      "fraction": 0.48,
+      "chunks": 33,
+      "single_concept_share": 0.9090909090909091
+    },
+    "Arson": {
+      "fraction": 0.42,
+      "chunks": 155,
+      "single_concept_share": 0.9096774193548387
+    },
+    "Shooting": {
+      "fraction": 0.44,
+      "chunks": 40,
+      "single_concept_share": 0.925
+    },
+    "Assault": {
+      "fraction": 0.66,
+      "chunks": 17,
+      "single_concept_share": 0.9411764705882353
+    },
+    "Shoplifting": {
+      "fraction": 0.63,
+      "chunks": 104,
+      "single_concept_share": 0.9038461538461539
+    },
+    "Arrest": {
+      "fraction": 0.52,
+      "chunks": 46,
+      "single_concept_share": 0.9130434782608695
+    },
+    "RoadAccidents": {
+      "fraction": 0.56,
+      "chunks": 48,
+      "single_concept_share": 0.9166666666666666
+    },
+    "Stealing": {
+      "fraction": 0.53,
+      "chunks": 47,
+      "single_concept_share": 0.9148936170212766
+    },
+    "Robbery": {
+      "fraction": 0.65,
+      "chunks": 75,
+      "single_concept_share": 0.92
+    },
+    "Abuse": {
+      "fraction": 0.57,
+      "chunks": 17,
+      "single_concept_share": 0.9411764705882353
+    }
+  },
+  "a2": {
+    "Fighting": {
+      "fraction": 0.71,
+      "chunks": 52,
+      "single_concept_share": 0.9230769230769231
+    },
+    "Explosion": {
+      "fraction": 0.51,
+      "chunks": 52,
+      "single_concept_share": 0.9038461538461539
+    },
+    "Burglary": {
+      "fraction": 0.68,
+      "chunks": 308,
+      "single_concept_share": 0.9090909090909091
+    },
+    "Vandalism": {
+      "fraction": 0.5,
+      "chunks": 33,
+      "single_concept_share": 0.9090909090909091
+    },
+    "Arson": {
+      "fraction": 0.46,
+      "chunks": 155,
+      "single_concept_share": 0.9032258064516129
+    },
+    "Shooting": {
+      "fraction": 0.44,
+      "chunks": 40,
+      "single_concept_share": 0.925
+    },
+    "Assault": {
+      "fraction": 0.66,
+      "chunks": 17,
+      "single_concept_share": 0.9411764705882353
+    },
+    "Shoplifting": {
+      "fraction": 0.6,
+      "chunks": 104,
+      "single_concept_share": 0.9038461538461539
+    },
+    "Arrest": {
+      "fraction": 0.51,
+      "chunks": 46,
+      "single_concept_share": 0.9130434782608695
+    },
+    "RoadAccidents": {
+      "fraction": 0.63,
+      "chunks": 48,
+      "single_concept_share": 0.9166666666666666
+    },
+    "Stealing": {
+      "fraction": 0.47,
+      "chunks": 47,
+      "single_concept_share": 0.9148936170212766
+    },
+    "Robbery": {
+      "fraction": 0.63,
+      "chunks": 75,
+      "single_concept_share": 0.9066666666666666
+    },
+    "Abuse": {
+      "fraction": 0.64,
+      "chunks": 17,
+      "single_concept_share": 0.9411764705882353
+    }
+  },
+  "chunks_without_positive_mass": {},
+  "dictionaries": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/localization-class-routing-20261021/fits/campaign/dictionaries.npz"
+}

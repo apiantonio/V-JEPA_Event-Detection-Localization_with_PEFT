@@ -1,0 +1,9 @@
+family: prompt
+name: apt-n8
+variant: apt
+n_tokens: 8
+depth: null             # null = tutti i blocchi, da `start_block`
+start_block: 0          # `prompt_start`/`prompt_end` di APT ufficiale
+pos_policy: rope_identity
+apt_reparam: false      # `prompt_scale`: una scala per token, a 1 all'avvio
+dropout: 0.0

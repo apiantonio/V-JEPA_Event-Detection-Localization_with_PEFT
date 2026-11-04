@@ -1,0 +1,6 @@
+id: detection
+n_queries: 1
+n_heads: 16
+depth: 4
+norm: true
+n_classes: 1

@@ -1,0 +1,358 @@
+{
+  "schema": 1,
+  "profili": [
+    {
+      "run_id": "e5b2_efficienza_gpuq",
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "precision": "bf16",
+      "profile_schema": 2,
+      "avvio_a_freddo": {
+        "caricamento_s": 3.022005081176758,
+        "prima_passata_s": 1.100438056513667,
+        "totale_s": 4.122443137690425
+      },
+      "percorso": "C:\\Users\\antonio\\OneDrive\\Desktop\\Corsi UNISA\\Magistrale\\TESI\\codice\\evd-vfm\\runs\\e5b2_efficienza_gpuq\\efficiency_inference.json"
+    },
+    {
+      "run_id": "e5b2_efficienza_aiq",
+      "gpu": "NVIDIA H100 80GB HBM3",
+      "precision": "bf16",
+      "profile_schema": 2,
+      "avvio_a_freddo": {
+        "caricamento_s": 2.664932922460139,
+        "prima_passata_s": 0.5399885419756174,
+        "totale_s": 3.204921464435756
+      },
+      "percorso": "C:\\Users\\antonio\\OneDrive\\Desktop\\Corsi UNISA\\Magistrale\\TESI\\codice\\evd-vfm\\runs\\e5b2_efficienza_aiq\\efficiency_inference.json"
+    }
+  ],
+  "confronto": {
+    "macchine": [
+      "NVIDIA A100-SXM4-80GB",
+      "NVIDIA H100 80GB HBM3"
+    ],
+    "run_id": [
+      "e5b2_efficienza_gpuq",
+      "e5b2_efficienza_aiq"
+    ],
+    "rapporti": [
+      {
+        "variante": "dora-r32",
+        "batch": 1,
+        "latency_ms_NVIDIA A100-SXM4-80GB": 241.449900405,
+        "latency_ms_NVIDIA H100 80GB HBM3": 146.38111498,
+        "rapporto": 1.6494607274851623
+      },
+      {
+        "variante": "dora-r32",
+        "batch": 2,
+        "latency_ms_NVIDIA A100-SXM4-80GB": 458.9728157,
+        "latency_ms_NVIDIA H100 80GB HBM3": 270.9708467333333,
+        "rapporto": 1.6938088404457858
+      },
+      {
+        "variante": "dora-r32",
+        "batch": 4,
+        "latency_ms_NVIDIA A100-SXM4-80GB": 879.47479,
+        "latency_ms_NVIDIA H100 80GB HBM3": 513.2882885,
+        "rapporto": 1.7134129293503255
+      },
+      {
+        "variante": "dora-r32",
+        "batch": 8,
+        "latency_ms_NVIDIA A100-SXM4-80GB": 1730.0006719666667,
+        "latency_ms_NVIDIA H100 80GB HBM3": 1000.4239911666666,
+        "rapporto": 1.7292674778312624
+      },
+      {
+        "variante": "dora-r32-fusa",
+        "batch": 1,
+        "latency_ms_NVIDIA A100-SXM4-80GB": 131.623989715,
+        "latency_ms_NVIDIA H100 80GB HBM3": 77.962777215,
+        "rapporto": 1.688292726566385
+      },
+      {
+        "variante": "dora-r32-fusa",
+        "batch": 2,
+        "latency_ms_NVIDIA A100-SXM4-80GB": 250.279055,
+        "latency_ms_NVIDIA H100 80GB HBM3": 144.45182873333334,
+        "rapporto": 1.7326125753799213
+      },
+      {
+        "variante": "dora-r32-fusa",
+        "batch": 4,
+        "latency_ms_NVIDIA A100-SXM4-80GB": 477.53510453333337,
+        "latency_ms_NVIDIA H100 80GB HBM3": 273.53312036666665,
+        "rapporto": 1.7458035937045042
+      },
+      {
+        "variante": "dora-r32-fusa",
+        "batch": 8,
+        "latency_ms_NVIDIA A100-SXM4-80GB": 936.6484424666667,
+        "latency_ms_NVIDIA H100 80GB HBM3": 534.2896724666666,
+        "rapporto": 1.7530723327337054
+      },
+      {
+        "variante": "frozen",
+        "batch": 1,
+        "latency_ms_NVIDIA A100-SXM4-80GB": 131.65313543,
+        "latency_ms_NVIDIA H100 80GB HBM3": 77.92500119,
+        "rapporto": 1.6894851898557923
+      },
+      {
+        "variante": "frozen",
+        "batch": 2,
+        "latency_ms_NVIDIA A100-SXM4-80GB": 250.34077233333335,
+        "latency_ms_NVIDIA H100 80GB HBM3": 144.5097046,
+        "rapporto": 1.732345748171527
+      },
+      {
+        "variante": "frozen",
+        "batch": 4,
+        "latency_ms_NVIDIA A100-SXM4-80GB": 477.630024,
+        "latency_ms_NVIDIA H100 80GB HBM3": 272.67953446666667,
+        "rapporto": 1.7516166914917013
+      },
+      {
+        "variante": "frozen",
+        "batch": 8,
+        "latency_ms_NVIDIA A100-SXM4-80GB": 937.2422019666667,
+        "latency_ms_NVIDIA H100 80GB HBM3": 533.1699315,
+        "rapporto": 1.7578677014472013
+      },
+      {
+        "variante": "lora-r32",
+        "batch": 1,
+        "latency_ms_NVIDIA A100-SXM4-80GB": 187.70662774000002,
+        "latency_ms_NVIDIA H100 80GB HBM3": 112.64704463,
+        "rapporto": 1.6663253648290588
+      },
+      {
+        "variante": "lora-r32",
+        "batch": 2,
+        "latency_ms_NVIDIA A100-SXM4-80GB": 362.1133621333333,
+        "latency_ms_NVIDIA H100 80GB HBM3": 211.37752343333335,
+        "rapporto": 1.7131119536819661
+      },
+      {
+        "variante": "lora-r32",
+        "batch": 4,
+        "latency_ms_NVIDIA A100-SXM4-80GB": 697.2694845999999,
+        "latency_ms_NVIDIA H100 80GB HBM3": 401.86088170000005,
+        "rapporto": 1.7351016641637949
+      },
+      {
+        "variante": "lora-r32",
+        "batch": 8,
+        "latency_ms_NVIDIA A100-SXM4-80GB": 1375.2992463333333,
+        "latency_ms_NVIDIA H100 80GB HBM3": 784.9892555333333,
+        "rapporto": 1.751997542181561
+      },
+      {
+        "variante": "lora-r32-fusa",
+        "batch": 1,
+        "latency_ms_NVIDIA A100-SXM4-80GB": 131.706083595,
+        "latency_ms_NVIDIA H100 80GB HBM3": 77.703462255,
+        "rapporto": 1.694983463706922
+      },
+      {
+        "variante": "lora-r32-fusa",
+        "batch": 2,
+        "latency_ms_NVIDIA A100-SXM4-80GB": 250.4811777666667,
+        "latency_ms_NVIDIA H100 80GB HBM3": 144.43526616666668,
+        "rapporto": 1.7342106565416757
+      },
+      {
+        "variante": "lora-r32-fusa",
+        "batch": 4,
+        "latency_ms_NVIDIA A100-SXM4-80GB": 477.7111918333333,
+        "latency_ms_NVIDIA H100 80GB HBM3": 273.47860490000005,
+        "rapporto": 1.7467954833542199
+      },
+      {
+        "variante": "lora-r32-fusa",
+        "batch": 8,
+        "latency_ms_NVIDIA A100-SXM4-80GB": 936.4759792666666,
+        "latency_ms_NVIDIA H100 80GB HBM3": 533.9762627333333,
+        "rapporto": 1.7537782943253057
+      },
+      {
+        "variante": "vptdeep-n576",
+        "batch": 1,
+        "latency_ms_NVIDIA A100-SXM4-80GB": 133.639170555,
+        "latency_ms_NVIDIA H100 80GB HBM3": 78.08038896,
+        "rapporto": 1.7115587196096367
+      },
+      {
+        "variante": "vptdeep-n576",
+        "batch": 2,
+        "latency_ms_NVIDIA A100-SXM4-80GB": 251.8428873,
+        "latency_ms_NVIDIA H100 80GB HBM3": 143.4824453,
+        "rapporto": 1.7552174189214214
+      },
+      {
+        "variante": "vptdeep-n576",
+        "batch": 4,
+        "latency_ms_NVIDIA A100-SXM4-80GB": 486.3999547,
+        "latency_ms_NVIDIA H100 80GB HBM3": 272.0883344,
+        "rapporto": 1.7876545709781817
+      },
+      {
+        "variante": "vptdeep-n576",
+        "batch": 8,
+        "latency_ms_NVIDIA A100-SXM4-80GB": 952.6321260999999,
+        "latency_ms_NVIDIA H100 80GB HBM3": 534.0582007,
+        "rapporto": 1.783760880090161
+      }
+    ],
+    "overhead": [
+      {
+        "variante": "dora-r32",
+        "batch": 1,
+        "overhead_pct_NVIDIA A100-SXM4-80GB": 83.39851885516161,
+        "overhead_pct_NVIDIA H100 80GB HBM3": 87.84871702868178,
+        "scarto_punti": -4.450198173520164
+      },
+      {
+        "variante": "dora-r32",
+        "batch": 2,
+        "overhead_pct_NVIDIA A100-SXM4-80GB": 83.33921854681716,
+        "overhead_pct_NVIDIA H100 80GB HBM3": 87.51048414594386,
+        "scarto_punti": -4.1712655991266985
+      },
+      {
+        "variante": "dora-r32",
+        "batch": 4,
+        "overhead_pct_NVIDIA A100-SXM4-80GB": 84.13306237214266,
+        "overhead_pct_NVIDIA H100 80GB HBM3": 88.23865513190769,
+        "scarto_punti": -4.105592759765031
+      },
+      {
+        "variante": "dora-r32",
+        "batch": 8,
+        "overhead_pct_NVIDIA A100-SXM4-80GB": 84.58416280621076,
+        "overhead_pct_NVIDIA H100 80GB HBM3": 87.63698627042073,
+        "scarto_punti": -3.052823464209979
+      },
+      {
+        "variante": "dora-r32-fusa",
+        "batch": 1,
+        "overhead_pct_NVIDIA A100-SXM4-80GB": -0.02213826120038842,
+        "overhead_pct_NVIDIA H100 80GB HBM3": 0.04847741344000678,
+        "scarto_punti": -0.0706156746403952
+      },
+      {
+        "variante": "dora-r32-fusa",
+        "batch": 2,
+        "overhead_pct_NVIDIA A100-SXM4-80GB": -0.024653328644030914,
+        "overhead_pct_NVIDIA H100 80GB HBM3": -0.04004981314358336,
+        "scarto_punti": 0.015396484499552443
+      },
+      {
+        "variante": "dora-r32-fusa",
+        "batch": 4,
+        "overhead_pct_NVIDIA A100-SXM4-80GB": -0.019873010886484188,
+        "overhead_pct_NVIDIA H100 80GB HBM3": 0.3130362906293982,
+        "scarto_punti": -0.3329093015158824
+      },
+      {
+        "variante": "dora-r32-fusa",
+        "batch": 8,
+        "overhead_pct_NVIDIA A100-SXM4-80GB": -0.06335176742512383,
+        "overhead_pct_NVIDIA H100 80GB HBM3": 0.21001577555517237,
+        "scarto_punti": -0.2733675429802962
+      },
+      {
+        "variante": "lora-r32",
+        "batch": 1,
+        "overhead_pct_NVIDIA A100-SXM4-80GB": 42.576648195214226,
+        "overhead_pct_NVIDIA H100 80GB HBM3": 44.558284131865776,
+        "scarto_punti": -1.98163593665155
+      },
+      {
+        "variante": "lora-r32",
+        "batch": 2,
+        "overhead_pct_NVIDIA A100-SXM4-80GB": 44.648176466905156,
+        "overhead_pct_NVIDIA H100 80GB HBM3": 46.272199516580685,
+        "scarto_punti": -1.6240230496755288
+      },
+      {
+        "variante": "lora-r32",
+        "batch": 4,
+        "overhead_pct_NVIDIA A100-SXM4-80GB": 45.985270934307934,
+        "overhead_pct_NVIDIA H100 80GB HBM3": 47.37478648186742,
+        "scarto_punti": -1.3895155475594834
+      },
+      {
+        "variante": "lora-r32",
+        "batch": 8,
+        "overhead_pct_NVIDIA A100-SXM4-80GB": 46.73893721894591,
+        "overhead_pct_NVIDIA H100 80GB HBM3": 47.230593691747494,
+        "scarto_punti": -0.4916564728015871
+      },
+      {
+        "variante": "lora-r32-fusa",
+        "batch": 1,
+        "overhead_pct_NVIDIA A100-SXM4-80GB": 0.04021792935433588,
+        "overhead_pct_NVIDIA H100 80GB HBM3": -0.28429763441367717,
+        "scarto_punti": 0.32451556376801305
+      },
+      {
+        "variante": "lora-r32-fusa",
+        "batch": 2,
+        "overhead_pct_NVIDIA A100-SXM4-80GB": 0.05608572348190233,
+        "overhead_pct_NVIDIA H100 80GB HBM3": -0.051511027262396425,
+        "scarto_punti": 0.10759675074429875
+      },
+      {
+        "variante": "lora-r32-fusa",
+        "batch": 4,
+        "overhead_pct_NVIDIA A100-SXM4-80GB": 0.016993871669446214,
+        "overhead_pct_NVIDIA H100 80GB HBM3": 0.29304378669132713,
+        "scarto_punti": -0.2760499150218809
+      },
+      {
+        "variante": "lora-r32-fusa",
+        "batch": 8,
+        "overhead_pct_NVIDIA A100-SXM4-80GB": -0.0817529021198804,
+        "overhead_pct_NVIDIA H100 80GB HBM3": 0.15123344091532154,
+        "scarto_punti": -0.23298634303520194
+      },
+      {
+        "variante": "vptdeep-n576",
+        "batch": 1,
+        "overhead_pct_NVIDIA A100-SXM4-80GB": 1.5085361381734552,
+        "overhead_pct_NVIDIA H100 80GB HBM3": 0.1994068240321445,
+        "scarto_punti": 1.3091293141413107
+      },
+      {
+        "variante": "vptdeep-n576",
+        "batch": 2,
+        "overhead_pct_NVIDIA A100-SXM4-80GB": 0.6000280947709768,
+        "overhead_pct_NVIDIA H100 80GB HBM3": -0.7108583488170783,
+        "scarto_punti": 1.3108864435880552
+      },
+      {
+        "variante": "vptdeep-n576",
+        "batch": 4,
+        "overhead_pct_NVIDIA A100-SXM4-80GB": 1.8361347192026756,
+        "overhead_pct_NVIDIA H100 80GB HBM3": -0.21681130849184882,
+        "scarto_punti": 2.0529460276945244
+      },
+      {
+        "variante": "vptdeep-n576",
+        "batch": 8,
+        "overhead_pct_NVIDIA A100-SXM4-80GB": 1.642043444164143,
+        "overhead_pct_NVIDIA H100 80GB HBM3": 0.16660151811282997,
+        "scarto_punti": 1.475441926051313
+      }
+    ],
+    "ordinamento_conservato": false,
+    "rapporto_mediano": 1.7334116159607986,
+    "rapporto_min": 1.6494607274851623,
+    "rapporto_max": 1.7876545709781817,
+    "note": [
+      "⚠️ l'ordinamento dei metodi per overhead NON è lo stesso sulle due macchine nemmeno a meno di 1 punti: [[['dora-r32-fusa', 'lora-r32-fusa'], ['vptdeep-n576'], ['lora-r32'], ['dora-r32']], [['dora-r32-fusa', 'lora-r32-fusa', 'vptdeep-n576'], ['lora-r32'], ['dora-r32']]] — il verdetto di C7 dipende dall'hardware e va dichiarato tale"
+    ]
+  }
+}

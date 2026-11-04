@@ -1,0 +1,42 @@
+{
+  "detection_latency": {
+    "regola": "endpoint_dentro",
+    "mediana_s": 3.8741613239898616,
+    "p90_s": 8.066666666666666,
+    "n_eventi": 205,
+    "n_senza_latenza_misurabile": 84
+  },
+  "detection_latency_intersezione": {
+    "regola": "intersezione",
+    "mediana_s": 4.416666666666666,
+    "p90_s": 8.31,
+    "n_eventi": 205,
+    "n_senza_latenza_misurabile": 57
+  },
+  "verifica_regola_storica": {
+    "eseguita": true,
+    "coerente": true,
+    "mediana_su_disco_s": 3.8741613239898616,
+    "mediana_ricalcolata_s": 3.8741613239898616,
+    "scarto_s": 0.0,
+    "n_senza_su_disco": 84,
+    "n_senza_ricalcolato": 84
+  },
+  "concordanza_con_event_prf": {
+    "verificabile": true,
+    "n_mancati_event_prf": 57,
+    "n_senza_latenza_intersezione": 57,
+    "concordano": true
+  },
+  "provenienza": {
+    "run_id": "e3p_ucf_vjepa21l_vptdeep-n8_s42__mivia",
+    "split": "test",
+    "origine": "ricalcolo_post_hoc",
+    "adr": "ADR-061",
+    "threshold": 0.22270013391971588,
+    "n_video": 270,
+    "n_chunk": 3485,
+    "annotation_source": "mivia_lab@7d65080073f9ed79967c7709b0307b9916071385677e0f35173b98e392d6af21",
+    "git_sha": "b0f95537207bf803eb82461f003d71ff216b294b"
+  }
+}

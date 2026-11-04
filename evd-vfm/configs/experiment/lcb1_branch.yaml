@@ -1,0 +1,29 @@
+# @package _global_
+#
+# B1 della campagna di localizzazione con scelta della classe (piano del 21 ottobre
+# 2026, docs/varie/piano_localizzazione_per_classe_20261021.md §5.4).
+#
+# Si parte dalla cella del rivelatore della campagna (VPT-shallow n=8 su LoRA r=32
+# fuso) e si cambia SOLO cio' che si addestra: l'encoder del rivelatore (LoRA fuso
+# dal preadattamento, prompt VPT selezionati) e la radice della sua testa binaria
+# (normalizzazione e primi 2 blocchi di self-attention) arrivano da `inherit` e
+# restano CONGELATI; si addestra il ramo multiclasse (1 self + 1 cross, 14 query).
+#
+# ⚠️ L'obiettivo e' multiclasse, ma il protocollo resta binario: il campo
+# `objective` della cella non tocca edp_v2.
+defaults:
+  - e3s_fondi_lora_vptshallow
+  - override /head: class_queries_branch
+  - override /train: class_routing_4ep
+
+exp_id: lcb1
+objective: multiclass
+
+inherit:
+  from: runs/e3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s${seed}/checkpoint/checkpoint.pt
+  state: selected
+  adapter: freeze
+  head:
+    "norm.": "root_norm."
+    "pooler.blocks.0.": "root_blocks.0."
+    "pooler.blocks.1.": "root_blocks.1."

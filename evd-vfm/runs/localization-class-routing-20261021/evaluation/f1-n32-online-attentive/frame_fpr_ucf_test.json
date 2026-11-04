@@ -1,0 +1,95 @@
+{
+  "definition": "docs/varie/metriche_localizzazione_1fps_fpr_ovad_20261030.md",
+  "configurations": [
+    "Global"
+  ],
+  "variants": [
+    "union",
+    "component",
+    "concept-union",
+    "concept-box",
+    "component-concept-score",
+    "largest-component",
+    "nms30-component",
+    "nms50-component",
+    "nms70-component",
+    "nms30-concept-box",
+    "nms50-concept-box",
+    "nms70-concept-box",
+    "softnms-component",
+    "softnms-concept-box",
+    "wbf-component",
+    "wbf-concept-box",
+    "component4",
+    "concept-union4",
+    "component4-concept-score",
+    "largest-component4",
+    "region",
+    "region-concept-score",
+    "region-combos-nms50",
+    "region-combos-nms50-concept"
+  ],
+  "scores": [
+    "mass",
+    "share"
+  ],
+  "theta_ovad": 0.32043135166168213,
+  "ovad_plan": {
+    "path": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/localization-class-routing-20261021/plan/ovad_rows/attentive.json",
+    "sha256": "017d2f053bd2d059b82f6e3ba76bf8fadb4172c7e234cc5d19c6e9d8d2ce9cdb"
+  },
+  "counts": {
+    "positive": 3600,
+    "positive_uncovered": 416,
+    "negative": 3016,
+    "negative_unjudgeable": 418,
+    "rows_tp": 285,
+    "rows_fp": 129,
+    "emitting_chunks": 1623,
+    "videos": 290
+  },
+  "extra_frames": {
+    "ucf_crime/Explosion020_x264/event001": {
+      "frame": 345,
+      "extent": [
+        343,
+        347
+      ],
+      "short": true
+    },
+    "ucf_crime/Explosion020_x264/event003": {
+      "frame": 830,
+      "extent": [
+        829,
+        832
+      ],
+      "short": true
+    },
+    "ucf_crime/Explosion035_x264/event003": {
+      "frame": 2861,
+      "extent": [
+        2858,
+        2864
+      ],
+      "short": true
+    },
+    "ucf_crime/Fighting018_x264/event000": {
+      "frame": 52,
+      "extent": [
+        49,
+        56
+      ],
+      "short": true
+    },
+    "ucf_crime/Fighting033_x264/event000": {
+      "frame": 188,
+      "extent": [
+        184,
+        192
+      ],
+      "short": true
+    }
+  },
+  "negative_population": "all_clean_coverage_v2",
+  "correction": "Clean non-emitting coverage retained as -inf TN; original score order retained."
+}

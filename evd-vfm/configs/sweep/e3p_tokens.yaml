@@ -1,0 +1,14 @@
+experiment: e3p_vpt
+official: true
+assi:
+  adapt: [vpt_deep_n8, vpt_deep_n64, vpt_deep_n192, vpt_deep_n576, vpt_shallow_n8, vpt_shallow_n64, vpt_shallow_n192, vpt_shallow_n576]
+  seed: [42]
+paralleli: 8
+fetta_massima: 8
+risorse:
+  p: aiq
+  t: "07:00:00"
+  c: "14"
+  g: "1"
+  m: "128G"
+note: "E3-P.2 completa su token e shallow/deep, autorizzata il 5 settembre. Primo giro a seme 42; deep n576 riusato. LR e budget invariati; nessuna parita di parametri fra questi punti."

@@ -1,0 +1,255 @@
+{
+  "run_id": "e2c_ucf_vjepa21l_frozen-linear_s42",
+  "chunk_auc": 0.8473407439170543,
+  "chunk_ap": 0.48333036215985364,
+  "chunk_auc_anomalous": 0.6534716366230527,
+  "chunk_ap_anomalous": 0.5266468366209875,
+  "n_video_anomalous": 140,
+  "chunk_prf": {
+    "precision": 0.28843762950683793,
+    "recall": 0.9336016096579477,
+    "f1": 0.44071552952350795,
+    "threshold": 0.12673720717430115,
+    "source": "val_youden",
+    "n_pred_pos": 4826,
+    "n_true_pos": 1491
+  },
+  "per_class_chunk": {
+    "Abuse": {
+      "auc": 0.534207650273224,
+      "ap": 0.0009409614230449858,
+      "n_pos": 6
+    },
+    "Arrest": {
+      "auc": 0.8289172427414576,
+      "ap": 0.0659410525836301,
+      "n_pos": 166
+    },
+    "Arson": {
+      "auc": 0.8631360655737705,
+      "ap": 0.17670241870453895,
+      "n_pos": 240
+    },
+    "Assault": {
+      "auc": 0.9106898493128001,
+      "ap": 0.16214686069142015,
+      "n_pos": 99
+    },
+    "Burglary": {
+      "auc": 0.9257264603183997,
+      "ap": 0.24319181090049577,
+      "n_pos": 277
+    },
+    "Explosion": {
+      "auc": 0.8890191586016195,
+      "ap": 0.28838782175289246,
+      "n_pos": 83
+    },
+    "Fighting": {
+      "auc": 0.8794655119084441,
+      "ap": 0.026821197554423186,
+      "n_pos": 53
+    },
+    "RoadAccidents": {
+      "auc": 0.6244983606557377,
+      "ap": 0.010678184577796783,
+      "n_pos": 60
+    },
+    "Robbery": {
+      "auc": 0.688214858737356,
+      "ap": 0.01907001737168537,
+      "n_pos": 94
+    },
+    "Shooting": {
+      "auc": 0.8296989567809241,
+      "ap": 0.08369132656199087,
+      "n_pos": 121
+    },
+    "Shoplifting": {
+      "auc": 0.8174785827604443,
+      "ap": 0.04172628820961459,
+      "n_pos": 124
+    },
+    "Stealing": {
+      "auc": 0.8433026281550872,
+      "ap": 0.07515579604010375,
+      "n_pos": 126
+    },
+    "Vandalism": {
+      "auc": 0.9110226385636221,
+      "ap": 0.030393860990262797,
+      "n_pos": 42
+    }
+  },
+  "detection_latency": {
+    "mediana_s": 2.3666666666666667,
+    "p90_s": 3.8666666666666667,
+    "n_eventi": 276,
+    "n_mai_rilevati": 77
+  },
+  "video_prf": {
+    "precision": 0.7386363636363636,
+    "recall": 0.9285714285714286,
+    "f1": 0.8227848101265823,
+    "threshold": 0.12673720717430115,
+    "source": "val_youden",
+    "n_pred_pos": 176,
+    "n_true_pos": 140
+  },
+  "eval_split": "test",
+  "eval_precision": "bf16",
+  "n_eval_videos": 290,
+  "n_chunk_eval": 9116,
+  "threshold": {
+    "value": 0.12673720717430115,
+    "source": "val_youden",
+    "n_scores": 8383,
+    "n_negativi": 7389
+  },
+  "threshold_sensitivity": [
+    {
+      "quantile": 0.8,
+      "threshold": 0.2881355822086335,
+      "chunk_prf": {
+        "precision": 0.4363873208858011,
+        "recall": 0.6740442655935613,
+        "f1": 0.5297838692672641,
+        "threshold": 0.2881355822086335,
+        "source": "val",
+        "n_pred_pos": 2303,
+        "n_true_pos": 1491
+      }
+    },
+    {
+      "quantile": 0.9,
+      "threshold": 0.43121339678764337,
+      "chunk_prf": {
+        "precision": 0.5232100708103855,
+        "recall": 0.4460093896713615,
+        "f1": 0.4815351194786387,
+        "threshold": 0.43121339678764337,
+        "source": "val",
+        "n_pred_pos": 1271,
+        "n_true_pos": 1491
+      }
+    },
+    {
+      "quantile": 0.95,
+      "threshold": 0.5643237471580504,
+      "chunk_prf": {
+        "precision": 0.602510460251046,
+        "recall": 0.289738430583501,
+        "f1": 0.3913043478260869,
+        "threshold": 0.5643237471580504,
+        "source": "val",
+        "n_pred_pos": 717,
+        "n_true_pos": 1491
+      }
+    },
+    {
+      "quantile": 0.975,
+      "threshold": 0.6276799380779267,
+      "chunk_prf": {
+        "precision": 0.5535353535353535,
+        "recall": 0.18376928236083165,
+        "f1": 0.27593152064451154,
+        "threshold": 0.6276799380779267,
+        "source": "val",
+        "n_pred_pos": 495,
+        "n_true_pos": 1491
+      }
+    },
+    {
+      "quantile": 0.99,
+      "threshold": 0.668677258491516,
+      "chunk_prf": {
+        "precision": 0.533678756476684,
+        "recall": 0.1381623071763917,
+        "f1": 0.21949920085242408,
+        "threshold": 0.668677258491516,
+        "source": "val",
+        "n_pred_pos": 386,
+        "n_true_pos": 1491
+      }
+    }
+  ],
+  "event_prf": {
+    "precision": 0.5243445692883895,
+    "recall": 0.9384057971014492,
+    "f1": 0.6727709591531917,
+    "threshold": 0.12673720717430115,
+    "source": "val_youden",
+    "n_eventi": 276,
+    "n_eventi_rilevati": 259,
+    "n_allarmi": 267,
+    "n_allarmi_veri": 140,
+    "n_eventi_irraggiungibili": 0
+  },
+  "n_test_videos": 290,
+  "n_chunk_test": 9116,
+  "cache_hit_rate": 1.0,
+  "cache_hits": 9116,
+  "cache_misses": 0,
+  "seed": 42,
+  "protocol_version": "edp_v2",
+  "split_sha": "5e82820a94a7d8aa7b70c6905334e92d39ab4f8128a6aa0e3692663942e89ade",
+  "chunks": {
+    "train": {
+      "n_chunk": 88371,
+      "n_positivi": 9475,
+      "n_video": 1303,
+      "tasso_positivi_uniforme": 0.10721843138586187,
+      "tasso_positivi_pesato": 0.23773669393537278
+    },
+    "val": {
+      "n_chunk": 8383,
+      "n_positivi": 994,
+      "n_video": 306,
+      "tasso_positivi_uniforme": 0.11857330311344387,
+      "tasso_positivi_pesato": 0.15474208694416813
+    },
+    "test": {
+      "n_chunk": 9116,
+      "n_positivi": 1491,
+      "n_video": 290,
+      "tasso_positivi_uniforme": 0.16355857832382623,
+      "tasso_positivi_pesato": 0.15065221000705442
+    }
+  },
+  "n_chunk_train": 88371,
+  "n_chunk_val": 8383,
+  "train_sampling": "static",
+  "final_loss": 0.3642333298921585,
+  "trainable_params": 3073,
+  "lr": 0.0001,
+  "lr_selection": {
+    "lr": 0.0001,
+    "regime": "griglia_a_un_valore",
+    "provenance": "la griglia ha un solo punto: niente da scegliere",
+    "trials": [],
+    "n_val": 0
+  },
+  "steps": 5524,
+  "max_steps": 5524,
+  "budget_epochs": null,
+  "budget_cap_attivo": false,
+  "stopped_early": false,
+  "resumed_from": 5524,
+  "model_selection": {
+    "metric": "val_auroc",
+    "step": 4600,
+    "value": 0.7787059343474572,
+    "eval_every": 920
+  },
+  "val_auroc_finale": null,
+  "adapt": {
+    "family": "none",
+    "method": "frozen",
+    "n_targets": 0,
+    "n_trainable": 0,
+    "extra_tokens": 0,
+    "targets": [],
+    "notes": {}
+  },
+  "figura_training": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/e2c_ucf_vjepa21l_frozen-linear_s42/training.png"
+}

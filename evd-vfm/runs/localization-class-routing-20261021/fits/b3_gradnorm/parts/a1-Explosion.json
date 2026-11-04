@@ -1,0 +1,15 @@
+{
+  "identity": {
+    "pass_root": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/localization-class-routing-20261021/passes/b3_gradnorm",
+    "references_sha256": "8c06ea3b6df35b476d29daccedae757dfda4ed9f6357e9f89fe0d86b2ab77290",
+    "pure_sha256": "ecbdcfb503ee6072074cdd4e4f78ce47732f478f94c0f964e79fd18baf8f42c6",
+    "existing": null,
+    "part": "a1-Explosion"
+  },
+  "receipt": {
+    "chunks": 16,
+    "iterations": 1911,
+    "seconds": 1.321596106979996,
+    "peak_memory_mb": 1430.609375
+  }
+}

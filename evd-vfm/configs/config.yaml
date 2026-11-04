@@ -1,0 +1,60 @@
+# configs/config.yaml — la config RADICE: dice quali gruppi esistono, non che
+# valori hanno (ADR-005, docs/02 §6).
+#
+# I `???` nella defaults list sono "scelta obbligatoria" di Hydra: comporre senza
+# indicare un backbone non produce un default plausibile, produce un errore che
+# nomina il gruppo mancante. È la versione config-driven di "fail loudly, early".
+#
+# Un run ufficiale NON si lancia da qui a colpi di override: si lancia con
+# `+experiment=<nome>`, dove il file in configs/experiment/ fissa tutti i gruppi.
+# Il motivo sta in ADR-014: a settembre si deve poter risalire dal numero alla
+# config, e una riga di comando lunga non è un artefatto versionato.
+
+defaults:
+  - backbone: ???
+  - adapt: none
+  - head: ???
+  - data: ???
+  - protocol: ???
+  - train: ???
+  - eval: chunk_primary
+  # `none` e non `???`: ogni run eseguito prima di ADR-028 (tutto E0) girava
+  # senza augmentation, e quello resta il default che li descrive. Chi la accende
+  # lo dichiara nell'experiment, dove sta anche il `adapt.name` che la nomina nel
+  # run_id.
+  - augment: none
+  # Il logging su file lo gestisce il progetto, non Hydra: con la configurazione
+  # di default Hydra scrive `<job_name>.log` dentro `hydra.run.dir`, che qui è la
+  # radice del repository — cioè un artefatto sporco accanto al codice, e un
+  # secondo log accanto a quello del run. Il log di un run appartiene a
+  # runs/{run_id}/ (docs/02 §7).
+  - override hydra/job_logging: disabled
+  - _self_
+
+# --- identità del run ------------------------------------------------------
+# run_id := {exp}_{dataset}_{backbone}_{adapt}_{seed}  (docs/05 §8)
+# `k` e' uscito dal run_id il 27 agosto (ADR-031): il regime non e' piu'
+# few-shot. Il campo qui sotto NON e' letto da nessun codice.
+exp_id: ???
+k: na          # ⚠️ CAMPO MORTO, e si toglie a una finestra senza checkpoint.
+               # Nessun codice lo legge (ADR-031 l'ha tolto dal run_id), ma
+               # entra ancora nel `config_sha`: cancellarlo adesso
+               # invaliderebbe i checkpoint di E2 sul cluster, che e' il
+               # costo che ADR-047 ha gia' pagato una volta (~5,4 h di A100
+               # per un campo che 'non lo legge nessuno').
+seed: 1
+
+# --- dove si calcola -------------------------------------------------------
+# `null` = si deduce dalla macchina dove si esegue (evd.utils.env.device), non
+# si eredita dall'ambiente del login node: con --export=ALL quell'ambiente entra
+# nel job e sembra legittimo (job 531599, 11 agosto).
+device: null
+runs_dir: null   # null → $EVD_RUNS_DIR (hpc/env.sh). Gitignored: ADR-009/ADR-020.
+
+hydra:
+  job:
+    chdir: false   # vincolo d'uso di ADR-005: i path relativi restano relativi al repo
+  run:
+    dir: .
+  output_subdir: null   # niente .hydra/ accanto ai risultati: la config risolta la
+                        # scrive il tracker in runs/{run_id}/config.yaml

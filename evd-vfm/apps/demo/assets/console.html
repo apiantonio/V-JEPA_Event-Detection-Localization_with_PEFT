@@ -1,0 +1,1222 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>EVD Studio · Video analysis</title>
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #101419;
+            --panel: #181e26;
+            --line: #2c3541;
+            --text: #edf2f7;
+            --muted: #a2afbe;
+            --accent: #72dfbc;
+            --danger: #ff9c8d;
+            font: 15px/1.5 "Segoe UI", system-ui, sans-serif
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text)
+        }
+
+        button,
+        input,
+        select {
+            font: inherit
+        }
+
+        button,
+        select,
+        input {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #11171e;
+            color: var(--text);
+            padding: 11px 13px
+        }
+
+        button {
+            cursor: pointer
+        }
+
+        button:hover {
+            border-color: var(--accent)
+        }
+
+        button:disabled {
+            opacity: .45;
+            cursor: default
+        }
+
+        button.primary {
+            background: var(--accent);
+            color: #10231d;
+            font-weight: 650;
+            border: 0
+        }
+
+        input,
+        select {
+            width: 100%
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            color: var(--muted);
+            margin: 17px 0 7px
+        }
+
+        a {
+            color: var(--accent)
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px
+        }
+
+        [hidden] {
+            display: none !important
+        }
+
+        header {
+            height: 76px;
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 32px;
+            gap: 20px
+        }
+
+        .brand {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -.5px
+        }
+
+        .brand span {
+            color: var(--accent)
+        }
+
+        .badge {
+            font-size: 12px;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        .badge:before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--accent)
+        }
+
+        header button {
+            padding: 7px 14px
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 330px minmax(0, 1fr);
+            min-height: calc(100vh - 76px)
+        }
+
+        aside {
+            border-right: 1px solid var(--line);
+            padding: 28px 24px;
+            background: #141920
+        }
+
+        .eyebrow {
+            color: var(--accent);
+            font-size: 11px;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            font-weight: 650
+        }
+
+        h1 {
+            font-size: 30px;
+            line-height: 1.2;
+            letter-spacing: -.8px;
+            margin: 12px 0
+        }
+
+        h2 {
+            font-size: 17px;
+            font-weight: 600;
+            margin: 0
+        }
+
+        p {
+            color: var(--muted);
+            margin: 9px 0 20px
+        }
+
+        .tabs {
+            display: flex;
+            gap: 4px;
+            margin: 24px 0 20px;
+            background: var(--bg);
+            padding: 4px;
+            border: 1px solid var(--line);
+            border-radius: 10px
+        }
+
+        .tabs button {
+            flex: 1;
+            border: 0;
+            background: none;
+            padding: 9px 5px;
+            font-size: 13px
+        }
+
+        .tabs button[aria-selected=true] {
+            background: #2a3540;
+            color: var(--accent)
+        }
+
+        .hint {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.6
+        }
+
+        .notice {
+            border: 1px solid #62503b;
+            background: #2b251e;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #eed2a3;
+            overflow-wrap: anywhere;
+            margin-top: 16px
+        }
+
+        .wide {
+            width: 100%;
+            margin-top: 20px
+        }
+
+        details {
+            margin-top: 22px;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        summary {
+            cursor: pointer
+        }
+
+        details p {
+            margin: 10px 0
+        }
+
+        main {
+            min-width: 0;
+            padding: 30px 32px
+        }
+
+        .title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px
+        }
+
+        .counter {
+            font-size: 12px;
+            color: var(--muted)
+        }
+
+        .filters {
+            display: grid;
+            grid-template-columns: 1fr 170px;
+            gap: 12px;
+            margin: 24px 0 18px
+        }
+
+        .library {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
+            gap: 12px;
+            max-height: calc(100vh - 305px);
+            overflow: auto;
+            padding: 3px
+        }
+
+        .card {
+            text-align: left;
+            min-width: 0;
+            padding: 18px;
+            background: var(--panel);
+            transition: background .15s
+        }
+
+        .card[aria-pressed=true] {
+            border-color: var(--accent);
+            background: #1b302b;
+            box-shadow: inset 3px 0 var(--accent)
+        }
+
+        .card strong {
+            display: block;
+            font-size: 14px;
+            overflow-wrap: anywhere;
+            margin: 13px 0 8px
+        }
+
+        .card small {
+            color: var(--muted);
+            font-size: 12px
+        }
+
+        .tags {
+            display: flex;
+            gap: 6px
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--accent)
+        }
+
+        .video-icon {
+            border: 1px solid #41545c;
+            width: 32px;
+            height: 26px;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 24px;
+            font-size: 12px
+        }
+
+        .tag {
+            font-size: 10px;
+            letter-spacing: .6px;
+            color: var(--muted);
+            text-transform: uppercase
+        }
+
+        .empty {
+            padding: 60px 25px;
+            border: 1px dashed var(--line);
+            border-radius: 12px;
+            text-align: center
+        }
+
+        .empty h2 {
+            font-size: 21px
+        }
+
+        .empty p {
+            max-width: 460px;
+            margin: 12px auto
+        }
+
+        .drop {
+            border: 1px dashed #4b655e;
+            border-radius: 12px;
+            padding: 42px;
+            text-align: center;
+            background: #17221f;
+            margin-top: 24px
+        }
+
+        .drop input {
+            max-width: 440px;
+            margin: 14px auto
+        }
+
+        .drop h2 {
+            font-size: 23px
+        }
+
+        .drop p {
+            margin-bottom: 5px
+        }
+
+        .preview {
+            display: block;
+            width: 100%;
+            max-height: 420px;
+            background: black;
+            margin-top: 20px;
+            border-radius: 10px
+        }
+
+        .status {
+            padding: 14px 18px;
+            border: 1px solid var(--line);
+            border-radius: 9px;
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+            background: var(--panel);
+            margin: 0 0 18px;
+            font-size: 13px
+        }
+
+        .status.error {
+            border-color: #8b4b43;
+            color: #ffb9ad
+        }
+
+        .resultbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 16px
+        }
+
+        .resultbar p {
+            margin: 3px 0 0;
+            font-size: 12px
+        }
+
+        iframe {
+            display: block;
+            width: 100%;
+            height: calc(100vh - 185px);
+            min-height: 650px;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: var(--bg)
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 20px
+        }
+
+        .step {
+            border-top: 1px solid var(--line);
+            padding-top: 16px;
+            font-size: 13px;
+            color: var(--muted)
+        }
+
+        .step b {
+            color: var(--accent);
+            display: block;
+            margin-bottom: 6px
+        }
+
+        .busy {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent)
+        }
+
+        .busy:before {
+            content: "";
+            width: 14px;
+            height: 14px;
+            border: 2px solid #3f6558;
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        @media(max-width:1000px) {
+            .layout {
+                grid-template-columns: 280px minmax(0, 1fr)
+            }
+
+            main {
+                padding: 25px 20px
+            }
+
+            aside {
+                padding: 25px 18px
+            }
+
+            .filters {
+                grid-template-columns: 1fr
+            }
+
+            .library {
+                max-height: 65vh
+            }
+
+            .steps {
+                grid-template-columns: 1fr
+            }
+        }
+
+        @media(max-width:720px) {
+            header {
+                padding: 0 18px
+            }
+
+            .layout {
+                display: block
+            }
+
+            aside {
+                border-right: 0;
+                border-bottom: 1px solid var(--line)
+            }
+
+            h1 {
+                font-size: 26px
+            }
+
+            .library {
+                max-height: none
+            }
+
+            .badge {
+                display: none
+            }
+
+            iframe {
+                height: 1100px
+            }
+
+            .drop {
+                padding: 24px 15px
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            * {
+                animation: none !important;
+                transition: none !important
+            }
+        }
+
+        .layout.collapsed {
+            grid-template-columns: minmax(0, 1fr)
+        }
+
+        .layout.collapsed>aside {
+            display: none
+        }
+
+        .rt-video-wrap {
+            position: relative;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 18px
+        }
+
+        .rt-video-wrap video {
+            display: block;
+            width: 100%;
+            max-height: 50vh
+        }
+
+        .rt-alert {
+            position: absolute;
+            left: 16px;
+            top: 16px;
+            background: #172b25e8;
+            color: #9af0cc;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-weight: 600
+        }
+
+        .rt-alert.anomaly {
+            background: #8b251fee;
+            color: #fff
+        }
+
+        .rt-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+            gap: 12px;
+            margin: 16px 0
+        }
+
+        .rt-stats>div {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            color: var(--muted)
+        }
+
+        .rt-stats b {
+            display: block;
+            font-size: 20px;
+            color: var(--text);
+            font-variant-numeric: tabular-nums
+        }
+
+        .rt-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px
+        }
+
+        .rt-table td,
+        .rt-table th {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .rt-table .anomaly {
+            color: var(--danger)
+        }
+
+        #rt-timeline {
+            width: 100%;
+            height: 190px;
+            display: block
+        }
+
+        #rt-state {
+            margin: 8px 0
+        }
+
+        .rt-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap
+        }
+
+        .video-metrics h3 {
+            font-size: 15px;
+            margin: 16px 0 8px
+        }
+
+        .metric-values {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 5px 15px;
+            font-size: 13px
+        }
+
+        .metric-values dd {
+            margin: 0;
+            text-align: right
+        }
+
+        .metric-values dt {
+            color: var(--muted)
+        }
+
+        .metrics-dialog {
+            width: min(680px, 92vw);
+            max-height: 85vh;
+            overflow: auto;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 20px 80px #0008
+        }
+
+        .metrics-dialog::backdrop {
+            background: #0009
+        }
+
+        .metrics-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px
+        }
+
+        .metrics-header h2 {
+            margin: 0
+        }
+
+        .metrics-header button {
+            flex-shrink: 0
+        }
+
+        .metrics-dialog {
+            background: var(--panel);
+            color: var(--text);
+            border: 1px solid var(--line)
+        }
+
+        .layout {
+            height: calc(100dvh - 76px);
+            min-height: 0
+        }
+
+        .layout>aside {
+            overflow: auto;
+            min-height: 0
+        }
+
+        main {
+            height: 100%;
+            min-height: 0;
+            overflow: auto;
+            padding: 12px 16px;
+            display: flex;
+            flex-direction: column
+        }
+
+        .status {
+            max-height: 70px;
+            overflow: auto;
+            flex-shrink: 0;
+            padding: 8px;
+            margin-bottom: 8px
+        }
+
+        #result,
+        #realtime-panel {
+            flex: 1;
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden
+        }
+
+        .resultbar {
+            margin-bottom: 8px;
+            flex-shrink: 0
+        }
+
+        iframe {
+            flex: 1;
+            height: 0;
+            min-height: 0
+        }
+
+        .rt-actions {
+            gap: 6px;
+            flex-shrink: 0
+        }
+
+        .rt-actions button {
+            padding: 6px 9px;
+            font-size: 12px
+        }
+
+        #rt-state {
+            font-size: 12px;
+            margin: 3px 0
+        }
+
+        #rt-name {
+            font-size: 15px
+        }
+
+        #realtime-panel>.eyebrow {
+            display: none
+        }
+
+        .rt-workspace {
+            flex: 1;
+            min-height: 0;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) clamp(220px, 28%, 320px);
+            grid-template-rows: minmax(0, 1fr) 190px;
+            gap: 10px;
+            margin-top: 8px
+        }
+
+        .rt-video-wrap {
+            margin: 0;
+            min-height: 0
+        }
+
+        .rt-video-wrap video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            max-height: none;
+            object-fit: contain
+        }
+
+        .rt-side {
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            overflow: hidden
+        }
+
+        .rt-stats {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 4px;
+            margin: 0;
+            flex-shrink: 0
+        }
+
+        .rt-stats>div {
+            padding: 5px 8px;
+            font-size: 10px
+        }
+
+        .rt-stats b {
+            font-size: 15px
+        }
+
+        .rt-events {
+            flex: 1;
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            overflow: hidden
+        }
+
+        .rt-events h2 {
+            font-size: 12px;
+            padding: 6px
+        }
+
+        .rt-event-scroll {
+            flex: 1;
+            min-height: 0;
+            overflow: auto;
+            overscroll-behavior: contain
+        }
+
+        .rt-table {
+            font-size: 11px
+        }
+
+        .rt-table th,
+        .rt-table td {
+            padding: 5px
+        }
+
+        .rt-table th {
+            position: sticky;
+            top: 0;
+            background: var(--panel)
+        }
+
+        .rt-deck {
+            grid-column: 1/-1;
+            min-height: 0
+        }
+
+        .rt-deck>.hint {
+            display: none
+        }
+
+        .rt-workspace.no-side {
+            grid-template-columns: minmax(0, 1fr)
+        }
+
+        .rt-workspace.no-side .rt-side {
+            display: none
+        }
+
+        .rt-workspace.no-deck {
+            grid-template-rows: minmax(0, 1fr)
+        }
+
+        .rt-workspace.no-deck .rt-deck {
+            display: none
+        }
+
+        #realtime-panel:fullscreen {
+            height: 100dvh;
+            width: 100vw;
+            background: var(--bg);
+            padding: 12px
+        }
+
+        .rt-actions button[aria-pressed=false] {
+            opacity: .55
+        }
+
+        @media(max-width:720px) {
+            .layout {
+                display: grid;
+                grid-template-columns: 220px minmax(0, 1fr)
+            }
+
+            .layout.collapsed {
+                grid-template-columns: minmax(0, 1fr)
+            }
+
+            main {
+                padding: 8px
+            }
+
+            .rt-workspace {
+                grid-template-columns: minmax(0, 1fr) 200px
+            }
+        }
+
+        header {
+            height: 38px;
+            padding: 0 16px
+        }
+
+        .brand {
+            font-size: 16px;
+            margin-left: 125px
+        }
+
+        .badge {
+            font-size: 11px
+        }
+
+        .layout {
+            height: calc(100dvh - 38px)
+        }
+
+        .layout>aside {
+            padding: 10px 16px
+        }
+
+        #toggle-sidebar {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 8px
+        }
+
+        #show-sidebar {
+            display: none;
+            position: absolute;
+            left: 6px;
+            top: 4px;
+            padding: 4px 8px;
+            font-size: 11px;
+            z-index: 5
+        }
+
+        .collapsed #show-sidebar {
+            display: block
+        }
+
+        main {
+            padding: 4px 8px
+        }
+
+        .resultbar {
+            margin: 0 0 3px;
+            min-height: 24px
+        }
+
+        .resultbar h2 {
+            font-size: 12px
+        }
+
+        .resultbar p {
+            display: none
+        }
+
+        .resultbar button {
+            padding: 3px 8px;
+            font-size: 11px
+        }
+
+        #selection {
+            color: var(--text);
+            font-size: 13px;
+            overflow-wrap: anywhere
+        }
+
+        .card small {
+            display: block;
+            color: var(--accent);
+            font-size: 13px
+        }
+
+        .status:has(+ #browse[hidden]) {
+            padding: 3px 8px;
+            margin-bottom: 3px;
+            max-height: 28px;
+            font-size: 11px
+        }
+
+        #rt-name {
+            display: none
+        }
+
+        #rt-state {
+            margin: 0;
+            font-size: 11px
+        }
+
+        .rt-workspace {
+            margin-top: 4px
+        }
+
+        .rt-actions button {
+            padding: 4px 7px
+        }
+
+        button {
+            font-family: "Segoe UI", system-ui, sans-serif
+        }
+
+        #help {
+            padding: 3px 12px;
+            line-height: 20px;
+            margin: 5px 0
+        }
+
+        header {
+            height: auto;
+            min-height: 38px
+        }
+
+        .resultbar {
+            display: none
+        }
+
+        #guide {
+            background: var(--panel);
+            color: var(--text);
+            border: 1px solid var(--line)
+        }
+
+        #guide p {
+            margin: 16px 0
+        }
+
+        kbd {
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            padding: 1px 5px
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="brand">EVD <span>Studio</span></div>
+        <div class="badge">Local workspace · videos stay on this PC</div><button id="help" aria-haspopup="dialog"
+            aria-controls="guide">How to use</button>
+    </header>
+    <div class="layout" id="layout">
+        <aside id="sidebar"><button id="toggle-sidebar" aria-controls="sidebar" aria-expanded="true">Hide
+                panel</button>
+            <div class="eyebrow">Video anomaly detection</div>
+            <h1>From video<br>to result.</h1>
+            <p class="hint">Choose a model and a video. Explore the scores over time and the alarm intervals.</p>
+            <label for="run">Model and seed</label><select id="run" disabled>
+                <option>Loading models…</option>
+            </select>
+            <div class="tabs" role="tablist" aria-label="Mode"><button role="tab" id="replay-tab"
+                    aria-selected="true">Video library</button><button role="tab" id="live-tab"
+                    aria-selected="false">New analysis</button></div>
+            <p id="mode-hint" class="hint">Shows the scores already computed by the model. Works without a GPU and
+                without loading the weights.</p>
+            <div id="requirements" class="notice" hidden></div>
+            <label><input type="checkbox" id="realtime" style="width:auto"> Live analysis (1×)</label>
+            <p class="hint">Video and timeline update during the computation. Requires the local model.</p>
+            <label id="recompute-label"><input type="checkbox" id="recompute" style="width:auto"> Recompute the
+                selected video</label>
+            <div id="live-options" hidden><label for="window">Window (seconds)</label><input id="window" required
+                    type="number" min="0.001" step="any" value="8">
+                <p class="hint">32 frames spread over the window; the hop cannot exceed the duration.</p><label
+                    for="hop">Hop (seconds)</label><input id="hop" required type="number" min="0.001" step="any"
+                    inputmode="decimal">
+                <p class="hint">Interval between windows. A smaller hop needs more computation. The threshold stays the
+                    model one.</p><label for="device">Local compute</label><select id="device">
+                    <option value="auto">Automatic · GPU if available</option>
+                    <option value="cpu">CPU · compatible, slower</option>
+                    <option value="cuda">NVIDIA GPU · needs enough memory</option>
+                </select><label for="backbone">V-JEPA weights file (optional)</label><input id="backbone"
+                    placeholder="C:\…\vjepa2_1_vitl_dist_vitG_384.pt">
+                <p class="hint">Enter the local path if the one recorded in the run belongs to the cluster.</p>
+            </div>
+            <button class="primary wide" id="analyze" disabled>Open the selected video</button><button
+                class="primary wide" id="back" hidden>Change video</button><button class="primary wide" id="rt-back"
+                disabled hidden>Change video</button><button class="wide" id="cancel" hidden>Cancel analysis</button>
+            <p class="hint" id="selection">No video selected.</p>
+
+        </aside>
+        <main><button id="show-sidebar">Show panel</button>
+            <div id="status" class="status" role="status" aria-live="polite" hidden></div>
+            <section id="browse">
+                <div class="title-row">
+                    <div>
+                        <div class="eyebrow">Library</div>
+                        <h2 style="font-size:24px;margin-top:8px">Choose your video</h2>
+                    </div><span class="counter" id="count"></span>
+                </div>
+                <div class="filters"><input type="search" id="search" aria-label="Search videos"
+                        placeholder="Search by name, e.g. Arson…"><select id="split" aria-label="Partition">
+                        <option value="test">Test</option>
+                        <option value="train">Train</option>
+                        <option value="val">Validation</option>
+                        <option value="all">All partitions</option>
+                    </select><select id="category" aria-label="Video type">
+                        <option value="all">All types</option>
+                        <option value="normal">Normal</option>
+                        <option value="anomalous">Anomalous</option>
+                        <option value="boxes">With localization boxes</option>
+                    </select></div>
+                <div class="library" id="library" aria-label="Available videos"></div>
+                <div class="steps">
+                    <div class="step"><b>01 · Select</b>The library shows the dataset videos available on this PC.
+                    </div>
+                    <div class="step"><b>02 · Play</b>Video, scores and alarms follow the same instant.</div>
+                    <div class="step"><b>03 · Explore</b>Jump between alarms and compare them with the annotations.</div>
+                </div>
+            </section>
+            <section id="upload-panel" hidden>
+                <div class="eyebrow">A new video</div>
+                <h2 style="font-size:24px;margin-top:8px">Open a file from the PC</h2>
+                <div class="drop">
+                    <h2>Your video, locally.</h2>
+                    <p>Select a file. Nothing is uploaded to external services.</p><input id="file" type="file"
+                        accept="video/*,.mkv,.avi" aria-label="Select a video from the PC">
+                    <p class="hint">MP4 recommended for browser playback · at most 2 GB</p>
+                </div><video class="preview" id="preview" controls hidden></video>
+            </section>
+            <section id="realtime-panel" hidden>
+                <div class="eyebrow">Live analysis on the PC</div>
+                <h2 id="rt-name">Local live</h2>
+                <p id="rt-state" role="status" aria-live="polite"></p>
+                <div class="rt-actions"><button id="rt-side-toggle" aria-pressed="true">Scores / events</button><button
+                        id="rt-deck-toggle" aria-pressed="true">Timeline</button><button id="rt-fullscreen">Full
+                        screen</button><button id="rt-play" class="primary" disabled>Start video</button><button
+                        id="rt-stop">Cancel live</button><button id="rt-metrics-open" aria-haspopup="dialog"
+                        aria-controls="rt-metrics-dialog">Metrics</button><button id="rt-final" hidden>Open full
+                        result</button></div>
+                <div class="rt-workspace" id="rt-workspace">
+                    <div class="rt-video-wrap"><video id="rt-video" playsinline muted preload="auto"
+                            disablepictureinpicture></video>
+                        <div id="rt-alert" class="rt-alert" role="status" aria-live="polite">Waiting for the first
+                            window</div>
+                    </div>
+                    <div class="rt-side">
+                        <div class="rt-stats">
+                            <div>Current score<b id="rt-score">-</b></div>
+                            <div>Analysed windows<b id="rt-count">0</b></div>
+                            <div>Video time<b id="rt-clock">0 s</b></div>
+                            <div>Analysed up to<b id="rt-coverage">Waiting</b></div>
+                            <div>Distance from the video<b id="rt-lag">0 s</b></div>
+                            <div>Last window compute<b id="rt-compute">-</b></div>
+                        </div>
+                        <div class="rt-events">
+                            <h2>Last 30 windows</h2>
+                            <div class="rt-event-scroll">
+                                <table class="rt-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Window</th>
+                                            <th>Video interval</th>
+                                            <th>Score</th>
+                                            <th>Outcome</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="rt-list"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rt-deck"><canvas id="rt-timeline" role="img"
+                            aria-label="Progressive score timeline; details in the following table"></canvas>
+                        <p class="hint">Red dots: windows above threshold. The curve grows only with new scores. The
+                            distance from the video includes waiting for the window and the computation; the video
+                            keeps playing even if the model falls behind.</p>
+                    </div>
+                </div>
+                <dialog id="rt-metrics-dialog" class="metrics-dialog" aria-labelledby="rt-metrics-title">
+                    <div class="metrics-header">
+                        <h2 id="rt-metrics-title">Model and video metrics</h2><button id="rt-metrics-close"
+                            autofocus>Close</button>
+                    </div>
+                    <div id="rt-metrics" class="video-metrics"></div>
+                </dialog>
+            </section>
+            <section id="result" hidden>
+                <div class="resultbar">
+                    <div>
+                        <h2 id="result-title">Result</h2>
+                        <p id="result-mode"></p>
+                    </div>
+                </div><iframe id="viewer" title="Video, scores and timeline" allow="fullscreen"></iframe>
+            </section>
+        </main>
+    </div>
+
+    <dialog id="guide" class="metrics-dialog" aria-labelledby="guide-title">
+        <div class="metrics-header">
+            <h2 id="guide-title">How to use</h2><button id="help-close" autofocus>Close</button>
+        </div>
+        <p><b>1.</b> Choose the model from the menu.</p>
+        <p><b>2.</b> Select a library video and press Open.</p>
+        <p><b>3.</b> Press Play. Click the timeline or an alarm to reach it.</p>
+        <p>The score measures the anomaly. The threshold comes from the model validation. Classes, when present, are
+            dataset annotations.</p>
+        <p>«New analysis» runs the model on a file from the PC and needs the trained weights. On CPU it can take a long
+            time.</p>
+        <p>To stop the service, press Ctrl+C in the launcher window.</p>
+        <p>Streaming replays the saved scores progressively: running windows fill up progressively and the score
+            appears only when they close. «Live analysis» instead computes new scores on the PC.</p>
+        <h3>Keyboard shortcuts</h3>
+        <p>In the video player, after clicking the video or the timeline:</p>
+        <dl class="metric-values">
+            <dt><kbd>Space</kbd></dt>
+            <dd>Play / pause</dd>
+            <dt><kbd>←</kbd> / <kbd>→</kbd></dt>
+            <dd>Back / forward by 1 second</dd>
+            <dt><kbd>[</kbd> / <kbd>]</kbd></dt>
+            <dd>Previous / next alarm</dd>
+            <dt><kbd>0</kbd></dt>
+            <dd>Back to the start</dd>
+            <dt><kbd>Esc</kbd></dt>
+            <dd>Close the popup or exit full screen</dd>
+            <dt><kbd>Tab</kbd> and <kbd>Enter</kbd></dt>
+            <dd>Select and activate buttons</dd>
+        </dl>
+        <p>Streaming supports all shortcuts, timeline seeking and speed changes too. The Annotations button shows or
+            hides the dataset intervals on the timeline and on the video. In live analysis use the Start video / Pause
+            button. Player shortcuts are disabled while a field, a menu or a button is in use.</p>
+    </dialog>
+    <script src="/assets/metrics.js"></script>
+    <script src="/assets/realtime.js"></script>
+    <script>
+        const $ = id => document.getElementById(id); let mode = 'replay', videos = [], partitionLabels = {}, selected = null, upload = null, ready = false, job = null, version = 0, uploading = false, launching = false, realtimeJob = false, progressOffset = 0, configurableWindow = true;
+        function show(message, error = false) { $('status').hidden = !message; $('status').textContent = message; $('status').classList.toggle('error', error) }
+        async function api(url, data) { const response = await fetch(url, data === undefined ? {} : { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-EVD-Console': '1' }, body: JSON.stringify(data) }); const result = await response.json(); if (!response.ok) throw new Error(result.message); return result }
+        function label(id) { const heads = { s: 'summed losses', g: 'GradNorm' }, b3 = id.match(/^lcb3([sg])_/); const suffix = b3 ? ' + multiclass head, ' + heads[b3[1]] : ''; return id.replace(/^(e[23][a-z]?|lcb3[sg])_ucf_vjepa21l_/, '').replace(/_s(\d+)$/, suffix + ' · seed $1') }
+        function needsLive() { return $('realtime').checked || mode === 'live' || $('recompute').checked || !!(selected && !videos.find(v => v.id === selected)?.replay) }
+        function videoDetails(v) { const t = Math.round(v.duration_s || 0); return 'Duration: ' + (t ? Math.floor(t / 60) + ':' + String(t % 60).padStart(2, '0') : 'n/a') + ' | Saved chunks: ' + (v.saved_windows ?? 'not available'); }
+        function enable() { const opened = !$('result').hidden, liveOpened = !$('realtime-panel').hidden; $('analyze').hidden = opened || liveOpened; $('back').hidden = !opened; $('rt-back').hidden = !liveOpened; const busy = !!job || uploading || launching; $('analyze').disabled = busy || !$('run').value || (mode === 'replay' ? !selected : !upload) || (needsLive() && !ready); $('live-options').hidden = !needsLive(); $('requirements').hidden = !needsLive() || ready; $('recompute-label').hidden = mode !== 'replay'; $('recompute').disabled = busy; $('realtime').disabled = busy; for (const id of ['split', 'category', 'search']) $(id).disabled = busy; $('hop').disabled = busy; $('window').disabled = busy || !configurableWindow; $('device').disabled = busy; $('backbone').disabled = busy; $('run').disabled = busy; $('file').disabled = busy; $('cancel').hidden = !job; for (const id of ['live-tab', 'replay-tab']) $(id).disabled = busy; $('selection').textContent = mode === 'replay' ? (selected ? selected + ' - ' + videoDetails(videos.find(v => v.id === selected) || {}) : 'No video selected.') : (upload ? upload.name : 'No file selected.'); $('analyze').textContent = $('realtime').checked ? 'Prepare live' : needsLive() ? 'Analyse the video' : 'Open the selected video'; }
+        function browse() { EVDLive.stop(); $('realtime-panel').hidden = true; $('result').hidden = true; $('viewer').src = 'about:blank'; $('browse').hidden = mode !== 'replay'; $('upload-panel').hidden = mode !== 'live'; enable(); }
+        function setMode(next) { if (job || uploading || launching) return; mode = next; browse(); $('replay-tab').setAttribute('aria-selected', mode === 'replay'); $('live-tab').setAttribute('aria-selected', mode === 'live'); $('live-options').hidden = mode !== 'live'; $('requirements').hidden = mode !== 'live' || ready; $('mode-hint').textContent = mode === 'replay' ? 'Shows the scores already computed by the model. Works without a GPU and without loading the weights.' : 'Computes new scores with the trained model. The file is copied into the local demonstrator folder.'; enable(); }
+        function render() { const search = $('search').value.toLowerCase(), split = $('split').value; const available = videos.filter(v => v.available); const rows = available.filter(v => v.id.toLowerCase().includes(search) && (split === 'all' || v.split === split) && ($('category').value === 'all' || ($('category').value === 'boxes' ? v.boxes : $('category').value === 'normal' ? v.normal : !v.normal))); $('count').textContent = rows.length + ' videos'; $('library').replaceChildren(); for (const v of rows) { const b = document.createElement('button'); b.className = 'card'; b.setAttribute('aria-pressed', v.id === selected); const top = document.createElement('div'); top.className = 'card-top'; const icon = document.createElement('span'); icon.className = 'video-icon'; icon.textContent = '▶'; const tag = document.createElement('span'); tag.className = 'tag'; tag.textContent = v.split === 'val' ? 'Validation' : partitionLabels[v.split] || v.split; const tags = document.createElement('span'); tags.className = 'tags'; tags.append(tag); if (v.boxes) { const boxTag = document.createElement('span'); boxTag.className = 'tag'; boxTag.textContent = 'boxes'; boxTag.title = 'Saved localization boxes'; tags.append(boxTag) } top.append(icon, tags); const name = document.createElement('strong'); name.textContent = v.id; const sub = document.createElement('small'); sub.textContent = videoDetails(v); b.append(top, name, sub); b.onclick = () => { if (job || launching) return; selected = v.id; render(); enable() }; $('library').append(b) } if (!rows.length) { const empty = document.createElement('div'); empty.className = 'empty'; empty.textContent = available.length ? 'No video matches the filters. Try another name or select all partitions.' : 'No video with scores is present in the local folders. See the guide to add a video folder.'; $('library').append(empty) } }
+        function setPartitions(list) { partitionLabels = Object.fromEntries(list.map(p => [p.id, p.label])); const select = $('split'), keep = select.value; select.querySelectorAll('option[data-external]').forEach(o => o.remove()); for (const p of list) { const o = document.createElement('option'); o.value = p.id; o.textContent = p.label; o.dataset.external = '1'; select.insertBefore(o, select.querySelector('option[value=all]')) } select.value = [...select.options].some(o => o.value === keep) ? keep : 'test' }
+        async function loadVideos() { const current = ++version; selected = null; videos = []; ready = false; render(); enable(); show('Reading the model results…'); try { const data = await api('/api/videos?run=' + encodeURIComponent($('run').value)); if (current !== version) return; videos = data.videos; ready = data.live; setPartitions(data.partitions || []); $('backbone').value = data.backbone || ''; $('hop').value = data.hop_s; $('window').value = data.window_s ?? 8; configurableWindow = data.window_configurable !== false; $('requirements').textContent = 'To analyse new videos, copy the trained checkpoint from the cluster to: ' + data.checkpoint; $('requirements').hidden = mode !== 'live' || ready; render(); enable(); show('') } catch (e) { if (current === version) show(e.message, true) } }
+        $('recompute').onchange = enable; $('realtime').onchange = enable;
+        $('show-sidebar').onclick = () => $('toggle-sidebar').click(); $('run').onchange = () => { browse(); loadVideos() }; $('search').oninput = render; $('split').onchange = () => { selected = null; render(); enable() }; $('category').onchange = () => { selected = null; render(); enable() }; $('replay-tab').onclick = () => setMode('replay'); $('live-tab').onclick = () => setMode('live'); $('back').onclick = browse; $('rt-back').onclick = browse; $('rt-stop').onclick = () => { $('cancel').click() }; $('toggle-sidebar').onclick = () => { const hidden = $('layout').classList.toggle('collapsed'); $('toggle-sidebar').setAttribute('aria-expanded', String(!hidden)); $('toggle-sidebar').textContent = hidden ? 'Show panel' : 'Hide panel' }; EVDMetrics.bindPopup($('guide'), $('help'), $('help-close'));
+        $('file').onchange = async () => { const file = $('file').files[0]; upload = null; enable(); $('preview').hidden = true; if (!file) return; if (file.size > 2 * 1024 ** 3) { show('The file exceeds the 2 GB limit.', true); return } uploading = true; enable(); show('Copying the video into the local workspace…'); try { const response = await fetch('/api/upload', { method: 'POST', headers: { 'X-EVD-Console': '1', 'X-Filename': encodeURIComponent(file.name) }, body: file }); const data = await response.json(); if (!response.ok) throw new Error(data.message); upload = data; $('preview').src = data.url; $('preview').hidden = false; show(ready ? 'Video ready. Press Analyse.' : 'Video opened. Computing the scores needs the weights shown on the left.'); enable() } catch (e) { show(e.message, true) } finally { uploading = false; enable() } };
+        $('preview').onerror = () => show('The browser cannot play this codec. Try an MP4 copy with H.264 video. The original file is kept.', true);
+        $('analyze').onclick = async () => { if (needsLive() && (!$('hop').reportValidity() || !$('window').reportValidity())) return; show(mode === 'replay' ? 'Preparing the video and the timeline…' : 'Analysis in progress. On CPU the computation can take several minutes per window.'); launching = true; enable(); try { const result = await api('/api/analyze', { run: $('run').value, realtime: $('realtime').checked, mode: needsLive() ? 'live' : 'replay', hop_s: needsLive() ? Number($('hop').value) : undefined, window_s: needsLive() && configurableWindow ? Number($('window').value) : undefined, video: selected, upload: mode === 'live' ? upload?.token : undefined, device: $('device').value, backbone: $('backbone').value.trim() }); job = result.id; realtimeJob = result.realtime; progressOffset = 0; if (realtimeJob) { $('preview').pause(); $('browse').hidden = true; $('upload-panel').hidden = true; $('result').hidden = true; EVDLive.start(result, api); show('') } poll(job) } catch (e) { show(e.message, true) } finally { launching = false; enable() } };
+        async function poll(id) { try { const data = await api('/api/job?id=' + id + (realtimeJob ? '&after=' + progressOffset : '')); if (job !== id) return; if (realtimeJob) { EVDLive.update(data.events); progressOffset = data.next ?? progressOffset; } if (data.more) { setTimeout(() => poll(id), 0); return; } if (data.state === 'running') { setTimeout(() => poll(id), realtimeJob ? 250 : 1000); return } job = null; enable(); if (realtimeJob) { EVDLive.finish(data); if (data.state === 'error') show(data.message, true); return; } if (data.state === 'done') { $('preview').pause(); $('browse').hidden = true; $('upload-panel').hidden = true; $('result').hidden = false; $('result-title').textContent = mode === 'replay' ? selected : upload.name; $('result-mode').textContent = label($('run').value) + ' · ' + (needsLive() ? 'New local inference' : 'Saved results'); $('viewer').src = data.url; enable(); show('') } else show(data.state === 'cancelled' ? 'Analysis cancelled. You can choose another video.' : data.message, data.state === 'error') } catch (e) { if (realtimeJob) { EVDLive.finish({ state: 'error' }); api('/api/cancel', { id }).catch(() => { }); } job = null; enable(); show('Connection to the local service lost. Reopen the demonstrator. ' + e.message, true) } }
+        $('cancel').onclick = async () => { try { await api('/api/cancel', { id: job }) } catch (e) { show(e.message, true) } };
+        (async () => { try { const data = await api('/api/catalog'); $('run').replaceChildren(); for (const run of data.runs) { const option = document.createElement('option'); option.value = run.id; option.textContent = label(run.id); $('run').append(option) } if (!data.runs.length) { show('There are no models with results. Copy a run folder with config.yaml, metrics.json and scores.jsonl into evd-vfm/runs.', true); return } const preferred = data.runs.find(r => r.id === 'e3r_ucf_vjepa21l_dora-r32-qkvomlp_s42'); if (preferred) $('run').value = preferred.id; await loadVideos() } catch (e) { show('Cannot open the library: ' + e.message, true) } })();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+family: reparam
+name: lora-r16-qkvo
+method: lora
+r: 16
+alpha: 32
+placement: qkvo         # qkvo | attn_mlp | qk_only | last_n_blocks:N
+factorization: separate # separate | fused | fused_nr | shared_b
+use_rslora: false       # scaling alpha/sqrt(r); compatibile con dora (agiscono su
+                        # parti diverse: rsLoRA sullo scaling, DoRA sulla parametrizzazione)
+dropout: 0.0
+init: kaiming_b_zero    # B = 0 → dW = 0 all'avvio: l'uscita parte identica al modello base

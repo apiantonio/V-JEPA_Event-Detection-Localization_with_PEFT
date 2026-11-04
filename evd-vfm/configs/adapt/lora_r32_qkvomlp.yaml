@@ -1,0 +1,10 @@
+family: reparam
+name: lora-r32-qkvomlp
+method: lora
+r: 32
+alpha: 64               # convenzione alpha = 2r, già in uso nel repo
+placement: attn_mlp     # Q, K, V, O + fc1, fc2 — tutti i 24 blocchi
+factorization: separate # rango indipendente per fetta: ciò che `peft` non sa fare
+use_rslora: false
+dropout: 0.0
+init: kaiming_b_zero    # B = 0 -> dW = 0 all'avvio: l'uscita parte identica al modello base

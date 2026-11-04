@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Localization movies</title>
+<style>
+:root{color-scheme:dark;--ink:#101419;--ink-2:#181e26;--paper:#e8eef2;--haze:#a5b3c1;--rule:#2c3541;--calm:#72dfbc;--truth:#c9a227;--alarm:#ff5b49;--missed:#c369cd}
+*{box-sizing:border-box}body{margin:0;background:var(--ink);color:var(--paper);font:15px/1.5 system-ui,sans-serif}
+header{padding:20px 32px;border-bottom:1px solid var(--rule)}h1{font-size:24px;margin:4px 0}p{margin:6px 0;color:var(--haze)}
+.eyebrow{font-size:11px;letter-spacing:.13em;color:var(--calm)}.status{float:right;font:13px monospace;color:var(--calm)}
+main{padding:20px 32px}.methods{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px;margin:14px 0}
+.method{background:var(--ink-2);border:1px solid var(--rule);border-left:4px solid var(--tone);border-radius:6px;padding:12px 14px}.method h3{margin:0 0 4px;font-size:16px}
+.method button{float:right;font-size:12px;padding:5px 9px}.method button[aria-pressed=true]{border-color:var(--calm)}
+.method dl{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;margin:8px 0 0;font-size:13px}.method dt{color:var(--haze)}.method dd{margin:0}
+.filters{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:16px 0}.filters label{font-size:12px;color:var(--haze)}.filters label select{font-size:15px;margin-left:6px}
+button,select,input{background:var(--ink-2);color:var(--paper);border:1px solid var(--rule);padding:8px 12px;border-radius:5px;font:inherit}
+button{cursor:pointer}button:hover,button.active{border-color:var(--calm)}input{min-width:210px}
+.layout{display:grid;grid-template-columns:320px minmax(0,1fr);gap:24px}nav{max-height:78vh;overflow:auto}
+nav button{display:block;text-align:left;width:100%;margin-bottom:6px;font-size:13px;overflow-wrap:anywhere}
+small{display:block;color:var(--haze);font-size:11px}h2{margin:0 0 4px;font-size:21px}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:4px;vertical-align:0}
+.chip{display:inline-block;margin-right:10px;font:12px monospace;color:var(--paper)}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.toolbar .event{font-size:12px;border-color:var(--truth)}.toolbar .event.active{border-color:var(--calm);box-shadow:inset 0 0 0 1px var(--calm)}
+.players{display:grid;grid-template-columns:repeat(var(--cols,2),minmax(0,1fr));gap:16px}
+.panel{background:var(--ink-2);border:1px solid var(--rule);border-top:3px solid var(--tone);padding:12px;border-radius:6px;min-width:0}
+.panel h3{font-size:15px;margin:0 0 8px}.panel h3 small{display:block;margin-top:2px}
+video{display:block;width:100%;max-height:72vh;background:#000}.pending{min-height:160px;display:grid;place-content:center;color:var(--haze);text-align:center;padding:12px}
+.note{font-size:12px}.legend{font-size:12px;color:var(--haze);margin-top:18px;border-top:1px solid var(--rule);padding-top:10px}
+.sw{display:inline-block;width:10px;height:10px;margin:0 4px 0 10px;vertical-align:-1px}a{color:var(--calm)}
+@media(max-width:900px){.layout{grid-template-columns:1fr}nav{max-height:240px}.players{grid-template-columns:1fr}header,main{padding:16px}.status{float:none}input{min-width:0;width:100%}}
+</style>
+<header><div class="status" id="status">Loading…</div><div class="eyebrow">LOCALIZATION MOVIES</div>
+<h1 id="name">Localization movies</h1>
+<p>Each movie is one localization method on one annotated video, in the demonstrator layout: the online anomaly score and alarms, the chunk the boxes come from with its TP/FP/FN/TN verdict, the annotated events with the evaluated IoU of the method, and the whole-video timeline.</p></header>
+<main>
+<div class="methods" id="methods"></div>
+<div class="filters">
+<select id="dataset"><option value="">All datasets</option></select><select id="class"><option value="">All classes</option></select><input id="search" placeholder="Search a video">
+<label>List <select id="unit"><option value="events">Events</option><option value="videos">Videos</option></select></label>
+<label>Sort by <select id="order"></select></label><button id="dir"></button><span id="count"></span></div>
+<div class="layout"><nav id="list"></nav><section>
+<h2 id="title">Choose a video</h2><p id="details"></p>
+<div class="toolbar" id="toolbar"></div>
+<div class="players" id="players"></div>
+<p class="legend">IoU: the evaluated IoU of each method on an annotated event (as in the IoU ranking), one coloured dot per method; a video's IoU is the mean over its events. "Best" and "mean" use the methods shown, and the gap is the first shown method minus the second. Events without an IoU go last. Chunk lane: <span class="sw" style="background:var(--calm)"></span>TP <span class="sw" style="background:var(--alarm)"></span>FP <span class="sw" style="background:var(--missed)"></span>FN <span class="sw" style="background:var(--rule)"></span>TN, against the run threshold. Boxes: solid and numbered = the method; dashed ochre = spatial ground truth the IoU was computed on. Boxes exist only inside annotated intervals. "Anomaly score (online)" and the alarm follow the demonstrator (a window speaks when it closes); "chunk of the boxes" is the chunk containing the frame, as the evaluator projects boxes, so the two can differ. Methods were chosen on the test set (exploratory).</p>
+</section></div>
+</main>
+<script>
+// Sorting is pure (no DOM), so it can be checked on a real catalogue outside a browser.
+const PALETTE = ["#72dfbc", "#7aa7ff", "#f0a35e", "#c58cf2"];
+const ORDERS = {name: "Video name", best: "Best IoU of shown methods", mean: "Mean IoU of shown methods", gap: "IoU gap between the two shown methods"};
+function mean(values) { const v = values.filter((x) => x != null); return v.length ? v.reduce((a, b) => a + b, 0) / v.length : null; }
+function videoIou(row, key) { return mean(row.events.map((e) => (e.iou || {})[key])); }
+function sortValue(values, order, keys) {
+  const shown = keys.map((k) => values[k]).filter((x) => x != null);
+  if (order === "best") return shown.length ? Math.max(...shown) : null;
+  if (order === "mean") return mean(shown);
+  if (order === "gap") return keys.length === 2 && values[keys[0]] != null && values[keys[1]] != null ? values[keys[0]] - values[keys[1]] : null;
+  if (order.startsWith("m:")) return values[order.slice(2)] ?? null;
+  return null;
+}
+// One item per event (with its index in the video) or per video, sorted: dir 1 is A-Z for
+// the name and high to low for an IoU; null values always last, ties in catalogue order.
+function listItems(videos, {unit, order, dir, keys, all, cls}) {
+  const items = unit === "events"
+    ? videos.flatMap((row) => row.events.map((e, event) => ({row, event, values: e.iou || {}})).filter((it) => !cls || it.row.events[it.event].class === cls))
+    : videos.map((row) => ({row, event: null, values: Object.fromEntries(all.map((k) => [k, videoIou(row, k)]))}));
+  const scored = items.map((it, i) => ({...it, i, value: order === "name" ? null : sortValue(it.values, order, keys)}));
+  if (order === "name") return dir === 1 ? scored : scored.reverse();
+  return scored.sort((a, b) => (a.value == null) - (b.value == null) || (a.value == null ? 0 : dir * (b.value - a.value)) || a.i - b.i);
+}
+
+let catalog, current, currentEvent = null, players = [], listed = [];
+const shown = new Set(), view = {unit: "events", order: "best", dir: 1};
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
+const iou = (x) => (x == null ? "—" : x.toFixed(3));
+const keysShown = () => catalog.methods.map((m) => m.key).filter((k) => shown.has(k));
+const tone = (key) => PALETTE[catalog.methods.findIndex((m) => m.key === key) % PALETTE.length];
+async function get(path) { const r = await fetch(path + "?t=" + Date.now(), {cache: "no-store"}); if (!r.ok) throw Error(r.status); return r.json(); }
+function method(key) { return catalog.methods.find((m) => m.key === key); }
+function remember() { try { localStorage.setItem("localization-movies.view", JSON.stringify(view)); } catch (e) { /* storage blocked: the choice lasts this visit */ } }
+function chips(values, extra) {
+  return keysShown().map((k) => '<span class="chip" title="' + esc(method(k).label) + '"><span class="dot" style="background:' + tone(k) + '"></span>' + iou(values[k]) + "</span>").join("") +
+    (extra == null ? "" : '<span class="chip">gap ' + (extra >= 0 ? "+" : "") + extra.toFixed(3) + "</span>");
+}
+function span(row, e) { return (e.start / row.fps).toFixed(1) + "–" + ((e.end + 1) / row.fps).toFixed(1) + " s"; }
+function drawMethods() {
+  $("methods").innerHTML = catalog.methods.map((m) => '<div class="method" style="--tone:' + tone(m.key) + '"><button data-key="' + esc(m.key) + '" aria-pressed="' + shown.has(m.key) + '">' +
+    (shown.has(m.key) ? "Shown" : "Hidden") + '</button><h3><span class="dot" style="background:' + tone(m.key) + '"></span>' + esc(m.label) + "</h3><small>" + esc(m.selection) + "</small><dl>" +
+    "<dt>model</dt><dd>" + esc(m.model) + "</dd><dt>run</dt><dd>" + esc(m.run_id) + "</dd>" +
+    "<dt>IoU</dt><dd>FS-UCF-Crime " + iou(m.iou.ucf_crime) + " · MIVIA-Crime " + iou(m.iou.mivia_crime) + " · mean " + iou((m.iou.ucf_crime + m.iou.mivia_crime) / 2) + "</dd>" +
+    "<dt>id</dt><dd>" + esc(m.method) + " · " + esc(m.campaign) + "</dd>" +
+    (catalog.skipped_reason[m.key] ? "<dt>note</dt><dd>MIVIA-Crime not rendered: " + esc(catalog.skipped_reason[m.key]) + "</dd>" : "") + "</dl></div>").join("");
+  $("methods").querySelectorAll("button").forEach((b) => (b.onclick = () => {
+    shown.has(b.dataset.key) ? shown.delete(b.dataset.key) : shown.add(b.dataset.key);
+    drawMethods(); drawOrder(); drawList(); if (current) { drawToolbar(); loadPlayers(); }
+  }));
+}
+function drawOrder() {
+  const options = Object.entries(ORDERS).filter(([k]) => k !== "gap" || keysShown().length === 2)
+    .concat(catalog.methods.map((m) => ["m:" + m.key, "IoU of " + m.label]));
+  if (!options.some(([k]) => k === view.order)) view.order = "best";
+  $("order").innerHTML = options.map(([k, label]) => '<option value="' + esc(k) + '"' + (k === view.order ? " selected" : "") + ">" + esc(label) + "</option>").join("");
+  $("unit").value = view.unit;
+  $("dir").textContent = view.order === "name" ? (view.dir === 1 ? "A → Z" : "Z → A") : (view.dir === 1 ? "High → low" : "Low → high");
+}
+function visible() {
+  const q = $("search").value.toLowerCase();
+  return catalog.videos.filter((v) => (!$("dataset").value || v.dataset === $("dataset").value) &&
+    (!$("class").value || v.classes.includes($("class").value)) && v.video_id.toLowerCase().includes(q));
+}
+function drawList() {
+  listed = listItems(visible(), {...view, keys: keysShown(), all: catalog.methods.map((m) => m.key), cls: $("class").value});
+  $("count").textContent = listed.length + (view.unit === "events" ? " events" : " videos");
+  const gap = view.order === "gap";
+  $("list").innerHTML = listed.map((it, n) => {
+    const row = it.row, e = it.event == null ? null : row.events[it.event];
+    const active = current && current.id === row.id && (e == null || currentEvent === it.event);
+    const head = e ? esc(row.video_id) + " · " + esc(e.class) + " " + span(row, e) : esc(row.video_id);
+    const sub = e ? esc(row.dataset_label) : esc(row.dataset_label) + " · " + esc(row.classes.join(", ")) + " · " + row.events.length + " events · " + Object.keys(row.movies).length + " of " + catalog.methods.length + " movies";
+    return '<button data-n="' + n + '" class="' + (active ? "active" : "") + '">' + head + "<small>" + sub + "</small><small>" + chips(it.values, gap ? it.value : null) + "</small></button>";
+  }).join("");
+  $("list").querySelectorAll("button").forEach((b) => (b.onclick = () => { const it = listed[+b.dataset.n]; choose(it.row, it.event); }));
+}
+function seekTime(row, event) { return event == null ? null : Math.max(0, row.events[event].start / row.fps - 1); }
+function seek(seconds) { players.forEach((v) => (v.currentTime = seconds)); }
+function drawToolbar() {
+  const row = current;
+  $("toolbar").innerHTML = '<button id="both">Play / pause all</button>' + row.events.map((e, i) => '<button class="event' + (i === currentEvent ? " active" : "") + '" data-i="' + i + '">' + esc(e.class) + " · " + span(row, e) +
+    (e.iou ? "<small>" + chips(e.iou) + "</small>" : "") + "</button>").join("");
+  $("both").onclick = () => { const go = players.some((v) => v.paused); players.forEach((v) => (go ? v.play() : v.pause())); };
+  $("toolbar").querySelectorAll(".event").forEach((b) => (b.onclick = () => choose(row, +b.dataset.i)));
+}
+function choose(row, event = null) {
+  const same = current === row;
+  current = row; currentEvent = event;
+  history.replaceState(null, "", "?video=" + encodeURIComponent(row.id) + (event == null ? "" : "&event=" + event));
+  $("title").textContent = row.video_id;
+  $("details").textContent = row.dataset_label + " · " + row.classes.join(", ");
+  drawToolbar(); drawList();
+  if (same) { if (event != null) seek(seekTime(row, event)); } else loadPlayers(seekTime(row, event));
+}
+async function loadPlayers(at = null) {
+  const row = current, time = at ?? (players[0] ? players[0].currentTime : 0);
+  players.forEach((v) => v.pause()); players = [];
+  const keys = keysShown();
+  $("players").style.setProperty("--cols", Math.max(1, Math.min(2, keys.length)));
+  $("players").replaceChildren();
+  for (const key of keys) {
+    const m = method(key), panel = document.createElement("article");
+    panel.className = "panel"; panel.style.setProperty("--tone", tone(key));
+    panel.innerHTML = '<h3><span class="dot" style="background:' + tone(key) + '"></span>' + esc(m.label) + "<small>" + esc(m.model) + "</small></h3>";
+    $("players").append(panel);
+    const target = row.movies[key];
+    if (!target) { panel.insertAdjacentHTML("beforeend", '<div class="pending">Not rendered for this video' + (catalog.skipped_reason[key] ? ": " + esc(catalog.skipped_reason[key]) : "") + "</div>"); continue; }
+    try {
+      const manifest = await get(target + "/manifest.json");
+      if (current !== row) return;
+      if (manifest.status !== "complete") throw Error("pending");
+      const video = document.createElement("video");
+      video.controls = true; video.preload = "metadata"; video.playsInline = true;
+      video.src = target + "/" + manifest.file;
+      video.onloadedmetadata = () => { if (time < video.duration) video.currentTime = time; };
+      panel.append(video); players.push(video);
+      const note = document.createElement("p");
+      note.className = "note";
+      note.textContent = "IoU on this video " + iou(manifest.video_iou) + " · " + manifest.frames_with_method_boxes + " frames with method boxes · " + manifest.frames + " frames · threshold " + manifest.threshold.toFixed(4);
+      panel.append(note);
+    } catch (e) {
+      if (current !== row) return;
+      panel.insertAdjacentHTML("beforeend", '<div class="pending">Rendering in progress…</div>');
+    }
+  }
+}
+if (typeof document !== "undefined") (async () => {
+  try {
+    catalog = await get("catalog.json");
+    catalog.methods.forEach((m) => shown.add(m.key));
+    try { Object.assign(view, JSON.parse(localStorage.getItem("localization-movies.view")) || {}); } catch (e) { /* defaults */ }
+    $("name").textContent = catalog.name;
+    drawMethods(); drawOrder();
+    for (const d of [...new Set(catalog.videos.map((v) => v.dataset))]) $("dataset").insertAdjacentHTML("beforeend", '<option value="' + esc(d) + '">' + esc(catalog.videos.find((v) => v.dataset === d).dataset_label) + "</option>");
+    for (const c of [...new Set(catalog.videos.flatMap((v) => v.classes))].sort()) $("class").insertAdjacentHTML("beforeend", '<option value="' + esc(c) + '">' + esc(c) + "</option>");
+    ["dataset", "class"].forEach((id) => ($(id).onchange = drawList)); $("search").oninput = drawList;
+    $("unit").onchange = () => { view.unit = $("unit").value; remember(); drawList(); };
+    $("order").onchange = () => { view.order = $("order").value; view.dir = 1; remember(); drawOrder(); drawList(); };
+    $("dir").onclick = () => { view.dir = -view.dir; remember(); drawOrder(); drawList(); };
+    drawList();
+    const query = new URLSearchParams(location.search), wanted = catalog.videos.find((v) => v.id === query.get("video"));
+    const event = query.get("event") == null ? null : +query.get("event");
+    if (wanted) choose(wanted, wanted.events[event] ? event : null);
+    else if (listed.length) choose(listed[0].row, listed[0].event);
+    try { const check = await get("final-verification.json"); $("status").textContent = check.complete + "/" + check.tasks + " movies verified"; }
+    catch (e) { $("status").textContent = "Rendering in progress"; }
+  } catch (e) { $("status").textContent = "Catalogue not available: " + e.message; }
+})();
+</script>
+</html>

@@ -1,0 +1,38 @@
+{
+ "threshold": 0.8095,
+ "levels": {
+  "anomalies": {
+   "auc": 0.787109375,
+   "ap": 0.43840797197653913,
+   "auc_a_macro": 0.8043859649122806,
+   "ap_a_macro": 0.7578947368421052,
+   "auc_a_micro": 0.8098901098901099,
+   "ap_a_micro": 0.644258218853857,
+   "row_precision": 0.36666666666666664,
+   "row_recall": 0.4230769230769231,
+   "row_f1": 0.3928571428571428,
+   "row_fpr": 0.1484375,
+   "video_precision": 0.4074074074074074,
+   "video_recall": 0.55,
+   "video_f1": 0.46808510638297873,
+   "video_fpr": 0.41025641025641024,
+   "event_recall": 0.4230769230769231,
+   "threshold": 0.8095,
+   "n_rows": 154,
+   "n_events": 26,
+   "hours": 0.966752777777778,
+   "n_unjudgeable_rows": 7,
+   "n_entries_in_macro": 19,
+   "n_entries_with_event": 20,
+   "n_events_detected": 11,
+   "n_events_unseen": 0,
+   "video_tp": 11,
+   "video_fn": 9,
+   "video_fp": 16,
+   "video_tn": 23,
+   "video_fp_with_event": 9,
+   "video_tn_with_event": 10,
+   "mean": 0.6211795020382208
+  }
+ }
+}

@@ -1,0 +1,2 @@
+exp,dataset,backbone,adapt,metric,mean,std,n,n_expected,complete,seeds
+e2d,ucf,vjepa21l,frozen-attentive,chunk_auc,0.9384909676639068,,1,,True,42

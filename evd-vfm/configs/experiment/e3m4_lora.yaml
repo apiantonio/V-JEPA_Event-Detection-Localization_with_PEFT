@@ -1,0 +1,36 @@
+# @package _global_
+#
+# E3-M4 — LoRA r=32 alla QUARTA epoca, in CONTINUAZIONE da E3-M.
+#
+# Decisione di Antonio (13 ottobre 2026): pareggiare il CALCOLO TOTALE con E3-S,
+# che spende 1+3 = 4 epoche (la sorgente a una epoca piu' i 16.572 passi del
+# secondo stadio), in continuazione e su tutti i modelli di E3-M ed E3-C.
+#
+# ⚠️ E' PARITA' DI CALCOLO, NON DI ESPOSIZIONE: qui ogni parametro vede quattro
+# epoche, mentre in E3-S la famiglia ereditata ne vede una e quella nuova tre.
+# Si dichiara quale delle due parita' si usa in ogni confronto.
+#
+# ⚠️ UN CICLO SOLO, 5524 passi: il primo l'ha fatto `e3r_ucf_vjepa21l_lora-r32-qkvomlp_s*`, il secondo
+# e il terzo `e3m_ucf_vjepa21l_lora-r32-qkvomlp_s*`, e `init_from` eredita i pesi dell'ULTIMO passo di
+# E3-M (11.048), non quelli selezionati — come E3-M li ha ereditati dalla cella
+# a una epoca.
+#
+# ⚠️ IL BUDGET E' QUELLO A UNA EPOCA DELLA MATRICE (`peft_budget_v2`), e non per
+# comodita': il quarto ciclo del coseno ciclico di periodo 5524 e' il coseno su
+# 5524 passi (`lr_at_step`; `test_budget_support.py` lo verifica passo per
+# passo), quindi un gruppo `train` nuovo sarebbe un duplicato.
+#
+# ⚠️ Momenti di AdamW reinizializzati (warm restart), come nel passaggio
+# a E3-M: `meta.json` lo dichiara in `avvio_a_caldo`.
+#
+# ⚠️ IL MIGLIORE SU QUATTRO EPOCHE E' IL MASSIMO FRA I TRE RUN per AUROC di
+# validazione: questo copre i suoi 6 punti, E3-M i cicli 2-3, la cella a una
+# epoca il ciclo 1. Si compone a mano, e si dice.
+defaults:
+  - e3m_lora
+  - override /train: peft_budget_v2
+
+# L'`exp` nuovo separa la cartella: il `run_id` non ha un campo per il budget.
+exp_id: e3m4
+
+init_from: runs/e3m_ucf_vjepa21l_lora-r32-qkvomlp_s${seed}/checkpoint/checkpoint.pt

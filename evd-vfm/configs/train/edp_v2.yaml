@@ -1,0 +1,23 @@
+max_steps: 5524
+batch_size: 2
+grad_accum: 8
+
+lr_grid: [1.0e-4]
+
+lr_schedule: cosine
+weight_decay: 0.01
+
+precision: bf16
+tf32: true
+attn: sdpa
+
+model_selection: val_auroc
+eval_every: 920
+early_stop_patience: null
+
+checkpoint_every: 100
+
+num_workers: 12
+
+pin_memory: true
+persistent_workers: true

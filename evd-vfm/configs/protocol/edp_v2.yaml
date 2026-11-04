@@ -1,0 +1,195 @@
+# Protocollo sperimentale EDP-v2 — il protocollo del LABORATORIO, adottato.
+#
+# Fonte: `docs/varie/protocollo-laboratorio_FS-UCF-Crime.md`, consegnato dal
+# prof. Greco il 31 agosto 2026 insieme alla partizione train/val/test
+# (`manifests/edp_v2/ucf_crime/split-FS-UCF-Crime.csv`). Decisione e motivazioni:
+# **ADR-047**. Specifica: `docs/04_spec_protocollo.md`.
+#
+# ⚠️ PERCHÉ `edp_v2` E NON UNA RIGA RISCRITTA IN `edp_v1`. L'invariante 1 dice
+# che un file di protocollo già consumato da un run non si riscrive mai, e
+# `edp_v1` è stato consumato (E0h, E0i, E0i2). Ma c'è una ragione più forte, ed
+# era scritta in anticipo: ADR-035 e `edp_v1.yaml` dichiaravano che una
+# partizione consegnata dal laboratorio sarebbe stata `source: laboratory`, cioè
+# «un protocollo NUOVO». È arrivata, ed è questo file.
+#
+# Cosa cambia rispetto a `edp_v1`, in una riga per punto:
+#   1. la GRIGLIA è ancorata all'inizio della finestra, non al suo endpoint, e la
+#      coda del video si valuta invece di essere ignorata (§1 del protocollo);
+#   2. la VALIDAZIONE ha una griglia propria, a finestre contigue (§3.1);
+#   3. lo SPLIT è quello del laboratorio, non un ritaglio nostro (ADR-035 decade);
+#   4. la SOGLIA è il punto di Youden sulla ROC di validazione, non un quantile (§3);
+#   5. le metriche guadagnano AUC_a/AP_a e il livello VIDEO diventa a sola soglia,
+#      con una regola asimmetrica (§4);
+#   6. la SELEZIONE DEL MODELLO è l'AUROC di validazione, non l'ultimo passo (§6);
+#   7. il campionamento di training torna STATICO (decisione di Antonio, 31/8);
+#   8. l'augmentation perde il random erasing e le operazioni geometriche di
+#      RandAugment (indicazione del prof. Greco del 31/8).
+id: edp_v2
+protocol_version: edp_v2
+approved: true
+approved_by: "prof. Greco + laboratorio MIVIA (protocollo e split, 2026-08-31, ADR-047); Antonio (campionamento di training, budget, catena di augmentation)"
+split_file: manifests/edp_v2/ucf_crime/split.json
+
+# ---------------------------------------------------------------------------
+# Geometria temporale — protocollo §1, ADR-047
+# ---------------------------------------------------------------------------
+temporal:
+  # La griglia è ancorata all'INIZIO: `start = k · hop`, durata `window_s`,
+  # estremi semiaperti. A 30 fps la finestra è di 240 frame e il passo di 120.
+  # `endpoint` è la griglia storica di ADR-024 e resta per fsp_v1/edp_v1.
+  window_grid: fixed
+  window_s: 8.0          # la durata decisa in seduta il 27 agosto, invariata
+  hop_s: 4.0             # metà finestra: un evento a cavallo finisce al centro della successiva
+  # ⚠️ LA VALIDAZIONE HA IL SUO HOP, ed è il protocollo a volerlo (§3.1):
+  # finestre CONTIGUE, non sovrapposte. 8383 finestre su 306 video invece delle
+  # ~16.700 che darebbe l'hop del test. È lì che si stima τ, e stimarla su una
+  # griglia in cui metà delle finestre sono ridondanti la sposterebbe.
+  val_hop_s: 8.0
+  num_frames: 32         # attestato negli eval ufficiali a 384: eval_2_1/vitl-384/{diving48,jester,ek100}
+  # ⚠️ FREQUENZA NOMINALE. Sulla griglia `fixed` i 32 campioni si distribuiscono
+  # uniformemente sulla finestra (la `linspace` di `loadvideo_decord` upstream),
+  # quindi la frequenza EFFETTIVA è (32-1)/durata: 3,89 fps su una finestra piena
+  # a 30 fps, fino a ~7,8 fps sulla coda più corta. È il prezzo dichiarato della
+  # proprietà che il prof. Greco ha chiesto il 31 agosto — il contenuto osservato
+  # coincide con l'intervallo su cui l'etichetta è calcolata — e senza di essa la
+  # finestra troncata non sarebbe nemmeno campionabile: è più corta di uno span.
+  target_fps: 4.0
+  span_s: 7.75           # (num_frames - 1) / target_fps; NON è la durata della finestra
+  # Positività per intersezione qualunque (protocollo §2, invariata da ADR-031).
+  chunk_label: any_overlap
+  # Proiezione degli score sui frame: serve SOLO alla timeline del dimostratore.
+  # Le metriche frame-level restano fuori protocollo (ADR-031 punto 5).
+  frame_mapping: causal
+  # ⚠️ STATICO, e non è un ritorno al passato: è la decisione di Antonio del 31
+  # agosto, presa leggendo il protocollo. Il training vede esattamente la griglia
+  # su cui si valuta. Il jitter dinamico di ADR-036 non era incoerente — l'
+  # etichetta si ricalcolava sulla finestra estratta — ma il protocollo del
+  # laboratorio non contiene alcun campionamento casuale, e la differenza fra le
+  # due scelte è una variabile in più in un confronto che ne ha già abbastanza.
+  # Il prezzo: le ~38 estrazioni per video ricadono su posizioni fisse, con
+  # ripetizioni. Il guadagno: la griglia è una sola in tutto il protocollo.
+  train_sampling: static
+
+# ---------------------------------------------------------------------------
+# Geometria spaziale — ADR-031 punto 8, invariata
+# ---------------------------------------------------------------------------
+# `squash` = il frame intero a 384x384, nessun ritaglio. È anche la metà spaziale
+# dell'indicazione del 31 agosto: «video senza ritagli o cancellazioni».
+geometry:
+  size: 384
+  preprocess_variant: squash
+
+# ---------------------------------------------------------------------------
+# Campionamento e bilanciamento — invariato da edp_v1 (ADR-032 §4-5, ADR-033 §3)
+# ---------------------------------------------------------------------------
+# I pesi RESTANO, ed è una scelta esplicita: il protocollo del laboratorio non
+# dice come campionare in training, e senza `w_video` un video da 9 h vale da
+# solo 8.137 chunk. Misurato sulla griglia nuova: i due pesi portano il tasso di
+# positivi visto dal modello dal 10,72% al 23,77%.
+sampling:
+  video_balance: inverse_chunk_count
+  # w_overlap = clip(overlap / durata_DI_QUESTA_FINESTRA, floor, 1.0), sui soli
+  # positivi. Il denominatore è la durata della finestra vera e non quella
+  # nominale: la coda di ogni video è troncata, e dividere per 8 s darebbe a una
+  # coda interamente coperta un peso di 0,5 invece di 1.
+  overlap_weight_floor: 0.1
+  class_balance: none
+
+# ---------------------------------------------------------------------------
+# Deduplicazione — QUI CAMBIA, e va letto (ADR-047)
+# ---------------------------------------------------------------------------
+# `declared` = i duplicati byte-identici si CONTANO e si DICHIARANO, non si
+# escludono. `edp_v1` li escludeva (`sha256_representative`, 20 video fuori).
+#
+# ⚠️ LO SPLIT DEL LABORATORIO CONTIENE 10 COPPIE BYTE-IDENTICHE CHE ATTRAVERSANO
+# LE PARTIZIONI: 6 video di training e 2 di validazione sono copie esatte di
+# video di test, più 2 coppie interne fra train e val. È leakage, ed è reale.
+# Si adotta comunque lo split verbatim per una ragione sola e dichiarata: è la
+# partizione su cui il laboratorio riporta i suoi numeri, e i conteggi 9116 e
+# 8383 si riproducono esatti solo così. Il limite si scrive in tesi, non si
+# nasconde; l'elenco sta in `manifests/edp_v2/ucf_crime/PROVENIENZA.md` e i
+# video coinvolti sono tutti `Normal`.
+dedup: declared
+
+# ---------------------------------------------------------------------------
+# Semi — protocollo §5
+# ---------------------------------------------------------------------------
+# Il protocollo ne dichiara UNO, 42, ed è il primo del calendario: la cella con
+# `_s42` è quella direttamente confrontabile con i loro numeri. Gli altri
+# esistono perché un risultato di probe singolo non è un risultato (E0c, 15
+# agosto: 1,3pp di rumore puro fra due repliche identiche). Se ne eseguono TRE.
+# ⚠️ QUESTA RIGA È TORNATA A [42, 43, 44, 45, 46] IL 1 SETTEMBRE 2026, e la
+# storia va saputa perché è il caso che dimostra la regola.
+#
+# La sera del 31 agosto era stata cambiata in [42, 67, 104, 88, 1320], mentre due
+# job giravano. `edp_v2.yaml` era però **già stato consumato da run**, e
+# `CLAUDE.md` dice che un file di protocollo consumato non si riscrive mai — un
+# valore diverso è `edp_v3`. Il costo di averlo fatto è stato concreto e non
+# ovvio: `config_sha` hasha il protocollo **intero**, quindi i checkpoint delle
+# due celle `_s42` sono stati **rifiutati** alla ripresa
+# (`ValueError: checkpoint di un altro run`) e una rivalutazione da 20 minuti
+# sarebbe diventata un riaddestramento da ~5,4 h di A100.
+#
+# ⚠️ E il campo **non lo legge nessuno** nel percorso di run: i semi che decidono
+# quali celle girano stanno in `configs/sweep/*.yaml`. È quindi un campo inerte
+# che ha denti solo attraverso l'hash — una variante nuova della famiglia «campo
+# dichiarato e mai letto», dove il danno non è un valore ignorato ma un
+# artefatto invalidato.
+#
+# I semi realmente in uso per la matrice sono [42, 67, 104, 88, 1320] e stanno
+# nelle sweep (decisione di Antonio, 31 agosto). Le due liste **divergono per
+# scelta**, e la divergenza è dichiarata qui invece che nascosta.
+#
+# ⚠️ AGGIORNAMENTO 1 SETTEMBRE (ADR-054), e questa riga **resta com'è** proprio
+# per la ragione scritta sopra. La decisione presa quel giorno è che per ora si
+# esegue **un seme solo, il 42**, e che la riserva per replicare — tre o cinque
+# — è, in quest'ordine, `[42, 67, 104, 88, 1320]`. Nessuna delle due cose si
+# scrive qui: la prima vive in `assi.seed` delle sweep, che è la griglia che
+# esegue davvero; la seconda è documentata lì accanto. Toccare il valore qui
+# sotto per «tenerlo allineato» è esattamente l'errore del 31 agosto, e costa i
+# checkpoint delle celle `_s42`.
+seed_schedule: [42, 43, 44, 45, 46]
+
+# ---------------------------------------------------------------------------
+# Uscita del modello e metriche
+# ---------------------------------------------------------------------------
+output: binary
+
+classes:
+  normal_idx: 13
+
+# Serve ancora ad `aggregate_video_scores`, che alimenta le metriche di
+# ordinamento per video. ⚠️ Quelle non sono più protocollo (§4.2) e
+# `configs/eval/chunk_lab.yaml` le spegne.
+video_policy: max
+
+# ---------------------------------------------------------------------------
+# Partizione di validazione — CONSEGNATA, non più ritagliata (ADR-047)
+# ---------------------------------------------------------------------------
+# Q-C è chiusa dalla fonte giusta. ADR-035 (20% del training, per video,
+# stratificata per classe, seme 20260828) descriveva un RIPIEGO dichiarato tale,
+# ed è superata: `manifests/edp_v1/ucf_crime/split.json` resta su disco come
+# storia del regime precedente e non si riusa.
+# 306 video (141 anomali, 165 normali), 8383 finestre sulla griglia contigua.
+validation:
+  source: laboratory
+
+threshold:
+  source: val
+  # ⚠️ LA REGOLA CAMBIA: il punto della ROC di validazione che massimizza
+  # `TPR - FPR` (protocollo §3), non più il quantile 0,95 degli score negativi.
+  # Il quantile fissa il tasso di falsi allarmi che si accetta e ignora dove
+  # stanno i positivi; Youden guarda entrambe le classi, quindi un metodo che
+  # separa meglio ottiene anche un punto di lavoro migliore — che è ciò che rende
+  # confrontabili fra metodi le metriche a soglia (invariante 5).
+  rule: youden
+  # È UNA SOLA e vale sia per il livello chunk sia per quello video (§3).
+  #
+  # ⚠️ `quantile` NON compare, e non è una dimenticanza: con `rule: youden` non
+  # lo leggerebbe nessuno, e un campo che non tocca il calcolo è un metadato che
+  # mente (`CLAUDE.md` §3.1). `edp_v1.yaml` ce l'ha perché lì la regola è quella.
+  #
+  # Analisi secondaria a costo zero, sugli score già calcolati: il PRF anche ai
+  # quantili degli score negativi della validazione. NON è protocollo, e il
+  # numero che va in tabella resta quello di Youden.
+  sensitivity_quantiles: [0.80, 0.90, 0.95, 0.975, 0.99]

@@ -1,0 +1,238 @@
+{
+  "receipts": {
+    "global": {
+      "chunks": 208,
+      "iterations": 1301,
+      "seconds": 23.35397548810579,
+      "peak_memory_mb": 1430.609375
+    },
+    "a1": {
+      "Abuse": {
+        "chunks": 16,
+        "iterations": 591,
+        "seconds": 0.4286185528617352,
+        "peak_memory_mb": 1430.609375
+      },
+      "Arrest": {
+        "chunks": 16,
+        "iterations": 1241,
+        "seconds": 0.834737243829295,
+        "peak_memory_mb": 1430.609375
+      },
+      "Arson": {
+        "chunks": 16,
+        "iterations": 1361,
+        "seconds": 0.8928302759304643,
+        "peak_memory_mb": 1430.609375
+      },
+      "Assault": {
+        "chunks": 16,
+        "iterations": 691,
+        "seconds": 0.4548362798523158,
+        "peak_memory_mb": 1430.609375
+      },
+      "Burglary": {
+        "chunks": 16,
+        "iterations": 1391,
+        "seconds": 0.9254931060131639,
+        "peak_memory_mb": 1430.609375
+      },
+      "Explosion": {
+        "chunks": 16,
+        "iterations": 1911,
+        "seconds": 1.321596106979996,
+        "peak_memory_mb": 1430.609375
+      },
+      "Fighting": {
+        "chunks": 16,
+        "iterations": 791,
+        "seconds": 0.5552164460532367,
+        "peak_memory_mb": 1430.609375
+      },
+      "RoadAccidents": {
+        "chunks": 16,
+        "iterations": 1571,
+        "seconds": 1.0580009899567813,
+        "peak_memory_mb": 1430.609375
+      },
+      "Robbery": {
+        "chunks": 16,
+        "iterations": 1221,
+        "seconds": 0.7738202749751508,
+        "peak_memory_mb": 1430.609375
+      },
+      "Shooting": {
+        "chunks": 16,
+        "iterations": 891,
+        "seconds": 0.5827809029724449,
+        "peak_memory_mb": 1430.609375
+      },
+      "Shoplifting": {
+        "chunks": 16,
+        "iterations": 1941,
+        "seconds": 1.2721272769849747,
+        "peak_memory_mb": 1430.609375
+      },
+      "Stealing": {
+        "chunks": 16,
+        "iterations": 1341,
+        "seconds": 0.87896808097139,
+        "peak_memory_mb": 1430.609375
+      },
+      "Vandalism": {
+        "chunks": 16,
+        "iterations": 1391,
+        "seconds": 0.8802283371333033,
+        "peak_memory_mb": 1430.609375
+      }
+    },
+    "a2": {
+      "Abuse": [
+        {
+          "chunks": 373,
+          "regions": 9367,
+          "converged": true,
+          "iterations": 1701,
+          "relative_squared_error": 0.5384214537056525,
+          "outcome": "fitted",
+          "seconds": 100.33748570084572,
+          "peak_memory_mb": 3392.82421875
+        }
+      ],
+      "Arrest": [
+        {
+          "chunks": 930,
+          "regions": 23150,
+          "converged": true,
+          "iterations": 1731,
+          "relative_squared_error": 0.5348371417156387,
+          "outcome": "fitted",
+          "seconds": 549.3872518450953,
+          "peak_memory_mb": 17324.82421875
+        }
+      ],
+      "Arson": [
+        {
+          "chunks": 431,
+          "regions": 10539,
+          "converged": true,
+          "iterations": 1851,
+          "relative_squared_error": 0.44001486993482974,
+          "outcome": "fitted",
+          "seconds": 183.61511959997006,
+          "peak_memory_mb": 17324.82421875
+        }
+      ],
+      "Assault": [
+        {
+          "chunks": 199,
+          "regions": 4805,
+          "converged": true,
+          "iterations": 1431,
+          "relative_squared_error": 0.5026979171582413,
+          "outcome": "fitted",
+          "seconds": 35.331878973171115,
+          "peak_memory_mb": 17324.82421875
+        }
+      ],
+      "Burglary": [
+        {
+          "chunks": 878,
+          "regions": 21828,
+          "converged": true,
+          "iterations": 2321,
+          "relative_squared_error": 0.5425618873530175,
+          "outcome": "fitted",
+          "seconds": 681.9837492278311,
+          "peak_memory_mb": 17324.82421875
+        }
+      ],
+      "Explosion": [
+        {
+          "outcome": "a1_dictionary",
+          "reason": "fewer than 16 pure"
+        }
+      ],
+      "Fighting": [
+        {
+          "chunks": 510,
+          "regions": 12371,
+          "converged": true,
+          "iterations": 2331,
+          "relative_squared_error": 0.48824287983272685,
+          "outcome": "fitted",
+          "seconds": 265.16697064996697,
+          "peak_memory_mb": 17324.82421875
+        }
+      ],
+      "RoadAccidents": [
+        {
+          "chunks": 37,
+          "regions": 885,
+          "converged": true,
+          "iterations": 3121,
+          "relative_squared_error": 0.1758076975605582,
+          "outcome": "fitted",
+          "seconds": 3.3178464549127966,
+          "peak_memory_mb": 17324.82421875
+        }
+      ],
+      "Robbery": [
+        {
+          "chunks": 1042,
+          "regions": 26097,
+          "converged": true,
+          "iterations": 4511,
+          "relative_squared_error": 0.5086891315878881,
+          "outcome": "fitted",
+          "seconds": 1682.6409638400655,
+          "peak_memory_mb": 21850.03515625
+        }
+      ],
+      "Shooting": [
+        {
+          "outcome": "a1_dictionary",
+          "reason": "fewer than 16 pure"
+        }
+      ],
+      "Shoplifting": [
+        {
+          "chunks": 20,
+          "regions": 488,
+          "converged": true,
+          "iterations": 1141,
+          "relative_squared_error": 0.40291213930500236,
+          "outcome": "fitted",
+          "seconds": 0.8189971868414432,
+          "peak_memory_mb": 21850.03515625
+        }
+      ],
+      "Stealing": [
+        {
+          "chunks": 1224,
+          "regions": 30625,
+          "converged": true,
+          "iterations": 2961,
+          "relative_squared_error": 0.5016123380375967,
+          "outcome": "fitted",
+          "seconds": 2660.26343733212,
+          "peak_memory_mb": 29770.50390625
+        }
+      ],
+      "Vandalism": [
+        {
+          "chunks": 135,
+          "regions": 3262,
+          "converged": true,
+          "iterations": 1221,
+          "relative_squared_error": 0.49420495228994255,
+          "outcome": "fitted",
+          "seconds": 9.055188346887007,
+          "peak_memory_mb": 29770.50390625
+        }
+      ]
+    }
+  },
+  "references_sha256": "8c06ea3b6df35b476d29daccedae757dfda4ed9f6357e9f89fe0d86b2ab77290",
+  "pure_sha256": "ecbdcfb503ee6072074cdd4e4f78ce47732f478f94c0f964e79fd18baf8f42c6"
+}

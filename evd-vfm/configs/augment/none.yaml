@@ -1,0 +1,7 @@
+# Nessuna augmentation: il preprocessing deterministico e basta.
+id: none
+random_resize_scale: [1.0, 1.0]
+random_resize_ratio: [1.0, 1.0]
+rand_augment: null
+horizontal_flip: false
+reprob: 0.0

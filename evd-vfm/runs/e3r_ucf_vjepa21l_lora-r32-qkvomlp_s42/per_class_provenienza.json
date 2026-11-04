@@ -1,0 +1,21 @@
+{
+  "run_id": "e3r_ucf_vjepa21l_lora-r32-qkvomlp_s42",
+  "split": "test",
+  "threshold": 0.05582314357161522,
+  "origine": "diagnostica_post_hoc",
+  "annotation_source": "ucf_lab@5d83069e67e1cff28de478b2d9845f40c254f2d07f79fee1d38c2f4be401b3c3",
+  "data_path_overrides": [
+    "root=C:/Users/antonio/OneDrive/Desktop/Corsi UNISA/Magistrale/TESI/codice/data/ucf_crime_mirror",
+    "inventory=C:/Users/antonio/OneDrive/Desktop/Corsi UNISA/Magistrale/TESI/codice/data/ucf_crime_inventory/inventory.csv",
+    "splits_dir=C:/Users/antonio/OneDrive/Desktop/Corsi UNISA/Magistrale/TESI/codice/data/ucf_crime_mirror/Anomaly_Detection_splits",
+    "annotations.path=C:/Users/antonio/OneDrive/Desktop/Corsi UNISA/Magistrale/TESI/codice/data/annotations/fs_ucf_crime"
+  ],
+  "coerenza_verificata": true,
+  "script_sha256": "0ea19b0913f0dd0288b42417054ab7cee10d63718fb8b41f94781539bc818533",
+  "n_verifiche": 152,
+  "sha256": {
+    "metrics.json": "c2f28dac4de343d01af5f9f87cce59f6dfb27ac5c6c70cc93f5112b910751c5f",
+    "scores.jsonl": "2bada7629bdf644f6499b837ca0c2c04325dcd80e5008a8ac81797cab677c8cb",
+    "config.yaml": "3649e9d86b1c048f1d4a2dcd44a269471d3d95c37babf006b15800e1f21ed6fd"
+  }
+}

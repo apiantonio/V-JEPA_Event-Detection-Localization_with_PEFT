@@ -1,0 +1,12 @@
+experiment: e3r_lora_r8
+official: true
+assi:
+  seed: [42]
+paralleli: 1
+fetta_massima: 1
+risorse:
+  p: aiq
+  t: "07:00:00"
+  c: "14"
+  g: "1"
+  m: "128G"

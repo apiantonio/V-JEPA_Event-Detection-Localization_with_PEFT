@@ -1,0 +1,14 @@
+id: mivia
+name: mivia_crime
+decoder: pyav
+root: ${oc.env:EVD_MIVIA_DIR}
+inventory: ${oc.env:EVD_DATA_DIR}/mivia_crime_inventory/inventory.csv
+n_classes: 14          # le stesse 13 classi di anomalia + Normal di UCF-Crime
+annotations:
+  source: mivia_lab
+  path: ${..root}
+feature_store:
+  enabled: false
+  root: ${oc.env:EVD_FEATURES_DIR}
+  layers: [23]
+  storage_dtype: fp16

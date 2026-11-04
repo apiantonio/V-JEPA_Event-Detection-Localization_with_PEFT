@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editors and tools
+.vscode/
+.idea/
+.claude/
+
+# Third-party code and data: not redistributed (see README, Installation)
+/vjepa2/
+/data/
+
+# Large or machine-specific run outputs
+evd-vfm/runs/**/checkpoint/*
+!evd-vfm/runs/**/checkpoint/README.md*
+!evd-vfm/runs/**/checkpoint/*
+!evd-vfm/runs/**/checkpoint/README.mdREADME.md
+evd-vfm/runs/**/explain/
+*.pt
+*.safetensors
+*.sqlite3
+evd-vfm/runs/registry.jsonl
+evd-vfm/runs/annotazioni_spaziali/
+
+# Private or Linux-only artifacts of the delivery: not for a public repository
+.venv-hpc*
+evd-vfm/runs/localization-class-routing-20261021/archives/
+evd-vfm/runs/localization-class-routing-20261021/gt-snapshot/
+evd-vfm/runs/localization-class-routing-20261021/plan/
+evd-vfm/runs/localization-class-routing-20261021/fits/**/*.npz
+
+# Temporary office files and credential material
+~$*
+.env
+.env.*
+*.pem
+*.key
+
+# Temporary office files and credential material
+~$*
+.env
+.env.*
+*.pem
+*.key

@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Metrics of the class-routed localization</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a bench of instruments. Sticky control rail on top; the ranked table of methods on
+   the left and the dossier of the selected method on the right, stacked below 1180px. GT is
+   amber, as the boxes of the demonstrator; the accent is a cool teal. */
+:root {
+  --paper: #f2f4f3; --surface: #ffffff; --sunken: #e9eeec; --ink: #16211e; --muted: #5a6964;
+  --rule: #d5ddda; --accent: #0e6b61; --accent-ink: #ffffff; --accent-soft: #d8ece8;
+  --truth: #94700a; --truth-soft: #f6ecd0; --warn: #9a4a17; --warn-soft: #f7e4d6;
+  --best: #e1f0d7; --best-ink: #23501a;
+  --s1: #0e6b61; --s2: #b25e18; --s3: #5a49b5; --s4: #b3315f; --s5: #2f73b3;
+  --font-ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-head: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --step--1: 0.78rem; --step-0: 0.875rem; --step-1: 1rem; --step-2: 1.25rem; --step-3: 1.6rem;
+  --radius: 6px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f1513; --surface: #151d1a; --sunken: #1b2522; --ink: #e2eae7; --muted: #94a59f;
+    --rule: #2a3632; --accent: #5cc4b4; --accent-ink: #0b1311; --accent-soft: #163029;
+    --truth: #e2b744; --truth-soft: #33290f; --warn: #ef9c66; --warn-soft: #3a2415;
+    --best: #1c3418; --best-ink: #bde3a5;
+    --s1: #5cc4b4; --s2: #e59a57; --s3: #a596f2; --s4: #ee7ba7; --s5: #7fb2e8;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0f1513; --surface: #151d1a; --sunken: #1b2522; --ink: #e2eae7; --muted: #94a59f;
+  --rule: #2a3632; --accent: #5cc4b4; --accent-ink: #0b1311; --accent-soft: #163029;
+  --truth: #e2b744; --truth-soft: #33290f; --warn: #ef9c66; --warn-soft: #3a2415;
+  --best: #1c3418; --best-ink: #bde3a5;
+  --s1: #5cc4b4; --s2: #e59a57; --s3: #a596f2; --s4: #ee7ba7; --s5: #7fb2e8;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--paper); color: var(--ink); font: 400 var(--step-0)/1.5 var(--font-ui);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 48px;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+h1, h2, h3 { font-family: var(--font-head); font-weight: 600; text-wrap: balance; margin: 0; letter-spacing: 0.005em; }
+h1 { font-size: var(--step-3); line-height: 1.15; }
+h2 { font-size: var(--step-2); }
+h3 { font-size: var(--step-1); }
+p { margin: 0; max-width: 72ch; }
+a { color: var(--accent); }
+button, select, input { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.mono { font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+.muted { color: var(--muted); }
+.eyebrow { font: 500 var(--step--1)/1.2 var(--font-ui); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+
+header.page { display: grid; gap: 10px; padding-block: 22px 14px; max-width: 1600px; margin-inline: auto; }
+header.page .lede { color: var(--muted); }
+.sources { display: flex; flex-wrap: wrap; gap: 8px; }
+.source { display: grid; gap: 2px; padding: 8px 10px; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--surface); min-width: 0; }
+.source b { font-weight: 600; }
+.pill { display: inline-flex; align-items: center; gap: 4px; padding: 1px 7px; border-radius: 999px; font-size: var(--step--1); font-weight: 500; white-space: nowrap; }
+.pill.ok { background: var(--accent-soft); color: var(--accent); }
+.pill.wait { background: var(--warn-soft); color: var(--warn); }
+.pill.gt { background: var(--truth-soft); color: var(--truth); }
+
+nav.views { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--paper); border-bottom: 1px solid var(--rule); max-width: 1600px; margin-inline: auto; }
+nav.views .row { display: flex; flex-wrap: wrap; gap: 4px; padding-block: 6px; }
+nav.views a { text-decoration: none; color: var(--muted); padding: 6px 12px; border-radius: var(--radius); font-weight: 500; }
+nav.views a[aria-current="page"] { color: var(--accent-ink); background: var(--accent); }
+.controls { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: end; padding-block: 8px 10px; }
+.control { display: grid; gap: 3px; min-width: 0; }
+.control > span { font-size: var(--step--1); color: var(--muted); font-weight: 500; letter-spacing: 0.02em; }
+.seg { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; background: var(--surface); }
+.seg button { border: 0; background: transparent; padding: 4px 10px; cursor: pointer; border-right: 1px solid var(--rule); }
+.seg button:last-child { border-right: 0; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+.seg.gt button[aria-pressed="true"] { background: var(--truth); color: var(--surface); }
+select, input[type="search"] { border: 1px solid var(--rule); border-radius: var(--radius); background: var(--surface); padding: 4px 8px; max-width: 100%; }
+.checks { display: flex; flex-wrap: wrap; gap: 4px 12px; }
+.checks label { display: inline-flex; gap: 5px; align-items: center; white-space: nowrap; }
+
+main { max-width: 1600px; margin-inline: auto; padding-top: 12px; }
+.bench { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; align-items: start; }
+@media (min-width: 1180px) { .bench { grid-template-columns: minmax(0, 1fr) 420px; } }
+.panel { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius); min-width: 0; }
+.panel-head { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; justify-content: space-between; padding: 10px 12px; border-bottom: 1px solid var(--rule); }
+.panel-body { padding: 12px; display: grid; gap: 14px; }
+.panel-body > * { min-width: 0; }
+.note { color: var(--muted); font-size: var(--step--1); }
+.warnline { color: var(--warn); font-size: var(--step--1); }
+
+.tablewrap { overflow: auto; max-height: 72vh; }
+table { border-collapse: collapse; width: 100%; font-size: var(--step--1); }
+th, td { padding: 5px 8px; border-bottom: 1px solid var(--rule); text-align: left; white-space: nowrap; }
+thead th { position: sticky; top: 0; background: var(--sunken); z-index: 1; font-weight: 600; vertical-align: bottom; }
+thead th.sortable { cursor: pointer; user-select: none; }
+thead th.sorted { color: var(--accent); }
+thead th small { display: block; font-weight: 400; color: var(--muted); font-size: 0.68rem; }
+td.num, th.num { text-align: right; font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+td.rank { color: var(--muted); text-align: right; font-family: var(--font-data); }
+td.best { background: var(--best); color: var(--best-ink); font-weight: 500; }
+td.na { color: var(--muted); }
+tbody tr { cursor: pointer; }
+tbody tr:hover { background: var(--sunken); }
+tbody tr.selected { background: var(--accent-soft); }
+tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 var(--accent); }
+.count { font-size: var(--step--1); color: var(--muted); }
+
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); gap: 8px; }
+.fact { display: grid; gap: 1px; padding: 6px 8px; background: var(--sunken); border-radius: var(--radius); min-width: 0; }
+.fact span { font-size: 0.7rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fact b { font: 500 var(--step-1) var(--font-data); }
+.chart svg { width: 100%; height: auto; display: block; }
+.chart .axis { stroke: var(--rule); }
+.chart .grid { stroke: var(--rule); stroke-dasharray: 2 3; }
+.chart text { fill: var(--muted); font: 10px var(--font-data); }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: var(--step--1); }
+.legend i { display: inline-block; width: 14px; height: 3px; border-radius: 2px; vertical-align: middle; margin-right: 5px; }
+.legend i.dash { background: repeating-linear-gradient(90deg, currentColor 0 4px, transparent 4px 7px) !important; }
+.btn { border: 1px solid var(--rule); background: var(--surface); padding: 3px 10px; border-radius: var(--radius); cursor: pointer; }
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { display: inline-flex; gap: 6px; align-items: center; padding: 2px 4px 2px 8px; border-radius: 999px; background: var(--sunken); font-size: var(--step--1); max-width: 100%; }
+.chip span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.chip button { border: 0; background: transparent; cursor: pointer; color: var(--muted); padding: 0 4px; }
+
+.prose { display: grid; gap: 18px; max-width: 900px; }
+.prose section { display: grid; gap: 8px; }
+.prose dl { display: grid; grid-template-columns: minmax(0, max-content) minmax(0, 1fr); gap: 6px 16px; margin: 0; }
+.prose dt { font-family: var(--font-data); font-size: var(--step--1); color: var(--accent); padding-top: 2px; }
+.prose dd { margin: 0; }
+@media (max-width: 640px) { .prose dl { grid-template-columns: minmax(0, 1fr); } .prose dd { margin-bottom: 6px; } }
+.callout { border-left: 3px solid var(--warn); background: var(--warn-soft); padding: 8px 12px; border-radius: 0 var(--radius) var(--radius) 0; }
+.empty { padding: 24px 12px; color: var(--muted); text-align: center; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<header class="page">
+  <span class="eyebrow" id="campaign"></span>
+  <h1>Metrics of the class-routed localization</h1>
+  <p class="lede" id="lede"></p>
+  <div class="sources" id="sources"></div>
+</header>
+<nav class="views" aria-label="Views">
+  <div class="row">
+    <a href="#metodi" data-view="metodi">AP, RBDC, RBDR</a>
+    <a href="#iou" data-view="iou">IoU with a mass threshold</a>
+    <a href="#rivelatori" data-view="rivelatori">Detectors and classifiers</a>
+    <a href="#definizioni" data-view="definizioni">Definitions</a>
+  </div>
+</nav>
+<main>
+  <section id="view-metodi" data-panel="metodi">
+    <div class="controls" id="controls">
+      <div class="control"><span>Regime</span><div class="seg" id="c-regime"></div></div>
+      <div class="control"><span>Dataset</span><div class="seg" id="c-dataset"></div></div>
+      <div class="control"><span>GT reading</span><div class="seg gt" id="c-gt"></div></div>
+      <div class="control"><span>Metric</span><div class="seg" id="c-family"></div></div>
+      <div class="control"><span>Columns</span><div class="seg" id="c-cols"></div></div>
+      <div class="control"><span>Detector</span><div class="checks" id="c-det"></div></div>
+      <div class="control"><label for="c-score">Score</label><select id="c-score"><option value="">all</option></select></div>
+      <div class="control"><label for="c-variant">Box variant</label><select id="c-variant"><option value="">all</option></select></div>
+      <div class="control"><label for="c-search">Configuration</label><input type="search" id="c-search" placeholder="e.g. B2-A2"></div>
+    </div>
+    <div class="bench">
+      <div class="panel">
+        <div class="panel-head"><h2 id="t-title">Methods</h2><span class="count" id="t-count"></span></div>
+        <p class="note" id="t-note" style="padding: 8px 12px 0"></p>
+        <div class="tablewrap" id="t-wrap"></div>
+      </div>
+      <aside class="panel" id="dossier" aria-live="polite"></aside>
+    </div>
+  </section>
+  <section id="view-iou" data-panel="iou" hidden>
+    <div class="bench" style="padding-top: 8px">
+      <div class="panel">
+        <div class="panel-head"><h2>IoU of the boxes with a mass threshold</h2><div class="seg" id="iou-regime"></div><span class="count" id="iou-count"></span></div>
+        <p class="note" style="padding: 8px 12px 0" id="iou-note">IoU between the union of the predicted boxes and the union of the GT boxes per annotated plane, mean per event, then per class and over the 13 classes. Mean = mean of the two datasets. Each configuration is on its own detector.</p>
+        <div class="tablewrap" id="iou-wrap"></div>
+      </div>
+      <aside class="panel" id="iou-dossier"></aside>
+    </div>
+  </section>
+  <section id="view-rivelatori" data-panel="rivelatori" hidden>
+    <div style="display: grid; gap: 16px; padding-top: 8px">
+      <div class="panel">
+        <div class="panel-head"><h2>Binary head of the detectors</h2></div>
+        <p class="note" style="padding: 8px 12px 0">The laboratory's OVAD protocol, 30 s guard, Youden threshold on the FS-UCF-Crime validation transferred to MIVIA-Crime.</p>
+        <div class="tablewrap" id="det-wrap"></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h2>Classifiers of the routing</h2></div>
+        <p class="note" style="padding: 8px 12px 0">Choice of the class on the test chunks selected for the spatial evaluation (13 classes, Normal left out before the argmax). They do not describe the quality of the boxes.</p>
+        <div class="tablewrap" id="cls-wrap"></div>
+      </div>
+    </div>
+  </section>
+  <section id="view-definizioni" data-panel="definizioni" hidden>
+    <div class="prose" style="padding-top: 14px">
+      <section>
+        <h2>Units and means</h2>
+        <p>Every metric is computed per <b>event</b>, on its images; then it is averaged over the events of each class and over the 13 classes. An image is a distinct pair (annotated plane, temporal plane of the predicted chunk) with its GT boxes. Per event <b>only the images with a GT</b> are used. «Mean of the two datasets» is the plain mean of the two values.</p>
+        <p>The choices among configurations, variants and thresholds are made on the test set: they are exploratory.</p>
+      </section>
+      <section>
+        <h2>Regimes: annotated chunks and real use</h2>
+        <dl>
+          <dt>annotated chunks</dt><dd>boxes are produced on every test chunk with a spatial GT, whatever the detector says (27 October). The «· dataset» metrics use the images with a GT only.</dd>
+          <dt>real use</dt><dd>every chunk of the test videos is seen, and boxes are produced only on the chunks the binary head of the configuration's detector flags: score ≥ τ, with τ the Youden point on the validation of that detector (transferred to MIVIA-Crime). An annotated chunk that is not flagged has no box. Videos: all 290 of FS-UCF-Crime; on MIVIA-Crime the 39 with a spatial GT and 39 normal ones, chosen as the annotated ones, by increasing number of base planes.</dd>
+          <dt>negative images</dt><dd>in real use, the chunk planes of the frames outside every temporal event: no object, every detection is a false positive. They enter the «· dataset» metrics (false positives and frames of RBDC, false positives of the AP); the frames inside an event without a reviewed spatial GT do not. Per event nothing changes, except for the unflagged chunks.</dd>
+          <dt>false alarms</dt><dd>in the IoU view, the share of negative images that get at least one box: the IoU looks only at the frames with a GT.</dd>
+        </dl>
+      </section>
+      <section>
+        <h2>IoU thresholds</h2>
+        <dl>
+          <dt>@t</dt><dd>the metric at a single IoU threshold t, from 0.05 to 0.95 in steps of 0.05.</dd>
+          <dt>[a:s:b]</dt><dd>mean over the thresholds from a to b with step s, both ends included. Step 0.1 is the main one (the THUMOS14 convention for [0.1:0.5], [0.3:0.7] and [0.1:0.7]); step 0.05 is a check.</dd>
+          <dt>{a,b,…}</dt><dd>mean over those values only. [0.5:0.1:0.7] = {0.5,0.6,0.7}, unlike {0.5,0.7}.</dd>
+          <dt>[0.5:0.05:0.95]</dt><dd>the COCO AP.</dd>
+        </dl>
+        <p>Every mean is computed per event and then aggregated: with every threshold present for every event it equals the mean of the values at each threshold.</p>
+      </section>
+      <section>
+        <h2>Metrics</h2>
+        <dl>
+          <dt>AP@t</dt><dd>COCO AP at threshold t: one-to-one matching by decreasing score, 101 recall points, precision envelope. AP@[a:s:b] is the mean over thresholds.</dd>
+          <dt>RBDC@t</dt><dd><i>Region-Based Detection Criterion</i> (Ramachandra &amp; Jones, WACV 2020), with the script of Georgescu et al. (2021). A GT region is detected if a detection covers it with IoU ≥ t; a detection may detect more than one; a detection covering only regions already detected is neither true nor false; one covering none is a false positive. RBDC is the area under the RBDR–FPR curve for FPR (false positives per frame) between 0 and 1. <b>RBDC = RBDC@0.1</b>, the threshold of the literature. It is the main metric.</dd>
+          <dt>RBDR@t</dt><dd><i>Region-Based Detection Rate</i> with every detection, with no threshold on the score: the fraction of GT regions covered with IoU ≥ t by at least one detection. It is a recall on the regions of the events and <b>does not penalize false alarms</b>. <b>RBDR = RBDR@0.1</b>.</dd>
+          <dt>mRBDC, mRBDR</dt><dd>means over thresholds, as AP@[a:s:b]: mRBDC@[0.1:0.1:0.5], mRBDR@{0.3,0.5,0.7}, …</dd>
+          <dt>· dataset</dt><dd>AP, RBDC and RBDR computed as in the RBDC paper: a single curve over every image of the dataset, with the scores compared across chunks. No class means. In real use they include the negative images.</dd>
+        </dl>
+        <p class="callout">RBDR is exact on the annotated frames alone too, because it counts GT regions only. RBDC is not: in the literature the false positives are counted on every frame, normal ones included. With the annotated chunks those of the normal frames are missing, so RBDC is optimistic; the «· dataset» RBDC of real use counts them.</p>
+      </section>
+      <section>
+        <h2>GT readings</h2>
+        <dl>
+          <dt>union</dt><dd>one object per image, the union of the areas of every GT box (as the IoU metric).</dd>
+          <dt>touching</dt><dd>the GT boxes whose pixels are 8-connected (overlapping, sharing a side or just a corner) are joined, transitively; the object is the union of the areas. It is the rule of the predicted components. Our own definition.</dd>
+          <dt>instances</dt><dd>every GT box is an object.</dd>
+        </dl>
+        <p class="callout">The three readings change the objects to find: the numbers of different readings are not comparable with each other.</p>
+      </section>
+      <section>
+        <h2>Box variants and scores</h2>
+        <dl>
+          <dt>union</dt><dd>cumulative union: at every confidence threshold, a single region per image, the union of the concepts above the threshold. The curve is not monotone: the AP takes the precision envelope, RBDC the highest RBDR reachable at each FPR; RBDR uses every concept.</dd>
+          <dt>component</dt><dd>every 8-connected component of every concept, with the mass of the component.</dd>
+          <dt>concept-union / concept-box</dt><dd>per concept, the union of the areas of its components / the box enclosing them.</dd>
+          <dt>component-concept-score</dt><dd>the components as separate instances, with the mass of the concept.</dd>
+          <dt>largest-component</dt><dd>the largest component of each concept.</dd>
+          <dt>nms / softnms / wbf</dt><dd>NMS at IoU 0.3, 0.5, 0.7; Soft-NMS (σ 0.5, cut 0.001); WBF (IoU 0.55, mean), on component or concept-box.</dd>
+          <dt>mass / share</dt><dd>score = sum of the positive IG of the concept (or of the component) / the same mass divided by the total of the chunk.</dd>
+        </dl>
+      </section>
+    </div>
+  </section>
+</main>
+<script>
+"use strict";
+const D = /*__DATA__*/null;
+const $ = (s, el = document) => el.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const fmt = (v, d = 4) => (Number.isFinite(v) ? v.toFixed(d) : "—");
+const pct = (v) => (Number.isFinite(v) ? (100 * v).toFixed(2) + "%" : "—");
+
+function decode(b64) {
+  const bin = atob(b64), out = new Float32Array(bin.length / 2);
+  for (let i = 0; i < out.length; i++) {
+    const v = bin.charCodeAt(2 * i) | (bin.charCodeAt(2 * i + 1) << 8);
+    out[i] = v === 65535 ? NaN : v / 10000;
+  }
+  return out;
+}
+const MACRO = decode(D.macro), PERCLASS = decode(D.perClass), POOLED = decode(D.pooled);
+const NM = D.methods.length, ND = D.datasets.length, NG = D.gt.length, NK = D.metrics.length;
+const NS = D.stats.length, NC = D.classes.length, NCS = D.classStats.length, NP = D.pooledMetrics.length;
+const DETECTORS = [...new Set(D.sources.map((s) => s.detector))];
+const REGIMES = D.regimes || [{ key: "annotated", label: "annotated chunks" }];
+const hasRegime = (r) => D.sources.some((s) => s.regime === r && s.folder);
+const LABEL = { ap: "AP", rbdc: "RBDC", rbdr: "RBDR" };
+const FAMILIES = [
+  { key: "ap", label: "AP" }, { key: "rbdc", label: "RBDC" }, { key: "rbdr", label: "RBDR" },
+  { key: "ap_pooled", label: "AP · dataset" }, { key: "rbdc_pooled", label: "RBDC · dataset" },
+  { key: "rbdr_pooled", label: "RBDR · dataset" },
+];
+const GT_LABEL = { union: "union", touching: "touching", instances: "instances" };
+const COLSETS = {
+  main: ["[0.5:0.05:0.95]", "@0.50", "@0.75", "[0.1:0.1:0.5]", "[0.1:0.1:0.7]", "[0.3:0.1:0.7]",
+    "[0.1:0.1:0.3]", "[0.3:0.1:0.5]", "[0.5:0.1:0.7]", "{0.3,0.5,0.7}", "{0.1,0.3,0.5}",
+    "{0.1,0.3}", "{0.3,0.5}", "{0.5,0.7}", "@0.10", "@0.30", "@0.70"],
+  step05: ["[0.1:0.05:0.5]", "[0.1:0.05:0.3]", "[0.3:0.05:0.5]", "[0.1:0.05:0.7]",
+    "[0.3:0.05:0.7]", "[0.5:0.05:0.7]", "[0.5:0.05:0.95]"],
+  single: D.stats.filter((k) => k.startsWith("@")),
+};
+const COLSET_LABEL = { main: "main", step05: "step 0.05", single: "single thresholds" };
+
+const state = {
+  regime: hasRegime("real") ? "real" : "annotated",
+  dataset: "ucf_test", gt: "union", family: "ap", cols: "main", detectors: new Set(DETECTORS),
+  score: "", variant: "", search: "", sort: null, desc: true, selected: null, compare: [],
+};
+
+function base(family) { return family.replace("_pooled", ""); }
+function pooledFamily(family) { return family.endsWith("_pooled"); }
+function columns() {
+  const cols = COLSETS[state.cols].slice();
+  if (state.cols === "main" && state.family !== "ap") {
+    cols.splice(cols.indexOf("@0.10"), 1);
+    cols.unshift("@0.10");
+  }
+  return cols;
+}
+function statName(family, key) {
+  const p = LABEL[base(family)];
+  if (key.startsWith("@")) return `${p}@${Number(key.slice(1))}`;
+  return `${base(family) === "ap" ? "" : "m"}${p}@${key}`;
+}
+function statCount(key) {
+  if (key.startsWith("@")) return "";
+  if (key === "[0.5:0.05:0.95]") return "COCO, 10 thresholds";
+  const m = key.match(/^\[([\d.]+):([\d.]+):([\d.]+)\]$/);
+  if (m) return `${Math.round((m[3] - m[1]) / m[2]) + 1} thresholds`;
+  return `${key.split(",").length} values`;
+}
+function raw(m, family, key, d) {
+  const s = D.stats.indexOf(key), g = D.gt.indexOf(state.gt);
+  if (s < 0) return NaN;
+  if (pooledFamily(family)) {
+    const k = D.pooledMetrics.indexOf(base(family));
+    return POOLED[(((m * ND + d) * NG + g) * NP + k) * NS + s];
+  }
+  const k = D.metrics.indexOf(family);
+  return MACRO[(((m * ND + d) * NG + g) * NK + k) * NS + s];
+}
+function both(f) {
+  if (state.dataset !== "mean") return f(D.datasets.findIndex((x) => x.key === state.dataset));
+  const a = f(0), b = f(1);
+  return Number.isFinite(a) && Number.isFinite(b) ? (a + b) / 2 : NaN;
+}
+function value(m, family, key) { return both((d) => raw(m, family, key, d)); }
+function classValue(m, family, key, c) {
+  const j = D.classStats.indexOf(key), g = D.gt.indexOf(state.gt), k = D.metrics.indexOf(family);
+  if (j < 0 || k < 0) return NaN;
+  return both((d) => PERCLASS[(((((m * ND + d) * NG + g) * NK + k) * NC + c) * NCS) + j]);
+}
+function methodName(m) {
+  const [src, cfg, variant, score] = D.methods[m];
+  return { det: D.sources[src].detector, regime: D.sources[src].regime || "annotated", cfg, variant, score };
+}
+const regimeLabel = (r) => (REGIMES.find((x) => x.key === r) || { label: r }).label;
+
+/* ---------- controls ---------- */
+function seg(el, options, current, onPick) {
+  el.innerHTML = options.map((o) => `<button type="button" data-v="${esc(o.v)}" aria-pressed="${o.v === current}">${esc(o.l)}</button>`).join("");
+  el.onclick = (e) => { const b = e.target.closest("button"); if (b) onPick(b.dataset.v); };
+}
+function drawControls() {
+  seg($("#c-regime"), REGIMES.map((r) => ({ v: r.key, l: r.label + (hasRegime(r.key) ? "" : " (pending)") })),
+    state.regime, (v) => { state.regime = v; state.selected = null; state.compare = []; render(); });
+  seg($("#c-dataset"), [...D.datasets.map((d) => ({ v: d.key, l: d.label })), { v: "mean", l: "mean of the two" }],
+    state.dataset, (v) => { state.dataset = v; render(); });
+  seg($("#c-gt"), D.gt.map((g) => ({ v: g, l: GT_LABEL[g] })), state.gt, (v) => { state.gt = v; render(); });
+  seg($("#c-family"), FAMILIES.map((f) => ({ v: f.key, l: f.label })), state.family,
+    (v) => { state.family = v; state.sort = null; render(); });
+  seg($("#c-cols"), Object.keys(COLSETS).map((k) => ({ v: k, l: COLSET_LABEL[k] })), state.cols,
+    (v) => { state.cols = v; state.sort = null; render(); });
+}
+function initControls() {
+  $("#c-det").innerHTML = DETECTORS.map((d, i) => `<label><input type="checkbox" id="c-det-${i}" value="${esc(d)}" checked>${esc(d)}</label>`).join("");
+  $("#c-det").onchange = (e) => {
+    if (e.target.checked) state.detectors.add(e.target.value); else state.detectors.delete(e.target.value);
+    render();
+  };
+  const scores = [...new Set(D.methods.map((m) => m[3]))];
+  const variants = [...new Set(D.methods.map((m) => m[2]))];
+  $("#c-score").insertAdjacentHTML("beforeend", scores.map((s) => `<option>${esc(s)}</option>`).join(""));
+  $("#c-variant").insertAdjacentHTML("beforeend", variants.map((s) => `<option>${esc(s)}</option>`).join(""));
+  $("#c-score").onchange = (e) => { state.score = e.target.value; render(); };
+  $("#c-variant").onchange = (e) => { state.variant = e.target.value; render(); };
+  $("#c-search").oninput = (e) => { state.search = e.target.value.trim().toLowerCase(); render(); };
+}
+
+/* ---------- method table ---------- */
+function rows() {
+  const out = [];
+  for (let m = 0; m < NM; m++) {
+    const n = methodName(m);
+    if (n.regime !== state.regime) continue;
+    if (!state.detectors.has(n.det)) continue;
+    if (state.score && n.score !== state.score) continue;
+    if (state.variant && n.variant !== state.variant) continue;
+    if (state.search && !n.cfg.toLowerCase().includes(state.search)) continue;
+    out.push(m);
+  }
+  return out;
+}
+function renderTable() {
+  const cols = columns(), list = rows();
+  const sortKey = state.sort && cols.includes(state.sort) ? state.sort : cols[0];
+  const vals = new Map(list.map((m) => [m, cols.map((c) => value(m, state.family, c))]));
+  const si = cols.indexOf(sortKey);
+  list.sort((a, b) => {
+    const x = vals.get(a)[si], y = vals.get(b)[si];
+    if (!Number.isFinite(x) && !Number.isFinite(y)) return a - b;
+    if (!Number.isFinite(x)) return 1;
+    if (!Number.isFinite(y)) return -1;
+    return state.desc ? y - x || a - b : x - y || a - b;
+  });
+  const best = cols.map((_, j) => Math.max(...list.map((m) => vals.get(m)[j]).filter(Number.isFinite)));
+  const fam = FAMILIES.find((f) => f.key === state.family).label;
+  $("#t-title").textContent = `${fam} · GT ${state.gt} · ${regimeLabel(state.regime)}`;
+  const available = list.filter((m) => Number.isFinite(vals.get(m)[si])).length;
+  $("#t-count").textContent = `${list.length} methods${available < list.length ? `, ${list.length - available} without values` : ""}`;
+  const real = state.regime === "real", pooled = pooledFamily(state.family);
+  $("#t-note").innerHTML = state.family.startsWith("rbdr") ? "RBDR is a recall on the GT regions with every detection: it does not penalize false alarms."
+    : real && pooled ? "Real use, on the dataset: the false positives of the negative images (frames outside the events) count."
+    : real ? "Real use, per event: boxes only on the chunks the detector flags; the false alarms on normal frames enter only the «· dataset» metrics."
+    : state.family.startsWith("rbdc") ? "RBDC counts the false positives per frame on the frames with a GT only: it is optimistic with respect to the literature."
+    : "Sorted by the highlighted column; click a header to change it, a row for its details.";
+  if (!list.length) { $("#t-wrap").innerHTML = `<p class="empty">${hasRegime(state.regime) ? "No method with these filters." : `Results «${esc(regimeLabel(state.regime))}» not available yet.`}</p>`; return list; }
+  const head = `<tr><th class="num">#</th><th>Detector</th><th>Configuration</th><th>Variant</th><th>Score</th>${cols.map((c) => `<th class="num sortable${c === sortKey ? " sorted" : ""}" data-col="${esc(c)}" title="${esc(statName(state.family, c))}">${esc(statName(state.family, c))}${c === sortKey ? (state.desc ? " ↓" : " ↑") : ""}<small>${esc(statCount(c))}</small></th>`).join("")}</tr>`;
+  const body = list.map((m, i) => {
+    const n = methodName(m), v = vals.get(m);
+    return `<tr data-m="${m}" class="${m === state.selected ? "selected" : ""}"><td class="rank">${i + 1}</td><td>${esc(n.det)}</td><td>${esc(n.cfg)}</td><td>${esc(n.variant)}</td><td>${esc(n.score)}</td>${v.map((x, j) => `<td class="num${!Number.isFinite(x) ? " na" : x === best[j] ? " best" : ""}">${fmt(x)}</td>`).join("")}</tr>`;
+  }).join("");
+  $("#t-wrap").innerHTML = `<table><thead>${head}</thead><tbody>${body}</tbody></table>`;
+  $("#t-wrap thead").onclick = (e) => {
+    const th = e.target.closest("th[data-col]"); if (!th) return;
+    if (state.sort === th.dataset.col || (!state.sort && th.dataset.col === cols[0])) state.desc = !state.desc;
+    else { state.sort = th.dataset.col; state.desc = true; }
+    render();
+  };
+  $("#t-wrap tbody").onclick = (e) => {
+    const tr = e.target.closest("tr[data-m]"); if (!tr) return;
+    state.selected = Number(tr.dataset.m); render();
+  };
+  return list;
+}
+
+/* ---------- dossier ---------- */
+function chart(series, opts = {}) {
+  const W = 400, H = 210, L = 38, R = 10, T = 10, B = 30;
+  const xs = D.thresholds, x = (t) => L + ((t - 0.05) / 0.9) * (W - L - R);
+  const top = Math.max(0.1, ...series.flatMap((s) => s.values.filter(Number.isFinite)));
+  const ymax = Math.min(1, Math.ceil(top * 10) / 10), y = (v) => T + (1 - v / ymax) * (H - T - B);
+  const ticks = []; for (let v = 0; v <= ymax + 1e-9; v += ymax <= 0.3 ? 0.05 : ymax <= 0.6 ? 0.1 : 0.2) ticks.push(v);
+  let svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(opts.label || "")}">`;
+  for (const v of ticks) svg += `<line class="grid" x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}"/><text x="${L - 6}" y="${y(v) + 3}" text-anchor="end">${v.toFixed(2)}</text>`;
+  for (const t of [0.1, 0.3, 0.5, 0.7, 0.9]) svg += `<text x="${x(t)}" y="${H - B + 14}" text-anchor="middle">${t}</text>`;
+  svg += `<line class="axis" x1="${L}" x2="${W - R}" y1="${y(0)}" y2="${y(0)}"/><text x="${(L + W - R) / 2}" y="${H - 4}" text-anchor="middle">IoU threshold</text>`;
+  series.forEach((s) => {
+    const pts = xs.map((t, i) => [t, s.values[i]]).filter((p) => Number.isFinite(p[1]));
+    if (!pts.length) return;
+    svg += `<polyline fill="none" stroke="${s.color}" stroke-width="2" ${s.dash ? 'stroke-dasharray="5 4"' : ""} points="${pts.map((p) => `${x(p[0]).toFixed(1)},${y(p[1]).toFixed(1)}`).join(" ")}"/>`;
+    const end = pts[pts.length - 1];
+    svg += `<circle cx="${x(end[0])}" cy="${y(end[1])}" r="3" fill="${s.color}"/>`;
+  });
+  svg += "</svg>";
+  const legend = `<div class="legend">${series.map((s) => `<span style="color:${s.color}"><i class="${s.dash ? "dash" : ""}" style="background:${s.color}"></i><span style="color:var(--ink)">${esc(s.label)}</span></span>`).join("")}</div>`;
+  return `<div class="chart">${svg}</div>${legend}`;
+}
+function curve(m, family) { return D.stats.filter((k) => k.startsWith("@")).map((k) => value(m, family, k)); }
+function eventsPerClass(m, c) {
+  const det = D.methods[m][0], src = D.sources[det];
+  const per = (key) => src.datasets?.[key]?.events_per_class?.[D.classes[c]];
+  if (state.dataset === "mean") return `${per("ucf_test") ?? "—"} / ${per("mivia_test") ?? "—"}`;
+  return per(state.dataset) ?? "—";
+}
+function renderDossier(list) {
+  const el = $("#dossier");
+  if (state.selected === null || !list.includes(state.selected)) state.selected = list[0] ?? null;
+  if (state.selected === null) { el.innerHTML = `<p class="empty">Select a method.</p>`; return; }
+  const m = state.selected, n = methodName(m);
+  const facts = [
+    ["AP@[0.5:0.05:0.95]", value(m, "ap", "[0.5:0.05:0.95]")], ["AP@0.5", value(m, "ap", "@0.50")],
+    ["AP@[0.1:0.1:0.5]", value(m, "ap", "[0.1:0.1:0.5]")], ["RBDC", value(m, "rbdc", "@0.10")],
+    ["mRBDC@[0.1:0.1:0.5]", value(m, "rbdc", "[0.1:0.1:0.5]")], ["RBDR", value(m, "rbdr", "@0.10")],
+    ["mRBDR@[0.1:0.1:0.5]", value(m, "rbdr", "[0.1:0.1:0.5]")], ["RBDC · dataset", value(m, "rbdc_pooled", "@0.10")],
+    ["AP · dataset@[0.1:0.1:0.5]", value(m, "ap_pooled", "[0.1:0.1:0.5]")],
+  ];
+  const own = chart([
+    { label: "AP", values: curve(m, "ap"), color: "var(--s1)" },
+    { label: "RBDC", values: curve(m, "rbdc"), color: "var(--s2)" },
+    { label: "RBDR", values: curve(m, "rbdr"), color: "var(--s3)" },
+    { label: "AP · dataset", values: curve(m, "ap_pooled"), color: "var(--s1)", dash: true },
+    { label: "RBDC · dataset", values: curve(m, "rbdc_pooled"), color: "var(--s2)", dash: true },
+  ], { label: "Metrics of the method per IoU threshold" });
+  const palette = ["var(--s1)", "var(--s2)", "var(--s3)", "var(--s4)", "var(--s5)"];
+  const compared = [m, ...state.compare.filter((x) => x !== m)].slice(0, 5);
+  const cmp = state.compare.length ? chart(compared.map((x, i) => {
+    const k = methodName(x);
+    return { label: `${k.det} · ${k.cfg} · ${k.variant} · ${k.score}`, values: curve(x, state.family), color: palette[i] };
+  }), { label: "Comparison per IoU threshold" }) : `<p class="note">Add methods to the comparison to see their ${esc(FAMILIES.find((f) => f.key === state.family).label)} curve next to this one.</p>`;
+  let classes = "";
+  if (!pooledFamily(state.family)) {
+    const keys = columns().filter((k) => D.classStats.includes(k)).slice(0, 6);
+    const head = `<tr><th>Class</th><th class="num">Events</th>${keys.map((k) => `<th class="num">${esc(statName(state.family, k))}</th>`).join("")}</tr>`;
+    const body = D.classes.map((c, ci) => `<tr><td>${esc(c)}</td><td class="num">${eventsPerClass(m, ci)}</td>${keys.map((k) => `<td class="num">${fmt(classValue(m, state.family, k, ci))}</td>`).join("")}</tr>`).join("");
+    classes = `<div><h3>Per class</h3><p class="note">${esc(FAMILIES.find((f) => f.key === state.family).label)}, GT ${esc(state.gt)}, ${state.dataset === "mean" ? "mean of the two datasets (UCF / MIVIA events)" : esc(D.datasets.find((d) => d.key === state.dataset).label)}.</p><div class="tablewrap" style="max-height:none"><table><thead>${head}</thead><tbody>${body}</tbody></table></div></div>`;
+  } else {
+    classes = `<p class="note">The «· dataset» metrics are a single curve over every image: they have no per-class values.</p>`;
+  }
+  const inCompare = state.compare.includes(m);
+  el.innerHTML = `<div class="panel-head"><div style="display:grid;gap:2px;min-width:0"><span class="eyebrow">${esc(n.det)} · ${esc(regimeLabel(n.regime))}</span><h2>${esc(n.cfg)}</h2><span class="muted">${esc(n.variant)} · score ${esc(n.score)} · GT ${esc(state.gt)}</span></div><button type="button" class="btn" id="cmp-toggle">${inCompare ? "Remove from the comparison" : "Add to the comparison"}</button></div>
+  <div class="panel-body"><div class="facts">${facts.map(([k, v]) => `<div class="fact"><span title="${esc(k)}">${esc(k)}</span><b>${fmt(v)}</b></div>`).join("")}</div>
+  <div><h3>Per IoU threshold</h3>${own}</div>
+  <div><h3>Comparison</h3>${state.compare.length ? `<div class="chips">${state.compare.map((x) => { const k = methodName(x); return `<span class="chip"><span>${esc(`${k.det} · ${k.cfg} · ${k.variant} · ${k.score}`)}</span><button type="button" data-rm="${x}" aria-label="Remove">×</button></span>`; }).join("")}</div>` : ""}${cmp}</div>
+  ${classes}</div>`;
+  $("#cmp-toggle").onclick = () => {
+    state.compare = inCompare ? state.compare.filter((x) => x !== m) : [...state.compare, m].slice(-4);
+    render();
+  };
+  el.querySelectorAll("[data-rm]").forEach((b) => (b.onclick = () => { state.compare = state.compare.filter((x) => x !== Number(b.dataset.rm)); render(); }));
+}
+
+/* ---------- other views ---------- */
+const THRESHOLD_LABEL = { fixed_50: "50%", fixed_55: "55%", fixed_70: "70%", calibrated: "calibrated" };
+const iouState = { regime: D.iouReal ? "real" : "annotated", sort: "mean", desc: true, selected: 0 };
+function iouValue(row, ds, cls = "MEAN") {
+  const v = row.values[ds]?.[cls];
+  if (Number.isFinite(v)) return v;
+  if (ds === "mean") { const a = row.values.ucf_test?.[cls], b = row.values.mivia_test?.[cls]; return Number.isFinite(a) && Number.isFinite(b) ? (a + b) / 2 : NaN; }
+  return NaN;
+}
+function renderIoU() {
+  const real = iouState.regime === "real", source = real ? D.iouReal : D.iou;
+  seg($("#iou-regime"), REGIMES.map((x) => ({ v: x.key, l: x.label + ((x.key === "real" ? D.iouReal : D.iou) ? "" : " (pending)") })),
+    iouState.regime, (v) => { iouState.regime = v; iouState.selected = 0; renderIoU(); });
+  $("#iou-note").textContent = "IoU between the union of the predicted boxes and the union of the GT boxes per annotated plane, mean per event, then per class and over the 13 classes. Mean = mean of the two datasets. Each configuration is on its own detector."
+    + (real ? " Real use: boxes only on the chunks the detector flags, a frame with a GT on an unflagged chunk counts 0; «false alarms» is the share of negative images (frames outside the events) with at least one box." : "");
+  if (!source) { $("#iou-wrap").innerHTML = `<p class="empty">${real ? "IoU evaluation in real use not available yet." : "classifica_iou.csv not found."}</p>`; $("#iou-dossier").innerHTML = ""; $("#iou-count").textContent = ""; return; }
+  const alarm = (r, ds) => (r.falseAlarms ? r.falseAlarms[ds] : NaN);
+  const rowsIoU = source.rows.map((r, i) => ({ i, r, mean: iouValue(r, "mean"), ucf: iouValue(r, "ucf_test"), mivia: iouValue(r, "mivia_test"), faUcf: alarm(r, "ucf_test"), faMivia: alarm(r, "mivia_test") }));
+  rowsIoU.sort((a, b) => (iouState.desc ? b[iouState.sort] - a[iouState.sort] : a[iouState.sort] - b[iouState.sort]) || a.i - b.i);
+  const keys = real ? ["mean", "ucf", "mivia", "faUcf", "faMivia"] : ["mean", "ucf", "mivia"];
+  // Fewer false alarms is better: their best is the minimum.
+  const best = Object.fromEntries(keys.map((k) => [k, (k.startsWith("fa") ? Math.min : Math.max)(...rowsIoU.map((x) => x[k]).filter(Number.isFinite))]));
+  $("#iou-count").textContent = `${rowsIoU.length} configurations`;
+  const th = (k, l) => `<th class="num sortable${iouState.sort === k ? " sorted" : ""}" data-k="${k}">${l}${iouState.sort === k ? (iouState.desc ? " ↓" : " ↑") : ""}</th>`;
+  const heads = th("mean", "Mean") + th("ucf", "FS-UCF-Crime") + th("mivia", "MIVIA-Crime") + (real ? th("faUcf", "False alarms UCF") + th("faMivia", "False alarms MIVIA") : "");
+  const cell = (x, k) => (k.startsWith("fa") ? `<td class="num${x[k] === best[k] ? " best" : ""}">${pct(x[k])}</td>` : `<td class="num${x[k] === best[k] ? " best" : ""}">${fmt(x[k])}</td>`);
+  $("#iou-wrap").innerHTML = `<table><thead><tr><th class="num">#</th><th>Detector</th><th>Configuration</th><th>Threshold</th>${heads}</tr></thead><tbody>${rowsIoU.map((x, n) => `<tr data-i="${x.i}" class="${x.i === iouState.selected ? "selected" : ""}"><td class="rank">${n + 1}</td><td>${esc(x.r.detector)}</td><td>${esc(x.r.configuration)}</td><td>${esc(THRESHOLD_LABEL[x.r.threshold] || x.r.threshold)}</td>${keys.map((k) => cell(x, k)).join("")}</tr>`).join("")}</tbody></table>`;
+  $("#iou-wrap thead").onclick = (e) => { const t = e.target.closest("th[data-k]"); if (!t) return; if (iouState.sort === t.dataset.k) iouState.desc = !iouState.desc; else { iouState.sort = t.dataset.k; iouState.desc = !t.dataset.k.startsWith("fa"); } renderIoU(); };
+  $("#iou-wrap tbody").onclick = (e) => { const t = e.target.closest("tr[data-i]"); if (!t) return; iouState.selected = Number(t.dataset.i); renderIoU(); };
+  const r = source.rows[iouState.selected] || source.rows[0];
+  $("#iou-dossier").innerHTML = `<div class="panel-head"><div style="display:grid;gap:2px"><span class="eyebrow">${esc(r.detector)}</span><h2>${esc(r.configuration)}</h2><span class="muted">threshold ${esc(THRESHOLD_LABEL[r.threshold] || r.threshold)}</span></div></div><div class="panel-body"><div class="tablewrap" style="max-height:none"><table><thead><tr><th>Class</th><th class="num">Mean</th><th class="num">FS-UCF-Crime</th><th class="num">MIVIA-Crime</th></tr></thead><tbody>${D.classes.map((c) => `<tr><td>${esc(c)}</td><td class="num">${fmt(iouValue(r, "mean", c))}</td><td class="num">${fmt(iouValue(r, "ucf_test", c))}</td><td class="num">${fmt(iouValue(r, "mivia_test", c))}</td></tr>`).join("")}</tbody></table></div></div>`;
+}
+function renderContext() {
+  const dsLabel = { ucf: "FS-UCF-Crime", mivia: "MIVIA-Crime", ucf_test: "FS-UCF-Crime", mivia_test: "MIVIA-Crime", pooled: "pooled" };
+  const det = D.detectors || [];
+  $("#det-wrap").innerHTML = det.length ? `<table><thead><tr><th>Detector</th><th>Dataset</th><th class="num">chunk-AUC</th><th class="num">Protocol Mean</th><th class="num">AUC</th><th class="num">AUC_a macro</th><th class="num">Row F1</th><th class="num">Video F1</th><th class="num">Event recall</th></tr></thead><tbody>${det.map((r) => `<tr><td>${esc(r.detector)}</td><td>${esc(dsLabel[r.dataset] || r.dataset)}</td>${["chunk_auc", "protocol_mean", "auc", "auc_a_macro", "row_f1", "video_f1", "event_recall"].map((k) => `<td class="num">${pct(r[k])}</td>`).join("")}</tr>`).join("")}</tbody></table>` : `<p class="empty">OVAD results not found.</p>`;
+  const cls = D.classifiers || [];
+  $("#cls-wrap").innerHTML = cls.length ? `<table><thead><tr><th>Classifier</th><th>Dataset</th><th class="num">Chunk</th><th class="num">Accuracy</th><th class="num">Balanced accuracy</th><th class="num">F1 macro</th><th class="num">F1 weighted</th></tr></thead><tbody>${cls.map((r) => `<tr><td>${esc(r.model)}</td><td>${esc(dsLabel[r.dataset] || r.dataset)}</td><td class="num">${r.chunks}</td>${["accuracy", "balanced_accuracy", "macro_f1", "weighted_f1"].map((k) => `<td class="num">${pct(r[k])}</td>`).join("")}</tr>`).join("")}</tbody></table>` : `<p class="empty">Classifier metrics not found.</p>`;
+}
+function renderHeader() {
+  $("#campaign").textContent = `${D.campaign} · generated ${new Date(D.generated).toLocaleString("en-GB")}`;
+  const images = D.datasets.map((d) => {
+    const s = D.sources.find((x) => x.datasets?.[d.key]);
+    return s ? `${d.label}: ${s.datasets[d.key].events} events, ${s.datasets[d.key].images.toLocaleString("en-US")} images` : "";
+  }).filter(Boolean).join(" · ");
+  $("#lede").textContent = `AP, RBDC and RBDR per event, at the 19 IoU thresholds and on their means, for every detector, configuration, box variant, score and GT reading, on the annotated chunks and in real use. ${images}.`;
+  $("#sources").innerHTML = D.sources.map((s) => {
+    const regime = `<span class="pill ${s.regime === "real" ? "gt" : "ok"}">${esc(regimeLabel(s.regime || "annotated"))}</span>`;
+    if (!s.folder) return `<div class="source"><span><b>${esc(s.detector)}</b> ${regime}</span><span class="pill wait">no result</span></div>`;
+    const ds = Object.values(s.datasets), first = ds[0];
+    const full = first.metrics.length === 3 && first.gt.length === 3;
+    const gt = first.ground_truth ? D.datasets.map((d) => { const g = s.datasets[d.key]?.ground_truth; return g ? `${d.label}: ${g.objects.union} / ${g.objects.touching} / ${g.objects.instances}` : ""; }).filter(Boolean).join(" · ") : "";
+    const neg = D.datasets.map((d) => { const n = s.datasets[d.key]?.negative; return n ? `${d.label}: ${n.images.toLocaleString("en-US")}` : ""; }).filter(Boolean).join(" · ");
+    return `<div class="source"><span><b>${esc(s.detector)}</b> ${regime} <span class="muted mono">${esc(s.folder)}</span></span><span>${first.metrics.map((m) => `<span class="pill ok">${LABEL[m]}</span>`).join(" ")} ${first.gt.map((g) => `<span class="pill gt">${esc(g)}</span>`).join(" ")} ${full ? "" : `<span class="pill wait">RBDC, RBDR and touching pending</span>`}</span>${gt ? `<span class="note">GT objects union / touching / instances — ${esc(gt)}</span>` : ""}${neg ? `<span class="note">negative images — ${esc(neg)}</span>` : ""}</div>`;
+  }).join("");
+}
+
+/* ---------- routing ---------- */
+const VIEWS = ["metodi", "iou", "rivelatori", "definizioni"];
+function route() {
+  const view = VIEWS.includes(location.hash.slice(1)) ? location.hash.slice(1) : "metodi";
+  document.querySelectorAll("[data-panel]").forEach((p) => (p.hidden = p.dataset.panel !== view));
+  document.querySelectorAll("nav.views a").forEach((a) => a.setAttribute("aria-current", a.dataset.view === view ? "page" : "false"));
+}
+function render() { drawControls(); const list = renderTable(); renderDossier(list); }
+renderHeader();
+initControls();
+render();
+renderIoU();
+renderContext();
+route();
+window.addEventListener("hashchange", route);
+</script>
+</body>
+</html>

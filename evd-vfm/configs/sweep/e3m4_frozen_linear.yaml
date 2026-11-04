@@ -1,0 +1,29 @@
+# E3-M4 — la linear probe, quarta epoca in continuazione da E3-M.
+#
+# ⚠️ CONTINUAZIONE, un ciclo su 5524 passi da `e3m_ucf_vjepa21l_frozen-linear_s*` (ultimo passo).
+# Semi `[42, 67, 104]`, nell'ordine della riserva (ADR-054) e con gli stessi
+# indici di E3-M: si esegue il 42 per primo (indice 0), poi 67 e 104.
+# Ogni seme eredita dalla sorgente allo STESSO seme (`init_from` interpola
+# `${seed}`); le 30 sorgenti di E3-M ed E3-C sono state verificate sul cluster
+# il 13 ottobre 2026 (passo finale, passo selezionato, chiavi e parametri).
+#
+# Costo: **1.4 s/passo** su H100 (misurato) x 5524 passi, piu' 6 passate di
+# validazione e la valutazione finale: ≈ **2,5 ore di H100** per seme.
+# Sopra le 7 ore servono anelli `-d afterany` (`checkpoint_every: 100`).
+experiment: e3m4_frozen_linear
+official: true
+
+assi:
+  seed: [42, 67, 104]
+
+paralleli: 4
+fetta_massima: 8
+
+# Risorse identiche a E3-M/E3-C: `num_workers` cambia i pixel (ADR-038) ed e'
+# 12 in tutti i budget, quindi le CPU per GPU restano 14, il tetto di `aiq`.
+risorse:
+  p: aiq
+  t: "07:00:00"
+  c: "14"
+  g: "1"
+  m: "128G"

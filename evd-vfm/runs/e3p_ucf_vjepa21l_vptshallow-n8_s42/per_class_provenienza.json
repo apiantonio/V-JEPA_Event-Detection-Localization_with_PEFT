@@ -1,0 +1,21 @@
+{
+  "run_id": "e3p_ucf_vjepa21l_vptshallow-n8_s42",
+  "split": "test",
+  "threshold": 0.06560483574867249,
+  "origine": "diagnostica_post_hoc",
+  "annotation_source": "ucf_lab@5d83069e67e1cff28de478b2d9845f40c254f2d07f79fee1d38c2f4be401b3c3",
+  "data_path_overrides": [
+    "root=data/ucf_crime_mirror",
+    "inventory=data/ucf_crime_inventory/inventory.csv",
+    "annotations.path=data/annotations/fs_ucf_crime",
+    "splits_dir=data/ucf_crime_mirror/Anomaly_Detection_splits"
+  ],
+  "coerenza_verificata": true,
+  "script_sha256": "81bb410aaa9940cc31122b8e2e1acc04da42420fb06c18ff26bfa4f726663896",
+  "n_verifiche": 152,
+  "sha256": {
+    "metrics.json": "048530b3ea7869bd9093e7749929564e069924af6738d13ef369aa129a5fc443",
+    "scores.jsonl": "e596126720188720a864bed34dbc265ad41c8dfa7f36e9803b4186518cd1e33d",
+    "config.yaml": "9dd4899b4c6bc3aba720ee4b61a72d088bf286bfd19a0be3614d71954f6ee2ba"
+  }
+}

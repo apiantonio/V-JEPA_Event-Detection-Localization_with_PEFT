@@ -1,0 +1,17 @@
+# UCF-Crime
+id: ucf
+name: ucf_crime
+decoder: pyav
+root: ${oc.env:EVD_UCF_DIR}
+videos_dir: ${.root}/Videos
+splits_dir: ${.root}/Anomaly_Detection_splits
+inventory: ${oc.env:EVD_DATA_DIR}/ucf_crime_inventory/inventory.csv
+n_classes: 14          # 13 classi di anomalia + Normal
+annotations:
+  source: ucf_lab
+  path: ${oc.env:EVD_ANNOT_DIR}/fs_ucf_crime
+feature_store:
+  root: ${oc.env:EVD_FEATURES_DIR}
+  enabled: true
+  layers: [23]
+  storage_dtype: fp16

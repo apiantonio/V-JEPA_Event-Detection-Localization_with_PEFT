@@ -1,0 +1,4 @@
+defaults:
+  - vpt_deep_n576
+name: vptdeep-n64
+n_tokens: 64

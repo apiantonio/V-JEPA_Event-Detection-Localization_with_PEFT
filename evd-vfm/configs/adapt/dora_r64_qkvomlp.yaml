@@ -1,0 +1,5 @@
+defaults:
+  - dora_r32_qkvomlp
+name: dora-r64-qkvomlp
+r: 64
+alpha: 128

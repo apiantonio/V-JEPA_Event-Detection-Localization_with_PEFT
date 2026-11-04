@@ -1,0 +1,312 @@
+{
+ "test_video_000": {
+  "duration": 129.77,
+  "anomalies": [
+   [
+    93.81,
+    106.06,
+    "Fighting"
+   ],
+   [
+    119.09,
+    124.33,
+    "Fighting"
+   ]
+  ]
+ },
+ "test_video_001": {
+  "duration": 145.81,
+  "anomalies": []
+ },
+ "test_video_002": {
+  "duration": 95.84,
+  "anomalies": [
+   [
+    81.58,
+    95.69,
+    "Arrest"
+   ]
+  ]
+ },
+ "test_video_003": {
+  "duration": 100.39,
+  "anomalies": []
+ },
+ "test_video_004": {
+  "duration": 148.34,
+  "anomalies": [
+   [
+    75.81,
+    94.32,
+    "Assault"
+   ]
+  ]
+ },
+ "test_video_005": {
+  "duration": 60.32,
+  "anomalies": []
+ },
+ "test_video_006": {
+  "duration": 136.85,
+  "anomalies": [
+   [
+    89.5,
+    102.89,
+    "Burglary"
+   ],
+   [
+    119.16,
+    126.05,
+    "Burglary"
+   ]
+  ]
+ },
+ "test_video_007": {
+  "duration": 145.66,
+  "anomalies": []
+ },
+ "test_video_008": {
+  "duration": 77.55,
+  "anomalies": [
+   [
+    37.3,
+    41.67,
+    "Abuse"
+   ]
+  ]
+ },
+ "test_video_009": {
+  "duration": 32.13,
+  "anomalies": []
+ },
+ "test_video_010": {
+  "duration": 112.33,
+  "anomalies": [
+   [
+    83.47,
+    100.23,
+    "Robbery"
+   ]
+  ]
+ },
+ "test_video_011": {
+  "duration": 51.71,
+  "anomalies": []
+ },
+ "test_video_012": {
+  "duration": 111.47,
+  "anomalies": [
+   [
+    6.64,
+    29.82,
+    "Vandalism"
+   ],
+   [
+    93.99,
+    97.13,
+    "Vandalism"
+   ]
+  ]
+ },
+ "test_video_013": {
+  "duration": 31.86,
+  "anomalies": []
+ },
+ "test_video_014": {
+  "duration": 133.76,
+  "anomalies": [
+   [
+    127.5,
+    133.76,
+    "Fighting"
+   ]
+  ]
+ },
+ "test_video_015": {
+  "duration": 111.85,
+  "anomalies": []
+ },
+ "test_video_016": {
+  "duration": 125.88,
+  "anomalies": [
+   [
+    64.77,
+    88.97,
+    "Fighting"
+   ]
+  ]
+ },
+ "test_video_017": {
+  "duration": 77.85,
+  "anomalies": []
+ },
+ "test_video_018": {
+  "duration": 61.22,
+  "anomalies": [
+   [
+    13.37,
+    20.41,
+    "Abuse"
+   ]
+  ]
+ },
+ "test_video_019": {
+  "duration": 99.66,
+  "anomalies": []
+ },
+ "test_video_020": {
+  "duration": 81.95,
+  "anomalies": [
+   [
+    6.82,
+    26.49,
+    "Abuse"
+   ]
+  ]
+ },
+ "test_video_021": {
+  "duration": 129.52,
+  "anomalies": []
+ },
+ "test_video_022": {
+  "duration": 128.92,
+  "anomalies": [
+   [
+    64.48,
+    78.96,
+    "Shooting"
+   ],
+   [
+    92.99,
+    100.43,
+    "Shooting"
+   ]
+  ]
+ },
+ "test_video_023": {
+  "duration": 95.36,
+  "anomalies": []
+ },
+ "test_video_024": {
+  "duration": 84.05,
+  "anomalies": [
+   [
+    50.05,
+    68.45,
+    "Robbery"
+   ]
+  ]
+ },
+ "test_video_025": {
+  "duration": 30.71,
+  "anomalies": []
+ },
+ "test_video_026": {
+  "duration": 83.24,
+  "anomalies": [
+   [
+    48.67,
+    70.26,
+    "Fighting"
+   ]
+  ]
+ },
+ "test_video_027": {
+  "duration": 35.23,
+  "anomalies": []
+ },
+ "test_video_028": {
+  "duration": 68.37,
+  "anomalies": [
+   [
+    10.63,
+    23.01,
+    "Burglary"
+   ],
+   [
+    57.27,
+    66.11,
+    "Burglary"
+   ]
+  ]
+ },
+ "test_video_029": {
+  "duration": 25.88,
+  "anomalies": []
+ },
+ "test_video_030": {
+  "duration": 23.47,
+  "anomalies": [
+   [
+    11.09,
+    23.47,
+    "Shooting"
+   ]
+  ]
+ },
+ "test_video_031": {
+  "duration": 31.9,
+  "anomalies": []
+ },
+ "test_video_032": {
+  "duration": 24.73,
+  "anomalies": [
+   [
+    0.41,
+    24.55,
+    "Arrest"
+   ]
+  ]
+ },
+ "test_video_033": {
+  "duration": 82.3,
+  "anomalies": []
+ },
+ "test_video_034": {
+  "duration": 141.81,
+  "anomalies": [
+   [
+    3.09,
+    15.46,
+    "Fighting"
+   ],
+   [
+    51.22,
+    54.99,
+    "Fighting"
+   ]
+  ]
+ },
+ "test_video_035": {
+  "duration": 65.54,
+  "anomalies": []
+ },
+ "test_video_036": {
+  "duration": 27.94,
+  "anomalies": [
+   [
+    10.25,
+    26.37,
+    "Shooting"
+   ]
+  ]
+ },
+ "test_video_037": {
+  "duration": 45.92,
+  "anomalies": []
+ },
+ "test_video_038": {
+  "duration": 137.57,
+  "anomalies": [
+   [
+    61.87,
+    84.72,
+    "Burglary"
+   ]
+  ]
+ },
+ "test_video_039": {
+  "duration": 145.65,
+  "anomalies": []
+ }
+}

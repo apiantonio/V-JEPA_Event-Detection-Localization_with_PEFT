@@ -1,0 +1,5 @@
+defaults:
+  - e3r_dora
+  - override /adapt: combo_dora_r32_vptdeep_n8
+  - override /train: peft_budget_v2_3ep
+exp_id: e3c

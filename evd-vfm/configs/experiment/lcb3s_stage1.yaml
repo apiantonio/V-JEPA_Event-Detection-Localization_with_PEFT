@@ -1,0 +1,12 @@
+# @package _global_
+#
+# B3 (somma delle loss (BCE + cross-entropy, peso 1)), STADIO 1: LoRA r=32 su qkv, proj, fc1, fc2 per un'epoca, con una testa
+# binaria e una multiclasse separate addestrate da zero insieme all'encoder (piano del
+# 21 ottobre 2026 §5.4). Stessa cella di E3-R LoRA tranne testa, obiettivo e budget.
+defaults:
+  - e3r_lora
+  - override /head: binary_and_classes_sum
+  - override /train: class_routing_1ep
+
+exp_id: lcb3s
+objective: multitask

@@ -1,0 +1,6 @@
+# @package _global_
+defaults:
+  - e3r_lora
+  - override /train: peft_budget_v2_cont2
+exp_id: e3m
+init_from: runs/e3r_ucf_vjepa21l_lora-r32-qkvomlp_s${seed}/checkpoint/checkpoint.pt

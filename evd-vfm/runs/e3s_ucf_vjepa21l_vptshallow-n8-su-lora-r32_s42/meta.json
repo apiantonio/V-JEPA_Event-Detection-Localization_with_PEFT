@@ -1,0 +1,127 @@
+{
+  "run_id": "e3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42",
+  "official": true,
+  "started_at": "2026-09-16T23:36:30+00:00",
+  "git": {
+    "sha": "4f7c59de9e2a9424a3b81f28a21c4df71210ae73",
+    "branch": "HEAD",
+    "dirty": false,
+    "available": true
+  },
+  "env": {
+    "host": "ainode01",
+    "platform": "Linux-6.8.0-51-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "cuda": "12.4",
+    "cuda_available": true,
+    "gpu": "NVIDIA H100 80GB HBM3",
+    "requirements_ref": "hpc/setup/requisiti-hpc.txt",
+    "slurm_job_id": "563894"
+  },
+  "env_vars": {
+    "resolved": {
+      "EVD_VJEPA_DIR": "/home/A.APICELLA97/evd/experiments/20260915-f13bis/vjepa2",
+      "EVD_SHARED_ROOT": "/shared/tesi_mllm",
+      "EVD_STORE_ROOT": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it",
+      "EVD_DATA_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/data",
+      "EVD_RAW_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/data/raw",
+      "EVD_CKPT_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/data/checkpoints",
+      "EVD_UCF_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/data/raw/ucf_crime/UCF_Crimes",
+      "EVD_ANNOT_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/data/annotations",
+      "EVD_FEATURES_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/features",
+      "EVD_RUNS_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs",
+      "EVD_CACHE_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/cache",
+      "EVD_ALLOW_BF16": "0"
+    },
+    "deduced": {
+      "TORCH_DEVICE": "cuda",
+      "EVD_CPUS": "14",
+      "EVD_NUM_WORKERS": "14",
+      "EVD_SHARD": "0/1",
+      "repo_root": "/home/A.APICELLA97/evd/experiments/20260915-f13bis/evd-vfm"
+    },
+    "non_consumate": {
+      "nota": "variabili risolte da hpc/env.sh che questo run NON legge: il suo budget viene dal config Hydra. Il seme vero e i campi che hanno governato stanno in `seed` ed `esecuzione` (ADR-057).",
+      "valori": {
+        "EVD_PRECISION": "fp32",
+        "EVD_TF32": "0",
+        "EVD_BATCH_SIZE": "1",
+        "EVD_SEED": "0"
+      }
+    }
+  },
+  "regime": {
+    "precision": "bf16",
+    "tf32": true,
+    "attn": "sdpa",
+    "device": "cuda",
+    "torch": "2.6.0+cu124",
+    "size": 384
+  },
+  "protocol_sha": "5e82820a94a7d8aa7b70c6905334e92d39ab4f8128a6aa0e3692663942e89ade",
+  "adapt": {
+    "family": "prompt",
+    "method": "vpt_shallow",
+    "n_targets": 24,
+    "n_trainable": 8192,
+    "extra_tokens": 8,
+    "targets": [
+      "blocks.0"
+    ],
+    "notes": {
+      "n_tokens": 8,
+      "start_block": 0,
+      "n_banchi": 1,
+      "pos_policy": "rope_identity",
+      "norm": "none",
+      "init": "xavier_uniform"
+    }
+  },
+  "chunks": {
+    "train": {
+      "n_chunk": 88371,
+      "n_positivi": 9475,
+      "n_video": 1303,
+      "tasso_positivi_uniforme": 0.10721843138586187,
+      "tasso_positivi_pesato": 0.23773669393537278
+    },
+    "val": {
+      "n_chunk": 8383,
+      "n_positivi": 994,
+      "n_video": 306,
+      "tasso_positivi_uniforme": 0.11857330311344387,
+      "tasso_positivi_pesato": 0.15474208694416813
+    },
+    "test": {
+      "n_chunk": 9116,
+      "n_positivi": 1491,
+      "n_video": 290,
+      "tasso_positivi_uniforme": 0.16355857832382623,
+      "tasso_positivi_pesato": 0.15065221000705442
+    }
+  },
+  "seed": 42,
+  "esecuzione": {
+    "seed": 42,
+    "max_steps": 16572,
+    "batch_size": 2,
+    "grad_accum": 8,
+    "batch_effettivo": 16,
+    "num_workers": 12,
+    "precision": "bf16",
+    "model_selection": "val_auroc",
+    "eval_every": 920,
+    "lr_schedule": "cosine_cyclic",
+    "lr_cycle_steps": 5524
+  },
+  "preadattamento": {
+    "modo": "fondi",
+    "adapt": "lora_r32_qkvomlp",
+    "wrapper_rimossi": 96,
+    "checkpoint": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/e3r_ucf_vjepa21l_lora-r32-qkvomlp_s42/checkpoint/checkpoint.pt",
+    "run_id": "e3r_ucf_vjepa21l_lora-r32-qkvomlp_s42",
+    "step": 5524,
+    "n_tensori": 288
+  }
+}

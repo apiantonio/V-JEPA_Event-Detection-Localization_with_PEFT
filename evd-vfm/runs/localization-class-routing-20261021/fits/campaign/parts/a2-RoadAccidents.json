@@ -1,0 +1,21 @@
+{
+  "identity": {
+    "pass_root": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/localization-class-routing-20261021/passes/campaign",
+    "references_sha256": "8c06ea3b6df35b476d29daccedae757dfda4ed9f6357e9f89fe0d86b2ab77290",
+    "pure_sha256": "ecbdcfb503ee6072074cdd4e4f78ce47732f478f94c0f964e79fd18baf8f42c6",
+    "existing": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/localization-auto-20261016/fits/vtcd_models.npz",
+    "part": "a2-RoadAccidents"
+  },
+  "receipt": [
+    {
+      "chunks": 37,
+      "regions": 907,
+      "converged": true,
+      "iterations": 2951,
+      "relative_squared_error": 0.1568752486301352,
+      "outcome": "fitted",
+      "seconds": 3.2012543259188533,
+      "peak_memory_mb": 17426.59375
+    }
+  ]
+}

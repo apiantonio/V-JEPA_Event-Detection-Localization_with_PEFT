@@ -1,0 +1,1497 @@
+{
+  "shape": [
+    1,
+    24,
+    2,
+    1,
+    276,
+    19
+  ],
+  "mode": "offline",
+  "configuration": [
+    "Global"
+  ],
+  "variant": [
+    "union",
+    "component",
+    "concept-union",
+    "concept-box",
+    "component-concept-score",
+    "largest-component",
+    "nms30-component",
+    "nms50-component",
+    "nms70-component",
+    "nms30-concept-box",
+    "nms50-concept-box",
+    "nms70-concept-box",
+    "softnms-component",
+    "softnms-concept-box",
+    "wbf-component",
+    "wbf-concept-box",
+    "component4",
+    "concept-union4",
+    "component4-concept-score",
+    "largest-component4",
+    "region",
+    "region-concept-score",
+    "region-combos-nms50",
+    "region-combos-nms50-concept"
+  ],
+  "score": [
+    "mass",
+    "share"
+  ],
+  "gt": [
+    "union"
+  ],
+  "event": [
+    {
+      "event_id": "ucf_crime/Abuse028_x264/event000",
+      "class": "Abuse",
+      "images": 2
+    },
+    {
+      "event_id": "ucf_crime/Abuse030_x264/event000",
+      "class": "Abuse",
+      "images": 2
+    },
+    {
+      "event_id": "ucf_crime/Arrest001_x264/event000",
+      "class": "Arrest",
+      "images": 9
+    },
+    {
+      "event_id": "ucf_crime/Arrest001_x264/event001",
+      "class": "Arrest",
+      "images": 13
+    },
+    {
+      "event_id": "ucf_crime/Arrest007_x264/event000",
+      "class": "Assault",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Arrest007_x264/event001",
+      "class": "Robbery",
+      "images": 8
+    },
+    {
+      "event_id": "ucf_crime/Arrest007_x264/event002",
+      "class": "Robbery",
+      "images": 6
+    },
+    {
+      "event_id": "ucf_crime/Arrest007_x264/event003",
+      "class": "Arrest",
+      "images": 23
+    },
+    {
+      "event_id": "ucf_crime/Arrest007_x264/event004",
+      "class": "Arrest",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Arrest024_x264/event000",
+      "class": "Arrest",
+      "images": 87
+    },
+    {
+      "event_id": "ucf_crime/Arrest030_x264/event000",
+      "class": "Burglary",
+      "images": 143
+    },
+    {
+      "event_id": "ucf_crime/Arrest030_x264/event001",
+      "class": "Arrest",
+      "images": 101
+    },
+    {
+      "event_id": "ucf_crime/Arrest039_x264/event000",
+      "class": "Robbery",
+      "images": 15
+    },
+    {
+      "event_id": "ucf_crime/Arrest039_x264/event001",
+      "class": "Robbery",
+      "images": 15
+    },
+    {
+      "event_id": "ucf_crime/Arrest039_x264/event002",
+      "class": "Robbery",
+      "images": 11
+    },
+    {
+      "event_id": "ucf_crime/Arrest039_x264/event003",
+      "class": "Robbery",
+      "images": 8
+    },
+    {
+      "event_id": "ucf_crime/Arrest039_x264/event004",
+      "class": "Robbery",
+      "images": 73
+    },
+    {
+      "event_id": "ucf_crime/Arrest039_x264/event005",
+      "class": "Arrest",
+      "images": 191
+    },
+    {
+      "event_id": "ucf_crime/Arson007_x264/event000",
+      "class": "Arson",
+      "images": 5
+    },
+    {
+      "event_id": "ucf_crime/Arson007_x264/event001",
+      "class": "Arson",
+      "images": 144
+    },
+    {
+      "event_id": "ucf_crime/Arson009_x264/event000",
+      "class": "Arson",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Arson009_x264/event001",
+      "class": "Arson",
+      "images": 4
+    },
+    {
+      "event_id": "ucf_crime/Arson010_x264/event000",
+      "class": "Vandalism",
+      "images": 7
+    },
+    {
+      "event_id": "ucf_crime/Arson010_x264/event001",
+      "class": "Arson",
+      "images": 15
+    },
+    {
+      "event_id": "ucf_crime/Arson010_x264/event002",
+      "class": "Vandalism",
+      "images": 9
+    },
+    {
+      "event_id": "ucf_crime/Arson010_x264/event003",
+      "class": "Arson",
+      "images": 13
+    },
+    {
+      "event_id": "ucf_crime/Arson011_x264/event000",
+      "class": "Arson",
+      "images": 11
+    },
+    {
+      "event_id": "ucf_crime/Arson011_x264/event001",
+      "class": "Arson",
+      "images": 19
+    },
+    {
+      "event_id": "ucf_crime/Arson016_x264/event000",
+      "class": "Arson",
+      "images": 8
+    },
+    {
+      "event_id": "ucf_crime/Arson016_x264/event001",
+      "class": "Arson",
+      "images": 7
+    },
+    {
+      "event_id": "ucf_crime/Arson016_x264/event002",
+      "class": "Arson",
+      "images": 33
+    },
+    {
+      "event_id": "ucf_crime/Arson018_x264/event000",
+      "class": "Arson",
+      "images": 24
+    },
+    {
+      "event_id": "ucf_crime/Arson022_x264/event000",
+      "class": "Arson",
+      "images": 21
+    },
+    {
+      "event_id": "ucf_crime/Arson022_x264/event001",
+      "class": "Arson",
+      "images": 21
+    },
+    {
+      "event_id": "ucf_crime/Arson022_x264/event002",
+      "class": "Arson",
+      "images": 179
+    },
+    {
+      "event_id": "ucf_crime/Arson035_x264/event000",
+      "class": "Arson",
+      "images": 5
+    },
+    {
+      "event_id": "ucf_crime/Arson035_x264/event001",
+      "class": "Arson",
+      "images": 4
+    },
+    {
+      "event_id": "ucf_crime/Arson035_x264/event002",
+      "class": "Arson",
+      "images": 15
+    },
+    {
+      "event_id": "ucf_crime/Arson041_x264/event000",
+      "class": "Arson",
+      "images": 57
+    },
+    {
+      "event_id": "ucf_crime/Assault006_x264/event000",
+      "class": "Stealing",
+      "images": 33
+    },
+    {
+      "event_id": "ucf_crime/Assault006_x264/event001",
+      "class": "Assault",
+      "images": 230
+    },
+    {
+      "event_id": "ucf_crime/Assault010_x264/event000",
+      "class": "Assault",
+      "images": 13
+    },
+    {
+      "event_id": "ucf_crime/Assault010_x264/event001",
+      "class": "Assault",
+      "images": 23
+    },
+    {
+      "event_id": "ucf_crime/Assault010_x264/event002",
+      "class": "Arrest",
+      "images": 22
+    },
+    {
+      "event_id": "ucf_crime/Assault011_x264/event000",
+      "class": "Assault",
+      "images": 33
+    },
+    {
+      "event_id": "ucf_crime/Burglary005_x264/event000",
+      "class": "Burglary",
+      "images": 12
+    },
+    {
+      "event_id": "ucf_crime/Burglary005_x264/event001",
+      "class": "Burglary",
+      "images": 2
+    },
+    {
+      "event_id": "ucf_crime/Burglary005_x264/event002",
+      "class": "Burglary",
+      "images": 2
+    },
+    {
+      "event_id": "ucf_crime/Burglary017_x264/event000",
+      "class": "Burglary",
+      "images": 16
+    },
+    {
+      "event_id": "ucf_crime/Burglary017_x264/event001",
+      "class": "Burglary",
+      "images": 6
+    },
+    {
+      "event_id": "ucf_crime/Burglary017_x264/event002",
+      "class": "Burglary",
+      "images": 18
+    },
+    {
+      "event_id": "ucf_crime/Burglary017_x264/event003",
+      "class": "Burglary",
+      "images": 7
+    },
+    {
+      "event_id": "ucf_crime/Burglary018_x264/event000",
+      "class": "Burglary",
+      "images": 26
+    },
+    {
+      "event_id": "ucf_crime/Burglary021_x264/event000",
+      "class": "Burglary",
+      "images": 5
+    },
+    {
+      "event_id": "ucf_crime/Burglary021_x264/event001",
+      "class": "Burglary",
+      "images": 2
+    },
+    {
+      "event_id": "ucf_crime/Burglary021_x264/event002",
+      "class": "Burglary",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Burglary021_x264/event003",
+      "class": "Burglary",
+      "images": 18
+    },
+    {
+      "event_id": "ucf_crime/Burglary024_x264/event000",
+      "class": "Burglary",
+      "images": 38
+    },
+    {
+      "event_id": "ucf_crime/Burglary032_x264/event000",
+      "class": "Burglary",
+      "images": 205
+    },
+    {
+      "event_id": "ucf_crime/Burglary032_x264/event001",
+      "class": "Burglary",
+      "images": 161
+    },
+    {
+      "event_id": "ucf_crime/Burglary033_x264/event000",
+      "class": "Burglary",
+      "images": 10
+    },
+    {
+      "event_id": "ucf_crime/Burglary035_x264/event000",
+      "class": "Burglary",
+      "images": 42
+    },
+    {
+      "event_id": "ucf_crime/Burglary037_x264/event000",
+      "class": "Stealing",
+      "images": 6
+    },
+    {
+      "event_id": "ucf_crime/Burglary037_x264/event001",
+      "class": "Burglary",
+      "images": 40
+    },
+    {
+      "event_id": "ucf_crime/Burglary061_x264/event000",
+      "class": "Burglary",
+      "images": 4
+    },
+    {
+      "event_id": "ucf_crime/Burglary061_x264/event001",
+      "class": "Burglary",
+      "images": 43
+    },
+    {
+      "event_id": "ucf_crime/Burglary061_x264/event002",
+      "class": "Burglary",
+      "images": 3
+    },
+    {
+      "event_id": "ucf_crime/Burglary076_x264/event000",
+      "class": "Burglary",
+      "images": 12
+    },
+    {
+      "event_id": "ucf_crime/Burglary076_x264/event001",
+      "class": "Stealing",
+      "images": 5
+    },
+    {
+      "event_id": "ucf_crime/Burglary076_x264/event002",
+      "class": "Stealing",
+      "images": 5
+    },
+    {
+      "event_id": "ucf_crime/Burglary076_x264/event003",
+      "class": "Stealing",
+      "images": 5
+    },
+    {
+      "event_id": "ucf_crime/Burglary079_x264/event000",
+      "class": "Stealing",
+      "images": 41
+    },
+    {
+      "event_id": "ucf_crime/Burglary079_x264/event001",
+      "class": "Stealing",
+      "images": 55
+    },
+    {
+      "event_id": "ucf_crime/Burglary079_x264/event002",
+      "class": "Burglary",
+      "images": 103
+    },
+    {
+      "event_id": "ucf_crime/Burglary079_x264/event003",
+      "class": "Burglary",
+      "images": 12
+    },
+    {
+      "event_id": "ucf_crime/Burglary092_x264/event000",
+      "class": "Burglary",
+      "images": 6
+    },
+    {
+      "event_id": "ucf_crime/Explosion002_x264/event000",
+      "class": "Arson",
+      "images": 39
+    },
+    {
+      "event_id": "ucf_crime/Explosion004_x264/event000",
+      "class": "Explosion",
+      "images": 4
+    },
+    {
+      "event_id": "ucf_crime/Explosion004_x264/event001",
+      "class": "Arson",
+      "images": 19
+    },
+    {
+      "event_id": "ucf_crime/Explosion007_x264/event000",
+      "class": "Explosion",
+      "images": 59
+    },
+    {
+      "event_id": "ucf_crime/Explosion008_x264/event000",
+      "class": "Explosion",
+      "images": 11
+    },
+    {
+      "event_id": "ucf_crime/Explosion008_x264/event001",
+      "class": "Arson",
+      "images": 13
+    },
+    {
+      "event_id": "ucf_crime/Explosion010_x264/event000",
+      "class": "Explosion",
+      "images": 10
+    },
+    {
+      "event_id": "ucf_crime/Explosion010_x264/event001",
+      "class": "Arson",
+      "images": 18
+    },
+    {
+      "event_id": "ucf_crime/Explosion010_x264/event002",
+      "class": "Arson",
+      "images": 30
+    },
+    {
+      "event_id": "ucf_crime/Explosion011_x264/event000",
+      "class": "Explosion",
+      "images": 3
+    },
+    {
+      "event_id": "ucf_crime/Explosion013_x264/event000",
+      "class": "Stealing",
+      "images": 23
+    },
+    {
+      "event_id": "ucf_crime/Explosion013_x264/event001",
+      "class": "Explosion",
+      "images": 12
+    },
+    {
+      "event_id": "ucf_crime/Explosion013_x264/event002",
+      "class": "Arson",
+      "images": 13
+    },
+    {
+      "event_id": "ucf_crime/Explosion016_x264/event000",
+      "class": "Explosion",
+      "images": 4
+    },
+    {
+      "event_id": "ucf_crime/Explosion016_x264/event001",
+      "class": "Arson",
+      "images": 21
+    },
+    {
+      "event_id": "ucf_crime/Explosion017_x264/event000",
+      "class": "Arson",
+      "images": 18
+    },
+    {
+      "event_id": "ucf_crime/Explosion020_x264/event000",
+      "class": "Explosion",
+      "images": 6
+    },
+    {
+      "event_id": "ucf_crime/Explosion020_x264/event001",
+      "class": "Explosion",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Explosion020_x264/event002",
+      "class": "Explosion",
+      "images": 8
+    },
+    {
+      "event_id": "ucf_crime/Explosion020_x264/event003",
+      "class": "Explosion",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Explosion021_x264/event000",
+      "class": "Explosion",
+      "images": 5
+    },
+    {
+      "event_id": "ucf_crime/Explosion021_x264/event001",
+      "class": "Explosion",
+      "images": 9
+    },
+    {
+      "event_id": "ucf_crime/Explosion022_x264/event000",
+      "class": "Explosion",
+      "images": 6
+    },
+    {
+      "event_id": "ucf_crime/Explosion025_x264/event000",
+      "class": "Explosion",
+      "images": 4
+    },
+    {
+      "event_id": "ucf_crime/Explosion027_x264/event000",
+      "class": "Explosion",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Explosion027_x264/event001",
+      "class": "Arson",
+      "images": 6
+    },
+    {
+      "event_id": "ucf_crime/Explosion028_x264/event000",
+      "class": "Explosion",
+      "images": 6
+    },
+    {
+      "event_id": "ucf_crime/Explosion029_x264/event000",
+      "class": "Arson",
+      "images": 5
+    },
+    {
+      "event_id": "ucf_crime/Explosion033_x264/event000",
+      "class": "Explosion",
+      "images": 13
+    },
+    {
+      "event_id": "ucf_crime/Explosion033_x264/event001",
+      "class": "Explosion",
+      "images": 10
+    },
+    {
+      "event_id": "ucf_crime/Explosion033_x264/event002",
+      "class": "Arson",
+      "images": 43
+    },
+    {
+      "event_id": "ucf_crime/Explosion035_x264/event000",
+      "class": "Explosion",
+      "images": 3
+    },
+    {
+      "event_id": "ucf_crime/Explosion035_x264/event001",
+      "class": "Arson",
+      "images": 12
+    },
+    {
+      "event_id": "ucf_crime/Explosion035_x264/event002",
+      "class": "Explosion",
+      "images": 2
+    },
+    {
+      "event_id": "ucf_crime/Explosion035_x264/event003",
+      "class": "Explosion",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Explosion036_x264/event000",
+      "class": "Explosion",
+      "images": 7
+    },
+    {
+      "event_id": "ucf_crime/Explosion039_x264/event000",
+      "class": "Explosion",
+      "images": 3
+    },
+    {
+      "event_id": "ucf_crime/Explosion039_x264/event001",
+      "class": "Explosion",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Explosion039_x264/event002",
+      "class": "Explosion",
+      "images": 4
+    },
+    {
+      "event_id": "ucf_crime/Explosion043_x264/event000",
+      "class": "Explosion",
+      "images": 6
+    },
+    {
+      "event_id": "ucf_crime/Fighting003_x264/event000",
+      "class": "Fighting",
+      "images": 42
+    },
+    {
+      "event_id": "ucf_crime/Fighting018_x264/event000",
+      "class": "Shoplifting",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Fighting018_x264/event001",
+      "class": "Fighting",
+      "images": 8
+    },
+    {
+      "event_id": "ucf_crime/Fighting033_x264/event000",
+      "class": "Vandalism",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Fighting033_x264/event001",
+      "class": "Fighting",
+      "images": 6
+    },
+    {
+      "event_id": "ucf_crime/Fighting042_x264/event000",
+      "class": "Fighting",
+      "images": 18
+    },
+    {
+      "event_id": "ucf_crime/Fighting042_x264/event001",
+      "class": "Fighting",
+      "images": 7
+    },
+    {
+      "event_id": "ucf_crime/Fighting047_x264/event000",
+      "class": "Fighting",
+      "images": 20
+    },
+    {
+      "event_id": "ucf_crime/Fighting047_x264/event001",
+      "class": "Fighting",
+      "images": 36
+    },
+    {
+      "event_id": "ucf_crime/Fighting047_x264/event002",
+      "class": "Fighting",
+      "images": 5
+    },
+    {
+      "event_id": "ucf_crime/RoadAccidents001_x264/event000",
+      "class": "RoadAccidents",
+      "images": 4
+    },
+    {
+      "event_id": "ucf_crime/RoadAccidents002_x264/event000",
+      "class": "RoadAccidents",
+      "images": 3
+    },
+    {
+      "event_id": "ucf_crime/RoadAccidents004_x264/event000",
+      "class": "RoadAccidents",
+      "images": 2
+    },
+    {
+      "event_id": "ucf_crime/RoadAccidents009_x264/event000",
+      "class": "RoadAccidents",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/RoadAccidents010_x264/event000",
+      "class": "RoadAccidents",
+      "images": 5
+    },
+    {
+      "event_id": "ucf_crime/RoadAccidents011_x264/event000",
+      "class": "RoadAccidents",
+      "images": 2
+    },
+    {
+      "event_id": "ucf_crime/RoadAccidents012_x264/event000",
+      "class": "RoadAccidents",
+      "images": 7
+    },
+    {
+      "event_id": "ucf_crime/RoadAccidents016_x264/event000",
+      "class": "RoadAccidents",
+      "images": 8
+    },
+    {
+      "event_id": "ucf_crime/RoadAccidents017_x264/event000",
+      "class": "RoadAccidents",
+      "images": 3
+    },
+    {
+      "event_id": "ucf_crime/RoadAccidents019_x264/event000",
+      "class": "RoadAccidents",
+      "images": 7
+    },
+    {
+      "event_id": "ucf_crime/RoadAccidents020_x264/event000",
+      "class": "RoadAccidents",
+      "images": 3
+    },
+    {
+      "event_id": "ucf_crime/RoadAccidents021_x264/event000",
+      "class": "RoadAccidents",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/RoadAccidents022_x264/event000",
+      "class": "RoadAccidents",
+      "images": 3
+    },
+    {
+      "event_id": "ucf_crime/RoadAccidents022_x264/event001",
+      "class": "RoadAccidents",
+      "images": 3
+    },
+    {
+      "event_id": "ucf_crime/RoadAccidents121_x264/event000",
+      "class": "RoadAccidents",
+      "images": 3
+    },
+    {
+      "event_id": "ucf_crime/RoadAccidents122_x264/event000",
+      "class": "RoadAccidents",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/RoadAccidents123_x264/event000",
+      "class": "RoadAccidents",
+      "images": 2
+    },
+    {
+      "event_id": "ucf_crime/RoadAccidents124_x264/event000",
+      "class": "RoadAccidents",
+      "images": 7
+    },
+    {
+      "event_id": "ucf_crime/RoadAccidents125_x264/event000",
+      "class": "RoadAccidents",
+      "images": 2
+    },
+    {
+      "event_id": "ucf_crime/RoadAccidents127_x264/event000",
+      "class": "RoadAccidents",
+      "images": 2
+    },
+    {
+      "event_id": "ucf_crime/RoadAccidents128_x264/event000",
+      "class": "RoadAccidents",
+      "images": 2
+    },
+    {
+      "event_id": "ucf_crime/RoadAccidents131_x264/event000",
+      "class": "RoadAccidents",
+      "images": 4
+    },
+    {
+      "event_id": "ucf_crime/RoadAccidents132_x264/event000",
+      "class": "RoadAccidents",
+      "images": 2
+    },
+    {
+      "event_id": "ucf_crime/RoadAccidents133_x264/event000",
+      "class": "RoadAccidents",
+      "images": 6
+    },
+    {
+      "event_id": "ucf_crime/Robbery048_x264/event000",
+      "class": "Fighting",
+      "images": 11
+    },
+    {
+      "event_id": "ucf_crime/Robbery050_x264/event000",
+      "class": "Robbery",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Robbery050_x264/event001",
+      "class": "Robbery",
+      "images": 11
+    },
+    {
+      "event_id": "ucf_crime/Robbery050_x264/event002",
+      "class": "Robbery",
+      "images": 6
+    },
+    {
+      "event_id": "ucf_crime/Robbery102_x264/event000",
+      "class": "Robbery",
+      "images": 5
+    },
+    {
+      "event_id": "ucf_crime/Robbery102_x264/event001",
+      "class": "Fighting",
+      "images": 10
+    },
+    {
+      "event_id": "ucf_crime/Robbery106_x264/event000",
+      "class": "Robbery",
+      "images": 2
+    },
+    {
+      "event_id": "ucf_crime/Robbery137_x264/event000",
+      "class": "Robbery",
+      "images": 56
+    },
+    {
+      "event_id": "ucf_crime/Shooting002_x264/event000",
+      "class": "Shooting",
+      "images": 4
+    },
+    {
+      "event_id": "ucf_crime/Shooting004_x264/event000",
+      "class": "Shooting",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Shooting004_x264/event001",
+      "class": "Shooting",
+      "images": 7
+    },
+    {
+      "event_id": "ucf_crime/Shooting004_x264/event002",
+      "class": "Arrest",
+      "images": 6
+    },
+    {
+      "event_id": "ucf_crime/Shooting004_x264/event003",
+      "class": "Arrest",
+      "images": 12
+    },
+    {
+      "event_id": "ucf_crime/Shooting007_x264/event000",
+      "class": "Shooting",
+      "images": 4
+    },
+    {
+      "event_id": "ucf_crime/Shooting007_x264/event001",
+      "class": "Shooting",
+      "images": 4
+    },
+    {
+      "event_id": "ucf_crime/Shooting007_x264/event002",
+      "class": "Shooting",
+      "images": 2
+    },
+    {
+      "event_id": "ucf_crime/Shooting007_x264/event003",
+      "class": "Shooting",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Shooting007_x264/event004",
+      "class": "Shooting",
+      "images": 5
+    },
+    {
+      "event_id": "ucf_crime/Shooting008_x264/event000",
+      "class": "Assault",
+      "images": 3
+    },
+    {
+      "event_id": "ucf_crime/Shooting008_x264/event001",
+      "class": "Shooting",
+      "images": 9
+    },
+    {
+      "event_id": "ucf_crime/Shooting008_x264/event002",
+      "class": "Robbery",
+      "images": 11
+    },
+    {
+      "event_id": "ucf_crime/Shooting010_x264/event000",
+      "class": "Shooting",
+      "images": 6
+    },
+    {
+      "event_id": "ucf_crime/Shooting010_x264/event001",
+      "class": "Shooting",
+      "images": 3
+    },
+    {
+      "event_id": "ucf_crime/Shooting011_x264/event000",
+      "class": "Robbery",
+      "images": 35
+    },
+    {
+      "event_id": "ucf_crime/Shooting011_x264/event001",
+      "class": "Shooting",
+      "images": 5
+    },
+    {
+      "event_id": "ucf_crime/Shooting011_x264/event002",
+      "class": "Arrest",
+      "images": 63
+    },
+    {
+      "event_id": "ucf_crime/Shooting013_x264/event000",
+      "class": "Shooting",
+      "images": 2
+    },
+    {
+      "event_id": "ucf_crime/Shooting015_x264/event000",
+      "class": "Shooting",
+      "images": 3
+    },
+    {
+      "event_id": "ucf_crime/Shooting015_x264/event001",
+      "class": "Shooting",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Shooting015_x264/event002",
+      "class": "Assault",
+      "images": 7
+    },
+    {
+      "event_id": "ucf_crime/Shooting015_x264/event003",
+      "class": "Shooting",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Shooting015_x264/event004",
+      "class": "Arrest",
+      "images": 14
+    },
+    {
+      "event_id": "ucf_crime/Shooting015_x264/event005",
+      "class": "Shooting",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Shooting018_x264/event000",
+      "class": "Shooting",
+      "images": 3
+    },
+    {
+      "event_id": "ucf_crime/Shooting018_x264/event001",
+      "class": "Assault",
+      "images": 41
+    },
+    {
+      "event_id": "ucf_crime/Shooting019_x264/event000",
+      "class": "Stealing",
+      "images": 16
+    },
+    {
+      "event_id": "ucf_crime/Shooting019_x264/event001",
+      "class": "Shooting",
+      "images": 14
+    },
+    {
+      "event_id": "ucf_crime/Shooting021_x264/event000",
+      "class": "Shooting",
+      "images": 4
+    },
+    {
+      "event_id": "ucf_crime/Shooting022_x264/event000",
+      "class": "Assault",
+      "images": 4
+    },
+    {
+      "event_id": "ucf_crime/Shooting022_x264/event001",
+      "class": "Shooting",
+      "images": 9
+    },
+    {
+      "event_id": "ucf_crime/Shooting024_x264/event000",
+      "class": "Shooting",
+      "images": 3
+    },
+    {
+      "event_id": "ucf_crime/Shooting024_x264/event001",
+      "class": "Shooting",
+      "images": 4
+    },
+    {
+      "event_id": "ucf_crime/Shooting024_x264/event002",
+      "class": "Shooting",
+      "images": 6
+    },
+    {
+      "event_id": "ucf_crime/Shooting026_x264/event000",
+      "class": "Shooting",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Shooting026_x264/event001",
+      "class": "Shooting",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Shooting026_x264/event002",
+      "class": "Shooting",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Shooting026_x264/event003",
+      "class": "Shooting",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Shooting026_x264/event004",
+      "class": "Shooting",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Shooting028_x264/event000",
+      "class": "Shooting",
+      "images": 7
+    },
+    {
+      "event_id": "ucf_crime/Shooting028_x264/event001",
+      "class": "Shooting",
+      "images": 2
+    },
+    {
+      "event_id": "ucf_crime/Shooting028_x264/event002",
+      "class": "Shooting",
+      "images": 3
+    },
+    {
+      "event_id": "ucf_crime/Shooting032_x264/event000",
+      "class": "Shooting",
+      "images": 4
+    },
+    {
+      "event_id": "ucf_crime/Shooting033_x264/event000",
+      "class": "Robbery",
+      "images": 15
+    },
+    {
+      "event_id": "ucf_crime/Shooting034_x264/event000",
+      "class": "Shooting",
+      "images": 3
+    },
+    {
+      "event_id": "ucf_crime/Shooting037_x264/event000",
+      "class": "Shooting",
+      "images": 2
+    },
+    {
+      "event_id": "ucf_crime/Shooting043_x264/event000",
+      "class": "Shooting",
+      "images": 20
+    },
+    {
+      "event_id": "ucf_crime/Shooting043_x264/event001",
+      "class": "Shooting",
+      "images": 6
+    },
+    {
+      "event_id": "ucf_crime/Shooting043_x264/event002",
+      "class": "Shooting",
+      "images": 6
+    },
+    {
+      "event_id": "ucf_crime/Shooting046_x264/event000",
+      "class": "Shooting",
+      "images": 10
+    },
+    {
+      "event_id": "ucf_crime/Shooting046_x264/event001",
+      "class": "Shooting",
+      "images": 10
+    },
+    {
+      "event_id": "ucf_crime/Shooting047_x264/event000",
+      "class": "Shooting",
+      "images": 27
+    },
+    {
+      "event_id": "ucf_crime/Shooting047_x264/event001",
+      "class": "Shooting",
+      "images": 8
+    },
+    {
+      "event_id": "ucf_crime/Shooting047_x264/event002",
+      "class": "Shooting",
+      "images": 23
+    },
+    {
+      "event_id": "ucf_crime/Shooting047_x264/event003",
+      "class": "Shooting",
+      "images": 5
+    },
+    {
+      "event_id": "ucf_crime/Shooting047_x264/event004",
+      "class": "Arrest",
+      "images": 19
+    },
+    {
+      "event_id": "ucf_crime/Shooting048_x264/event000",
+      "class": "Shooting",
+      "images": 9
+    },
+    {
+      "event_id": "ucf_crime/Shooting048_x264/event001",
+      "class": "Shooting",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Shooting048_x264/event002",
+      "class": "Arrest",
+      "images": 15
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting001_x264/event000",
+      "class": "Shoplifting",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting001_x264/event001",
+      "class": "Shoplifting",
+      "images": 5
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting001_x264/event002",
+      "class": "Shoplifting",
+      "images": 9
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting001_x264/event003",
+      "class": "Shoplifting",
+      "images": 3
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting004_x264/event000",
+      "class": "Shoplifting",
+      "images": 10
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting004_x264/event001",
+      "class": "Shoplifting",
+      "images": 6
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting005_x264/event000",
+      "class": "Shoplifting",
+      "images": 5
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting007_x264/event000",
+      "class": "Shoplifting",
+      "images": 4
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting007_x264/event001",
+      "class": "Shoplifting",
+      "images": 6
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting007_x264/event002",
+      "class": "Shoplifting",
+      "images": 5
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting010_x264/event000",
+      "class": "Shoplifting",
+      "images": 6
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting010_x264/event001",
+      "class": "Shoplifting",
+      "images": 15
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting015_x264/event000",
+      "class": "Shoplifting",
+      "images": 5
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting016_x264/event000",
+      "class": "Shoplifting",
+      "images": 3
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting017_x264/event000",
+      "class": "Shoplifting",
+      "images": 2
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting020_x264/event000",
+      "class": "Shoplifting",
+      "images": 7
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting021_x264/event000",
+      "class": "Shoplifting",
+      "images": 2
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting022_x264/event000",
+      "class": "Shoplifting",
+      "images": 6
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting022_x264/event001",
+      "class": "Shoplifting",
+      "images": 3
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting022_x264/event002",
+      "class": "Shoplifting",
+      "images": 5
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting022_x264/event003",
+      "class": "Shoplifting",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting027_x264/event000",
+      "class": "Shoplifting",
+      "images": 3
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting027_x264/event001",
+      "class": "Shoplifting",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting027_x264/event002",
+      "class": "Shoplifting",
+      "images": 3
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting028_x264/event000",
+      "class": "Shoplifting",
+      "images": 10
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting029_x264/event000",
+      "class": "Shoplifting",
+      "images": 13
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting031_x264/event000",
+      "class": "Shoplifting",
+      "images": 4
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting033_x264/event000",
+      "class": "Shoplifting",
+      "images": 2
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting034_x264/event000",
+      "class": "Shoplifting",
+      "images": 5
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting034_x264/event001",
+      "class": "Shoplifting",
+      "images": 11
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting034_x264/event002",
+      "class": "Shoplifting",
+      "images": 4
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting034_x264/event003",
+      "class": "Shoplifting",
+      "images": 9
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting034_x264/event004",
+      "class": "Shoplifting",
+      "images": 4
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting034_x264/event005",
+      "class": "Shoplifting",
+      "images": 7
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting037_x264/event000",
+      "class": "Shoplifting",
+      "images": 2
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting039_x264/event000",
+      "class": "Shoplifting",
+      "images": 6
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting044_x264/event000",
+      "class": "Shoplifting",
+      "images": 8
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting044_x264/event001",
+      "class": "Shoplifting",
+      "images": 7
+    },
+    {
+      "event_id": "ucf_crime/Shoplifting049_x264/event000",
+      "class": "Shoplifting",
+      "images": 11
+    },
+    {
+      "event_id": "ucf_crime/Stealing019_x264/event000",
+      "class": "Stealing",
+      "images": 11
+    },
+    {
+      "event_id": "ucf_crime/Stealing036_x264/event000",
+      "class": "Stealing",
+      "images": 8
+    },
+    {
+      "event_id": "ucf_crime/Stealing058_x264/event000",
+      "class": "Burglary",
+      "images": 6
+    },
+    {
+      "event_id": "ucf_crime/Stealing058_x264/event001",
+      "class": "Stealing",
+      "images": 105
+    },
+    {
+      "event_id": "ucf_crime/Stealing058_x264/event002",
+      "class": "Stealing",
+      "images": 10
+    },
+    {
+      "event_id": "ucf_crime/Stealing062_x264/event000",
+      "class": "Stealing",
+      "images": 19
+    },
+    {
+      "event_id": "ucf_crime/Stealing079_x264/event000",
+      "class": "Stealing",
+      "images": 20
+    },
+    {
+      "event_id": "ucf_crime/Stealing079_x264/event001",
+      "class": "Stealing",
+      "images": 31
+    },
+    {
+      "event_id": "ucf_crime/Vandalism007_x264/event000",
+      "class": "Vandalism",
+      "images": 2
+    },
+    {
+      "event_id": "ucf_crime/Vandalism007_x264/event001",
+      "class": "Vandalism",
+      "images": 3
+    },
+    {
+      "event_id": "ucf_crime/Vandalism007_x264/event002",
+      "class": "Vandalism",
+      "images": 2
+    },
+    {
+      "event_id": "ucf_crime/Vandalism015_x264/event000",
+      "class": "Vandalism",
+      "images": 25
+    },
+    {
+      "event_id": "ucf_crime/Vandalism017_x264/event000",
+      "class": "Vandalism",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Vandalism017_x264/event001",
+      "class": "Vandalism",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Vandalism028_x264/event000",
+      "class": "Vandalism",
+      "images": 4
+    },
+    {
+      "event_id": "ucf_crime/Vandalism028_x264/event001",
+      "class": "Vandalism",
+      "images": 1
+    },
+    {
+      "event_id": "ucf_crime/Vandalism028_x264/event002",
+      "class": "Vandalism",
+      "images": 11
+    },
+    {
+      "event_id": "ucf_crime/Vandalism036_x264/event000",
+      "class": "Vandalism",
+      "images": 8
+    },
+    {
+      "event_id": "ucf_crime/Vandalism036_x264/event001",
+      "class": "Vandalism",
+      "images": 4
+    }
+  ],
+  "iou_threshold": [
+    0.05,
+    0.1,
+    0.15000000000000002,
+    0.2,
+    0.25,
+    0.3,
+    0.35000000000000003,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.8999999999999999,
+    0.95
+  ],
+  "arrays": {
+    "ap": [
+      1,
+      24,
+      2,
+      1,
+      276,
+      19
+    ],
+    "rbdc": [
+      1,
+      24,
+      2,
+      1,
+      276,
+      19
+    ],
+    "rbdr": [
+      1,
+      24,
+      2,
+      1,
+      276,
+      19
+    ],
+    "pooled_ap": [
+      1,
+      24,
+      2,
+      1,
+      19
+    ],
+    "pooled_rbdc": [
+      1,
+      24,
+      2,
+      1,
+      19
+    ],
+    "pooled_rbdr": [
+      1,
+      24,
+      2,
+      1,
+      19
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+# @package _global_
+# LINEAR PROBE
+defaults:
+  - override /backbone: vjepa21_l
+  - override /adapt: none
+  - override /head: linear
+  - override /data: ucf_crime
+  - override /protocol: edp_v2
+  - override /train: edp_v2
+  - override /eval: chunk_lab
+  # ADR-031 punto 8 + ADR-032 §3: catena ufficiale MENO il ritaglio casuale.
+  - override /augment: photometric
+
+exp_id: e2c
+official: true
+seed: ???
+layer: 23
+adapt:
+  name: frozen-linear

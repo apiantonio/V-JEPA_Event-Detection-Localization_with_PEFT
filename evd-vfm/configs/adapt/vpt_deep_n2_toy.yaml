@@ -1,0 +1,5 @@
+family: prompt
+name: vptdeep-n2
+variant: vpt_deep
+n_tokens: 2
+pos_policy: none

@@ -1,0 +1,60 @@
+{
+  "definition": "docs/varie/metriche_localizzazione_1fps_fpr_ovad_20261030.md",
+  "configurations": [
+    "IG-tree",
+    "IG-tree-density",
+    "IG-tree-peak",
+    "IG-tree-level",
+    "IG-tree-persistence",
+    "IG-tree-conn4",
+    "IG-tree-nms30",
+    "IG-tree-nms70",
+    "IG-tree-softnms",
+    "IG-tree-wbf",
+    "IG-tree-nonms",
+    "IG-tree-largest",
+    "IG-q100",
+    "IG-nested",
+    "IG-top5",
+    "IG-tree-min01",
+    "IG-tree-black",
+    "IG-tree-noise",
+    "IG-tree-mean",
+    "IG-tree-blur",
+    "IG-tree-abs"
+  ],
+  "variants": [
+    "component"
+  ],
+  "scores": [
+    "mass",
+    "share"
+  ],
+  "theta_ovad": 0.2302274852991104,
+  "ovad_plan": {
+    "path": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/localization-class-routing-20261021/plan/ovad_rows/campaign.json",
+    "sha256": "f4448f81718e67e8d6501c1dda974d6d4356e0255cca38b489033f6b69544330"
+  },
+  "counts": {
+    "positive": 257,
+    "positive_uncovered": 17,
+    "negative": 157,
+    "negative_unjudgeable": 30,
+    "rows_tp": 32,
+    "rows_fp": 12,
+    "emitting_chunks": 119,
+    "videos": 78
+  },
+  "extra_frames": {
+    "mivia_crime/shooting_003/event000": {
+      "frame": 85,
+      "extent": [
+        82,
+        89
+      ],
+      "short": true
+    }
+  },
+  "negative_population": "all_clean_coverage_v2",
+  "correction": "Clean non-emitting coverage retained as -inf TN; original score order retained."
+}

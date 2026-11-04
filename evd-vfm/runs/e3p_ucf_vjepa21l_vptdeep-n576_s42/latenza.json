@@ -1,0 +1,42 @@
+{
+  "detection_latency": {
+    "regola": "endpoint_dentro",
+    "mediana_s": 2.566666666666667,
+    "p90_s": 5.263333333333337,
+    "n_eventi": 276,
+    "n_senza_latenza_misurabile": 92
+  },
+  "detection_latency_intersezione": {
+    "regola": "intersezione",
+    "mediana_s": 2.966666666666667,
+    "p90_s": 5.833333333333333,
+    "n_eventi": 276,
+    "n_senza_latenza_misurabile": 29
+  },
+  "verifica_regola_storica": {
+    "eseguita": true,
+    "coerente": true,
+    "mediana_su_disco_s": 2.566666666666667,
+    "mediana_ricalcolata_s": 2.566666666666667,
+    "scarto_s": 0.0,
+    "n_senza_su_disco": 92,
+    "n_senza_ricalcolato": 92
+  },
+  "concordanza_con_event_prf": {
+    "verificabile": true,
+    "n_mancati_event_prf": 29,
+    "n_senza_latenza_intersezione": 29,
+    "concordano": true
+  },
+  "provenienza": {
+    "run_id": "e3p_ucf_vjepa21l_vptdeep-n576_s42",
+    "split": "test",
+    "origine": "ricalcolo_post_hoc",
+    "adr": "ADR-061",
+    "threshold": 0.26971012353897095,
+    "n_video": 290,
+    "n_chunk": 9116,
+    "annotation_source": "ucf_lab@5d83069e67e1cff28de478b2d9845f40c254f2d07f79fee1d38c2f4be401b3c3",
+    "git_sha": "b98ded56f0a1f13aa3ec8db1601005ed937638db"
+  }
+}

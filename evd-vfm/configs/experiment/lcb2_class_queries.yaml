@@ -1,0 +1,18 @@
+# @package _global_
+#
+# B2 della campagna di localizzazione con scelta della classe (piano del 21 ottobre
+# 2026 §5.4): testa multiclasse nuova e completa (normalizzazione, 3 self-attention,
+# 1 cross-attention con 14 query) sull'encoder del rivelatore, congelato. Stessa
+# profondita' del percorso di B1: B1 contro B2 misura solo la radice condivisa.
+defaults:
+  - e3s_fondi_lora_vptshallow
+  - override /head: class_queries
+  - override /train: class_routing_4ep
+
+exp_id: lcb2
+objective: multiclass
+
+inherit:
+  from: runs/e3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s${seed}/checkpoint/checkpoint.pt
+  state: selected
+  adapter: freeze

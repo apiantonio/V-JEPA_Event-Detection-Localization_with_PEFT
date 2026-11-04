@@ -1,0 +1,56 @@
+{
+  "run_id": "e5b3_efficienza_gpuq",
+  "official": true,
+  "started_at": "2026-09-08T14:18:47+00:00",
+  "git": {
+    "sha": "e3803dd77dde1e2e6f382fe24f320f49ca96a946",
+    "branch": "main",
+    "dirty": false,
+    "available": true
+  },
+  "env": {
+    "host": "gnode05",
+    "platform": "Linux-6.8.0-51-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "cuda": "12.4",
+    "cuda_available": true,
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "requirements_ref": "hpc/setup/requisiti-hpc.txt",
+    "slurm_job_id": "559892"
+  },
+  "env_vars": {
+    "resolved": {
+      "EVD_VJEPA_DIR": "/home/A.APICELLA97/evd/vjepa2",
+      "EVD_SHARED_ROOT": "/shared/tesi_mllm",
+      "EVD_STORE_ROOT": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it",
+      "EVD_DATA_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/data",
+      "EVD_RAW_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/data/raw",
+      "EVD_CKPT_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/data/checkpoints",
+      "EVD_UCF_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/data/raw/ucf_crime/UCF_Crimes",
+      "EVD_ANNOT_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/data/annotations",
+      "EVD_FEATURES_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/features",
+      "EVD_RUNS_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs",
+      "EVD_CACHE_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/cache",
+      "EVD_PRECISION": "fp32",
+      "EVD_ALLOW_BF16": "1",
+      "EVD_TF32": "0",
+      "EVD_BATCH_SIZE": "1",
+      "EVD_SEED": "0"
+    },
+    "deduced": {
+      "TORCH_DEVICE": "cuda",
+      "EVD_CPUS": "4",
+      "EVD_NUM_WORKERS": "4",
+      "EVD_SHARD": "0/1",
+      "repo_root": "/home/A.APICELLA97/evd/evd-vfm"
+    }
+  },
+  "regime": {
+    "attn": "sdpa",
+    "device": "cuda",
+    "precision": "bf16",
+    "profile_schema": 1
+  },
+  "protocol_sha": null
+}

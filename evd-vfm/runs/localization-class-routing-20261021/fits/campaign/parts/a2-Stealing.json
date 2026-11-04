@@ -1,0 +1,21 @@
+{
+  "identity": {
+    "pass_root": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/localization-class-routing-20261021/passes/campaign",
+    "references_sha256": "8c06ea3b6df35b476d29daccedae757dfda4ed9f6357e9f89fe0d86b2ab77290",
+    "pure_sha256": "ecbdcfb503ee6072074cdd4e4f78ce47732f478f94c0f964e79fd18baf8f42c6",
+    "existing": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/localization-auto-20261016/fits/vtcd_models.npz",
+    "part": "a2-Stealing"
+  },
+  "receipt": [
+    {
+      "chunks": 1224,
+      "regions": 30921,
+      "converged": true,
+      "iterations": 2371,
+      "relative_squared_error": 0.36526229629347007,
+      "outcome": "fitted",
+      "seconds": 1167.47676954302,
+      "peak_memory_mb": 30333.26171875
+    }
+  ]
+}

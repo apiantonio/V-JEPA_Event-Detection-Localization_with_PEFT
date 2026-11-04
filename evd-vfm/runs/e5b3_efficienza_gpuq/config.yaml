@@ -1,0 +1,47 @@
+checkpoint: /shared/tesi_mllm/a.apicella97@studenti.unisa.it/data/checkpoints/vjepa2_1_vitl_dist_vitG_384.pt
+run_id: e5b3_efficienza_gpuq
+repo: /home/A.APICELLA97/evd/vjepa2
+arch: vit_large
+configs_dir: configs
+varianti:
+- frozen
+- frozen-linear
+- lora-r8
+- lora-r8-fusa
+- lora-r16
+- lora-r16-fusa
+- lora-r32
+- lora-r32-fusa
+- lora-r64
+- lora-r64-fusa
+- dora-r32
+- dora-r32-fusa
+- vptdeep-n8
+- vptdeep-n64
+- vptdeep-n192
+- vptdeep-n576
+- vptshallow-n8
+- vptshallow-n64
+- vptshallow-n192
+- vptshallow-n576
+batches:
+- 1
+- 2
+num_frames: 32
+size: 384
+precision: bf16
+layer: 23
+n_classes: 1
+warmup: 3
+iters: 12
+device: cuda
+seed: 42
+hop_s: 4.0
+tolleranza_merge: 0.0001
+scala_perturbazione: 0.02
+effetto_minimo: 0.001
+head:
+  n_queries: 1
+  n_heads: 16
+  depth: 4
+  norm: true

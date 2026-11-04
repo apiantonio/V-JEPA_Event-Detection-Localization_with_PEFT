@@ -1,0 +1,10 @@
+family: reparam
+name: dora-r16-qkvo
+method: dora
+r: 16
+alpha: 32
+placement: qkvo
+factorization: separate
+use_rslora: false       # combinabile con dora: agiscono su parti diverse
+dropout: 0.0
+init: kaiming_b_zero

@@ -1,0 +1,677 @@
+{
+  "run_id": "e3s_ucf_vjepa21l_vptshallow-n8-su-dora-r32_s42",
+  "chunk_auc": 0.9477426306472717,
+  "chunk_ap": 0.8089867488812275,
+  "chunk_auc_anomalous": 0.877361421033835,
+  "chunk_ap_anomalous": 0.8376787891184287,
+  "n_video_anomalous": 140,
+  "chunk_prf": {
+    "precision": 0.6020358700920989,
+    "recall": 0.8329979879275654,
+    "f1": 0.69893078221722,
+    "threshold": 0.024423090741038322,
+    "source": "val_youden",
+    "n_pred_pos": 2063,
+    "n_true_pos": 1491
+  },
+  "per_class_chunk": {
+    "Abuse": {
+      "auc": 0.95,
+      "ap": 0.01308665559881985,
+      "n_pos": 6
+    },
+    "Arrest": {
+      "auc": 0.9048011060635986,
+      "ap": 0.21067376811176075,
+      "n_pos": 166
+    },
+    "Arson": {
+      "auc": 0.9604775956284154,
+      "ap": 0.5234179342162617,
+      "n_pos": 240
+    },
+    "Assault": {
+      "auc": 0.9593700943864878,
+      "ap": 0.4491178983232368,
+      "n_pos": 99
+    },
+    "Burglary": {
+      "auc": 0.9684964194827484,
+      "ap": 0.6138846881763871,
+      "n_pos": 277
+    },
+    "Explosion": {
+      "auc": 0.9721153466324313,
+      "ap": 0.4337792148462089,
+      "n_pos": 83
+    },
+    "Fighting": {
+      "auc": 0.9944546860501083,
+      "ap": 0.5571814224530701,
+      "n_pos": 53
+    },
+    "RoadAccidents": {
+      "auc": 0.9634491803278689,
+      "ap": 0.42969109245280346,
+      "n_pos": 60
+    },
+    "Robbery": {
+      "auc": 0.9205294733170561,
+      "ap": 0.22803644099886786,
+      "n_pos": 94
+    },
+    "Shooting": {
+      "auc": 0.9506299959355101,
+      "ap": 0.44758354217702084,
+      "n_pos": 121
+    },
+    "Shoplifting": {
+      "auc": 0.8665039661554733,
+      "ap": 0.0630726286100356,
+      "n_pos": 124
+    },
+    "Stealing": {
+      "auc": 0.969015873015873,
+      "ap": 0.5633900666466234,
+      "n_pos": 126
+    },
+    "Vandalism": {
+      "auc": 0.9791522248243559,
+      "ap": 0.3126044082186638,
+      "n_pos": 42
+    }
+  },
+  "detection_latency": {
+    "regola": "endpoint_dentro",
+    "mediana_s": 2.566666666666667,
+    "p90_s": 5.086666666666667,
+    "n_eventi": 276,
+    "n_senza_latenza_misurabile": 94
+  },
+  "detection_latency_intersezione": {
+    "regola": "intersezione",
+    "mediana_s": 3.0,
+    "p90_s": 6.366666666666666,
+    "n_eventi": 276,
+    "n_senza_latenza_misurabile": 20
+  },
+  "video_prf": {
+    "precision": 0.9047619047619048,
+    "recall": 0.95,
+    "f1": 0.9268292682926829,
+    "threshold": 0.024423090741038322,
+    "source": "val_youden",
+    "n_pred_pos": 147,
+    "n_true_pos": 140
+  },
+  "eval_split": "test",
+  "eval_precision": "bf16",
+  "n_eval_videos": 290,
+  "n_chunk_eval": 9116,
+  "threshold": {
+    "value": 0.024423090741038322,
+    "source": "val_youden",
+    "n_scores": 8383,
+    "n_negativi": 7389,
+    "scores_from": "selected_step"
+  },
+  "threshold_sensitivity": [
+    {
+      "quantile": 0.8,
+      "threshold": 0.0064882696606218815,
+      "chunk_prf": {
+        "precision": 0.4816124469589816,
+        "recall": 0.9134808853118712,
+        "f1": 0.6307015512850197,
+        "threshold": 0.0064882696606218815,
+        "source": "val",
+        "n_pred_pos": 2828,
+        "n_true_pos": 1491
+      }
+    },
+    {
+      "quantile": 0.9,
+      "threshold": 0.03514484688639641,
+      "chunk_prf": {
+        "precision": 0.646588486140725,
+        "recall": 0.8135479543930249,
+        "f1": 0.7205227205227206,
+        "threshold": 0.03514484688639641,
+        "source": "val",
+        "n_pred_pos": 1876,
+        "n_true_pos": 1491
+      }
+    },
+    {
+      "quantile": 0.95,
+      "threshold": 0.12817613482475232,
+      "chunk_prf": {
+        "precision": 0.7376373626373627,
+        "recall": 0.7203219315895373,
+        "f1": 0.7288768238887005,
+        "threshold": 0.12817613482475232,
+        "source": "val",
+        "n_pred_pos": 1456,
+        "n_true_pos": 1491
+      }
+    },
+    {
+      "quantile": 0.975,
+      "threshold": 0.589077156782151,
+      "chunk_prf": {
+        "precision": 0.8362627197039778,
+        "recall": 0.6063044936284373,
+        "f1": 0.702954898911353,
+        "threshold": 0.589077156782151,
+        "source": "val",
+        "n_pred_pos": 1081,
+        "n_true_pos": 1491
+      }
+    },
+    {
+      "quantile": 0.99,
+      "threshold": 0.968967716693878,
+      "chunk_prf": {
+        "precision": 0.9112801013941698,
+        "recall": 0.48222669349429914,
+        "f1": 0.6307017543859649,
+        "threshold": 0.968967716693878,
+        "source": "val",
+        "n_pred_pos": 789,
+        "n_true_pos": 1491
+      }
+    }
+  ],
+  "event_prf": {
+    "precision": 0.49014778325123154,
+    "recall": 0.927536231884058,
+    "f1": 0.6413697595366991,
+    "threshold": 0.024423090741038322,
+    "source": "val_youden",
+    "n_eventi": 276,
+    "n_eventi_rilevati": 256,
+    "n_allarmi": 406,
+    "n_allarmi_veri": 199,
+    "n_eventi_irraggiungibili": 0
+  },
+  "strata": {
+    "threshold": 0.024423090741038322,
+    "source": "val_youden",
+    "riferimento_negativi": {
+      "n": 7625,
+      "n_sopra_soglia": 821,
+      "score_mediano": 0.000503335555549711
+    },
+    "chunk": {
+      "copertura": {
+        "<=25%": {
+          "n_pos": 192,
+          "auc": 0.9003084016393442,
+          "ap": 0.23801135491775854,
+          "recall": 0.6458333333333334,
+          "precision": 0.1312169312169312,
+          "f1": 0.21811785400175898,
+          "score_mediano": 0.07655547931790352
+        },
+        "25-50%": {
+          "n_pos": 234,
+          "auc": 0.9386675073560318,
+          "ap": 0.44383031422148733,
+          "recall": 0.811965811965812,
+          "precision": 0.18793273986152326,
+          "f1": 0.30522088353413657,
+          "score_mediano": 0.9096084833145142
+        },
+        "50-75%": {
+          "n_pos": 186,
+          "auc": 0.9418307773664727,
+          "ap": 0.42110277439722693,
+          "recall": 0.8010752688172043,
+          "precision": 0.15360824742268042,
+          "f1": 0.2577854671280277,
+          "score_mediano": 0.8440858721733093
+        },
+        ">75%": {
+          "n_pos": 879,
+          "auc": 0.9617705664037002,
+          "ap": 0.7942997153509436,
+          "recall": 0.8862343572241184,
+          "precision": 0.486875,
+          "f1": 0.6284792254941509,
+          "score_mediano": 0.9840936064720154
+        }
+      }
+    },
+    "livello_evento": true,
+    "regola_latenza": "intersezione",
+    "bordi": {
+      "copertura": [
+        0.25,
+        0.5,
+        0.75
+      ],
+      "durata_s": [
+        4.0,
+        8.0,
+        32.0
+      ],
+      "quota_anomala_video": [
+        0.05,
+        0.2,
+        0.5
+      ]
+    },
+    "evento": {
+      "classe": {
+        "Abuse": {
+          "n_eventi": 2,
+          "n_rilevati": 2,
+          "recall": 1.0,
+          "n_allarmi_veri": 2,
+          "precision": 0.009569377990430622,
+          "f1": 0.01895734597156398,
+          "latenza_mediana_s": 1.25,
+          "n_senza_latenza_misurabile": 0
+        },
+        "Arrest": {
+          "n_eventi": 14,
+          "n_rilevati": 13,
+          "recall": 0.9285714285714286,
+          "n_allarmi_veri": 16,
+          "precision": 0.07174887892376682,
+          "f1": 0.13320525136087097,
+          "latenza_mediana_s": 2.7666666666666666,
+          "n_senza_latenza_misurabile": 1
+        },
+        "Arson": {
+          "n_eventi": 31,
+          "n_rilevati": 30,
+          "recall": 0.967741935483871,
+          "n_allarmi_veri": 29,
+          "precision": 0.1228813559322034,
+          "f1": 0.21807244015540797,
+          "latenza_mediana_s": 2.25,
+          "n_senza_latenza_misurabile": 1
+        },
+        "Assault": {
+          "n_eventi": 9,
+          "n_rilevati": 9,
+          "recall": 1.0,
+          "n_allarmi_veri": 10,
+          "precision": 0.04608294930875576,
+          "f1": 0.0881057268722467,
+          "latenza_mediana_s": 2.7666666666666666,
+          "n_senza_latenza_misurabile": 0
+        },
+        "Burglary": {
+          "n_eventi": 27,
+          "n_rilevati": 25,
+          "recall": 0.9259259259259259,
+          "n_allarmi_veri": 25,
+          "precision": 0.10775862068965517,
+          "f1": 0.19305019305019305,
+          "latenza_mediana_s": 2.966666666666667,
+          "n_senza_latenza_misurabile": 2
+        },
+        "Explosion": {
+          "n_eventi": 27,
+          "n_rilevati": 27,
+          "recall": 1.0,
+          "n_allarmi_veri": 20,
+          "precision": 0.0881057268722467,
+          "f1": 0.16194331983805668,
+          "latenza_mediana_s": 2.966666666666667,
+          "n_senza_latenza_misurabile": 0
+        },
+        "Fighting": {
+          "n_eventi": 10,
+          "n_rilevati": 10,
+          "recall": 1.0,
+          "n_allarmi_veri": 8,
+          "precision": 0.037209302325581395,
+          "f1": 0.07174887892376683,
+          "latenza_mediana_s": 3.0166666666666666,
+          "n_senza_latenza_misurabile": 0
+        },
+        "RoadAccidents": {
+          "n_eventi": 24,
+          "n_rilevati": 23,
+          "recall": 0.9583333333333334,
+          "n_allarmi_veri": 23,
+          "precision": 0.1,
+          "f1": 0.18110236220472442,
+          "latenza_mediana_s": 3.2333333333333334,
+          "n_senza_latenza_misurabile": 1
+        },
+        "Robbery": {
+          "n_eventi": 16,
+          "n_rilevati": 16,
+          "recall": 1.0,
+          "n_allarmi_veri": 16,
+          "precision": 0.07174887892376682,
+          "f1": 0.13389121338912133,
+          "latenza_mediana_s": 3.216666666666667,
+          "n_senza_latenza_misurabile": 0
+        },
+        "Shooting": {
+          "n_eventi": 46,
+          "n_rilevati": 41,
+          "recall": 0.8913043478260869,
+          "n_allarmi_veri": 28,
+          "precision": 0.11914893617021277,
+          "f1": 0.21019866337086882,
+          "latenza_mediana_s": 3.5,
+          "n_senza_latenza_misurabile": 5
+        },
+        "Shoplifting": {
+          "n_eventi": 40,
+          "n_rilevati": 31,
+          "recall": 0.775,
+          "n_allarmi_veri": 27,
+          "precision": 0.11538461538461539,
+          "f1": 0.20086393088552915,
+          "latenza_mediana_s": 4.333333333333333,
+          "n_senza_latenza_misurabile": 9
+        },
+        "Stealing": {
+          "n_eventi": 16,
+          "n_rilevati": 15,
+          "recall": 0.9375,
+          "n_allarmi_veri": 13,
+          "precision": 0.05909090909090909,
+          "f1": 0.11117445838084379,
+          "latenza_mediana_s": 3.7666666666666666,
+          "n_senza_latenza_misurabile": 1
+        },
+        "Vandalism": {
+          "n_eventi": 14,
+          "n_rilevati": 14,
+          "recall": 1.0,
+          "n_allarmi_veri": 10,
+          "precision": 0.04608294930875576,
+          "f1": 0.0881057268722467,
+          "latenza_mediana_s": 1.9666666666666666,
+          "n_senza_latenza_misurabile": 0
+        }
+      },
+      "durata": {
+        "<=4 s": {
+          "n_eventi": 89,
+          "n_rilevati": 81,
+          "recall": 0.9101123595505618,
+          "n_allarmi_veri": 71,
+          "precision": 0.25539568345323743,
+          "f1": 0.39886257238963835,
+          "latenza_mediana_s": 3.3666666666666667,
+          "n_senza_latenza_misurabile": 8
+        },
+        "4-8 s": {
+          "n_eventi": 77,
+          "n_rilevati": 70,
+          "recall": 0.9090909090909091,
+          "n_allarmi_veri": 67,
+          "precision": 0.24452554744525548,
+          "f1": 0.3853897037676158,
+          "latenza_mediana_s": 3.0666666666666664,
+          "n_senza_latenza_misurabile": 7
+        },
+        "8-32 s": {
+          "n_eventi": 79,
+          "n_rilevati": 74,
+          "recall": 0.9367088607594937,
+          "n_allarmi_veri": 65,
+          "precision": 0.23897058823529413,
+          "f1": 0.38079404662945815,
+          "latenza_mediana_s": 2.9166666666666665,
+          "n_senza_latenza_misurabile": 5
+        },
+        ">32 s": {
+          "n_eventi": 31,
+          "n_rilevati": 31,
+          "recall": 1.0,
+          "n_allarmi_veri": 46,
+          "precision": 0.18181818181818182,
+          "f1": 0.3076923076923077,
+          "latenza_mediana_s": 2.4,
+          "n_senza_latenza_misurabile": 0
+        }
+      },
+      "quota_anomala_video": {
+        "<=5%": {
+          "n_eventi": 17,
+          "n_rilevati": 16,
+          "recall": 0.9411764705882353,
+          "n_allarmi_veri": 16,
+          "precision": 0.07174887892376682,
+          "f1": 0.13333333333333333,
+          "latenza_mediana_s": 3.0,
+          "n_senza_latenza_misurabile": 1
+        },
+        "5-20%": {
+          "n_eventi": 91,
+          "n_rilevati": 78,
+          "recall": 0.8571428571428571,
+          "n_allarmi_veri": 66,
+          "precision": 0.24175824175824176,
+          "f1": 0.37714285714285717,
+          "latenza_mediana_s": 3.2666666666666666,
+          "n_senza_latenza_misurabile": 13
+        },
+        "20-50%": {
+          "n_eventi": 118,
+          "n_rilevati": 113,
+          "recall": 0.9576271186440678,
+          "n_allarmi_veri": 72,
+          "precision": 0.25806451612903225,
+          "f1": 0.40656622442095797,
+          "latenza_mediana_s": 3.0,
+          "n_senza_latenza_misurabile": 5
+        },
+        ">50%": {
+          "n_eventi": 50,
+          "n_rilevati": 49,
+          "recall": 0.98,
+          "n_allarmi_veri": 45,
+          "precision": 0.17857142857142858,
+          "f1": 0.30209617755856966,
+          "latenza_mediana_s": 2.566666666666667,
+          "n_senza_latenza_misurabile": 1
+        }
+      }
+    }
+  },
+  "per_class_chunk_prf": {
+    "Abuse": {
+      "precision": 0.006053268765133172,
+      "recall": 0.8333333333333334,
+      "f1": 0.012019230769230768,
+      "threshold": 0.024423090741038322,
+      "source": "val_youden",
+      "n_pred_pos": 826,
+      "n_true_pos": 6
+    },
+    "Arrest": {
+      "precision": 0.11815252416756176,
+      "recall": 0.6626506024096386,
+      "f1": 0.20054694621695535,
+      "threshold": 0.024423090741038322,
+      "source": "val_youden",
+      "n_pred_pos": 931,
+      "n_true_pos": 166
+    },
+    "Arson": {
+      "precision": 0.20676328502415459,
+      "recall": 0.8916666666666667,
+      "f1": 0.3356862745098039,
+      "threshold": 0.024423090741038322,
+      "source": "val_youden",
+      "n_pred_pos": 1035,
+      "n_true_pos": 240
+    },
+    "Assault": {
+      "precision": 0.09581497797356828,
+      "recall": 0.8787878787878788,
+      "f1": 0.1727904667328699,
+      "threshold": 0.024423090741038322,
+      "source": "val_youden",
+      "n_pred_pos": 908,
+      "n_true_pos": 99
+    },
+    "Burglary": {
+      "precision": 0.23485554520037277,
+      "recall": 0.9097472924187726,
+      "f1": 0.3733333333333333,
+      "threshold": 0.024423090741038322,
+      "source": "val_youden",
+      "n_pred_pos": 1073,
+      "n_true_pos": 277
+    },
+    "Explosion": {
+      "precision": 0.0867630700778643,
+      "recall": 0.9397590361445783,
+      "f1": 0.1588594704684318,
+      "threshold": 0.024423090741038322,
+      "source": "val_youden",
+      "n_pred_pos": 899,
+      "n_true_pos": 83
+    },
+    "Fighting": {
+      "precision": 0.06064073226544622,
+      "recall": 1.0,
+      "f1": 0.11434735706580365,
+      "threshold": 0.024423090741038322,
+      "source": "val_youden",
+      "n_pred_pos": 874,
+      "n_true_pos": 53
+    },
+    "RoadAccidents": {
+      "precision": 0.05956471935853379,
+      "recall": 0.8666666666666667,
+      "f1": 0.11146838156484458,
+      "threshold": 0.024423090741038322,
+      "source": "val_youden",
+      "n_pred_pos": 873,
+      "n_true_pos": 60
+    },
+    "Robbery": {
+      "precision": 0.07856341189674523,
+      "recall": 0.7446808510638298,
+      "f1": 0.14213197969543148,
+      "threshold": 0.024423090741038322,
+      "source": "val_youden",
+      "n_pred_pos": 891,
+      "n_true_pos": 94
+    },
+    "Shooting": {
+      "precision": 0.11243243243243244,
+      "recall": 0.859504132231405,
+      "f1": 0.1988527724665392,
+      "threshold": 0.024423090741038322,
+      "source": "val_youden",
+      "n_pred_pos": 925,
+      "n_true_pos": 121
+    },
+    "Shoplifting": {
+      "precision": 0.07231638418079096,
+      "recall": 0.5161290322580645,
+      "f1": 0.12685827552031714,
+      "threshold": 0.024423090741038322,
+      "source": "val_youden",
+      "n_pred_pos": 885,
+      "n_true_pos": 124
+    },
+    "Stealing": {
+      "precision": 0.12098501070663811,
+      "recall": 0.8968253968253969,
+      "f1": 0.21320754716981133,
+      "threshold": 0.024423090741038322,
+      "source": "val_youden",
+      "n_pred_pos": 934,
+      "n_true_pos": 126
+    },
+    "Vandalism": {
+      "precision": 0.04645760743321719,
+      "recall": 0.9523809523809523,
+      "f1": 0.08859357696567,
+      "threshold": 0.024423090741038322,
+      "source": "val_youden",
+      "n_pred_pos": 861,
+      "n_true_pos": 42
+    }
+  },
+  "n_test_videos": 290,
+  "n_chunk_test": 9116,
+  "seed": 42,
+  "protocol_version": "edp_v2",
+  "split_sha": "5e82820a94a7d8aa7b70c6905334e92d39ab4f8128a6aa0e3692663942e89ade",
+  "chunks": {
+    "train": {
+      "n_chunk": 88371,
+      "n_positivi": 9475,
+      "n_video": 1303,
+      "tasso_positivi_uniforme": 0.10721843138586187,
+      "tasso_positivi_pesato": 0.23773669393537278
+    },
+    "val": {
+      "n_chunk": 8383,
+      "n_positivi": 994,
+      "n_video": 306,
+      "tasso_positivi_uniforme": 0.11857330311344387,
+      "tasso_positivi_pesato": 0.15474208694416813
+    },
+    "test": {
+      "n_chunk": 9116,
+      "n_positivi": 1491,
+      "n_video": 290,
+      "tasso_positivi_uniforme": 0.16355857832382623,
+      "tasso_positivi_pesato": 0.15065221000705442
+    }
+  },
+  "n_chunk_train": 88371,
+  "n_chunk_val": 8383,
+  "train_sampling": "static",
+  "final_loss": 0.006595530951017281,
+  "trainable_params": 49347585,
+  "trainable_params_adapter": 8192,
+  "lr": 0.0001,
+  "lr_selection": {
+    "lr": 0.0001,
+    "regime": "griglia_a_un_valore",
+    "provenance": "la griglia ha un solo punto: niente da scegliere",
+    "trials": [],
+    "n_val": 0
+  },
+  "steps": 16572,
+  "max_steps": 16572,
+  "budget_epochs": null,
+  "budget_cap_attivo": false,
+  "stopped_early": false,
+  "resumed_from": 13990,
+  "model_selection": {
+    "metric": "val_auroc",
+    "step": 11960,
+    "value": 0.9419711529428295,
+    "eval_every": 920
+  },
+  "val_auroc_finale": 0.9397811282364644,
+  "adapt": {
+    "family": "prompt",
+    "method": "vpt_shallow",
+    "n_targets": 24,
+    "n_trainable": 8192,
+    "extra_tokens": 8,
+    "targets": [
+      "blocks.0"
+    ],
+    "notes": {
+      "n_tokens": 8,
+      "start_block": 0,
+      "n_banchi": 1,
+      "pos_policy": "rope_identity",
+      "norm": "none",
+      "init": "xavier_uniform"
+    }
+  },
+  "figura_training": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/e3s_ucf_vjepa21l_vptshallow-n8-su-dora-r32_s42/training.png",
+  "figura_lr": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/e3s_ucf_vjepa21l_vptshallow-n8-su-dora-r32_s42/lr.png"
+}

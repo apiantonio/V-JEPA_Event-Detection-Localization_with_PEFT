@@ -1,0 +1,5 @@
+defaults:
+  - e2_frozen
+  - override /train: edp_v2_cont2
+exp_id: e3m
+init_from: runs/e2d_ucf_vjepa21l_frozen-attentive_s${seed}/checkpoint/checkpoint.pt

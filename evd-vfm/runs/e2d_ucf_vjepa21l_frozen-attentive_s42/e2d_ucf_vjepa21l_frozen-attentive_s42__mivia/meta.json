@@ -1,0 +1,83 @@
+{
+  "run_id": "e2d_ucf_vjepa21l_frozen-attentive_s42__mivia",
+  "official": true,
+  "started_at": "2026-09-21T15:17:19+00:00",
+  "git": {
+    "sha": "acba2dab562d505f51c16881507314a2a81f3362",
+    "branch": "main",
+    "dirty": false,
+    "available": true
+  },
+  "env": {
+    "host": "ainode02",
+    "platform": "Linux-6.8.0-51-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "cuda": "12.4",
+    "cuda_available": true,
+    "gpu": "NVIDIA H100 80GB HBM3",
+    "requirements_ref": "hpc/setup/requisiti-hpc.txt",
+    "slurm_job_id": "567126"
+  },
+  "env_vars": {
+    "resolved": {
+      "EVD_VJEPA_DIR": "/home/A.APICELLA97/evd/vjepa2",
+      "EVD_SHARED_ROOT": "/shared/tesi_mllm",
+      "EVD_STORE_ROOT": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it",
+      "EVD_DATA_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/data",
+      "EVD_RAW_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/data/raw",
+      "EVD_CKPT_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/data/checkpoints",
+      "EVD_UCF_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/data/raw/ucf_crime/UCF_Crimes",
+      "EVD_MIVIA_DIR": "/mnt/beegfs/mmarseglia/OFFICIAL_MIVIA_TEST_(USED_ALSO_FOR_CDC_CONTEST)",
+      "EVD_ANNOT_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/data/annotations",
+      "EVD_FEATURES_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/features",
+      "EVD_RUNS_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs",
+      "EVD_CACHE_DIR": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/cache",
+      "EVD_ALLOW_BF16": "1"
+    },
+    "deduced": {
+      "TORCH_DEVICE": "cuda",
+      "EVD_CPUS": "14",
+      "EVD_NUM_WORKERS": "14",
+      "EVD_SHARD": "0/1",
+      "repo_root": "/home/A.APICELLA97/evd/evd-vfm"
+    },
+    "non_consumate": {
+      "nota": "variabili risolte da hpc/env.sh che questo run NON legge: il suo budget viene dal config Hydra. Il seme vero e i campi che hanno governato stanno in `seed` ed `esecuzione` (ADR-057).",
+      "valori": {
+        "EVD_PRECISION": "fp32",
+        "EVD_TF32": "0",
+        "EVD_BATCH_SIZE": "1",
+        "EVD_SEED": "0"
+      }
+    }
+  },
+  "regime": {
+    "eval_precision": "bf16",
+    "training": false
+  },
+  "protocol_sha": "mivia_lab@7d65080073f9ed79967c7709b0307b9916071385677e0f35173b98e392d6af21",
+  "valutazione_esterna": {
+    "run_sorgente": "e2d_ucf_vjepa21l_frozen-attentive_s42",
+    "dataset": "mivia_crime",
+    "annotation_source": "mivia_lab@7d65080073f9ed79967c7709b0307b9916071385677e0f35173b98e392d6af21",
+    "sottoinsieme": false,
+    "geometria": {
+      "window_grid": "fixed",
+      "window_s": 8.0,
+      "hop_s": 4.0,
+      "num_frames": 32,
+      "target_fps": 4.0
+    },
+    "preprocess_hash": "dbafe9a5998c875424542b69b9f3c96c193d2c9b11ca922957f69ffec06e79f0"
+  },
+  "threshold": {
+    "value": 0.14687739312648773,
+    "source": "fissa",
+    "trasferita_da": "e2d_ucf_vjepa21l_frozen-attentive_s42",
+    "regola_originale": "val_youden",
+    "n_scores": 0,
+    "n_negativi": 7389,
+    "scores_from": "run_sorgente"
+  }
+}

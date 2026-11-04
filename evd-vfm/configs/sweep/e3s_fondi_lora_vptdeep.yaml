@@ -1,0 +1,15 @@
+experiment: e3s_fondi_lora_vptdeep
+official: true
+
+assi:
+  seed: [42, 67, 104]
+
+paralleli: 4
+fetta_massima: 8
+
+risorse:
+  p: aiq
+  t: "07:00:00"
+  c: "14"
+  g: "1"
+  m: "128G"

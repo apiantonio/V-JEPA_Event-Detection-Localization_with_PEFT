@@ -1,0 +1,18 @@
+# Campagna di localizzazione con scelta della classe (piano del 21 ottobre 2026,
+# docs/varie/piano_localizzazione_per_classe_20261021.md §6.1). Seme 42 soltanto.
+# Risorse della matrice: num_workers 12, quindi 14 CPU per GPU (il tetto di aiq).
+experiment: lcb1_branch
+official: true
+
+assi:
+  seed: [42]
+
+paralleli: 1
+fetta_massima: 8
+
+risorse:
+  p: aiq
+  t: "07:00:00"
+  c: "14"
+  g: "1"
+  m: "128G"

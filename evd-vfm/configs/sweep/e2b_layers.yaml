@@ -1,0 +1,14 @@
+experiment: e2b_layers
+official: true
+assi:
+  layer: [5, 11, 17, 23]
+  seed: [42]
+
+paralleli: 4
+fetta_massima: 8
+risorse:
+  p: aiq
+  t: "06:59:00"
+  c: "14"
+  g: "1"
+  m: "128G"

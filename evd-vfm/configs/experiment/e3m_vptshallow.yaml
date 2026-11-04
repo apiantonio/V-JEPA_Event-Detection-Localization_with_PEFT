@@ -1,0 +1,7 @@
+# @package _global_
+defaults:
+  - e3p_vpt
+  - override /adapt: vpt_shallow_n8
+  - override /train: peft_budget_v2_cont2
+exp_id: e3m
+init_from: runs/e3p_ucf_vjepa21l_vptshallow-n8_s${seed}/checkpoint/checkpoint.pt

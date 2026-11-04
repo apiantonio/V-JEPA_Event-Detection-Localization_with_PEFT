@@ -1,0 +1,3692 @@
+{
+  "schema": 1,
+  "run_id": "e3r_ucf_vjepa21l_dora-r32-qkvomlp_s42",
+  "campaign": "localization-auto-20261016",
+  "metric": "IoU per annotated plane, then mean per event, per class, and over the classes",
+  "selection": "best UCF-Crime test macro IoU (exploratory: chosen on the test set)",
+  "default": "P07-mass40-minarea",
+  "classes": [
+    "Abuse",
+    "Arrest",
+    "Arson",
+    "Assault",
+    "Burglary",
+    "Explosion",
+    "Fighting",
+    "RoadAccidents",
+    "Robbery",
+    "Shooting",
+    "Shoplifting",
+    "Stealing",
+    "Vandalism"
+  ],
+  "coordinate_space": "native_pixels_xyxy_inclusive",
+  "projection": "fine",
+  "methods": [
+    {
+      "id": "P07-mass40-minarea",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 10.818697438626142,
+      "ucf_crime": {
+        "rank": 1,
+        "mean": 0.34643563263771554,
+        "classes": {
+          "Abuse": 0.4401357736920004,
+          "Arrest": 0.3173883532856855,
+          "Arson": 0.32469585467652295,
+          "Assault": 0.2924087388423758,
+          "Burglary": 0.47711234995601165,
+          "Explosion": 0.32865514047298444,
+          "Fighting": 0.24464528874871494,
+          "RoadAccidents": 0.21099942189270493,
+          "Robbery": 0.44548679379216766,
+          "Shooting": 0.30059247886727486,
+          "Shoplifting": 0.4170327806519283,
+          "Stealing": 0.38911047623462575,
+          "Vandalism": 0.3153997731773055
+        }
+      },
+      "mivia_crime": {
+        "rank": 16,
+        "mean": 0.30921983816695947,
+        "classes": {
+          "Abuse": 0.25968454777867667,
+          "Arrest": 0.2670074858428269,
+          "Arson": 0.41009328121864314,
+          "Assault": 0.1961906763970996,
+          "Burglary": 0.48625029811774517,
+          "Explosion": 0.3842032146548935,
+          "Fighting": 0.27128713201933025,
+          "RoadAccidents": 0.15350856772062912,
+          "Robbery": 0.40723960115938146,
+          "Shooting": 0.07564144271733722,
+          "Shoplifting": 0.34557579781329545,
+          "Stealing": 0.46773154131283273,
+          "Vandalism": 0.2954443094177821
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P07-mass10-minarea",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 10.81890053726038,
+      "ucf_crime": {
+        "rank": 2,
+        "mean": 0.34622962121776013,
+        "classes": {
+          "Abuse": 0.4401357736920004,
+          "Arrest": 0.3173883532856855,
+          "Arson": 0.32362676876551066,
+          "Assault": 0.2924087388423758,
+          "Burglary": 0.4770290212315634,
+          "Explosion": 0.32865514047298444,
+          "Fighting": 0.24464528874871494,
+          "RoadAccidents": 0.21099942189270493,
+          "Robbery": 0.44548679379216766,
+          "Shooting": 0.2990482791342243,
+          "Shoplifting": 0.4170327806519283,
+          "Stealing": 0.3891289421437166,
+          "Vandalism": 0.3153997731773055
+        }
+      },
+      "mivia_crime": {
+        "rank": 16,
+        "mean": 0.30921983816695947,
+        "classes": {
+          "Abuse": 0.25968454777867667,
+          "Arrest": 0.2670074858428269,
+          "Arson": 0.41009328121864314,
+          "Assault": 0.1961906763970996,
+          "Burglary": 0.48625029811774517,
+          "Explosion": 0.3842032146548935,
+          "Fighting": 0.27128713201933025,
+          "RoadAccidents": 0.15350856772062912,
+          "Robbery": 0.40723960115938146,
+          "Shooting": 0.07564144271733722,
+          "Shoplifting": 0.34557579781329545,
+          "Stealing": 0.46773154131283273,
+          "Vandalism": 0.2954443094177821
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P07-mass20-minarea",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 10.818719217139874,
+      "ucf_crime": {
+        "rank": 2,
+        "mean": 0.34622962121776013,
+        "classes": {
+          "Abuse": 0.4401357736920004,
+          "Arrest": 0.3173883532856855,
+          "Arson": 0.32362676876551066,
+          "Assault": 0.2924087388423758,
+          "Burglary": 0.4770290212315634,
+          "Explosion": 0.32865514047298444,
+          "Fighting": 0.24464528874871494,
+          "RoadAccidents": 0.21099942189270493,
+          "Robbery": 0.44548679379216766,
+          "Shooting": 0.2990482791342243,
+          "Shoplifting": 0.4170327806519283,
+          "Stealing": 0.3891289421437166,
+          "Vandalism": 0.3153997731773055
+        }
+      },
+      "mivia_crime": {
+        "rank": 16,
+        "mean": 0.30921983816695947,
+        "classes": {
+          "Abuse": 0.25968454777867667,
+          "Arrest": 0.2670074858428269,
+          "Arson": 0.41009328121864314,
+          "Assault": 0.1961906763970996,
+          "Burglary": 0.48625029811774517,
+          "Explosion": 0.3842032146548935,
+          "Fighting": 0.27128713201933025,
+          "RoadAccidents": 0.15350856772062912,
+          "Robbery": 0.40723960115938146,
+          "Shooting": 0.07564144271733722,
+          "Shoplifting": 0.34557579781329545,
+          "Stealing": 0.46773154131283273,
+          "Vandalism": 0.2954443094177821
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P07-mass30-minarea",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 11.011887533798024,
+      "ucf_crime": {
+        "rank": 2,
+        "mean": 0.34622962121776013,
+        "classes": {
+          "Abuse": 0.4401357736920004,
+          "Arrest": 0.3173883532856855,
+          "Arson": 0.32362676876551066,
+          "Assault": 0.2924087388423758,
+          "Burglary": 0.4770290212315634,
+          "Explosion": 0.32865514047298444,
+          "Fighting": 0.24464528874871494,
+          "RoadAccidents": 0.21099942189270493,
+          "Robbery": 0.44548679379216766,
+          "Shooting": 0.2990482791342243,
+          "Shoplifting": 0.4170327806519283,
+          "Stealing": 0.3891289421437166,
+          "Vandalism": 0.3153997731773055
+        }
+      },
+      "mivia_crime": {
+        "rank": 8,
+        "mean": 0.3205445129107147,
+        "classes": {
+          "Abuse": 0.2648805121393638,
+          "Arrest": 0.2670074858428269,
+          "Arson": 0.42915960161382044,
+          "Assault": 0.19398214879295692,
+          "Burglary": 0.48625029811774517,
+          "Explosion": 0.4230576712597551,
+          "Fighting": 0.2700581275044018,
+          "RoadAccidents": 0.14498796388027124,
+          "Robbery": 0.40723960115938146,
+          "Shooting": 0.07564144271733722,
+          "Shoplifting": 0.38459671759042235,
+          "Stealing": 0.46773154131283273,
+          "Vandalism": 0.3524855559081759
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P07-mass40",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 10.818683581848399,
+      "ucf_crime": {
+        "rank": 5,
+        "mean": 0.34622516834088235,
+        "classes": {
+          "Abuse": 0.43897091316621273,
+          "Arrest": 0.3172538673384744,
+          "Arson": 0.3249852662741327,
+          "Assault": 0.29197967075674747,
+          "Burglary": 0.47691860823848947,
+          "Explosion": 0.32933089107777297,
+          "Fighting": 0.24455912203760324,
+          "RoadAccidents": 0.21135209356633175,
+          "Robbery": 0.4451624948527129,
+          "Shooting": 0.29998249892944406,
+          "Shoplifting": 0.41661880137437246,
+          "Stealing": 0.38949749512635967,
+          "Vandalism": 0.3143154656928163
+        }
+      },
+      "mivia_crime": {
+        "rank": 19,
+        "mean": 0.3090242435725947,
+        "classes": {
+          "Abuse": 0.25968294005962106,
+          "Arrest": 0.26634082979272516,
+          "Arson": 0.4095931545146256,
+          "Assault": 0.19592252210462857,
+          "Burglary": 0.48640613018708323,
+          "Explosion": 0.38372080599160685,
+          "Fighting": 0.2711306890926878,
+          "RoadAccidents": 0.15350856772062912,
+          "Robbery": 0.4072581515802319,
+          "Shooting": 0.07521158797171884,
+          "Shoplifting": 0.34540524898517244,
+          "Stealing": 0.4676902290252187,
+          "Vandalism": 0.2954443094177821
+        }
+      },
+      "stage": "vtcd_ablation_sweep"
+    },
+    {
+      "id": "P07-mass10",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 10.81888650954363,
+      "ucf_crime": {
+        "rank": 6,
+        "mean": 0.34602145570662096,
+        "classes": {
+          "Abuse": 0.43897091316621273,
+          "Arrest": 0.3172538673384744,
+          "Arson": 0.32394452048854677,
+          "Assault": 0.29197967075674747,
+          "Burglary": 0.4768354291258205,
+          "Explosion": 0.32933089107777297,
+          "Fighting": 0.24455912203760324,
+          "RoadAccidents": 0.21135209356633175,
+          "Robbery": 0.4451624948527129,
+          "Shooting": 0.2984396936732108,
+          "Shoplifting": 0.41661880137437246,
+          "Stealing": 0.38951596103545055,
+          "Vandalism": 0.3143154656928163
+        }
+      },
+      "mivia_crime": {
+        "rank": 19,
+        "mean": 0.3090242435725947,
+        "classes": {
+          "Abuse": 0.25968294005962106,
+          "Arrest": 0.26634082979272516,
+          "Arson": 0.4095931545146256,
+          "Assault": 0.19592252210462857,
+          "Burglary": 0.48640613018708323,
+          "Explosion": 0.38372080599160685,
+          "Fighting": 0.2711306890926878,
+          "RoadAccidents": 0.15350856772062912,
+          "Robbery": 0.4072581515802319,
+          "Shooting": 0.07521158797171884,
+          "Shoplifting": 0.34540524898517244,
+          "Stealing": 0.4676902290252187,
+          "Vandalism": 0.2954443094177821
+        }
+      },
+      "stage": "vtcd_ablation_sweep"
+    },
+    {
+      "id": "P07-mass20",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 10.818705293574506,
+      "ucf_crime": {
+        "rank": 6,
+        "mean": 0.34602145570662096,
+        "classes": {
+          "Abuse": 0.43897091316621273,
+          "Arrest": 0.3172538673384744,
+          "Arson": 0.32394452048854677,
+          "Assault": 0.29197967075674747,
+          "Burglary": 0.4768354291258205,
+          "Explosion": 0.32933089107777297,
+          "Fighting": 0.24455912203760324,
+          "RoadAccidents": 0.21135209356633175,
+          "Robbery": 0.4451624948527129,
+          "Shooting": 0.2984396936732108,
+          "Shoplifting": 0.41661880137437246,
+          "Stealing": 0.38951596103545055,
+          "Vandalism": 0.3143154656928163
+        }
+      },
+      "mivia_crime": {
+        "rank": 19,
+        "mean": 0.3090242435725947,
+        "classes": {
+          "Abuse": 0.25968294005962106,
+          "Arrest": 0.26634082979272516,
+          "Arson": 0.4095931545146256,
+          "Assault": 0.19592252210462857,
+          "Burglary": 0.48640613018708323,
+          "Explosion": 0.38372080599160685,
+          "Fighting": 0.2711306890926878,
+          "RoadAccidents": 0.15350856772062912,
+          "Robbery": 0.4072581515802319,
+          "Shooting": 0.07521158797171884,
+          "Shoplifting": 0.34540524898517244,
+          "Stealing": 0.4676902290252187,
+          "Vandalism": 0.2954443094177821
+        }
+      },
+      "stage": "vtcd_ablation_sweep"
+    },
+    {
+      "id": "P07-mass30",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 11.01187349120906,
+      "ucf_crime": {
+        "rank": 6,
+        "mean": 0.34602145570662096,
+        "classes": {
+          "Abuse": 0.43897091316621273,
+          "Arrest": 0.3172538673384744,
+          "Arson": 0.32394452048854677,
+          "Assault": 0.29197967075674747,
+          "Burglary": 0.4768354291258205,
+          "Explosion": 0.32933089107777297,
+          "Fighting": 0.24455912203760324,
+          "RoadAccidents": 0.21135209356633175,
+          "Robbery": 0.4451624948527129,
+          "Shooting": 0.2984396936732108,
+          "Shoplifting": 0.41661880137437246,
+          "Stealing": 0.38951596103545055,
+          "Vandalism": 0.3143154656928163
+        }
+      },
+      "mivia_crime": {
+        "rank": 9,
+        "mean": 0.32031150220818344,
+        "classes": {
+          "Abuse": 0.26449697655106497,
+          "Arrest": 0.26634082979272516,
+          "Arson": 0.42809337597759867,
+          "Assault": 0.19376098062167768,
+          "Burglary": 0.48640613018708323,
+          "Explosion": 0.4226367606765982,
+          "Fighting": 0.2699516671407328,
+          "RoadAccidents": 0.14498796388027124,
+          "Robbery": 0.4072581515802319,
+          "Shooting": 0.07521158797171884,
+          "Shoplifting": 0.3847646129333555,
+          "Stealing": 0.4676902290252187,
+          "Vandalism": 0.35245026236810806
+        }
+      },
+      "stage": "vtcd_ablation_mass30"
+    },
+    {
+      "id": "P07-mass40-largest",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 10.81870977584392,
+      "ucf_crime": {
+        "rank": 9,
+        "mean": 0.34450758655038005,
+        "classes": {
+          "Abuse": 0.4401357736920004,
+          "Arrest": 0.295780972395277,
+          "Arson": 0.3155732798125261,
+          "Assault": 0.3035760325676278,
+          "Burglary": 0.4697480318432974,
+          "Explosion": 0.31619179324110114,
+          "Fighting": 0.23993599068394705,
+          "RoadAccidents": 0.2079582511912065,
+          "Robbery": 0.4430786944059257,
+          "Shooting": 0.2852847832884578,
+          "Shoplifting": 0.439399259700244,
+          "Stealing": 0.39655179149310366,
+          "Vandalism": 0.3253839708402263
+        }
+      },
+      "mivia_crime": {
+        "rank": 12,
+        "mean": 0.31545287745005096,
+        "classes": {
+          "Abuse": 0.257995386309781,
+          "Arrest": 0.26779518668049446,
+          "Arson": 0.40903483752375275,
+          "Assault": 0.19441265815764378,
+          "Burglary": 0.4766836919342288,
+          "Explosion": 0.38345439418544874,
+          "Fighting": 0.3161218374559845,
+          "RoadAccidents": 0.15364694789265326,
+          "Robbery": 0.4216584863066193,
+          "Shooting": 0.07763264687957991,
+          "Shoplifting": 0.39039103151039534,
+          "Stealing": 0.4679627319309398,
+          "Vandalism": 0.284097570083141
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P07-mass50-minarea",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 10.794372644098608,
+      "ucf_crime": {
+        "rank": 10,
+        "mean": 0.34428281003098155,
+        "classes": {
+          "Abuse": 0.4401357736920004,
+          "Arrest": 0.3174906339334317,
+          "Arson": 0.331870804854815,
+          "Assault": 0.27879797964112196,
+          "Burglary": 0.4728878189218166,
+          "Explosion": 0.3314907419568328,
+          "Fighting": 0.24464528874871494,
+          "RoadAccidents": 0.20348041060429067,
+          "Robbery": 0.44584049462096714,
+          "Shooting": 0.2942146626865671,
+          "Shoplifting": 0.41031167133027013,
+          "Stealing": 0.38911047623462575,
+          "Vandalism": 0.3153997731773055
+        }
+      },
+      "mivia_crime": {
+        "rank": 10,
+        "mean": 0.3169715749518142,
+        "classes": {
+          "Abuse": 0.2640448242955535,
+          "Arrest": 0.2740041195557055,
+          "Arson": 0.413850241231612,
+          "Assault": 0.1682327447154668,
+          "Burglary": 0.4820357989186903,
+          "Explosion": 0.4230576712597551,
+          "Fighting": 0.2818347811933457,
+          "RoadAccidents": 0.14498796388027124,
+          "Robbery": 0.4081646418542541,
+          "Shooting": 0.05863593920229453,
+          "Shoplifting": 0.3801946868619794,
+          "Stealing": 0.4789926384548671,
+          "Vandalism": 0.3425944229497902
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P07-mass10-largest",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 10.818912852098546,
+      "ucf_crime": {
+        "rank": 11,
+        "mean": 0.3442020987512358,
+        "classes": {
+          "Abuse": 0.4401357736920004,
+          "Arrest": 0.295780972395277,
+          "Arson": 0.31380876122759815,
+          "Assault": 0.3035760325676278,
+          "Burglary": 0.4696422272184366,
+          "Explosion": 0.31619179324110114,
+          "Fighting": 0.23993599068394705,
+          "RoadAccidents": 0.2079582511912065,
+          "Robbery": 0.4430786944059257,
+          "Shooting": 0.28316529920028055,
+          "Shoplifting": 0.439399259700244,
+          "Stealing": 0.3965702574021946,
+          "Vandalism": 0.3253839708402263
+        }
+      },
+      "mivia_crime": {
+        "rank": 12,
+        "mean": 0.31545287745005096,
+        "classes": {
+          "Abuse": 0.257995386309781,
+          "Arrest": 0.26779518668049446,
+          "Arson": 0.40903483752375275,
+          "Assault": 0.19441265815764378,
+          "Burglary": 0.4766836919342288,
+          "Explosion": 0.38345439418544874,
+          "Fighting": 0.3161218374559845,
+          "RoadAccidents": 0.15364694789265326,
+          "Robbery": 0.4216584863066193,
+          "Shooting": 0.07763264687957991,
+          "Shoplifting": 0.39039103151039534,
+          "Stealing": 0.4679627319309398,
+          "Vandalism": 0.284097570083141
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P07-mass20-largest",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 10.818731658653144,
+      "ucf_crime": {
+        "rank": 11,
+        "mean": 0.3442020987512358,
+        "classes": {
+          "Abuse": 0.4401357736920004,
+          "Arrest": 0.295780972395277,
+          "Arson": 0.31380876122759815,
+          "Assault": 0.3035760325676278,
+          "Burglary": 0.4696422272184366,
+          "Explosion": 0.31619179324110114,
+          "Fighting": 0.23993599068394705,
+          "RoadAccidents": 0.2079582511912065,
+          "Robbery": 0.4430786944059257,
+          "Shooting": 0.28316529920028055,
+          "Shoplifting": 0.439399259700244,
+          "Stealing": 0.3965702574021946,
+          "Vandalism": 0.3253839708402263
+        }
+      },
+      "mivia_crime": {
+        "rank": 12,
+        "mean": 0.31545287745005096,
+        "classes": {
+          "Abuse": 0.257995386309781,
+          "Arrest": 0.26779518668049446,
+          "Arson": 0.40903483752375275,
+          "Assault": 0.19441265815764378,
+          "Burglary": 0.4766836919342288,
+          "Explosion": 0.38345439418544874,
+          "Fighting": 0.3161218374559845,
+          "RoadAccidents": 0.15364694789265326,
+          "Robbery": 0.4216584863066193,
+          "Shooting": 0.07763264687957991,
+          "Shoplifting": 0.39039103151039534,
+          "Stealing": 0.4679627319309398,
+          "Vandalism": 0.284097570083141
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P07-mass30-largest",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 11.011900008300655,
+      "ucf_crime": {
+        "rank": 11,
+        "mean": 0.3442020987512358,
+        "classes": {
+          "Abuse": 0.4401357736920004,
+          "Arrest": 0.295780972395277,
+          "Arson": 0.31380876122759815,
+          "Assault": 0.3035760325676278,
+          "Burglary": 0.4696422272184366,
+          "Explosion": 0.31619179324110114,
+          "Fighting": 0.23993599068394705,
+          "RoadAccidents": 0.2079582511912065,
+          "Robbery": 0.4430786944059257,
+          "Shooting": 0.28316529920028055,
+          "Shoplifting": 0.439399259700244,
+          "Stealing": 0.3965702574021946,
+          "Vandalism": 0.3253839708402263
+        }
+      },
+      "mivia_crime": {
+        "rank": 4,
+        "mean": 0.3270037729806405,
+        "classes": {
+          "Abuse": 0.26448375244607225,
+          "Arrest": 0.26779518668049446,
+          "Arson": 0.43307007334440795,
+          "Assault": 0.19517202668194877,
+          "Burglary": 0.4766836919342288,
+          "Explosion": 0.4369298695699739,
+          "Fighting": 0.3129322243801961,
+          "RoadAccidents": 0.14512634405229538,
+          "Robbery": 0.4216584863066193,
+          "Shooting": 0.07763264687957991,
+          "Shoplifting": 0.4102998004608184,
+          "Stealing": 0.4679627319309398,
+          "Vandalism": 0.34130221408075134
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P07-mass50",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 10.794358440168134,
+      "ucf_crime": {
+        "rank": 14,
+        "mean": 0.34406533994826016,
+        "classes": {
+          "Abuse": 0.43897091316621273,
+          "Arrest": 0.3173365017079663,
+          "Arson": 0.3321124610161069,
+          "Assault": 0.278375183348333,
+          "Burglary": 0.47269443978805714,
+          "Explosion": 0.33216646116941456,
+          "Fighting": 0.24455912203760324,
+          "RoadAccidents": 0.2037928067010765,
+          "Robbery": 0.44551414100720466,
+          "Shooting": 0.2936016225208932,
+          "Shoplifting": 0.40991280604533753,
+          "Stealing": 0.38949749512635967,
+          "Vandalism": 0.3143154656928163
+        }
+      },
+      "mivia_crime": {
+        "rank": 11,
+        "mean": 0.3167863578440218,
+        "classes": {
+          "Abuse": 0.26366289642631024,
+          "Arrest": 0.2733315287636127,
+          "Arson": 0.41278401559539013,
+          "Assault": 0.1681782156830862,
+          "Burglary": 0.4821453797240716,
+          "Explosion": 0.4226367606765982,
+          "Fighting": 0.28178170853875484,
+          "RoadAccidents": 0.14498796388027124,
+          "Robbery": 0.40821194669687194,
+          "Shooting": 0.05840124290868926,
+          "Shoplifting": 0.3806262213474826,
+          "Stealing": 0.4789156423214225,
+          "Vandalism": 0.34255912940972233
+        }
+      },
+      "stage": "vtcd_ablation"
+    },
+    {
+      "id": "P07-mass50-largest",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 10.794384938014547,
+      "ucf_crime": {
+        "rank": 15,
+        "mean": 0.34272725706074864,
+        "classes": {
+          "Abuse": 0.4401357736920004,
+          "Arrest": 0.29729283081323193,
+          "Arson": 0.32399450035650956,
+          "Assault": 0.2888192261940248,
+          "Burglary": 0.4622277733921364,
+          "Explosion": 0.32407771508704564,
+          "Fighting": 0.23993599068394705,
+          "RoadAccidents": 0.20222150313622755,
+          "Robbery": 0.44364792337270864,
+          "Shooting": 0.27893583436952335,
+          "Shoplifting": 0.43222950835904655,
+          "Stealing": 0.39655179149310366,
+          "Vandalism": 0.3253839708402263
+        }
+      },
+      "mivia_crime": {
+        "rank": 7,
+        "mean": 0.32247594276096836,
+        "classes": {
+          "Abuse": 0.26364806460226187,
+          "Arrest": 0.27511988337933513,
+          "Arson": 0.4177607129621994,
+          "Assault": 0.17307089852318636,
+          "Burglary": 0.47286725387898415,
+          "Explosion": 0.4369298695699739,
+          "Fighting": 0.3178587990021862,
+          "RoadAccidents": 0.14512634405229538,
+          "Robbery": 0.4113444163087503,
+          "Shooting": 0.05435425866068157,
+          "Shoplifting": 0.4060526556141947,
+          "Stealing": 0.481568811571647,
+          "Vandalism": 0.33648528776689246
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P13-count05-minarea",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.759093493646103,
+      "ucf_crime": {
+        "rank": 16,
+        "mean": 0.33156543441271896,
+        "classes": {
+          "Abuse": 0.37809586458645694,
+          "Arrest": 0.3226761214123159,
+          "Arson": 0.28611656524178725,
+          "Assault": 0.27467203207042123,
+          "Burglary": 0.36566214577114714,
+          "Explosion": 0.21378698014379302,
+          "Fighting": 0.3610388485156362,
+          "RoadAccidents": 0.23767413097245116,
+          "Robbery": 0.42937906979582074,
+          "Shooting": 0.32151209855404217,
+          "Shoplifting": 0.3375644828619719,
+          "Stealing": 0.4057285053588094,
+          "Vandalism": 0.3764438020806935
+        }
+      },
+      "mivia_crime": {
+        "rank": 2,
+        "mean": 0.33839499570692766,
+        "classes": {
+          "Abuse": 0.1694787801005993,
+          "Arrest": 0.3880840283387015,
+          "Arson": 0.462468534368974,
+          "Assault": 0.4071970662435169,
+          "Burglary": 0.45510224698912743,
+          "Explosion": 0.35804320350367297,
+          "Fighting": 0.35877680221831676,
+          "RoadAccidents": 0.12811394992034003,
+          "Robbery": 0.3064827563780019,
+          "Shooting": 0.21152094800727977,
+          "Shoplifting": 0.461849559098078,
+          "Stealing": 0.48738850580970033,
+          "Vandalism": 0.20462856321375109
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P13-count05-largest",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.7591185186784557,
+      "ucf_crime": {
+        "rank": 17,
+        "mean": 0.3307976098054966,
+        "classes": {
+          "Abuse": 0.4105638629905767,
+          "Arrest": 0.30690892806878406,
+          "Arson": 0.27448194608886634,
+          "Assault": 0.2708186253350884,
+          "Burglary": 0.35553634616844376,
+          "Explosion": 0.19931466684957963,
+          "Fighting": 0.35661460672878637,
+          "RoadAccidents": 0.24653221084299248,
+          "Robbery": 0.4206654329662389,
+          "Shooting": 0.3135469205388545,
+          "Shoplifting": 0.32532136153895425,
+          "Stealing": 0.4204084094778698,
+          "Vandalism": 0.3996556098764207
+        }
+      },
+      "mivia_crime": {
+        "rank": 3,
+        "mean": 0.32956704146266574,
+        "classes": {
+          "Abuse": 0.17889923370262384,
+          "Arrest": 0.37402272275820403,
+          "Arson": 0.45080165423773416,
+          "Assault": 0.39045473249367996,
+          "Burglary": 0.4286586800554703,
+          "Explosion": 0.3246693253391084,
+          "Fighting": 0.3436982874295945,
+          "RoadAccidents": 0.0798499649120162,
+          "Robbery": 0.29133641079009237,
+          "Shooting": 0.2104026776771803,
+          "Shoplifting": 0.46249712644824037,
+          "Stealing": 0.5137621473774645,
+          "Vandalism": 0.23531857579324544
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P07-mass70-minarea",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 8.962986506142343,
+      "ucf_crime": {
+        "rank": 18,
+        "mean": 0.330762035449125,
+        "classes": {
+          "Abuse": 0.4401357736920004,
+          "Arrest": 0.3045921607549385,
+          "Arson": 0.34046057298863297,
+          "Assault": 0.2724939295634845,
+          "Burglary": 0.45286492266104483,
+          "Explosion": 0.34536991408338175,
+          "Fighting": 0.24270177540523163,
+          "RoadAccidents": 0.1919351368696212,
+          "Robbery": 0.4324481476953044,
+          "Shooting": 0.25587192297617145,
+          "Shoplifting": 0.3530062559294832,
+          "Stealing": 0.362509449093217,
+          "Vandalism": 0.3055164991261132
+        }
+      },
+      "mivia_crime": {
+        "rank": 24,
+        "mean": 0.30239266279648824,
+        "classes": {
+          "Abuse": 0.22358825729232,
+          "Arrest": 0.2591031514495198,
+          "Arson": 0.4212983248361897,
+          "Assault": 0.16617523611202786,
+          "Burglary": 0.4973371126099406,
+          "Explosion": 0.4243954164976717,
+          "Fighting": 0.2820146428294914,
+          "RoadAccidents": 0.04292696629885521,
+          "Robbery": 0.43603603367594546,
+          "Shooting": 0.06190651956657224,
+          "Shoplifting": 0.33726367006167635,
+          "Stealing": 0.48960476400348485,
+          "Vandalism": 0.28945452112065223
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P07-mass70",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 8.962972123951065,
+      "ucf_crime": {
+        "rank": 19,
+        "mean": 0.33050070492837336,
+        "classes": {
+          "Abuse": 0.43897091316621273,
+          "Arrest": 0.30445537243549214,
+          "Arson": 0.34031278513929225,
+          "Assault": 0.2720163603625744,
+          "Burglary": 0.4525618560042999,
+          "Explosion": 0.3459966406049215,
+          "Fighting": 0.24258655171022747,
+          "RoadAccidents": 0.19198999845788808,
+          "Robbery": 0.4321335002668074,
+          "Shooting": 0.25529159956612557,
+          "Shoplifting": 0.3528118568451831,
+          "Stealing": 0.36288404874725816,
+          "Vandalism": 0.3044976807625711
+        }
+      },
+      "mivia_crime": {
+        "rank": 25,
+        "mean": 0.30222519251965657,
+        "classes": {
+          "Abuse": 0.22358592312120634,
+          "Arrest": 0.25838944041199785,
+          "Arson": 0.4208767809918659,
+          "Assault": 0.1661031761273499,
+          "Burglary": 0.49754954021616965,
+          "Explosion": 0.4237936787343877,
+          "Fighting": 0.28197282084949826,
+          "RoadAccidents": 0.04292696629885521,
+          "Robbery": 0.4359974850440724,
+          "Shooting": 0.06169157427595412,
+          "Shoplifting": 0.33709312123355334,
+          "Stealing": 0.48952776787004026,
+          "Vandalism": 0.2894192275805844
+        }
+      },
+      "stage": "vtcd"
+    },
+    {
+      "id": "P07-mass70-largest",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 8.962999003229367,
+      "ucf_crime": {
+        "rank": 20,
+        "mean": 0.3300442553592209,
+        "classes": {
+          "Abuse": 0.4401357736920004,
+          "Arrest": 0.28605418244308556,
+          "Arson": 0.33444805478281653,
+          "Assault": 0.2807093602151324,
+          "Burglary": 0.4358168723903296,
+          "Explosion": 0.3422691141504665,
+          "Fighting": 0.23715722202040812,
+          "RoadAccidents": 0.19160438150319684,
+          "Robbery": 0.43055519126469705,
+          "Shooting": 0.24312440064135435,
+          "Shoplifting": 0.382963778125851,
+          "Stealing": 0.37559026545862734,
+          "Vandalism": 0.3101467229819054
+        }
+      },
+      "mivia_crime": {
+        "rank": 22,
+        "mean": 0.30889938009947926,
+        "classes": {
+          "Abuse": 0.222217341407346,
+          "Arrest": 0.2600687172979548,
+          "Arson": 0.4260312844862315,
+          "Assault": 0.1711519589255682,
+          "Burglary": 0.48549826973793814,
+          "Explosion": 0.44874753577510607,
+          "Fighting": 0.316592115539083,
+          "RoadAccidents": 0.04306534647087936,
+          "Robbery": 0.4392994229968239,
+          "Shooting": 0.05957915992148269,
+          "Shoplifting": 0.3679144656767974,
+          "Stealing": 0.4921809371202647,
+          "Vandalism": 0.28334538593775455
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P04-top1-minarea",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 6.691492743284339,
+      "ucf_crime": {
+        "rank": 21,
+        "mean": 0.3248915311890924,
+        "classes": {
+          "Abuse": 0.4401357736920004,
+          "Arrest": 0.2638365742154137,
+          "Arson": 0.33548624376366604,
+          "Assault": 0.28641201060556737,
+          "Burglary": 0.45643208339126295,
+          "Explosion": 0.3420600444834938,
+          "Fighting": 0.2289374180021147,
+          "RoadAccidents": 0.16297063015835814,
+          "Robbery": 0.4277169105267629,
+          "Shooting": 0.2716753571883951,
+          "Shoplifting": 0.35704788226355827,
+          "Stealing": 0.36068396424116744,
+          "Vandalism": 0.29019501292644023
+        }
+      },
+      "mivia_crime": {
+        "rank": 26,
+        "mean": 0.29831695382350376,
+        "classes": {
+          "Abuse": 0.21629824088257918,
+          "Arrest": 0.2591031514495198,
+          "Arson": 0.26752500216733693,
+          "Assault": 0.19635757483526098,
+          "Burglary": 0.4948963005128508,
+          "Explosion": 0.43445589682569036,
+          "Fighting": 0.2820146428294914,
+          "RoadAccidents": 0.0969950857898495,
+          "Robbery": 0.4325846863666321,
+          "Shooting": 0.06207165004845031,
+          "Shoplifting": 0.35675888287375035,
+          "Stealing": 0.48960476400348485,
+          "Vandalism": 0.28945452112065223
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P04-top1",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 6.691478088475083,
+      "ucf_crime": {
+        "rank": 22,
+        "mean": 0.32461094501810883,
+        "classes": {
+          "Abuse": 0.43897091316621273,
+          "Arrest": 0.26371801278664153,
+          "Arson": 0.335766537936956,
+          "Assault": 0.28596699295287026,
+          "Burglary": 0.45622246049612897,
+          "Explosion": 0.34273537650072045,
+          "Fighting": 0.22873218998909312,
+          "RoadAccidents": 0.1628061565786671,
+          "Robbery": 0.4274035459688531,
+          "Shooting": 0.2710941727408768,
+          "Shoplifting": 0.3568738382914148,
+          "Stealing": 0.36045751419108435,
+          "Vandalism": 0.28919457363589524
+        }
+      },
+      "mivia_crime": {
+        "rank": 27,
+        "mean": 0.2981315983059045,
+        "classes": {
+          "Abuse": 0.2162955871195031,
+          "Arrest": 0.25838944041199785,
+          "Arson": 0.2671814663148427,
+          "Assault": 0.19614582379373124,
+          "Burglary": 0.4951087281190798,
+          "Explosion": 0.4336885258366152,
+          "Fighting": 0.28197282084949826,
+          "RoadAccidents": 0.0969950857898495,
+          "Robbery": 0.43254613773475903,
+          "Shooting": 0.061851832510630214,
+          "Shoplifting": 0.35658833404562734,
+          "Stealing": 0.48952776787004026,
+          "Vandalism": 0.2894192275805844
+        }
+      },
+      "stage": "vtcd"
+    },
+    {
+      "id": "P04-top1-largest",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 6.691505380125492,
+      "ucf_crime": {
+        "rank": 23,
+        "mean": 0.32402733647832344,
+        "classes": {
+          "Abuse": 0.4401357736920004,
+          "Arrest": 0.2443204148042462,
+          "Arson": 0.32971065616124845,
+          "Assault": 0.2968451019795242,
+          "Burglary": 0.4483078456869143,
+          "Explosion": 0.33441692737246664,
+          "Fighting": 0.23213857461916984,
+          "RoadAccidents": 0.16680602054508853,
+          "Robbery": 0.42636386944652566,
+          "Shooting": 0.2559554817913188,
+          "Shoplifting": 0.3789649340611338,
+          "Stealing": 0.3669320426725711,
+          "Vandalism": 0.2914577313859962
+        }
+      },
+      "mivia_crime": {
+        "rank": 23,
+        "mean": 0.303523401547403,
+        "classes": {
+          "Abuse": 0.21467929080714693,
+          "Arrest": 0.2600687172979548,
+          "Arson": 0.273681005302058,
+          "Assault": 0.19497446728212528,
+          "Burglary": 0.48087413839344556,
+          "Explosion": 0.43489910591704484,
+          "Fighting": 0.316592115539083,
+          "RoadAccidents": 0.1022651030339239,
+          "Robbery": 0.4326091609731188,
+          "Shooting": 0.06211974990670092,
+          "Shoplifting": 0.3975150426056172,
+          "Stealing": 0.4921809371202647,
+          "Vandalism": 0.28334538593775455
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P13-count10-largest",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.752965294199012,
+      "ucf_crime": {
+        "rank": 24,
+        "mean": 0.3165905167005594,
+        "classes": {
+          "Abuse": 0.24896427397016177,
+          "Arrest": 0.28735419830165687,
+          "Arson": 0.29373444168771695,
+          "Assault": 0.2840730745824618,
+          "Burglary": 0.4057857457905018,
+          "Explosion": 0.24137787467752378,
+          "Fighting": 0.3579078306077631,
+          "RoadAccidents": 0.21376197911267328,
+          "Robbery": 0.4010930825396541,
+          "Shooting": 0.2710498847136317,
+          "Shoplifting": 0.38667989227699495,
+          "Stealing": 0.3743303493369546,
+          "Vandalism": 0.3495640895095775
+        }
+      },
+      "mivia_crime": {
+        "rank": 1,
+        "mean": 0.3465104492475687,
+        "classes": {
+          "Abuse": 0.2005544222997589,
+          "Arrest": 0.39779018182640935,
+          "Arson": 0.4803132744090899,
+          "Assault": 0.3604807855888617,
+          "Burglary": 0.4295386048347593,
+          "Explosion": 0.39109617185034534,
+          "Fighting": 0.40050428717991915,
+          "RoadAccidents": 0.0793236686157199,
+          "Robbery": 0.43019143224402007,
+          "Shooting": 0.16507219909725707,
+          "Shoplifting": 0.46681724196776464,
+          "Stealing": 0.4457220274440718,
+          "Vandalism": 0.2572315428604159
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P13-count05",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.759056013051956,
+      "ucf_crime": {
+        "rank": 25,
+        "mean": 0.31523891572940155,
+        "classes": {
+          "Abuse": 0.33141437055726214,
+          "Arrest": 0.3119117403701569,
+          "Arson": 0.2722221040240175,
+          "Assault": 0.26892417322357787,
+          "Burglary": 0.3557216027838149,
+          "Explosion": 0.21394868217017168,
+          "Fighting": 0.35800345278792245,
+          "RoadAccidents": 0.2279318719287233,
+          "Robbery": 0.41468819756083997,
+          "Shooting": 0.2982694228078813,
+          "Shoplifting": 0.33592855009555295,
+          "Stealing": 0.36410307400827197,
+          "Vandalism": 0.34503866216402684
+        }
+      },
+      "mivia_crime": {
+        "rank": 6,
+        "mean": 0.3247475929012079,
+        "classes": {
+          "Abuse": 0.17016433848922488,
+          "Arrest": 0.3665464434734991,
+          "Arson": 0.44930348746797716,
+          "Assault": 0.4055762330562487,
+          "Burglary": 0.445200171370607,
+          "Explosion": 0.3577486783072595,
+          "Fighting": 0.36237104047967383,
+          "RoadAccidents": 0.1191988981319491,
+          "Robbery": 0.31440505717185685,
+          "Shooting": 0.17786806272996086,
+          "Shoplifting": 0.4538618536906792,
+          "Stealing": 0.4250928669383382,
+          "Vandalism": 0.17438157640842836
+        }
+      },
+      "stage": "rethreshold_p13"
+    },
+    {
+      "id": "P13-count03-minarea",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.756234311588948,
+      "ucf_crime": {
+        "rank": 26,
+        "mean": 0.30245984010544064,
+        "classes": {
+          "Abuse": 0.39193029709024546,
+          "Arrest": 0.30722699447899,
+          "Arson": 0.25639722436947043,
+          "Assault": 0.24425136127918862,
+          "Burglary": 0.2919068689314781,
+          "Explosion": 0.17625629349686775,
+          "Fighting": 0.31176909307072687,
+          "RoadAccidents": 0.24132449037784143,
+          "Robbery": 0.3591480497350658,
+          "Shooting": 0.30350834718644754,
+          "Shoplifting": 0.25813458744399725,
+          "Stealing": 0.39143205765318717,
+          "Vandalism": 0.3986922562572219
+        }
+      },
+      "mivia_crime": {
+        "rank": 29,
+        "mean": 0.2959654978376886,
+        "classes": {
+          "Abuse": 0.16326278644105924,
+          "Arrest": 0.3347981826056381,
+          "Arson": 0.3855887897090618,
+          "Assault": 0.3121914621495825,
+          "Burglary": 0.38988007264765256,
+          "Explosion": 0.2546893929094222,
+          "Fighting": 0.31310853093155716,
+          "RoadAccidents": 0.1434997519552308,
+          "Robbery": 0.2129681709045382,
+          "Shooting": 0.23534042095679125,
+          "Shoplifting": 0.39399011877569834,
+          "Stealing": 0.4772541024064956,
+          "Vandalism": 0.2309796894972239
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P13-count03",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.7562080272642775,
+      "ucf_crime": {
+        "rank": 27,
+        "mean": 0.30043678120932876,
+        "classes": {
+          "Abuse": 0.37791097382294747,
+          "Arrest": 0.3083873450197018,
+          "Arson": 0.2545299374818317,
+          "Assault": 0.2484607448339271,
+          "Burglary": 0.2937858825364091,
+          "Explosion": 0.17963771643196594,
+          "Fighting": 0.32253694176408815,
+          "RoadAccidents": 0.23820743285515747,
+          "Robbery": 0.36762118574412267,
+          "Shooting": 0.29193137792797247,
+          "Shoplifting": 0.2696922490474723,
+          "Stealing": 0.37177930540928905,
+          "Vandalism": 0.3811970628463883
+        }
+      },
+      "mivia_crime": {
+        "rank": 30,
+        "mean": 0.29589784240789546,
+        "classes": {
+          "Abuse": 0.16282995858178234,
+          "Arrest": 0.3357738010948646,
+          "Arson": 0.38629007615750915,
+          "Assault": 0.32650830899655375,
+          "Burglary": 0.404262704470004,
+          "Explosion": 0.2642548752453136,
+          "Fighting": 0.31856961010438206,
+          "RoadAccidents": 0.13993950566844426,
+          "Robbery": 0.22681305309717956,
+          "Shooting": 0.2146570675849917,
+          "Shoplifting": 0.4066498160424737,
+          "Stealing": 0.44709249442180027,
+          "Vandalism": 0.2130306798373424
+        }
+      },
+      "stage": "rethreshold_p13"
+    },
+    {
+      "id": "P13-count10-minarea",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.7529251795995004,
+      "ucf_crime": {
+        "rank": 28,
+        "mean": 0.2952244744181897,
+        "classes": {
+          "Abuse": 0.2043835254207132,
+          "Arrest": 0.2793364739423814,
+          "Arson": 0.2767920882085584,
+          "Assault": 0.28637475052160427,
+          "Burglary": 0.3908304420736283,
+          "Explosion": 0.2497591455419297,
+          "Fighting": 0.3403458128203095,
+          "RoadAccidents": 0.19568725266995798,
+          "Robbery": 0.371707454322633,
+          "Shooting": 0.26679421418126237,
+          "Shoplifting": 0.3631179862422513,
+          "Stealing": 0.3286741288475379,
+          "Vandalism": 0.2841148926436991
+        }
+      },
+      "mivia_crime": {
+        "rank": 5,
+        "mean": 0.32666075425149427,
+        "classes": {
+          "Abuse": 0.199431533915609,
+          "Arrest": 0.37132652873162547,
+          "Arson": 0.44402925596427023,
+          "Assault": 0.36196188906019033,
+          "Burglary": 0.4311055928349765,
+          "Explosion": 0.3972479987976358,
+          "Fighting": 0.3972471655629289,
+          "RoadAccidents": 0.11617357838011955,
+          "Robbery": 0.43499264753334677,
+          "Shooting": 0.13778239448248228,
+          "Shoplifting": 0.42640206805339814,
+          "Stealing": 0.3578386096800023,
+          "Vandalism": 0.17105054227284033
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P13-count03-largest",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.756253236164844,
+      "ucf_crime": {
+        "rank": 29,
+        "mean": 0.29425759870513984,
+        "classes": {
+          "Abuse": 0.38616354259945207,
+          "Arrest": 0.2875991362728724,
+          "Arson": 0.24475215719952104,
+          "Assault": 0.24096633244246007,
+          "Burglary": 0.2773697063046551,
+          "Explosion": 0.16954837975979392,
+          "Fighting": 0.3125575983215495,
+          "RoadAccidents": 0.23615071216315178,
+          "Robbery": 0.3474616748376657,
+          "Shooting": 0.28854405251792775,
+          "Shoplifting": 0.23514805909959016,
+          "Stealing": 0.3932498469665805,
+          "Vandalism": 0.40583758468159786
+        }
+      },
+      "mivia_crime": {
+        "rank": 31,
+        "mean": 0.28197268333745884,
+        "classes": {
+          "Abuse": 0.17294070152025737,
+          "Arrest": 0.3256271425864648,
+          "Arson": 0.3724896035938418,
+          "Assault": 0.3031058014401135,
+          "Burglary": 0.3703257366306758,
+          "Explosion": 0.21066676613861293,
+          "Fighting": 0.2971587945883321,
+          "RoadAccidents": 0.08717934241102314,
+          "Robbery": 0.2097071643482832,
+          "Shooting": 0.2271899119739592,
+          "Shoplifting": 0.38099464604511,
+          "Stealing": 0.47756349468307907,
+          "Vandalism": 0.2306957774272117
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P13-count10",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.752861068569955,
+      "ucf_crime": {
+        "rank": 30,
+        "mean": 0.27602037130303636,
+        "classes": {
+          "Abuse": 0.17969505440423222,
+          "Arrest": 0.2608101741814825,
+          "Arson": 0.2600353146884725,
+          "Assault": 0.27676224024867113,
+          "Burglary": 0.3707988138862355,
+          "Explosion": 0.24769245787244557,
+          "Fighting": 0.32275509918745043,
+          "RoadAccidents": 0.18296114125406013,
+          "Robbery": 0.3484531613842498,
+          "Shooting": 0.24977465375091762,
+          "Shoplifting": 0.34250636289677394,
+          "Stealing": 0.28998359750374003,
+          "Vandalism": 0.25603675568074163
+        }
+      },
+      "mivia_crime": {
+        "rank": 15,
+        "mean": 0.31140496655248384,
+        "classes": {
+          "Abuse": 0.20106515934548086,
+          "Arrest": 0.3526598121874625,
+          "Arson": 0.4184025314726903,
+          "Assault": 0.3433270978005741,
+          "Burglary": 0.4144849544821751,
+          "Explosion": 0.3936280404679202,
+          "Fighting": 0.3785055704544701,
+          "RoadAccidents": 0.1038426348944736,
+          "Robbery": 0.4247870451718201,
+          "Shooting": 0.11997560575027201,
+          "Shoplifting": 0.41417384242739297,
+          "Stealing": 0.3280797926466863,
+          "Vandalism": 0.15533247808087208
+        }
+      },
+      "stage": "ig"
+    },
+    {
+      "id": "P13-count02",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.7556978241212304,
+      "ucf_crime": {
+        "rank": 31,
+        "mean": 0.2659871362893734,
+        "classes": {
+          "Abuse": 0.3559385516502088,
+          "Arrest": 0.27100994736134937,
+          "Arson": 0.2321525028410481,
+          "Assault": 0.21424929445103008,
+          "Burglary": 0.2386888056643831,
+          "Explosion": 0.15501274924320987,
+          "Fighting": 0.2817133505619774,
+          "RoadAccidents": 0.22989473821505854,
+          "Robbery": 0.29466606193690587,
+          "Shooting": 0.2609561252146429,
+          "Shoplifting": 0.2062271850569711,
+          "Stealing": 0.35154903157932105,
+          "Vandalism": 0.3657744279857479
+        }
+      },
+      "mivia_crime": {
+        "rank": 34,
+        "mean": 0.2572969939540662,
+        "classes": {
+          "Abuse": 0.1512856220925917,
+          "Arrest": 0.27524226619891706,
+          "Arson": 0.3073244665146812,
+          "Assault": 0.23773727115423474,
+          "Burglary": 0.3324726225661077,
+          "Explosion": 0.21930058594486881,
+          "Fighting": 0.27009651249652145,
+          "RoadAccidents": 0.1497539133211008,
+          "Robbery": 0.16628044971655828,
+          "Shooting": 0.21263877322107724,
+          "Shoplifting": 0.35658800193147355,
+          "Stealing": 0.4385532097554226,
+          "Vandalism": 0.22758722648930538
+        }
+      },
+      "stage": "rethreshold_p13"
+    },
+    {
+      "id": "P13-count02-minarea",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.7557195830397276,
+      "ucf_crime": {
+        "rank": 32,
+        "mean": 0.2572108612415192,
+        "classes": {
+          "Abuse": 0.34302393496881556,
+          "Arrest": 0.25472073772899745,
+          "Arson": 0.22198231943636407,
+          "Assault": 0.20941089051666462,
+          "Burglary": 0.23028400645693828,
+          "Explosion": 0.15203725244490235,
+          "Fighting": 0.2672631600049785,
+          "RoadAccidents": 0.22657455194238765,
+          "Robbery": 0.2770231186804223,
+          "Shooting": 0.24689105470085995,
+          "Shoplifting": 0.18694700170522197,
+          "Stealing": 0.35647352352548484,
+          "Vandalism": 0.3711096440277117
+        }
+      },
+      "mivia_crime": {
+        "rank": 35,
+        "mean": 0.24713447994954768,
+        "classes": {
+          "Abuse": 0.15182190239041174,
+          "Arrest": 0.2678018735697956,
+          "Arson": 0.29256881084963454,
+          "Assault": 0.21592164377739712,
+          "Burglary": 0.30381930769026444,
+          "Explosion": 0.2075666368341428,
+          "Fighting": 0.2568926018722002,
+          "RoadAccidents": 0.14038927778529034,
+          "Robbery": 0.1539248617576244,
+          "Shooting": 0.20867815536450554,
+          "Shoplifting": 0.33797468458192953,
+          "Stealing": 0.4476331998585177,
+          "Vandalism": 0.22775528301240597
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P13-count02-largest",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.755873011838551,
+      "ucf_crime": {
+        "rank": 33,
+        "mean": 0.2528641282843557,
+        "classes": {
+          "Abuse": 0.34529895498915897,
+          "Arrest": 0.24203865290077248,
+          "Arson": 0.21737221746848542,
+          "Assault": 0.20203716247107378,
+          "Burglary": 0.22517464823452094,
+          "Explosion": 0.14304616438544093,
+          "Fighting": 0.26816427713610114,
+          "RoadAccidents": 0.22002762909714083,
+          "Robbery": 0.27255453236188365,
+          "Shooting": 0.24552369657140338,
+          "Shoplifting": 0.17470578394457573,
+          "Stealing": 0.3525897374511645,
+          "Vandalism": 0.37870021068490317
+        }
+      },
+      "mivia_crime": {
+        "rank": 36,
+        "mean": 0.23946749834616024,
+        "classes": {
+          "Abuse": 0.16104164610474606,
+          "Arrest": 0.26184112425811074,
+          "Arson": 0.2941306315799288,
+          "Assault": 0.20277013180372183,
+          "Burglary": 0.27620817314664664,
+          "Explosion": 0.17844073525442228,
+          "Fighting": 0.2534561024766128,
+          "RoadAccidents": 0.11133122632439191,
+          "Robbery": 0.15697872860699935,
+          "Shooting": 0.21173801459579877,
+          "Shoplifting": 0.33528777324095216,
+          "Stealing": 0.44511464735812734,
+          "Vandalism": 0.22473854374962468
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P13-count20-largest",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.7645786376201293,
+      "ucf_crime": {
+        "rank": 34,
+        "mean": 0.23290146840075407,
+        "classes": {
+          "Abuse": 0.06566061550015581,
+          "Arrest": 0.1868505710197402,
+          "Arson": 0.24661583446178756,
+          "Assault": 0.25288088056613156,
+          "Burglary": 0.34263191732465725,
+          "Explosion": 0.26270015182682455,
+          "Fighting": 0.2898232184098903,
+          "RoadAccidents": 0.17390701590174476,
+          "Robbery": 0.2806868957124748,
+          "Shooting": 0.1753708241363872,
+          "Shoplifting": 0.3279663487089299,
+          "Stealing": 0.22392918320631097,
+          "Vandalism": 0.19869563243476793
+        }
+      },
+      "mivia_crime": {
+        "rank": 28,
+        "mean": 0.29737401341984554,
+        "classes": {
+          "Abuse": 0.25676198779318476,
+          "Arrest": 0.34536343630525224,
+          "Arson": 0.375942883454204,
+          "Assault": 0.23132011483623124,
+          "Burglary": 0.36558840425008965,
+          "Explosion": 0.3880132385456105,
+          "Fighting": 0.3488476886535874,
+          "RoadAccidents": 0.0793236686157199,
+          "Robbery": 0.4855711062677574,
+          "Shooting": 0.06593301652286351,
+          "Shoplifting": 0.46681724196776464,
+          "Stealing": 0.32903488008296095,
+          "Vandalism": 0.12734450716276596
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P14-mass70",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.749058005238329,
+      "ucf_crime": {
+        "rank": 35,
+        "mean": 0.22598738269420776,
+        "classes": {
+          "Abuse": 0.29696919294323704,
+          "Arrest": 0.1984728278608577,
+          "Arson": 0.1925089512918872,
+          "Assault": 0.20941426555320064,
+          "Burglary": 0.2530806639269352,
+          "Explosion": 0.15236149587097259,
+          "Fighting": 0.3165877064571544,
+          "RoadAccidents": 0.18295076301810512,
+          "Robbery": 0.16109727955199046,
+          "Shooting": 0.24296722621478042,
+          "Shoplifting": 0.11923810482586823,
+          "Stealing": 0.2948526673682538,
+          "Vandalism": 0.3173348301414579
+        }
+      },
+      "mivia_crime": {
+        "rank": 40,
+        "mean": 0.18148388057768108,
+        "classes": {
+          "Abuse": 0.1466551638914056,
+          "Arrest": 0.1801466452140861,
+          "Arson": 0.17818891732357586,
+          "Assault": 0.294248271601714,
+          "Burglary": 0.24657161875115222,
+          "Explosion": 0.15878383402387947,
+          "Fighting": 0.194729515193626,
+          "RoadAccidents": 0.12080348311716632,
+          "Robbery": 0.21897692189362625,
+          "Shooting": 0.17593157174835813,
+          "Shoplifting": 0.07874302984336216,
+          "Stealing": 0.24446792445420829,
+          "Vandalism": 0.12104355045369365
+        }
+      },
+      "stage": "ig"
+    },
+    {
+      "id": "P13-count20-minarea",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.7645276731837813,
+      "ucf_crime": {
+        "rank": 36,
+        "mean": 0.21094852578725554,
+        "classes": {
+          "Abuse": 0.07771352878629507,
+          "Arrest": 0.1760545197903241,
+          "Arson": 0.2287604117000694,
+          "Assault": 0.24858622955065807,
+          "Burglary": 0.3071236753767448,
+          "Explosion": 0.2736807835813665,
+          "Fighting": 0.24540317881889329,
+          "RoadAccidents": 0.14213786402695333,
+          "Robbery": 0.2577751302086046,
+          "Shooting": 0.17525508304247872,
+          "Shoplifting": 0.26958556987217175,
+          "Stealing": 0.17740862669397298,
+          "Vandalism": 0.1628462337857897
+        }
+      },
+      "mivia_crime": {
+        "rank": 32,
+        "mean": 0.2810742975007542,
+        "classes": {
+          "Abuse": 0.2629291032531139,
+          "Arrest": 0.3294664593434038,
+          "Arson": 0.3223813844612607,
+          "Assault": 0.21932997880912533,
+          "Burglary": 0.35737485916353534,
+          "Explosion": 0.4142336121436329,
+          "Fighting": 0.31389158650567106,
+          "RoadAccidents": 0.11617357838011955,
+          "Robbery": 0.40919852721160127,
+          "Shooting": 0.076329065344431,
+          "Shoplifting": 0.42640206805339814,
+          "Stealing": 0.26837485965474867,
+          "Vandalism": 0.13788078518576252
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P36-first_chunk",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 0.9708608436855086,
+      "ucf_crime": {
+        "rank": 37,
+        "mean": 0.20531964061958308,
+        "classes": {
+          "Abuse": 0.23573196149261735,
+          "Arrest": 0.24477784189846258,
+          "Arson": 0.168891219434815,
+          "Assault": 0.17816209288223211,
+          "Burglary": 0.20276640376328653,
+          "Explosion": 0.10085131965875602,
+          "Fighting": 0.23939737988777612,
+          "RoadAccidents": 0.10958979673879783,
+          "Robbery": 0.19861309793615067,
+          "Shooting": 0.1932180395379875,
+          "Shoplifting": 0.2748930643299313,
+          "Stealing": 0.2842060742683702,
+          "Vandalism": 0.23805703622539662
+        }
+      },
+      "mivia_crime": {
+        "rank": 41,
+        "mean": 0.18025209704787862,
+        "classes": {
+          "Abuse": 0.15521873227674984,
+          "Arrest": 0.20231125004858933,
+          "Arson": 0.16759498611902446,
+          "Assault": 0.17132970926928023,
+          "Burglary": 0.29004763483922497,
+          "Explosion": 0.1468893840494762,
+          "Fighting": 0.15582204723522036,
+          "RoadAccidents": 0.051390021363183325,
+          "Robbery": 0.25788237365900296,
+          "Shooting": 0.08674789771361377,
+          "Shoplifting": 0.23636078809260308,
+          "Stealing": 0.282909648681152,
+          "Vandalism": 0.13877278827530135
+        }
+      },
+      "stage": "ig"
+    },
+    {
+      "id": "P14-mass70-largest",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.749092233339393,
+      "ucf_crime": {
+        "rank": 38,
+        "mean": 0.2050182007671682,
+        "classes": {
+          "Abuse": 0.27752806225268256,
+          "Arrest": 0.18106076151499614,
+          "Arson": 0.1694563002909442,
+          "Assault": 0.17490911208249862,
+          "Burglary": 0.23293505732785683,
+          "Explosion": 0.13112023607486187,
+          "Fighting": 0.2927856873485376,
+          "RoadAccidents": 0.16310765772381852,
+          "Robbery": 0.14696860083443916,
+          "Shooting": 0.2136092427419054,
+          "Shoplifting": 0.0964660823909285,
+          "Stealing": 0.2800809648782749,
+          "Vandalism": 0.3052088445114425
+        }
+      },
+      "mivia_crime": {
+        "rank": 46,
+        "mean": 0.1632158506484454,
+        "classes": {
+          "Abuse": 0.13553331071620142,
+          "Arrest": 0.15945410100385335,
+          "Arson": 0.17076475862500295,
+          "Assault": 0.26327386914324397,
+          "Burglary": 0.22286494563375028,
+          "Explosion": 0.11806593904904801,
+          "Fighting": 0.1867578883884544,
+          "RoadAccidents": 0.10805372166489557,
+          "Robbery": 0.19425237838735035,
+          "Shooting": 0.16126637004548705,
+          "Shoplifting": 0.06315778522793843,
+          "Stealing": 0.21804878957168214,
+          "Vandalism": 0.12031220097288207
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P07-mass90-largest",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 10.79455964642364,
+      "ucf_crime": {
+        "rank": 39,
+        "mean": 0.20314453844424324,
+        "classes": {
+          "Abuse": 0.30900390385096893,
+          "Arrest": 0.13817887676567897,
+          "Arson": 0.20716076200243283,
+          "Assault": 0.22306979102194152,
+          "Burglary": 0.24735230194490143,
+          "Explosion": 0.36036888002115763,
+          "Fighting": 0.13823012220501088,
+          "RoadAccidents": 0.1352501233409252,
+          "Robbery": 0.2711589505570644,
+          "Shooting": 0.11743304061781379,
+          "Shoplifting": 0.2339371061164633,
+          "Stealing": 0.17519632011797104,
+          "Vandalism": 0.08453882121283221
+        }
+      },
+      "mivia_crime": {
+        "rank": 37,
+        "mean": 0.23438333611166126,
+        "classes": {
+          "Abuse": 0.21748061803777602,
+          "Arrest": 0.2288480293703972,
+          "Arson": 0.2382254130654545,
+          "Assault": 0.1341829862009494,
+          "Burglary": 0.3560720254693837,
+          "Explosion": 0.4672908824617808,
+          "Fighting": 0.3021005774946466,
+          "RoadAccidents": 0.03766779735824944,
+          "Robbery": 0.33977035459115057,
+          "Shooting": 0.03301862653479111,
+          "Shoplifting": 0.2916823418542488,
+          "Stealing": 0.16196165916616737,
+          "Vandalism": 0.2386820578466008
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P13-count20",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.764441995263215,
+      "ucf_crime": {
+        "rank": 40,
+        "mean": 0.20241221153056566,
+        "classes": {
+          "Abuse": 0.07110842860718011,
+          "Arrest": 0.16731804953500348,
+          "Arson": 0.22340161854255444,
+          "Assault": 0.24380285099946303,
+          "Burglary": 0.29461298173931394,
+          "Explosion": 0.2743971503461093,
+          "Fighting": 0.23563900805079055,
+          "RoadAccidents": 0.13701757515959542,
+          "Robbery": 0.24309722669886774,
+          "Shooting": 0.16745170735623743,
+          "Shoplifting": 0.2538568310261279,
+          "Stealing": 0.16545962336099534,
+          "Vandalism": 0.15419569847511477
+        }
+      },
+      "mivia_crime": {
+        "rank": 33,
+        "mean": 0.26884269553452106,
+        "classes": {
+          "Abuse": 0.26196862319976044,
+          "Arrest": 0.3128201060836779,
+          "Arson": 0.30291033157460623,
+          "Assault": 0.20885398383141415,
+          "Burglary": 0.3465098275744279,
+          "Explosion": 0.40921649137309696,
+          "Fighting": 0.28924293166160947,
+          "RoadAccidents": 0.1038426348944736,
+          "Robbery": 0.3896085298287679,
+          "Shooting": 0.07075831655517134,
+          "Shoplifting": 0.41417384242739297,
+          "Stealing": 0.25346843522054774,
+          "Vandalism": 0.13158098772382706
+        }
+      },
+      "stage": "rethreshold_p13"
+    },
+    {
+      "id": "P07-mass90-minarea",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 10.79454718812577,
+      "ucf_crime": {
+        "rank": 41,
+        "mean": 0.20047036061119414,
+        "classes": {
+          "Abuse": 0.3074298571532098,
+          "Arrest": 0.14070136777890543,
+          "Arson": 0.21247828941742358,
+          "Assault": 0.21648364665122055,
+          "Burglary": 0.24941299186821445,
+          "Explosion": 0.3593180603449407,
+          "Fighting": 0.13430503757598916,
+          "RoadAccidents": 0.1336995652177148,
+          "Robbery": 0.2692162858853378,
+          "Shooting": 0.11913726072337064,
+          "Shoplifting": 0.21246147493900852,
+          "Stealing": 0.16863390328648079,
+          "Vandalism": 0.0828369471037077
+        }
+      },
+      "mivia_crime": {
+        "rank": 38,
+        "mean": 0.22618197368212004,
+        "classes": {
+          "Abuse": 0.21563179977076366,
+          "Arrest": 0.21728942403116305,
+          "Arson": 0.23398403450187777,
+          "Assault": 0.13263556717082906,
+          "Burglary": 0.33241460372055126,
+          "Explosion": 0.4499923850871368,
+          "Fighting": 0.2686267130308015,
+          "RoadAccidents": 0.037108848425207105,
+          "Robbery": 0.3455660620933789,
+          "Shooting": 0.03315097386553769,
+          "Shoplifting": 0.27954180027268816,
+          "Stealing": 0.155505297603126,
+          "Vandalism": 0.23891814829449917
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P07-mass90",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 10.794533024006649,
+      "ucf_crime": {
+        "rank": 42,
+        "mean": 0.2003656004074255,
+        "classes": {
+          "Abuse": 0.3074298571532098,
+          "Arrest": 0.1405189700571302,
+          "Arson": 0.21244515920415907,
+          "Assault": 0.21636223371341703,
+          "Burglary": 0.2493969224450644,
+          "Explosion": 0.3592972892130954,
+          "Fighting": 0.13424903858747456,
+          "RoadAccidents": 0.13356585260639578,
+          "Robbery": 0.2687853726151091,
+          "Shooting": 0.11914510592955808,
+          "Shoplifting": 0.21236931769632839,
+          "Stealing": 0.16837656449706065,
+          "Vandalism": 0.0828111215785285
+        }
+      },
+      "mivia_crime": {
+        "rank": 39,
+        "mean": 0.2260120767963484,
+        "classes": {
+          "Abuse": 0.21524378808167166,
+          "Arrest": 0.21684833210295754,
+          "Arson": 0.2330828709776475,
+          "Assault": 0.13259418162667264,
+          "Burglary": 0.3326789683242411,
+          "Explosion": 0.44928862681479237,
+          "Fighting": 0.2685549103366622,
+          "RoadAccidents": 0.037108848425207105,
+          "Robbery": 0.34552014158890326,
+          "Shooting": 0.03315097386553769,
+          "Shoplifting": 0.27981324759636167,
+          "Stealing": 0.1554283014696814,
+          "Vandalism": 0.2388438071421933
+        }
+      },
+      "stage": "vtcd_ablation"
+    },
+    {
+      "id": "P14-mass70-minarea",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.749077944999207,
+      "ucf_crime": {
+        "rank": 43,
+        "mean": 0.19670368257830154,
+        "classes": {
+          "Abuse": 0.18092065654778175,
+          "Arrest": 0.16744422063751305,
+          "Arson": 0.16336509188949663,
+          "Assault": 0.18590628809610843,
+          "Burglary": 0.2384242297822696,
+          "Explosion": 0.13728862037520134,
+          "Fighting": 0.3009767787628166,
+          "RoadAccidents": 0.16230549520109464,
+          "Robbery": 0.13792572708914602,
+          "Shooting": 0.21974683796447436,
+          "Shoplifting": 0.09919440712507285,
+          "Stealing": 0.2584467612173703,
+          "Vandalism": 0.3052027588295742
+        }
+      },
+      "mivia_crime": {
+        "rank": 48,
+        "mean": 0.1580645514938843,
+        "classes": {
+          "Abuse": 0.0556529696234139,
+          "Arrest": 0.1574408797129099,
+          "Arson": 0.16306074400018797,
+          "Assault": 0.2774464332677942,
+          "Burglary": 0.2215829216137266,
+          "Explosion": 0.14363128467590383,
+          "Fighting": 0.1814539845301864,
+          "RoadAccidents": 0.12304772036485921,
+          "Robbery": 0.2088090900229078,
+          "Shooting": 0.14520616094585367,
+          "Shoplifting": 0.045587546304970625,
+          "Stealing": 0.23747973840334383,
+          "Vandalism": 0.0944396959544378
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P18-vote3of4",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.7504473974693635,
+      "ucf_crime": {
+        "rank": 44,
+        "mean": 0.19564528287141336,
+        "classes": {
+          "Abuse": 0.28463447221771393,
+          "Arrest": 0.1665234048137691,
+          "Arson": 0.15352480299678586,
+          "Assault": 0.1743401948476042,
+          "Burglary": 0.20445002797163514,
+          "Explosion": 0.12948711692172055,
+          "Fighting": 0.2811207435712099,
+          "RoadAccidents": 0.16504016758327686,
+          "Robbery": 0.14527806254458633,
+          "Shooting": 0.21113302466018247,
+          "Shoplifting": 0.10191376852662429,
+          "Stealing": 0.26179262059301744,
+          "Vandalism": 0.26415027008024733
+        }
+      },
+      "mivia_crime": {
+        "rank": 45,
+        "mean": 0.16387240605512773,
+        "classes": {
+          "Abuse": 0.14097116267547152,
+          "Arrest": 0.16106863676470592,
+          "Arson": 0.15962294748362818,
+          "Assault": 0.2540601137316067,
+          "Burglary": 0.23792239940665713,
+          "Explosion": 0.12434309833326697,
+          "Fighting": 0.19208576814772071,
+          "RoadAccidents": 0.12094919164101464,
+          "Robbery": 0.195395983563506,
+          "Shooting": 0.2032082398860177,
+          "Shoplifting": 0.0720471402317569,
+          "Stealing": 0.1505567427172904,
+          "Vandalism": 0.11810985413401755
+        }
+      },
+      "stage": "ig"
+    },
+    {
+      "id": "P36-first_chunk-largest",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 0.9709050209509543,
+      "ucf_crime": {
+        "rank": 45,
+        "mean": 0.1912385255737033,
+        "classes": {
+          "Abuse": 0.23573196149261735,
+          "Arrest": 0.24090112999137805,
+          "Arson": 0.1547427460611363,
+          "Assault": 0.16471244494521534,
+          "Burglary": 0.17782428594184485,
+          "Explosion": 0.07180577113574421,
+          "Fighting": 0.2231740820560979,
+          "RoadAccidents": 0.09305365941921767,
+          "Robbery": 0.19717480611581661,
+          "Shooting": 0.1719902145973447,
+          "Shoplifting": 0.25287751433080996,
+          "Stealing": 0.2781468330185493,
+          "Vandalism": 0.22396538335237057
+        }
+      },
+      "mivia_crime": {
+        "rank": 44,
+        "mean": 0.16678592388811986,
+        "classes": {
+          "Abuse": 0.1678002742522368,
+          "Arrest": 0.18588181246713228,
+          "Arson": 0.16238539535594157,
+          "Assault": 0.15285459777090346,
+          "Burglary": 0.2545437387548586,
+          "Explosion": 0.0985397038597066,
+          "Fighting": 0.1487331201927765,
+          "RoadAccidents": 0.04966281276615387,
+          "Robbery": 0.2375582281860716,
+          "Shooting": 0.07131368794274195,
+          "Shoplifting": 0.2331804902948757,
+          "Stealing": 0.2782580786332982,
+          "Vandalism": 0.12750507006886103
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P13-count01",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.755182765768031,
+      "ucf_crime": {
+        "rank": 46,
+        "mean": 0.18692083781778862,
+        "classes": {
+          "Abuse": 0.27364898685001016,
+          "Arrest": 0.18275943335710595,
+          "Arson": 0.1604416769425127,
+          "Assault": 0.14473897560929713,
+          "Burglary": 0.1467369543589017,
+          "Explosion": 0.10350962834756128,
+          "Fighting": 0.17640057824160318,
+          "RoadAccidents": 0.19543152075823642,
+          "Robbery": 0.18362248393823724,
+          "Shooting": 0.19936569703725088,
+          "Shoplifting": 0.11803491505545834,
+          "Stealing": 0.2611407155102394,
+          "Vandalism": 0.28413932562483735
+        }
+      },
+      "mivia_crime": {
+        "rank": 42,
+        "mean": 0.17018721739073495,
+        "classes": {
+          "Abuse": 0.14119099226095394,
+          "Arrest": 0.17460029930237106,
+          "Arson": 0.16891779681570843,
+          "Assault": 0.11807344285521594,
+          "Burglary": 0.1799991208188395,
+          "Explosion": 0.1549024237066389,
+          "Fighting": 0.1761485190954972,
+          "RoadAccidents": 0.12072646420502793,
+          "Robbery": 0.09534093930401477,
+          "Shooting": 0.1919207132650755,
+          "Shoplifting": 0.19844618929284288,
+          "Stealing": 0.2763509765048184,
+          "Vandalism": 0.2158159486525498
+        }
+      },
+      "stage": "rethreshold_p13"
+    },
+    {
+      "id": "P36-first_chunk-minarea",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 0.9708870192814053,
+      "ucf_crime": {
+        "rank": 47,
+        "mean": 0.1791592986665983,
+        "classes": {
+          "Abuse": 0.08541558613336751,
+          "Arrest": 0.2318107634203864,
+          "Arson": 0.15105216464442775,
+          "Assault": 0.16412724601312556,
+          "Burglary": 0.18678044080319628,
+          "Explosion": 0.08431738932821202,
+          "Fighting": 0.22792466623894708,
+          "RoadAccidents": 0.09442790503676206,
+          "Robbery": 0.18398582254943327,
+          "Shooting": 0.17147706379489103,
+          "Shoplifting": 0.2672907157431046,
+          "Stealing": 0.25570050888461987,
+          "Vandalism": 0.22476061007530457
+        }
+      },
+      "mivia_crime": {
+        "rank": 43,
+        "mean": 0.1679545013159715,
+        "classes": {
+          "Abuse": 0.1260044391854484,
+          "Arrest": 0.19485106337787247,
+          "Arson": 0.1570072720946027,
+          "Assault": 0.16041687601911578,
+          "Burglary": 0.26290565466280386,
+          "Explosion": 0.13432747022932176,
+          "Fighting": 0.15355711655281,
+          "RoadAccidents": 0.043577394026522887,
+          "Robbery": 0.2477505637293261,
+          "Shooting": 0.0679718958740262,
+          "Shoplifting": 0.2311089279611315,
+          "Stealing": 0.28765881420663203,
+          "Vandalism": 0.11627102918801614
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P18-vote3of4-largest",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.750476994436647,
+      "ucf_crime": {
+        "rank": 48,
+        "mean": 0.17778240678912252,
+        "classes": {
+          "Abuse": 0.2804740031419551,
+          "Arrest": 0.15169377978349116,
+          "Arson": 0.132289902089963,
+          "Assault": 0.14104159569258956,
+          "Burglary": 0.1836348159070912,
+          "Explosion": 0.10991524564639549,
+          "Fighting": 0.26149492109880773,
+          "RoadAccidents": 0.14850736135742051,
+          "Robbery": 0.13373061983858114,
+          "Shooting": 0.18926658730353196,
+          "Shoplifting": 0.08359203107318311,
+          "Stealing": 0.24623114217262307,
+          "Vandalism": 0.24929928315295963
+        }
+      },
+      "mivia_crime": {
+        "rank": 55,
+        "mean": 0.15009625725425962,
+        "classes": {
+          "Abuse": 0.13342930699982697,
+          "Arrest": 0.14343352629897363,
+          "Arson": 0.15287752213331288,
+          "Assault": 0.22555672459540665,
+          "Burglary": 0.21608033198483587,
+          "Explosion": 0.08643778380941612,
+          "Fighting": 0.18036456887831534,
+          "RoadAccidents": 0.1119848446243445,
+          "Robbery": 0.17006789648823759,
+          "Shooting": 0.2147230794847854,
+          "Shoplifting": 0.06069847480585143,
+          "Stealing": 0.13853282437699202,
+          "Vandalism": 0.1170644598250768
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P13-count01-largest",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.7552124750320073,
+      "ucf_crime": {
+        "rank": 49,
+        "mean": 0.1714930744037852,
+        "classes": {
+          "Abuse": 0.2525992373319802,
+          "Arrest": 0.16249043659135293,
+          "Arson": 0.14806294052722002,
+          "Assault": 0.12787016789816918,
+          "Burglary": 0.1282934630012036,
+          "Explosion": 0.09005807151818691,
+          "Fighting": 0.16493651228777303,
+          "RoadAccidents": 0.18663964391926124,
+          "Robbery": 0.16493340339615056,
+          "Shooting": 0.18039172823682836,
+          "Shoplifting": 0.09591901782467335,
+          "Stealing": 0.24910500419104614,
+          "Vandalism": 0.2781103405253618
+        }
+      },
+      "mivia_crime": {
+        "rank": 54,
+        "mean": 0.15160725241580375,
+        "classes": {
+          "Abuse": 0.1323116590320229,
+          "Arrest": 0.16258029912180713,
+          "Arson": 0.15889322787352156,
+          "Assault": 0.09101638015513434,
+          "Burglary": 0.13550650755993854,
+          "Explosion": 0.1317699546040032,
+          "Fighting": 0.15995375306127638,
+          "RoadAccidents": 0.10131653163284098,
+          "Robbery": 0.08179834020734426,
+          "Shooting": 0.17355809192299723,
+          "Shoplifting": 0.1659555897744822,
+          "Stealing": 0.2599894949090383,
+          "Vandalism": 0.21624445155104186
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P18-vote3of4-minarea",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.750464659256988,
+      "ucf_crime": {
+        "rank": 50,
+        "mean": 0.1654939956100548,
+        "classes": {
+          "Abuse": 0.18431122486265863,
+          "Arrest": 0.13436377237775757,
+          "Arson": 0.12175470260336554,
+          "Assault": 0.13750638665243975,
+          "Burglary": 0.18686524737177687,
+          "Explosion": 0.11497764530383695,
+          "Fighting": 0.26227053462887406,
+          "RoadAccidents": 0.14943214392028864,
+          "Robbery": 0.12000081992482498,
+          "Shooting": 0.18644756651691652,
+          "Shoplifting": 0.08394107525540619,
+          "Stealing": 0.22315254049340238,
+          "Vandalism": 0.24639828301916394
+        }
+      },
+      "mivia_crime": {
+        "rank": 63,
+        "mean": 0.1397661669280074,
+        "classes": {
+          "Abuse": 0.05127565901411499,
+          "Arrest": 0.14105104241652147,
+          "Arson": 0.14511001417082267,
+          "Assault": 0.2366160851474187,
+          "Burglary": 0.2113858863603205,
+          "Explosion": 0.10876906394585657,
+          "Fighting": 0.1804068656842093,
+          "RoadAccidents": 0.10929523214476201,
+          "Robbery": 0.18113810482584136,
+          "Shooting": 0.19546980621830917,
+          "Shoplifting": 0.04415582588371694,
+          "Stealing": 0.12078856662122206,
+          "Vandalism": 0.0914980176309803
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P13-count01-minarea",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.7551994529202166,
+      "ucf_crime": {
+        "rank": 51,
+        "mean": 0.16452868200772153,
+        "classes": {
+          "Abuse": 0.25054179798064724,
+          "Arrest": 0.14728682567860932,
+          "Arson": 0.13869067072946462,
+          "Assault": 0.1091221360429632,
+          "Burglary": 0.13007464470908042,
+          "Explosion": 0.09025905434043642,
+          "Fighting": 0.15786668621086467,
+          "RoadAccidents": 0.17696891285261707,
+          "Robbery": 0.15723900292141457,
+          "Shooting": 0.17257988148376432,
+          "Shoplifting": 0.09823549131130012,
+          "Stealing": 0.23479127615328255,
+          "Vandalism": 0.2752164856859355
+        }
+      },
+      "mivia_crime": {
+        "rank": 57,
+        "mean": 0.14744252730804222,
+        "classes": {
+          "Abuse": 0.12625642989730473,
+          "Arrest": 0.1563644947441105,
+          "Arson": 0.15249962770843528,
+          "Assault": 0.09068137019451317,
+          "Burglary": 0.12589028835497676,
+          "Explosion": 0.14009225406706063,
+          "Fighting": 0.15934469552512262,
+          "RoadAccidents": 0.1028291997597463,
+          "Robbery": 0.08187440873442021,
+          "Shooting": 0.16323832332289132,
+          "Shoplifting": 0.1622673254200679,
+          "Stealing": 0.24365296849251586,
+          "Vandalism": 0.21176146878338345
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P04-top2-largest",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 8.528735519829816,
+      "ucf_crime": {
+        "rank": 52,
+        "mean": 0.1564565491374594,
+        "classes": {
+          "Abuse": 0.03946118355545344,
+          "Arrest": 0.11640639478374191,
+          "Arson": 0.21393324193032823,
+          "Assault": 0.19928913924560476,
+          "Burglary": 0.21932398504055967,
+          "Explosion": 0.3595361873160857,
+          "Fighting": 0.13053924752985616,
+          "RoadAccidents": 0.12413377524483826,
+          "Robbery": 0.1334820478737277,
+          "Shooting": 0.13393969676441317,
+          "Shoplifting": 0.17747644563199166,
+          "Stealing": 0.0968610977322327,
+          "Vandalism": 0.089552696138139
+        }
+      },
+      "mivia_crime": {
+        "rank": 47,
+        "mean": 0.16085182233231227,
+        "classes": {
+          "Abuse": 0.18805423053793524,
+          "Arrest": 0.14329797392279287,
+          "Arson": 0.20136170430462796,
+          "Assault": 0.10797522168785058,
+          "Burglary": 0.16558782685915605,
+          "Explosion": 0.38849242688914004,
+          "Fighting": 0.1445902530075579,
+          "RoadAccidents": 0.048358372890766756,
+          "Robbery": 0.2234310981668897,
+          "Shooting": 0.04142106710404992,
+          "Shoplifting": 0.1736665032582461,
+          "Stealing": 0.1431342671617445,
+          "Vandalism": 0.12170274452930195
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P04-top2-minarea",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 8.528722602139164,
+      "ucf_crime": {
+        "rank": 53,
+        "mean": 0.15552089256742996,
+        "classes": {
+          "Abuse": 0.04307462677202753,
+          "Arrest": 0.1153809808406692,
+          "Arson": 0.220549233619173,
+          "Assault": 0.18814079294944552,
+          "Burglary": 0.22844166904695845,
+          "Explosion": 0.3579939858151456,
+          "Fighting": 0.12886432962421318,
+          "RoadAccidents": 0.12337610113353918,
+          "Robbery": 0.14589222821605966,
+          "Shooting": 0.12882597518039748,
+          "Shoplifting": 0.16126736590534296,
+          "Stealing": 0.09198270428440265,
+          "Vandalism": 0.0879816099892148
+        }
+      },
+      "mivia_crime": {
+        "rank": 50,
+        "mean": 0.15761060233997246,
+        "classes": {
+          "Abuse": 0.19082708844426985,
+          "Arrest": 0.1428942340554776,
+          "Arson": 0.20211911949436026,
+          "Assault": 0.10669540362470935,
+          "Burglary": 0.15504120403057473,
+          "Explosion": 0.3888566527296809,
+          "Fighting": 0.11672351793256694,
+          "RoadAccidents": 0.040735900970641635,
+          "Robbery": 0.22298746479555764,
+          "Shooting": 0.038262083361836674,
+          "Shoplifting": 0.15302988838494774,
+          "Stealing": 0.16205337119617821,
+          "Vandalism": 0.12871190139884042
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P04-top2",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 8.52870770623091,
+      "ucf_crime": {
+        "rank": 54,
+        "mean": 0.15550551879733174,
+        "classes": {
+          "Abuse": 0.04306666836713214,
+          "Arrest": 0.11535934301769668,
+          "Arson": 0.22055661222295084,
+          "Assault": 0.18812061217240056,
+          "Burglary": 0.22841614126009838,
+          "Explosion": 0.35803569305023514,
+          "Fighting": 0.1288170100247824,
+          "RoadAccidents": 0.12336045809559197,
+          "Robbery": 0.1458775732041826,
+          "Shooting": 0.12878845282136514,
+          "Shoplifting": 0.16123337327192638,
+          "Stealing": 0.09197489682107833,
+          "Vandalism": 0.087964910035872
+        }
+      },
+      "mivia_crime": {
+        "rank": 49,
+        "mean": 0.1576649220178046,
+        "classes": {
+          "Abuse": 0.19082118498848796,
+          "Arrest": 0.14281029156000716,
+          "Arson": 0.20209745172108207,
+          "Assault": 0.10667215173220528,
+          "Burglary": 0.15509532944017526,
+          "Explosion": 0.3888651931585491,
+          "Fighting": 0.11669506448102769,
+          "RoadAccidents": 0.040715284686436266,
+          "Robbery": 0.22296977849261299,
+          "Shooting": 0.038248900930982044,
+          "Shoplifting": 0.1539683611640994,
+          "Stealing": 0.1619763750627336,
+          "Vandalism": 0.12870861881306087
+        }
+      },
+      "stage": "vtcd_ablation"
+    },
+    {
+      "id": "P10-soft",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 16255.522775268371,
+      "inference_s_per_chunk": 6.678885181794184,
+      "ucf_crime": {
+        "rank": 55,
+        "mean": 0.14594338655914915,
+        "classes": {
+          "Abuse": 0.029065753629063704,
+          "Arrest": 0.1318263123691927,
+          "Arson": 0.1777758090113084,
+          "Assault": 0.18991127182667766,
+          "Burglary": 0.13525002368121852,
+          "Explosion": 0.27153427923129647,
+          "Fighting": 0.21994909557947717,
+          "RoadAccidents": 0.028034186956409943,
+          "Robbery": 0.19492507185250046,
+          "Shooting": 0.15370707530904248,
+          "Shoplifting": 0.07905399142788637,
+          "Stealing": 0.18415698707154007,
+          "Vandalism": 0.10207416732332496
+        }
+      },
+      "mivia_crime": {
+        "rank": 56,
+        "mean": 0.14758858649272535,
+        "classes": {
+          "Abuse": 0.13876061893364344,
+          "Arrest": 0.09188716966509959,
+          "Arson": 0.23183386890260863,
+          "Assault": 0.12258655754678355,
+          "Burglary": 0.19080110044454854,
+          "Explosion": 0.2499969742272595,
+          "Fighting": 0.341654447793504,
+          "RoadAccidents": 0.0,
+          "Robbery": 0.28601706980635616,
+          "Shooting": 0.020924190271941385,
+          "Shoplifting": 0.028277886748084048,
+          "Stealing": 0.09412164942338286,
+          "Vandalism": 0.12179009064221784
+        }
+      },
+      "stage": "vtcd"
+    },
+    {
+      "id": "P10-soft-minarea",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 16255.522775268371,
+      "inference_s_per_chunk": 6.6788998129459465,
+      "ucf_crime": {
+        "rank": 56,
+        "mean": 0.14569966664870002,
+        "classes": {
+          "Abuse": 0.02989871912699396,
+          "Arrest": 0.13172921454357442,
+          "Arson": 0.17783920239061032,
+          "Assault": 0.1897477350768951,
+          "Burglary": 0.13533590951571878,
+          "Explosion": 0.2707622657779397,
+          "Fighting": 0.21924789723855276,
+          "RoadAccidents": 0.027995018292338206,
+          "Robbery": 0.19499199558520897,
+          "Shooting": 0.1532829756316748,
+          "Shoplifting": 0.07914785250686142,
+          "Stealing": 0.18376393126512525,
+          "Vandalism": 0.1003529494816064
+        }
+      },
+      "mivia_crime": {
+        "rank": 58,
+        "mean": 0.14672246925126645,
+        "classes": {
+          "Abuse": 0.1334995077351806,
+          "Arrest": 0.09188082903048322,
+          "Arson": 0.23208871245332044,
+          "Assault": 0.12313057106489594,
+          "Burglary": 0.18685835976054263,
+          "Explosion": 0.2491813425584898,
+          "Fighting": 0.341654447793504,
+          "RoadAccidents": 0.0,
+          "Robbery": 0.2856141264578484,
+          "Shooting": 0.019121837147354236,
+          "Shoplifting": 0.02834930467804393,
+          "Stealing": 0.09422221694398154,
+          "Vandalism": 0.12179084464281902
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P06-soft-largest",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 16542.666661875395,
+      "inference_s_per_chunk": 6.658229941093012,
+      "ucf_crime": {
+        "rank": 57,
+        "mean": 0.14324654617473861,
+        "classes": {
+          "Abuse": 0.03401748511904762,
+          "Arrest": 0.09552861635197162,
+          "Arson": 0.19775271664552366,
+          "Assault": 0.1950949984556944,
+          "Burglary": 0.22036352224281547,
+          "Explosion": 0.33340244600261953,
+          "Fighting": 0.13007754169122243,
+          "RoadAccidents": 0.11166633852851522,
+          "Robbery": 0.12199777231990047,
+          "Shooting": 0.11295471789885989,
+          "Shoplifting": 0.1449077445445724,
+          "Stealing": 0.08286839109136224,
+          "Vandalism": 0.08157280937949708
+        }
+      },
+      "mivia_crime": {
+        "rank": 59,
+        "mean": 0.14317192663241485,
+        "classes": {
+          "Abuse": 0.18667197651489303,
+          "Arrest": 0.15174732925011572,
+          "Arson": 0.12873986452066066,
+          "Assault": 0.10158792759027833,
+          "Burglary": 0.17661542047659914,
+          "Explosion": 0.38625953897404464,
+          "Fighting": 0.11379655209519046,
+          "RoadAccidents": 0.046968696358871166,
+          "Robbery": 0.25028506170388826,
+          "Shooting": 0.03217571070680504,
+          "Shoplifting": 0.09015043866998797,
+          "Stealing": 0.07010719475677392,
+          "Vandalism": 0.12612933460328468
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P06-soft-minarea",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 16542.666661875395,
+      "inference_s_per_chunk": 6.658217274171986,
+      "ucf_crime": {
+        "rank": 58,
+        "mean": 0.14037292247742553,
+        "classes": {
+          "Abuse": 0.0337188628611557,
+          "Arrest": 0.09406604831543441,
+          "Arson": 0.19761869035489804,
+          "Assault": 0.19195144488314766,
+          "Burglary": 0.2157779919605799,
+          "Explosion": 0.33425350763611544,
+          "Fighting": 0.12161510535635174,
+          "RoadAccidents": 0.11015830687719662,
+          "Robbery": 0.11489659711244497,
+          "Shooting": 0.11072506687023032,
+          "Shoplifting": 0.13880642876365873,
+          "Stealing": 0.08103393003034831,
+          "Vandalism": 0.08022601118496978
+        }
+      },
+      "mivia_crime": {
+        "rank": 61,
+        "mean": 0.1404395570760756,
+        "classes": {
+          "Abuse": 0.18679863127758312,
+          "Arrest": 0.14309113966819179,
+          "Arson": 0.12874949524378365,
+          "Assault": 0.09550557508430829,
+          "Burglary": 0.16680506248751173,
+          "Explosion": 0.397087178145823,
+          "Fighting": 0.11220447389864492,
+          "RoadAccidents": 0.03706606465390647,
+          "Robbery": 0.2463845388946966,
+          "Shooting": 0.03204981632241377,
+          "Shoplifting": 0.0873683254800133,
+          "Stealing": 0.06954101897820858,
+          "Vandalism": 0.1230629218538976
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P06-soft",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 16542.666661875395,
+      "inference_s_per_chunk": 6.65820227148292,
+      "ucf_crime": {
+        "rank": 59,
+        "mean": 0.14036955284891156,
+        "classes": {
+          "Abuse": 0.033714318304743925,
+          "Arrest": 0.0940601912214247,
+          "Arson": 0.1976854411158821,
+          "Assault": 0.1919582682752461,
+          "Burglary": 0.21575971929138607,
+          "Explosion": 0.3342419923648696,
+          "Fighting": 0.12158353735454235,
+          "RoadAccidents": 0.11016028315200548,
+          "Robbery": 0.11490751422102151,
+          "Shooting": 0.11070678682609664,
+          "Shoplifting": 0.13879037545016826,
+          "Stealing": 0.08102924981649183,
+          "Vandalism": 0.08020650964197185
+        }
+      },
+      "mivia_crime": {
+        "rank": 62,
+        "mean": 0.14042472480089643,
+        "classes": {
+          "Abuse": 0.18694331584443286,
+          "Arrest": 0.14294516376557723,
+          "Arson": 0.1287439799283928,
+          "Assault": 0.09549019318041797,
+          "Burglary": 0.16679518502667223,
+          "Explosion": 0.3970810255290924,
+          "Fighting": 0.1121907666739212,
+          "RoadAccidents": 0.03704560061073393,
+          "Robbery": 0.2462961208482146,
+          "Shooting": 0.03204897641231106,
+          "Shoplifting": 0.08734702272495339,
+          "Stealing": 0.06953279430646152,
+          "Vandalism": 0.12306127756047237
+        }
+      },
+      "stage": "vtcd"
+    },
+    {
+      "id": "P04-top3-largest",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 8.528550963157686,
+      "ucf_crime": {
+        "rank": 60,
+        "mean": 0.14018361673704594,
+        "classes": {
+          "Abuse": 0.032167410714285714,
+          "Arrest": 0.0932672604888237,
+          "Arson": 0.2047095701546937,
+          "Assault": 0.17422431715615036,
+          "Burglary": 0.21560835829531524,
+          "Explosion": 0.34582691744521243,
+          "Fighting": 0.11678650917224176,
+          "RoadAccidents": 0.11152982511812704,
+          "Robbery": 0.11834925556276543,
+          "Shooting": 0.11500517428431861,
+          "Shoplifting": 0.13748873928574817,
+          "Stealing": 0.07928104692661937,
+          "Vandalism": 0.07814263297729582
+        }
+      },
+      "mivia_crime": {
+        "rank": 51,
+        "mean": 0.1555719804005576,
+        "classes": {
+          "Abuse": 0.1868252407015756,
+          "Arrest": 0.13311080864787758,
+          "Arson": 0.20063252961095043,
+          "Assault": 0.09384836190876655,
+          "Burglary": 0.1442123827191337,
+          "Explosion": 0.39040400538118586,
+          "Fighting": 0.1406487972664982,
+          "RoadAccidents": 0.03279209384418188,
+          "Robbery": 0.2177928428199174,
+          "Shooting": 0.0317923363693737,
+          "Shoplifting": 0.1736665032582461,
+          "Stealing": 0.15746464913530314,
+          "Vandalism": 0.11924519354423868
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P10-soft-largest",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 16255.522775268371,
+      "inference_s_per_chunk": 6.678911069251584,
+      "ucf_crime": {
+        "rank": 61,
+        "mean": 0.1401680162997569,
+        "classes": {
+          "Abuse": 0.011263424661642454,
+          "Arrest": 0.1272887513334046,
+          "Arson": 0.17037501190008178,
+          "Assault": 0.17789252806065584,
+          "Burglary": 0.13385493748358476,
+          "Explosion": 0.2604582082899754,
+          "Fighting": 0.21176630530020324,
+          "RoadAccidents": 0.02784334100144625,
+          "Robbery": 0.19218388854276303,
+          "Shooting": 0.14439562727548957,
+          "Shoplifting": 0.07921298530909873,
+          "Stealing": 0.18184100829408417,
+          "Vandalism": 0.1038081944444098
+        }
+      },
+      "mivia_crime": {
+        "rank": 60,
+        "mean": 0.14260405279103205,
+        "classes": {
+          "Abuse": 0.13596233262730195,
+          "Arrest": 0.0916876088214707,
+          "Arson": 0.22376653265923904,
+          "Assault": 0.12273780678561604,
+          "Burglary": 0.20467779396348262,
+          "Explosion": 0.2168700682504263,
+          "Fighting": 0.3224574130411162,
+          "RoadAccidents": 0.0,
+          "Robbery": 0.2820714399675131,
+          "Shooting": 0.019553560472309772,
+          "Shoplifting": 0.02663006062152436,
+          "Stealing": 0.10234776706255323,
+          "Vandalism": 0.10509030201086354
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P04-top3-minarea",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 8.528538719985384,
+      "ucf_crime": {
+        "rank": 62,
+        "mean": 0.1393248821036286,
+        "classes": {
+          "Abuse": 0.032167410714285714,
+          "Arrest": 0.09309953159016437,
+          "Arson": 0.20484016182737647,
+          "Assault": 0.17246419963707538,
+          "Burglary": 0.21555481700177814,
+          "Explosion": 0.34404088975118347,
+          "Fighting": 0.11636792800816713,
+          "RoadAccidents": 0.11122034264458204,
+          "Robbery": 0.11846974327648646,
+          "Shooting": 0.11075551228108443,
+          "Shoplifting": 0.13541085863947006,
+          "Stealing": 0.07919510139895572,
+          "Vandalism": 0.0776369705765622
+        }
+      },
+      "mivia_crime": {
+        "rank": 53,
+        "mean": 0.1517761267095061,
+        "classes": {
+          "Abuse": 0.18959809860791021,
+          "Arrest": 0.1330773806066254,
+          "Arson": 0.20057697741339273,
+          "Assault": 0.09384836190876655,
+          "Burglary": 0.14381388643570836,
+          "Explosion": 0.39040400538118586,
+          "Fighting": 0.11106428462849305,
+          "RoadAccidents": 0.03279209384418188,
+          "Robbery": 0.21723251372239472,
+          "Shooting": 0.03194631718876042,
+          "Shoplifting": 0.15302988838494774,
+          "Stealing": 0.1564606455569739,
+          "Vandalism": 0.11924519354423868
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P04-top3",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 1588.2489556737557,
+      "inference_s_per_chunk": 8.528525607393169,
+      "ucf_crime": {
+        "rank": 63,
+        "mean": 0.13931873300492906,
+        "classes": {
+          "Abuse": 0.032167410714285714,
+          "Arrest": 0.09309584675648543,
+          "Arson": 0.20483166297948827,
+          "Assault": 0.17246994911582775,
+          "Burglary": 0.21553904115443603,
+          "Explosion": 0.3440312643807219,
+          "Fighting": 0.11636644990204088,
+          "RoadAccidents": 0.11121839152942788,
+          "Robbery": 0.1184689188711366,
+          "Shooting": 0.11073985823932302,
+          "Shoplifting": 0.13540400858463822,
+          "Stealing": 0.07917783457165124,
+          "Vandalism": 0.07763289226461487
+        }
+      },
+      "mivia_crime": {
+        "rank": 52,
+        "mean": 0.15183178853229887,
+        "classes": {
+          "Abuse": 0.18959219515212833,
+          "Arrest": 0.13305418336514552,
+          "Arson": 0.20056502836851933,
+          "Assault": 0.09382865937041773,
+          "Burglary": 0.14382585940099105,
+          "Explosion": 0.3903448017532834,
+          "Fighting": 0.11104401621655349,
+          "RoadAccidents": 0.03279209384418188,
+          "Robbery": 0.21722289212803667,
+          "Shooting": 0.03194631718876042,
+          "Shoplifting": 0.1539683611640994,
+          "Stealing": 0.15638364942352928,
+          "Vandalism": 0.11924519354423868
+        }
+      },
+      "stage": "vtcd_ablation"
+    },
+    {
+      "id": "P15-otsu256",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.7480809884581405,
+      "ucf_crime": {
+        "rank": 64,
+        "mean": 0.056401015893451895,
+        "classes": {
+          "Abuse": 0.12347493533924614,
+          "Arrest": 0.027686133161325916,
+          "Arson": 0.05344492694199619,
+          "Assault": 0.02617684942439462,
+          "Burglary": 0.03495473811928775,
+          "Explosion": 0.04401638284777155,
+          "Fighting": 0.11634911802658746,
+          "RoadAccidents": 0.08472204177833355,
+          "Robbery": 0.03204977565029636,
+          "Shooting": 0.052086316923522495,
+          "Shoplifting": 0.007651439052000564,
+          "Stealing": 0.0518017045153992,
+          "Vandalism": 0.07879884483471292
+        }
+      },
+      "mivia_crime": {
+        "rank": 64,
+        "mean": 0.05535131121297783,
+        "classes": {
+          "Abuse": 0.08503429832270182,
+          "Arrest": 0.04200917553800277,
+          "Arson": 0.07993359869069579,
+          "Assault": 0.050809603823439325,
+          "Burglary": 0.1068696286012475,
+          "Explosion": 0.020001247988535597,
+          "Fighting": 0.059072247363404246,
+          "RoadAccidents": 0.0897016654276138,
+          "Robbery": 0.046922800032731304,
+          "Shooting": 0.011028031389139319,
+          "Shoplifting": 0.01130731318014699,
+          "Stealing": 0.024736923499061828,
+          "Vandalism": 0.09214051191199148
+        }
+      },
+      "stage": "ig"
+    },
+    {
+      "id": "P15-otsu256-largest",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.7480960638190455,
+      "ucf_crime": {
+        "rank": 65,
+        "mean": 0.05152245298073927,
+        "classes": {
+          "Abuse": 0.12347493533924614,
+          "Arrest": 0.02551397181323247,
+          "Arson": 0.049246223212607444,
+          "Assault": 0.022583762824170062,
+          "Burglary": 0.02814758366316655,
+          "Explosion": 0.03890248626117703,
+          "Fighting": 0.10794110028559825,
+          "RoadAccidents": 0.07654175593731723,
+          "Robbery": 0.029267420215841396,
+          "Shooting": 0.04692082576165542,
+          "Shoplifting": 0.006451447901131125,
+          "Stealing": 0.04634196805492,
+          "Vandalism": 0.06845840747954739
+        }
+      },
+      "mivia_crime": {
+        "rank": 65,
+        "mean": 0.04969150665375198,
+        "classes": {
+          "Abuse": 0.08495315436497264,
+          "Arrest": 0.03908964025161573,
+          "Arson": 0.07576873681650136,
+          "Assault": 0.04298612915016973,
+          "Burglary": 0.07429434415149534,
+          "Explosion": 0.014386858906007279,
+          "Fighting": 0.055513676738399395,
+          "RoadAccidents": 0.09451824794089363,
+          "Robbery": 0.03082620021364199,
+          "Shooting": 0.009111870094663629,
+          "Shoplifting": 0.007996765620396366,
+          "Stealing": 0.024403450338027127,
+          "Vandalism": 0.09214051191199148
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P15-otsu256-minarea",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.7480913387473316,
+      "ucf_crime": {
+        "rank": 66,
+        "mean": 0.03455617336009308,
+        "classes": {
+          "Abuse": 0.0,
+          "Arrest": 0.016675615158517534,
+          "Arson": 0.0351370206259394,
+          "Assault": 0.015553584629704544,
+          "Burglary": 0.022508451378750436,
+          "Explosion": 0.03702639526625027,
+          "Fighting": 0.09973607683401939,
+          "RoadAccidents": 0.06737672452421323,
+          "Robbery": 0.02290639935982446,
+          "Shooting": 0.038004378285280284,
+          "Shoplifting": 0.001964848828235598,
+          "Stealing": 0.03033391726384023,
+          "Vandalism": 0.06200684152663472
+        }
+      },
+      "mivia_crime": {
+        "rank": 66,
+        "mean": 0.03807788892876147,
+        "classes": {
+          "Abuse": 0.0,
+          "Arrest": 0.028981961791212114,
+          "Arson": 0.06989875662652284,
+          "Assault": 0.037164778873850245,
+          "Burglary": 0.09033567785132122,
+          "Explosion": 0.013241512476435362,
+          "Fighting": 0.04995985740136586,
+          "RoadAccidents": 0.09342166261225177,
+          "Robbery": 0.03152380669867884,
+          "Shooting": 0.004665844669916741,
+          "Shoplifting": 0.002637157349664759,
+          "Stealing": 0.021749237236845475,
+          "Vandalism": 0.051432302485833865
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P17-range70_40",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.7482272654498825,
+      "ucf_crime": {
+        "rank": 67,
+        "mean": 0.011934495471597095,
+        "classes": {
+          "Abuse": 0.05260928003740066,
+          "Arrest": 0.0036930186118857987,
+          "Arson": 0.006891404381968684,
+          "Assault": 0.001906958510346003,
+          "Burglary": 0.003913552787667299,
+          "Explosion": 0.003280666165473462,
+          "Fighting": 0.010613649016998726,
+          "RoadAccidents": 0.022049981637974312,
+          "Robbery": 0.004784704490336586,
+          "Shooting": 0.008938702053031235,
+          "Shoplifting": 0.0024339766926979823,
+          "Stealing": 0.013205504025869964,
+          "Vandalism": 0.02082704271911153
+        }
+      },
+      "mivia_crime": {
+        "rank": 67,
+        "mean": 0.0128544747937023,
+        "classes": {
+          "Abuse": 0.019918316455529765,
+          "Arrest": 0.004597172107967067,
+          "Arson": 0.006374183198473826,
+          "Assault": 0.0029909661375019533,
+          "Burglary": 0.0021166878439083108,
+          "Explosion": 0.0003604111755460336,
+          "Fighting": 0.003005212325301672,
+          "RoadAccidents": 0.051904243201651414,
+          "Robbery": 0.0013840434499469117,
+          "Shooting": 0.0021783818841201565,
+          "Shoplifting": 0.0035429220472710868,
+          "Stealing": 0.01020212593545068,
+          "Vandalism": 0.058533506555461
+        }
+      },
+      "stage": "ig"
+    },
+    {
+      "id": "P17-range70_40-largest",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.7482335943162473,
+      "ucf_crime": {
+        "rank": 68,
+        "mean": 0.011698126773652942,
+        "classes": {
+          "Abuse": 0.05260928003740066,
+          "Arrest": 0.0036893477732156607,
+          "Arson": 0.00686237853422217,
+          "Assault": 0.0016968570579702293,
+          "Burglary": 0.003897335008941623,
+          "Explosion": 0.003210516654191034,
+          "Fighting": 0.01054447897412102,
+          "RoadAccidents": 0.020854996206740473,
+          "Robbery": 0.004594850294657591,
+          "Shooting": 0.008895370963328793,
+          "Shoplifting": 0.002372833538820562,
+          "Stealing": 0.013148577009159236,
+          "Vandalism": 0.0196988260047192
+        }
+      },
+      "mivia_crime": {
+        "rank": 68,
+        "mean": 0.012656707384948056,
+        "classes": {
+          "Abuse": 0.019910652968065073,
+          "Arrest": 0.004538220343427557,
+          "Arson": 0.006374183198473826,
+          "Assault": 0.0024972211980889077,
+          "Burglary": 0.00144459102072285,
+          "Explosion": 0.00019241010033915228,
+          "Fighting": 0.0026030081110126743,
+          "RoadAccidents": 0.051904243201651414,
+          "Robbery": 0.0010436465585297661,
+          "Shooting": 0.0021783818841201565,
+          "Shoplifting": 0.0035429220472710868,
+          "Stealing": 0.009774208817161258,
+          "Vandalism": 0.058533506555461
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P12-range70",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.7477087239464,
+      "ucf_crime": {
+        "rank": 69,
+        "mean": 0.007439453284906244,
+        "classes": {
+          "Abuse": 0.03513616175783076,
+          "Arrest": 0.0032810022988575696,
+          "Arson": 0.004173412892998882,
+          "Assault": 0.001841554437143501,
+          "Burglary": 0.0023925106469368062,
+          "Explosion": 0.0013924983956852524,
+          "Fighting": 0.0044347636198715425,
+          "RoadAccidents": 0.012740056058224944,
+          "Robbery": 0.0024745381551042295,
+          "Shooting": 0.006039899392925332,
+          "Shoplifting": 0.002110767800317245,
+          "Stealing": 0.00966771760990696,
+          "Vandalism": 0.011028009637978146
+        }
+      },
+      "mivia_crime": {
+        "rank": 69,
+        "mean": 0.007919238113346643,
+        "classes": {
+          "Abuse": 0.019918316455529765,
+          "Arrest": 0.00355342118815664,
+          "Arson": 0.0038524077203152592,
+          "Assault": 0.0015734935550899892,
+          "Burglary": 0.0021166878439083108,
+          "Explosion": 0.0003604111755460336,
+          "Fighting": 0.0024801850428972194,
+          "RoadAccidents": 0.03316694401743122,
+          "Robbery": 0.0010825435071413214,
+          "Shooting": 0.0021783818841201565,
+          "Shoplifting": 0.0031197009796581575,
+          "Stealing": 0.0028723211830317744,
+          "Vandalism": 0.0266752809206805
+        }
+      },
+      "stage": "ig"
+    },
+    {
+      "id": "P12-range70-largest",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.747723832466493,
+      "ucf_crime": {
+        "rank": 70,
+        "mean": 0.007076237587812916,
+        "classes": {
+          "Abuse": 0.03513616175783076,
+          "Arrest": 0.0032790779685268326,
+          "Arson": 0.004139173970672327,
+          "Assault": 0.0016319008231866113,
+          "Burglary": 0.00237592236052963,
+          "Explosion": 0.0013160821187979486,
+          "Fighting": 0.004245920896688611,
+          "RoadAccidents": 0.011445220250708087,
+          "Robbery": 0.00228314679971867,
+          "Shooting": 0.005887130992817279,
+          "Shoplifting": 0.0020496246464398247,
+          "Stealing": 0.009614027066235478,
+          "Vandalism": 0.008587698989415844
+        }
+      },
+      "mivia_crime": {
+        "rank": 70,
+        "mean": 0.007764021643303306,
+        "classes": {
+          "Abuse": 0.019910652968065073,
+          "Arrest": 0.0034944694236171297,
+          "Arson": 0.0038524077203152592,
+          "Assault": 0.00131610317544355,
+          "Burglary": 0.00144459102072285,
+          "Explosion": 0.00019241010033915228,
+          "Fighting": 0.0020779808286082216,
+          "RoadAccidents": 0.03316694401743122,
+          "Robbery": 0.0010589542591993557,
+          "Shooting": 0.0021783818841201565,
+          "Shoplifting": 0.0031197009796581575,
+          "Stealing": 0.0024444040647423533,
+          "Vandalism": 0.0266752809206805
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P05-presence",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 16542.662194394346,
+      "inference_s_per_chunk": 6.657315764079527,
+      "ucf_crime": {
+        "rank": 71,
+        "mean": 0.004204977767417914,
+        "classes": {
+          "Abuse": 0.0,
+          "Arrest": 0.002198293046912857,
+          "Arson": 0.007228114379075206,
+          "Assault": 3.269592766816609e-05,
+          "Burglary": 0.006443107254647575,
+          "Explosion": 0.022535697748963534,
+          "Fighting": 0.0,
+          "RoadAccidents": 0.0006229696477312892,
+          "Robbery": 0.0022217859146292933,
+          "Shooting": 0.005551747855124254,
+          "Shoplifting": 0.0030917716414783037,
+          "Stealing": 0.002831881148281234,
+          "Vandalism": 0.0019066464119211703
+        }
+      },
+      "mivia_crime": {
+        "rank": 72,
+        "mean": 0.0019616211748380405,
+        "classes": {
+          "Abuse": 0.0,
+          "Arrest": 0.00012649422585768577,
+          "Arson": 0.0,
+          "Assault": 0.0016046165105055455,
+          "Burglary": 0.003509650943728397,
+          "Explosion": 0.0,
+          "Fighting": 0.0,
+          "RoadAccidents": 0.0,
+          "Robbery": 2.6819265403017856e-05,
+          "Shooting": 0.0,
+          "Shoplifting": 0.0,
+          "Stealing": 0.007551740696184801,
+          "Vandalism": 0.012681753631215077
+        }
+      },
+      "stage": "vtcd"
+    },
+    {
+      "id": "P05-presence-minarea",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 16542.662194394346,
+      "inference_s_per_chunk": 6.65732478882945,
+      "ucf_crime": {
+        "rank": 72,
+        "mean": 0.004196177993856734,
+        "classes": {
+          "Abuse": 0.0,
+          "Arrest": 0.0021905678090117964,
+          "Arson": 0.007178899713276161,
+          "Assault": 3.152038516015971e-05,
+          "Burglary": 0.0064402797060743545,
+          "Explosion": 0.022448859496316274,
+          "Fighting": 0.0,
+          "RoadAccidents": 0.0005960560940656632,
+          "Robbery": 0.0022228392415321744,
+          "Shooting": 0.0055429576677511845,
+          "Shoplifting": 0.0030968025766918332,
+          "Stealing": 0.0028330310488683423,
+          "Vandalism": 0.0019685001813895962
+        }
+      },
+      "mivia_crime": {
+        "rank": 73,
+        "mean": 0.0019613232867387595,
+        "classes": {
+          "Abuse": 0.0,
+          "Arrest": 0.00012143965979521499,
+          "Arson": 0.0,
+          "Assault": 0.0016057985312773664,
+          "Burglary": 0.003509650943728397,
+          "Explosion": 0.0,
+          "Fighting": 0.0,
+          "RoadAccidents": 0.0,
+          "Robbery": 2.6819265403017856e-05,
+          "Shooting": 0.0,
+          "Shoplifting": 0.0,
+          "Stealing": 0.007551740696184801,
+          "Vandalism": 0.012681753631215077
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P05-presence-largest",
+      "family": "concepts",
+      "family_label": "Concepts",
+      "fit_s": 16542.662194394346,
+      "inference_s_per_chunk": 6.657325936925778,
+      "ucf_crime": {
+        "rank": 73,
+        "mean": 0.0039211162557672204,
+        "classes": {
+          "Abuse": 0.0,
+          "Arrest": 0.0021162944460151136,
+          "Arson": 0.006673293995743744,
+          "Assault": 3.152038516015971e-05,
+          "Burglary": 0.007284068615768429,
+          "Explosion": 0.018945724846914754,
+          "Fighting": 0.0,
+          "RoadAccidents": 0.0007996232081355791,
+          "Robbery": 0.003038464381269491,
+          "Shooting": 0.006487945116995889,
+          "Shoplifting": 0.0031932898576153786,
+          "Stealing": 0.0009725048349148498,
+          "Vandalism": 0.0014317816364404798
+        }
+      },
+      "mivia_crime": {
+        "rank": 75,
+        "mean": 0.001335866471059841,
+        "classes": {
+          "Abuse": 0.0,
+          "Arrest": 0.00017589719234964777,
+          "Arson": 0.0,
+          "Assault": 0.0022350665934389303,
+          "Burglary": 0.004643295818237711,
+          "Explosion": 0.0,
+          "Fighting": 0.0,
+          "RoadAccidents": 0.0,
+          "Robbery": 2.6819265403017856e-05,
+          "Shooting": 0.0,
+          "Shoplifting": 0.0,
+          "Stealing": 0.0034308920319283016,
+          "Vandalism": 0.006854293222420325
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P17-range70_40-minarea",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.7482343312447712,
+      "ucf_crime": {
+        "rank": 74,
+        "mean": 0.003498941597444196,
+        "classes": {
+          "Abuse": 0.0,
+          "Arrest": 9.672522770193326e-06,
+          "Arson": 0.0029150996526554783,
+          "Assault": 7.574723661673501e-05,
+          "Burglary": 0.000948905455567876,
+          "Explosion": 0.001819059064263352,
+          "Fighting": 0.007435812825210478,
+          "RoadAccidents": 0.009211813618021867,
+          "Robbery": 0.0008768622795535714,
+          "Shooting": 0.0032585021787068635,
+          "Shoplifting": 0.00011290449428882215,
+          "Stealing": 0.004109015983578074,
+          "Vandalism": 0.01471284545554123
+        }
+      },
+      "mivia_crime": {
+        "rank": 71,
+        "mean": 0.005731273244043899,
+        "classes": {
+          "Abuse": 0.0,
+          "Arrest": 0.002005054966354064,
+          "Arson": 0.003791919299979739,
+          "Assault": 0.0018122807316172844,
+          "Burglary": 0.0,
+          "Explosion": 0.0,
+          "Fighting": 0.0,
+          "RoadAccidents": 0.016264441145112767,
+          "Robbery": 0.0,
+          "Shooting": 0.0,
+          "Shoplifting": 0.0,
+          "Stealing": 0.009069400630914824,
+          "Vandalism": 0.041563455398592006
+        }
+      },
+      "stage": "postprocess_followup"
+    },
+    {
+      "id": "P12-range70-minarea",
+      "family": "integrated_gradients",
+      "family_label": "Integrated Gradients",
+      "fit_s": 0.005722163012251258,
+      "inference_s_per_chunk": 2.7477186092450134,
+      "ucf_crime": {
+        "rank": 75,
+        "mean": 0.0005183672265823304,
+        "classes": {
+          "Abuse": 0.0,
+          "Arrest": 0.0,
+          "Arson": 1.9727637324158006e-05,
+          "Assault": 1.3001956193207544e-05,
+          "Burglary": 8.566995523192589e-05,
+          "Explosion": 0.0,
+          "Fighting": 0.0006433751861365139,
+          "RoadAccidents": 0.0024773779314434725,
+          "Robbery": 3.556794339479218e-05,
+          "Shooting": 0.00011459951601973885,
+          "Shoplifting": 0.0,
+          "Stealing": 0.00016711229946524069,
+          "Vandalism": 0.0031823415203612463
+        }
+      },
+      "mivia_crime": {
+        "rank": 74,
+        "mean": 0.0014365860756472082,
+        "classes": {
+          "Abuse": 0.0,
+          "Arrest": 0.0013367033109027095,
+          "Arson": 0.0005830126437357937,
+          "Assault": 0.0004914618836624354,
+          "Burglary": 0.0,
+          "Explosion": 0.0,
+          "Fighting": 0.0,
+          "RoadAccidents": 0.016264441145112767,
+          "Robbery": 0.0,
+          "Shooting": 0.0,
+          "Shoplifting": 0.0,
+          "Stealing": 0.0,
+          "Vandalism": 0.0
+        }
+      },
+      "stage": "postprocess_followup"
+    }
+  ],
+  "videos": {
+    "Abuse028_x264": "ucf_crime/Abuse028_x264.json",
+    "Abuse030_x264": "ucf_crime/Abuse030_x264.json",
+    "Arrest001_x264": "ucf_crime/Arrest001_x264.json",
+    "Arrest007_x264": "ucf_crime/Arrest007_x264.json",
+    "Arrest024_x264": "ucf_crime/Arrest024_x264.json",
+    "Arrest030_x264": "ucf_crime/Arrest030_x264.json",
+    "Arrest039_x264": "ucf_crime/Arrest039_x264.json",
+    "Arson007_x264": "ucf_crime/Arson007_x264.json",
+    "Arson009_x264": "ucf_crime/Arson009_x264.json",
+    "Arson010_x264": "ucf_crime/Arson010_x264.json",
+    "Arson011_x264": "ucf_crime/Arson011_x264.json",
+    "Arson016_x264": "ucf_crime/Arson016_x264.json",
+    "Arson018_x264": "ucf_crime/Arson018_x264.json",
+    "Arson022_x264": "ucf_crime/Arson022_x264.json",
+    "Arson035_x264": "ucf_crime/Arson035_x264.json",
+    "Arson041_x264": "ucf_crime/Arson041_x264.json",
+    "Assault006_x264": "ucf_crime/Assault006_x264.json",
+    "Assault010_x264": "ucf_crime/Assault010_x264.json",
+    "Assault011_x264": "ucf_crime/Assault011_x264.json",
+    "Burglary005_x264": "ucf_crime/Burglary005_x264.json",
+    "Burglary017_x264": "ucf_crime/Burglary017_x264.json",
+    "Burglary018_x264": "ucf_crime/Burglary018_x264.json",
+    "Burglary021_x264": "ucf_crime/Burglary021_x264.json",
+    "Burglary024_x264": "ucf_crime/Burglary024_x264.json",
+    "Burglary032_x264": "ucf_crime/Burglary032_x264.json",
+    "Burglary033_x264": "ucf_crime/Burglary033_x264.json",
+    "Burglary035_x264": "ucf_crime/Burglary035_x264.json",
+    "Burglary037_x264": "ucf_crime/Burglary037_x264.json",
+    "Burglary061_x264": "ucf_crime/Burglary061_x264.json",
+    "Burglary076_x264": "ucf_crime/Burglary076_x264.json",
+    "Burglary079_x264": "ucf_crime/Burglary079_x264.json",
+    "Burglary092_x264": "ucf_crime/Burglary092_x264.json",
+    "Explosion002_x264": "ucf_crime/Explosion002_x264.json",
+    "Explosion004_x264": "ucf_crime/Explosion004_x264.json",
+    "Explosion007_x264": "ucf_crime/Explosion007_x264.json",
+    "Explosion008_x264": "ucf_crime/Explosion008_x264.json",
+    "Explosion010_x264": "ucf_crime/Explosion010_x264.json",
+    "Explosion011_x264": "ucf_crime/Explosion011_x264.json",
+    "Explosion013_x264": "ucf_crime/Explosion013_x264.json",
+    "Explosion016_x264": "ucf_crime/Explosion016_x264.json",
+    "Explosion017_x264": "ucf_crime/Explosion017_x264.json",
+    "Explosion020_x264": "ucf_crime/Explosion020_x264.json",
+    "Explosion021_x264": "ucf_crime/Explosion021_x264.json",
+    "Explosion022_x264": "ucf_crime/Explosion022_x264.json",
+    "Explosion025_x264": "ucf_crime/Explosion025_x264.json",
+    "Explosion027_x264": "ucf_crime/Explosion027_x264.json",
+    "Explosion028_x264": "ucf_crime/Explosion028_x264.json",
+    "Explosion029_x264": "ucf_crime/Explosion029_x264.json",
+    "Explosion033_x264": "ucf_crime/Explosion033_x264.json",
+    "Explosion035_x264": "ucf_crime/Explosion035_x264.json",
+    "Explosion036_x264": "ucf_crime/Explosion036_x264.json",
+    "Explosion039_x264": "ucf_crime/Explosion039_x264.json",
+    "Explosion043_x264": "ucf_crime/Explosion043_x264.json",
+    "Fighting003_x264": "ucf_crime/Fighting003_x264.json",
+    "Fighting018_x264": "ucf_crime/Fighting018_x264.json",
+    "Fighting033_x264": "ucf_crime/Fighting033_x264.json",
+    "Fighting042_x264": "ucf_crime/Fighting042_x264.json",
+    "Fighting047_x264": "ucf_crime/Fighting047_x264.json",
+    "RoadAccidents001_x264": "ucf_crime/RoadAccidents001_x264.json",
+    "RoadAccidents002_x264": "ucf_crime/RoadAccidents002_x264.json",
+    "RoadAccidents004_x264": "ucf_crime/RoadAccidents004_x264.json",
+    "RoadAccidents009_x264": "ucf_crime/RoadAccidents009_x264.json",
+    "RoadAccidents010_x264": "ucf_crime/RoadAccidents010_x264.json",
+    "RoadAccidents011_x264": "ucf_crime/RoadAccidents011_x264.json",
+    "RoadAccidents012_x264": "ucf_crime/RoadAccidents012_x264.json",
+    "RoadAccidents016_x264": "ucf_crime/RoadAccidents016_x264.json",
+    "RoadAccidents017_x264": "ucf_crime/RoadAccidents017_x264.json",
+    "RoadAccidents019_x264": "ucf_crime/RoadAccidents019_x264.json",
+    "RoadAccidents020_x264": "ucf_crime/RoadAccidents020_x264.json",
+    "RoadAccidents021_x264": "ucf_crime/RoadAccidents021_x264.json",
+    "RoadAccidents022_x264": "ucf_crime/RoadAccidents022_x264.json",
+    "RoadAccidents121_x264": "ucf_crime/RoadAccidents121_x264.json",
+    "RoadAccidents122_x264": "ucf_crime/RoadAccidents122_x264.json",
+    "RoadAccidents123_x264": "ucf_crime/RoadAccidents123_x264.json",
+    "RoadAccidents124_x264": "ucf_crime/RoadAccidents124_x264.json",
+    "RoadAccidents125_x264": "ucf_crime/RoadAccidents125_x264.json",
+    "RoadAccidents127_x264": "ucf_crime/RoadAccidents127_x264.json",
+    "RoadAccidents128_x264": "ucf_crime/RoadAccidents128_x264.json",
+    "RoadAccidents131_x264": "ucf_crime/RoadAccidents131_x264.json",
+    "RoadAccidents132_x264": "ucf_crime/RoadAccidents132_x264.json",
+    "RoadAccidents133_x264": "ucf_crime/RoadAccidents133_x264.json",
+    "Robbery048_x264": "ucf_crime/Robbery048_x264.json",
+    "Robbery050_x264": "ucf_crime/Robbery050_x264.json",
+    "Robbery102_x264": "ucf_crime/Robbery102_x264.json",
+    "Robbery106_x264": "ucf_crime/Robbery106_x264.json",
+    "Robbery137_x264": "ucf_crime/Robbery137_x264.json",
+    "Shooting002_x264": "ucf_crime/Shooting002_x264.json",
+    "Shooting004_x264": "ucf_crime/Shooting004_x264.json",
+    "Shooting007_x264": "ucf_crime/Shooting007_x264.json",
+    "Shooting008_x264": "ucf_crime/Shooting008_x264.json",
+    "Shooting010_x264": "ucf_crime/Shooting010_x264.json",
+    "Shooting011_x264": "ucf_crime/Shooting011_x264.json",
+    "Shooting013_x264": "ucf_crime/Shooting013_x264.json",
+    "Shooting015_x264": "ucf_crime/Shooting015_x264.json",
+    "Shooting018_x264": "ucf_crime/Shooting018_x264.json",
+    "Shooting019_x264": "ucf_crime/Shooting019_x264.json",
+    "Shooting021_x264": "ucf_crime/Shooting021_x264.json",
+    "Shooting022_x264": "ucf_crime/Shooting022_x264.json",
+    "Shooting024_x264": "ucf_crime/Shooting024_x264.json",
+    "Shooting026_x264": "ucf_crime/Shooting026_x264.json",
+    "Shooting028_x264": "ucf_crime/Shooting028_x264.json",
+    "Shooting032_x264": "ucf_crime/Shooting032_x264.json",
+    "Shooting033_x264": "ucf_crime/Shooting033_x264.json",
+    "Shooting034_x264": "ucf_crime/Shooting034_x264.json",
+    "Shooting037_x264": "ucf_crime/Shooting037_x264.json",
+    "Shooting043_x264": "ucf_crime/Shooting043_x264.json",
+    "Shooting046_x264": "ucf_crime/Shooting046_x264.json",
+    "Shooting047_x264": "ucf_crime/Shooting047_x264.json",
+    "Shooting048_x264": "ucf_crime/Shooting048_x264.json",
+    "Shoplifting001_x264": "ucf_crime/Shoplifting001_x264.json",
+    "Shoplifting004_x264": "ucf_crime/Shoplifting004_x264.json",
+    "Shoplifting005_x264": "ucf_crime/Shoplifting005_x264.json",
+    "Shoplifting007_x264": "ucf_crime/Shoplifting007_x264.json",
+    "Shoplifting010_x264": "ucf_crime/Shoplifting010_x264.json",
+    "Shoplifting015_x264": "ucf_crime/Shoplifting015_x264.json",
+    "Shoplifting016_x264": "ucf_crime/Shoplifting016_x264.json",
+    "Shoplifting017_x264": "ucf_crime/Shoplifting017_x264.json",
+    "Shoplifting020_x264": "ucf_crime/Shoplifting020_x264.json",
+    "Shoplifting021_x264": "ucf_crime/Shoplifting021_x264.json",
+    "Shoplifting022_x264": "ucf_crime/Shoplifting022_x264.json",
+    "Shoplifting027_x264": "ucf_crime/Shoplifting027_x264.json",
+    "Shoplifting028_x264": "ucf_crime/Shoplifting028_x264.json",
+    "Shoplifting029_x264": "ucf_crime/Shoplifting029_x264.json",
+    "Shoplifting031_x264": "ucf_crime/Shoplifting031_x264.json",
+    "Shoplifting033_x264": "ucf_crime/Shoplifting033_x264.json",
+    "Shoplifting034_x264": "ucf_crime/Shoplifting034_x264.json",
+    "Shoplifting037_x264": "ucf_crime/Shoplifting037_x264.json",
+    "Shoplifting039_x264": "ucf_crime/Shoplifting039_x264.json",
+    "Shoplifting044_x264": "ucf_crime/Shoplifting044_x264.json",
+    "Shoplifting049_x264": "ucf_crime/Shoplifting049_x264.json",
+    "Stealing019_x264": "ucf_crime/Stealing019_x264.json",
+    "Stealing036_x264": "ucf_crime/Stealing036_x264.json",
+    "Stealing058_x264": "ucf_crime/Stealing058_x264.json",
+    "Stealing062_x264": "ucf_crime/Stealing062_x264.json",
+    "Stealing079_x264": "ucf_crime/Stealing079_x264.json",
+    "Vandalism007_x264": "ucf_crime/Vandalism007_x264.json",
+    "Vandalism015_x264": "ucf_crime/Vandalism015_x264.json",
+    "Vandalism017_x264": "ucf_crime/Vandalism017_x264.json",
+    "Vandalism028_x264": "ucf_crime/Vandalism028_x264.json",
+    "Vandalism036_x264": "ucf_crime/Vandalism036_x264.json",
+    "abuse_004": "mivia_crime/abuse_004.json",
+    "abuse_006": "mivia_crime/abuse_006.json",
+    "abuse_010": "mivia_crime/abuse_010.json",
+    "arrest_004": "mivia_crime/arrest_004.json",
+    "arrest_005": "mivia_crime/arrest_005.json",
+    "arrest_007": "mivia_crime/arrest_007.json",
+    "arson_002": "mivia_crime/arson_002.json",
+    "arson_003": "mivia_crime/arson_003.json",
+    "arson_010": "mivia_crime/arson_010.json",
+    "assault_001": "mivia_crime/assault_001.json",
+    "assault_003": "mivia_crime/assault_003.json",
+    "assault_006": "mivia_crime/assault_006.json",
+    "burglary_002": "mivia_crime/burglary_002.json",
+    "burglary_003": "mivia_crime/burglary_003.json",
+    "burglary_004": "mivia_crime/burglary_004.json",
+    "explosion_003": "mivia_crime/explosion_003.json",
+    "explosion_005": "mivia_crime/explosion_005.json",
+    "explosion_011": "mivia_crime/explosion_011.json",
+    "fighting_001": "mivia_crime/fighting_001.json",
+    "fighting_005": "mivia_crime/fighting_005.json",
+    "fighting_009": "mivia_crime/fighting_009.json",
+    "road_accident_005": "mivia_crime/road_accident_005.json",
+    "road_accident_007": "mivia_crime/road_accident_007.json",
+    "road_accident_013": "mivia_crime/road_accident_013.json",
+    "robbery_002": "mivia_crime/robbery_002.json",
+    "robbery_005": "mivia_crime/robbery_005.json",
+    "robbery_008": "mivia_crime/robbery_008.json",
+    "shooting_003": "mivia_crime/shooting_003.json",
+    "shooting_007": "mivia_crime/shooting_007.json",
+    "shooting_008": "mivia_crime/shooting_008.json",
+    "shoplifting_001": "mivia_crime/shoplifting_001.json",
+    "shoplifting_007": "mivia_crime/shoplifting_007.json",
+    "shoplifting_009": "mivia_crime/shoplifting_009.json",
+    "stealing_002": "mivia_crime/stealing_002.json",
+    "stealing_004": "mivia_crime/stealing_004.json",
+    "stealing_008": "mivia_crime/stealing_008.json",
+    "vandalism_002": "mivia_crime/vandalism_002.json",
+    "vandalism_006": "mivia_crime/vandalism_006.json",
+    "vandalism_007": "mivia_crime/vandalism_007.json"
+  },
+  "detector_check": {
+    "ucf_crime": {
+      "compared_windows": 1299,
+      "max_abs_score_difference": 1.1920928955078125e-07
+    },
+    "mivia_crime": {
+      "compared_windows": 120,
+      "max_abs_score_difference": 5.960464477539063e-08
+    }
+  },
+  "sources": {
+    "predictions": "C:\\Users\\antonio\\OneDrive\\Desktop\\Corsi UNISA\\Magistrale\\TESI\\codice\\tmp\\localization-auto-20261016\\pulled_annotated\\dora\\predictions_annotated",
+    "report": "C:\\Users\\antonio\\OneDrive\\Desktop\\Corsi UNISA\\Magistrale\\TESI\\codice\\tmp\\localization-auto-20261016\\report_annotated_dora",
+    "comparison_sha256": {
+      "ucf_test": "3bd4cdc584cc10cfeed83523f9f7d4c1fa44c8f93e77743b64f00c4c20bd4529",
+      "mivia_test": "7b11d429aca1a5bdf173c65488593dc08cc132d532377fade9cf959ce84059ca"
+    },
+    "seal_sha256": {
+      "ig/ucf_test": "93dca39c82a28c5dd1773bfa418e2e4b204769f03065b2912aca692a31c5a0e3",
+      "postprocess_followup/ucf_test": "a9d678c26207c92c85f8b4a2d31ebcb05f25cf26e8223732cdac55e6750bcd8f",
+      "rethreshold_p13/ucf_test": "e9dff826c4394c784246d6a9f0ddb635d5b9ae6174450104208c4348ee900e88",
+      "vtcd/ucf_test": "454e50f8c22586352331e2cc6b0c9d1510a40529f85f3438fe360e0e7e76a25c",
+      "vtcd_ablation/ucf_test": "e6c604b58f522815a545ee81916d564a16f3176df1560261330e6d829757508c",
+      "vtcd_ablation_mass30/ucf_test": "494afd083325f47234c9d1f1d55dd58484ffb137606f7578bd87a3bc9e54b4b3",
+      "vtcd_ablation_sweep/ucf_test": "54dd9f5bf292b71248f29529322ae5209efeef494ae5226da6539423b7f34038",
+      "ig/mivia_test": "83cb2cafae51fee21dae4fbe30dde3a0699d12141f7fc90082e32015a5ab47b3",
+      "postprocess_followup/mivia_test": "22c4e8643ba82ad77f1d4a7c81ed2125ea950925fc6b1c8dc282b7a401fdea50",
+      "rethreshold_p13/mivia_test": "b0c234f715c9b7850f7c6eec395b5a2955e97b635f029e7d6df9283ab3367202",
+      "vtcd/mivia_test": "9041503e7a7e1b0199e2e6a94ce2c277cee404fc2f9b1753fb7a143a7297d7fb",
+      "vtcd_ablation/mivia_test": "88f039b3207ee47dd784698c3da422319a57d80715feb059ce3adc9113d7484a",
+      "vtcd_ablation_mass30/mivia_test": "917095ac1befb8251048df0e86a1f573eab4c10b8f2d4ddbdbfafed78b9d62b3",
+      "vtcd_ablation_sweep/mivia_test": "4f8171d88234c197db2ea50cbcf26db57a63885b2a0b04b97f2b3ab49ee6ff5a"
+    }
+  }
+}

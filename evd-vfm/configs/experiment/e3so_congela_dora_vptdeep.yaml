@@ -1,0 +1,14 @@
+# @package _global_
+defaults:
+  - e3r_dora
+  - override /adapt: combo_dora_r16_vptdeep_n8
+  - override /train: peft_budget_v2_cont2
+
+exp_id: e3so
+seed: 42
+official: true
+preadattamento:
+  modo: congela
+  slot: prompt
+  checkpoint_state: selected
+  from: runs/e3p_ucf_vjepa21l_vptdeep-n8_s${seed}/checkpoint/checkpoint.pt

@@ -1,0 +1,20 @@
+{
+  "run_id": "e3r_ucf_vjepa21l_dora-r32-qkvomlp_s42__mivia",
+  "split": "test",
+  "threshold": 0.08632347732782364,
+  "origine": "diagnostica_post_hoc",
+  "annotation_source": "mivia_lab@7d65080073f9ed79967c7709b0307b9916071385677e0f35173b98e392d6af21",
+  "data_path_overrides": [
+    "root=C:/Users/antonio/OneDrive/Desktop/Corsi UNISA/Magistrale/TESI/codice/data/mivia_crime",
+    "inventory=C:/Users/antonio/OneDrive/Desktop/Corsi UNISA/Magistrale/TESI/codice/data/mivia_crime_inventory/inventory.csv",
+    "annotations.path=C:/Users/antonio/OneDrive/Desktop/Corsi UNISA/Magistrale/TESI/codice/data/mivia_crime"
+  ],
+  "coerenza_verificata": true,
+  "script_sha256": "e301ee2457516565a3c6368fc41114a2d666c31062a6b75550767cd83556a78a",
+  "n_verifiche": 152,
+  "sha256": {
+    "metrics.json": "4d0f69d40582abed4b9684b5946a6207d6c4fc88621a7bbd44ea4d77d3139cb1",
+    "scores.jsonl": "49fe750fd9f5d22ac7dd059a2ccada885acceb31e447d89a3debcd5aea26b302",
+    "config.yaml": "ea26fd6394ec5b06d30d653007ef2a4a6b4eb709de3c2bc8d69f7b21d0ff2394"
+  }
+}

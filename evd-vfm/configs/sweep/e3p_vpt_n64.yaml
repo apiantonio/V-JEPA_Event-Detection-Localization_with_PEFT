@@ -1,0 +1,13 @@
+experiment: e3p_vpt_n64
+official: true
+assi:
+  seed: [42]
+paralleli: 1
+fetta_massima: 1
+risorse:
+  p: aiq
+  t: "07:00:00"
+  c: "14"
+  g: "1"
+  m: "128G"
+note: "E3-P.2 autorizzata il 5 settembre; un seme esplorativo, budget originale."

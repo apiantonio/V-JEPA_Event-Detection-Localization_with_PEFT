@@ -1,0 +1,9 @@
+family: prompt
+name: vptdeep-n576
+variant: vpt_deep
+n_tokens: 576
+depth: null             # null = tutti i blocchi, da `start_block`
+start_block: 0
+pos_policy: rope_identity   
+init: xavier_uniform
+dropout: 0.0

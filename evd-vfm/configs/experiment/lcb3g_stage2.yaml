@@ -1,0 +1,20 @@
+# @package _global_
+#
+# B3 (GradNorm con alpha 1,5), STADIO 2: il LoRA dello stadio 1 si fonde nei pesi dell'encoder dal suo
+# ULTIMO passo (come il rivelatore di riferimento, E3-S), poi VPT-shallow n=8 per tre
+# epoche con DUE TESTE NUOVE: il preadattamento eredita solo l'adattatore (piano del
+# 21 ottobre 2026 §5.4).
+#
+# ⚠️ DIPENDE DALLO STADIO 1: si ferma nominando il checkpoint se manca.
+defaults:
+  - e3s_fondi_lora_vptshallow
+  - override /head: binary_and_classes_gradnorm
+  - override /train: class_routing_3ep
+
+exp_id: lcb3g
+objective: multitask
+
+preadattamento:
+  modo: fondi
+  adapt: lora_r32_qkvomlp
+  from: runs/lcb3g_ucf_vjepa21l_lora-r32-qkvomlp_s${seed}/checkpoint/checkpoint.pt

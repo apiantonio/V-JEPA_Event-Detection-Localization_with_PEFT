@@ -1,0 +1,20 @@
+# Valutazione secondo il protocollo (non OVAD) del laboratorio
+primary_unit: chunk
+chunk_label: ${protocol.temporal.chunk_label}
+normal_idx: ${protocol.classes.normal_idx}
+
+metrics:
+  chunk_auc: true
+  chunk_ap: true
+  chunk_prf: true
+  per_class_chunk: true
+  video_auc: false
+  video_ap: false
+  video_prf: true
+  detection_latency: true
+  event_level: true
+
+efficiency: false
+batch_size: 1   # 9.216 token per finestra
+num_workers: 8
+precision: bf16

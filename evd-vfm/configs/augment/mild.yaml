@@ -1,0 +1,7 @@
+# solo geometria, con lo scale del pre-training.
+id: mild
+random_resize_scale: [0.3, 1.0]
+random_resize_ratio: [0.75, 1.35]
+rand_augment: null
+horizontal_flip: false
+reprob: 0.0

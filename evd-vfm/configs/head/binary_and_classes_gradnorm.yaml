@@ -1,0 +1,9 @@
+# Come binary_and_classes_sum, con GradNorm (B3-GradNorm, piano del 21 ottobre
+# 2026 §5.4). alpha = 1.5: il valore ottimo su NYUv2 di Chen et al. (ICML 2018),
+# non tarato sui nostri dati. Norme dei gradienti sull'uscita dell'encoder.
+id: binary_and_classes
+n_heads: 16
+depth: 4
+balance: gradnorm
+gradnorm_alpha: 1.5
+n_classes: 14

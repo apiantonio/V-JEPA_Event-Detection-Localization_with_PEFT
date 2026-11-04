@@ -1,0 +1,8 @@
+# Attentive probe: query apprese in cross-attention sui token, poi Linear.
+id: attentive
+n_queries: 1
+n_heads: 16       # vjepa2/configs/eval_2_1/vitl-384/k400.yaml
+depth: 4          # classifier.num_probe_blocks nello stesso config ufficiale
+norm: true        # layer arbitrari del backbone non hanno una norm addestrata
+n_classes: 1      # output binario
+

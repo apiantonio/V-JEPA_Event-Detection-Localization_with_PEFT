@@ -1,0 +1,8 @@
+defaults:
+  - combo_dora_r32_vptshallow_n8
+name: dora-r16-vptshallow-n8
+componenti:
+  reparam:
+    name: dora-r16-qkvomlp
+    r: 16
+    alpha: 32

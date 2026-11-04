@@ -1,0 +1,13 @@
+experiment: e3r_dora
+official: true
+assi:
+  adapt: [dora_r8_qkvomlp, dora_r16_qkvomlp, dora_r32_qkvomlp, dora_r64_qkvomlp]
+  seed: [42, 67, 104]
+paralleli: 9
+fetta_massima: 9
+risorse:
+  p: aiq
+  t: "07:00:00"
+  c: "14"
+  g: "1"
+  m: "128G"

@@ -1,0 +1,11 @@
+# @package _global_
+defaults:
+  - e3p_vpt
+  - override /adapt: vpt_deep_n8_su_dora_r32
+  - override /train: peft_budget_v2_3ep
+
+exp_id: e3s
+preadattamento:
+  modo: fondi
+  adapt: dora_r32_qkvomlp
+  from: runs/e3r_ucf_vjepa21l_dora-r32-qkvomlp_s${seed}/checkpoint/checkpoint.pt
