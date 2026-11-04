@@ -1,0 +1,2619 @@
+{
+  "schema": 1,
+  "coordinate_convention": "native_pixels_xyxy_inclusive_zero_based",
+  "frame_intervals": "inclusive",
+  "missing_frames": "unannotated, not negative",
+  "dataset": "ucf_crime",
+  "video_id": "Explosion007_x264",
+  "split": "test",
+  "width": 320,
+  "height": 240,
+  "num_frames": 16289,
+  "fps": 30.0,
+  "sha256": "ceb6b0b6791344341e22701c087ab4dc88812fed54bf453f42135019b6bfc19e",
+  "events": [
+    {
+      "start": 1619,
+      "end": 3377,
+      "class_name": "Explosion"
+    }
+  ],
+  "reviewed_segments": [
+    {
+      "start": 1619,
+      "end": 1633,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@1799x32ic0081b3b297c:4:1619-1633",
+        "start": 1619,
+        "end": 1633,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1634,
+      "end": 1649,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@1799x32ic0081b3b297c:5:1634-1649",
+        "start": 1634,
+        "end": 1649,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1650,
+      "end": 1664,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@1799x32ic0081b3b297c:6:1650-1664",
+        "start": 1650,
+        "end": 1664,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1665,
+      "end": 1679,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@1799x32ic0081b3b297c:7:1665-1679",
+        "start": 1665,
+        "end": 1679,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1680,
+      "end": 1691,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@1919x32ic0081b3b297c:0:1680-1691",
+        "start": 1680,
+        "end": 1691,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1692,
+      "end": 1707,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@1919x32ic0081b3b297c:1:1692-1707",
+        "start": 1692,
+        "end": 1707,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1708,
+      "end": 1722,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@1919x32ic0081b3b297c:2:1708-1722",
+        "start": 1708,
+        "end": 1722,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1723,
+      "end": 1738,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@1919x32ic0081b3b297c:3:1723-1738",
+        "start": 1723,
+        "end": 1738,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1739,
+      "end": 1753,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@1919x32ic0081b3b297c:4:1739-1753",
+        "start": 1739,
+        "end": 1753,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1754,
+      "end": 1769,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@1919x32ic0081b3b297c:5:1754-1769",
+        "start": 1754,
+        "end": 1769,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1770,
+      "end": 1784,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@1919x32ic0081b3b297c:6:1770-1784",
+        "start": 1770,
+        "end": 1784,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1785,
+      "end": 1799,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@1919x32ic0081b3b297c:7:1785-1799",
+        "start": 1785,
+        "end": 1799,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1800,
+      "end": 1815,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@1919x32ic0081b3b297c:8:1800-1815",
+        "start": 1800,
+        "end": 1815,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1816,
+      "end": 1830,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@1919x32ic0081b3b297c:9:1816-1830",
+        "start": 1816,
+        "end": 1830,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1831,
+      "end": 1846,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@1919x32ic0081b3b297c:10:1831-1846",
+        "start": 1831,
+        "end": 1846,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1847,
+      "end": 1859,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@1919x32ic0081b3b297c:11:1847-1859",
+        "start": 1847,
+        "end": 1859,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1860,
+      "end": 1873,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2039x32ic0081b3b297c:4:1860-1873",
+        "start": 1860,
+        "end": 1873,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1874,
+      "end": 1889,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2039x32ic0081b3b297c:5:1874-1889",
+        "start": 1874,
+        "end": 1889,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1890,
+      "end": 1904,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2039x32ic0081b3b297c:6:1890-1904",
+        "start": 1890,
+        "end": 1904,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1905,
+      "end": 1919,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2039x32ic0081b3b297c:7:1905-1919",
+        "start": 1905,
+        "end": 1919,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1920,
+      "end": 1935,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2039x32ic0081b3b297c:8:1920-1935",
+        "start": 1920,
+        "end": 1935,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1936,
+      "end": 1950,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2039x32ic0081b3b297c:9:1936-1950",
+        "start": 1936,
+        "end": 1950,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1951,
+      "end": 1966,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2039x32ic0081b3b297c:10:1951-1966",
+        "start": 1951,
+        "end": 1966,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1967,
+      "end": 1979,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2039x32ic0081b3b297c:11:1967-1979",
+        "start": 1967,
+        "end": 1979,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1980,
+      "end": 1993,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2159x32ic0081b3b297c:4:1980-1993",
+        "start": 1980,
+        "end": 1993,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1994,
+      "end": 2009,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2159x32ic0081b3b297c:5:1994-2009",
+        "start": 1994,
+        "end": 2009,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2010,
+      "end": 2024,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2159x32ic0081b3b297c:6:2010-2024",
+        "start": 2010,
+        "end": 2024,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2025,
+      "end": 2039,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2159x32ic0081b3b297c:7:2025-2039",
+        "start": 2025,
+        "end": 2039,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2040,
+      "end": 2055,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2159x32ic0081b3b297c:8:2040-2055",
+        "start": 2040,
+        "end": 2055,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2056,
+      "end": 2070,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2159x32ic0081b3b297c:9:2056-2070",
+        "start": 2056,
+        "end": 2070,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2071,
+      "end": 2086,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2159x32ic0081b3b297c:10:2071-2086",
+        "start": 2071,
+        "end": 2086,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2087,
+      "end": 2099,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2159x32ic0081b3b297c:11:2087-2099",
+        "start": 2087,
+        "end": 2099,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2100,
+      "end": 2113,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2279x32ic0081b3b297c:4:2100-2113",
+        "start": 2100,
+        "end": 2113,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2114,
+      "end": 2129,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2279x32ic0081b3b297c:5:2114-2129",
+        "start": 2114,
+        "end": 2129,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2130,
+      "end": 2144,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2279x32ic0081b3b297c:6:2130-2144",
+        "start": 2130,
+        "end": 2144,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2145,
+      "end": 2159,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2279x32ic0081b3b297c:7:2145-2159",
+        "start": 2145,
+        "end": 2159,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2160,
+      "end": 2175,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2279x32ic0081b3b297c:8:2160-2175",
+        "start": 2160,
+        "end": 2175,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2176,
+      "end": 2190,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2279x32ic0081b3b297c:9:2176-2190",
+        "start": 2176,
+        "end": 2190,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2191,
+      "end": 2206,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2279x32ic0081b3b297c:10:2191-2206",
+        "start": 2191,
+        "end": 2206,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2207,
+      "end": 2219,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2279x32ic0081b3b297c:11:2207-2219",
+        "start": 2207,
+        "end": 2219,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2220,
+      "end": 2233,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2399x32ic0081b3b297c:4:2220-2233",
+        "start": 2220,
+        "end": 2233,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2234,
+      "end": 2249,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2399x32ic0081b3b297c:5:2234-2249",
+        "start": 2234,
+        "end": 2249,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2250,
+      "end": 2264,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2399x32ic0081b3b297c:6:2250-2264",
+        "start": 2250,
+        "end": 2264,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2265,
+      "end": 2279,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2399x32ic0081b3b297c:7:2265-2279",
+        "start": 2265,
+        "end": 2279,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2280,
+      "end": 2295,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2399x32ic0081b3b297c:8:2280-2295",
+        "start": 2280,
+        "end": 2295,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2296,
+      "end": 2310,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2399x32ic0081b3b297c:9:2296-2310",
+        "start": 2296,
+        "end": 2310,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2311,
+      "end": 2326,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2399x32ic0081b3b297c:10:2311-2326",
+        "start": 2311,
+        "end": 2326,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2327,
+      "end": 2339,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2399x32ic0081b3b297c:11:2327-2339",
+        "start": 2327,
+        "end": 2339,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2340,
+      "end": 2353,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2519x32ic0081b3b297c:4:2340-2353",
+        "start": 2340,
+        "end": 2353,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2354,
+      "end": 2369,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2519x32ic0081b3b297c:5:2354-2369",
+        "start": 2354,
+        "end": 2369,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2370,
+      "end": 2384,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2519x32ic0081b3b297c:6:2370-2384",
+        "start": 2370,
+        "end": 2384,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2385,
+      "end": 2399,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2519x32ic0081b3b297c:7:2385-2399",
+        "start": 2385,
+        "end": 2399,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2400,
+      "end": 2415,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2519x32ic0081b3b297c:8:2400-2415",
+        "start": 2400,
+        "end": 2415,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2416,
+      "end": 2430,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2519x32ic0081b3b297c:9:2416-2430",
+        "start": 2416,
+        "end": 2430,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2431,
+      "end": 2446,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2519x32ic0081b3b297c:10:2431-2446",
+        "start": 2431,
+        "end": 2446,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2447,
+      "end": 2459,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2519x32ic0081b3b297c:11:2447-2459",
+        "start": 2447,
+        "end": 2459,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2460,
+      "end": 2473,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2639x32ic0081b3b297c:4:2460-2473",
+        "start": 2460,
+        "end": 2473,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2474,
+      "end": 2489,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2639x32ic0081b3b297c:5:2474-2489",
+        "start": 2474,
+        "end": 2489,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2490,
+      "end": 2504,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2639x32ic0081b3b297c:6:2490-2504",
+        "start": 2490,
+        "end": 2504,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2505,
+      "end": 2519,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2639x32ic0081b3b297c:7:2505-2519",
+        "start": 2505,
+        "end": 2519,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2520,
+      "end": 2535,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2639x32ic0081b3b297c:8:2520-2535",
+        "start": 2520,
+        "end": 2535,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2536,
+      "end": 2550,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2639x32ic0081b3b297c:9:2536-2550",
+        "start": 2536,
+        "end": 2550,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2551,
+      "end": 2566,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2639x32ic0081b3b297c:10:2551-2566",
+        "start": 2551,
+        "end": 2566,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2567,
+      "end": 2579,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2639x32ic0081b3b297c:11:2567-2579",
+        "start": 2567,
+        "end": 2579,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2580,
+      "end": 2593,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2759x32ic0081b3b297c:4:2580-2593",
+        "start": 2580,
+        "end": 2593,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2594,
+      "end": 2609,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2759x32ic0081b3b297c:5:2594-2609",
+        "start": 2594,
+        "end": 2609,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2610,
+      "end": 2624,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2759x32ic0081b3b297c:6:2610-2624",
+        "start": 2610,
+        "end": 2624,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2625,
+      "end": 2639,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2759x32ic0081b3b297c:7:2625-2639",
+        "start": 2625,
+        "end": 2639,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2640,
+      "end": 2655,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2759x32ic0081b3b297c:8:2640-2655",
+        "start": 2640,
+        "end": 2655,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2656,
+      "end": 2670,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2759x32ic0081b3b297c:9:2656-2670",
+        "start": 2656,
+        "end": 2670,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2671,
+      "end": 2686,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2759x32ic0081b3b297c:10:2671-2686",
+        "start": 2671,
+        "end": 2686,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2687,
+      "end": 2699,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2759x32ic0081b3b297c:11:2687-2699",
+        "start": 2687,
+        "end": 2699,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2700,
+      "end": 2713,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2879x32ic0081b3b297c:4:2700-2713",
+        "start": 2700,
+        "end": 2713,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2714,
+      "end": 2729,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2879x32ic0081b3b297c:5:2714-2729",
+        "start": 2714,
+        "end": 2729,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2730,
+      "end": 2744,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2879x32ic0081b3b297c:6:2730-2744",
+        "start": 2730,
+        "end": 2744,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2745,
+      "end": 2759,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2879x32ic0081b3b297c:7:2745-2759",
+        "start": 2745,
+        "end": 2759,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2760,
+      "end": 2775,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2879x32ic0081b3b297c:8:2760-2775",
+        "start": 2760,
+        "end": 2775,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2776,
+      "end": 2790,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2879x32ic0081b3b297c:9:2776-2790",
+        "start": 2776,
+        "end": 2790,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2791,
+      "end": 2806,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2879x32ic0081b3b297c:10:2791-2806",
+        "start": 2791,
+        "end": 2806,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2807,
+      "end": 2819,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2879x32ic0081b3b297c:11:2807-2819",
+        "start": 2807,
+        "end": 2819,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2820,
+      "end": 2833,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2999x32ic0081b3b297c:4:2820-2833",
+        "start": 2820,
+        "end": 2833,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2834,
+      "end": 2849,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2999x32ic0081b3b297c:5:2834-2849",
+        "start": 2834,
+        "end": 2849,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2850,
+      "end": 2864,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2999x32ic0081b3b297c:6:2850-2864",
+        "start": 2850,
+        "end": 2864,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2865,
+      "end": 2879,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2999x32ic0081b3b297c:7:2865-2879",
+        "start": 2865,
+        "end": 2879,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2880,
+      "end": 2895,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2999x32ic0081b3b297c:8:2880-2895",
+        "start": 2880,
+        "end": 2895,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2896,
+      "end": 2910,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2999x32ic0081b3b297c:9:2896-2910",
+        "start": 2896,
+        "end": 2910,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2911,
+      "end": 2926,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2999x32ic0081b3b297c:10:2911-2926",
+        "start": 2911,
+        "end": 2926,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2927,
+      "end": 2939,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@2999x32ic0081b3b297c:11:2927-2939",
+        "start": 2927,
+        "end": 2939,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2940,
+      "end": 2953,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3119x32ic0081b3b297c:4:2940-2953",
+        "start": 2940,
+        "end": 2953,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2954,
+      "end": 2969,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3119x32ic0081b3b297c:5:2954-2969",
+        "start": 2954,
+        "end": 2969,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2970,
+      "end": 2984,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3119x32ic0081b3b297c:6:2970-2984",
+        "start": 2970,
+        "end": 2984,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2985,
+      "end": 2999,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3119x32ic0081b3b297c:7:2985-2999",
+        "start": 2985,
+        "end": 2999,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 3000,
+      "end": 3015,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3119x32ic0081b3b297c:8:3000-3015",
+        "start": 3000,
+        "end": 3015,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 3016,
+      "end": 3030,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3119x32ic0081b3b297c:9:3016-3030",
+        "start": 3016,
+        "end": 3030,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 3031,
+      "end": 3046,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3119x32ic0081b3b297c:10:3031-3046",
+        "start": 3031,
+        "end": 3046,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 3047,
+      "end": 3059,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3119x32ic0081b3b297c:11:3047-3059",
+        "start": 3047,
+        "end": 3059,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 3060,
+      "end": 3073,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3239x32ic0081b3b297c:4:3060-3073",
+        "start": 3060,
+        "end": 3073,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 3074,
+      "end": 3089,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3239x32ic0081b3b297c:5:3074-3089",
+        "start": 3074,
+        "end": 3089,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 3090,
+      "end": 3104,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3239x32ic0081b3b297c:6:3090-3104",
+        "start": 3090,
+        "end": 3104,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 3105,
+      "end": 3119,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3239x32ic0081b3b297c:7:3105-3119",
+        "start": 3105,
+        "end": 3119,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 3120,
+      "end": 3135,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3239x32ic0081b3b297c:8:3120-3135",
+        "start": 3120,
+        "end": 3135,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 3136,
+      "end": 3150,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3239x32ic0081b3b297c:9:3136-3150",
+        "start": 3136,
+        "end": 3150,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 3151,
+      "end": 3166,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3239x32ic0081b3b297c:10:3151-3166",
+        "start": 3151,
+        "end": 3166,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 3167,
+      "end": 3179,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3239x32ic0081b3b297c:11:3167-3179",
+        "start": 3167,
+        "end": 3179,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 3180,
+      "end": 3193,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3359x32ic0081b3b297c:4:3180-3193",
+        "start": 3180,
+        "end": 3193,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 3194,
+      "end": 3209,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3359x32ic0081b3b297c:5:3194-3209",
+        "start": 3194,
+        "end": 3209,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 3210,
+      "end": 3224,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3359x32ic0081b3b297c:6:3210-3224",
+        "start": 3210,
+        "end": 3224,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 3225,
+      "end": 3239,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3359x32ic0081b3b297c:7:3225-3239",
+        "start": 3225,
+        "end": 3239,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 3240,
+      "end": 3255,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3359x32ic0081b3b297c:8:3240-3255",
+        "start": 3240,
+        "end": 3255,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 3256,
+      "end": 3270,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3359x32ic0081b3b297c:9:3256-3270",
+        "start": 3256,
+        "end": 3270,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 3271,
+      "end": 3286,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3359x32ic0081b3b297c:10:3271-3286",
+        "start": 3271,
+        "end": 3286,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 3287,
+      "end": 3301,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3359x32ic0081b3b297c:11:3287-3301",
+        "start": 3287,
+        "end": 3301,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 3302,
+      "end": 3316,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3359x32ic0081b3b297c:12:3302-3316",
+        "start": 3302,
+        "end": 3316,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 3317,
+      "end": 3332,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3359x32ic0081b3b297c:13:3317-3332",
+        "start": 3317,
+        "end": 3332,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 3333,
+      "end": 3347,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3359x32ic0081b3b297c:14:3333-3347",
+        "start": 3333,
+        "end": 3347,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 3348,
+      "end": 3359,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3359x32ic0081b3b297c:15:3348-3359",
+        "start": 3348,
+        "end": 3359,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 3360,
+      "end": 3375,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3479x32ic0081b3b297c:8:3360-3375",
+        "start": 3360,
+        "end": 3375,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 3376,
+      "end": 3377,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            22,
+            30,
+            297,
+            199
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion007_x264@3479x32ic0081b3b297c:9:3376-3377",
+        "start": 3376,
+        "end": 3377,
+        "mode": "plane_hold"
+      }
+    }
+  ]
+}

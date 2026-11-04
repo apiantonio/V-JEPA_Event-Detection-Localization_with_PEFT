@@ -1,0 +1,997 @@
+{
+  "schema": 1,
+  "coordinate_convention": "native_pixels_xyxy_inclusive_zero_based",
+  "frame_intervals": "inclusive",
+  "missing_frames": "unannotated, not negative",
+  "dataset": "ucf_crime",
+  "video_id": "Burglary005_x264",
+  "split": "test",
+  "width": 320,
+  "height": 240,
+  "num_frames": 7729,
+  "fps": 30.0,
+  "sha256": "df64c811305ec0e378565fa4fde8a433db96071236c6e85b4b1402b680bdffc0",
+  "events": [
+    {
+      "start": 4710,
+      "end": 5040,
+      "class_name": "Burglary"
+    },
+    {
+      "start": 5441,
+      "end": 5492,
+      "class_name": "Burglary"
+    },
+    {
+      "start": 6736,
+      "end": 6788,
+      "class_name": "Burglary"
+    }
+  ],
+  "reviewed_segments": [
+    {
+      "start": 4710,
+      "end": 4722,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            95,
+            68,
+            152,
+            213
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            131,
+            39,
+            145,
+            91
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@4919x32ic0081b3b297c:2:4710-4722",
+        "start": 4710,
+        "end": 4722,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4723,
+      "end": 4738,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            109,
+            70,
+            160,
+            215
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            131,
+            39,
+            145,
+            91
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@4919x32ic0081b3b297c:3:4723-4738",
+        "start": 4723,
+        "end": 4738,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4739,
+      "end": 4753,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            65,
+            86,
+            198,
+            214
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            132,
+            39,
+            149,
+            94
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@4919x32ic0081b3b297c:4:4739-4753",
+        "start": 4739,
+        "end": 4753,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4754,
+      "end": 4769,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            114,
+            73,
+            211,
+            213
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            132,
+            39,
+            145,
+            76
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@4919x32ic0081b3b297c:5:4754-4769",
+        "start": 4754,
+        "end": 4769,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4770,
+      "end": 4784,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            127,
+            68,
+            189,
+            210
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            132,
+            39,
+            147,
+            83
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@4919x32ic0081b3b297c:6:4770-4784",
+        "start": 4770,
+        "end": 4784,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4785,
+      "end": 4799,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            91,
+            85,
+            198,
+            211
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            132,
+            39,
+            146,
+            91
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@4919x32ic0081b3b297c:7:4785-4799",
+        "start": 4785,
+        "end": 4799,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4800,
+      "end": 4811,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            94,
+            71,
+            201,
+            207
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            132,
+            39,
+            146,
+            90
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@5039x32ic0081b3b297c:0:4800-4811",
+        "start": 4800,
+        "end": 4811,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4812,
+      "end": 4827,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            108,
+            64,
+            175,
+            194
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            132,
+            39,
+            146,
+            92
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@5039x32ic0081b3b297c:1:4812-4827",
+        "start": 4812,
+        "end": 4827,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4828,
+      "end": 4842,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            59,
+            82,
+            146,
+            189
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            131,
+            39,
+            146,
+            91
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@5039x32ic0081b3b297c:2:4828-4842",
+        "start": 4828,
+        "end": 4842,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4843,
+      "end": 4858,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            16,
+            93,
+            97,
+            188
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            131,
+            39,
+            146,
+            91
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@5039x32ic0081b3b297c:3:4843-4858",
+        "start": 4843,
+        "end": 4858,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4859,
+      "end": 4873,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            4,
+            97,
+            70,
+            186
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            131,
+            39,
+            146,
+            91
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@5039x32ic0081b3b297c:4:4859-4873",
+        "start": 4859,
+        "end": 4873,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4874,
+      "end": 4889,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            2,
+            94,
+            71,
+            187
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            131,
+            39,
+            145,
+            91
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@5039x32ic0081b3b297c:5:4874-4889",
+        "start": 4874,
+        "end": 4889,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4890,
+      "end": 4904,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            25,
+            97,
+            95,
+            188
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            132,
+            39,
+            145,
+            91
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@5039x32ic0081b3b297c:6:4890-4904",
+        "start": 4890,
+        "end": 4904,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4905,
+      "end": 4919,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            85,
+            69,
+            150,
+            185
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            132,
+            39,
+            146,
+            91
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@5039x32ic0081b3b297c:7:4905-4919",
+        "start": 4905,
+        "end": 4919,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4920,
+      "end": 4935,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            129,
+            78,
+            230,
+            204
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            132,
+            39,
+            146,
+            91
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@5039x32ic0081b3b297c:8:4920-4935",
+        "start": 4920,
+        "end": 4935,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4936,
+      "end": 4950,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            130,
+            40,
+            146,
+            91
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            156,
+            86,
+            243,
+            208
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@5039x32ic0081b3b297c:9:4936-4950",
+        "start": 4936,
+        "end": 4950,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4951,
+      "end": 4966,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            127,
+            40,
+            146,
+            93
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            170,
+            91,
+            245,
+            208
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@5039x32ic0081b3b297c:10:4951-4966",
+        "start": 4951,
+        "end": 4966,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4967,
+      "end": 4981,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            126,
+            42,
+            146,
+            99
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            170,
+            73,
+            245,
+            210
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@5039x32ic0081b3b297c:11:4967-4981",
+        "start": 4967,
+        "end": 4981,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4982,
+      "end": 4996,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            120,
+            46,
+            142,
+            104
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            171,
+            76,
+            245,
+            209
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@5039x32ic0081b3b297c:12:4982-4996",
+        "start": 4982,
+        "end": 4996,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4997,
+      "end": 5012,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            112,
+            52,
+            137,
+            117
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            185,
+            97,
+            242,
+            210
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@5039x32ic0081b3b297c:13:4997-5012",
+        "start": 4997,
+        "end": 5012,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 5013,
+      "end": 5027,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            106,
+            61,
+            138,
+            138
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            209,
+            102,
+            241,
+            130
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@5039x32ic0081b3b297c:14:5013-5027",
+        "start": 5013,
+        "end": 5027,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 5028,
+      "end": 5039,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            108,
+            79,
+            148,
+            170
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@5039x32ic0081b3b297c:15:5028-5039",
+        "start": 5028,
+        "end": 5039,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 5040,
+      "end": 5040,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            116,
+            86,
+            168,
+            179
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@5159x32ic0081b3b297c:8:5040-5040",
+        "start": 5040,
+        "end": 5040,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 5441,
+      "end": 5446,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            0,
+            110,
+            69,
+            212
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            140,
+            69,
+            237,
+            203
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@5519x32ic0081b3b297c:10:5441-5446",
+        "start": 5441,
+        "end": 5446,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 5447,
+      "end": 5459,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            3,
+            98,
+            115,
+            225
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            112,
+            69,
+            235,
+            213
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@5519x32ic0081b3b297c:11:5447-5459",
+        "start": 5447,
+        "end": 5459,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 5460,
+      "end": 5473,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            61,
+            77,
+            161,
+            198
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            62,
+            99,
+            139,
+            225
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@5639x32ic0081b3b297c:4:5460-5473",
+        "start": 5460,
+        "end": 5473,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 5474,
+      "end": 5489,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            34,
+            82,
+            110,
+            194
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            123,
+            96,
+            225,
+            223
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@5639x32ic0081b3b297c:5:5474-5489",
+        "start": 5474,
+        "end": 5489,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 5490,
+      "end": 5492,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            1,
+            88,
+            63,
+            166
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            161,
+            103,
+            239,
+            225
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@5639x32ic0081b3b297c:6:5490-5492",
+        "start": 5490,
+        "end": 5492,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 6736,
+      "end": 6750,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            210,
+            100,
+            239,
+            164
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@6839x32ic0081b3b297c:9:6736-6750",
+        "start": 6736,
+        "end": 6750,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 6751,
+      "end": 6766,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            114,
+            85,
+            213,
+            211
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@6839x32ic0081b3b297c:10:6751-6766",
+        "start": 6751,
+        "end": 6766,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 6767,
+      "end": 6779,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            40,
+            85,
+            125,
+            209
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@6839x32ic0081b3b297c:11:6767-6779",
+        "start": 6767,
+        "end": 6779,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 6780,
+      "end": 6788,
+      "boxes": [
+        {
+          "class_name": "Burglary",
+          "xyxy": [
+            0,
+            96,
+            68,
+            186
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Burglary005_x264@6959x32ic0081b3b297c:4:6780-6788",
+        "start": 6780,
+        "end": 6788,
+        "mode": "plane_hold"
+      }
+    }
+  ]
+}

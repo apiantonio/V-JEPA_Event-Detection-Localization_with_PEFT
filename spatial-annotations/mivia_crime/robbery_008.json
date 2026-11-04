@@ -1,0 +1,1115 @@
+{
+  "schema": 1,
+  "coordinate_convention": "native_pixels_xyxy_inclusive_zero_based",
+  "frame_intervals": "inclusive",
+  "missing_frames": "unannotated, not negative",
+  "dataset": "mivia_crime",
+  "video_id": "robbery_008",
+  "split": "test",
+  "width": 362,
+  "height": 270,
+  "num_frames": 1893,
+  "fps": 30.0,
+  "sha256": "7674683818b6b2fc9c0251e9ca9931ff1b325e08555f3f2b89f5f70e5f2d01ce",
+  "events": [
+    {
+      "start": 278,
+      "end": 655,
+      "class_name": "Robbery"
+    }
+  ],
+  "reviewed_segments": [
+    {
+      "start": 278,
+      "end": 282,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            209,
+            171,
+            332,
+            269
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            215,
+            97,
+            261,
+            181
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            249,
+            125,
+            288,
+            220
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "robbery_008@479x32ic0081b3b297c:2:278-282",
+        "start": 278,
+        "end": 282,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 283,
+      "end": 298,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            209,
+            171,
+            332,
+            269
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            215,
+            97,
+            261,
+            181
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            252,
+            123,
+            291,
+            221
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "robbery_008@479x32ic0081b3b297c:3:283-298",
+        "start": 283,
+        "end": 298,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 299,
+      "end": 313,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            209,
+            171,
+            332,
+            269
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            217,
+            99,
+            259,
+            177
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            250,
+            128,
+            302,
+            223
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "robbery_008@479x32ic0081b3b297c:4:299-313",
+        "start": 299,
+        "end": 313,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 314,
+      "end": 329,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            209,
+            171,
+            332,
+            269
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            220,
+            97,
+            261,
+            172
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            255,
+            129,
+            308,
+            222
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "robbery_008@479x32ic0081b3b297c:5:314-329",
+        "start": 314,
+        "end": 329,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 330,
+      "end": 344,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            209,
+            171,
+            332,
+            269
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            223,
+            97,
+            261,
+            172
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            256,
+            135,
+            313,
+            222
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "robbery_008@479x32ic0081b3b297c:6:330-344",
+        "start": 330,
+        "end": 344,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 345,
+      "end": 359,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            209,
+            171,
+            332,
+            269
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            223,
+            97,
+            261,
+            172
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            258,
+            137,
+            313,
+            221
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "robbery_008@479x32ic0081b3b297c:7:345-359",
+        "start": 345,
+        "end": 359,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 360,
+      "end": 371,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            209,
+            171,
+            332,
+            269
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            222,
+            97,
+            261,
+            172
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            254,
+            137,
+            313,
+            221
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "robbery_008@599x32ic0081b3b297c:0:360-371",
+        "start": 360,
+        "end": 371,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 372,
+      "end": 387,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            209,
+            171,
+            332,
+            269
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            222,
+            97,
+            261,
+            172
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            254,
+            137,
+            313,
+            221
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "robbery_008@599x32ic0081b3b297c:1:372-387",
+        "start": 372,
+        "end": 387,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 388,
+      "end": 402,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            209,
+            171,
+            332,
+            269
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            222,
+            97,
+            261,
+            172
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            259,
+            137,
+            308,
+            221
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "robbery_008@599x32ic0081b3b297c:2:388-402",
+        "start": 388,
+        "end": 402,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 403,
+      "end": 418,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            209,
+            171,
+            332,
+            269
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            222,
+            97,
+            261,
+            172
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            257,
+            137,
+            302,
+            221
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "robbery_008@599x32ic0081b3b297c:3:403-418",
+        "start": 403,
+        "end": 418,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 419,
+      "end": 433,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            209,
+            171,
+            332,
+            269
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            222,
+            97,
+            261,
+            172
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            254,
+            131,
+            301,
+            221
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "robbery_008@599x32ic0081b3b297c:4:419-433",
+        "start": 419,
+        "end": 433,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 434,
+      "end": 449,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            209,
+            171,
+            332,
+            269
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            222,
+            97,
+            261,
+            172
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            263,
+            140,
+            307,
+            221
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "robbery_008@599x32ic0081b3b297c:5:434-449",
+        "start": 434,
+        "end": 449,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 450,
+      "end": 464,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            209,
+            171,
+            332,
+            269
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            222,
+            97,
+            261,
+            172
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            259,
+            141,
+            309,
+            222
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "robbery_008@599x32ic0081b3b297c:6:450-464",
+        "start": 450,
+        "end": 464,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 465,
+      "end": 479,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            209,
+            171,
+            332,
+            269
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            222,
+            97,
+            261,
+            172
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            260,
+            145,
+            316,
+            222
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "robbery_008@599x32ic0081b3b297c:7:465-479",
+        "start": 465,
+        "end": 479,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 480,
+      "end": 495,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            209,
+            171,
+            332,
+            269
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            222,
+            97,
+            261,
+            172
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            274,
+            141,
+            322,
+            215
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "robbery_008@599x32ic0081b3b297c:8:480-495",
+        "start": 480,
+        "end": 495,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 496,
+      "end": 510,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            209,
+            171,
+            332,
+            269
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            222,
+            97,
+            261,
+            172
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            273,
+            136,
+            326,
+            191
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "robbery_008@599x32ic0081b3b297c:9:496-510",
+        "start": 496,
+        "end": 510,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 511,
+      "end": 526,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            209,
+            171,
+            332,
+            269
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            222,
+            97,
+            261,
+            172
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            245,
+            133,
+            295,
+            223
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "robbery_008@599x32ic0081b3b297c:10:511-526",
+        "start": 511,
+        "end": 526,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 527,
+      "end": 541,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            209,
+            171,
+            332,
+            269
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            214,
+            134,
+            267,
+            224
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            222,
+            97,
+            261,
+            172
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "robbery_008@599x32ic0081b3b297c:11:527-541",
+        "start": 527,
+        "end": 541,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 542,
+      "end": 556,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            202,
+            137,
+            258,
+            269
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            209,
+            171,
+            332,
+            269
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            231,
+            96,
+            268,
+            165
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "robbery_008@599x32ic0081b3b297c:12:542-556",
+        "start": 542,
+        "end": 556,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 557,
+      "end": 572,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            208,
+            140,
+            266,
+            269
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            209,
+            171,
+            332,
+            269
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            231,
+            96,
+            268,
+            165
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "robbery_008@599x32ic0081b3b297c:13:557-572",
+        "start": 557,
+        "end": 572,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 573,
+      "end": 587,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            209,
+            171,
+            332,
+            269
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            212,
+            136,
+            296,
+            229
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            230,
+            97,
+            267,
+            170
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "robbery_008@599x32ic0081b3b297c:14:573-587",
+        "start": 573,
+        "end": 587,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 588,
+      "end": 599,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            215,
+            176,
+            336,
+            269
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            230,
+            97,
+            267,
+            170
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            256,
+            139,
+            324,
+            268
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "robbery_008@599x32ic0081b3b297c:15:588-599",
+        "start": 588,
+        "end": 599,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 600,
+      "end": 615,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            227,
+            189,
+            346,
+            269
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            230,
+            100,
+            267,
+            173
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            271,
+            152,
+            344,
+            269
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "robbery_008@719x32ic0081b3b297c:8:600-615",
+        "start": 600,
+        "end": 615,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 616,
+      "end": 630,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            227,
+            174,
+            348,
+            269
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            230,
+            100,
+            267,
+            173
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            279,
+            137,
+            344,
+            269
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "robbery_008@719x32ic0081b3b297c:9:616-630",
+        "start": 616,
+        "end": 630,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 631,
+      "end": 646,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            224,
+            91,
+            261,
+            164
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            262,
+            131,
+            342,
+            260
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            274,
+            172,
+            325,
+            269
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "robbery_008@719x32ic0081b3b297c:10:631-646",
+        "start": 631,
+        "end": 646,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 647,
+      "end": 655,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            228,
+            90,
+            265,
+            163
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            253,
+            125,
+            330,
+            246
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            257,
+            141,
+            308,
+            247
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "robbery_008@719x32ic0081b3b297c:11:647-655",
+        "start": 647,
+        "end": 655,
+        "mode": "plane_hold"
+      }
+    }
+  ]
+}

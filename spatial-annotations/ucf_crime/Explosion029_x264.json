@@ -1,0 +1,265 @@
+{
+  "schema": 1,
+  "coordinate_convention": "native_pixels_xyxy_inclusive_zero_based",
+  "frame_intervals": "inclusive",
+  "missing_frames": "unannotated, not negative",
+  "dataset": "ucf_crime",
+  "video_id": "Explosion029_x264",
+  "split": "test",
+  "width": 320,
+  "height": 240,
+  "num_frames": 2410,
+  "fps": 30.0,
+  "sha256": "61ea0ff0293cbc53a9921d145ff08ff3814892544469d2a886783be3548e3834",
+  "events": [
+    {
+      "start": 1868,
+      "end": 2020,
+      "class_name": "Arson"
+    }
+  ],
+  "reviewed_segments": [
+    {
+      "start": 1868,
+      "end": 1873,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            274,
+            139,
+            299,
+            158
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion029_x264@2039x32ic0081b3b297c:4:1868-1873",
+        "start": 1868,
+        "end": 1873,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1874,
+      "end": 1889,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            258,
+            100,
+            319,
+            159
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion029_x264@2039x32ic0081b3b297c:5:1874-1889",
+        "start": 1874,
+        "end": 1889,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1890,
+      "end": 1904,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            289,
+            105,
+            319,
+            153
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion029_x264@2039x32ic0081b3b297c:6:1890-1904",
+        "start": 1890,
+        "end": 1904,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1905,
+      "end": 1919,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            287,
+            100,
+            319,
+            155
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion029_x264@2039x32ic0081b3b297c:7:1905-1919",
+        "start": 1905,
+        "end": 1919,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1920,
+      "end": 1935,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            285,
+            83,
+            319,
+            155
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion029_x264@2039x32ic0081b3b297c:8:1920-1935",
+        "start": 1920,
+        "end": 1935,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1936,
+      "end": 1950,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            281,
+            107,
+            319,
+            155
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion029_x264@2039x32ic0081b3b297c:9:1936-1950",
+        "start": 1936,
+        "end": 1950,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1951,
+      "end": 1966,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            286,
+            107,
+            319,
+            155
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion029_x264@2039x32ic0081b3b297c:10:1951-1966",
+        "start": 1951,
+        "end": 1966,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1967,
+      "end": 1981,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            286,
+            98,
+            319,
+            155
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion029_x264@2039x32ic0081b3b297c:11:1967-1981",
+        "start": 1967,
+        "end": 1981,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1982,
+      "end": 1996,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            284,
+            93,
+            319,
+            155
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion029_x264@2039x32ic0081b3b297c:12:1982-1996",
+        "start": 1982,
+        "end": 1996,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1997,
+      "end": 2012,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            285,
+            82,
+            319,
+            155
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion029_x264@2039x32ic0081b3b297c:13:1997-2012",
+        "start": 1997,
+        "end": 2012,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2013,
+      "end": 2020,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            284,
+            82,
+            319,
+            155
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion029_x264@2039x32ic0081b3b297c:14:2013-2020",
+        "start": 2013,
+        "end": 2020,
+        "mode": "plane_hold"
+      }
+    }
+  ]
+}

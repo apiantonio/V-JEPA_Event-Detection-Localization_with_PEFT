@@ -1,0 +1,1846 @@
+{
+  "schema": 1,
+  "coordinate_convention": "native_pixels_xyxy_inclusive_zero_based",
+  "frame_intervals": "inclusive",
+  "missing_frames": "unannotated, not negative",
+  "dataset": "ucf_crime",
+  "video_id": "Explosion004_x264",
+  "split": "test",
+  "width": 320,
+  "height": 240,
+  "num_frames": 1902,
+  "fps": 30.0,
+  "sha256": "dd351537288dceac0833a0299f9733aabfc497db406a0d4f8f146120e1e65c97",
+  "events": [
+    {
+      "start": 92,
+      "end": 237,
+      "class_name": "Explosion"
+    },
+    {
+      "start": 258,
+      "end": 829,
+      "class_name": "Arson"
+    }
+  ],
+  "reviewed_segments": [
+    {
+      "start": 92,
+      "end": 104,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            61,
+            79,
+            120,
+            184
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            91,
+            63,
+            141,
+            150
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@239x32ic0081b3b297c:6:92-104",
+        "start": 92,
+        "end": 104,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 105,
+      "end": 119,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            25,
+            30,
+            294,
+            209
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@239x32ic0081b3b297c:7:105-119",
+        "start": 105,
+        "end": 119,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 120,
+      "end": 131,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            25,
+            30,
+            294,
+            209
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@359x32ic0081b3b297c:0:120-131",
+        "start": 120,
+        "end": 131,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 132,
+      "end": 147,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            25,
+            30,
+            294,
+            209
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@359x32ic0081b3b297c:1:132-147",
+        "start": 132,
+        "end": 147,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 148,
+      "end": 162,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            25,
+            30,
+            294,
+            209
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@359x32ic0081b3b297c:2:148-162",
+        "start": 148,
+        "end": 162,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 163,
+      "end": 178,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            25,
+            30,
+            294,
+            209
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@359x32ic0081b3b297c:3:163-178",
+        "start": 163,
+        "end": 178,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 179,
+      "end": 193,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            25,
+            30,
+            294,
+            209
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@359x32ic0081b3b297c:4:179-193",
+        "start": 179,
+        "end": 193,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 194,
+      "end": 209,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            26,
+            30,
+            122,
+            100
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            123,
+            90,
+            139,
+            107
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            257,
+            150,
+            293,
+            168
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            286,
+            106,
+            294,
+            129
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@359x32ic0081b3b297c:5:194-209",
+        "start": 194,
+        "end": 209,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 210,
+      "end": 224,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            28,
+            31,
+            112,
+            117
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            115,
+            91,
+            124,
+            101
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            257,
+            150,
+            293,
+            168
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@359x32ic0081b3b297c:6:210-224",
+        "start": 210,
+        "end": 224,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 225,
+      "end": 237,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            28,
+            31,
+            113,
+            117
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            257,
+            150,
+            293,
+            168
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@359x32ic0081b3b297c:7:225-237",
+        "start": 225,
+        "end": 237,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 258,
+      "end": 267,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            102,
+            30,
+            112,
+            67
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            260,
+            150,
+            289,
+            167
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@479x32ic0081b3b297c:1:258-267",
+        "start": 258,
+        "end": 267,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 268,
+      "end": 282,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            102,
+            30,
+            112,
+            67
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            259,
+            159,
+            287,
+            167
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@479x32ic0081b3b297c:2:268-282",
+        "start": 268,
+        "end": 282,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 283,
+      "end": 298,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            99,
+            30,
+            112,
+            67
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            260,
+            157,
+            289,
+            167
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@479x32ic0081b3b297c:3:283-298",
+        "start": 283,
+        "end": 298,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 299,
+      "end": 313,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            99,
+            30,
+            112,
+            65
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            260,
+            160,
+            289,
+            167
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@479x32ic0081b3b297c:4:299-313",
+        "start": 299,
+        "end": 313,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 314,
+      "end": 329,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            99,
+            30,
+            112,
+            64
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            260,
+            159,
+            289,
+            167
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@479x32ic0081b3b297c:5:314-329",
+        "start": 314,
+        "end": 329,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 330,
+      "end": 344,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            99,
+            30,
+            112,
+            64
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            260,
+            160,
+            289,
+            167
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@479x32ic0081b3b297c:6:330-344",
+        "start": 330,
+        "end": 344,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 345,
+      "end": 359,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            88,
+            30,
+            112,
+            65
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            260,
+            161,
+            289,
+            167
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@479x32ic0081b3b297c:7:345-359",
+        "start": 345,
+        "end": 359,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 360,
+      "end": 371,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            88,
+            30,
+            112,
+            65
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            260,
+            158,
+            289,
+            167
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@599x32ic0081b3b297c:0:360-371",
+        "start": 360,
+        "end": 371,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 372,
+      "end": 387,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            88,
+            30,
+            112,
+            65
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            260,
+            160,
+            289,
+            167
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@599x32ic0081b3b297c:1:372-387",
+        "start": 372,
+        "end": 387,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 388,
+      "end": 402,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            78,
+            30,
+            112,
+            65
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            260,
+            158,
+            289,
+            167
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@599x32ic0081b3b297c:2:388-402",
+        "start": 388,
+        "end": 402,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 403,
+      "end": 418,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            76,
+            35,
+            98,
+            51
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            97,
+            30,
+            114,
+            76
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            261,
+            159,
+            290,
+            167
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@599x32ic0081b3b297c:3:403-418",
+        "start": 403,
+        "end": 418,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 419,
+      "end": 433,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            76,
+            35,
+            98,
+            51
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            97,
+            30,
+            114,
+            76
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            262,
+            159,
+            289,
+            171
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@599x32ic0081b3b297c:4:419-433",
+        "start": 419,
+        "end": 433,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 434,
+      "end": 449,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            76,
+            32,
+            98,
+            48
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            97,
+            30,
+            114,
+            76
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            262,
+            159,
+            289,
+            171
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@599x32ic0081b3b297c:5:434-449",
+        "start": 434,
+        "end": 449,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 450,
+      "end": 464,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            76,
+            30,
+            100,
+            46
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            97,
+            30,
+            114,
+            76
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            262,
+            160,
+            289,
+            172
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@599x32ic0081b3b297c:6:450-464",
+        "start": 450,
+        "end": 464,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 465,
+      "end": 479,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            76,
+            30,
+            100,
+            46
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            97,
+            30,
+            114,
+            76
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            262,
+            160,
+            289,
+            172
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@599x32ic0081b3b297c:7:465-479",
+        "start": 465,
+        "end": 479,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 480,
+      "end": 495,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            76,
+            30,
+            100,
+            46
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            97,
+            30,
+            114,
+            76
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            262,
+            160,
+            289,
+            172
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@599x32ic0081b3b297c:8:480-495",
+        "start": 480,
+        "end": 495,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 496,
+      "end": 510,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            77,
+            30,
+            100,
+            46
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            97,
+            30,
+            114,
+            76
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            262,
+            162,
+            289,
+            172
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@599x32ic0081b3b297c:9:496-510",
+        "start": 496,
+        "end": 510,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 511,
+      "end": 526,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            78,
+            30,
+            100,
+            46
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            97,
+            30,
+            114,
+            76
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            262,
+            164,
+            289,
+            172
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@599x32ic0081b3b297c:10:511-526",
+        "start": 511,
+        "end": 526,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 527,
+      "end": 539,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            78,
+            30,
+            100,
+            51
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            97,
+            30,
+            114,
+            76
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            262,
+            164,
+            289,
+            172
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@599x32ic0081b3b297c:11:527-539",
+        "start": 527,
+        "end": 539,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 540,
+      "end": 553,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            78,
+            30,
+            100,
+            52
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            97,
+            30,
+            114,
+            76
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            262,
+            163,
+            289,
+            175
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@719x32ic0081b3b297c:4:540-553",
+        "start": 540,
+        "end": 553,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 554,
+      "end": 569,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            76,
+            30,
+            100,
+            52
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            97,
+            30,
+            114,
+            76
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            262,
+            161,
+            289,
+            173
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@719x32ic0081b3b297c:5:554-569",
+        "start": 554,
+        "end": 569,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 570,
+      "end": 584,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            74,
+            30,
+            96,
+            52
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            97,
+            30,
+            114,
+            79
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            262,
+            161,
+            289,
+            173
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@719x32ic0081b3b297c:6:570-584",
+        "start": 570,
+        "end": 584,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 585,
+      "end": 599,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            76,
+            30,
+            98,
+            52
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            97,
+            30,
+            114,
+            79
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            262,
+            161,
+            289,
+            173
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@719x32ic0081b3b297c:7:585-599",
+        "start": 585,
+        "end": 599,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 600,
+      "end": 615,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            76,
+            30,
+            98,
+            51
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            95,
+            30,
+            114,
+            91
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            262,
+            161,
+            289,
+            173
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@719x32ic0081b3b297c:8:600-615",
+        "start": 600,
+        "end": 615,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 616,
+      "end": 630,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            83,
+            36,
+            114,
+            106
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            262,
+            161,
+            289,
+            173
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@719x32ic0081b3b297c:9:616-630",
+        "start": 616,
+        "end": 630,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 631,
+      "end": 646,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            83,
+            36,
+            108,
+            116
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            98,
+            36,
+            113,
+            79
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            262,
+            161,
+            289,
+            173
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@719x32ic0081b3b297c:10:631-646",
+        "start": 631,
+        "end": 646,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 647,
+      "end": 661,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            73,
+            46,
+            105,
+            126
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            98,
+            36,
+            113,
+            79
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            262,
+            161,
+            289,
+            173
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@719x32ic0081b3b297c:11:647-661",
+        "start": 647,
+        "end": 661,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 662,
+      "end": 676,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            74,
+            48,
+            116,
+            136
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            98,
+            36,
+            113,
+            79
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            262,
+            161,
+            289,
+            173
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@719x32ic0081b3b297c:12:662-676",
+        "start": 662,
+        "end": 676,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 677,
+      "end": 692,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            80,
+            51,
+            118,
+            137
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            87,
+            38,
+            112,
+            77
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            262,
+            161,
+            289,
+            173
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@719x32ic0081b3b297c:13:677-692",
+        "start": 677,
+        "end": 692,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 693,
+      "end": 707,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            80,
+            51,
+            120,
+            143
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            87,
+            38,
+            112,
+            77
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            262,
+            146,
+            292,
+            173
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@719x32ic0081b3b297c:14:693-707",
+        "start": 693,
+        "end": 707,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 708,
+      "end": 719,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            73,
+            66,
+            124,
+            148
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            92,
+            40,
+            113,
+            80
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            263,
+            142,
+            294,
+            175
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@719x32ic0081b3b297c:15:708-719",
+        "start": 708,
+        "end": 719,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 720,
+      "end": 735,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            81,
+            91,
+            132,
+            155
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            83,
+            30,
+            112,
+            72
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            263,
+            140,
+            294,
+            173
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@839x32ic0081b3b297c:8:720-735",
+        "start": 720,
+        "end": 735,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 736,
+      "end": 750,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            82,
+            30,
+            113,
+            68
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            82,
+            82,
+            131,
+            156
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            263,
+            140,
+            294,
+            173
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@839x32ic0081b3b297c:9:736-750",
+        "start": 736,
+        "end": 750,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 751,
+      "end": 766,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            82,
+            30,
+            113,
+            75
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            86,
+            74,
+            160,
+            179
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            263,
+            140,
+            294,
+            173
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@839x32ic0081b3b297c:10:751-766",
+        "start": 751,
+        "end": 766,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 767,
+      "end": 781,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            82,
+            30,
+            113,
+            75
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            120,
+            76,
+            233,
+            191
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            263,
+            140,
+            294,
+            173
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@839x32ic0081b3b297c:11:767-781",
+        "start": 767,
+        "end": 781,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 782,
+      "end": 796,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            82,
+            30,
+            113,
+            75
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            120,
+            76,
+            233,
+            191
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            263,
+            140,
+            294,
+            173
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@839x32ic0081b3b297c:12:782-796",
+        "start": 782,
+        "end": 796,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 797,
+      "end": 812,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            82,
+            30,
+            113,
+            75
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            83,
+            108,
+            214,
+            196
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            263,
+            140,
+            294,
+            173
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@839x32ic0081b3b297c:13:797-812",
+        "start": 797,
+        "end": 812,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 813,
+      "end": 827,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            84,
+            35,
+            113,
+            75
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            85,
+            134,
+            176,
+            208
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            263,
+            140,
+            294,
+            173
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@839x32ic0081b3b297c:14:813-827",
+        "start": 813,
+        "end": 827,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 828,
+      "end": 829,
+      "boxes": [
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            84,
+            30,
+            113,
+            70
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            84,
+            144,
+            275,
+            208
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arson",
+          "xyxy": [
+            276,
+            140,
+            294,
+            168
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion004_x264@839x32ic0081b3b297c:15:828-829",
+        "start": 828,
+        "end": 829,
+        "mode": "plane_hold"
+      }
+    }
+  ]
+}

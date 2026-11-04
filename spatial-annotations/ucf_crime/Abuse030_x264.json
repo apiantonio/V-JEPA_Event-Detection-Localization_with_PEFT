@@ -1,0 +1,133 @@
+{
+  "schema": 1,
+  "coordinate_convention": "native_pixels_xyxy_inclusive_zero_based",
+  "frame_intervals": "inclusive",
+  "missing_frames": "unannotated, not negative",
+  "dataset": "ucf_crime",
+  "video_id": "Abuse030_x264",
+  "split": "test",
+  "width": 320,
+  "height": 240,
+  "num_frames": 1544,
+  "fps": 30.0,
+  "sha256": "4f4175f2dfddb84f2033aee27479f5278faed7fce66d8bab05828db7bd68f964",
+  "events": [
+    {
+      "start": 1302,
+      "end": 1364,
+      "class_name": "Abuse"
+    }
+  ],
+  "reviewed_segments": [
+    {
+      "start": 1302,
+      "end": 1304,
+      "boxes": [
+        {
+          "class_name": "Abuse",
+          "xyxy": [
+            115,
+            44,
+            135,
+            79
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Abuse030_x264@1439x32ic0081b3b297c:6:1302-1304",
+        "start": 1302,
+        "end": 1304,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1305,
+      "end": 1319,
+      "boxes": [
+        {
+          "class_name": "Abuse",
+          "xyxy": [
+            116,
+            49,
+            136,
+            78
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Abuse030_x264@1439x32ic0081b3b297c:7:1305-1319",
+        "start": 1305,
+        "end": 1319,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1320,
+      "end": 1335,
+      "boxes": [
+        {
+          "class_name": "Abuse",
+          "xyxy": [
+            115,
+            48,
+            138,
+            78
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Abuse030_x264@1439x32ic0081b3b297c:8:1320-1335",
+        "start": 1320,
+        "end": 1335,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1336,
+      "end": 1350,
+      "boxes": [
+        {
+          "class_name": "Abuse",
+          "xyxy": [
+            117,
+            48,
+            138,
+            78
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Abuse030_x264@1439x32ic0081b3b297c:9:1336-1350",
+        "start": 1336,
+        "end": 1350,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1351,
+      "end": 1364,
+      "boxes": [
+        {
+          "class_name": "Abuse",
+          "xyxy": [
+            118,
+            50,
+            140,
+            81
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Abuse030_x264@1439x32ic0081b3b297c:10:1351-1364",
+        "start": 1351,
+        "end": 1364,
+        "mode": "plane_hold"
+      }
+    }
+  ]
+}

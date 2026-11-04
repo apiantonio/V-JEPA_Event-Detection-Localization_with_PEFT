@@ -1,0 +1,924 @@
+{
+  "schema": 1,
+  "source_project_sha256": "fc567227b6b3ba9fe0dec5060a928e166d3adbec4d16264147671689f89e1f69",
+  "database_snapshot_sha256": "e379bfdd0ed46d5184158af46da126ceefaf7f54c33ecb7107462f412b31af20",
+  "status_filter": "reviewed only",
+  "verification": "Every exported frame and rectangle expanded and compared against the consistent source snapshot",
+  "datasets": {
+    "ucf_crime": {
+      "videos": 140,
+      "reviewed_frames": 131428,
+      "reviewed_empty_frames": 542,
+      "box_frame_instances": 351511,
+      "completed_events": 276,
+      "temporal_events_in_included_videos": 276,
+      "segments": 9002
+    },
+    "mivia_crime": {
+      "videos": 39,
+      "reviewed_frames": 9051,
+      "reviewed_empty_frames": 10,
+      "box_frame_instances": 22400,
+      "completed_events": 44,
+      "temporal_events_in_included_videos": 44,
+      "segments": 678
+    }
+  },
+  "files": [
+    {
+      "path": "ucf_crime/Abuse028_x264.json",
+      "sha256": "cb82082cd3fa777afccdb443caeab7914beee97a014efcf540d7d4356fee7fd2",
+      "bytes": 2618
+    },
+    {
+      "path": "ucf_crime/Abuse030_x264.json",
+      "sha256": "366341676525028e3ed8478cb20c901d320a8bfa12a1f773aca87245e981af40",
+      "bytes": 2661
+    },
+    {
+      "path": "ucf_crime/Arrest001_x264.json",
+      "sha256": "672904362e20e8becfb71c7a4d0436e06a544d4409d73b147c7e29ea1bc2c2d8",
+      "bytes": 20235
+    },
+    {
+      "path": "ucf_crime/Arrest007_x264.json",
+      "sha256": "b8b8b04eab4496fb25cabbdda6afae11002415026def8ad02e30c9fdf0d52978",
+      "bytes": 56361
+    },
+    {
+      "path": "ucf_crime/Arrest024_x264.json",
+      "sha256": "0abaa6827144778914c574a123b311290f55d6c0e485a54deac20f74f50fb21e",
+      "bytes": 258523
+    },
+    {
+      "path": "ucf_crime/Arrest030_x264.json",
+      "sha256": "a039528ec81c5c2c044c5e6c502dd77762974cbdce3ebd3d898794a1b776e909",
+      "bytes": 662287
+    },
+    {
+      "path": "ucf_crime/Arrest039_x264.json",
+      "sha256": "0186409e2331b7f1fab6223f34105e84e39bc8f8d890114a9ce8fe0bcb0ccdf6",
+      "bytes": 474899
+    },
+    {
+      "path": "ucf_crime/Arson007_x264.json",
+      "sha256": "dae84a42e4090f0118b5ee89f3ecf18fc66571faf07550f054194ad17511fac6",
+      "bytes": 139742
+    },
+    {
+      "path": "ucf_crime/Arson009_x264.json",
+      "sha256": "d7d2e61f3bc0bd04460cd89ee2cbed68924b10cd74226613667c7fb61c24e090",
+      "bytes": 5788
+    },
+    {
+      "path": "ucf_crime/Arson010_x264.json",
+      "sha256": "9b56857596e82e0dba87125f16de767677336802effa40d8f189ed8496aa63ad",
+      "bytes": 49466
+    },
+    {
+      "path": "ucf_crime/Arson011_x264.json",
+      "sha256": "969e2065777e26c38a0e597288abe49917ba01118a8bb63c9de895ed78eb0c18",
+      "bytes": 30614
+    },
+    {
+      "path": "ucf_crime/Arson016_x264.json",
+      "sha256": "3e3b94c89a010fc45a630c05a456cb4c703fa21e3d017a13c6f8577ff86baaed",
+      "bytes": 44513
+    },
+    {
+      "path": "ucf_crime/Arson018_x264.json",
+      "sha256": "61a720257c173defb916649c1c142551b9e703dcf72f121da4e521572a5d6b6d",
+      "bytes": 24678
+    },
+    {
+      "path": "ucf_crime/Arson022_x264.json",
+      "sha256": "36ef01fbc1f82fd261bd3a81b7426b13d358f52d188539f003c0c18a13892ae7",
+      "bytes": 234884
+    },
+    {
+      "path": "ucf_crime/Arson035_x264.json",
+      "sha256": "e1ce315bf1adbfeb7234697174211589ec21c6cc9fad2af9725397d6839d1dce",
+      "bytes": 21474
+    },
+    {
+      "path": "ucf_crime/Arson041_x264.json",
+      "sha256": "fc4a49854fbf39c5445f16a4491e89d4b743f1651f82fa59388a2596d8db7b83",
+      "bytes": 60019
+    },
+    {
+      "path": "ucf_crime/Assault006_x264.json",
+      "sha256": "5a2a9acac559a8a2057f9a419c4796ab7e06e4becbfe9725c6b44b8f21e75774",
+      "bytes": 830854
+    },
+    {
+      "path": "ucf_crime/Assault010_x264.json",
+      "sha256": "d7502fb183483d5fac015dbc4e2796cd6e6afd03aa66f84d869155224b1f6580",
+      "bytes": 74922
+    },
+    {
+      "path": "ucf_crime/Assault011_x264.json",
+      "sha256": "7d337e4e1be904118d0973e6294416a4ba935404b2b118e8efe95c89e028b994",
+      "bytes": 43831
+    },
+    {
+      "path": "ucf_crime/Burglary005_x264.json",
+      "sha256": "2de59701fbb60586b1b80def0f8ab1a81e55d5a9c33a0cab71ba58c8f4573b11",
+      "bytes": 19370
+    },
+    {
+      "path": "ucf_crime/Burglary017_x264.json",
+      "sha256": "25fa2d1c740e1d6b35e235df5b915dfcd72f70013ae03186a9c9f5eb0dab2591",
+      "bytes": 42830
+    },
+    {
+      "path": "ucf_crime/Burglary018_x264.json",
+      "sha256": "89ad3c7ecb5306d5c2c7ade39b70855292cebee430f72da5ae5125c5eaab60f2",
+      "bytes": 22538
+    },
+    {
+      "path": "ucf_crime/Burglary021_x264.json",
+      "sha256": "e1b48fa075a6a76b8ac1afc195f12373d183500a7de2d7c2bfc5d680dd2cd28c",
+      "bytes": 34500
+    },
+    {
+      "path": "ucf_crime/Burglary024_x264.json",
+      "sha256": "23b9cd803c19bb660acf0aff91e8599045a47976f52c332b600b59609189e1dd",
+      "bytes": 34275
+    },
+    {
+      "path": "ucf_crime/Burglary032_x264.json",
+      "sha256": "56d5957dc799d3a17f1d3b6964c15d14af29077c53725bc0594c99fb6a05239a",
+      "bytes": 438065
+    },
+    {
+      "path": "ucf_crime/Burglary033_x264.json",
+      "sha256": "88d9de2ae2870350e7ae61ba69e09fac52ab0adc1f0fd248eee474792c3e73cc",
+      "bytes": 9113
+    },
+    {
+      "path": "ucf_crime/Burglary035_x264.json",
+      "sha256": "5b8c5aa19946b2ccc95e0e93cad590e468862aa8a6f7678eebf3298c015a0238",
+      "bytes": 37040
+    },
+    {
+      "path": "ucf_crime/Burglary037_x264.json",
+      "sha256": "4f4336ef3454fe189287f6954eb12d054de0827feb17cae3b3b8e1bb54ae3cb9",
+      "bytes": 43162
+    },
+    {
+      "path": "ucf_crime/Burglary061_x264.json",
+      "sha256": "e88a789688aaff50514f6deaaba3bab5aaaf4fa276155ef9253fb6e71e2c2ea4",
+      "bytes": 46853
+    },
+    {
+      "path": "ucf_crime/Burglary076_x264.json",
+      "sha256": "6262fd23d1521152d7bf5835e239feae91825113e13077061231e49d5dd1dbb3",
+      "bytes": 26133
+    },
+    {
+      "path": "ucf_crime/Burglary079_x264.json",
+      "sha256": "473cc8ca48c6b030ae0ae898c16c936a1bae6e764ce1701d3d276c4e2f367646",
+      "bytes": 321325
+    },
+    {
+      "path": "ucf_crime/Burglary092_x264.json",
+      "sha256": "90f7ba6f11712cf8b800ac61f34b808eb69a7d5ea519a952a95c2630ec5841f7",
+      "bytes": 5697
+    },
+    {
+      "path": "ucf_crime/Explosion002_x264.json",
+      "sha256": "1e9ba4502ba307a946df1df9f4133de8f23d67cca7ba0d4803da1e7e252b4d68",
+      "bytes": 41978
+    },
+    {
+      "path": "ucf_crime/Explosion004_x264.json",
+      "sha256": "c26f2b00d6fb9ba28ad645c7f0b3f57f7b047cf883daa757e235962cb33674b1",
+      "bytes": 35343
+    },
+    {
+      "path": "ucf_crime/Explosion007_x264.json",
+      "sha256": "75ab887e40a47b82fdefc4117c2b9be28e5b254e5bf7c1f81b66855e8a8fd240",
+      "bytes": 52362
+    },
+    {
+      "path": "ucf_crime/Explosion008_x264.json",
+      "sha256": "efa0269ea3be0b068522d5499ae921a165eab229796a009176d7c606a165ff9c",
+      "bytes": 23038
+    },
+    {
+      "path": "ucf_crime/Explosion010_x264.json",
+      "sha256": "99776a828ba04e64b11beb2d4fbba41ff2c4ecdd7fdcb0032b4e70628765a1d9",
+      "bytes": 69614
+    },
+    {
+      "path": "ucf_crime/Explosion011_x264.json",
+      "sha256": "e086dfef470813a3fecf6df42eeac4c8289b3f639e6779a2698ecd162e6c3ccc",
+      "bytes": 3111
+    },
+    {
+      "path": "ucf_crime/Explosion013_x264.json",
+      "sha256": "004262508e3af82af8adc08f2dd643b13a439778774a20c557851d1361ea8f4b",
+      "bytes": 55534
+    },
+    {
+      "path": "ucf_crime/Explosion016_x264.json",
+      "sha256": "132fb32a5855c7638a9e88de270150fdb300be0bcc8c070317898c5f2827234e",
+      "bytes": 26539
+    },
+    {
+      "path": "ucf_crime/Explosion017_x264.json",
+      "sha256": "626664548bba69f8fd2d78961b07a3daa4d386f1a8874bf68e99183dd63dad43",
+      "bytes": 20094
+    },
+    {
+      "path": "ucf_crime/Explosion020_x264.json",
+      "sha256": "c9e74567260e745983acad1b3def994380b3f8ae56449eb31f5e1f62a8b52528",
+      "bytes": 17238
+    },
+    {
+      "path": "ucf_crime/Explosion021_x264.json",
+      "sha256": "9f6dace97f8474b4581e9621fe48ebad5b6db7724518fc98f7682632a413e9b0",
+      "bytes": 14411
+    },
+    {
+      "path": "ucf_crime/Explosion022_x264.json",
+      "sha256": "b32bc20aab1c1cad77d52063554f99edf8f9adca8fb0ea63fa63e26ae5585adb",
+      "bytes": 9996
+    },
+    {
+      "path": "ucf_crime/Explosion025_x264.json",
+      "sha256": "78d2045a7ae5850910ce3106813ca261e8563aea324a090ab30bd837719fbd68",
+      "bytes": 4414
+    },
+    {
+      "path": "ucf_crime/Explosion027_x264.json",
+      "sha256": "b6a092fa4ac5886ed1c4070d749ada0cda943fb5eeb9433e747bd253656c9e31",
+      "bytes": 8825
+    },
+    {
+      "path": "ucf_crime/Explosion028_x264.json",
+      "sha256": "4e973aaa059c9336c865f51ce71180278f032f627c3fb2ba7b12b3641f62045f",
+      "bytes": 6074
+    },
+    {
+      "path": "ucf_crime/Explosion029_x264.json",
+      "sha256": "01ee111b6926c251b150fc5d6a05c9e2c22c38c4c47b8f36930f55dfab9f8715",
+      "bytes": 5332
+    },
+    {
+      "path": "ucf_crime/Explosion033_x264.json",
+      "sha256": "a350ad4af32d821c4f37a4598b01e286126a340675a09129f4fc81f445bc29a6",
+      "bytes": 64610
+    },
+    {
+      "path": "ucf_crime/Explosion035_x264.json",
+      "sha256": "20349a5d76bd53776f7d2f2b6e991be85b5320c83abaac34c43934b3798c2ce5",
+      "bytes": 21958
+    },
+    {
+      "path": "ucf_crime/Explosion036_x264.json",
+      "sha256": "a04c7cd2871b24584af53a7d8d827c87550112dc23497250580fb10b95c7b94e",
+      "bytes": 7109
+    },
+    {
+      "path": "ucf_crime/Explosion039_x264.json",
+      "sha256": "922cd3bd6118b3194de1002b789c33043e0cc8dd17572604770dbc572bfd0fcb",
+      "bytes": 8720
+    },
+    {
+      "path": "ucf_crime/Explosion043_x264.json",
+      "sha256": "b07e00d68b2d65cef291e3ba75bc6dbe1b58b5883451957ec5a53112336a7d18",
+      "bytes": 5801
+    },
+    {
+      "path": "ucf_crime/Fighting003_x264.json",
+      "sha256": "fce84f76d94f650d8d92e93511cc5670d3e88dde30a29e2176c4cecac85dd89d",
+      "bytes": 66109
+    },
+    {
+      "path": "ucf_crime/Fighting018_x264.json",
+      "sha256": "9b468b7c8de684677ad4e511cc8fe2d06b9245724d9c8d034bbc8c870c2e8899",
+      "bytes": 11130
+    },
+    {
+      "path": "ucf_crime/Fighting033_x264.json",
+      "sha256": "b30e61d550249ed5fa2156cfe3a5c01c0e40679f12331b097836530f4fcab56a",
+      "bytes": 10460
+    },
+    {
+      "path": "ucf_crime/Fighting042_x264.json",
+      "sha256": "87a992a82ad5067245f9e0ca797a9d61b86d9a95498947248ab7c7687f189035",
+      "bytes": 29936
+    },
+    {
+      "path": "ucf_crime/Fighting047_x264.json",
+      "sha256": "abc55ae8d01ac1d6569ac9348d618e870128da4e851f87c41111cabfa5037166",
+      "bytes": 106313
+    },
+    {
+      "path": "ucf_crime/RoadAccidents001_x264.json",
+      "sha256": "458f59ae358659e5e4340893217c3d007f77df1054ca3572f519bf16ebe92ca2",
+      "bytes": 5651
+    },
+    {
+      "path": "ucf_crime/RoadAccidents002_x264.json",
+      "sha256": "b8545c886f18565fc1317456a61e27f8f1667d57ef43714aa51fcbedf02f89a4",
+      "bytes": 3601
+    },
+    {
+      "path": "ucf_crime/RoadAccidents004_x264.json",
+      "sha256": "e73db6b94df680bad9e4fe417d50188f7215d3ba8d5d01294354f98500567267",
+      "bytes": 2484
+    },
+    {
+      "path": "ucf_crime/RoadAccidents009_x264.json",
+      "sha256": "f00485d5a15104ebd8b94f10684ce8483b8c1d9db2e0cd3c048515f226297629",
+      "bytes": 2287
+    },
+    {
+      "path": "ucf_crime/RoadAccidents010_x264.json",
+      "sha256": "d44a3416a68fd562e3707cc93e93e0cba241d6409350b4805919298d72ddd54d",
+      "bytes": 7425
+    },
+    {
+      "path": "ucf_crime/RoadAccidents011_x264.json",
+      "sha256": "a8dd36985807f63d0f564c53f40fdfdb184eec94492d61db98c80983989273ef",
+      "bytes": 4343
+    },
+    {
+      "path": "ucf_crime/RoadAccidents012_x264.json",
+      "sha256": "9ff3dbfe651fe5bc4fe4c6b64c7fe3aabd57aa19797f021504564c56ddd75917",
+      "bytes": 12500
+    },
+    {
+      "path": "ucf_crime/RoadAccidents016_x264.json",
+      "sha256": "e266583c3793b1b0890aa4d11b31f70ae822a113b347fb085ba093b62689e6d9",
+      "bytes": 13131
+    },
+    {
+      "path": "ucf_crime/RoadAccidents017_x264.json",
+      "sha256": "d52df1816a272f952e7483226f8a705eb7125ff8844243d9805dfe4f455ba76b",
+      "bytes": 4333
+    },
+    {
+      "path": "ucf_crime/RoadAccidents019_x264.json",
+      "sha256": "e3a108a2c2b4508cb83457e59b69639563acf05ce44ddc0a8e4eb9bf5f5eb9cb",
+      "bytes": 12651
+    },
+    {
+      "path": "ucf_crime/RoadAccidents020_x264.json",
+      "sha256": "13f118abb1e54c0ff4eae9a386e245e000f215a1b175dc3509d159febefc1e29",
+      "bytes": 9662
+    },
+    {
+      "path": "ucf_crime/RoadAccidents021_x264.json",
+      "sha256": "8b78ac7f151857d8d48046d4869a28b9df69a5cfb614b6858ee0615f16a799cf",
+      "bytes": 2400
+    },
+    {
+      "path": "ucf_crime/RoadAccidents022_x264.json",
+      "sha256": "71de2d84b0a3d8aa726253faf9ebd9e29d5f5c5d37b223dbafafd34032c87568",
+      "bytes": 9510
+    },
+    {
+      "path": "ucf_crime/RoadAccidents121_x264.json",
+      "sha256": "50a5c7d531dc031ff35d12b11acb9e2e68b1c8e728f6e1572209199a0fb5cbc3",
+      "bytes": 6379
+    },
+    {
+      "path": "ucf_crime/RoadAccidents122_x264.json",
+      "sha256": "b58d09d00d4f214201eb2d1929b1ad8223a59bc55acd2b85f4166ba5424ecff0",
+      "bytes": 2437
+    },
+    {
+      "path": "ucf_crime/RoadAccidents123_x264.json",
+      "sha256": "d45a68dd42f33a4959b57618751b8ad520d526ab8359894f8bcf7b412a116dcb",
+      "bytes": 4269
+    },
+    {
+      "path": "ucf_crime/RoadAccidents124_x264.json",
+      "sha256": "1cc00c19d1bc4f85ea260be8b2f88e53704c302c0bec3b7fe47f7ce85b1aed22",
+      "bytes": 11677
+    },
+    {
+      "path": "ucf_crime/RoadAccidents125_x264.json",
+      "sha256": "247b095d3d6bf0564c166d5d63d647e2282acb79fa35bf934a4ce29ee18c2c40",
+      "bytes": 2681
+    },
+    {
+      "path": "ucf_crime/RoadAccidents127_x264.json",
+      "sha256": "e6b803115a855e46dd7123de20ec9354e26f11eef4893c31297bf8c647ad8987",
+      "bytes": 4304
+    },
+    {
+      "path": "ucf_crime/RoadAccidents128_x264.json",
+      "sha256": "603edd1227641029722632d48817218e08eab21974db7a5789c0a4a7ec84df5d",
+      "bytes": 2730
+    },
+    {
+      "path": "ucf_crime/RoadAccidents131_x264.json",
+      "sha256": "b4834d83e012a54adebb59710a68cdf50dde72fe20bce49739f5baf826be8008",
+      "bytes": 5903
+    },
+    {
+      "path": "ucf_crime/RoadAccidents132_x264.json",
+      "sha256": "8d7d286f39855966548ca30ad6aada3422fdd1cccc76112a9d03aeabceabf932",
+      "bytes": 5123
+    },
+    {
+      "path": "ucf_crime/RoadAccidents133_x264.json",
+      "sha256": "723a05f5994f6491ffc03fb1bf6aba50439ebfc90792a2e02f4bd2ec76c565de",
+      "bytes": 10914
+    },
+    {
+      "path": "ucf_crime/Robbery048_x264.json",
+      "sha256": "95f5542e8c9da5b5fb2ccced3880d6500df03b3ffe20a9554a460de9e819631a",
+      "bytes": 18683
+    },
+    {
+      "path": "ucf_crime/Robbery050_x264.json",
+      "sha256": "ed5324c5d1f6e0d438f773b536ae510be776d61662026ec0025dc607c65c3397",
+      "bytes": 30178
+    },
+    {
+      "path": "ucf_crime/Robbery102_x264.json",
+      "sha256": "33ae86b315b511440670666a298cae8053ad37e5b1c49ea7243101d898732d86",
+      "bytes": 27825
+    },
+    {
+      "path": "ucf_crime/Robbery106_x264.json",
+      "sha256": "b25e0e375d9200b510b4d9b96785db9a2bb6483f88f911e7fa6c50066ab26be2",
+      "bytes": 4541
+    },
+    {
+      "path": "ucf_crime/Robbery137_x264.json",
+      "sha256": "0cf0dbe416538ad5610eb497147eafa1890cf659bc8858d4078fcc36f943cfd0",
+      "bytes": 106352
+    },
+    {
+      "path": "ucf_crime/Shooting002_x264.json",
+      "sha256": "95f94835ca45c0e4761ef480425a24750b232a31a084c72ff1e5c0dac5661d4b",
+      "bytes": 4443
+    },
+    {
+      "path": "ucf_crime/Shooting004_x264.json",
+      "sha256": "f13d337be6d1ed15e2735713ffaa8ca398e34c4922da690d6cfc1da98d8bcbc7",
+      "bytes": 28332
+    },
+    {
+      "path": "ucf_crime/Shooting007_x264.json",
+      "sha256": "159a9438289897ed7504d8135277fc0572f0bfad2aa22cb7991d42369d704fe3",
+      "bytes": 21506
+    },
+    {
+      "path": "ucf_crime/Shooting008_x264.json",
+      "sha256": "a4bfe01db0e0ea02d43827a4ee04ff232e91e7972d67c39a9791da06cf8424ba",
+      "bytes": 23777
+    },
+    {
+      "path": "ucf_crime/Shooting010_x264.json",
+      "sha256": "4ac1dfbe8da0b3788366adfa3c218f4b4cd19304c344ffe14786def9ec62f77f",
+      "bytes": 16239
+    },
+    {
+      "path": "ucf_crime/Shooting011_x264.json",
+      "sha256": "2803e288b0cc5f2a8bd3cc4df82d15a972c75434924b99490716b7fdddf7ab62",
+      "bytes": 254945
+    },
+    {
+      "path": "ucf_crime/Shooting013_x264.json",
+      "sha256": "54712f7119a367f4cd01a381ab9b62b1e3321fd1b7735b2689a3ab320ba10a4d",
+      "bytes": 3107
+    },
+    {
+      "path": "ucf_crime/Shooting015_x264.json",
+      "sha256": "5e2568d5202222de478450be202e6f86cf95e8662f426640ae853eb780e41b35",
+      "bytes": 46192
+    },
+    {
+      "path": "ucf_crime/Shooting018_x264.json",
+      "sha256": "aa1d6420e518b34102b515f29f74a49b303dccf11ed9c0eb89df246332ba445b",
+      "bytes": 56555
+    },
+    {
+      "path": "ucf_crime/Shooting019_x264.json",
+      "sha256": "119c0a74afefd46326308a9c8126cba94a695ebee92fe439d956c9ef5c13fca5",
+      "bytes": 47754
+    },
+    {
+      "path": "ucf_crime/Shooting021_x264.json",
+      "sha256": "5e293990ba098eb330003334d55790597af831cf758b0bc3e66bf67b66916532",
+      "bytes": 7134
+    },
+    {
+      "path": "ucf_crime/Shooting022_x264.json",
+      "sha256": "5077178fdc830c76e4d20c45b3288cc65000b0679a024935ced86edf24e6ca42",
+      "bytes": 26481
+    },
+    {
+      "path": "ucf_crime/Shooting024_x264.json",
+      "sha256": "21d5d42f4ecc508b0c6f21104c311305102454576b92703e661c31f48992bf28",
+      "bytes": 14712
+    },
+    {
+      "path": "ucf_crime/Shooting026_x264.json",
+      "sha256": "f11c537ce00fefdd60f4b7f59483fb39dc382a60e197e3e097c39b53bf3e24b0",
+      "bytes": 7561
+    },
+    {
+      "path": "ucf_crime/Shooting028_x264.json",
+      "sha256": "b2d81762b6285bd3a773ef495104fd4ac6ec58a85e099c663927a983728856af",
+      "bytes": 21714
+    },
+    {
+      "path": "ucf_crime/Shooting032_x264.json",
+      "sha256": "7dbcd1c67a51474cf1f2bb3e65a175409dce4f1a6f274db1b0b66145b6a3bd3b",
+      "bytes": 5544
+    },
+    {
+      "path": "ucf_crime/Shooting033_x264.json",
+      "sha256": "99ff38a147dcc4094643e5173efb924e032a51b75cc6925d9391c3171e2f63ee",
+      "bytes": 28871
+    },
+    {
+      "path": "ucf_crime/Shooting034_x264.json",
+      "sha256": "ed98c812820a42c159d3cd3924d3c1750fa48bc9e88394d67896075f0bd43813",
+      "bytes": 3569
+    },
+    {
+      "path": "ucf_crime/Shooting037_x264.json",
+      "sha256": "d6809684af712420f170a17a35e2972adfc1da064644ac7045695989063dcb53",
+      "bytes": 3549
+    },
+    {
+      "path": "ucf_crime/Shooting043_x264.json",
+      "sha256": "282200308ab876faa177e98f21a76a646d26f325251f8cd7c965241b4acb2bce",
+      "bytes": 57270
+    },
+    {
+      "path": "ucf_crime/Shooting046_x264.json",
+      "sha256": "6fac97940a56f35a4e381dcb7e05cd87f1e0194ee94ddafa1334daed5a5d8d89",
+      "bytes": 20793
+    },
+    {
+      "path": "ucf_crime/Shooting047_x264.json",
+      "sha256": "6cebbbe3ef3d17a4406c99f38ac80830c2bb3c5298892fff6aed1885e0cb7278",
+      "bytes": 151000
+    },
+    {
+      "path": "ucf_crime/Shooting048_x264.json",
+      "sha256": "c259c325f801682fcbf51e67aecfaeee8407e8093508e4b00f3e9a066a8a106e",
+      "bytes": 32640
+    },
+    {
+      "path": "ucf_crime/Shoplifting001_x264.json",
+      "sha256": "75cf949aa7ab07eb5607e15a7656a05dabb14abc6247f5a2c81d1726c6f1c3f2",
+      "bytes": 28053
+    },
+    {
+      "path": "ucf_crime/Shoplifting004_x264.json",
+      "sha256": "c41b45f55f7070c7ff6d25366deb5494f73f12959ae3f3f0f398fff932f1e5ae",
+      "bytes": 15660
+    },
+    {
+      "path": "ucf_crime/Shoplifting005_x264.json",
+      "sha256": "419e8ab47ce8a83378c7b7fa5caaa35dddb5ec70b50feef2244f53c111cfbaa3",
+      "bytes": 7065
+    },
+    {
+      "path": "ucf_crime/Shoplifting007_x264.json",
+      "sha256": "b492883130f80bcfc148cb9ff5e1483f795323ae40e1f49613a791979dcec1ff",
+      "bytes": 21528
+    },
+    {
+      "path": "ucf_crime/Shoplifting010_x264.json",
+      "sha256": "51b050d9db70ae11a73297494992ec47cd000e4ab08f7a5f48d71ddc5788d751",
+      "bytes": 19345
+    },
+    {
+      "path": "ucf_crime/Shoplifting015_x264.json",
+      "sha256": "3971d86f6a4d8e866b5649feb70a4a59f5214f83e85f3bbe4647e4e5d20bc5a7",
+      "bytes": 5413
+    },
+    {
+      "path": "ucf_crime/Shoplifting016_x264.json",
+      "sha256": "526fcb9413e37a1ca26c61b1181389649a0a79bc2a77c5e8622ce64a45ec1392",
+      "bytes": 3586
+    },
+    {
+      "path": "ucf_crime/Shoplifting017_x264.json",
+      "sha256": "6a2b8e9ec3a1b7ce8c7b4895891799d533c4b9c8c3319eb802275537cf45c74f",
+      "bytes": 2277
+    },
+    {
+      "path": "ucf_crime/Shoplifting020_x264.json",
+      "sha256": "5e732ef3428f58d0dd7d87a8f8f76ff067fd8ddc2196fc98fa643a41f35adeea",
+      "bytes": 12021
+    },
+    {
+      "path": "ucf_crime/Shoplifting021_x264.json",
+      "sha256": "f2b400473dbc5353dd7ad03e9e6a2237570e678491a2972f41032568e8c96569",
+      "bytes": 3197
+    },
+    {
+      "path": "ucf_crime/Shoplifting022_x264.json",
+      "sha256": "67e988fc7557692b14f269cd4cf340dd2ecb9a1bc2b29b7006fc2b18f6597fed",
+      "bytes": 20698
+    },
+    {
+      "path": "ucf_crime/Shoplifting027_x264.json",
+      "sha256": "2ed35454d78d0d694cc22e1c47a0edc7c51e8655b34faf21676063a57bf4650b",
+      "bytes": 7790
+    },
+    {
+      "path": "ucf_crime/Shoplifting028_x264.json",
+      "sha256": "c576ae8a8c349d58346fef544de52dba26098471b76f862779909e90e9b8752f",
+      "bytes": 8840
+    },
+    {
+      "path": "ucf_crime/Shoplifting029_x264.json",
+      "sha256": "48ea379fbda4e774ac8f8cd2aadea0224a3f691b630fae629ebfd2edc292550e",
+      "bytes": 21194
+    },
+    {
+      "path": "ucf_crime/Shoplifting031_x264.json",
+      "sha256": "8e54a893172a1502ecfe49810d0e3b43d602a26fa843596f29aebd40d70a3be8",
+      "bytes": 4892
+    },
+    {
+      "path": "ucf_crime/Shoplifting033_x264.json",
+      "sha256": "3711ecdcd66c3015c860adbd3095779db6aaaf60b82932cfbf0eeab64a53c8b0",
+      "bytes": 2712
+    },
+    {
+      "path": "ucf_crime/Shoplifting034_x264.json",
+      "sha256": "6eff2dfe56b9a002b480d97e5e7bae211eb9a617608b5ec714ce5bb64ec52330",
+      "bytes": 50268
+    },
+    {
+      "path": "ucf_crime/Shoplifting037_x264.json",
+      "sha256": "e8cb7dae6be4b85e9bf6efbdf5ba87d0da832b4610151bb521a0e2c261255ffe",
+      "bytes": 2934
+    },
+    {
+      "path": "ucf_crime/Shoplifting039_x264.json",
+      "sha256": "26ca71afe1a1c7ed674d70ffff2b8052153ed2269b1e31df3c91ad0d27690de4",
+      "bytes": 6300
+    },
+    {
+      "path": "ucf_crime/Shoplifting044_x264.json",
+      "sha256": "5244c8a87f68e0487227cd7b7d95fd40ece4decf9f358ff80b220ee8f1a1fd33",
+      "bytes": 15796
+    },
+    {
+      "path": "ucf_crime/Shoplifting049_x264.json",
+      "sha256": "4fc711b8f21bf039dc81f38bdfa3c8cd6b582161f2a49f5da70d141c4f7821b1",
+      "bytes": 10307
+    },
+    {
+      "path": "ucf_crime/Stealing019_x264.json",
+      "sha256": "2c6499f0c1b55baf9e1b8e40f2a648cbf7e49fc6b9d2f3e8d7c1259e27104941",
+      "bytes": 10608
+    },
+    {
+      "path": "ucf_crime/Stealing036_x264.json",
+      "sha256": "aaad5d95aedc2488021d4b7852094b17715480f99a55a7a1be68e705fcaa0c9a",
+      "bytes": 13829
+    },
+    {
+      "path": "ucf_crime/Stealing058_x264.json",
+      "sha256": "0957f4740ecc0f19c3b8b03a9876889d9e065a95f8165df481fd6ba0955a8987",
+      "bytes": 223081
+    },
+    {
+      "path": "ucf_crime/Stealing062_x264.json",
+      "sha256": "09bc63acb4c7875828989ecc44c1a4467fcb5a4a9666bda3240265f9fb8767ec",
+      "bytes": 16828
+    },
+    {
+      "path": "ucf_crime/Stealing079_x264.json",
+      "sha256": "153238d9d22d7142579e7ae2ba42559cd121931980085acc16a6e54f64aadb03",
+      "bytes": 56709
+    },
+    {
+      "path": "ucf_crime/Vandalism007_x264.json",
+      "sha256": "5ae4985157e4164359c0f8aa2c2193200e47927b935ac7db34289a0d7cb2406c",
+      "bytes": 8040
+    },
+    {
+      "path": "ucf_crime/Vandalism015_x264.json",
+      "sha256": "3748d7495a1fa33eb11bf44197e2e895e62f992a4a8695d235fa0b16a1631953",
+      "bytes": 30848
+    },
+    {
+      "path": "ucf_crime/Vandalism017_x264.json",
+      "sha256": "d7aec1fc371e864892ae6f35f8fb83cb1d1c9f936f821dedcb12123faa0fa480",
+      "bytes": 3956
+    },
+    {
+      "path": "ucf_crime/Vandalism028_x264.json",
+      "sha256": "212cab56537e751fe3c5ea1f348deca30b1387194363f1957ae0810a910c6386",
+      "bytes": 45698
+    },
+    {
+      "path": "ucf_crime/Vandalism036_x264.json",
+      "sha256": "d501aca00067c5ecae2eea633fa147512e5d786ee45d9a086cb27b6e30fbc0a3",
+      "bytes": 18382
+    },
+    {
+      "path": "mivia_crime/abuse_004.json",
+      "sha256": "eaf86b4e32ce71dc3b1772950ca5f67f8746de70e2cf344d0318cb1481bf3f8d",
+      "bytes": 6204
+    },
+    {
+      "path": "mivia_crime/abuse_006.json",
+      "sha256": "0e11468813bbc5f538c9130cd403c8d6d367b2638baed036e37bd16cce2a1dfe",
+      "bytes": 9026
+    },
+    {
+      "path": "mivia_crime/abuse_010.json",
+      "sha256": "c6faa26c9ef832367e0621ec1ba120fec9f22a7e9c92b88a07b38f688315e018",
+      "bytes": 6641
+    },
+    {
+      "path": "mivia_crime/arrest_004.json",
+      "sha256": "db2d4de782949aad439a15eaf2b0890cd4f83f1b0dece802413cbe5c8b9ee755",
+      "bytes": 16024
+    },
+    {
+      "path": "mivia_crime/arrest_005.json",
+      "sha256": "2aff4f25be6d7240584833d281e0b703455af1579dff83884032055dbc10d971",
+      "bytes": 26608
+    },
+    {
+      "path": "mivia_crime/arrest_007.json",
+      "sha256": "33ae009df1c4c0edec11d0076a4023882b143aead9bb569ab47c7c8c53b96be2",
+      "bytes": 50232
+    },
+    {
+      "path": "mivia_crime/arson_002.json",
+      "sha256": "88bdad60dcb450e252f43cd5d4e0fa830789b2ef4f0636baa72018d00ace2389",
+      "bytes": 16950
+    },
+    {
+      "path": "mivia_crime/arson_003.json",
+      "sha256": "f6ce1d43c82cfaf9a565b280a26ca14f26cbce749d2f613c04e351fa235948d7",
+      "bytes": 16552
+    },
+    {
+      "path": "mivia_crime/arson_010.json",
+      "sha256": "2e5c5f852e20420fe0c60163429998309734d757a2c0a01b98d1e657439aa754",
+      "bytes": 18282
+    },
+    {
+      "path": "mivia_crime/assault_001.json",
+      "sha256": "982f8001c59ee987ac0af8c4cb113059782f35cc8dfe4f5d427950eeab6790b1",
+      "bytes": 46266
+    },
+    {
+      "path": "mivia_crime/assault_003.json",
+      "sha256": "c61edd8aa6684ef93ca6f3fdf9c107b7e1a607e45ecd3daa5fce3661d59e25f7",
+      "bytes": 6313
+    },
+    {
+      "path": "mivia_crime/assault_006.json",
+      "sha256": "8ff9f280ee192ce086798d3c353d070afd5c3b9c2730ca94ebcdba670b0c133a",
+      "bytes": 30347
+    },
+    {
+      "path": "mivia_crime/burglary_002.json",
+      "sha256": "38e879b976f6e0eddb3834237f02123fdba7b75513552f02420b7ee22ade7590",
+      "bytes": 12806
+    },
+    {
+      "path": "mivia_crime/burglary_003.json",
+      "sha256": "b02a3423928bbc0bf492257144a511da00278c8a55b478e856821c8a4e3a2628",
+      "bytes": 9661
+    },
+    {
+      "path": "mivia_crime/burglary_004.json",
+      "sha256": "1f405ea8c49af8be7ab396f3f4a5d4bc6967e6ddf73cf863f822796b7b3e428e",
+      "bytes": 25307
+    },
+    {
+      "path": "mivia_crime/explosion_003.json",
+      "sha256": "31f01eee62acacdd7364a66af7298fb39e257389b695c547fd0fc79a233878ec",
+      "bytes": 7030
+    },
+    {
+      "path": "mivia_crime/explosion_005.json",
+      "sha256": "4e5b0c07ddde4f8a3a6ffa2ad3fa2c958de2b9a1bb8562e79719882d9bae06b6",
+      "bytes": 2888
+    },
+    {
+      "path": "mivia_crime/explosion_011.json",
+      "sha256": "c2ba2db1e22d28738e2b59478b31a12b17a308b9ad95b242b311b8d6a612b6ef",
+      "bytes": 4303
+    },
+    {
+      "path": "mivia_crime/fighting_001.json",
+      "sha256": "4f6f51d0342ba6279ce12a1f69b374e4b44554aa73a0afc70d36f443086847e5",
+      "bytes": 9925
+    },
+    {
+      "path": "mivia_crime/fighting_005.json",
+      "sha256": "dacceff05f1a584dbab3625526c8b9d5d794ccc41c3a3af80691679a6489b6a5",
+      "bytes": 9674
+    },
+    {
+      "path": "mivia_crime/fighting_009.json",
+      "sha256": "c8f6388ad2c8bd1a0d3a5454a4c6d1d2c6e746efe3cdad045212aaef48225f98",
+      "bytes": 7968
+    },
+    {
+      "path": "mivia_crime/road_accident_005.json",
+      "sha256": "a598b4647dc2b372530715e155c8b3296b91d95a82a90997e602e49df2521605",
+      "bytes": 2806
+    },
+    {
+      "path": "mivia_crime/road_accident_007.json",
+      "sha256": "460cb0580a61a4256f6b67e4de228a8cd73658786707e0f8e4e1d7cbed93a764",
+      "bytes": 3036
+    },
+    {
+      "path": "mivia_crime/road_accident_013.json",
+      "sha256": "d6c480d817f6d6fa7aa53b88c0803b04929ebd005967f5c0aab87df6762cd3cc",
+      "bytes": 2411
+    },
+    {
+      "path": "mivia_crime/robbery_002.json",
+      "sha256": "a4af33faab8613c50695c78a1a57d012cbcfa472829dcd536a684e2f30c19ced",
+      "bytes": 46981
+    },
+    {
+      "path": "mivia_crime/robbery_005.json",
+      "sha256": "f04293f5ee94430d2aacece2b202a09d7880a315a78d84811552653317e8429e",
+      "bytes": 10547
+    },
+    {
+      "path": "mivia_crime/robbery_008.json",
+      "sha256": "957b2c69447cfea9dbbb20087993ef0c70ce41f8ad9d8c454ac7dff4cdf64398",
+      "bytes": 21401
+    },
+    {
+      "path": "mivia_crime/shooting_003.json",
+      "sha256": "64012b9bed64712a41630eb5dfdca339eb0c758d1fa8fb28c466607ea17ebbf0",
+      "bytes": 9439
+    },
+    {
+      "path": "mivia_crime/shooting_007.json",
+      "sha256": "9a3386a10fbb35bc02a616440dd6be3dd43ba673d5682a61c7572c49bb4522dd",
+      "bytes": 12024
+    },
+    {
+      "path": "mivia_crime/shooting_008.json",
+      "sha256": "2792962277e2c19122553b20c4a19fd42d39ff81adbdc56d8530f0858d8a6d84",
+      "bytes": 8074
+    },
+    {
+      "path": "mivia_crime/shoplifting_001.json",
+      "sha256": "852fac872a8fdda51f30d6f12e6442f7dd4e89f472473164fa7497efb5b37b53",
+      "bytes": 3129
+    },
+    {
+      "path": "mivia_crime/shoplifting_007.json",
+      "sha256": "fa500838151bafdecf375bc3d7bb2cd1a616c072f732f637f8c83919730ddc7a",
+      "bytes": 5740
+    },
+    {
+      "path": "mivia_crime/shoplifting_009.json",
+      "sha256": "44d6231acbd1c431b66414a7e9808b56a3919d7c663023b95beda54398627827",
+      "bytes": 7684
+    },
+    {
+      "path": "mivia_crime/stealing_002.json",
+      "sha256": "51aabfc103beed29bc5c5fce2e45aa01ef0b558c2efba436014ecfc3d1fe62b3",
+      "bytes": 2645
+    },
+    {
+      "path": "mivia_crime/stealing_004.json",
+      "sha256": "97c1969bf66f50d69ff55429b2b10de26bf6dda2cb9eda926ff3e912b71bc313",
+      "bytes": 2204
+    },
+    {
+      "path": "mivia_crime/stealing_008.json",
+      "sha256": "5ff7df471643dd2ebc297d794fa74c1e7f645175404741348ad5b7535e1f0648",
+      "bytes": 7796
+    },
+    {
+      "path": "mivia_crime/vandalism_002.json",
+      "sha256": "c13a47e7efba388f62e04b7b856df01b0ca712cb8cdfd483df7da4378236fb24",
+      "bytes": 2808
+    },
+    {
+      "path": "mivia_crime/vandalism_006.json",
+      "sha256": "df734240e2445f9cd75bb7f49cdf510ca84aa0accbc1964b824417ce21235d71",
+      "bytes": 6847
+    },
+    {
+      "path": "mivia_crime/vandalism_007.json",
+      "sha256": "c5675a6ef58d33c78316f7ff4fd0e04cbdb9c4b4941c54d691039c1ae77d71ef",
+      "bytes": 3534
+    }
+  ]
+}

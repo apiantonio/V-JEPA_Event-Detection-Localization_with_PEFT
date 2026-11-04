@@ -1,0 +1,119 @@
+{
+  "schema": 1,
+  "coordinate_convention": "native_pixels_xyxy_inclusive_zero_based",
+  "frame_intervals": "inclusive",
+  "missing_frames": "unannotated, not negative",
+  "dataset": "ucf_crime",
+  "video_id": "RoadAccidents122_x264",
+  "split": "test",
+  "width": 320,
+  "height": 240,
+  "num_frames": 647,
+  "fps": 30.0,
+  "sha256": "a8906759f63af661026066cc6795571d3b5695acf8ddb2d65ff91f08039da6f7",
+  "events": [
+    {
+      "start": 329,
+      "end": 355,
+      "class_name": "RoadAccidents"
+    }
+  ],
+  "reviewed_segments": [
+    {
+      "start": 329,
+      "end": 329,
+      "boxes": [
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            137,
+            72,
+            168,
+            90
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            162,
+            74,
+            184,
+            88
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "RoadAccidents122_x264@479x32ic0081b3b297c:5:329-329",
+        "start": 329,
+        "end": 329,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 330,
+      "end": 344,
+      "boxes": [
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            137,
+            72,
+            168,
+            90
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            162,
+            72,
+            184,
+            88
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "RoadAccidents122_x264@479x32ic0081b3b297c:6:330-344",
+        "start": 330,
+        "end": 344,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 345,
+      "end": 355,
+      "boxes": [
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            137,
+            72,
+            168,
+            90
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            156,
+            72,
+            175,
+            89
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "RoadAccidents122_x264@479x32ic0081b3b297c:7:345-355",
+        "start": 345,
+        "end": 355,
+        "mode": "plane_hold"
+      }
+    }
+  ]
+}

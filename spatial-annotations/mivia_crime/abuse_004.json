@@ -1,0 +1,322 @@
+{
+  "schema": 1,
+  "coordinate_convention": "native_pixels_xyxy_inclusive_zero_based",
+  "frame_intervals": "inclusive",
+  "missing_frames": "unannotated, not negative",
+  "dataset": "mivia_crime",
+  "video_id": "abuse_004",
+  "split": "test",
+  "width": 1920,
+  "height": 1080,
+  "num_frames": 871,
+  "fps": 30.0,
+  "sha256": "30c228333ce423a76d3da7f74acd5264d3881db5ece9f906a3947d97d1e60d88",
+  "events": [
+    {
+      "start": 234,
+      "end": 272,
+      "class_name": "Abuse"
+    },
+    {
+      "start": 707,
+      "end": 736,
+      "class_name": "Abuse"
+    }
+  ],
+  "reviewed_segments": [
+    {
+      "start": 234,
+      "end": 239,
+      "boxes": [
+        {
+          "class_name": "Abuse",
+          "xyxy": [
+            1511,
+            603,
+            1540,
+            641
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Abuse",
+          "xyxy": [
+            1533,
+            533,
+            1594,
+            668
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Abuse",
+          "xyxy": [
+            1563,
+            613,
+            1618,
+            677
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "abuse_004@359x32ic0081b3b297c:7:234-239",
+        "start": 234,
+        "end": 239,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 240,
+      "end": 255,
+      "boxes": [
+        {
+          "class_name": "Abuse",
+          "xyxy": [
+            1516,
+            603,
+            1541,
+            641
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Abuse",
+          "xyxy": [
+            1539,
+            533,
+            1607,
+            668
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Abuse",
+          "xyxy": [
+            1565,
+            611,
+            1625,
+            675
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "abuse_004@359x32ic0081b3b297c:8:240-255",
+        "start": 240,
+        "end": 255,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 256,
+      "end": 270,
+      "boxes": [
+        {
+          "class_name": "Abuse",
+          "xyxy": [
+            1544,
+            599,
+            1576,
+            636
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Abuse",
+          "xyxy": [
+            1564,
+            532,
+            1630,
+            661
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Abuse",
+          "xyxy": [
+            1622,
+            606,
+            1653,
+            664
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "abuse_004@359x32ic0081b3b297c:9:256-270",
+        "start": 256,
+        "end": 270,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 271,
+      "end": 272,
+      "boxes": [
+        {
+          "class_name": "Abuse",
+          "xyxy": [
+            1570,
+            599,
+            1608,
+            634
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Abuse",
+          "xyxy": [
+            1604,
+            525,
+            1652,
+            650
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Abuse",
+          "xyxy": [
+            1632,
+            603,
+            1683,
+            660
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "abuse_004@359x32ic0081b3b297c:10:271-272",
+        "start": 271,
+        "end": 272,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 707,
+      "end": 719,
+      "boxes": [
+        {
+          "class_name": "Abuse",
+          "xyxy": [
+            1511,
+            603,
+            1539,
+            641
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Abuse",
+          "xyxy": [
+            1533,
+            533,
+            1594,
+            668
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Abuse",
+          "xyxy": [
+            1563,
+            613,
+            1618,
+            677
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "abuse_004@839x32ic0081b3b297c:7:707-719",
+        "start": 707,
+        "end": 719,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 720,
+      "end": 735,
+      "boxes": [
+        {
+          "class_name": "Abuse",
+          "xyxy": [
+            1530,
+            603,
+            1565,
+            641
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Abuse",
+          "xyxy": [
+            1559,
+            524,
+            1620,
+            659
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Abuse",
+          "xyxy": [
+            1606,
+            597,
+            1643,
+            667
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "abuse_004@839x32ic0081b3b297c:8:720-735",
+        "start": 720,
+        "end": 735,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 736,
+      "end": 736,
+      "boxes": [
+        {
+          "class_name": "Abuse",
+          "xyxy": [
+            1558,
+            604,
+            1594,
+            629
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Abuse",
+          "xyxy": [
+            1588,
+            524,
+            1647,
+            655
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Abuse",
+          "xyxy": [
+            1629,
+            601,
+            1667,
+            667
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "abuse_004@839x32ic0081b3b297c:9:736-736",
+        "start": 736,
+        "end": 736,
+        "mode": "plane_hold"
+      }
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "schema": 1,
+  "coordinate_convention": "native_pixels_xyxy_inclusive_zero_based",
+  "frame_intervals": "inclusive",
+  "missing_frames": "unannotated, not negative",
+  "dataset": "mivia_crime",
+  "video_id": "shoplifting_001",
+  "split": "test",
+  "width": 848,
+  "height": 480,
+  "num_frames": 752,
+  "fps": 30.0,
+  "sha256": "083a93c0cbd25ea07374ffd4f99ec37641a9fcba1addd6c1289013d7ccaecc46",
+  "events": [
+    {
+      "start": 563,
+      "end": 636,
+      "class_name": "Shoplifting"
+    }
+  ],
+  "reviewed_segments": [
+    {
+      "start": 563,
+      "end": 569,
+      "boxes": [
+        {
+          "class_name": "Shoplifting",
+          "xyxy": [
+            284,
+            118,
+            369,
+            478
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "shoplifting_001@719x32ic0081b3b297c:5:563-569",
+        "start": 563,
+        "end": 569,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 570,
+      "end": 584,
+      "boxes": [
+        {
+          "class_name": "Shoplifting",
+          "xyxy": [
+            271,
+            124,
+            372,
+            479
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "shoplifting_001@719x32ic0081b3b297c:6:570-584",
+        "start": 570,
+        "end": 584,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 585,
+      "end": 599,
+      "boxes": [
+        {
+          "class_name": "Shoplifting",
+          "xyxy": [
+            239,
+            71,
+            352,
+            479
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "shoplifting_001@719x32ic0081b3b297c:7:585-599",
+        "start": 585,
+        "end": 599,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 600,
+      "end": 615,
+      "boxes": [
+        {
+          "class_name": "Shoplifting",
+          "xyxy": [
+            245,
+            67,
+            400,
+            479
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "shoplifting_001@719x32ic0081b3b297c:8:600-615",
+        "start": 600,
+        "end": 615,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 616,
+      "end": 630,
+      "boxes": [
+        {
+          "class_name": "Shoplifting",
+          "xyxy": [
+            275,
+            51,
+            438,
+            479
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "shoplifting_001@719x32ic0081b3b297c:9:616-630",
+        "start": 616,
+        "end": 630,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 631,
+      "end": 636,
+      "boxes": [
+        {
+          "class_name": "Shoplifting",
+          "xyxy": [
+            298,
+            46,
+            461,
+            479
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "shoplifting_001@719x32ic0081b3b297c:10:631-636",
+        "start": 631,
+        "end": 636,
+        "mode": "plane_hold"
+      }
+    }
+  ]
+}

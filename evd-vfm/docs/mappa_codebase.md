@@ -1916,3 +1916,14 @@ distingue E3-SV da E3-S. Test sui pesi effettivi in entrambi i modi e sui config
 `vtcd_spatial_present.py` genera nove categorie di tabelle filtrabili e mantiene tutte le colonne, senza riscrivere dati scientifici; vista iniziale `boxes`, distinta da `mask` e `largest`. Il preparatore accetta `--dataset mivia_crime --external --reviewed-videos-only`: esporta i 39 video interamente confermati senza fold MIVIA. Snapshot/audit in `tmp/vtcd-spatial-extension/gt-mivia/`. Tredici test mirati passati, incluso il controllo sugli ID/duplicati dei box.
 
 Conteggi statici: 129 file Python in src/evd, 22 apps, 82 scripts, 112 tests. La suite completa non e' rieseguita. Le alternative di formazione bbox sono solo proposte: [discussione](varie/estensione_vtcd_box_mivia_discussione.md). MIVIA non ha ancora metriche spaziali della nuova campagna.
+
+
+## Esportazioni pubbliche GitHub
+
+- `spatial-annotations/`: annotazioni spaziali revisionate dei test UCF (140 video) e del
+  sottoinsieme MIVIA (39 video), segmenti nativi inclusivi, hash e coperture. Il comando
+  `export_reviewed.py` usa la libreria standard, esclude bozze e dati del progetto operativo
+  e verifica frame e box rispetto alla copia SQLite coerente. La pubblicazione è autorizzata
+  dall'autore il 4 novembre 2026 e non modifica gli input delle campagne sperimentali.
+- `comparisons/`: fonti SOTA fornite dal laboratorio e `results.json`, con numeri, run e
+  provenienza dei confronti del README, separati fra chunk di 8 s e righe OVAD.

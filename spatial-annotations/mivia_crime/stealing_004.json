@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "coordinate_convention": "native_pixels_xyxy_inclusive_zero_based",
+  "frame_intervals": "inclusive",
+  "missing_frames": "unannotated, not negative",
+  "dataset": "mivia_crime",
+  "video_id": "stealing_004",
+  "split": "test",
+  "width": 1920,
+  "height": 1080,
+  "num_frames": 428,
+  "fps": 30.0,
+  "sha256": "efd0f0f17c073340c2d874c861df3f21fd5c7bc2ebf0c7392396253cfc43faff",
+  "events": [
+    {
+      "start": 40,
+      "end": 86,
+      "class_name": "Stealing"
+    }
+  ],
+  "reviewed_segments": [
+    {
+      "start": 40,
+      "end": 42,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            695,
+            729,
+            1165,
+            1078
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "stealing_004@239x32ic0081b3b297c:2:40-42",
+        "start": 40,
+        "end": 42,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 43,
+      "end": 58,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            697,
+            713,
+            1150,
+            1079
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "stealing_004@239x32ic0081b3b297c:3:43-58",
+        "start": 43,
+        "end": 58,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 59,
+      "end": 73,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            481,
+            675,
+            790,
+            1079
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "stealing_004@239x32ic0081b3b297c:4:59-73",
+        "start": 59,
+        "end": 73,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 74,
+      "end": 86,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            402,
+            693,
+            519,
+            1042
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "stealing_004@239x32ic0081b3b297c:5:74-86",
+        "start": 74,
+        "end": 86,
+        "mode": "plane_hold"
+      }
+    }
+  ]
+}

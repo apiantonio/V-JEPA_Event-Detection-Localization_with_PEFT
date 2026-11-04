@@ -1,0 +1,293 @@
+{
+  "schema": 1,
+  "coordinate_convention": "native_pixels_xyxy_inclusive_zero_based",
+  "frame_intervals": "inclusive",
+  "missing_frames": "unannotated, not negative",
+  "dataset": "ucf_crime",
+  "video_id": "RoadAccidents131_x264",
+  "split": "test",
+  "width": 320,
+  "height": 240,
+  "num_frames": 1524,
+  "fps": 30.0,
+  "sha256": "23ec5369acdaf7a4291efef4450010848e407bc2f17719b0c7988f4fc1562a05",
+  "events": [
+    {
+      "start": 189,
+      "end": 321,
+      "class_name": "RoadAccidents"
+    }
+  ],
+  "reviewed_segments": [
+    {
+      "start": 189,
+      "end": 193,
+      "boxes": [
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            118,
+            119,
+            139,
+            140
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            140,
+            111,
+            165,
+            139
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "RoadAccidents131_x264@359x32ic0081b3b297c:4:189-193",
+        "start": 189,
+        "end": 193,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 194,
+      "end": 209,
+      "boxes": [
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            109,
+            134,
+            136,
+            155
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            128,
+            117,
+            150,
+            145
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "RoadAccidents131_x264@359x32ic0081b3b297c:5:194-209",
+        "start": 194,
+        "end": 209,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 210,
+      "end": 224,
+      "boxes": [
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            63,
+            162,
+            98,
+            189
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            100,
+            156,
+            124,
+            193
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "RoadAccidents131_x264@359x32ic0081b3b297c:6:210-224",
+        "start": 210,
+        "end": 224,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 225,
+      "end": 239,
+      "boxes": [
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            39,
+            184,
+            64,
+            209
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            65,
+            176,
+            109,
+            208
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "RoadAccidents131_x264@359x32ic0081b3b297c:7:225-239",
+        "start": 225,
+        "end": 239,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 240,
+      "end": 255,
+      "boxes": [
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            24,
+            198,
+            46,
+            209
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            47,
+            181,
+            84,
+            209
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "RoadAccidents131_x264@359x32ic0081b3b297c:8:240-255",
+        "start": 240,
+        "end": 255,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 256,
+      "end": 270,
+      "boxes": [
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            30,
+            185,
+            72,
+            208
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "RoadAccidents131_x264@359x32ic0081b3b297c:9:256-270",
+        "start": 256,
+        "end": 270,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 271,
+      "end": 286,
+      "boxes": [
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            24,
+            183,
+            69,
+            209
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "RoadAccidents131_x264@359x32ic0081b3b297c:10:271-286",
+        "start": 271,
+        "end": 286,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 287,
+      "end": 301,
+      "boxes": [
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            24,
+            183,
+            69,
+            209
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "RoadAccidents131_x264@359x32ic0081b3b297c:11:287-301",
+        "start": 287,
+        "end": 301,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 302,
+      "end": 316,
+      "boxes": [
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            23,
+            183,
+            69,
+            209
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "RoadAccidents131_x264@359x32ic0081b3b297c:12:302-316",
+        "start": 302,
+        "end": 316,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 317,
+      "end": 321,
+      "boxes": [
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            23,
+            183,
+            69,
+            209
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "RoadAccidents131_x264@359x32ic0081b3b297c:13:317-321",
+        "start": 317,
+        "end": 321,
+        "mode": "plane_hold"
+      }
+    }
+  ]
+}

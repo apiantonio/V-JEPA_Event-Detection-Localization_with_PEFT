@@ -1,0 +1,155 @@
+{
+  "schema": 1,
+  "coordinate_convention": "native_pixels_xyxy_inclusive_zero_based",
+  "frame_intervals": "inclusive",
+  "missing_frames": "unannotated, not negative",
+  "dataset": "ucf_crime",
+  "video_id": "Explosion011_x264",
+  "split": "test",
+  "width": 320,
+  "height": 240,
+  "num_frames": 1571,
+  "fps": 30.0,
+  "sha256": "fa4fe8eb7b91e27f1194b41d185737c3214a22931454c4c849c2e284fb7be7e9",
+  "events": [
+    {
+      "start": 834,
+      "end": 903,
+      "class_name": "Explosion"
+    }
+  ],
+  "reviewed_segments": [
+    {
+      "start": 834,
+      "end": 839,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            159,
+            103,
+            165,
+            109
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion011_x264@959x32ic0081b3b297c:7:834-839",
+        "start": 834,
+        "end": 839,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 840,
+      "end": 855,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            138,
+            113,
+            143,
+            119
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion011_x264@959x32ic0081b3b297c:8:840-855",
+        "start": 840,
+        "end": 855,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 856,
+      "end": 870,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            128,
+            101,
+            168,
+            158
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion011_x264@959x32ic0081b3b297c:9:856-870",
+        "start": 856,
+        "end": 870,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 871,
+      "end": 886,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            130,
+            91,
+            181,
+            168
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion011_x264@959x32ic0081b3b297c:10:871-886",
+        "start": 871,
+        "end": 886,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 887,
+      "end": 901,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            114,
+            80,
+            182,
+            165
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion011_x264@959x32ic0081b3b297c:11:887-901",
+        "start": 887,
+        "end": 901,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 902,
+      "end": 903,
+      "boxes": [
+        {
+          "class_name": "Explosion",
+          "xyxy": [
+            102,
+            80,
+            188,
+            169
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Explosion011_x264@959x32ic0081b3b297c:12:902-903",
+        "start": 902,
+        "end": 903,
+        "mode": "plane_hold"
+      }
+    }
+  ]
+}

@@ -1,0 +1,825 @@
+{
+  "schema": 1,
+  "coordinate_convention": "native_pixels_xyxy_inclusive_zero_based",
+  "frame_intervals": "inclusive",
+  "missing_frames": "unannotated, not negative",
+  "dataset": "mivia_crime",
+  "video_id": "arrest_004",
+  "split": "test",
+  "width": 1920,
+  "height": 1080,
+  "num_frames": 1451,
+  "fps": 30.0,
+  "sha256": "9896cf85acb9a9cca7df87c1a78aded3bfdacfa0de018376db9d74c33c1b6c2f",
+  "events": [
+    {
+      "start": 1159,
+      "end": 1450,
+      "class_name": "Arrest"
+    }
+  ],
+  "reviewed_segments": [
+    {
+      "start": 1159,
+      "end": 1169,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            526,
+            524,
+            671,
+            753
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            664,
+            518,
+            777,
+            795
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            840,
+            568,
+            1000,
+            844
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "arrest_004@1319x32ic0081b3b297c:5:1159-1169",
+        "start": 1159,
+        "end": 1169,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1170,
+      "end": 1184,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            523,
+            504,
+            673,
+            852
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            647,
+            493,
+            758,
+            858
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            756,
+            515,
+            923,
+            890
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "arrest_004@1319x32ic0081b3b297c:6:1170-1184",
+        "start": 1170,
+        "end": 1184,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1185,
+      "end": 1199,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            517,
+            501,
+            667,
+            881
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            636,
+            453,
+            768,
+            915
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            751,
+            491,
+            928,
+            949
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "arrest_004@1319x32ic0081b3b297c:7:1185-1199",
+        "start": 1185,
+        "end": 1199,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1200,
+      "end": 1211,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            494,
+            480,
+            645,
+            911
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            614,
+            450,
+            784,
+            953
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            738,
+            476,
+            928,
+            966
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "arrest_004@1439x32ic0081b3b297c:0:1200-1211",
+        "start": 1200,
+        "end": 1211,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1212,
+      "end": 1227,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            488,
+            475,
+            647,
+            824
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            614,
+            434,
+            902,
+            853
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            759,
+            455,
+            949,
+            917
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "arrest_004@1439x32ic0081b3b297c:1:1212-1227",
+        "start": 1212,
+        "end": 1227,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1228,
+      "end": 1242,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            379,
+            468,
+            598,
+            965
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            545,
+            410,
+            895,
+            896
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            745,
+            450,
+            957,
+            868
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "arrest_004@1439x32ic0081b3b297c:2:1228-1242",
+        "start": 1228,
+        "end": 1242,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1243,
+      "end": 1258,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            371,
+            459,
+            590,
+            1075
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            507,
+            418,
+            885,
+            1028
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            725,
+            452,
+            963,
+            942
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "arrest_004@1439x32ic0081b3b297c:3:1243-1258",
+        "start": 1243,
+        "end": 1258,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1259,
+      "end": 1273,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1230,
+            450,
+            1508,
+            1079
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1397,
+            402,
+            1752,
+            1076
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1603,
+            449,
+            1867,
+            1055
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "arrest_004@1439x32ic0081b3b297c:4:1259-1273",
+        "start": 1259,
+        "end": 1273,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1274,
+      "end": 1289,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            931,
+            364,
+            1024,
+            687
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            989,
+            341,
+            1075,
+            666
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1030,
+            330,
+            1186,
+            597
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "arrest_004@1439x32ic0081b3b297c:5:1274-1289",
+        "start": 1274,
+        "end": 1289,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1290,
+      "end": 1304,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            944,
+            358,
+            1053,
+            683
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1052,
+            357,
+            1172,
+            660
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1090,
+            339,
+            1210,
+            577
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "arrest_004@1439x32ic0081b3b297c:6:1290-1304",
+        "start": 1290,
+        "end": 1304,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1305,
+      "end": 1319,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1038,
+            387,
+            1148,
+            640
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1101,
+            349,
+            1185,
+            580
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1160,
+            371,
+            1277,
+            603
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "arrest_004@1439x32ic0081b3b297c:7:1305-1319",
+        "start": 1305,
+        "end": 1319,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1320,
+      "end": 1335,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1100,
+            389,
+            1225,
+            601
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1115,
+            362,
+            1227,
+            547
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1224,
+            376,
+            1358,
+            563
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "arrest_004@1439x32ic0081b3b297c:8:1320-1335",
+        "start": 1320,
+        "end": 1335,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1336,
+      "end": 1350,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1121,
+            366,
+            1281,
+            579
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1125,
+            382,
+            1250,
+            594
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1248,
+            434,
+            1369,
+            601
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "arrest_004@1439x32ic0081b3b297c:9:1336-1350",
+        "start": 1336,
+        "end": 1350,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1351,
+      "end": 1366,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1111,
+            406,
+            1252,
+            599
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1125,
+            382,
+            1250,
+            594
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "arrest_004@1439x32ic0081b3b297c:10:1351-1366",
+        "start": 1351,
+        "end": 1366,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1367,
+      "end": 1381,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1096,
+            362,
+            1221,
+            583
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1123,
+            394,
+            1264,
+            587
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "arrest_004@1439x32ic0081b3b297c:11:1367-1381",
+        "start": 1367,
+        "end": 1381,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1382,
+      "end": 1396,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1093,
+            352,
+            1218,
+            598
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1123,
+            394,
+            1264,
+            587
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "arrest_004@1439x32ic0081b3b297c:12:1382-1396",
+        "start": 1382,
+        "end": 1396,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1397,
+      "end": 1412,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1013,
+            395,
+            1154,
+            717
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1109,
+            342,
+            1234,
+            588
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "arrest_004@1439x32ic0081b3b297c:13:1397-1412",
+        "start": 1397,
+        "end": 1412,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1413,
+      "end": 1427,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            946,
+            424,
+            1097,
+            774
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1109,
+            342,
+            1234,
+            588
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "arrest_004@1439x32ic0081b3b297c:14:1413-1427",
+        "start": 1413,
+        "end": 1427,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1428,
+      "end": 1439,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1025,
+            494,
+            1170,
+            907
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1075,
+            340,
+            1222,
+            600
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "arrest_004@1439x32ic0081b3b297c:15:1428-1439",
+        "start": 1428,
+        "end": 1439,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1440,
+      "end": 1444,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1072,
+            356,
+            1252,
+            600
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1164,
+            504,
+            1309,
+            950
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "arrest_004@1450x32i42baa00134ad:14:1440-1444",
+        "start": 1440,
+        "end": 1444,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1445,
+      "end": 1450,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1082,
+            355,
+            1292,
+            599
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            1222,
+            506,
+            1383,
+            952
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "arrest_004@1450x32i42baa00134ad:15:1445-1450",
+        "start": 1445,
+        "end": 1450,
+        "mode": "plane_hold"
+      }
+    }
+  ]
+}

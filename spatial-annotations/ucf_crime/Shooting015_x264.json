@@ -1,0 +1,2412 @@
+{
+  "schema": 1,
+  "coordinate_convention": "native_pixels_xyxy_inclusive_zero_based",
+  "frame_intervals": "inclusive",
+  "missing_frames": "unannotated, not negative",
+  "dataset": "ucf_crime",
+  "video_id": "Shooting015_x264",
+  "split": "test",
+  "width": 320,
+  "height": 240,
+  "num_frames": 1713,
+  "fps": 30.0,
+  "sha256": "d1bb4b1dfb6ffa469f3cbda40650be9029315d25d3c706ab65c956d34abf7708",
+  "events": [
+    {
+      "start": 135,
+      "end": 233,
+      "class_name": "Shooting"
+    },
+    {
+      "start": 873,
+      "end": 909,
+      "class_name": "Shooting"
+    },
+    {
+      "start": 910,
+      "end": 1120,
+      "class_name": "Assault"
+    },
+    {
+      "start": 1121,
+      "end": 1146,
+      "class_name": "Shooting"
+    },
+    {
+      "start": 1251,
+      "end": 1654,
+      "class_name": "Arrest"
+    },
+    {
+      "start": 1655,
+      "end": 1699,
+      "class_name": "Shooting"
+    }
+  ],
+  "reviewed_segments": [
+    {
+      "start": 135,
+      "end": 135,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            158,
+            135,
+            218,
+            209
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            189,
+            131,
+            231,
+            200
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@239x32ic0081b3b297c:8:135-135",
+        "start": 135,
+        "end": 135,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 136,
+      "end": 150,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            152,
+            131,
+            217,
+            209
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            189,
+            129,
+            230,
+            200
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@239x32ic0081b3b297c:9:136-150",
+        "start": 136,
+        "end": 150,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 151,
+      "end": 166,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            152,
+            128,
+            220,
+            209
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            193,
+            125,
+            227,
+            200
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@239x32ic0081b3b297c:10:151-166",
+        "start": 151,
+        "end": 166,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 167,
+      "end": 179,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            155,
+            125,
+            225,
+            209
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            194,
+            126,
+            234,
+            199
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@239x32ic0081b3b297c:11:167-179",
+        "start": 167,
+        "end": 179,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 180,
+      "end": 193,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            158,
+            120,
+            227,
+            209
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            194,
+            130,
+            241,
+            198
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@359x32ic0081b3b297c:4:180-193",
+        "start": 180,
+        "end": 193,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 194,
+      "end": 209,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            163,
+            115,
+            224,
+            197
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            213,
+            132,
+            242,
+            204
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@359x32ic0081b3b297c:5:194-209",
+        "start": 194,
+        "end": 209,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 210,
+      "end": 224,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            176,
+            109,
+            223,
+            192
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            212,
+            134,
+            243,
+            207
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@359x32ic0081b3b297c:6:210-224",
+        "start": 210,
+        "end": 224,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 225,
+      "end": 233,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            179,
+            108,
+            217,
+            189
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            210,
+            138,
+            245,
+            207
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@359x32ic0081b3b297c:7:225-233",
+        "start": 225,
+        "end": 233,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 873,
+      "end": 882,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            97,
+            94,
+            111,
+            109
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            136,
+            98,
+            150,
+            108
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            162,
+            97,
+            179,
+            133
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1079x32ic0081b3b297c:2:873-882",
+        "start": 873,
+        "end": 882,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 883,
+      "end": 898,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            98,
+            88,
+            113,
+            110
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            135,
+            93,
+            150,
+            108
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            161,
+            90,
+            179,
+            129
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1079x32ic0081b3b297c:3:883-898",
+        "start": 883,
+        "end": 898,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 899,
+      "end": 909,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            107,
+            84,
+            118,
+            100
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            136,
+            93,
+            148,
+            108
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            159,
+            90,
+            176,
+            120
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1079x32ic0081b3b297c:4:899-909",
+        "start": 899,
+        "end": 909,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 910,
+      "end": 913,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            115,
+            81,
+            123,
+            93
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            136,
+            98,
+            147,
+            108
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            146,
+            97,
+            173,
+            114
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1079x32ic0081b3b297c:4:910-913",
+        "start": 910,
+        "end": 913,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 914,
+      "end": 929,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            115,
+            81,
+            124,
+            93
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            137,
+            99,
+            149,
+            109
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            145,
+            99,
+            173,
+            114
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1079x32ic0081b3b297c:5:914-929",
+        "start": 914,
+        "end": 929,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 930,
+      "end": 944,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            134,
+            75,
+            141,
+            82
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            139,
+            98,
+            157,
+            128
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1079x32ic0081b3b297c:6:930-944",
+        "start": 930,
+        "end": 944,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 945,
+      "end": 959,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            139,
+            97,
+            152,
+            129
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            144,
+            72,
+            154,
+            81
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1079x32ic0081b3b297c:7:945-959",
+        "start": 945,
+        "end": 959,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 960,
+      "end": 975,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            138,
+            98,
+            151,
+            128
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            157,
+            75,
+            174,
+            99
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1079x32ic0081b3b297c:8:960-975",
+        "start": 960,
+        "end": 975,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 976,
+      "end": 990,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            138,
+            102,
+            150,
+            128
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            163,
+            76,
+            175,
+            103
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1079x32ic0081b3b297c:9:976-990",
+        "start": 976,
+        "end": 990,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 991,
+      "end": 1006,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            135,
+            103,
+            149,
+            129
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            163,
+            78,
+            175,
+            109
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1079x32ic0081b3b297c:10:991-1006",
+        "start": 991,
+        "end": 1006,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1007,
+      "end": 1021,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            137,
+            98,
+            165,
+            126
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            159,
+            82,
+            173,
+            113
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1079x32ic0081b3b297c:11:1007-1021",
+        "start": 1007,
+        "end": 1021,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1022,
+      "end": 1036,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            125,
+            102,
+            155,
+            129
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            153,
+            85,
+            169,
+            116
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1079x32ic0081b3b297c:12:1022-1036",
+        "start": 1022,
+        "end": 1036,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1037,
+      "end": 1052,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            129,
+            101,
+            154,
+            128
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            149,
+            91,
+            165,
+            117
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1079x32ic0081b3b297c:13:1037-1052",
+        "start": 1037,
+        "end": 1052,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1053,
+      "end": 1067,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            129,
+            100,
+            154,
+            129
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            144,
+            92,
+            162,
+            114
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1079x32ic0081b3b297c:14:1053-1067",
+        "start": 1053,
+        "end": 1067,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1068,
+      "end": 1079,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            129,
+            101,
+            153,
+            129
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            140,
+            94,
+            161,
+            109
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1079x32ic0081b3b297c:15:1068-1079",
+        "start": 1068,
+        "end": 1079,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1080,
+      "end": 1095,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            130,
+            102,
+            154,
+            129
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            137,
+            94,
+            161,
+            109
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1199x32ic0081b3b297c:8:1080-1095",
+        "start": 1080,
+        "end": 1095,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1096,
+      "end": 1110,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            134,
+            100,
+            154,
+            129
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            138,
+            91,
+            161,
+            109
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1199x32ic0081b3b297c:9:1096-1110",
+        "start": 1096,
+        "end": 1110,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1111,
+      "end": 1120,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            141,
+            91,
+            161,
+            110
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            142,
+            101,
+            156,
+            129
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1199x32ic0081b3b297c:10:1111-1120",
+        "start": 1111,
+        "end": 1120,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1121,
+      "end": 1126,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            136,
+            100,
+            156,
+            129
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            146,
+            90,
+            161,
+            128
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1199x32ic0081b3b297c:10:1121-1126",
+        "start": 1121,
+        "end": 1126,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1127,
+      "end": 1141,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            135,
+            100,
+            157,
+            127
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            146,
+            89,
+            162,
+            127
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1199x32ic0081b3b297c:11:1127-1141",
+        "start": 1127,
+        "end": 1141,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1142,
+      "end": 1146,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            144,
+            96,
+            162,
+            127
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            156,
+            90,
+            183,
+            113
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1199x32ic0081b3b297c:12:1142-1146",
+        "start": 1142,
+        "end": 1146,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1251,
+      "end": 1258,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            159,
+            125
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            168,
+            90,
+            179,
+            107
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            175,
+            88,
+            192,
+            119
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1439x32ic0081b3b297c:3:1251-1258",
+        "start": 1251,
+        "end": 1258,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1259,
+      "end": 1273,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            158,
+            125
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            166,
+            90,
+            181,
+            107
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            177,
+            88,
+            203,
+            120
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1439x32ic0081b3b297c:4:1259-1273",
+        "start": 1259,
+        "end": 1273,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1274,
+      "end": 1289,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            142,
+            97,
+            158,
+            125
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            167,
+            90,
+            181,
+            106
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            186,
+            88,
+            207,
+            121
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1439x32ic0081b3b297c:5:1274-1289",
+        "start": 1274,
+        "end": 1289,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1290,
+      "end": 1304,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            158,
+            125
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            166,
+            86,
+            181,
+            113
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            194,
+            84,
+            217,
+            120
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1439x32ic0081b3b297c:6:1290-1304",
+        "start": 1290,
+        "end": 1304,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1305,
+      "end": 1319,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            159,
+            125
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            164,
+            83,
+            180,
+            105
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            200,
+            83,
+            218,
+            114
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1439x32ic0081b3b297c:7:1305-1319",
+        "start": 1305,
+        "end": 1319,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1320,
+      "end": 1331,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            159,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            164,
+            83,
+            177,
+            104
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            207,
+            80,
+            218,
+            110
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1559x32ic0081b3b297c:0:1320-1331",
+        "start": 1320,
+        "end": 1331,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1332,
+      "end": 1347,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            159,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            165,
+            82,
+            177,
+            104
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            208,
+            78,
+            221,
+            106
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1559x32ic0081b3b297c:1:1332-1347",
+        "start": 1332,
+        "end": 1347,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1348,
+      "end": 1362,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            159,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            162,
+            83,
+            177,
+            105
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            210,
+            77,
+            223,
+            100
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1559x32ic0081b3b297c:2:1348-1362",
+        "start": 1348,
+        "end": 1362,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1363,
+      "end": 1378,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            159,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            162,
+            84,
+            176,
+            105
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            211,
+            75,
+            223,
+            100
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1559x32ic0081b3b297c:3:1363-1378",
+        "start": 1363,
+        "end": 1378,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1379,
+      "end": 1393,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            159,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            162,
+            83,
+            176,
+            105
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            210,
+            74,
+            223,
+            100
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1559x32ic0081b3b297c:4:1379-1393",
+        "start": 1379,
+        "end": 1393,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1394,
+      "end": 1409,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            159,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            162,
+            84,
+            177,
+            104
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            210,
+            75,
+            223,
+            100
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1559x32ic0081b3b297c:5:1394-1409",
+        "start": 1394,
+        "end": 1409,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1410,
+      "end": 1424,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            159,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            162,
+            84,
+            177,
+            103
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            206,
+            75,
+            222,
+            100
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1559x32ic0081b3b297c:6:1410-1424",
+        "start": 1410,
+        "end": 1424,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1425,
+      "end": 1439,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            159,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            161,
+            83,
+            177,
+            104
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            200,
+            77,
+            218,
+            105
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1559x32ic0081b3b297c:7:1425-1439",
+        "start": 1425,
+        "end": 1439,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1440,
+      "end": 1455,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            159,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            160,
+            79,
+            177,
+            105
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            202,
+            81,
+            215,
+            109
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1559x32ic0081b3b297c:8:1440-1455",
+        "start": 1440,
+        "end": 1455,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1456,
+      "end": 1470,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            159,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            160,
+            77,
+            175,
+            105
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            198,
+            83,
+            215,
+            114
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1559x32ic0081b3b297c:9:1456-1470",
+        "start": 1456,
+        "end": 1470,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1471,
+      "end": 1486,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            159,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            160,
+            76,
+            176,
+            108
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            197,
+            92,
+            213,
+            122
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1559x32ic0081b3b297c:10:1471-1486",
+        "start": 1471,
+        "end": 1486,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1487,
+      "end": 1499,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            159,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            160,
+            76,
+            176,
+            107
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            191,
+            94,
+            209,
+            129
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1559x32ic0081b3b297c:11:1487-1499",
+        "start": 1487,
+        "end": 1499,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1500,
+      "end": 1513,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            159,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            162,
+            77,
+            176,
+            107
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            187,
+            99,
+            207,
+            136
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1679x32ic0081b3b297c:4:1500-1513",
+        "start": 1500,
+        "end": 1513,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1514,
+      "end": 1529,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            159,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            163,
+            77,
+            179,
+            106
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            189,
+            106,
+            207,
+            144
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1679x32ic0081b3b297c:5:1514-1529",
+        "start": 1514,
+        "end": 1529,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1530,
+      "end": 1544,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            159,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            166,
+            77,
+            179,
+            105
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            190,
+            106,
+            211,
+            144
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1679x32ic0081b3b297c:6:1530-1544",
+        "start": 1530,
+        "end": 1544,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1545,
+      "end": 1559,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            159,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            169,
+            75,
+            180,
+            102
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            194,
+            104,
+            215,
+            143
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1679x32ic0081b3b297c:7:1545-1559",
+        "start": 1545,
+        "end": 1559,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1560,
+      "end": 1575,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            159,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            169,
+            75,
+            185,
+            99
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            199,
+            100,
+            217,
+            139
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1679x32ic0081b3b297c:8:1560-1575",
+        "start": 1560,
+        "end": 1575,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1576,
+      "end": 1590,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            159,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            175,
+            73,
+            190,
+            99
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            203,
+            92,
+            223,
+            127
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1679x32ic0081b3b297c:9:1576-1590",
+        "start": 1576,
+        "end": 1590,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1591,
+      "end": 1606,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            159,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            180,
+            74,
+            198,
+            100
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            212,
+            86,
+            227,
+            119
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1679x32ic0081b3b297c:10:1591-1606",
+        "start": 1591,
+        "end": 1606,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1607,
+      "end": 1621,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            159,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            188,
+            74,
+            200,
+            100
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            218,
+            83,
+            230,
+            111
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1679x32ic0081b3b297c:11:1607-1621",
+        "start": 1607,
+        "end": 1621,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1622,
+      "end": 1636,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            159,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            189,
+            73,
+            199,
+            100
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            219,
+            78,
+            234,
+            103
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1679x32ic0081b3b297c:12:1622-1636",
+        "start": 1622,
+        "end": 1636,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1637,
+      "end": 1652,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            159,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            189,
+            73,
+            200,
+            100
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            224,
+            76,
+            236,
+            100
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1679x32ic0081b3b297c:13:1637-1652",
+        "start": 1637,
+        "end": 1652,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1653,
+      "end": 1654,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            144,
+            96,
+            159,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            189,
+            73,
+            200,
+            100
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            224,
+            76,
+            236,
+            100
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1679x32ic0081b3b297c:14:1653-1654",
+        "start": 1653,
+        "end": 1654,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1655,
+      "end": 1667,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            143,
+            97,
+            158,
+            125
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            190,
+            73,
+            200,
+            100
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            223,
+            76,
+            236,
+            101
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1679x32ic0081b3b297c:14:1655-1667",
+        "start": 1655,
+        "end": 1667,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1668,
+      "end": 1679,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            143,
+            97,
+            158,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            190,
+            73,
+            200,
+            100
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            221,
+            77,
+            236,
+            102
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1679x32ic0081b3b297c:15:1668-1679",
+        "start": 1668,
+        "end": 1679,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1680,
+      "end": 1685,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            143,
+            97,
+            158,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            190,
+            73,
+            200,
+            100
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            219,
+            78,
+            235,
+            103
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1712x32i268be8d18388:12:1680-1685",
+        "start": 1680,
+        "end": 1685,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1686,
+      "end": 1694,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            143,
+            97,
+            158,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            190,
+            73,
+            200,
+            100
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            220,
+            78,
+            235,
+            104
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1712x32i268be8d18388:13:1686-1694",
+        "start": 1686,
+        "end": 1694,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1695,
+      "end": 1699,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            143,
+            97,
+            158,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            190,
+            73,
+            199,
+            100
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            220,
+            79,
+            235,
+            104
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting015_x264@1712x32i268be8d18388:14:1695-1699",
+        "start": 1695,
+        "end": 1699,
+        "mode": "plane_hold"
+      }
+    }
+  ]
+}

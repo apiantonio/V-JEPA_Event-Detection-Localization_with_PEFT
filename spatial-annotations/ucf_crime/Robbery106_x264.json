@@ -1,0 +1,233 @@
+{
+  "schema": 1,
+  "coordinate_convention": "native_pixels_xyxy_inclusive_zero_based",
+  "frame_intervals": "inclusive",
+  "missing_frames": "unannotated, not negative",
+  "dataset": "ucf_crime",
+  "video_id": "Robbery106_x264",
+  "split": "test",
+  "width": 320,
+  "height": 240,
+  "num_frames": 1197,
+  "fps": 30.0,
+  "sha256": "1a3f50b4e048d130e2d00d8af51e7a474cef8cad46d9f80a96a493bcf57fc894",
+  "events": [
+    {
+      "start": 496,
+      "end": 564,
+      "class_name": "Robbery"
+    }
+  ],
+  "reviewed_segments": [
+    {
+      "start": 496,
+      "end": 510,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            28,
+            106,
+            82,
+            207
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            107,
+            105,
+            149,
+            207
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            140,
+            89,
+            191,
+            183
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Robbery106_x264@599x32ic0081b3b297c:9:496-510",
+        "start": 496,
+        "end": 510,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 511,
+      "end": 526,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            31,
+            110,
+            82,
+            207
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            113,
+            109,
+            163,
+            207
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            140,
+            89,
+            191,
+            183
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Robbery106_x264@599x32ic0081b3b297c:10:511-526",
+        "start": 511,
+        "end": 526,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 527,
+      "end": 539,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            31,
+            108,
+            81,
+            207
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            106,
+            109,
+            163,
+            207
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            140,
+            89,
+            191,
+            183
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Robbery106_x264@599x32ic0081b3b297c:11:527-539",
+        "start": 527,
+        "end": 539,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 540,
+      "end": 553,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            28,
+            106,
+            95,
+            207
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            110,
+            109,
+            163,
+            207
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            140,
+            89,
+            191,
+            183
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Robbery106_x264@719x32ic0081b3b297c:4:540-553",
+        "start": 540,
+        "end": 553,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 554,
+      "end": 564,
+      "boxes": [
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            28,
+            106,
+            95,
+            207
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            90,
+            109,
+            163,
+            207
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Robbery",
+          "xyxy": [
+            140,
+            89,
+            191,
+            183
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Robbery106_x264@719x32ic0081b3b297c:5:554-564",
+        "start": 554,
+        "end": 564,
+        "mode": "plane_hold"
+      }
+    }
+  ]
+}

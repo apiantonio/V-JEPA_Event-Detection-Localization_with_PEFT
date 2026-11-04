@@ -1,0 +1,397 @@
+{
+  "schema": 1,
+  "coordinate_convention": "native_pixels_xyxy_inclusive_zero_based",
+  "frame_intervals": "inclusive",
+  "missing_frames": "unannotated, not negative",
+  "dataset": "mivia_crime",
+  "video_id": "stealing_008",
+  "split": "test",
+  "width": 1072,
+  "height": 602,
+  "num_frames": 2311,
+  "fps": 30.0,
+  "sha256": "a69331a3eda47b7526f74a142a7d6d8631d7dd42953991124461b75b4ae3104c",
+  "events": [
+    {
+      "start": 840,
+      "end": 1093,
+      "class_name": "Stealing"
+    }
+  ],
+  "reviewed_segments": [
+    {
+      "start": 840,
+      "end": 851,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            251,
+            72,
+            470,
+            444
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "stealing_008@1079x32ic0081b3b297c:0:840-851",
+        "start": 840,
+        "end": 851,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 852,
+      "end": 867,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            221,
+            132,
+            440,
+            478
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "stealing_008@1079x32ic0081b3b297c:1:852-867",
+        "start": 852,
+        "end": 867,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 868,
+      "end": 882,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            196,
+            203,
+            390,
+            478
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "stealing_008@1079x32ic0081b3b297c:2:868-882",
+        "start": 868,
+        "end": 882,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 883,
+      "end": 898,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            214,
+            247,
+            390,
+            478
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "stealing_008@1079x32ic0081b3b297c:3:883-898",
+        "start": 883,
+        "end": 898,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 899,
+      "end": 913,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            220,
+            250,
+            389,
+            476
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "stealing_008@1079x32ic0081b3b297c:4:899-913",
+        "start": 899,
+        "end": 913,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 914,
+      "end": 929,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            220,
+            251,
+            388,
+            477
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "stealing_008@1079x32ic0081b3b297c:5:914-929",
+        "start": 914,
+        "end": 929,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 930,
+      "end": 944,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            223,
+            247,
+            389,
+            480
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "stealing_008@1079x32ic0081b3b297c:6:930-944",
+        "start": 930,
+        "end": 944,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 945,
+      "end": 959,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            227,
+            231,
+            389,
+            476
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "stealing_008@1079x32ic0081b3b297c:7:945-959",
+        "start": 945,
+        "end": 959,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 960,
+      "end": 975,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            242,
+            225,
+            391,
+            478
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "stealing_008@1079x32ic0081b3b297c:8:960-975",
+        "start": 960,
+        "end": 975,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 976,
+      "end": 990,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            248,
+            210,
+            390,
+            473
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "stealing_008@1079x32ic0081b3b297c:9:976-990",
+        "start": 976,
+        "end": 990,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 991,
+      "end": 1006,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            227,
+            182,
+            389,
+            471
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "stealing_008@1079x32ic0081b3b297c:10:991-1006",
+        "start": 991,
+        "end": 1006,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1007,
+      "end": 1021,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            192,
+            107,
+            377,
+            448
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "stealing_008@1079x32ic0081b3b297c:11:1007-1021",
+        "start": 1007,
+        "end": 1021,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1022,
+      "end": 1036,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            196,
+            87,
+            356,
+            445
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "stealing_008@1079x32ic0081b3b297c:12:1022-1036",
+        "start": 1022,
+        "end": 1036,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1037,
+      "end": 1052,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            186,
+            90,
+            356,
+            444
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "stealing_008@1079x32ic0081b3b297c:13:1037-1052",
+        "start": 1037,
+        "end": 1052,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1053,
+      "end": 1067,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            180,
+            108,
+            356,
+            444
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "stealing_008@1079x32ic0081b3b297c:14:1053-1067",
+        "start": 1053,
+        "end": 1067,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1068,
+      "end": 1079,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            159,
+            143,
+            353,
+            447
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "stealing_008@1079x32ic0081b3b297c:15:1068-1079",
+        "start": 1068,
+        "end": 1079,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1080,
+      "end": 1093,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            153,
+            158,
+            327,
+            447
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "stealing_008@1199x32ic0081b3b297c:8:1080-1093",
+        "start": 1080,
+        "end": 1093,
+        "mode": "plane_hold"
+      }
+    }
+  ]
+}

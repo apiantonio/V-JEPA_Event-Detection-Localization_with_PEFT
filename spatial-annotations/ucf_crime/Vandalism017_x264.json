@@ -1,0 +1,200 @@
+{
+  "schema": 1,
+  "coordinate_convention": "native_pixels_xyxy_inclusive_zero_based",
+  "frame_intervals": "inclusive",
+  "missing_frames": "unannotated, not negative",
+  "dataset": "ucf_crime",
+  "video_id": "Vandalism017_x264",
+  "split": "test",
+  "width": 320,
+  "height": 240,
+  "num_frames": 1011,
+  "fps": 30.0,
+  "sha256": "160e2274f7424c18009c3f80935be8f5a4309c4f64a73d8b89daacfb4959f8db",
+  "events": [
+    {
+      "start": 323,
+      "end": 350,
+      "class_name": "Vandalism"
+    },
+    {
+      "start": 812,
+      "end": 851,
+      "class_name": "Vandalism"
+    }
+  ],
+  "reviewed_segments": [
+    {
+      "start": 323,
+      "end": 329,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            222,
+            60,
+            271,
+            166
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism017_x264@479x32ic0081b3b297c:5:323-329",
+        "start": 323,
+        "end": 329,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 330,
+      "end": 344,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            139,
+            50,
+            195,
+            139
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            227,
+            63,
+            276,
+            169
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism017_x264@479x32ic0081b3b297c:6:330-344",
+        "start": 330,
+        "end": 344,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 345,
+      "end": 350,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            139,
+            52,
+            195,
+            139
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            178,
+            68,
+            232,
+            164
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism017_x264@479x32ic0081b3b297c:7:345-350",
+        "start": 345,
+        "end": 350,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 812,
+      "end": 824,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            215,
+            58,
+            260,
+            163
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism017_x264@959x32ic0081b3b297c:6:812-824",
+        "start": 812,
+        "end": 824,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 825,
+      "end": 839,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            138,
+            51,
+            193,
+            138
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            228,
+            61,
+            277,
+            165
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism017_x264@959x32ic0081b3b297c:7:825-839",
+        "start": 825,
+        "end": 839,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 840,
+      "end": 851,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            138,
+            51,
+            193,
+            138
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            182,
+            76,
+            237,
+            165
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism017_x264@959x32ic0081b3b297c:8:840-851",
+        "start": 840,
+        "end": 851,
+        "mode": "plane_hold"
+      }
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "schema": 1,
+  "coordinate_convention": "native_pixels_xyxy_inclusive_zero_based",
+  "frame_intervals": "inclusive",
+  "missing_frames": "unannotated, not negative",
+  "dataset": "ucf_crime",
+  "video_id": "RoadAccidents132_x264",
+  "split": "test",
+  "width": 320,
+  "height": 240,
+  "num_frames": 1862,
+  "fps": 30.0,
+  "sha256": "aae3133dc96f1a312eeeecfc1e79b7d8f268205f9e9e9df48765806063712d2e",
+  "events": [
+    {
+      "start": 244,
+      "end": 324,
+      "class_name": "RoadAccidents"
+    }
+  ],
+  "reviewed_segments": [
+    {
+      "start": 244,
+      "end": 255,
+      "boxes": [
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            142,
+            113,
+            180,
+            134
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            165,
+            131,
+            178,
+            138
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "RoadAccidents132_x264@359x32ic0081b3b297c:8:244-255",
+        "start": 244,
+        "end": 255,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 256,
+      "end": 270,
+      "boxes": [
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            140,
+            126,
+            162,
+            135
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            142,
+            112,
+            182,
+            135
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "RoadAccidents132_x264@359x32ic0081b3b297c:9:256-270",
+        "start": 256,
+        "end": 270,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 271,
+      "end": 286,
+      "boxes": [
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            102,
+            117,
+            113,
+            123
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            119,
+            125,
+            135,
+            134
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            142,
+            113,
+            183,
+            138
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "RoadAccidents132_x264@359x32ic0081b3b297c:10:271-286",
+        "start": 271,
+        "end": 286,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 287,
+      "end": 299,
+      "boxes": [
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            73,
+            113,
+            88,
+            119
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            101,
+            126,
+            117,
+            135
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            142,
+            113,
+            183,
+            136
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "RoadAccidents132_x264@359x32ic0081b3b297c:11:287-299",
+        "start": 287,
+        "end": 299,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 300,
+      "end": 313,
+      "boxes": [
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            60,
+            108,
+            75,
+            116
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            91,
+            125,
+            112,
+            134
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            143,
+            113,
+            184,
+            137
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "RoadAccidents132_x264@479x32ic0081b3b297c:4:300-313",
+        "start": 300,
+        "end": 313,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 314,
+      "end": 324,
+      "boxes": [
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            57,
+            108,
+            72,
+            116
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            87,
+            126,
+            100,
+            137
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "RoadAccidents",
+          "xyxy": [
+            143,
+            113,
+            184,
+            137
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "RoadAccidents132_x264@479x32ic0081b3b297c:5:314-324",
+        "start": 314,
+        "end": 324,
+        "mode": "plane_hold"
+      }
+    }
+  ]
+}

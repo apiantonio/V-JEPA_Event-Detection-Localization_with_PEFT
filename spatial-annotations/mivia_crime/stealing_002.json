@@ -1,0 +1,133 @@
+{
+  "schema": 1,
+  "coordinate_convention": "native_pixels_xyxy_inclusive_zero_based",
+  "frame_intervals": "inclusive",
+  "missing_frames": "unannotated, not negative",
+  "dataset": "mivia_crime",
+  "video_id": "stealing_002",
+  "split": "test",
+  "width": 320,
+  "height": 240,
+  "num_frames": 1587,
+  "fps": 30.0,
+  "sha256": "28b5b041213cdb8c24fdb9039a21992c923198ee3b81395282b2210575e364f5",
+  "events": [
+    {
+      "start": 909,
+      "end": 972,
+      "class_name": "Stealing"
+    }
+  ],
+  "reviewed_segments": [
+    {
+      "start": 909,
+      "end": 913,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            70,
+            109,
+            122,
+            190
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "stealing_002@1079x32ic0081b3b297c:4:909-913",
+        "start": 909,
+        "end": 913,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 914,
+      "end": 929,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            71,
+            108,
+            122,
+            191
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "stealing_002@1079x32ic0081b3b297c:5:914-929",
+        "start": 914,
+        "end": 929,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 930,
+      "end": 944,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            72,
+            102,
+            120,
+            192
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "stealing_002@1079x32ic0081b3b297c:6:930-944",
+        "start": 930,
+        "end": 944,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 945,
+      "end": 959,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            68,
+            99,
+            128,
+            191
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "stealing_002@1079x32ic0081b3b297c:7:945-959",
+        "start": 945,
+        "end": 959,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 960,
+      "end": 972,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            70,
+            92,
+            122,
+            185
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "stealing_002@1079x32ic0081b3b297c:8:960-972",
+        "start": 960,
+        "end": 972,
+        "mode": "plane_hold"
+      }
+    }
+  ]
+}

@@ -1,0 +1,3837 @@
+{
+  "schema": 1,
+  "coordinate_convention": "native_pixels_xyxy_inclusive_zero_based",
+  "frame_intervals": "inclusive",
+  "missing_frames": "unannotated, not negative",
+  "dataset": "ucf_crime",
+  "video_id": "Assault010_x264",
+  "split": "test",
+  "width": 320,
+  "height": 240,
+  "num_frames": 16177,
+  "fps": 30.0,
+  "sha256": "324c35712dd3322e6d9d1396ae30fee346ef4f28076c34a644f4379b43911edf",
+  "events": [
+    {
+      "start": 11319,
+      "end": 11700,
+      "class_name": "Assault"
+    },
+    {
+      "start": 12276,
+      "end": 12972,
+      "class_name": "Assault"
+    },
+    {
+      "start": 15209,
+      "end": 15852,
+      "class_name": "Arrest"
+    }
+  ],
+  "reviewed_segments": [
+    {
+      "start": 11319,
+      "end": 11322,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            99,
+            74,
+            155,
+            144
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            108,
+            26,
+            148,
+            82
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@11519x32ic0081b3b297c:2:11319-11322",
+        "start": 11319,
+        "end": 11322,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 11323,
+      "end": 11338,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            90,
+            81,
+            152,
+            146
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            107,
+            28,
+            149,
+            89
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@11519x32ic0081b3b297c:3:11323-11338",
+        "start": 11323,
+        "end": 11338,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 11339,
+      "end": 11353,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            96,
+            31,
+            144,
+            104
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            98,
+            86,
+            151,
+            151
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@11519x32ic0081b3b297c:4:11339-11353",
+        "start": 11339,
+        "end": 11353,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 11354,
+      "end": 11369,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            92,
+            38,
+            156,
+            101
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            99,
+            86,
+            152,
+            153
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@11519x32ic0081b3b297c:5:11354-11369",
+        "start": 11354,
+        "end": 11369,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 11370,
+      "end": 11384,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            91,
+            36,
+            148,
+            127
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            105,
+            98,
+            185,
+            154
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@11519x32ic0081b3b297c:6:11370-11384",
+        "start": 11370,
+        "end": 11384,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 11385,
+      "end": 11399,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            89,
+            35,
+            141,
+            141
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            126,
+            87,
+            206,
+            170
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@11519x32ic0081b3b297c:7:11385-11399",
+        "start": 11385,
+        "end": 11399,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 11400,
+      "end": 11411,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            88,
+            35,
+            139,
+            141
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            121,
+            107,
+            202,
+            163
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@11639x32ic0081b3b297c:0:11400-11411",
+        "start": 11400,
+        "end": 11411,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 11412,
+      "end": 11427,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            86,
+            33,
+            137,
+            139
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            105,
+            110,
+            196,
+            166
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@11639x32ic0081b3b297c:1:11412-11427",
+        "start": 11412,
+        "end": 11427,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 11428,
+      "end": 11442,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            103,
+            33,
+            154,
+            140
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            105,
+            112,
+            193,
+            163
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@11639x32ic0081b3b297c:2:11428-11442",
+        "start": 11428,
+        "end": 11442,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 11443,
+      "end": 11458,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            111,
+            110,
+            191,
+            157
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            114,
+            34,
+            157,
+            127
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@11639x32ic0081b3b297c:3:11443-11458",
+        "start": 11443,
+        "end": 11458,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 11459,
+      "end": 11473,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            110,
+            41,
+            159,
+            138
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            111,
+            110,
+            191,
+            157
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@11639x32ic0081b3b297c:4:11459-11473",
+        "start": 11459,
+        "end": 11473,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 11474,
+      "end": 11489,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            110,
+            46,
+            165,
+            136
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            111,
+            108,
+            199,
+            155
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@11639x32ic0081b3b297c:5:11474-11489",
+        "start": 11474,
+        "end": 11489,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 11490,
+      "end": 11504,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            108,
+            45,
+            162,
+            138
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            111,
+            110,
+            200,
+            157
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@11639x32ic0081b3b297c:6:11490-11504",
+        "start": 11490,
+        "end": 11504,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 11505,
+      "end": 11519,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            107,
+            73,
+            178,
+            139
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            109,
+            101,
+            200,
+            161
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@11639x32ic0081b3b297c:7:11505-11519",
+        "start": 11505,
+        "end": 11519,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 11520,
+      "end": 11535,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            110,
+            66,
+            174,
+            136
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            110,
+            103,
+            201,
+            150
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@11639x32ic0081b3b297c:8:11520-11535",
+        "start": 11520,
+        "end": 11535,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 11536,
+      "end": 11550,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            110,
+            65,
+            188,
+            127
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            110,
+            101,
+            208,
+            153
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@11639x32ic0081b3b297c:9:11536-11550",
+        "start": 11536,
+        "end": 11550,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 11551,
+      "end": 11566,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            111,
+            64,
+            194,
+            138
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            112,
+            104,
+            201,
+            148
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@11639x32ic0081b3b297c:10:11551-11566",
+        "start": 11551,
+        "end": 11566,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 11567,
+      "end": 11581,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            98,
+            105,
+            188,
+            148
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            99,
+            74,
+            179,
+            123
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@11639x32ic0081b3b297c:11:11567-11581",
+        "start": 11567,
+        "end": 11581,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 11582,
+      "end": 11596,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            104,
+            98,
+            205,
+            144
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            113,
+            51,
+            175,
+            125
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            243,
+            47,
+            278,
+            87
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@11639x32ic0081b3b297c:12:11582-11596",
+        "start": 11582,
+        "end": 11596,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 11597,
+      "end": 11612,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            98,
+            68,
+            173,
+            142
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            99,
+            100,
+            204,
+            147
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            244,
+            47,
+            278,
+            86
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@11639x32ic0081b3b297c:13:11597-11612",
+        "start": 11597,
+        "end": 11612,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 11613,
+      "end": 11627,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            91,
+            39,
+            136,
+            143
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            114,
+            95,
+            204,
+            147
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@11639x32ic0081b3b297c:14:11613-11627",
+        "start": 11613,
+        "end": 11627,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 11628,
+      "end": 11639,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            79,
+            33,
+            122,
+            150
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            111,
+            101,
+            202,
+            150
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@11639x32ic0081b3b297c:15:11628-11639",
+        "start": 11628,
+        "end": 11639,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 11640,
+      "end": 11655,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            89,
+            32,
+            127,
+            141
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            116,
+            103,
+            206,
+            154
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@11759x32ic0081b3b297c:8:11640-11655",
+        "start": 11640,
+        "end": 11655,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 11656,
+      "end": 11670,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            102,
+            28,
+            145,
+            117
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            114,
+            106,
+            206,
+            153
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@11759x32ic0081b3b297c:9:11656-11670",
+        "start": 11656,
+        "end": 11670,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 11671,
+      "end": 11686,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            98,
+            24,
+            149,
+            126
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            115,
+            101,
+            205,
+            153
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@11759x32ic0081b3b297c:10:11671-11686",
+        "start": 11671,
+        "end": 11686,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 11687,
+      "end": 11700,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            100,
+            23,
+            138,
+            115
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            113,
+            105,
+            197,
+            148
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@11759x32ic0081b3b297c:11:11687-11700",
+        "start": 11687,
+        "end": 11700,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12276,
+      "end": 12282,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            245,
+            42,
+            280,
+            87
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            249,
+            22,
+            280,
+            57
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12479x32ic0081b3b297c:2:12276-12282",
+        "start": 12276,
+        "end": 12282,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12283,
+      "end": 12298,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            245,
+            42,
+            280,
+            87
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            249,
+            22,
+            280,
+            57
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12479x32ic0081b3b297c:3:12283-12298",
+        "start": 12283,
+        "end": 12298,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12299,
+      "end": 12313,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            241,
+            42,
+            280,
+            87
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            249,
+            22,
+            280,
+            57
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12479x32ic0081b3b297c:4:12299-12313",
+        "start": 12299,
+        "end": 12313,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12314,
+      "end": 12329,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            241,
+            42,
+            280,
+            87
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            249,
+            22,
+            280,
+            57
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12479x32ic0081b3b297c:5:12314-12329",
+        "start": 12314,
+        "end": 12329,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12330,
+      "end": 12344,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            241,
+            42,
+            280,
+            87
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            259,
+            33,
+            290,
+            68
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12479x32ic0081b3b297c:6:12330-12344",
+        "start": 12330,
+        "end": 12344,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12345,
+      "end": 12359,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            241,
+            42,
+            280,
+            87
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            259,
+            33,
+            290,
+            68
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12479x32ic0081b3b297c:7:12345-12359",
+        "start": 12345,
+        "end": 12359,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12360,
+      "end": 12371,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            245,
+            42,
+            271,
+            84
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            275,
+            35,
+            306,
+            70
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12599x32ic0081b3b297c:0:12360-12371",
+        "start": 12360,
+        "end": 12371,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12372,
+      "end": 12387,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            245,
+            42,
+            271,
+            84
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            274,
+            32,
+            302,
+            67
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12599x32ic0081b3b297c:1:12372-12387",
+        "start": 12372,
+        "end": 12387,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12388,
+      "end": 12402,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            245,
+            42,
+            271,
+            84
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            270,
+            30,
+            294,
+            69
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12599x32ic0081b3b297c:2:12388-12402",
+        "start": 12388,
+        "end": 12402,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12403,
+      "end": 12418,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            243,
+            50,
+            270,
+            86
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            270,
+            40,
+            294,
+            71
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12599x32ic0081b3b297c:3:12403-12418",
+        "start": 12403,
+        "end": 12418,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12419,
+      "end": 12433,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            239,
+            48,
+            269,
+            86
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            271,
+            37,
+            298,
+            69
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12599x32ic0081b3b297c:4:12419-12433",
+        "start": 12419,
+        "end": 12433,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12434,
+      "end": 12449,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            241,
+            41,
+            294,
+            119
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            272,
+            29,
+            299,
+            61
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12599x32ic0081b3b297c:5:12434-12449",
+        "start": 12434,
+        "end": 12449,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12450,
+      "end": 12464,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            270,
+            50,
+            310,
+            139
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            275,
+            26,
+            292,
+            63
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12599x32ic0081b3b297c:6:12450-12464",
+        "start": 12450,
+        "end": 12464,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12465,
+      "end": 12479,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            241,
+            22,
+            276,
+            59
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            274,
+            48,
+            319,
+            143
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12599x32ic0081b3b297c:7:12465-12479",
+        "start": 12465,
+        "end": 12479,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12480,
+      "end": 12495,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            225,
+            22,
+            260,
+            59
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            268,
+            50,
+            318,
+            156
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12599x32ic0081b3b297c:8:12480-12495",
+        "start": 12480,
+        "end": 12495,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12496,
+      "end": 12510,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            203,
+            18,
+            241,
+            50
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            258,
+            50,
+            319,
+            171
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12599x32ic0081b3b297c:9:12496-12510",
+        "start": 12496,
+        "end": 12510,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12511,
+      "end": 12526,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            191,
+            14,
+            231,
+            58
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            244,
+            47,
+            311,
+            176
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12599x32ic0081b3b297c:10:12511-12526",
+        "start": 12511,
+        "end": 12526,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12527,
+      "end": 12539,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            173,
+            13,
+            215,
+            64
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            236,
+            50,
+            309,
+            195
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12599x32ic0081b3b297c:11:12527-12539",
+        "start": 12527,
+        "end": 12539,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12540,
+      "end": 12553,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            160,
+            15,
+            202,
+            65
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            214,
+            50,
+            292,
+            200
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12719x32ic0081b3b297c:4:12540-12553",
+        "start": 12540,
+        "end": 12553,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12554,
+      "end": 12569,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            151,
+            16,
+            189,
+            81
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            210,
+            64,
+            282,
+            222
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12719x32ic0081b3b297c:5:12554-12569",
+        "start": 12554,
+        "end": 12569,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12570,
+      "end": 12584,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            122,
+            17,
+            174,
+            88
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            202,
+            75,
+            282,
+            222
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12719x32ic0081b3b297c:6:12570-12584",
+        "start": 12570,
+        "end": 12584,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12585,
+      "end": 12599,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            112,
+            18,
+            160,
+            96
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            184,
+            83,
+            292,
+            222
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12719x32ic0081b3b297c:7:12585-12599",
+        "start": 12585,
+        "end": 12599,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12600,
+      "end": 12615,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            112,
+            19,
+            149,
+            102
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            194,
+            92,
+            293,
+            222
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12719x32ic0081b3b297c:8:12600-12615",
+        "start": 12600,
+        "end": 12615,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12616,
+      "end": 12630,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            59,
+            123,
+            186,
+            208
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            99,
+            23,
+            140,
+            113
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            182,
+            88,
+            284,
+            223
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12719x32ic0081b3b297c:9:12616-12630",
+        "start": 12616,
+        "end": 12630,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12631,
+      "end": 12646,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            54,
+            139,
+            187,
+            205
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            75,
+            31,
+            132,
+            128
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            183,
+            87,
+            278,
+            223
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12719x32ic0081b3b297c:10:12631-12646",
+        "start": 12631,
+        "end": 12646,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12647,
+      "end": 12659,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            64,
+            19,
+            142,
+            149
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            65,
+            134,
+            148,
+            221
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            196,
+            98,
+            282,
+            223
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12719x32ic0081b3b297c:11:12647-12659",
+        "start": 12647,
+        "end": 12659,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12660,
+      "end": 12673,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            41,
+            161,
+            142,
+            223
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            68,
+            68,
+            176,
+            170
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            208,
+            121,
+            309,
+            223
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12839x32ic0081b3b297c:4:12660-12673",
+        "start": 12660,
+        "end": 12673,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12674,
+      "end": 12689,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            32,
+            199,
+            140,
+            223
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            80,
+            50,
+            170,
+            147
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            207,
+            127,
+            314,
+            222
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12839x32ic0081b3b297c:5:12674-12689",
+        "start": 12674,
+        "end": 12689,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12690,
+      "end": 12704,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            83,
+            205,
+            188,
+            223
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            94,
+            34,
+            179,
+            135
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            232,
+            134,
+            319,
+            224
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12839x32ic0081b3b297c:6:12690-12704",
+        "start": 12690,
+        "end": 12704,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12705,
+      "end": 12719,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            112,
+            33,
+            189,
+            133
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            231,
+            123,
+            319,
+            224
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12839x32ic0081b3b297c:7:12705-12719",
+        "start": 12705,
+        "end": 12719,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12720,
+      "end": 12735,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            155,
+            31,
+            211,
+            130
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            232,
+            116,
+            319,
+            224
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12839x32ic0081b3b297c:8:12720-12735",
+        "start": 12720,
+        "end": 12735,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12736,
+      "end": 12750,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            166,
+            34,
+            238,
+            154
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            257,
+            138,
+            319,
+            223
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12839x32ic0081b3b297c:9:12736-12750",
+        "start": 12736,
+        "end": 12750,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12751,
+      "end": 12766,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            182,
+            41,
+            235,
+            170
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            258,
+            134,
+            319,
+            223
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12839x32ic0081b3b297c:10:12751-12766",
+        "start": 12751,
+        "end": 12766,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12767,
+      "end": 12779,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            57,
+            203,
+            138,
+            222
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            166,
+            46,
+            262,
+            184
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            250,
+            128,
+            319,
+            224
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12839x32ic0081b3b297c:11:12767-12779",
+        "start": 12767,
+        "end": 12779,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12780,
+      "end": 12793,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            45,
+            184,
+            136,
+            223
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            147,
+            50,
+            267,
+            210
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            240,
+            101,
+            319,
+            222
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12959x32ic0081b3b297c:4:12780-12793",
+        "start": 12780,
+        "end": 12793,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12794,
+      "end": 12809,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            44,
+            188,
+            124,
+            223
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            131,
+            50,
+            264,
+            212
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            248,
+            126,
+            319,
+            223
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12959x32ic0081b3b297c:5:12794-12809",
+        "start": 12794,
+        "end": 12809,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12810,
+      "end": 12824,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            40,
+            197,
+            124,
+            223
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            195,
+            74,
+            286,
+            211
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            244,
+            152,
+            319,
+            224
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12959x32ic0081b3b297c:6:12810-12824",
+        "start": 12810,
+        "end": 12824,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12825,
+      "end": 12839,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            44,
+            206,
+            120,
+            223
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            180,
+            59,
+            270,
+            219
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            225,
+            144,
+            319,
+            224
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12959x32ic0081b3b297c:7:12825-12839",
+        "start": 12825,
+        "end": 12839,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12840,
+      "end": 12855,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            46,
+            216,
+            104,
+            223
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            169,
+            55,
+            248,
+            222
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            223,
+            117,
+            319,
+            223
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12959x32ic0081b3b297c:8:12840-12855",
+        "start": 12840,
+        "end": 12855,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12856,
+      "end": 12870,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            46,
+            216,
+            104,
+            223
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            124,
+            118,
+            206,
+            223
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            187,
+            135,
+            319,
+            223
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12959x32ic0081b3b297c:9:12856-12870",
+        "start": 12856,
+        "end": 12870,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12871,
+      "end": 12886,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            41,
+            68,
+            195,
+            223
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            62,
+            195,
+            144,
+            223
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            166,
+            128,
+            319,
+            223
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12959x32ic0081b3b297c:10:12871-12886",
+        "start": 12871,
+        "end": 12886,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12887,
+      "end": 12901,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            78,
+            205,
+            130,
+            223
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            91,
+            28,
+            197,
+            223
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            194,
+            170,
+            319,
+            223
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12959x32ic0081b3b297c:11:12887-12901",
+        "start": 12887,
+        "end": 12901,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12902,
+      "end": 12916,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            92,
+            215,
+            123,
+            223
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            100,
+            77,
+            214,
+            223
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            201,
+            166,
+            319,
+            223
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12959x32ic0081b3b297c:12:12902-12916",
+        "start": 12902,
+        "end": 12916,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12917,
+      "end": 12932,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            123,
+            50,
+            221,
+            223
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            254,
+            154,
+            319,
+            223
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12959x32ic0081b3b297c:13:12917-12932",
+        "start": 12917,
+        "end": 12932,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12933,
+      "end": 12947,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            140,
+            27,
+            229,
+            196
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            242,
+            111,
+            319,
+            222
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12959x32ic0081b3b297c:14:12933-12947",
+        "start": 12933,
+        "end": 12947,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12948,
+      "end": 12959,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            167,
+            46,
+            248,
+            195
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            259,
+            140,
+            319,
+            222
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@12959x32ic0081b3b297c:15:12948-12959",
+        "start": 12948,
+        "end": 12959,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 12960,
+      "end": 12972,
+      "boxes": [
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            174,
+            41,
+            233,
+            188
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Assault",
+          "xyxy": [
+            253,
+            137,
+            319,
+            223
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@13079x32ic0081b3b297c:8:12960-12972",
+        "start": 12960,
+        "end": 12972,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15209,
+      "end": 15209,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            80,
+            124,
+            198,
+            223
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            216,
+            13,
+            237,
+            51
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            229,
+            12,
+            251,
+            50
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15359x32ic0081b3b297c:5:15209-15209",
+        "start": 15209,
+        "end": 15209,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15210,
+      "end": 15224,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            80,
+            124,
+            198,
+            223
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            216,
+            13,
+            237,
+            51
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            229,
+            12,
+            251,
+            50
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15359x32ic0081b3b297c:6:15210-15224",
+        "start": 15210,
+        "end": 15224,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15225,
+      "end": 15239,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            80,
+            109,
+            178,
+            223
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            216,
+            13,
+            237,
+            51
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            229,
+            12,
+            251,
+            50
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15359x32ic0081b3b297c:7:15225-15239",
+        "start": 15225,
+        "end": 15239,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15240,
+      "end": 15251,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            73,
+            104,
+            167,
+            223
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            216,
+            13,
+            237,
+            51
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15479x32ic0081b3b297c:0:15240-15251",
+        "start": 15240,
+        "end": 15251,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15252,
+      "end": 15267,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            73,
+            104,
+            157,
+            223
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            216,
+            13,
+            237,
+            51
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15479x32ic0081b3b297c:1:15252-15267",
+        "start": 15252,
+        "end": 15267,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15268,
+      "end": 15282,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            64,
+            120,
+            172,
+            223
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            216,
+            13,
+            237,
+            51
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15479x32ic0081b3b297c:2:15268-15282",
+        "start": 15268,
+        "end": 15282,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15283,
+      "end": 15298,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            47,
+            126,
+            168,
+            223
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            216,
+            13,
+            237,
+            51
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15479x32ic0081b3b297c:3:15283-15298",
+        "start": 15283,
+        "end": 15298,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15299,
+      "end": 15313,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            42,
+            135,
+            136,
+            223
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            119,
+            171,
+            223,
+            223
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            218,
+            15,
+            239,
+            52
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15479x32ic0081b3b297c:4:15299-15313",
+        "start": 15299,
+        "end": 15313,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15314,
+      "end": 15329,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            52,
+            154,
+            143,
+            223
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            154,
+            189,
+            263,
+            223
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            217,
+            14,
+            240,
+            52
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15479x32ic0081b3b297c:5:15314-15329",
+        "start": 15314,
+        "end": 15329,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15330,
+      "end": 15344,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            88,
+            152,
+            188,
+            224
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            216,
+            13,
+            240,
+            51
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15479x32ic0081b3b297c:6:15330-15344",
+        "start": 15330,
+        "end": 15344,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15345,
+      "end": 15359,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            127,
+            182,
+            203,
+            223
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            216,
+            14,
+            240,
+            51
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15479x32ic0081b3b297c:7:15345-15359",
+        "start": 15345,
+        "end": 15359,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15360,
+      "end": 15375,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            208,
+            214,
+            255,
+            223
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            217,
+            14,
+            238,
+            51
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15479x32ic0081b3b297c:8:15360-15375",
+        "start": 15360,
+        "end": 15375,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15376,
+      "end": 15390,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            217,
+            15,
+            238,
+            51
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15479x32ic0081b3b297c:9:15376-15390",
+        "start": 15376,
+        "end": 15390,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15391,
+      "end": 15406,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            215,
+            14,
+            241,
+            51
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15479x32ic0081b3b297c:10:15391-15406",
+        "start": 15391,
+        "end": 15406,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15407,
+      "end": 15419,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            217,
+            14,
+            239,
+            52
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15479x32ic0081b3b297c:11:15407-15419",
+        "start": 15407,
+        "end": 15419,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15420,
+      "end": 15433,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            218,
+            15,
+            239,
+            52
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15599x32ic0081b3b297c:4:15420-15433",
+        "start": 15420,
+        "end": 15433,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15434,
+      "end": 15449,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            219,
+            15,
+            241,
+            52
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15599x32ic0081b3b297c:5:15434-15449",
+        "start": 15434,
+        "end": 15449,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15450,
+      "end": 15464,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            220,
+            16,
+            242,
+            52
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15599x32ic0081b3b297c:6:15450-15464",
+        "start": 15450,
+        "end": 15464,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15465,
+      "end": 15479,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            220,
+            16,
+            242,
+            52
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15599x32ic0081b3b297c:7:15465-15479",
+        "start": 15465,
+        "end": 15479,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15480,
+      "end": 15495,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            220,
+            15,
+            244,
+            51
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15599x32ic0081b3b297c:8:15480-15495",
+        "start": 15480,
+        "end": 15495,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15496,
+      "end": 15510,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            216,
+            13,
+            241,
+            52
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15599x32ic0081b3b297c:9:15496-15510",
+        "start": 15496,
+        "end": 15510,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15511,
+      "end": 15526,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            218,
+            15,
+            244,
+            52
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15599x32ic0081b3b297c:10:15511-15526",
+        "start": 15511,
+        "end": 15526,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15527,
+      "end": 15539,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            217,
+            15,
+            240,
+            65
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            233,
+            17,
+            252,
+            52
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15599x32ic0081b3b297c:11:15527-15539",
+        "start": 15527,
+        "end": 15539,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15540,
+      "end": 15553,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            217,
+            16,
+            239,
+            51
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            236,
+            18,
+            255,
+            55
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15719x32ic0081b3b297c:4:15540-15553",
+        "start": 15540,
+        "end": 15553,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15554,
+      "end": 15569,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            222,
+            17,
+            244,
+            53
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            241,
+            19,
+            259,
+            55
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15719x32ic0081b3b297c:5:15554-15569",
+        "start": 15554,
+        "end": 15569,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15570,
+      "end": 15584,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            236,
+            20,
+            257,
+            55
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            252,
+            22,
+            267,
+            56
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15719x32ic0081b3b297c:6:15570-15584",
+        "start": 15570,
+        "end": 15584,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15585,
+      "end": 15599,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            243,
+            23,
+            257,
+            77
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            252,
+            22,
+            271,
+            78
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15719x32ic0081b3b297c:7:15585-15599",
+        "start": 15585,
+        "end": 15599,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15600,
+      "end": 15615,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            259,
+            24,
+            274,
+            76
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            269,
+            25,
+            289,
+            81
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15719x32ic0081b3b297c:8:15600-15615",
+        "start": 15600,
+        "end": 15615,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15616,
+      "end": 15630,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            269,
+            27,
+            292,
+            85
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            284,
+            31,
+            304,
+            86
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15719x32ic0081b3b297c:9:15616-15630",
+        "start": 15616,
+        "end": 15630,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15631,
+      "end": 15646,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            284,
+            31,
+            307,
+            96
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            291,
+            36,
+            319,
+            92
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15719x32ic0081b3b297c:10:15631-15646",
+        "start": 15631,
+        "end": 15646,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15647,
+      "end": 15659,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            305,
+            38,
+            319,
+            105
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15719x32ic0081b3b297c:11:15647-15659",
+        "start": 15647,
+        "end": 15659,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15660,
+      "end": 15673,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            309,
+            47,
+            319,
+            108
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15839x32ic0081b3b297c:4:15660-15673",
+        "start": 15660,
+        "end": 15673,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15674,
+      "end": 15689,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            312,
+            50,
+            319,
+            110
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15839x32ic0081b3b297c:5:15674-15689",
+        "start": 15674,
+        "end": 15689,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15690,
+      "end": 15704,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            313,
+            79,
+            319,
+            114
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15839x32ic0081b3b297c:6:15690-15704",
+        "start": 15690,
+        "end": 15704,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15705,
+      "end": 15719,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            306,
+            59,
+            319,
+            130
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15839x32ic0081b3b297c:7:15705-15719",
+        "start": 15705,
+        "end": 15719,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15720,
+      "end": 15735,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            302,
+            58,
+            319,
+            140
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15839x32ic0081b3b297c:8:15720-15735",
+        "start": 15720,
+        "end": 15735,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15736,
+      "end": 15750,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            285,
+            50,
+            319,
+            141
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15839x32ic0081b3b297c:9:15736-15750",
+        "start": 15736,
+        "end": 15750,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15751,
+      "end": 15766,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            274,
+            48,
+            319,
+            150
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            301,
+            90,
+            319,
+            156
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15839x32ic0081b3b297c:10:15751-15766",
+        "start": 15751,
+        "end": 15766,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15767,
+      "end": 15781,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            257,
+            52,
+            313,
+            172
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            284,
+            60,
+            319,
+            167
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15839x32ic0081b3b297c:11:15767-15781",
+        "start": 15767,
+        "end": 15781,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15782,
+      "end": 15796,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            226,
+            57,
+            303,
+            190
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            280,
+            65,
+            319,
+            192
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15839x32ic0081b3b297c:12:15782-15796",
+        "start": 15782,
+        "end": 15796,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15797,
+      "end": 15812,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            226,
+            61,
+            288,
+            204
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            246,
+            63,
+            319,
+            206
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15839x32ic0081b3b297c:13:15797-15812",
+        "start": 15797,
+        "end": 15812,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15813,
+      "end": 15827,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            191,
+            73,
+            280,
+            222
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            247,
+            76,
+            319,
+            223
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15839x32ic0081b3b297c:14:15813-15827",
+        "start": 15813,
+        "end": 15827,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15828,
+      "end": 15839,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            173,
+            94,
+            266,
+            222
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            237,
+            95,
+            319,
+            222
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15839x32ic0081b3b297c:15:15828-15839",
+        "start": 15828,
+        "end": 15839,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 15840,
+      "end": 15852,
+      "boxes": [
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            166,
+            133,
+            280,
+            223
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Arrest",
+          "xyxy": [
+            215,
+            106,
+            316,
+            220
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Assault010_x264@15959x32ic0081b3b297c:8:15840-15852",
+        "start": 15840,
+        "end": 15852,
+        "mode": "plane_hold"
+      }
+    }
+  ]
+}

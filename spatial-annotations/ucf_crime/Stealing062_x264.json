@@ -1,0 +1,859 @@
+{
+  "schema": 1,
+  "coordinate_convention": "native_pixels_xyxy_inclusive_zero_based",
+  "frame_intervals": "inclusive",
+  "missing_frames": "unannotated, not negative",
+  "dataset": "ucf_crime",
+  "video_id": "Stealing062_x264",
+  "split": "test",
+  "width": 320,
+  "height": 240,
+  "num_frames": 1560,
+  "fps": 30.0,
+  "sha256": "8dc872537de232c651597b90db2ee40455a59ac056e1b7ca3236a9c4ca27bb48",
+  "events": [
+    {
+      "start": 416,
+      "end": 971,
+      "class_name": "Stealing"
+    }
+  ],
+  "reviewed_segments": [
+    {
+      "start": 416,
+      "end": 418,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            126,
+            36,
+            147,
+            87
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@599x32ic0081b3b297c:3:416-418",
+        "start": 416,
+        "end": 418,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 419,
+      "end": 433,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            123,
+            36,
+            146,
+            87
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@599x32ic0081b3b297c:4:419-433",
+        "start": 419,
+        "end": 433,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 434,
+      "end": 449,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            124,
+            36,
+            146,
+            87
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@599x32ic0081b3b297c:5:434-449",
+        "start": 434,
+        "end": 449,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 450,
+      "end": 464,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            124,
+            36,
+            148,
+            87
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@599x32ic0081b3b297c:6:450-464",
+        "start": 450,
+        "end": 464,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 465,
+      "end": 479,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            123,
+            36,
+            147,
+            87
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@599x32ic0081b3b297c:7:465-479",
+        "start": 465,
+        "end": 479,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 480,
+      "end": 491,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            125,
+            34,
+            146,
+            87
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@719x32ic0081b3b297c:0:480-491",
+        "start": 480,
+        "end": 491,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 492,
+      "end": 507,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            125,
+            34,
+            147,
+            87
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@719x32ic0081b3b297c:1:492-507",
+        "start": 492,
+        "end": 507,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 508,
+      "end": 522,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            123,
+            36,
+            147,
+            88
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@719x32ic0081b3b297c:2:508-522",
+        "start": 508,
+        "end": 522,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 523,
+      "end": 538,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            124,
+            35,
+            147,
+            87
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@719x32ic0081b3b297c:3:523-538",
+        "start": 523,
+        "end": 538,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 539,
+      "end": 553,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            123,
+            35,
+            147,
+            87
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@719x32ic0081b3b297c:4:539-553",
+        "start": 539,
+        "end": 553,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 554,
+      "end": 569,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            124,
+            35,
+            147,
+            87
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@719x32ic0081b3b297c:5:554-569",
+        "start": 554,
+        "end": 569,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 570,
+      "end": 584,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            124,
+            33,
+            147,
+            87
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@719x32ic0081b3b297c:6:570-584",
+        "start": 570,
+        "end": 584,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 585,
+      "end": 599,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            122,
+            34,
+            147,
+            87
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@719x32ic0081b3b297c:7:585-599",
+        "start": 585,
+        "end": 599,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 600,
+      "end": 615,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            122,
+            34,
+            147,
+            87
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@719x32ic0081b3b297c:8:600-615",
+        "start": 600,
+        "end": 615,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 616,
+      "end": 630,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            122,
+            34,
+            147,
+            87
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@719x32ic0081b3b297c:9:616-630",
+        "start": 616,
+        "end": 630,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 631,
+      "end": 646,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            122,
+            34,
+            147,
+            87
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@719x32ic0081b3b297c:10:631-646",
+        "start": 631,
+        "end": 646,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 647,
+      "end": 659,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            122,
+            34,
+            147,
+            87
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@719x32ic0081b3b297c:11:647-659",
+        "start": 647,
+        "end": 659,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 660,
+      "end": 673,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            122,
+            34,
+            147,
+            87
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@839x32ic0081b3b297c:4:660-673",
+        "start": 660,
+        "end": 673,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 674,
+      "end": 689,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            122,
+            34,
+            147,
+            87
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@839x32ic0081b3b297c:5:674-689",
+        "start": 674,
+        "end": 689,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 690,
+      "end": 704,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            122,
+            34,
+            147,
+            87
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@839x32ic0081b3b297c:6:690-704",
+        "start": 690,
+        "end": 704,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 705,
+      "end": 719,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            122,
+            34,
+            147,
+            87
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@839x32ic0081b3b297c:7:705-719",
+        "start": 705,
+        "end": 719,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 720,
+      "end": 735,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            121,
+            34,
+            147,
+            87
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@839x32ic0081b3b297c:8:720-735",
+        "start": 720,
+        "end": 735,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 736,
+      "end": 750,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            121,
+            34,
+            147,
+            87
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@839x32ic0081b3b297c:9:736-750",
+        "start": 736,
+        "end": 750,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 751,
+      "end": 766,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            120,
+            34,
+            147,
+            87
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@839x32ic0081b3b297c:10:751-766",
+        "start": 751,
+        "end": 766,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 767,
+      "end": 779,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            122,
+            34,
+            147,
+            87
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@839x32ic0081b3b297c:11:767-779",
+        "start": 767,
+        "end": 779,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 780,
+      "end": 793,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            122,
+            34,
+            147,
+            87
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@959x32ic0081b3b297c:4:780-793",
+        "start": 780,
+        "end": 793,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 794,
+      "end": 809,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            122,
+            34,
+            147,
+            87
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@959x32ic0081b3b297c:5:794-809",
+        "start": 794,
+        "end": 809,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 810,
+      "end": 824,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            122,
+            34,
+            147,
+            87
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@959x32ic0081b3b297c:6:810-824",
+        "start": 810,
+        "end": 824,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 825,
+      "end": 839,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            122,
+            34,
+            147,
+            87
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@959x32ic0081b3b297c:7:825-839",
+        "start": 825,
+        "end": 839,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 840,
+      "end": 855,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            122,
+            34,
+            147,
+            87
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@959x32ic0081b3b297c:8:840-855",
+        "start": 840,
+        "end": 855,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 856,
+      "end": 870,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            122,
+            34,
+            147,
+            87
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@959x32ic0081b3b297c:9:856-870",
+        "start": 856,
+        "end": 870,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 871,
+      "end": 886,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            122,
+            34,
+            147,
+            87
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@959x32ic0081b3b297c:10:871-886",
+        "start": 871,
+        "end": 886,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 887,
+      "end": 901,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            122,
+            34,
+            147,
+            87
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@959x32ic0081b3b297c:11:887-901",
+        "start": 887,
+        "end": 901,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 902,
+      "end": 916,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            122,
+            34,
+            147,
+            87
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@959x32ic0081b3b297c:12:902-916",
+        "start": 902,
+        "end": 916,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 917,
+      "end": 932,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            122,
+            34,
+            147,
+            87
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@959x32ic0081b3b297c:13:917-932",
+        "start": 917,
+        "end": 932,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 933,
+      "end": 947,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            122,
+            34,
+            147,
+            87
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@959x32ic0081b3b297c:14:933-947",
+        "start": 933,
+        "end": 947,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 948,
+      "end": 959,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            122,
+            34,
+            147,
+            87
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@959x32ic0081b3b297c:15:948-959",
+        "start": 948,
+        "end": 959,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 960,
+      "end": 971,
+      "boxes": [
+        {
+          "class_name": "Stealing",
+          "xyxy": [
+            122,
+            34,
+            147,
+            87
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Stealing062_x264@1079x32ic0081b3b297c:8:960-971",
+        "start": 960,
+        "end": 971,
+        "mode": "plane_hold"
+      }
+    }
+  ]
+}

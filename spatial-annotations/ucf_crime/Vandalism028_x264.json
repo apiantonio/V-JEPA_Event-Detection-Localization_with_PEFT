@@ -1,0 +1,2355 @@
+{
+  "schema": 1,
+  "coordinate_convention": "native_pixels_xyxy_inclusive_zero_based",
+  "frame_intervals": "inclusive",
+  "missing_frames": "unannotated, not negative",
+  "dataset": "ucf_crime",
+  "video_id": "Vandalism028_x264",
+  "split": "test",
+  "width": 320,
+  "height": 240,
+  "num_frames": 4495,
+  "fps": 30.0,
+  "sha256": "491931abc026021fc5ecc7c301a65b9660083dbe464ec40a933cbeb6f6cba9fe",
+  "events": [
+    {
+      "start": 1846,
+      "end": 1978,
+      "class_name": "Vandalism"
+    },
+    {
+      "start": 2109,
+      "end": 2156,
+      "class_name": "Vandalism"
+    },
+    {
+      "start": 2301,
+      "end": 2634,
+      "class_name": "Vandalism"
+    }
+  ],
+  "reviewed_segments": [
+    {
+      "start": 1846,
+      "end": 1858,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            193,
+            120,
+            230,
+            175
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2039x32ic0081b3b297c:3:1846-1858",
+        "start": 1846,
+        "end": 1858,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1859,
+      "end": 1873,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            193,
+            123,
+            226,
+            179
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2039x32ic0081b3b297c:4:1859-1873",
+        "start": 1859,
+        "end": 1873,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1874,
+      "end": 1889,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            193,
+            123,
+            229,
+            179
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            193,
+            175,
+            210,
+            185
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2039x32ic0081b3b297c:5:1874-1889",
+        "start": 1874,
+        "end": 1889,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1890,
+      "end": 1904,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            193,
+            120,
+            229,
+            176
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            193,
+            176,
+            210,
+            185
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2039x32ic0081b3b297c:6:1890-1904",
+        "start": 1890,
+        "end": 1904,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1905,
+      "end": 1919,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            193,
+            176,
+            210,
+            185
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            197,
+            116,
+            239,
+            169
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            211,
+            169,
+            219,
+            177
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2039x32ic0081b3b297c:7:1905-1919",
+        "start": 1905,
+        "end": 1919,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1920,
+      "end": 1935,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            203,
+            113,
+            252,
+            169
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2039x32ic0081b3b297c:8:1920-1935",
+        "start": 1920,
+        "end": 1935,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1936,
+      "end": 1950,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            225,
+            118,
+            271,
+            168
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2039x32ic0081b3b297c:9:1936-1950",
+        "start": 1936,
+        "end": 1950,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1951,
+      "end": 1966,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            244,
+            119,
+            286,
+            164
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2039x32ic0081b3b297c:10:1951-1966",
+        "start": 1951,
+        "end": 1966,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1967,
+      "end": 1978,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            248,
+            117,
+            310,
+            165
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2039x32ic0081b3b297c:11:1967-1978",
+        "start": 1967,
+        "end": 1978,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2109,
+      "end": 2116,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            304,
+            184,
+            319,
+            239
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2159x32ic0081b3b297c:12:2109-2116",
+        "start": 2109,
+        "end": 2116,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2117,
+      "end": 2132,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            297,
+            178,
+            319,
+            239
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2159x32ic0081b3b297c:13:2117-2132",
+        "start": 2117,
+        "end": 2132,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2133,
+      "end": 2147,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            295,
+            178,
+            313,
+            191
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            300,
+            193,
+            319,
+            238
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2159x32ic0081b3b297c:14:2133-2147",
+        "start": 2133,
+        "end": 2147,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2148,
+      "end": 2156,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            295,
+            180,
+            313,
+            191
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            297,
+            203,
+            319,
+            239
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2159x32ic0081b3b297c:15:2148-2156",
+        "start": 2148,
+        "end": 2156,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2301,
+      "end": 2307,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            215,
+            200,
+            279,
+            239
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            295,
+            180,
+            313,
+            191
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2519x32ic0081b3b297c:1:2301-2307",
+        "start": 2301,
+        "end": 2307,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2308,
+      "end": 2322,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            199,
+            195,
+            266,
+            239
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            295,
+            179,
+            313,
+            191
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2519x32ic0081b3b297c:2:2308-2322",
+        "start": 2308,
+        "end": 2322,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2323,
+      "end": 2338,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            192,
+            196,
+            260,
+            239
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            295,
+            180,
+            313,
+            191
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2519x32ic0081b3b297c:3:2323-2338",
+        "start": 2323,
+        "end": 2338,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2339,
+      "end": 2353,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            179,
+            205,
+            266,
+            239
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            197,
+            232,
+            228
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            295,
+            179,
+            313,
+            191
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2519x32ic0081b3b297c:4:2339-2353",
+        "start": 2339,
+        "end": 2353,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2354,
+      "end": 2369,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            179,
+            205,
+            212,
+            229
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            197,
+            242,
+            239
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            219,
+            221,
+            263,
+            239
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            295,
+            179,
+            313,
+            191
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2519x32ic0081b3b297c:5:2354-2369",
+        "start": 2354,
+        "end": 2369,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2370,
+      "end": 2384,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            179,
+            205,
+            212,
+            229
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            197,
+            242,
+            239
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            218,
+            221,
+            266,
+            239
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            295,
+            180,
+            313,
+            191
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2519x32ic0081b3b297c:6:2370-2384",
+        "start": 2370,
+        "end": 2384,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2385,
+      "end": 2399,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            179,
+            205,
+            212,
+            229
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            197,
+            242,
+            239
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            212,
+            229,
+            267,
+            239
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            295,
+            179,
+            313,
+            191
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2519x32ic0081b3b297c:7:2385-2399",
+        "start": 2385,
+        "end": 2399,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2400,
+      "end": 2411,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            179,
+            205,
+            212,
+            229
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            197,
+            242,
+            239
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            195,
+            232,
+            236,
+            239
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            295,
+            179,
+            313,
+            191
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2639x32ic0081b3b297c:0:2400-2411",
+        "start": 2400,
+        "end": 2411,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2412,
+      "end": 2427,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            179,
+            205,
+            212,
+            229
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            181,
+            228,
+            219,
+            239
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            197,
+            242,
+            239
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            295,
+            179,
+            313,
+            191
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2639x32ic0081b3b297c:1:2412-2427",
+        "start": 2412,
+        "end": 2427,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2428,
+      "end": 2442,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            162,
+            204,
+            197,
+            239
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            179,
+            205,
+            212,
+            229
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            197,
+            242,
+            239
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            295,
+            179,
+            313,
+            191
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2639x32ic0081b3b297c:2:2428-2442",
+        "start": 2428,
+        "end": 2442,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2443,
+      "end": 2458,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            131,
+            175,
+            188,
+            239
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            179,
+            205,
+            212,
+            229
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            197,
+            242,
+            239
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            295,
+            179,
+            313,
+            191
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2639x32ic0081b3b297c:3:2443-2458",
+        "start": 2443,
+        "end": 2458,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2459,
+      "end": 2473,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            130,
+            160,
+            193,
+            228
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            179,
+            205,
+            212,
+            229
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            197,
+            242,
+            239
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            295,
+            179,
+            313,
+            191
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2639x32ic0081b3b297c:4:2459-2473",
+        "start": 2459,
+        "end": 2473,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2474,
+      "end": 2489,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            137,
+            141,
+            197,
+            223
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            175,
+            185,
+            191,
+            227
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            179,
+            205,
+            212,
+            229
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            197,
+            242,
+            239
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            295,
+            179,
+            313,
+            191
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2639x32ic0081b3b297c:5:2474-2489",
+        "start": 2474,
+        "end": 2489,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2490,
+      "end": 2504,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            141,
+            127,
+            200,
+            194
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            175,
+            185,
+            191,
+            227
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            179,
+            205,
+            212,
+            229
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            184,
+            168,
+            195,
+            181
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            197,
+            242,
+            239
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            295,
+            179,
+            313,
+            191
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2639x32ic0081b3b297c:6:2490-2504",
+        "start": 2490,
+        "end": 2504,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2505,
+      "end": 2519,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            157,
+            121,
+            219,
+            184
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            175,
+            185,
+            191,
+            227
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            179,
+            205,
+            212,
+            229
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            184,
+            164,
+            217,
+            181
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            197,
+            242,
+            239
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            295,
+            179,
+            313,
+            191
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2639x32ic0081b3b297c:7:2505-2519",
+        "start": 2505,
+        "end": 2519,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2520,
+      "end": 2535,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            175,
+            185,
+            191,
+            227
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            179,
+            205,
+            212,
+            229
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            182,
+            115,
+            232,
+            172
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            184,
+            165,
+            219,
+            181
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            197,
+            242,
+            239
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            295,
+            179,
+            313,
+            191
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2639x32ic0081b3b297c:8:2520-2535",
+        "start": 2520,
+        "end": 2535,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2536,
+      "end": 2550,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            175,
+            185,
+            191,
+            227
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            179,
+            205,
+            212,
+            229
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            184,
+            164,
+            229,
+            181
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            197,
+            242,
+            239
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            196,
+            120,
+            239,
+            170
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            295,
+            179,
+            313,
+            191
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2639x32ic0081b3b297c:9:2536-2550",
+        "start": 2536,
+        "end": 2550,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2551,
+      "end": 2566,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            175,
+            185,
+            191,
+            227
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            179,
+            205,
+            212,
+            229
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            184,
+            164,
+            229,
+            188
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            197,
+            242,
+            239
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            202,
+            123,
+            238,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            295,
+            179,
+            313,
+            191
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2639x32ic0081b3b297c:10:2551-2566",
+        "start": 2551,
+        "end": 2566,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2567,
+      "end": 2581,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            175,
+            185,
+            191,
+            227
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            179,
+            205,
+            212,
+            229
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            184,
+            164,
+            229,
+            188
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            197,
+            242,
+            239
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            204,
+            128,
+            238,
+            183
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            295,
+            179,
+            313,
+            191
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2639x32ic0081b3b297c:11:2567-2581",
+        "start": 2567,
+        "end": 2581,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2582,
+      "end": 2596,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            175,
+            185,
+            191,
+            227
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            179,
+            205,
+            212,
+            229
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            184,
+            164,
+            229,
+            188
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            197,
+            242,
+            239
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            204,
+            128,
+            239,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            295,
+            179,
+            313,
+            191
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2639x32ic0081b3b297c:12:2582-2596",
+        "start": 2582,
+        "end": 2596,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2597,
+      "end": 2612,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            175,
+            185,
+            191,
+            227
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            179,
+            205,
+            212,
+            229
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            184,
+            164,
+            229,
+            188
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            197,
+            242,
+            239
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            204,
+            126,
+            243,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            295,
+            179,
+            313,
+            191
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2639x32ic0081b3b297c:13:2597-2612",
+        "start": 2597,
+        "end": 2612,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2613,
+      "end": 2627,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            175,
+            185,
+            191,
+            227
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            179,
+            205,
+            212,
+            229
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            184,
+            164,
+            229,
+            188
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            197,
+            242,
+            239
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            204,
+            126,
+            243,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            295,
+            179,
+            313,
+            191
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2639x32ic0081b3b297c:14:2613-2627",
+        "start": 2613,
+        "end": 2627,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2628,
+      "end": 2634,
+      "boxes": [
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            175,
+            185,
+            191,
+            227
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            179,
+            205,
+            212,
+            229
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            184,
+            164,
+            229,
+            188
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            176,
+            209,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            194,
+            197,
+            242,
+            239
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            204,
+            124,
+            243,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            210,
+            166,
+            220,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Vandalism",
+          "xyxy": [
+            295,
+            179,
+            313,
+            191
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Vandalism028_x264@2639x32ic0081b3b297c:15:2628-2634",
+        "start": 2628,
+        "end": 2634,
+        "mode": "plane_hold"
+      }
+    }
+  ]
+}

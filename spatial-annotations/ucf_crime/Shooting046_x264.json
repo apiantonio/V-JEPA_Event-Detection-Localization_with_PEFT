@@ -1,0 +1,1056 @@
+{
+  "schema": 1,
+  "coordinate_convention": "native_pixels_xyxy_inclusive_zero_based",
+  "frame_intervals": "inclusive",
+  "missing_frames": "unannotated, not negative",
+  "dataset": "ucf_crime",
+  "video_id": "Shooting046_x264",
+  "split": "test",
+  "width": 320,
+  "height": 240,
+  "num_frames": 5088,
+  "fps": 30.0,
+  "sha256": "3b5f607255df3494b3f5003fb44c00d95b1a724e88203e55764a166f1020e28f",
+  "events": [
+    {
+      "start": 4061,
+      "end": 4355,
+      "class_name": "Shooting"
+    },
+    {
+      "start": 4775,
+      "end": 5087,
+      "class_name": "Shooting"
+    }
+  ],
+  "reviewed_segments": [
+    {
+      "start": 4061,
+      "end": 4064,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            17,
+            68,
+            74,
+            197
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@4199x32ic0081b3b297c:6:4061-4064",
+        "start": 4061,
+        "end": 4064,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4065,
+      "end": 4079,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            9,
+            68,
+            86,
+            208
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@4199x32ic0081b3b297c:7:4065-4079",
+        "start": 4065,
+        "end": 4079,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4080,
+      "end": 4091,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            2,
+            76,
+            86,
+            210
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@4319x32ic0081b3b297c:0:4080-4091",
+        "start": 4080,
+        "end": 4091,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4092,
+      "end": 4107,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            0,
+            79,
+            87,
+            210
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            114,
+            79,
+            188,
+            213
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@4319x32ic0081b3b297c:1:4092-4107",
+        "start": 4092,
+        "end": 4107,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4108,
+      "end": 4122,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            0,
+            83,
+            91,
+            227
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            114,
+            90,
+            197,
+            219
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@4319x32ic0081b3b297c:2:4108-4122",
+        "start": 4108,
+        "end": 4122,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4123,
+      "end": 4138,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            0,
+            93,
+            92,
+            227
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            96,
+            118,
+            197,
+            219
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@4319x32ic0081b3b297c:3:4123-4138",
+        "start": 4123,
+        "end": 4138,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4139,
+      "end": 4153,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            0,
+            108,
+            71,
+            228
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            92,
+            144,
+            181,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@4319x32ic0081b3b297c:4:4139-4153",
+        "start": 4139,
+        "end": 4153,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4154,
+      "end": 4169,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            0,
+            110,
+            60,
+            228
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            51,
+            169,
+            165,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@4319x32ic0081b3b297c:5:4154-4169",
+        "start": 4154,
+        "end": 4169,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4170,
+      "end": 4184,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            0,
+            104,
+            62,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@4319x32ic0081b3b297c:6:4170-4184",
+        "start": 4170,
+        "end": 4184,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4185,
+      "end": 4199,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            0,
+            112,
+            54,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@4319x32ic0081b3b297c:7:4185-4199",
+        "start": 4185,
+        "end": 4199,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4200,
+      "end": 4215,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            0,
+            111,
+            50,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@4319x32ic0081b3b297c:8:4200-4215",
+        "start": 4200,
+        "end": 4215,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4216,
+      "end": 4230,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            0,
+            122,
+            31,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@4319x32ic0081b3b297c:9:4216-4230",
+        "start": 4216,
+        "end": 4230,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4231,
+      "end": 4246,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            0,
+            134,
+            27,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@4319x32ic0081b3b297c:10:4231-4246",
+        "start": 4231,
+        "end": 4246,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4247,
+      "end": 4261,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            0,
+            135,
+            27,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@4319x32ic0081b3b297c:11:4247-4261",
+        "start": 4247,
+        "end": 4261,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4262,
+      "end": 4276,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            0,
+            131,
+            28,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@4319x32ic0081b3b297c:12:4262-4276",
+        "start": 4262,
+        "end": 4276,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4277,
+      "end": 4292,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            0,
+            126,
+            31,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@4319x32ic0081b3b297c:13:4277-4292",
+        "start": 4277,
+        "end": 4292,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4293,
+      "end": 4307,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            0,
+            126,
+            34,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@4319x32ic0081b3b297c:14:4293-4307",
+        "start": 4293,
+        "end": 4307,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4308,
+      "end": 4319,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            0,
+            11,
+            319,
+            228
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@4319x32ic0081b3b297c:15:4308-4319",
+        "start": 4308,
+        "end": 4319,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4320,
+      "end": 4335,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            0,
+            11,
+            319,
+            228
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@4439x32ic0081b3b297c:8:4320-4335",
+        "start": 4320,
+        "end": 4335,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4336,
+      "end": 4350,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            0,
+            11,
+            319,
+            228
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@4439x32ic0081b3b297c:9:4336-4350",
+        "start": 4336,
+        "end": 4350,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4351,
+      "end": 4355,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            0,
+            11,
+            226,
+            227
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@4439x32ic0081b3b297c:10:4351-4355",
+        "start": 4351,
+        "end": 4355,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4775,
+      "end": 4784,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            11,
+            65,
+            53,
+            228
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            157,
+            36,
+            261,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@4919x32ic0081b3b297c:6:4775-4784",
+        "start": 4775,
+        "end": 4784,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4785,
+      "end": 4799,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            119,
+            45,
+            267,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@4919x32ic0081b3b297c:7:4785-4799",
+        "start": 4785,
+        "end": 4799,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4800,
+      "end": 4811,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            111,
+            59,
+            192,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@5039x32ic0081b3b297c:0:4800-4811",
+        "start": 4800,
+        "end": 4811,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4812,
+      "end": 4827,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            101,
+            45,
+            194,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@5039x32ic0081b3b297c:1:4812-4827",
+        "start": 4812,
+        "end": 4827,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4828,
+      "end": 4842,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            60,
+            43,
+            175,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@5039x32ic0081b3b297c:2:4828-4842",
+        "start": 4828,
+        "end": 4842,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4843,
+      "end": 4858,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            68,
+            53,
+            173,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@5039x32ic0081b3b297c:3:4843-4858",
+        "start": 4843,
+        "end": 4858,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4859,
+      "end": 4873,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            66,
+            53,
+            154,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@5039x32ic0081b3b297c:4:4859-4873",
+        "start": 4859,
+        "end": 4873,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4874,
+      "end": 4889,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            56,
+            46,
+            164,
+            227
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@5039x32ic0081b3b297c:5:4874-4889",
+        "start": 4874,
+        "end": 4889,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4890,
+      "end": 4904,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            103,
+            50,
+            180,
+            227
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@5039x32ic0081b3b297c:6:4890-4904",
+        "start": 4890,
+        "end": 4904,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4905,
+      "end": 4919,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            48,
+            10,
+            319,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@5039x32ic0081b3b297c:7:4905-4919",
+        "start": 4905,
+        "end": 4919,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4920,
+      "end": 4935,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            215,
+            32,
+            276,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@5039x32ic0081b3b297c:8:4920-4935",
+        "start": 4920,
+        "end": 4935,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4936,
+      "end": 4950,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            173,
+            31,
+            263,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@5039x32ic0081b3b297c:9:4936-4950",
+        "start": 4936,
+        "end": 4950,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4951,
+      "end": 4966,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            150,
+            38,
+            259,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@5039x32ic0081b3b297c:10:4951-4966",
+        "start": 4951,
+        "end": 4966,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4967,
+      "end": 4981,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            109,
+            55,
+            193,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@5039x32ic0081b3b297c:11:4967-4981",
+        "start": 4967,
+        "end": 4981,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4982,
+      "end": 4996,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            102,
+            48,
+            176,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@5039x32ic0081b3b297c:12:4982-4996",
+        "start": 4982,
+        "end": 4996,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 4997,
+      "end": 5012,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            69,
+            44,
+            176,
+            227
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@5039x32ic0081b3b297c:13:4997-5012",
+        "start": 4997,
+        "end": 5012,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 5013,
+      "end": 5027,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            67,
+            53,
+            173,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@5039x32ic0081b3b297c:14:5013-5027",
+        "start": 5013,
+        "end": 5027,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 5028,
+      "end": 5039,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            74,
+            52,
+            154,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@5039x32ic0081b3b297c:15:5028-5039",
+        "start": 5028,
+        "end": 5039,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 5040,
+      "end": 5046,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            52,
+            49,
+            157,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@5087x32i6ec39627b3eb:11:5040-5046",
+        "start": 5040,
+        "end": 5046,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 5047,
+      "end": 5057,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            63,
+            48,
+            165,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@5087x32i6ec39627b3eb:12:5047-5057",
+        "start": 5047,
+        "end": 5057,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 5058,
+      "end": 5068,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            87,
+            50,
+            179,
+            228
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@5087x32i6ec39627b3eb:13:5058-5068",
+        "start": 5058,
+        "end": 5068,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 5069,
+      "end": 5079,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            48,
+            10,
+            319,
+            228
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@5087x32i6ec39627b3eb:14:5069-5079",
+        "start": 5069,
+        "end": 5079,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 5080,
+      "end": 5087,
+      "boxes": [
+        {
+          "class_name": "Shooting",
+          "xyxy": [
+            48,
+            10,
+            319,
+            228
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Shooting046_x264@5087x32i6ec39627b3eb:15:5080-5087",
+        "start": 5080,
+        "end": 5087,
+        "mode": "plane_hold"
+      }
+    }
+  ]
+}

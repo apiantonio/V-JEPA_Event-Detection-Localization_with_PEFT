@@ -1,0 +1,5517 @@
+{
+  "schema": 1,
+  "coordinate_convention": "native_pixels_xyxy_inclusive_zero_based",
+  "frame_intervals": "inclusive",
+  "missing_frames": "unannotated, not negative",
+  "dataset": "ucf_crime",
+  "video_id": "Fighting047_x264",
+  "split": "test",
+  "width": 320,
+  "height": 240,
+  "num_frames": 4459,
+  "fps": 30.0,
+  "sha256": "47878448207828dd1e08359df09e44e93294656331dc622ffc027f7511f2139c",
+  "events": [
+    {
+      "start": 93,
+      "end": 711,
+      "class_name": "Fighting"
+    },
+    {
+      "start": 787,
+      "end": 1869,
+      "class_name": "Fighting"
+    },
+    {
+      "start": 2322,
+      "end": 2477,
+      "class_name": "Fighting"
+    }
+  ],
+  "reviewed_segments": [
+    {
+      "start": 93,
+      "end": 104,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            171,
+            126,
+            231,
+            192
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            191,
+            132,
+            228,
+            207
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@239x32ic0081b3b297c:6:93-104",
+        "start": 93,
+        "end": 104,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 105,
+      "end": 119,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            194,
+            118,
+            243,
+            205
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            205,
+            130,
+            250,
+            206
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@239x32ic0081b3b297c:7:105-119",
+        "start": 105,
+        "end": 119,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 120,
+      "end": 131,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            207,
+            143,
+            242,
+            207
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            227,
+            143,
+            270,
+            205
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@359x32ic0081b3b297c:0:120-131",
+        "start": 120,
+        "end": 131,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 132,
+      "end": 147,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            207,
+            143,
+            239,
+            207
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            217,
+            140,
+            262,
+            207
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@359x32ic0081b3b297c:1:132-147",
+        "start": 132,
+        "end": 147,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 148,
+      "end": 162,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            181,
+            146,
+            232,
+            207
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            219,
+            132,
+            255,
+            207
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@359x32ic0081b3b297c:2:148-162",
+        "start": 148,
+        "end": 162,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 163,
+      "end": 178,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            169,
+            152,
+            212,
+            207
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            210,
+            129,
+            244,
+            207
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@359x32ic0081b3b297c:3:163-178",
+        "start": 163,
+        "end": 178,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 179,
+      "end": 193,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            178,
+            149,
+            219,
+            207
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            207,
+            139,
+            235,
+            207
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@359x32ic0081b3b297c:4:179-193",
+        "start": 179,
+        "end": 193,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 194,
+      "end": 209,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            179,
+            145,
+            230,
+            207
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            210,
+            141,
+            233,
+            207
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@359x32ic0081b3b297c:5:194-209",
+        "start": 194,
+        "end": 209,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 210,
+      "end": 224,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            189,
+            148,
+            242,
+            207
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            193,
+            140,
+            231,
+            185
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@359x32ic0081b3b297c:6:210-224",
+        "start": 210,
+        "end": 224,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 225,
+      "end": 239,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            207,
+            132,
+            237,
+            207
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            208,
+            148,
+            247,
+            207
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@359x32ic0081b3b297c:7:225-239",
+        "start": 225,
+        "end": 239,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 240,
+      "end": 255,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            213,
+            130,
+            276,
+            200
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            215,
+            140,
+            265,
+            207
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@359x32ic0081b3b297c:8:240-255",
+        "start": 240,
+        "end": 255,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 256,
+      "end": 270,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            215,
+            133,
+            264,
+            207
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            259,
+            148,
+            303,
+            198
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@359x32ic0081b3b297c:9:256-270",
+        "start": 256,
+        "end": 270,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 271,
+      "end": 286,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            221,
+            118,
+            259,
+            207
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            263,
+            127,
+            308,
+            175
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@359x32ic0081b3b297c:10:271-286",
+        "start": 271,
+        "end": 286,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 287,
+      "end": 299,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            216,
+            101,
+            253,
+            195
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            258,
+            139,
+            299,
+            183
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@359x32ic0081b3b297c:11:287-299",
+        "start": 287,
+        "end": 299,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 300,
+      "end": 313,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            216,
+            92,
+            248,
+            175
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            244,
+            122,
+            283,
+            176
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@479x32ic0081b3b297c:4:300-313",
+        "start": 300,
+        "end": 313,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 314,
+      "end": 329,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            219,
+            81,
+            250,
+            153
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            242,
+            106,
+            268,
+            161
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@479x32ic0081b3b297c:5:314-329",
+        "start": 314,
+        "end": 329,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 330,
+      "end": 344,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            228,
+            73,
+            251,
+            141
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            243,
+            86,
+            262,
+            145
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@479x32ic0081b3b297c:6:330-344",
+        "start": 330,
+        "end": 344,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 345,
+      "end": 359,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            220,
+            67,
+            250,
+            120
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            230,
+            81,
+            260,
+            132
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@479x32ic0081b3b297c:7:345-359",
+        "start": 345,
+        "end": 359,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 360,
+      "end": 375,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            219,
+            67,
+            245,
+            123
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            232,
+            91,
+            257,
+            123
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@479x32ic0081b3b297c:8:360-375",
+        "start": 360,
+        "end": 375,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 376,
+      "end": 390,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            232,
+            64,
+            256,
+            106
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            249,
+            79,
+            263,
+            116
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@479x32ic0081b3b297c:9:376-390",
+        "start": 376,
+        "end": 390,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 391,
+      "end": 406,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            240,
+            65,
+            259,
+            116
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@479x32ic0081b3b297c:10:391-406",
+        "start": 391,
+        "end": 406,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 407,
+      "end": 419,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            241,
+            62,
+            261,
+            123
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@479x32ic0081b3b297c:11:407-419",
+        "start": 407,
+        "end": 419,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 420,
+      "end": 433,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            251,
+            67,
+            268,
+            125
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@599x32ic0081b3b297c:4:420-433",
+        "start": 420,
+        "end": 433,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 434,
+      "end": 449,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            248,
+            70,
+            275,
+            127
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@599x32ic0081b3b297c:5:434-449",
+        "start": 434,
+        "end": 449,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 450,
+      "end": 464,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            248,
+            69,
+            270,
+            119
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            256,
+            67,
+            278,
+            132
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@599x32ic0081b3b297c:6:450-464",
+        "start": 450,
+        "end": 464,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 465,
+      "end": 479,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            249,
+            71,
+            271,
+            119
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            261,
+            83,
+            285,
+            137
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@599x32ic0081b3b297c:7:465-479",
+        "start": 465,
+        "end": 479,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 480,
+      "end": 495,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            249,
+            72,
+            281,
+            119
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            270,
+            74,
+            294,
+            139
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            279,
+            71,
+            290,
+            91
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@599x32ic0081b3b297c:8:480-495",
+        "start": 480,
+        "end": 495,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 496,
+      "end": 510,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            256,
+            68,
+            287,
+            124
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            258,
+            70,
+            283,
+            134
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@599x32ic0081b3b297c:9:496-510",
+        "start": 496,
+        "end": 510,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 511,
+      "end": 526,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            247,
+            72,
+            274,
+            130
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@599x32ic0081b3b297c:10:511-526",
+        "start": 511,
+        "end": 526,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 527,
+      "end": 541,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            242,
+            75,
+            264,
+            132
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            245,
+            76,
+            265,
+            142
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@599x32ic0081b3b297c:11:527-541",
+        "start": 527,
+        "end": 541,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 542,
+      "end": 556,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            242,
+            75,
+            266,
+            130
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            245,
+            73,
+            271,
+            141
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@599x32ic0081b3b297c:12:542-556",
+        "start": 542,
+        "end": 556,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 557,
+      "end": 572,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            243,
+            71,
+            270,
+            139
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            250,
+            71,
+            270,
+            127
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@599x32ic0081b3b297c:13:557-572",
+        "start": 557,
+        "end": 572,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 573,
+      "end": 587,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            245,
+            73,
+            270,
+            137
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            250,
+            72,
+            270,
+            126
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@599x32ic0081b3b297c:14:573-587",
+        "start": 573,
+        "end": 587,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 588,
+      "end": 599,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            245,
+            73,
+            265,
+            137
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            257,
+            78,
+            271,
+            125
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@599x32ic0081b3b297c:15:588-599",
+        "start": 588,
+        "end": 599,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 600,
+      "end": 615,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            242,
+            73,
+            263,
+            137
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            253,
+            72,
+            270,
+            125
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@719x32ic0081b3b297c:8:600-615",
+        "start": 600,
+        "end": 615,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 616,
+      "end": 630,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            240,
+            74,
+            263,
+            131
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            253,
+            71,
+            269,
+            125
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@719x32ic0081b3b297c:9:616-630",
+        "start": 616,
+        "end": 630,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 631,
+      "end": 646,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            240,
+            67,
+            254,
+            127
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            251,
+            72,
+            268,
+            125
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@719x32ic0081b3b297c:10:631-646",
+        "start": 631,
+        "end": 646,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 647,
+      "end": 661,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            238,
+            69,
+            257,
+            109
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            251,
+            69,
+            267,
+            124
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@719x32ic0081b3b297c:11:647-661",
+        "start": 647,
+        "end": 661,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 662,
+      "end": 676,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            242,
+            66,
+            256,
+            111
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            254,
+            66,
+            268,
+            114
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@719x32ic0081b3b297c:12:662-676",
+        "start": 662,
+        "end": 676,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 677,
+      "end": 692,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            246,
+            63,
+            269,
+            110
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            257,
+            62,
+            272,
+            107
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@719x32ic0081b3b297c:13:677-692",
+        "start": 677,
+        "end": 692,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 693,
+      "end": 707,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            256,
+            61,
+            273,
+            109
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@719x32ic0081b3b297c:14:693-707",
+        "start": 693,
+        "end": 707,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 708,
+      "end": 711,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            261,
+            59,
+            275,
+            107
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@719x32ic0081b3b297c:15:708-711",
+        "start": 708,
+        "end": 711,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 787,
+      "end": 793,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            243,
+            62,
+            276,
+            114
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@959x32ic0081b3b297c:4:787-793",
+        "start": 787,
+        "end": 793,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 794,
+      "end": 809,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            245,
+            61,
+            278,
+            117
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@959x32ic0081b3b297c:5:794-809",
+        "start": 794,
+        "end": 809,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 810,
+      "end": 824,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            109,
+            158,
+            171,
+            207
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            244,
+            62,
+            263,
+            124
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            255,
+            61,
+            271,
+            99
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            265,
+            55,
+            278,
+            100
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@959x32ic0081b3b297c:6:810-824",
+        "start": 810,
+        "end": 824,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 825,
+      "end": 839,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            176,
+            123,
+            203,
+            195
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            228,
+            64,
+            259,
+            125
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            252,
+            62,
+            265,
+            117
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            262,
+            57,
+            276,
+            106
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@959x32ic0081b3b297c:7:825-839",
+        "start": 825,
+        "end": 839,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 840,
+      "end": 851,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            221,
+            73,
+            249,
+            153
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            241,
+            62,
+            257,
+            119
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            253,
+            64,
+            271,
+            112
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1079x32ic0081b3b297c:0:840-851",
+        "start": 840,
+        "end": 851,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 852,
+      "end": 867,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            227,
+            61,
+            254,
+            118
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            233,
+            80,
+            263,
+            137
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            251,
+            65,
+            269,
+            90
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            260,
+            59,
+            275,
+            97
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1079x32ic0081b3b297c:1:852-867",
+        "start": 852,
+        "end": 867,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 868,
+      "end": 882,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            226,
+            59,
+            247,
+            118
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            237,
+            80,
+            264,
+            139
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            241,
+            66,
+            266,
+            115
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            256,
+            60,
+            273,
+            95
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1079x32ic0081b3b297c:2:868-882",
+        "start": 868,
+        "end": 882,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 883,
+      "end": 898,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            211,
+            63,
+            237,
+            119
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            235,
+            60,
+            255,
+            114
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            241,
+            62,
+            272,
+            121
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            255,
+            80,
+            272,
+            145
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1079x32ic0081b3b297c:3:883-898",
+        "start": 883,
+        "end": 898,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 899,
+      "end": 913,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            211,
+            70,
+            228,
+            115
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            216,
+            61,
+            245,
+            117
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            230,
+            67,
+            251,
+            115
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            236,
+            65,
+            265,
+            116
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            246,
+            60,
+            278,
+            163
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1079x32ic0081b3b297c:4:899-913",
+        "start": 899,
+        "end": 913,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 914,
+      "end": 929,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            194,
+            57,
+            225,
+            118
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            221,
+            68,
+            257,
+            122
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            228,
+            98,
+            272,
+            163
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            236,
+            69,
+            257,
+            119
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1079x32ic0081b3b297c:5:914-929",
+        "start": 914,
+        "end": 929,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 930,
+      "end": 944,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            186,
+            58,
+            217,
+            119
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            211,
+            64,
+            247,
+            118
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            220,
+            65,
+            241,
+            115
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            221,
+            92,
+            245,
+            154
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1079x32ic0081b3b297c:6:930-944",
+        "start": 930,
+        "end": 944,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 945,
+      "end": 959,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            170,
+            53,
+            205,
+            110
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            208,
+            77,
+            232,
+            139
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            212,
+            65,
+            241,
+            121
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            220,
+            65,
+            241,
+            115
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1079x32ic0081b3b297c:7:945-959",
+        "start": 945,
+        "end": 959,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 960,
+      "end": 975,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            167,
+            49,
+            202,
+            106
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            187,
+            73,
+            201,
+            134
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            213,
+            62,
+            228,
+            116
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1079x32ic0081b3b297c:8:960-975",
+        "start": 960,
+        "end": 975,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 976,
+      "end": 990,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            167,
+            49,
+            202,
+            118
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            170,
+            69,
+            196,
+            125
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            213,
+            60,
+            228,
+            109
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1079x32ic0081b3b297c:9:976-990",
+        "start": 976,
+        "end": 990,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 991,
+      "end": 1006,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            143,
+            53,
+            161,
+            78
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            159,
+            51,
+            194,
+            117
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            188,
+            51,
+            203,
+            110
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            213,
+            60,
+            228,
+            109
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1079x32ic0081b3b297c:10:991-1006",
+        "start": 991,
+        "end": 1006,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1007,
+      "end": 1019,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            140,
+            55,
+            155,
+            107
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            149,
+            52,
+            164,
+            70
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            151,
+            63,
+            168,
+            120
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            158,
+            51,
+            193,
+            117
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            188,
+            51,
+            203,
+            110
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            211,
+            60,
+            228,
+            110
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1079x32ic0081b3b297c:11:1007-1019",
+        "start": 1007,
+        "end": 1019,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1020,
+      "end": 1033,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            140,
+            55,
+            155,
+            107
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            143,
+            42,
+            169,
+            66
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            151,
+            63,
+            168,
+            120
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            158,
+            48,
+            175,
+            120
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            188,
+            51,
+            203,
+            110
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            210,
+            60,
+            226,
+            113
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1199x32ic0081b3b297c:4:1020-1033",
+        "start": 1020,
+        "end": 1033,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1034,
+      "end": 1049,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            140,
+            55,
+            155,
+            107
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            151,
+            63,
+            168,
+            122
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            155,
+            49,
+            176,
+            117
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            188,
+            51,
+            203,
+            110
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1199x32ic0081b3b297c:5:1034-1049",
+        "start": 1034,
+        "end": 1049,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1050,
+      "end": 1064,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            134,
+            60,
+            149,
+            113
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            137,
+            38,
+            171,
+            61
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            151,
+            63,
+            168,
+            122
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            158,
+            63,
+            174,
+            117
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            188,
+            51,
+            203,
+            110
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1199x32ic0081b3b297c:6:1050-1064",
+        "start": 1050,
+        "end": 1064,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1065,
+      "end": 1079,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            99,
+            45,
+            138,
+            122
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            158,
+            53,
+            175,
+            112
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            158,
+            62,
+            175,
+            117
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            188,
+            51,
+            203,
+            110
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1199x32ic0081b3b297c:7:1065-1079",
+        "start": 1065,
+        "end": 1079,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1080,
+      "end": 1095,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            99,
+            61,
+            140,
+            122
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            153,
+            54,
+            176,
+            112
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            158,
+            62,
+            175,
+            117
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            188,
+            51,
+            203,
+            110
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1199x32ic0081b3b297c:8:1080-1095",
+        "start": 1080,
+        "end": 1095,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1096,
+      "end": 1110,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            122,
+            30,
+            168,
+            117
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            153,
+            54,
+            176,
+            112
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            158,
+            62,
+            175,
+            117
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            188,
+            51,
+            203,
+            110
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1199x32ic0081b3b297c:9:1096-1110",
+        "start": 1096,
+        "end": 1110,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1111,
+      "end": 1126,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            113,
+            56,
+            151,
+            118
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            132,
+            58,
+            155,
+            111
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            162,
+            61,
+            175,
+            117
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            188,
+            59,
+            203,
+            113
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1199x32ic0081b3b297c:10:1111-1126",
+        "start": 1111,
+        "end": 1126,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1127,
+      "end": 1139,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            98,
+            72,
+            119,
+            133
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            115,
+            59,
+            137,
+            84
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            115,
+            77,
+            139,
+            124
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            129,
+            65,
+            157,
+            103
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            160,
+            59,
+            174,
+            113
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            186,
+            61,
+            195,
+            115
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1199x32ic0081b3b297c:11:1127-1139",
+        "start": 1127,
+        "end": 1139,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1140,
+      "end": 1153,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            90,
+            76,
+            119,
+            139
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            116,
+            73,
+            147,
+            118
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            122,
+            53,
+            158,
+            108
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            149,
+            60,
+            171,
+            116
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1319x32ic0081b3b297c:4:1140-1153",
+        "start": 1140,
+        "end": 1153,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1154,
+      "end": 1169,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            88,
+            75,
+            117,
+            130
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            116,
+            73,
+            148,
+            124
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            122,
+            57,
+            158,
+            108
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            149,
+            54,
+            172,
+            112
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1319x32ic0081b3b297c:5:1154-1169",
+        "start": 1154,
+        "end": 1169,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1170,
+      "end": 1184,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            120,
+            57,
+            150,
+            114
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            120,
+            70,
+            152,
+            128
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            139,
+            61,
+            167,
+            115
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1319x32ic0081b3b297c:6:1170-1184",
+        "start": 1170,
+        "end": 1184,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1185,
+      "end": 1199,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            96,
+            73,
+            136,
+            136
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            120,
+            57,
+            153,
+            128
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            123,
+            58,
+            156,
+            110
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1319x32ic0081b3b297c:7:1185-1199",
+        "start": 1185,
+        "end": 1199,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1200,
+      "end": 1215,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            76,
+            78,
+            113,
+            149
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            99,
+            67,
+            132,
+            137
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            122,
+            57,
+            155,
+            113
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1319x32ic0081b3b297c:8:1200-1215",
+        "start": 1200,
+        "end": 1215,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1216,
+      "end": 1230,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            69,
+            80,
+            100,
+            154
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            93,
+            73,
+            125,
+            147
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            112,
+            62,
+            148,
+            123
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1319x32ic0081b3b297c:9:1216-1230",
+        "start": 1216,
+        "end": 1230,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1231,
+      "end": 1246,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            56,
+            97,
+            90,
+            166
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            82,
+            80,
+            104,
+            152
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            95,
+            85,
+            127,
+            157
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            104,
+            64,
+            140,
+            128
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1319x32ic0081b3b297c:10:1231-1246",
+        "start": 1231,
+        "end": 1246,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1247,
+      "end": 1259,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            72,
+            104,
+            121,
+            173
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            78,
+            84,
+            107,
+            121
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            96,
+            89,
+            124,
+            162
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            102,
+            67,
+            139,
+            127
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            134,
+            69,
+            172,
+            127
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1319x32ic0081b3b297c:11:1247-1259",
+        "start": 1247,
+        "end": 1259,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1260,
+      "end": 1273,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            74,
+            84,
+            112,
+            159
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            92,
+            66,
+            129,
+            126
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            108,
+            91,
+            147,
+            171
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            120,
+            69,
+            153,
+            120
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            134,
+            111,
+            167,
+            192
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            139,
+            66,
+            153,
+            120
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1439x32ic0081b3b297c:4:1260-1273",
+        "start": 1260,
+        "end": 1273,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1274,
+      "end": 1289,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            65,
+            89,
+            99,
+            165
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            92,
+            66,
+            129,
+            126
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            112,
+            94,
+            148,
+            168
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            117,
+            68,
+            136,
+            118
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            198,
+            108,
+            252,
+            188
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1439x32ic0081b3b297c:5:1274-1289",
+        "start": 1274,
+        "end": 1289,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1290,
+      "end": 1304,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            64,
+            91,
+            95,
+            171
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            92,
+            66,
+            129,
+            130
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            114,
+            63,
+            133,
+            128
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            116,
+            94,
+            147,
+            171
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            271,
+            115,
+            293,
+            180
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1439x32ic0081b3b297c:6:1290-1304",
+        "start": 1290,
+        "end": 1304,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1305,
+      "end": 1319,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            54,
+            93,
+            81,
+            170
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            89,
+            66,
+            129,
+            130
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            114,
+            63,
+            133,
+            128
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            133,
+            101,
+            165,
+            180
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            296,
+            101,
+            318,
+            166
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1439x32ic0081b3b297c:7:1305-1319",
+        "start": 1305,
+        "end": 1319,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1320,
+      "end": 1335,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            58,
+            93,
+            87,
+            170
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            89,
+            66,
+            129,
+            130
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            114,
+            63,
+            133,
+            128
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            150,
+            102,
+            211,
+            181
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            296,
+            101,
+            318,
+            166
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1439x32ic0081b3b297c:8:1320-1335",
+        "start": 1320,
+        "end": 1335,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1336,
+      "end": 1350,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            81,
+            86,
+            113,
+            161
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            89,
+            66,
+            129,
+            133
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            114,
+            63,
+            133,
+            128
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            181,
+            100,
+            243,
+            177
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            296,
+            101,
+            318,
+            166
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1439x32ic0081b3b297c:9:1336-1350",
+        "start": 1336,
+        "end": 1350,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1351,
+      "end": 1366,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            94,
+            68,
+            134,
+            135
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            96,
+            86,
+            123,
+            161
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            114,
+            63,
+            137,
+            128
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            214,
+            98,
+            268,
+            175
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            297,
+            101,
+            318,
+            174
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1439x32ic0081b3b297c:10:1351-1366",
+        "start": 1351,
+        "end": 1366,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1367,
+      "end": 1379,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            101,
+            77,
+            122,
+            137
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            110,
+            100,
+            146,
+            175
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            118,
+            72,
+            146,
+            131
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            134,
+            81,
+            170,
+            133
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            214,
+            98,
+            268,
+            175
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            297,
+            101,
+            318,
+            174
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1439x32ic0081b3b297c:11:1367-1379",
+        "start": 1367,
+        "end": 1379,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1380,
+      "end": 1393,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            110,
+            79,
+            145,
+            137
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            125,
+            101,
+            161,
+            176
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            132,
+            78,
+            155,
+            109
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            146,
+            80,
+            172,
+            139
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            237,
+            94,
+            282,
+            160
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1559x32ic0081b3b297c:4:1380-1393",
+        "start": 1380,
+        "end": 1393,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1394,
+      "end": 1409,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            118,
+            82,
+            153,
+            140
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            138,
+            76,
+            161,
+            140
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            149,
+            76,
+            175,
+            139
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            157,
+            104,
+            193,
+            190
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            247,
+            87,
+            290,
+            151
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1559x32ic0081b3b297c:5:1394-1409",
+        "start": 1394,
+        "end": 1409,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1410,
+      "end": 1424,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            118,
+            85,
+            153,
+            143
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            138,
+            76,
+            161,
+            140
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            149,
+            72,
+            175,
+            139
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            192,
+            105,
+            228,
+            189
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            257,
+            86,
+            298,
+            147
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1559x32ic0081b3b297c:6:1410-1424",
+        "start": 1410,
+        "end": 1424,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1425,
+      "end": 1439,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            127,
+            81,
+            171,
+            145
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            138,
+            76,
+            161,
+            140
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            149,
+            72,
+            175,
+            139
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            224,
+            103,
+            251,
+            185
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            265,
+            87,
+            314,
+            146
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1559x32ic0081b3b297c:7:1425-1439",
+        "start": 1425,
+        "end": 1439,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1440,
+      "end": 1455,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            127,
+            81,
+            171,
+            145
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            138,
+            76,
+            161,
+            140
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            149,
+            72,
+            175,
+            139
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            241,
+            102,
+            278,
+            180
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            281,
+            90,
+            317,
+            149
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1559x32ic0081b3b297c:8:1440-1455",
+        "start": 1440,
+        "end": 1455,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1456,
+      "end": 1470,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            127,
+            77,
+            145,
+            138
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            138,
+            76,
+            158,
+            145
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            149,
+            72,
+            170,
+            125
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1559x32ic0081b3b297c:9:1456-1470",
+        "start": 1456,
+        "end": 1470,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1471,
+      "end": 1486,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            119,
+            78,
+            138,
+            128
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            130,
+            80,
+            162,
+            147
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            147,
+            71,
+            160,
+            124
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1559x32ic0081b3b297c:10:1471-1486",
+        "start": 1471,
+        "end": 1486,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1487,
+      "end": 1499,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            110,
+            79,
+            132,
+            134
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            130,
+            67,
+            152,
+            122
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            130,
+            80,
+            160,
+            145
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1559x32ic0081b3b297c:11:1487-1499",
+        "start": 1487,
+        "end": 1499,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1500,
+      "end": 1513,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            98,
+            81,
+            122,
+            131
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            112,
+            73,
+            134,
+            99
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            123,
+            85,
+            147,
+            145
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1679x32ic0081b3b297c:4:1500-1513",
+        "start": 1500,
+        "end": 1513,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1514,
+      "end": 1529,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            90,
+            91,
+            117,
+            141
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            112,
+            89,
+            134,
+            135
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            123,
+            96,
+            148,
+            148
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1679x32ic0081b3b297c:5:1514-1529",
+        "start": 1514,
+        "end": 1529,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1530,
+      "end": 1544,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            78,
+            114,
+            133,
+            147
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            84,
+            114,
+            123,
+            166
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            116,
+            117,
+            141,
+            149
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1679x32ic0081b3b297c:6:1530-1544",
+        "start": 1530,
+        "end": 1544,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1545,
+      "end": 1559,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            66,
+            112,
+            134,
+            154
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            84,
+            114,
+            123,
+            170
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            116,
+            117,
+            141,
+            149
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1679x32ic0081b3b297c:7:1545-1559",
+        "start": 1545,
+        "end": 1559,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1560,
+      "end": 1575,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            71,
+            105,
+            112,
+            174
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            72,
+            132,
+            132,
+            163
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            113,
+            105,
+            140,
+            149
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1679x32ic0081b3b297c:8:1560-1575",
+        "start": 1560,
+        "end": 1575,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1576,
+      "end": 1590,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            67,
+            134,
+            135,
+            171
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            82,
+            107,
+            115,
+            174
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            113,
+            114,
+            142,
+            152
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1679x32ic0081b3b297c:9:1576-1590",
+        "start": 1576,
+        "end": 1590,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1591,
+      "end": 1606,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            67,
+            140,
+            147,
+            171
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            86,
+            115,
+            137,
+            175
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            113,
+            114,
+            142,
+            152
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1679x32ic0081b3b297c:10:1591-1606",
+        "start": 1591,
+        "end": 1606,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1607,
+      "end": 1619,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            67,
+            142,
+            147,
+            171
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            86,
+            115,
+            137,
+            175
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            113,
+            114,
+            142,
+            152
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1679x32ic0081b3b297c:11:1607-1619",
+        "start": 1607,
+        "end": 1619,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1620,
+      "end": 1633,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            67,
+            142,
+            147,
+            171
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            88,
+            118,
+            137,
+            175
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            114,
+            118,
+            142,
+            156
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1799x32ic0081b3b297c:4:1620-1633",
+        "start": 1620,
+        "end": 1633,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1634,
+      "end": 1649,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            76,
+            144,
+            144,
+            173
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            87,
+            123,
+            122,
+            197
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            88,
+            120,
+            137,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            117,
+            129,
+            143,
+            168
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1799x32ic0081b3b297c:5:1634-1649",
+        "start": 1634,
+        "end": 1649,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1650,
+      "end": 1664,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            76,
+            144,
+            144,
+            173
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            85,
+            134,
+            125,
+            195
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            88,
+            120,
+            137,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            117,
+            129,
+            143,
+            168
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1799x32ic0081b3b297c:6:1650-1664",
+        "start": 1650,
+        "end": 1664,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1665,
+      "end": 1679,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            76,
+            144,
+            144,
+            173
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            88,
+            123,
+            137,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            93,
+            141,
+            127,
+            193
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            117,
+            129,
+            143,
+            168
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1799x32ic0081b3b297c:7:1665-1679",
+        "start": 1665,
+        "end": 1679,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1680,
+      "end": 1695,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            76,
+            144,
+            144,
+            173
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            88,
+            123,
+            137,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            95,
+            145,
+            140,
+            193
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            117,
+            129,
+            143,
+            168
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1799x32ic0081b3b297c:8:1680-1695",
+        "start": 1680,
+        "end": 1695,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1696,
+      "end": 1710,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            76,
+            144,
+            148,
+            173
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            88,
+            123,
+            137,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            93,
+            144,
+            141,
+            195
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            117,
+            129,
+            143,
+            168
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1799x32ic0081b3b297c:9:1696-1710",
+        "start": 1696,
+        "end": 1710,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1711,
+      "end": 1726,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            76,
+            137,
+            148,
+            173
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            85,
+            123,
+            137,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            91,
+            145,
+            141,
+            192
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            117,
+            129,
+            143,
+            168
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1799x32ic0081b3b297c:10:1711-1726",
+        "start": 1711,
+        "end": 1726,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1727,
+      "end": 1741,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            76,
+            137,
+            148,
+            173
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            85,
+            123,
+            137,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            91,
+            145,
+            141,
+            192
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            115,
+            139,
+            142,
+            198
+          ],
+          "origin": "manual"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            129,
+            120,
+            172,
+            182
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1799x32ic0081b3b297c:11:1727-1741",
+        "start": 1727,
+        "end": 1741,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1742,
+      "end": 1756,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            76,
+            137,
+            148,
+            173
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            85,
+            123,
+            137,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            91,
+            145,
+            141,
+            192
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            115,
+            139,
+            142,
+            204
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            129,
+            127,
+            166,
+            182
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1799x32ic0081b3b297c:12:1742-1756",
+        "start": 1742,
+        "end": 1756,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1757,
+      "end": 1772,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            72,
+            119,
+            113,
+            175
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            76,
+            137,
+            148,
+            173
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            91,
+            145,
+            141,
+            197
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            115,
+            139,
+            142,
+            206
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            129,
+            127,
+            166,
+            182
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1799x32ic0081b3b297c:13:1757-1772",
+        "start": 1757,
+        "end": 1772,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1773,
+      "end": 1787,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            66,
+            110,
+            108,
+            180
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            76,
+            137,
+            148,
+            173
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            91,
+            145,
+            141,
+            197
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            115,
+            139,
+            142,
+            205
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            119,
+            120,
+            149,
+            187
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1799x32ic0081b3b297c:14:1773-1787",
+        "start": 1773,
+        "end": 1787,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1788,
+      "end": 1799,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            52,
+            110,
+            88,
+            184
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            76,
+            132,
+            148,
+            177
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            81,
+            124,
+            109,
+            187
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            115,
+            118,
+            145,
+            185
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            115,
+            139,
+            142,
+            205
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1799x32ic0081b3b297c:15:1788-1799",
+        "start": 1788,
+        "end": 1799,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1800,
+      "end": 1815,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            72,
+            120,
+            108,
+            191
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            76,
+            125,
+            148,
+            177
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            115,
+            118,
+            145,
+            185
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            115,
+            139,
+            142,
+            206
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1919x32ic0081b3b297c:8:1800-1815",
+        "start": 1800,
+        "end": 1815,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1816,
+      "end": 1830,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            86,
+            115,
+            114,
+            178
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            113,
+            116,
+            141,
+            169
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1919x32ic0081b3b297c:9:1816-1830",
+        "start": 1816,
+        "end": 1830,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1831,
+      "end": 1846,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            85,
+            132,
+            119,
+            166
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            103,
+            113,
+            127,
+            184
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            112,
+            96,
+            145,
+            142
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1919x32ic0081b3b297c:10:1831-1846",
+        "start": 1831,
+        "end": 1846,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1847,
+      "end": 1861,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            84,
+            128,
+            117,
+            153
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            95,
+            104,
+            119,
+            175
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1919x32ic0081b3b297c:11:1847-1861",
+        "start": 1847,
+        "end": 1861,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 1862,
+      "end": 1869,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            79,
+            118,
+            116,
+            149
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            86,
+            99,
+            116,
+            175
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@1919x32ic0081b3b297c:12:1862-1869",
+        "start": 1862,
+        "end": 1869,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2322,
+      "end": 2322,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            247,
+            80,
+            267,
+            146
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@2519x32ic0081b3b297c:2:2322-2322",
+        "start": 2322,
+        "end": 2322,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2323,
+      "end": 2338,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            245,
+            80,
+            267,
+            146
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@2519x32ic0081b3b297c:3:2323-2338",
+        "start": 2323,
+        "end": 2338,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2339,
+      "end": 2353,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            227,
+            90,
+            267,
+            167
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            245,
+            96,
+            268,
+            134
+          ],
+          "origin": "pseudo"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            254,
+            101,
+            282,
+            170
+          ],
+          "origin": "pseudo"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@2519x32ic0081b3b297c:4:2339-2353",
+        "start": 2339,
+        "end": 2353,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2354,
+      "end": 2369,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            218,
+            97,
+            258,
+            190
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            245,
+            96,
+            268,
+            134
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            257,
+            103,
+            278,
+            172
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            264,
+            107,
+            305,
+            175
+          ],
+          "origin": "manual"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@2519x32ic0081b3b297c:5:2354-2369",
+        "start": 2354,
+        "end": 2369,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2370,
+      "end": 2384,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            226,
+            100,
+            259,
+            182
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            251,
+            105,
+            274,
+            191
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            264,
+            98,
+            285,
+            167
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            283,
+            108,
+            308,
+            185
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@2519x32ic0081b3b297c:6:2370-2384",
+        "start": 2370,
+        "end": 2384,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2385,
+      "end": 2399,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            242,
+            104,
+            275,
+            185
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            248,
+            109,
+            271,
+            195
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            264,
+            98,
+            285,
+            170
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            282,
+            100,
+            306,
+            169
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@2519x32ic0081b3b297c:7:2385-2399",
+        "start": 2385,
+        "end": 2399,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2400,
+      "end": 2415,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            274,
+            96,
+            295,
+            161
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            275,
+            100,
+            306,
+            170
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@2519x32ic0081b3b297c:8:2400-2415",
+        "start": 2400,
+        "end": 2415,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2416,
+      "end": 2430,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            275,
+            102,
+            305,
+            172
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            276,
+            94,
+            297,
+            159
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@2519x32ic0081b3b297c:9:2416-2430",
+        "start": 2416,
+        "end": 2430,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2431,
+      "end": 2446,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            270,
+            95,
+            293,
+            169
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            280,
+            91,
+            302,
+            150
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@2519x32ic0081b3b297c:10:2431-2446",
+        "start": 2431,
+        "end": 2446,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2447,
+      "end": 2461,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            265,
+            95,
+            287,
+            168
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            281,
+            86,
+            302,
+            148
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@2519x32ic0081b3b297c:11:2447-2461",
+        "start": 2447,
+        "end": 2461,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2462,
+      "end": 2476,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            263,
+            89,
+            285,
+            137
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            271,
+            82,
+            288,
+            139
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@2519x32ic0081b3b297c:12:2462-2476",
+        "start": 2462,
+        "end": 2476,
+        "mode": "plane_hold"
+      }
+    },
+    {
+      "start": 2477,
+      "end": 2477,
+      "boxes": [
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            262,
+            89,
+            284,
+            137
+          ],
+          "origin": "propagated"
+        },
+        {
+          "class_name": "Fighting",
+          "xyxy": [
+            272,
+            82,
+            289,
+            120
+          ],
+          "origin": "propagated"
+        }
+      ],
+      "review_unit": {
+        "id": "Fighting047_x264@2519x32ic0081b3b297c:13:2477-2477",
+        "start": 2477,
+        "end": 2477,
+        "mode": "plane_hold"
+      }
+    }
+  ]
+}
