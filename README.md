@@ -15,6 +15,8 @@ ground truth, an interactive demonstrator and a spatial annotation tool.
 
 - **Author:** Antonio Apicella
 - **Supervisors:** Prof. Antonio Greco, Prof. Mario Vento (MIVIA Lab, University of Salerno)
+- **Trained models:** [Hugging Face collection](https://huggingface.co/collections/apiantonio/v-jepa-21-peft-for-video-event-detection-6af784a3eef00787bc71c0c4)
+  — 14 detectors with inference checkpoints and model cards
 
 ---
 
@@ -484,7 +486,19 @@ The GitHub repositories do not redistribute those datasets or third-party tempor
 
 ## Model weights
 
-Principal seed-42 checkpoints are distributed as **GitHub Release assets**, separately
+The best variant of every family is on **Hugging Face**, in the collection
+[V-JEPA 2.1 + PEFT for Video Event Detection](https://huggingface.co/collections/apiantonio/v-jepa-21-peft-for-video-event-detection-6af784a3eef00787bc71c0c4):
+14 repositories `apiantonio/vjepa2.1-…` (LoRA, DoRA, VPT, sequential and joint
+combinations, Gigantic and the attentive probes), each with `checkpoint/checkpoint.pt`,
+a model card with its results, and the run configuration and metrics. One command installs
+a run folder (`runs/<run_id>` in development); sequential models name the repository of
+their source prior:
+
+```bash
+hf download apiantonio/vjepa2.1-l-ucf-crime-lora-r32 --local-dir evd-vfm/runs/e3r_ucf_vjepa21l_lora-r32-qkvomlp_s42
+```
+
+Principal seed-42 checkpoints are also distributed as **GitHub Release assets**, separately
 from Git. The [weight manifest](weights/weights-manifest.json) identifies each file,
 its SHA-256, selected training step and destination. The [download guide](weights/README.md)
 explains installation. Placeholder files in the public run folders mark the destinations.
@@ -493,8 +507,9 @@ Weights include the trained head and adapter; the upstream backbone is downloade
 The release covers the attentive probe, LoRA r32, DoRA r32, VPT-shallow n8, VPT-deep n8/n576,
 VPT-shallow on LoRA r32 and on DoRA r32, B1/B2 class heads, B3 with summed losses / GradNorm,
 and the completed Gigantic LoRA r32 run. The detectors completed after 4 November 2026 are
-not in the release: the inherited-head sequence, the Gigantic probes and VPT-shallow on
-Gigantic LoRA r32.
+not in the release: the inherited-head sequence, the Gigantic attentive probe and VPT-shallow
+on Gigantic LoRA r32 are in the Hugging Face collection; the Gigantic linear probe is not
+published.
 Both selected and last head/adapter states are retained because some sequential runs
 inherit the last adapter. Optimizer, RNG and training history are omitted: these assets
 are for inference, **not for resuming training**. Composite models also require their
