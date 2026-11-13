@@ -1,0 +1,377 @@
+{
+  "note": "Seed 42. OVAD guard 30 s, Youden on UCF validation rows transferred to MIVIA; EDP-v2 chunk AUC/AP are threshold-free. Fractions, not percentages.",
+  "models": [
+    {
+      "label": "LoRA → VPT-s (reference)",
+      "run_id": "e3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42",
+      "setting": "ViT-L · 1 + 3 ep.",
+      "ucf": {
+        "auc": 0.9467281021998597,
+        "ap": 0.8661862989216897,
+        "auc_a_macro": 0.9138704793658354,
+        "ap_a_macro": 0.917774993038151,
+        "auc_a_micro": 0.9019168663402438,
+        "ap_a_micro": 0.9038253038033288,
+        "row_precision": 0.6835748792270532,
+        "row_recall": 0.8549848942598187,
+        "row_f1": 0.7597315436241612,
+        "row_fpr": 0.11974405850091407,
+        "video_precision": 0.7441860465116279,
+        "video_recall": 0.9142857142857143,
+        "video_f1": 0.8205128205128205,
+        "video_fpr": 0.17959183673469387,
+        "event_recall": 0.8320610687022901,
+        "protocol_mean": 0.8588599926506756,
+        "chunk_auc": 0.9412623060768984,
+        "chunk_ap": 0.798206631065137
+      },
+      "mivia": {
+        "auc": 0.9285447248336907,
+        "ap": 0.8992808813998423,
+        "auc_a_macro": 0.9239583333333333,
+        "ap_a_macro": 0.9434267594778959,
+        "auc_a_micro": 0.8843396588077439,
+        "ap_a_micro": 0.9461155384570072,
+        "row_precision": 0.8537735849056604,
+        "row_recall": 0.7702127659574468,
+        "row_f1": 0.8098434004474272,
+        "row_fpr": 0.08010335917312661,
+        "video_precision": 0.8275862068965517,
+        "video_recall": 0.8888888888888888,
+        "video_f1": 0.8571428571428572,
+        "video_fpr": 0.1366120218579235,
+        "event_recall": 0.75,
+        "protocol_mean": 0.8648976594306971,
+        "chunk_auc": 0.9055810202079837,
+        "chunk_ap": 0.8408111803055548
+      },
+      "mean_of_tests": {
+        "protocol_mean": 0.8618788260406863,
+        "auc": 0.9376364135167752,
+        "video_f1": 0.8388278388278388,
+        "event_recall": 0.791030534351145
+      }
+    },
+    {
+      "label": "LoRA → VPT-s, inherited head",
+      "run_id": "e3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32-headlast_s42",
+      "setting": "ViT-L · 1 + 3 ep.",
+      "campaign": "lora-vpt-head-20261112",
+      "ucf": {
+        "auc": 0.9498914706418421,
+        "ap": 0.8698406687770308,
+        "auc_a_macro": 0.9006794701686343,
+        "ap_a_macro": 0.9062871095765832,
+        "auc_a_micro": 0.902815397437233,
+        "ap_a_micro": 0.9028099768081697,
+        "row_precision": 0.696078431372549,
+        "row_recall": 0.8580060422960725,
+        "row_f1": 0.7686062246278754,
+        "row_fpr": 0.113345521023766,
+        "video_precision": 0.7398843930635838,
+        "video_recall": 0.9142857142857143,
+        "video_f1": 0.8178913738019169,
+        "video_fpr": 0.1836734693877551,
+        "event_recall": 0.8396946564885496,
+        "protocol_mean": 0.8605696124508421,
+        "chunk_auc": 0.9421174478565382,
+        "chunk_ap": 0.7999844880574043
+      },
+      "mivia": {
+        "auc": 0.9337401726318104,
+        "ap": 0.9026604452887128,
+        "auc_a_macro": 0.9229166666666666,
+        "ap_a_macro": 0.9425128585639949,
+        "auc_a_micro": 0.9013034310906651,
+        "ap_a_micro": 0.9529203861043577,
+        "row_precision": 0.861904761904762,
+        "row_recall": 0.7702127659574468,
+        "row_f1": 0.8134831460674158,
+        "row_fpr": 0.07493540051679587,
+        "video_precision": 0.8285714285714286,
+        "video_recall": 0.8592592592592593,
+        "video_f1": 0.8436363636363636,
+        "video_fpr": 0.13114754098360656,
+        "event_recall": 0.745,
+        "protocol_mean": 0.8639734914142435,
+        "chunk_auc": 0.9068197102608085,
+        "chunk_ap": 0.8399014088580015
+      },
+      "mean_of_tests": {
+        "protocol_mean": 0.8622715519325428,
+        "auc": 0.9418158216368262,
+        "video_f1": 0.8307638687191403,
+        "event_recall": 0.7923473282442748
+      }
+    },
+    {
+      "label": "Gigantic attentive probe",
+      "run_id": "e2d_ucf_vjepa21gigantic_frozen-attentive_s42",
+      "setting": "Gigantic · 1 ep.",
+      "campaign": "gigantic-attentive-20261111",
+      "ucf": {
+        "auc": 0.9157944735635739,
+        "ap": 0.8022121535082368,
+        "auc_a_macro": 0.915561684187845,
+        "ap_a_macro": 0.905080289507534,
+        "auc_a_micro": 0.8482611035871792,
+        "ap_a_micro": 0.8480129400642427,
+        "row_precision": 0.6342592592592593,
+        "row_recall": 0.8277945619335347,
+        "row_f1": 0.7182175622542596,
+        "row_fpr": 0.14442413162705667,
+        "video_precision": 0.6983240223463687,
+        "video_recall": 0.8928571428571429,
+        "video_f1": 0.7836990595611285,
+        "video_fpr": 0.22040816326530613,
+        "event_recall": 0.8015267175572519,
+        "protocol_mean": 0.8317292275828337,
+        "chunk_auc": 0.9112058141196908,
+        "chunk_ap": 0.7125664414235008
+      },
+      "mivia": {
+        "auc": 0.9033921600967618,
+        "ap": 0.8538937313642199,
+        "auc_a_macro": 0.9471590909090909,
+        "ap_a_macro": 0.9576128916327781,
+        "auc_a_micro": 0.863024726854514,
+        "ap_a_micro": 0.9361046320653174,
+        "row_precision": 0.8316831683168316,
+        "row_recall": 0.7148936170212766,
+        "row_f1": 0.7688787185354691,
+        "row_fpr": 0.08785529715762273,
+        "video_precision": 0.8153846153846154,
+        "video_recall": 0.7851851851851852,
+        "video_f1": 0.7999999999999999,
+        "video_fpr": 0.13114754098360656,
+        "event_recall": 0.685,
+        "protocol_mean": 0.8360957787306166,
+        "chunk_auc": 0.8793405481460131,
+        "chunk_ap": 0.7888510323267472
+      },
+      "mean_of_tests": {
+        "protocol_mean": 0.8339125031567252,
+        "auc": 0.9095933168301679,
+        "video_f1": 0.7918495297805642,
+        "event_recall": 0.7432633587786259
+      }
+    },
+    {
+      "label": "Gigantic linear probe",
+      "run_id": "e2c_ucf_vjepa21gigantic_frozen-linear_s42",
+      "setting": "Gigantic · 1 ep.",
+      "campaign": "gigantic-linear-20261112",
+      "ucf": {
+        "auc": 0.8464392428903605,
+        "ap": 0.594517408956855,
+        "auc_a_macro": 0.8485509777460242,
+        "ap_a_macro": 0.8651458458585155,
+        "auc_a_micro": 0.6737333750043407,
+        "ap_a_micro": 0.6327549675876631,
+        "row_precision": 0.3780025284450063,
+        "row_recall": 0.9033232628398792,
+        "row_f1": 0.5329768270944741,
+        "row_fpr": 0.44972577696526506,
+        "video_precision": 0.497907949790795,
+        "video_recall": 0.85,
+        "video_f1": 0.6279683377308707,
+        "video_fpr": 0.4897959183673469,
+        "event_recall": 0.8778625954198473,
+        "protocol_mean": 0.714012033986052,
+        "chunk_auc": 0.856881309716221,
+        "chunk_ap": 0.4906557958081569
+      },
+      "mivia": {
+        "auc": 0.7985705646269724,
+        "ap": 0.695167876755768,
+        "auc_a_macro": 0.7690025252525251,
+        "ap_a_macro": 0.8356351153581266,
+        "auc_a_micro": 0.7235767682576193,
+        "ap_a_micro": 0.8466674028185452,
+        "row_precision": 0.6889952153110048,
+        "row_recall": 0.6127659574468085,
+        "row_f1": 0.6486486486486487,
+        "row_fpr": 0.16795865633074936,
+        "video_precision": 0.6612903225806451,
+        "video_recall": 0.6074074074074074,
+        "video_f1": 0.633204633204633,
+        "video_fpr": 0.22950819672131148,
+        "event_recall": 0.575,
+        "protocol_mean": 0.7094112859003383,
+        "chunk_auc": 0.7979910558636625,
+        "chunk_ap": 0.6310237013742257
+      },
+      "mean_of_tests": {
+        "protocol_mean": 0.7117116599431952,
+        "auc": 0.8225049037586665,
+        "video_f1": 0.6305864854677519,
+        "event_recall": 0.7264312977099237
+      }
+    },
+    {
+      "label": "Gigantic LoRA r32",
+      "run_id": "e3g_ucf_vjepa21gigantic_lora-r32-qkvomlp_s42",
+      "setting": "Gigantic · 5 ep.",
+      "campaign": "gigantic-official-20261102",
+      "ucf": {
+        "auc": 0.9498072430229154,
+        "ap": 0.8818021800582616,
+        "auc_a_macro": 0.8865225563909773,
+        "ap_a_macro": 0.8964282154607232,
+        "auc_a_micro": 0.8995685314442476,
+        "ap_a_micro": 0.9081617305540145,
+        "row_precision": 0.6666666666666666,
+        "row_recall": 0.8580060422960725,
+        "row_f1": 0.750330250990753,
+        "row_fpr": 0.12979890310786105,
+        "video_precision": 0.7142857142857143,
+        "video_recall": 0.8928571428571429,
+        "video_f1": 0.7936507936507937,
+        "video_fpr": 0.20408163265306123,
+        "event_recall": 0.8320610687022901,
+        "protocol_mean": 0.8470955016083116,
+        "chunk_auc": 0.9486289100724566,
+        "chunk_ap": 0.8162956838046614
+      },
+      "mivia": {
+        "auc": 0.9260322172741767,
+        "ap": 0.8946797810601632,
+        "auc_a_macro": 0.8975694444444443,
+        "ap_a_macro": 0.9406527395163758,
+        "auc_a_micro": 0.8701744297488978,
+        "ap_a_micro": 0.9397565598165862,
+        "row_precision": 0.8443396226415094,
+        "row_recall": 0.7617021276595745,
+        "row_f1": 0.8008948545861297,
+        "row_fpr": 0.08527131782945736,
+        "video_precision": 0.8142857142857143,
+        "video_recall": 0.8444444444444444,
+        "video_f1": 0.8290909090909091,
+        "video_fpr": 0.14207650273224043,
+        "event_recall": 0.74,
+        "protocol_mean": 0.8513860179277004,
+        "chunk_auc": 0.9140397527501049,
+        "chunk_ap": 0.8521612758798799
+      },
+      "mean_of_tests": {
+        "protocol_mean": 0.8492407597680061,
+        "auc": 0.937919730148546,
+        "video_f1": 0.8113708513708514,
+        "event_recall": 0.7860305343511451
+      }
+    }
+  ],
+  "cpu_benchmark": {
+    "run": "e3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42",
+    "job": "818699",
+    "precision": "fp32",
+    "threads": 16,
+    "model_only_p50_s": 14.958767100000001,
+    "model_only_p95_s": 15.29081300475,
+    "n_iters": 100,
+    "n_warmup": 3,
+    "response_p50_s": 15.073491825489327,
+    "response_p95_s": 16.921946932165884,
+    "response_n": 52,
+    "peak_rss_gib": 3.6917800903320312,
+    "max_score_abs_error_vs_gpu": 0.02760779857635498
+  },
+  "sources": [
+    {
+      "path": "evd-vfm/runs/classifiche/ovad_guard30/classifiche/ucf_s42.json",
+      "sha256": "525b1073b710c907505fedbd441c37c7759c966bb3331a8bf5e775b3b10e4046"
+    },
+    {
+      "path": "evd-vfm/runs/e3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42/metrics.json",
+      "sha256": "b0e3d7fb03aca82e0c713cb2024ee4f745338f0f781ecf63a662f7767dd731b8"
+    },
+    {
+      "path": "evd-vfm/runs/classifiche/ovad_guard30/classifiche/mivia_s42.json",
+      "sha256": "8c85293ca2164a5d8886331085c24e50c0fa675a2622f5dbc0692c5a9801329c"
+    },
+    {
+      "path": "evd-vfm/runs/e3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42/e3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42__mivia/metrics.json",
+      "sha256": "85729fc8c6ff5cde22b863724ecd044a9c01d6bb442146f1e36d9d512a8225fd"
+    },
+    {
+      "path": "evd-vfm/runs/lora-vpt-head-20261112/results.json",
+      "sha256": "085e0a0fdce450a87fb76767b38c6ff3199c87278d351f934b5f964a611d9306"
+    },
+    {
+      "path": "evd-vfm/runs/lora-vpt-head-20261112/tables/ucf.json",
+      "sha256": "6f2ce1687f220ed3e6a523adf0b4226b9fe2a5491be99780786a9c0763f4cac4"
+    },
+    {
+      "path": "evd-vfm/runs/lora-vpt-head-20261112/runs/e3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32-headlast_s42/metrics.json",
+      "sha256": "93ac43745699f66ef42ed710a4df639c80cb72ed45559450dfb9ab7da9da2d5d"
+    },
+    {
+      "path": "evd-vfm/runs/lora-vpt-head-20261112/tables/mivia.json",
+      "sha256": "965c21bf7a9f29e260d1cdbd1cec195f386cfef7ee62364abf0ddfb3243e74d1"
+    },
+    {
+      "path": "evd-vfm/runs/lora-vpt-head-20261112/runs/e3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32-headlast_s42__mivia/metrics.json",
+      "sha256": "f74c88643c49b47f7cf95e51655264c6f86aa98d4a46626b05341cb052792932"
+    },
+    {
+      "path": "evd-vfm/runs/gigantic-attentive-20261111/results.json",
+      "sha256": "8adf1882a8b0eae7b4ec813f0011b4435042898c08c4ac02c4335d090647f366"
+    },
+    {
+      "path": "evd-vfm/runs/gigantic-attentive-20261111/tables/ucf.json",
+      "sha256": "ab6bab6d66ea873c9bc2aa99b977e9824d53b8f6e085cd46baebe979aed50b71"
+    },
+    {
+      "path": "evd-vfm/runs/gigantic-attentive-20261111/runs/e2d_ucf_vjepa21gigantic_frozen-attentive_s42/metrics.json",
+      "sha256": "aa20af89b8725b5405c1e986e218fa1246da764ca77b920459e69094f5514af0"
+    },
+    {
+      "path": "evd-vfm/runs/gigantic-attentive-20261111/tables/mivia.json",
+      "sha256": "49628c8900b554f178c6d1aaf25316765d1a27e8b7b8eeb267d085b66b771893"
+    },
+    {
+      "path": "evd-vfm/runs/gigantic-attentive-20261111/runs/e2d_ucf_vjepa21gigantic_frozen-attentive_s42__mivia/metrics.json",
+      "sha256": "bbd03e209c69620630054c79f82c384bac654893d5f64b046f45fa177c269348"
+    },
+    {
+      "path": "evd-vfm/runs/gigantic-linear-20261112/results.json",
+      "sha256": "9a6c4cc9fa082e4419fe0e3f699a5bf6f899fd4134e2bb2a22a4b2f9107b0594"
+    },
+    {
+      "path": "evd-vfm/runs/gigantic-linear-20261112/tables/ucf.json",
+      "sha256": "eb21b7853a781debc692eee5de891f0f93a9ebaca3c922a59fd5ff8fedf8123d"
+    },
+    {
+      "path": "evd-vfm/runs/gigantic-linear-20261112/runs/e2c_ucf_vjepa21gigantic_frozen-linear_s42/metrics.json",
+      "sha256": "bc08773302ec18fc44b687034baa3c358256748e7298a166d61356aeaf83f221"
+    },
+    {
+      "path": "evd-vfm/runs/gigantic-linear-20261112/tables/mivia.json",
+      "sha256": "883488a291d8dee0be48872967b19ba0ae256e22e8f6eb4ed177c006fe43ec5f"
+    },
+    {
+      "path": "evd-vfm/runs/gigantic-linear-20261112/runs/e2c_ucf_vjepa21gigantic_frozen-linear_s42__mivia/metrics.json",
+      "sha256": "c9a926d0bc7cdcf00aa5bd1a750f5f1485a881c60efb22e03a304b3979e3dc44"
+    },
+    {
+      "path": "evd-vfm/runs/gigantic-official-20261102/detection/ovad_ucf.json",
+      "sha256": "700593a5df08064069bb341ffbf288574b9aa8780929c5bf833c1c82efeaba05"
+    },
+    {
+      "path": "evd-vfm/runs/gigantic-official-20261102/detection/edp_ucf.json",
+      "sha256": "d0ce226e6e7ad991c1f8f5103d71d6dd2fbfb807cb78feae917894bb267f4c72"
+    },
+    {
+      "path": "evd-vfm/runs/gigantic-official-20261102/detection/ovad_mivia.json",
+      "sha256": "6a605a337aa721f9193ef0ab479802526d74de5a0fbc49b1e01fbf8c06657cd9"
+    },
+    {
+      "path": "evd-vfm/runs/gigantic-official-20261102/detection/edp_mivia.json",
+      "sha256": "a6d32c4b6697a02d2b49473d4fb03ed2f36c1ef53d0ab167a1b929bdd06df060"
+    },
+    {
+      "path": "evd-vfm/runs/detector-cpu-20261113/summary.json",
+      "sha256": "9be4b5f5033008cda59da5273fcaf27023279cfabb0d9feaa3908e01f1af0631"
+    }
+  ]
+}

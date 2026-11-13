@@ -9,6 +9,13 @@ run IDs, source receipt hashes and the supplied SOTA values used to generate the
 These are results supplied by the laboratory, not reruns performed in this repository.
 The original supplied source documents are retained without translation or changed numbers.
 
+`additional-detectors.json` holds the table "Detectors completed in November 2026": the
+reference LoRA → VPT-shallow sequence, the same sequence with an inherited head, the frozen
+Gigantic attentive and linear probes and Gigantic LoRA r32, with all 15 OVAD metrics per
+test set, the Protocol Mean recomputed from its six components, EDP-v2 chunk AUC/AP, the
+CPU benchmark of the reference detector, and the SHA-256 of every receipt it was read from.
+Values are fractions.
+
 OVAD uses different input-window durations (30 s for supplied SOTA, 8 s for thesis models),
 and the supplied EDP event recall is not known to use the same event definition as our
 EDP-v2 implementation. The README describes these limits alongside the tables.

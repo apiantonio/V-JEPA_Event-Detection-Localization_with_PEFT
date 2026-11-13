@@ -1,28 +1,81 @@
 {
-  "source_video": "Shoplifting049_x264",
-  "source_collection": "runs/localization-class-routing-20261021/render_best_20261025",
-  "source_movie": "videos/ucf_crime/Shoplifting049_x264/best-mean/movie.mp4",
-  "source_identity": "c18a12fea77014a68ef7c29ac30124af0ba3e298b577d81b3efe7f45cb2db677",
-  "source_sha256": "ccb05e678120d9713359c2984bbe6d64a497b732ce50395a1a134e1b5a14bc0a",
-  "published_sha256": "ccb05e678120d9713359c2984bbe6d64a497b732ce50395a1a134e1b5a14bc0a",
-  "modifications": "None: original cluster movie copied byte for byte, without trimming or re-encoding.",
-  "selection": "Behavioural anomaly: taking and concealing a phone in a shop. Selected as a qualitative illustration.",
-  "run_id": "e3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42",
-  "method": "B2-A2-phase1",
-  "method_label": "MultiClasse-Completa→Concetti-TuttiChunk, soglia 55%",
-  "renderer": "apps.demo.localization_video over apps.demo.run_demo.payload_for (replay)",
+  "title": "EVD Studio: eight annotated test events, one per class",
+  "source_file": "presentazioni/presentazione_finale_sorgenti/demo/demo_eventi_extended.mp4.bak (workspace, not in Git)",
+  "source_sha256": "6a749a27780d0df2682e9d9dd9c818d3b241abdf1494d76a253937efb44561b2",
+  "published_sha256": "6a749a27780d0df2682e9d9dd9c818d3b241abdf1494d76a253937efb44561b2",
+  "modifications": "None: the extended cut prepared for the final presentation, copied byte for byte.",
+  "detector_run_id": "e3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42",
+  "detector": "VPT-shallow n=8 on merged LoRA r=32, V-JEPA 2.1 ViT-L, seed 42",
+  "mode": "Saved offline replay of the demonstrator (apps.demo.run_demo --modo replay); no model runs.",
+  "threshold": {
+    "value": 0.044019,
+    "source": "val_youden"
+  },
+  "box_rule": "B1-A2-largest-component4-share-f1max",
+  "box_rule_label": "theta@F1max, largest 4-connected component, MultiClass-Branch→Concepts-AllChunks",
+  "boxes": "Method boxes (blue) and dashed reference boxes only inside annotated intervals; planes interpolated for drawing.",
+  "clips": [
+    {
+      "video": "Explosion033_x264",
+      "start_s": 28.0,
+      "end_s": 41.0,
+      "caption": "UCF-Crime test · Explosion"
+    },
+    {
+      "video": "Explosion002_x264",
+      "start_s": 49.0,
+      "end_s": 59.0,
+      "caption": "UCF-Crime test · Arson"
+    },
+    {
+      "video": "RoadAccidents127_x264",
+      "start_s": 68.0,
+      "end_s": 79.0,
+      "caption": "UCF-Crime test · Road accident"
+    },
+    {
+      "video": "Shooting010_x264",
+      "start_s": 32.0,
+      "end_s": 43.0,
+      "caption": "UCF-Crime test · Shooting"
+    },
+    {
+      "video": "Robbery102_x264",
+      "start_s": 37.0,
+      "end_s": 47.0,
+      "caption": "UCF-Crime test · Robbery"
+    },
+    {
+      "video": "Shoplifting001_x264",
+      "start_s": 49.0,
+      "end_s": 63.0,
+      "caption": "UCF-Crime test · Shoplifting"
+    },
+    {
+      "video": "Burglary021_x264",
+      "start_s": 28.0,
+      "end_s": 40.0,
+      "caption": "UCF-Crime test · Burglary"
+    },
+    {
+      "video": "assault_001",
+      "start_s": 9.5,
+      "end_s": 21.5,
+      "caption": "MIVIA-Crime: never used in training · Assault"
+    }
+  ],
+  "selection": "Chosen by eye, one event per class; illustrative, estimates no frequency.",
+  "recording": "Demonstrator pages recorded frame by frame in a browser at 1920x1080 and joined with 12-frame cross-fades and captions.",
   "codec": "h264",
   "size": [
-    1280,
-    894
+    1920,
+    1080
   ],
-  "fps": 30.0,
-  "frames": 2149,
-  "duration_seconds": 71.63333333333334,
-  "poster_frame": 1200,
-  "poster_time_seconds": 40.0,
-  "frames_with_method_boxes": 331,
-  "frames_with_truth_boxes": 331,
-  "mode": "Saved offline localization replay with causal anomaly score.",
-  "note": "Method boxes and dashed reference boxes are shown within annotated intervals; localization is not an online latency demonstration. No ground-truth coordinate files are distributed."
+  "fps": 25.0,
+  "frames": 2241,
+  "duration_seconds": 89.64,
+  "audio": false,
+  "poster_frame": 225,
+  "poster_time_seconds": 9.0,
+  "note": "Qualitative illustration. Labels are the FS-UCF-Crime / MIVIA-Crime annotations (Explosion002_x264 is annotated Arson in FS-UCF-Crime). MIVIA-Crime was never used for training or selection."
 }

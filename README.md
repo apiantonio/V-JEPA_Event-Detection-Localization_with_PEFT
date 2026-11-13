@@ -24,20 +24,26 @@ ground truth, an interactive demonstrator and a spatial annotation tool.
 
 ## Demonstrator video
 
-https://github.com/user-attachments/assets/74534ebc-41f0-4f3d-ade6-0285338d5040
+https://github.com/user-attachments/assets/3ebf85ed-2335-40a7-ba05-283937a84617
 
-**[Watch the original cluster rendering (MP4, 72 seconds)](https://github.com/apiantonio/V-JEPA_Event-Detection-Localization_with_PEFT/releases/download/demo-v1/demonstrator.mp4).**
-FS-UCF-Crime `Shoplifting049`: taking and concealing a phone in a shop. This is the
-complete, unmodified movie from the latest existing cluster rendering collection,
-`render_best_20261025`, with the updated EVD Studio interface: anomaly score and alarm,
-chunk verdict, event and frame IoU, method boxes, dashed reference boxes and timeline.
-The model is VPT-shallow on merged LoRA r32; localization uses B2, all-chunk VTCD
-dictionaries and the 55% IG-mass rule. The embedded player replaces the static screenshot; the complete movie is also available as a release asset.
+**[Download the full movie (MP4, 1920×1080, 90 seconds)](https://github.com/apiantonio/V-JEPA_Event-Detection-Localization_with_PEFT/releases/download/demo-v1/demonstrator.mp4).**
+EVD Studio, the interactive demonstrator of this repository, replays eight annotated test
+events, one per class: Explosion, Arson, Road accident, Shooting, Robbery, Shoplifting and
+Burglary from FS-UCF-Crime, and an Assault from MIVIA-Crime, which was never used for
+training or selection. This extended cut was prepared for the final thesis presentation.
+Each clip shows the anomaly score against the threshold, the alarm, the chunk outcomes
+(TP/FP/FN/TN) on the timeline, the method boxes (blue) and the dashed reference boxes.
 
-This is a qualitative **offline replay**: localization boxes are limited to annotated
-intervals and can precede the causal alarm. It is not an online localization timing
-measurement. Source identity, checksum and screenshot timestamp are recorded in
-[media/demonstrator.json](media/demonstrator.json).
+The detector is VPT-shallow n=8 on merged LoRA r=32 (V-JEPA 2.1 ViT-L, seed 42) with its
+validation Youden threshold (τ = 0.044). The boxes come from the class-routed IG + VTCD
+rule at its F1-maximizing confidence (largest 4-connected component, class from the B1
+head); they are drawn only inside annotated intervals and interpolated between planes
+for display.
+
+This is a qualitative **offline replay** of saved scores and boxes: the clips were chosen
+by eye and estimate no frequency, and localization boxes can precede the causal alarm. It
+is not an online latency measurement. Clips, threshold, box rule, checksum and preview
+frame are recorded in [media/demonstrator.json](media/demonstrator.json).
 
 The [pipeline figure](media/pipeline.png) summarizes sampling, PEFT adaptation,
 detection and class-routed IG + VTCD localization. Its frames and attribution maps are
@@ -229,6 +235,42 @@ percentage measures are higher-is-better. Macro averages per anomalous video; mi
 pools their rows. The supplied SOTA results and their inference settings are preserved
 in [comparisons/sources/](comparisons/sources/ovad-supplied.md).
 
+### Detectors completed in November 2026
+
+Four detectors were completed after the tables above: the ViT-L LoRA → VPT-shallow sequence
+retrained with an inherited head, and the frozen attentive and linear probes on the
+V-JEPA 2.1 Gigantic backbone (one epoch). The Gigantic LoRA r32 run of the 8-second tables
+is added here under OVAD. Same rules as above, seed 42: OVAD with a 30 s guard and the
+UCF-validation Youden threshold transferred to MIVIA; EDP-v2 chunk AUC and AP are
+threshold-free. Percentages.
+
+| Metric | LoRA → VPT-s (reference) | LoRA → VPT-s, inherited head | Gigantic attentive probe | Gigantic linear probe | Gigantic LoRA r32 |
+|---|---:|---:|---:|---:|---:|
+| Backbone · training | ViT-L · 1 + 3 ep. | ViT-L · 1 + 3 ep. | Gigantic · 1 ep. | Gigantic · 1 ep. | Gigantic · 5 ep. |
+| Protocol Mean, mean of tests | 86.19 | 86.23 | 83.39 | 71.17 | 84.92 |
+| Protocol Mean, UCF-Crime | 85.89 | 86.06 | 83.17 | 71.40 | 84.71 |
+| Protocol Mean, MIVIA-Crime | 86.49 | 86.40 | 83.61 | 70.94 | 85.14 |
+| Row AUC, mean of tests | 93.76 | 94.18 | 90.96 | 82.25 | 93.79 |
+| Video F1, mean of tests | 83.88 | 83.08 | 79.18 | 63.06 | 81.14 |
+| Event recall, mean of tests | 79.10 | 79.23 | 74.33 | 72.64 | 78.60 |
+| EDP-v2 chunk AUC, UCF-Crime | 94.13 | 94.21 | 91.12 | 85.69 | 94.86 |
+| EDP-v2 chunk AUC, MIVIA-Crime | 90.56 | 90.68 | 87.93 | 79.80 | 91.40 |
+| EDP-v2 chunk AP, UCF-Crime | 79.82 | 80.00 | 71.26 | 49.07 | 81.63 |
+| EDP-v2 chunk AP, MIVIA-Crime | 84.08 | 83.99 | 78.89 | 63.10 | 85.22 |
+
+The inherited-head sequence repeats the second stage of the reference (eight shallow
+prompts on the merged LoRA r32 encoder, three epochs), but starts from the binary head of
+the LoRA run at its last step and keeps training it, instead of a new head; the selected
+step is 12,880. It has the highest mean Protocol Mean of the thesis detectors, 0.04 points
+above the reference: a single-seed difference, not a demonstrated improvement. A larger
+frozen backbone does not replace adaptation: the Gigantic attentive probe stays below both
+ViT-L sequences, and Gigantic LoRA r32 has the best EDP-v2 chunk AUC and AP but a lower
+Protocol Mean. Unrounded values, run IDs and receipt checksums are in
+[comparisons/additional-detectors.json](comparisons/additional-detectors.json); the
+per-campaign OVAD packages and the UCF-validation metrics of the principal models
+(calibration data, not test estimates) are in
+[`evd-vfm/runs/classifiche/ovad_guard30/`](https://github.com/apiantonio/V-JEPA_Event-Detection-Localization_with_PEFT/tree/main/evd-vfm/runs/classifiche/ovad_guard30).
+
 **Efficiency (A100, bf16, one 32-frame window at 384×384, batch 1).**
 
 | Variant | Latency per window | Overhead vs frozen |
@@ -242,6 +284,13 @@ Video decoding adds 40.8 ms per window; every variant runs 14–25× faster than
 with a 4 s hop. Training hours, the selected step over the four-epoch chain, peak memory
 and the response time of the deployed form of the 18 thesis models are in
 [`evd-vfm/runs/statistiche_modelli/`](https://github.com/apiantonio/V-JEPA_Event-Detection-Localization_with_PEFT/blob/main/evd-vfm/runs/statistiche_modelli/statistiche_modelli.md).
+
+**On CPU** (Intel Xeon Platinum 8280L, 16 cores, FP32, batch 1, no GPU) the reference
+LoRA → VPT-shallow detector takes a median 14.96 s per window (P95 15.29 s over 100
+forward passes) and a median 15.07 s from decoding to score on 52 real chunks of UCF-Crime
+and MIVIA-Crime, with a peak process memory of 3.7 GiB. That is about a quarter of the
+rate a 4 s hop requires, so this serial configuration is not real time. Scores stay
+within 0.028 of the GPU evaluation and no threshold decision changes on those chunks.
 
 ## Spatial localization
 
@@ -444,7 +493,9 @@ Weights include the trained head and adapter; the upstream backbone is downloade
 
 The release covers the attentive probe, LoRA r32, DoRA r32, VPT-shallow n8, VPT-deep n8/n576,
 VPT-shallow on LoRA r32 and on DoRA r32, B1/B2 class heads, B3 with summed losses / GradNorm,
-and the completed Gigantic LoRA r32 run. An ongoing Gigantic VPT run is not a final model.
+and the completed Gigantic LoRA r32 run. The detectors completed after 4 November 2026 are
+not in the release: the inherited-head sequence, the Gigantic probes and VPT-shallow on
+Gigantic LoRA r32.
 Both selected and last head/adapter states are retained because some sequential runs
 inherit the last adapter. Optimizer, RNG and training history are omitted: these assets
 are for inference, **not for resuming training**. Composite models also require their
