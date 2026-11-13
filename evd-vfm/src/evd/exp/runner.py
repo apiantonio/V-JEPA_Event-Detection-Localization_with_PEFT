@@ -1389,24 +1389,42 @@ class ExperimentRunner:
     ) -> dict[str, Any] | None:
         """Load the weights of another run as a starting point (ADR-062).
 
-        The mechanism of multi-epoch training with a cyclic cosine: this run executes the next
-        cycles starting where the source run arrived. Not a resume: the run is new (different
-        budget, schedule and ``run_id``) and only the weights are inherited; ``meta.json``
-        records ``avvio_a_caldo`` and leaves ``resumed_from`` empty. The weights of the last
-        step are taken, not the selected ones; optimizer moments are not inherited (a warm
-        restart, SGDR).
+        A path keeps the historical continuation behavior: copy the last head and adapter.
+        A mapping with ``from``, ``components`` (``head`` or ``head_and_adapter``) and
+        ``checkpoint_state`` (``last`` or ``selected``) can initialize only the head when
+        changing adaptation families, leaving the newly initialized prompts untouched.
+        Copied parameters remain trainable. This is a new run; optimizer moments reset.
 
-        :param cfg: the run config; reads the top-level ``init_from`` field.
+        :param cfg: the run config; ``init_from`` is a path or a component-selection mapping.
         :param head: the freshly built head, receiving its weights.
         :param strategy: the already applied strategy, receiving its weights.
         :param device: where the parameters live.
         :return: the provenance for ``meta.json``, or ``None`` if the run starts from scratch.
         :raises FileNotFoundError: if the referenced checkpoint does not exist.
-        :raises ValueError: if the checkpoint belongs to this very run (that is a resume).
+        :raises ValueError: on an unknown field, component/state or missing requested state.
         """
         path = cfg.get("init_from")
         if not path:
             return None
+        structured = isinstance(path, Mapping)
+        components, checkpoint_state = "head_and_adapter", "last"
+        if structured:
+            unknown = sorted(set(path) - {"from", "components", "checkpoint_state"})
+            if unknown:
+                raise ValueError(f"init_from: unknown fields {unknown}")
+            components = str(path.get("components", "head_and_adapter"))
+            checkpoint_state = str(path.get("checkpoint_state", "last"))
+            path = path.get("from")
+            if not path:
+                raise ValueError("init_from.from is required: declare the source checkpoint")
+        if components not in {"head", "head_and_adapter"}:
+            raise ValueError(
+                f"init_from.components must be head or head_and_adapter, not {components!r}"
+            )
+        if checkpoint_state not in {"last", "selected"}:
+            raise ValueError(
+                f"init_from.checkpoint_state must be last or selected, not {checkpoint_state!r}"
+            )
         import torch
 
         from evd.train.checkpoint import restore_adapter_state
@@ -1417,28 +1435,44 @@ class ExperimentRunner:
         data = torch.load(file, map_location="cpu", weights_only=True)
         identity = dict(data.get("identity") or {})
         source = str(identity.get("run_id", "?"))
-        head_weights = dict(data["head"])
-        adapter_weights = dict(data.get("adapter") or {})
+        prefix = "selected_" if checkpoint_state == "selected" else ""
+        head_weights = dict(data.get(prefix + "head") or {})
+        step = data.get("selected_step" if checkpoint_state == "selected" else "step")
+        if not head_weights or step is None:
+            raise ValueError(f"{file} has no complete {checkpoint_state} head state to initialize")
+        adapter_weights = (
+            dict(data.get(prefix + "adapter") or {}) if components == "head_and_adapter" else {}
+        )
+        if (
+            components == "head_and_adapter"
+            and checkpoint_state == "selected"
+            and "selected_adapter" not in data
+        ):
+            raise ValueError(f"{file} has no selected adapter state to initialize")
         head.load_state_dict({k: v.to(device) for k, v in head_weights.items()})
-        restore_adapter_state(strategy, {k: v.to(device) for k, v in adapter_weights.items()})
+        if components == "head_and_adapter":
+            restore_adapter_state(strategy, {k: v.to(device) for k, v in adapter_weights.items()})
         log.info(
             "warm start from %s (run %s, step %s): %d head tensors, %d adapter tensors",
             file,
             source,
-            data.get("step"),
+            step,
             len(head_weights),
             len(adapter_weights),
         )
-        return {
+        receipt = {
             "checkpoint": str(file),
             "run_id": source,
-            "step": data.get("step"),
+            "step": step,
             "selected_step_sorgente": data.get("selected_step"),
-            "pesi": "last step",
+            "pesi": "last step" if checkpoint_state == "last" else "validation-selected step",
             "momenti_ottimizzatore": "reinizializzati (warm restart)",
             "n_tensori_testa": len(head_weights),
             "n_tensori_adattatore": len(adapter_weights),
         }
+        if structured:
+            receipt.update(components=components, checkpoint_state=checkpoint_state)
+        return receipt
 
     def _inherit(
         self,

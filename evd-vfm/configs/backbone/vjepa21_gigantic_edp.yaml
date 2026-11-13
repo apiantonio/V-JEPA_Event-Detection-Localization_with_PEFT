@@ -1,0 +1,20 @@
+# V-JEPA 2.1 ViT-Gigantic at the EDP-v2 geometry of UCF-Crime.
+# The generic vjepa21_gigantic group stays incomplete on purpose; this variant
+# declares the decisions already taken for ViT-L.
+id: vjepa21gigantic
+arch: vit_gigantic
+checkpoint: ${oc.env:EVD_CKPT_DIR}/vjepa2_1_vitG_384.pt
+strict: true
+repo: null
+state_dict_key: target_encoder
+expected:
+  embed_dim: 1664
+  depth: 48
+  num_heads: 26
+  head_dim: 64
+hierarchical_layers: [11, 23, 37, 47]
+size: 384
+num_frames: 32
+preprocess_variant: squash
+preprocess_fps: 4.0
+preprocess_dtype: fp32
