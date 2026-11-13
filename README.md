@@ -1,7 +1,6 @@
-# Automatic Event Detection in Surveillance Videos with Video Foundation Models
+# Adapting V-JEPA for Event Detection and Localization in Surveillance Videos with Parameter-Efficient Fine-Tuning
 
-Code of the master's thesis *Automatic Event Detection in Surveillance Videos with Video
-Foundation Models* (University of Salerno, 2026).
+Code of the master's thesis *Adapting V-JEPA for Event Detection and Localization in Surveillance Videos with Parameter-Efficient Fine-Tuning* (University of Salerno, 2026).
 
 The project detects anomalous events in surveillance video with a frozen video foundation
 model, **V-JEPA 2.1 ViT-L**, and compares the two families of parameter-efficient
