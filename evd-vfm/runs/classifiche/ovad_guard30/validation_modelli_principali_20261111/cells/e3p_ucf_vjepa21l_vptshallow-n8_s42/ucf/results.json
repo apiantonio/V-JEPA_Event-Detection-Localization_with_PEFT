@@ -1,0 +1,51 @@
+{
+  "parameters": {
+    "chunk_size": 8.0,
+    "asking_rate": 4.0,
+    "grid": "start",
+    "guard": 30.0,
+    "T": 32.0
+  },
+  "threshold": {
+    "value": 0.21011798083782196,
+    "source": "validation: Youden point on the judgeable rows"
+  },
+  "warnings": [
+    "the validation set has asking rate 8 s, the test set 4 s"
+  ],
+  "levels": {
+    "anomalies": {
+      "auc": 0.944575465184997,
+      "ap": 0.858211777527127,
+      "auc_a_macro": 0.8971115587485557,
+      "ap_a_macro": 0.9059732331695893,
+      "auc_a_micro": 0.8696261763378129,
+      "ap_a_micro": 0.8770812229674725,
+      "row_precision": 0.684964200477327,
+      "row_recall": 0.8670694864048338,
+      "row_f1": 0.7653333333333333,
+      "row_fpr": 0.1206581352833638,
+      "video_precision": 0.7298850574712644,
+      "video_recall": 0.9071428571428571,
+      "video_f1": 0.8089171974522293,
+      "video_fpr": 0.19183673469387755,
+      "event_recall": 0.8473282442748091,
+      "threshold": 0.21011798083782196,
+      "n_rows": 1425,
+      "n_unjudgeable_rows": 255,
+      "n_events": 262,
+      "n_events_detected": 222,
+      "n_events_unseen": 0,
+      "n_entries_with_event": 140,
+      "n_entries_in_macro": 95,
+      "video_tp": 127,
+      "video_fn": 13,
+      "video_fp": 47,
+      "video_tn": 198,
+      "video_fp_with_event": 40,
+      "video_tn_with_event": 55,
+      "hours": 10.294518518518528,
+      "mean": 0.8571012772850936
+    }
+  }
+}

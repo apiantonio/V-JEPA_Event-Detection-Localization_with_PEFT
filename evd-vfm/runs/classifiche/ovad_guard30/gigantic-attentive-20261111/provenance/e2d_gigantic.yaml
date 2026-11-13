@@ -1,0 +1,21 @@
+# @package _global_
+# One frozen Gigantic attentive-probe epoch, seed 42 (11 November 2026).
+defaults:
+  - e2_frozen
+  - override /backbone: vjepa21_gigantic_edp
+
+seed: 42
+layer: 47
+device: cuda
+data:
+  feature_store:
+    enabled: false
+    layers: [47]
+train:
+  max_steps: 5524
+  batch_size: 2
+  grad_accum: 8
+  num_workers: 8
+eval:
+  batch_size: 1
+  num_workers: 4

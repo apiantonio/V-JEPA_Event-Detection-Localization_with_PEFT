@@ -1,0 +1,16 @@
+# @package _global_
+# Paired with the winning E3-S sequence: only the initial head weights differ.
+defaults:
+  - e3s_fondi_lora_vptshallow
+
+seed: 42
+device: cuda
+adapt:
+  name: vptshallow-n8-su-lora-r32-headlast
+preadattamento:
+  from: runs/lora-vpt-head-20261112/prior/checkpoint.pt
+  checkpoint_state: last
+init_from:
+  from: ${preadattamento.from}
+  components: head
+  checkpoint_state: last

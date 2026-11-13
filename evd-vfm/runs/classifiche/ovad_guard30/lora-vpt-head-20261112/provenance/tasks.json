@@ -1,0 +1,60 @@
+[
+  {
+    "id": "pilot",
+    "deps": [],
+    "cpus": 14,
+    "memory": "128G",
+    "time": "00:30:00",
+    "gpus": 1,
+    "partition": "aiq",
+    "fallback": false
+  },
+  {
+    "id": "train",
+    "deps": [
+      "pilot"
+    ],
+    "cpus": 14,
+    "memory": "128G",
+    "time": "06:59:00",
+    "gpus": 1,
+    "partition": "aiq",
+    "fallback": false
+  },
+  {
+    "id": "external",
+    "deps": [
+      "train"
+    ],
+    "cpus": 4,
+    "memory": "128G",
+    "time": "03:00:00",
+    "gpus": 1,
+    "partition": "aiq",
+    "fallback": false
+  },
+  {
+    "id": "ovad",
+    "deps": [
+      "external"
+    ],
+    "cpus": 4,
+    "memory": "32G",
+    "time": "00:30:00",
+    "gpus": 0,
+    "partition": "fatq",
+    "fallback": false
+  },
+  {
+    "id": "package",
+    "deps": [
+      "ovad"
+    ],
+    "cpus": 4,
+    "memory": "16G",
+    "time": "00:30:00",
+    "gpus": 0,
+    "partition": "fatq",
+    "fallback": false
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "step": 5524,
+  "max_steps": 5524,
+  "loss": 0.3079798612743616,
+  "selected_step": 4600,
+  "selected_value": 0.7921287366913622,
+  "checkpoint": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/e2c_ucf_vjepa21gigantic_frozen-linear_s42/checkpoint/checkpoint.pt",
+  "checkpoint_bytes": 804308,
+  "updated_at": 1794567852.6058965,
+  "job": "818473"
+}

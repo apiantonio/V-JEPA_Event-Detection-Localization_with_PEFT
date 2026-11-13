@@ -1,0 +1,11 @@
+{
+  "step": 16572,
+  "max_steps": 16572,
+  "loss": 0.005903968183702091,
+  "selected_step": 12880,
+  "selected_value": 0.9516754744191228,
+  "checkpoint": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/e3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32-headlast_s42/checkpoint/checkpoint.pt",
+  "checkpoint_bytes": 790876562,
+  "updated_at": 1794578235.5008569,
+  "job": "818512"
+}

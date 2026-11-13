@@ -1,0 +1,10 @@
+{
+  "status": "complete",
+  "checks": 78,
+  "splits": [
+    "ucf",
+    "mivia",
+    "val"
+  ],
+  "method": "scikit-learn and direct counts from saved row/event tables"
+}

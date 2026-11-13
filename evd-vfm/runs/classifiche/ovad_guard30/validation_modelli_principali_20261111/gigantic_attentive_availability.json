@@ -1,0 +1,32 @@
+{
+  "checked_utc": "2026-11-11T10:50:48.260614+00:00",
+  "status": "not_available",
+  "model": "Frozen Attentive Probe with V-JEPA 2.1 Gigantic",
+  "datasets": [
+    "FS-UCF-Crime validation",
+    "FS-UCF-Crime test",
+    "MIVIA-Crime test"
+  ],
+  "reason": "No completed event-detection run, saved scores or registry entry was found for a frozen Gigantic Attentive Probe.",
+  "different_available_gigantic_models": [
+    "LoRA r=32",
+    "LoRA r=32 -> VPT-shallow n=8"
+  ],
+  "excluded_candidate": {
+    "run_id": "e0c_ucf101_vjepa21gigantic_frozen-none_kna_s1",
+    "reason": "UCF101 feature extraction; no event-detection scores or OVAD metrics."
+  },
+  "remote_runs_root": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs",
+  "remote_registry_sha256": "6dcdf3a9a5f8d84fbaac7313e5801b9fa5a01af8e7060f5a114657611aedfae0",
+  "gigantic_run_ids": [
+    "e0b2_synth_vjepa21gigantic_peft_kna_s0",
+    "e0b2_synth_vjepa21gigantic_peft_kna_s42",
+    "e0c_ucf101_vjepa21gigantic_frozen-none_kna_s1",
+    "e3g_ucf_vjepa21gigantic_lora-r32-qkvomlp_s42",
+    "e3sv_ucf_vjepa21gigantic_vptshallow-n8-su-lora-r32-gsel16560_s42",
+    "f5_minifit_vjepa21gigantic_peft_kna_s1",
+    "gigantic-official-20261102",
+    "gigantic-vpt-interim13800-20261105",
+    "gigantic-vpt3-20261102"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "step": 5524,
+  "max_steps": 5524,
+  "loss": 0.016794665116321994,
+  "selected_step": 3680,
+  "selected_value": 0.934300620341347,
+  "checkpoint": "/shared/tesi_mllm/a.apicella97@studenti.unisa.it/runs/e2d_ucf_vjepa21gigantic_frozen-attentive_s42/checkpoint/checkpoint.pt",
+  "checkpoint_bytes": 2084509724,
+  "updated_at": 1794523714.9167762,
+  "job": "818022"
+}

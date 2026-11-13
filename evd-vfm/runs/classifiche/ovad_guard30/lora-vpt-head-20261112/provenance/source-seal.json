@@ -1,0 +1,26 @@
+{
+  "snapshot_commit": "eedcbf9dc7cdd3c2a903b4eae64623bfcdb4b381",
+  "files": {
+    "smoke_evaluation.py": "edf24e66fdf8eb1639cda7b505111996376b463712801833964e6f3163162824",
+    "task.sbatch": "c21450bcf1fa4aba752ba273039fcdab8c983cd3438c689a78f08d85a6da7106",
+    "check_gpu.py": "2989ed2809d81d2b73fbc739907f1c66287b1a28dbae6276f92ddfbf36341937",
+    "baseline_mivia.json": "4a5c119a1ae2fcaa1a74839e076e45f59797068bd31eee4120ce836798289336",
+    "train.py": "8ca4eccd8d588c0eadc027d72fdc28b9fda99ea95c3e965ccacf0ff645b3e235",
+    "status.py": "3f953f7aa450fd4b68741ca3e560aba3afd372ba6d236823cf29b905b2b5330c",
+    "prelaunch.sh": "9556e6837caa7d429714191915049a13ab3ec747055dbe1c64ce259febd4a55b",
+    "integrity.py": "f15fda7476a27a03b7547c9c9b94f42680f57f09b2a002c94d3e730fb00426da",
+    "tick.sh": "1b7096b3c1fcd88de3cb5cd2459b5623349585d5502b125385da88e7d5b69ee6",
+    "test_operations.py": "361b358204ec38806f4448f893220977a748a92cf87fd6ea5ece896616a2384f",
+    "campaign.json": "ca08fe9fa7c886b7da2a623112ef68d708f53103874721c27aa07f6af0668534",
+    "baseline_ucf.json": "f581b0c6c06ea82ddea6159160588ed9f83392fd353c4905918dcbbea74a4476",
+    "nvml_monitor.py": "3d8bbf0a3613608f18aef6c5df1e347e62f99571390f92a2b3a0bb8a798d1d8b",
+    "install_cron.py": "3c38dc56167b3286b5cf578731a209268e4762be38e4b4b67285bddff7fcd445",
+    "pull.py": "cbcf68a9ca75702679d2e58b7ff56949ecec1f634b0e9e1521bf98cafe72cf6e",
+    "supervisor.py": "2badc5001342013417008810d0e3e8dbfde165df7cd406d4d238ed8c09266118",
+    "e3s_lora_vptshallow_headlast.yaml": "db274326eaa3838204e7486167ad9d1bfff3141611a4519c01a2caf03e8d36b8",
+    "setup.py": "8b4da50618acfdc27de51b110913824e5a51dffdb3b302c0d30143a4702a8d73",
+    "tasks.json": "41b36be2638b50f7a5460ffa132e3749098e77cfd090fa37630442461c4ff267",
+    "prelaunch.py": "2845f9b0111423b66261eed1043b39ad504088be094f4187a482eb8567c3c5c7",
+    "evaluate.py": "5c8baf52fe1329cc4e40c7d9935ae5ec8f02607f9e5e1ce8f075a43681028855"
+  }
+}

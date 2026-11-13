@@ -1,0 +1,36 @@
+chunk size 8 s · asking rate 4 s · grid start · guard 30 s · T 32 s
+threshold θ = 0.188923 (validation: Youden point on the judgeable rows)
+WARNING: the validation set has asking rate 8 s, the test set 4 s
+
+                                anomalies
+protocol mean                       85.45
+row · AUC                           94.55
+row · AP                            86.00
+row · AUC_a macro                   90.79
+row · AP_a macro                    91.44
+row · AUC_a micro                   89.77
+row · AP_a micro                    89.94
+row · precision                     64.25
+row · recall                        88.52
+row · F1                            74.46
+row · FPR                           14.90
+video · precision                   72.32
+video · recall                      91.43
+video · F1                          80.76
+video · FPR                         20.00
+event · recall                      87.02
+
+judgeable rows                       1425
+unjudgeable rows                      255
+events                                262
+events detected                       228
+events never seen, excluded             0
+entries with an event                 140
+entries in the macro averages          95
+video TP                              128
+video FN                               12
+video FP                               49
+video TN                              196
+hours of video                      10.29
+
+Metrics in percent (x100). n/a = not defined on these data (for example only one class present).

@@ -1,0 +1,12 @@
+{
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "steps": 20,
+  "resumed_from": null,
+  "interrupted": true,
+  "fit_elapsed_s": 99.9915669541806,
+  "allocated_peak_gib": 12.838947296142578,
+  "reserved_peak_gib": 13.634765625,
+  "nvml_process_peak_gib": 14.3046875,
+  "nvml_samples": 993,
+  "job": "817115"
+}

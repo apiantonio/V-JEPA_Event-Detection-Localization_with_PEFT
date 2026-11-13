@@ -1,0 +1,9 @@
+{
+  "status": "complete",
+  "source_step": 5524,
+  "source_checkpoint_sha256": "2812cadb5bc8ff61d95aa69916fa773ba9ebc37850efbe64378080e1f7f9345e",
+  "all_head_tensors_identical": true,
+  "head_trainable": true,
+  "prompt_parameters": 8192,
+  "optimizer_moments": "reset"
+}

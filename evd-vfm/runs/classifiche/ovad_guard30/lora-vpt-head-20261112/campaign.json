@@ -1,0 +1,48 @@
+{
+  "campaign": "lora-vpt-head-20261112",
+  "run_id": "e3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32-headlast_s42",
+  "epochs": 3,
+  "max_steps": 16572,
+  "seed": 42,
+  "microbatch": 2,
+  "grad_accum": 8,
+  "effective_batch": 16,
+  "precision": "bf16",
+  "head": "detection",
+  "head_trainable_params": 49339393,
+  "prompt_trainable_params": 8192,
+  "backbone": "V-JEPA 2.1 ViT-L",
+  "initialization": "LoRA r32 last-step encoder fused at 5524, and its same-step trainable head; fresh VPT-shallow n8",
+  "prior_run": "e3r_ucf_vjepa21l_lora-r32-qkvomlp_s42",
+  "prior_step": 5524,
+  "prior_state": "last",
+  "prior_sha256": "2812cadb5bc8ff61d95aa69916fa773ba9ebc37850efbe64378080e1f7f9345e",
+  "partition": "aiq",
+  "gpu_family": "H100",
+  "fallback": false,
+  "pilot_steps": 20,
+  "eval_every": 920,
+  "selection": "validation AUROC",
+  "ovad_guard": 30,
+  "optimizer_moments": "reset",
+  "snapshot_commit": "eedcbf9dc7cdd3c2a903b4eae64623bfcdb4b381",
+  "parent_snapshot": "a9730bfaaeeebfea277b9a97fb747425f154b5b0",
+  "global_job_limit": 8,
+  "supervisor_host": "lnode02",
+  "outputs": [
+    "EDP-v2 UCF and MIVIA",
+    "OVAD UCF validation and UCF/MIVIA tests",
+    "all 15 metrics and Protocol Mean",
+    "arithmetic mean of both tests"
+  ],
+  "estimate_h100_hours": {
+    "training": 16,
+    "validations": 3,
+    "full_cycle_range": [
+      20,
+      23
+    ],
+    "queue_excluded": true
+  },
+  "shared_destination": "/shared/tesi_mllm/codice/evd-vfm/runs/classifiche/ovad_guard30/lora-vpt-head-20261112"
+}

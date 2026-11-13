@@ -1,0 +1,15 @@
+{
+  "status": "complete",
+  "steps": 5524,
+  "selected_step": 4600,
+  "validation_auroc": 0.7921287366913622,
+  "checkpoint_identity": {
+    "run_id": "e2c_ucf_vjepa21gigantic_frozen-linear_s42",
+    "config_sha": "607f26410320ad7bbdeef976501ff3787888b1fe5f27f78de5300be7bc2b7426",
+    "backbone_id": "vjepa21gigantic",
+    "git_sha": "a9730bfaaeeebfea277b9a97fb747425f154b5b0",
+    "protocol_sha": "5e82820a94a7d8aa7b70c6905334e92d39ab4f8128a6aa0e3692663942e89ade",
+    "ckpt_sha": "7aae1a3c7a31d258af9c985388b5d2f20587469380f2e11b54d7876ac8cfe58a"
+  },
+  "checkpoint_sha256": "4e3f3aa817273e1fda25e2fb8dc5d7dfbb882467cb10ae791013f5f4d1adf4ae"
+}

@@ -1,0 +1,15 @@
+{
+  "status": "complete",
+  "steps": 16572,
+  "selected_step": 12880,
+  "validation_auroc": 0.9516754744191228,
+  "checkpoint_identity": {
+    "run_id": "e3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32-headlast_s42",
+    "config_sha": "c4e1af6c967bce5e1c5b008ced2f0a9c31daae7f42ebc2bc2097d58444178041",
+    "backbone_id": "vjepa21l",
+    "git_sha": "eedcbf9dc7cdd3c2a903b4eae64623bfcdb4b381",
+    "protocol_sha": "5e82820a94a7d8aa7b70c6905334e92d39ab4f8128a6aa0e3692663942e89ade",
+    "ckpt_sha": "7ea9b7cb4a75d10644a8a8d42cff9e177b10dca8f02173f0eaf2b0bed82838c6"
+  },
+  "checkpoint_sha256": "1dcfecaf66b63efa77306250151c90bfb4c2d9c3019242cc1e27d8010316bda8"
+}

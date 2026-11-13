@@ -1,0 +1,24 @@
+{
+  "snapshot_commit": "a9730bfaaeeebfea277b9a97fb747425f154b5b0",
+  "files": {
+    "smoke_evaluation.py": "edf24e66fdf8eb1639cda7b505111996376b463712801833964e6f3163162824",
+    "task.sbatch": "632f9378d721bc309851594f51591abd9753cd66a0441c3e578fd4c5a7b28e4b",
+    "check_gpu.py": "2989ed2809d81d2b73fbc739907f1c66287b1a28dbae6276f92ddfbf36341937",
+    "train.py": "b8dcac4a975adac3d7866a0606cd0a0027a57a11861a3e2795601cfa71ef6bf1",
+    "status.py": "de01f30a81472fa28269927b7511872f343aedb1d8ce27f0b5a8709b724fcb12",
+    "prelaunch.sh": "f8094dbc7af6c09b66461ae5b9a4af7f4fb78e80ea67853ae80094880acfaf89",
+    "integrity.py": "f15fda7476a27a03b7547c9c9b94f42680f57f09b2a002c94d3e730fb00426da",
+    "tick.sh": "2af5d404c5a3dfeba3a43a446370ed1cab9cbdb157b98d72844bc8160b253ba3",
+    "test_operations.py": "3d97826f01b662aa667f4f414cec0b3bc5c82756ea28fe94b760a096e58560fd",
+    "campaign.json": "79d6222d27fe2b67a08ef147120197ff4d0c2eb4b9a34fbbb19affa5d271069c",
+    "nvml_monitor.py": "3d8bbf0a3613608f18aef6c5df1e347e62f99571390f92a2b3a0bb8a798d1d8b",
+    "e2c_gigantic.yaml": "bb44593abd13b9c49fee1dcd432dd78cd5244de0ab841e75b6afe8a21b68ba8b",
+    "install_cron.py": "fb6f55fecf0ffa2c90380492afa33cd992cb2689cac76473c7ba3a0ceacf46f0",
+    "pull.py": "8a371b346cb02a70407273d772b6e5e6e886dbb275de45788e7c851c7961ac1b",
+    "supervisor.py": "38139fbf4b8f7492abe29e7b875888b7fdd722fa1445d84d17b733320500481d",
+    "setup.py": "5d9f4b6193bf7849dc96fe0057fe8b9546f405c283ad972f6555eca39322564e",
+    "tasks.json": "00e629e674760e71e7f269a7fba4e9ad6f4a60b2e70b55e4450ee83c50b50cc1",
+    "prelaunch.py": "32eaf46c6e25176631449d5f39795c9f00375d366c4e448cfdaaedfa0310f9a2",
+    "evaluate.py": "b0964616f0fdcada55f2b752568186cb61bc3f26836df26f5c3014f32d726607"
+  }
+}
