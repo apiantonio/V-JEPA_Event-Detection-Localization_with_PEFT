@@ -102,6 +102,19 @@ class DemoPayload:
     def durata_s(self) -> float:
         return self.num_frames / self.fps if self.fps else 0.0
 
+    def window_labels(self) -> tuple[int | None, ...]:
+        """Return the protocol label of every window of :attr:`finestre`.
+
+        :return: 1 if the window intersects an annotated interval and 0 otherwise, ``None``
+            for every window of a video without annotation.
+        """
+        if not self.ha_verita:
+            return tuple(None for _ in self.finestre)
+        return tuple(
+            int(any(a <= seg.end and seg.start <= b for seg in self.annotati))
+            for a, b, _ in self.finestre
+        )
+
     def as_dict(self) -> dict[str, Any]:
         """Return the JSON form read inline by the viewer.
 
@@ -134,8 +147,11 @@ class DemoPayload:
                     "score": round(float(s), DIGITS),
                     "start_s": round(a / self.fps, 3) if self.fps else 0.0,
                     "end_s": round((b + 1) / self.fps, 3) if self.fps else 0.0,
+                    # On the exact score: a rounded one can cross the threshold.
+                    "above": bool(s >= self.threshold),
+                    "label": label,
                 }
-                for a, b, s in self.finestre
+                for (a, b, s), label in zip(self.finestre, self.window_labels(), strict=True)
             ],
             "predicted": [seg.as_dict(self.fps) for seg in self.predetti],
             "ground_truth": [seg.as_dict(self.fps) for seg in self.annotati],

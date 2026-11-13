@@ -28,6 +28,7 @@ for entry in (str(ROOT), str(ROOT / "src")):
     if entry not in sys.path:
         sys.path.insert(0, entry)
 
+from apps.demo import library as video_library  # noqa: E402
 from apps.demo import localization  # noqa: E402
 from evd.exp.demo import demo_geometry, open_run, validate_hop  # noqa: E402
 from evd.infer.replay import scores_from_disk  # noqa: E402
@@ -38,6 +39,13 @@ EXTENSIONS = {".mp4", ".mov", ".mkv", ".avi", ".webm", ".m4v"}
 MAX_UPLOAD = 2 * 1024**3
 #: Library names of the external test sets (``data.name`` of an external evaluation).
 DATASET_LABELS = {"mivia_crime": "MIVIA-Crime"}
+#: The model the console opens with, first present wins: VPT-shallow n=8 on fused LoRA r=32 has
+#: the best mean of the UCF-Crime and MIVIA-Crime OVAD protocol means (seed 42,
+#: ``runs/classifiche/ovad_guard30``); chosen on the test sets, as those rankings declare.
+DEFAULT_RUNS = (
+    "e3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42",
+    "e3r_ucf_vjepa21l_dora-r32-qkvomlp_s42",
+)
 
 
 class Console:
@@ -63,7 +71,8 @@ class Console:
         self.workspace = self.runs / "demo-local"
         self.files: dict[str, Path] = {}
         self.library: dict[str, Path] = {}
-        self.video_durations: dict[tuple[Path, int, int], float | None] = {}
+        self.video_durations: dict[tuple[Path, int, int], tuple[float | None, float | None]] = {}
+        self.entries: dict[tuple[str, int], dict[str, dict[str, Any]]] = {}
         for directory in videos:
             for path in sorted(directory.rglob("*")):
                 if path.is_file() and path.suffix.lower() in EXTENSIONS:
@@ -107,7 +116,12 @@ class Console:
                 )
             except (ValueError, OSError, KeyError):
                 continue
-        return {"runs": runs, "local_videos": len(self.library)}
+        known = {r["id"] for r in runs}
+        return {
+            "runs": runs,
+            "default": next((r for r in DEFAULT_RUNS if r in known), None),
+            "local_videos": len(self.library),
+        }
 
     def external_runs(self, run: Any) -> list[Any]:
         """Return the external evaluations of a run's weights (ADR-066).
@@ -133,11 +147,14 @@ class Console:
                 found.append(other)
         return found
 
-    def video_duration(self, key: str) -> float | None:
-        """Read only the file metadata and reuse the duration until the file changes."""
+    def video_timing(self, key: str) -> tuple[float | None, float | None]:
+        """Read only the file metadata and reuse it until the file changes.
+
+        :return: duration in seconds and native frames per second, ``None`` where unknown.
+        """
         path = self.library.get(key)
         if path is None:
-            return None
+            return None, None
         try:
             stat = path.stat()
             cache_key = (path, stat.st_mtime_ns, stat.st_size)
@@ -153,32 +170,59 @@ class Console:
                         if container.duration
                         else None
                     )
+                    rate = float(stream.average_rate) if stream.average_rate else None
                     self.video_durations[cache_key] = (
                         duration
                         if duration is not None and math.isfinite(duration) and duration > 0
-                        else None
+                        else None,
+                        rate if rate is not None and math.isfinite(rate) and rate > 0 else None,
                     )
             return self.video_durations[cache_key]
         except (OSError, ValueError, IndexError, ImportError):
-            return None
+            return None, None
+
+    def video_duration(self, key: str) -> float | None:
+        """:return: the duration of a library video in seconds, ``None`` if unknown."""
+        return self.video_timing(key)[0]
+
+    def library_entries(self, source: Any) -> dict[str, dict[str, Any]]:
+        """Return the sorting numbers of a source run, computed once per score file.
+
+        :param source: the run, or one of its external evaluations.
+        :return: ``video_id`` to :func:`apps.demo.library.video_entry`, for the local videos.
+        """
+        key = (str(source.dir), source.score_path.stat().st_mtime_ns)
+        if key not in self.entries:
+            self.entries[key] = video_library.run_entries(
+                source,
+                self.annotations,
+                lambda video: self.video_timing(video)[1],
+                list(self.library),
+            )
+        return self.entries[key]
 
     def videos(self, name: str) -> dict[str, Any]:
-        """:return: replayable videos, partition and availability of the local file."""
+        """:return: replayable videos, partition, availability of the local file and the
+        per-video and per-event numbers the library sorts by."""
         run = open_run(self.run_path(name))
         declared = str(run.cfg.get("backbone", {}).get("checkpoint", ""))
         local = ROOT.parent / "data" / "checkpoints" / Path(declared).name
         backbone = str(local) if local.is_file() else declared
         scores = scores_from_disk(run.score_path) if run.score_path.exists() else {}
         partitions = {key: value.split for key, value in scores.items()}
+        entries = self.library_entries(run) if scores else {}
         # The external test sets of the same weights become partitions of the library.
         external = []
         for other in self.external_runs(run):
             name = str(other.cfg.get("data", {}).get("name") or other.run_id)
             external.append({"id": name, "label": DATASET_LABELS.get(name, name) + " test"})
+            other_entries = self.library_entries(other)
             for key, value in scores_from_disk(other.score_path).items():
                 if key not in scores:
                     scores[key] = value
                     partitions[key] = name
+                    if key in other_entries:
+                        entries[key] = other_entries[key]
         boxes = localization.exported_videos(run.dir, run.metrics)
         split_path = Path(str(run.protocol.get("split_file", "")))
         if not split_path.is_absolute():
@@ -200,6 +244,8 @@ class Console:
                     "duration_s": self.video_duration(key),
                     "saved_windows": len(scores[key].per_finestra) if key in scores else None,
                     "boxes": key in boxes,
+                    "metrics": entries.get(key, {}).get("metrics"),
+                    "events": entries.get(key, {}).get("events", []),
                 }
                 for key, split in sorted(partitions.items())
             ],

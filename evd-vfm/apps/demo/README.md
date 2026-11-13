@@ -7,7 +7,10 @@ connection is needed.
 
 ## Watching a precomputed result
 
-1. In **Model and seed**, choose the run (default: **DoRA r=32, seed 42** when present, otherwise the first run listed).
+1. In **Model and seed**, choose the run. The default is **LoRA r32→VPT-shallow n8, seed 42**, the
+   best mean of the UCF-Crime and MIVIA-Crime OVAD protocol means (`runs/classifiche/ovad_guard30`);
+   without it DoRA r=32 seed 42, otherwise the first run listed. The ranking is chosen on the test
+   sets, as those tables declare.
 2. In **Saved results**, search for a video and select its card.
 3. Press **Open the selected video**, then Play.
 
@@ -21,9 +24,23 @@ saved results does not load the model and does not use the GPU. Videos without s
 a new inference and the model weights. The **Hide panel / Show panel** button toggles the
 left column.
 
+**List videos / List events** and **Sort by** order the library. Videos sort by the metrics of
+that video (chunk AUC, AP, F1, precision, recall, accuracy, false-alarm rate, TP/FP/FN/TN, peak
+score, duration, event F1/recall/precision, missed events, false alarms, detection latency, mean
+AP or IoU of its events); events, one card per annotated interval, by the detector on that event
+(detected, latency, share of its chunks above threshold, peak and mean score, duration) or by the
+localization of the default method (event AP, event IoU). The button next to the menu reverses the
+order; values that are not defined (AUC on a video without both classes, AP on an event the method
+does not evaluate one by one) stay last, shown as `n/a`. The numbers are computed once per score
+file, by the functions of the player page (`apps/demo/library.py`). Opening an event card starts
+the video at that event.
+
 Click the timeline to seek; click an alarm to open it. Speeds 0.5×–4× and full screen are
 available. Arrow keys move by one second, space pauses, `[` and `]` change alarm, `0`
-returns to the start.
+returns to the start. **Chunk outcome** (`V`), in the header of the timeline, colours its chunks by
+verdict, as in the rendered movies: TP, FP, FN and TN, on the exact score against the threshold, so
+the counts are those of the Metrics card. It needs an annotation, and hiding the annotations hides
+it too.
 
 ## Analysing a file from the PC
 
@@ -59,18 +76,30 @@ describe the run test set, not the single opened file.
 
 When the selected model has saved localization boxes (`runs/<run_id>/localization/`, also
 used by its MIVIA-Crime evaluation) and the video is annotated, the **Localization** card
-lists every method evaluated for that model, grouped by family and ordered by mean IoU on
-UCF-Crime; the default is the best one (for example P07 on VPT-shallow n=8 on LoRA r=32).
-The card shows the mean IoU on UCF-Crime and MIVIA-Crime and the IoU of the annotated
-class; **Metrics** has the per-class table. Boxes are drawn on the video only inside
+lists every method evaluated for that model, grouped by family. Every video opens on the default
+method of the detector: where the official table has been exported, its best rule (on LoRA
+r32→VPT-shallow n8 the largest 4-connected component, under MultiClass-Branch→Concepts-AllChunks),
+otherwise the best mean IoU on UCF-Crime. A choice in the menu lasts for the opened video.
+The card shows the mean AP of the official methods, or the mean IoU of the others, on UCF-Crime and
+MIVIA-Crime, the value of the annotated class and of the current event; **Metrics** has the
+per-class table. Boxes are drawn on the video only inside
 annotated intervals, in native pixels, with the same frame projection used by the
 evaluation. Two independent buttons in the top bar show or hide each layer: **GT boxes**
 (`G`, dashed ochre: the spatial ground truth of the frozen snapshot the IoU was computed
 on, reviewed frames with a box of the event class) and **Method boxes** (`B`, solid and
-numbered). **Annotations** governs only the temporal annotation. Where a GT box exists the
+blue). **Annotations** governs only the temporal annotation. Where a GT box exists the
 card shows the **frame IoU**, the per-frame quantity the evaluation averages. Both layers
 are hidden while Streaming. The default method is chosen on the test set, so the ranking
 is exploratory.
+
+**YOLO style** (`Y`, on by default) draws the method boxes with a thick line and no label; off,
+they are thin and numbered.
+
+**Interpolate planes** (`I`) moves each method box linearly on its corners between one
+plane and the next, about 0.5 s apart, instead of jumping. It only changes the drawing: AP, IoU and
+frame IoU stay on the evaluated boxes, and the card says `interpolated view`. Boxes pair by
+decreasing IoU, from 0.1 up; a box without a partner keeps its place and appears or disappears at
+the boundary, so nothing crosses the frame. It uses the following plane, so it is not causal.
 
 To add the boxes of a model, export them once from the pulled campaign predictions:
 
@@ -98,6 +127,28 @@ python scripts/export_demo_localization.py --run runs/<run_id> `
 The page shows the readable name (the campaign id stays in the Metrics card). After a merge the
 ranks are recomputed over all methods and the default follows the same rule (best UCF-Crime
 mean).
+
+The official table ranks box rules by offline AP, and its stages seal their material instead of
+boxes. `--official-table` reads which rule a step of the table names best for the detector, builds
+its boxes from the stage and makes it the default, which later merges keep:
+
+```powershell
+python scripts/export_demo_localization.py --run runs/<run_id> `
+  --official-table <campaign>/evaluation/tabella_localizzazione.json --official-step ours-best `
+  --official-stage <campaign>/stages/ign-n32-campaign `
+  --official-name "Largest 4-conn. component, MultiClass-Branch→Concepts-AllChunks" `
+  --intervals <campaign>/plan/real_use/intervals.json `
+  --ground-truth <snapshot> --campaign localization-class-routing-20261021
+```
+
+AP has no operating point: it ranks every box by confidence. So the rule enters the menu four times:
+θ@TPR90 (the default, the confidence at which 90% of the annotated frames of the true positive rows
+keep a box, from the evaluation of the false alarms), θ@F1max (the confidence with the highest macro
+F1@[0.3:0.05:0.7], offline at 1 fps; chosen on UCF-Crime and moved to MIVIA-Crime), the most
+confident box of each plane, with no threshold, and all the boxes. The export recomputes the
+per-event AP from the stage and refuses to proceed if it differs from the evaluation, or if the
+chunk flags of the stage disagree with the run scores. The IoU of each entry is computed here, on
+those very boxes; the AP is of the rule and does not change between them.
 
 ## Localization movies
 

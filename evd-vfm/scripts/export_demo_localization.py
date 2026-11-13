@@ -30,6 +30,23 @@ run already has instead of replacing it:
         --passes <campaign>/passes/campaign/test \
         --method "B2-A2-phase1=MultiClass-Full→Concepts-AllChunks, 55% threshold" \
         --campaign localization-class-routing-20261021 --append
+
+The official localization table (``localization_class_table.py``) ranks the box rules by
+offline AP, and an AP stage seals the material of the boxes instead of the boxes.
+``--official-table`` draws from that material the rule a step of the table names as the best of
+the detector, and makes it the method the page opens with. AP has no operating point of its own,
+so the rule enters the menu twice: with the boxes above the confidence of TPR 90%, the default,
+and with all of them. Before anything is written the per-event AP is recomputed from the stage
+and compared with the evaluation the table was built from:
+
+    python scripts/export_demo_localization.py \
+        --run runs/e3s_ucf_vjepa21l_vptshallow-n8-su-lora-r32_s42 \
+        --official-table <campaign>/evaluation/tabella_localizzazione.json \
+        --official-step ours-best --official-stage <campaign>/stages/ign-n32-campaign \
+        --official-name "MultiClass-Branch→Concepts-AllChunks, largest 4-conn. component" \
+        --intervals <campaign>/plan/real_use/intervals.json \
+        --ground-truth <campaign>/evaluation-only/gt-snapshot \
+        --campaign localization-class-routing-20261021
 """
 
 from __future__ import annotations
@@ -44,9 +61,12 @@ from collections.abc import Mapping, Sequence
 from pathlib import Path
 from typing import Any
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path[:0] = [str(ROOT), str(ROOT / "src")]
+import numpy as np
 
+ROOT = Path(__file__).resolve().parents[1]
+sys.path[:0] = [str(ROOT), str(ROOT / "src"), str(ROOT / "scripts")]
+
+from evd.eval.localization import aggregate_localization  # noqa: E402
 from evd.exp.localization_auto import FAMILY_LABELS  # noqa: E402
 from evd.explain.project import offline_assignment, offline_plane  # noqa: E402
 from evd.types import WindowSpec  # noqa: E402
@@ -73,6 +93,34 @@ CLASS_ROUTING_FAMILY = ("class_routing", "Class routing (21-24 Oct 2026)")
 
 #: Largest gap accepted between an evaluator result's ``value`` and the mean of its classes.
 MEAN_TOLERANCE = 1e-12
+
+#: Family of the rule the official table names as the best of the detector.
+OFFICIAL_FAMILY = ("official_table", "Official table (offline AP)")
+
+#: Node set of the official table: AP and false alarms at 1 fps, IG with 32 nodes.
+OFFICIAL_SET = "1fps"
+
+#: GT reading of the official table.
+OFFICIAL_GT = "union"
+
+#: Share of the annotated frames that keep a box at the confidence of the default method.
+OFFICIAL_TPR = 90
+
+#: Largest gap accepted between the recomputed per-event AP and the evaluation on disk.
+AP_TOLERANCE = 1e-9
+
+#: Confidence grid of the F1 of the official rule, for a confidence in ``[0, 1]``.
+F1_CONFIDENCES = np.round(np.arange(0, 1.0005, 0.005), 3)
+
+#: The dataset that chooses the confidence of the highest F1; the other one receives it, as the
+#: chunk threshold moves from UCF-Crime to MIVIA-Crime.
+F1_SOURCE = "ucf_test"
+
+#: The table rounds its values to seven digits.
+TABLE_TOLERANCE = 1e-6
+
+#: Folder of the export holding the IoU results of the official method.
+OFFICIAL_FOLDER = "official"
 
 
 def read_comparison(report: Path) -> tuple[list[str], list[dict[str, Any]]]:
@@ -168,7 +216,7 @@ def read_evaluation(
                 "prediction_seal_sha256": result["prediction_seal_sha256"],
                 "gt_snapshot_sha256": result["gt_snapshot_sha256"],
             }
-            if folder == "ucf_test":
+            if folder == "ucf_test" and "timing" in result:
                 entry["fit_s"] = float(result["timing"]["fit_seconds"])
         methods.append(entry)
     if classes is None:
@@ -526,9 +574,9 @@ def append_export(output: Path, addition: Path) -> dict[str, Any]:
     """Add the methods of a second export of the same run to the one in ``output``.
 
     Box tables are merged video by video, ranks are recomputed over all methods and the
-    default follows the selection rule again (best UCF-Crime mean). The first campaign stays
-    the index ``campaign``; the added one is recorded under ``appended`` and on each added
-    method.
+    default follows the selection rule again (best UCF-Crime mean, unless the official table
+    chose it: :func:`export_official`). The first campaign stays the index ``campaign``; the
+    added one is recorded under ``appended`` and on each added method.
 
     :param output: the ``localization`` folder that receives the methods.
     :param addition: a complete export of the same run, written elsewhere.
@@ -574,7 +622,8 @@ def append_export(output: Path, addition: Path) -> dict[str, Any]:
         write_text_atomic(output / relative, json.dumps(merged, separators=(",", ":")) + "\n")
     index["methods"] += extra["methods"]
     rank_methods(index["methods"])
-    index["default"] = min(index["methods"], key=lambda m: m["ucf_crime"]["rank"])["id"]
+    if "official_best" not in index:
+        index["default"] = min(index["methods"], key=lambda m: m["ucf_crime"]["rank"])["id"]
     index.setdefault("appended", []).append(
         {
             "campaign": extra["campaign"],
@@ -739,6 +788,454 @@ def add_ground_truth(output: Path, snapshot: Path) -> dict[str, Any]:
     return index
 
 
+def official_choice(table: Mapping[str, Any], step: str) -> dict[str, Any]:
+    """Read what a step of the official table names as the best rule of a detector.
+
+    :param table: the content of ``tabella_localizzazione.json``.
+    :param step: a key of ``table["ladder"]["steps"]``, such as ``ours-best``.
+    :return: ``id`` of the table row, its ``index``, ``stage``, ``configuration``, ``variant``
+        and ``score``.
+    :raises ValueError: if the step is unknown or has no row at the official node set.
+    """
+    steps = {s["key"]: s for s in table["ladder"]["steps"]}
+    if step not in steps:
+        raise ValueError(f"Unknown step {step!r} of the official table: {sorted(steps)}")
+    row = steps[step]["ids"][OFFICIAL_SET]["any"]
+    if row is None:
+        raise ValueError(f"The step {step} has no row at the node set {OFFICIAL_SET}")
+    stage, configuration, variant, score = row.split("|")
+    index = next(i for i, r in enumerate(table["rows"]) if r["id"] == row)
+    return {
+        "id": row,
+        "index": index,
+        "stage": stage,
+        "configuration": configuration,
+        "variant": variant,
+        "score": score,
+    }
+
+
+def official_values(table: Mapping[str, Any], index: int, dataset: int) -> dict[str, Any]:
+    """Read the numbers of one row of the official table on one dataset.
+
+    :param table: the content of ``tabella_localizzazione.json``.
+    :param index: position of the row in ``table["rows"]``.
+    :param dataset: position of the dataset in ``table["datasets"]``.
+    :return: ``main``, ``coco``, ``online_main``, ``online_coco``, ``fpr_tpr90`` and the
+        per-class ``classes`` of the main offline AP.
+    """
+    nodes = table["ig_nodes"]
+    values = nodes["values"][OFFICIAL_SET][index][dataset]
+    metric = nodes["metrics"].index
+    per_class = nodes["per_class"][OFFICIAL_SET][index][dataset]
+    main = per_class[nodes["per_class_metrics"].index("offline_main")]
+    return {
+        "main": values[metric("offline_main")],
+        "coco": values[metric("offline_coco")],
+        "online_main": values[metric("online_main")],
+        "online_coco": values[metric("online_coco")],
+        "fpr_tpr90": values[metric(f"fpr{OFFICIAL_TPR}")],
+        "classes": dict(zip(table["classes"], main, strict=True)),
+    }
+
+
+def plane_detections(
+    chunk: Mapping[str, Any], configuration: str, variant: str, score: str, size: tuple[int, int]
+) -> list[list[tuple[float, list[int]]]] | None:
+    """Build the scored boxes of every plane of a chunk of an AP stage.
+
+    :param chunk: a chunk record of the stage.
+    :param configuration: the configuration that chose the dictionary.
+    :param variant: box rule (``evd.exp.localization_ap.BOX_VARIANTS``).
+    :param score: confidence, ``mass`` or ``share``.
+    :param size: native ``(width, height)``.
+    :return: per plane the ``(confidence, inclusive native box)`` pairs by decreasing
+        confidence, or ``None`` if the chunk was not localized under the configuration.
+    """
+    from localization_class_ap import _detections, plane_material
+
+    key = chunk["methods"][configuration]["partition"] if chunk.get("localized") else None
+    if key is None:
+        return None
+    planes = []
+    for temporal in range(len(chunk["partitions"][key]["planes"])):
+        material = plane_material(chunk, key, temporal)
+        planes.append(
+            [
+                (float(d.score), [int(r[0]), int(r[1]), int(r[2]) - 1, int(r[3]) - 1])
+                for d in _detections(variant, material, score, size)
+                for r in d.rects
+            ]
+        )
+    return planes
+
+
+def _stored_ap(
+    evaluation: Path, folder: str, choice: Mapping[str, Any]
+) -> tuple[dict[str, Any], np.ndarray]:
+    """Read the AP of one box rule from an evaluation of the official table.
+
+    :return: the axes of the evaluation and the ``scores × events × thresholds`` AP of the rule.
+    """
+    axes = read_json(evaluation / f"axes_{folder}.json")
+    with np.load(evaluation / f"metrics_per_event_{folder}.npz") as stored:
+        ap = stored["ap"][
+            axes["configuration"].index(choice["configuration"]),
+            axes["variant"].index(choice["variant"]),
+            :,
+            axes["gt"].index(OFFICIAL_GT),
+        ]
+    return axes, ap
+
+
+def _official_theta(evaluation: Path, folder: str, choice: Mapping[str, Any]) -> float:
+    """:return: the box confidence that keeps :data:`OFFICIAL_TPR` percent of the annotated
+    frames of the true positive rows (``localization_class_ap.frame_fpr``)."""
+    axes = read_json(evaluation / f"axes_{folder}.json")
+    with np.load(evaluation / f"frame_fpr_{folder}.npz") as stored:
+        position = [int(q) for q in stored["q"]].index(OFFICIAL_TPR)
+        return float(
+            stored["theta"][
+                axes["configuration"].index(choice["configuration"]),
+                axes["variant"].index(choice["variant"]),
+                axes["score"].index(choice["score"]),
+                position,
+            ]
+        )
+
+
+def _official_seal(stage: Path, folder: str, choice: Mapping[str, Any]) -> dict[str, Any]:
+    """:return: the seal of a dataset of the stage.
+
+    :raises ValueError: if the dataset is not sealed for the configuration of the rule.
+    """
+    path = stage / "operations" / f"seal-{folder}.json"
+    seal = read_json(path)
+    if seal.get("status") != "complete" or choice["configuration"] not in seal["methods"]:
+        raise ValueError(f"{path} does not seal {choice['configuration']}")
+    return seal
+
+
+def _official_f1(
+    stage: Path,
+    snapshot: Path,
+    folder: str,
+    intervals: Mapping[str, Any],
+    choice: Mapping[str, Any],
+    iou_thresholds: Sequence[float],
+    theta: float,
+) -> tuple[np.ndarray, float]:
+    """Read the macro F1 of the rule at every confidence, offline at 1 fps on the official GT.
+
+    :param intervals: temporal events of the videos of the dataset, by video.
+    :param theta: one more confidence, off the grid.
+    :return: the F1 at each of :data:`F1_CONFIDENCES`, and at ``theta``.
+    """
+    from evd.eval.localization_ap import Image, confidence_f1, ground_truth
+    from localization_auto_evaluate import sealed_videos
+    from localization_class_ap import _detections, evaluated_frames, event_images
+
+    configuration = choice["configuration"]
+    images: dict[str, list[Image]] = {}
+    truth_folder = snapshot / DATASETS[folder]
+    seal = _official_seal(stage, folder, choice)
+    for entry, complete, chunks in sealed_videos(
+        stage, seal, lambda e: (truth_folder / f"{e['video_id']}.json").exists()
+    ):
+        if chunks is None:
+            continue
+        truth = read_json(truth_folder / f"{entry['video_id']}.json")
+        size = (truth["width"], truth["height"])
+        frames, _ = evaluated_frames(
+            truth, float(complete["video"]["fps"]), intervals[entry["video_id"]]
+        )
+        for event in event_images(truth, complete, chunks, [configuration], "offline", frames):
+            for image in event["images"]:
+                material = image["material"][configuration]
+                images.setdefault(event["class"], []).append(
+                    Image(
+                        truths=ground_truth(image["boxes"], OFFICIAL_GT),
+                        detections=[]
+                        if material is None
+                        else _detections(choice["variant"], material, choice["score"], size),
+                    )
+                )
+    values = confidence_f1(images, [*F1_CONFIDENCES, theta], iou_thresholds)
+    return values[:-1], float(values[-1])
+
+
+def export_official(
+    run: Path,
+    table_path: Path,
+    step: str,
+    stage: Path,
+    intervals: Path,
+    snapshot: Path,
+    name: str,
+    campaign: str,
+    output: Path | None = None,
+) -> dict[str, Any]:
+    """Export the best box rule of the official table and make it the default of the run.
+
+    :param run: the run of the detector, with an export whose ground truth is ``snapshot``.
+    :param table_path: ``tabella_localizzazione.json``; its folder holds the evaluations.
+    :param step: step of the table naming the rule (:func:`official_choice`).
+    :param stage: the sealed AP stage of the rule, at the table's IG nodes.
+    :param intervals: temporal events of the test videos, which place the 1 fps frames.
+    :param snapshot: the frozen GT snapshot of the evaluations.
+    :param name: readable name of the rule.
+    :param campaign: provenance label of the campaign.
+    :param output: the ``localization`` folder, ``<run>/localization`` by default.
+    :return: the updated index.
+    :raises ValueError: if the stage is not the one of the evaluation, the chunk flags disagree
+        with the run scores (another detector), the recomputed AP differs from the evaluation,
+        the AP on disk is not the table's, or the export lacks the snapshot.
+    """
+    from localization_auto_evaluate import chunk_windows, evaluate_video, sealed_videos
+    from localization_class_ap import evaluate_configuration, evaluated_frames, event_images
+    from localization_class_table import range_mean
+
+    output = output or run / OUTPUT_FOLDER
+    table = read_json(table_path)
+    choice = official_choice(table, step)
+    # Reading the snapshot here: an export on another ground truth must fail before the long read.
+    digest = file_sha256(snapshot / "snapshot.json")
+    index = read_json(output / "index.json")
+    if (index.get("ground_truth") or {}).get("snapshot_sha256") != digest:
+        raise ValueError(f"{snapshot} is not the ground truth of the export in {output}")
+    temporal = read_json(intervals)["intervals"]
+    provenance = next(s for s in table["ig_nodes"]["sets"] if s["key"] == OFFICIAL_SET)[
+        "provenance"
+    ][choice["stage"]]
+    all_boxes = "-".join((choice["configuration"], choice["variant"], choice["score"]))
+    above_theta = f"{all_boxes}-tpr{OFFICIAL_TPR}"
+    above_f1 = f"{all_boxes}-f1max"
+    most_confident = f"{all_boxes}-top1"
+    # What tells the entries apart comes first: the closed menu shows only the start of a name.
+    labels = {
+        above_theta: f"θ@TPR{OFFICIAL_TPR} · {name}",
+        above_f1: f"θ@F1max · {name}",
+        most_confident: f"Most confident box · {name}",
+        all_boxes: f"All boxes · {name}",
+    }
+    report = output / OFFICIAL_FOLDER
+    target = output.with_name(output.name + ".official")
+    if target.exists():
+        raise ValueError(f"{target} exists: remove the leftover of an interrupted export")
+    threshold = read_json(run / "metrics.json")["threshold"]["value"]
+    videos: dict[str, str] = {}
+    ap_blocks: dict[str, dict[str, Any]] = {}
+    seals: dict[str, str] = {}
+    checks: dict[str, Any] = {}
+    meta_snapshot = read_json(snapshot / "snapshot.json")
+    previous_default = index["default"]
+    low, high = table["ranges"]["main"]
+    f1_curves, f1_at_tpr = {}, {}
+    for folder in DATASETS:
+        axes = read_json(table_path.parent / provenance[folder]["offline"] / f"axes_{folder}.json")
+        f1_curves[folder], f1_at_tpr[folder] = _official_f1(
+            stage,
+            snapshot,
+            folder,
+            temporal[folder],
+            choice,
+            [t for t in axes["iou_threshold"] if low - 1e-9 <= t <= high + 1e-9],
+            _official_theta(table_path.parent / provenance[folder]["online"], folder, choice),
+        )
+    theta_f1 = float(F1_CONFIDENCES[int(np.argmax(f1_curves[F1_SOURCE]))])
+    for folder, dataset in DATASETS.items():
+        seal = _official_seal(stage, folder, choice)
+        seals[f"{stage.name}/{folder}"] = file_sha256(stage / "operations" / f"seal-{folder}.json")
+        offline = table_path.parent / provenance[folder]["offline"]
+        online = table_path.parent / provenance[folder]["online"]
+        expected = run_scores(run, folder)
+        theta = _official_theta(online, folder, choice)
+        entries = {
+            above_theta: lambda plane, limit=theta: [b for s, b in plane if s >= limit],
+            above_f1: lambda plane: [b for s, b in plane if s >= theta_f1],
+            most_confident: lambda plane: [b for s, b in plane if s == plane[0][0]],
+            all_boxes: lambda plane: [b for _, b in plane],
+        }
+        rows: dict[str, list] = {method: [] for method in entries}
+        events: list[dict[str, Any]] = []
+        sizes: dict[str, tuple[int, int]] = {}
+        compared = mismatches = 0
+
+        def truth_of(entry: dict, dataset: str = dataset) -> Path:
+            return snapshot / dataset / f"{entry['video_id']}.json"
+
+        for entry, complete, chunks in sealed_videos(stage, seal, lambda e: truth_of(e).exists()):
+            video_id = entry["video_id"]
+            if chunks is None:
+                continue
+            truth = read_json(truth_of(entry))
+            meta = complete["video"]
+            size = (int(meta["width"]), int(meta["height"]))
+            boxes: dict[str, list] = {method: [] for method in entries}
+            for chunk in chunks:
+                if expected is not None and chunk["flagged"] is not None:
+                    compared += 1
+                    above = expected[chunk["window_id"]] >= threshold
+                    mismatches += above != bool(chunk["flagged"])
+                planes = plane_detections(
+                    chunk, choice["configuration"], choice["variant"], choice["score"], size
+                )
+                empty = [[] for _ in range(int(chunk["grid"][0]))]
+                for method, keep in entries.items():
+                    kept = None if planes is None else [keep(plane) for plane in planes]
+                    boxes[method].append(kept)
+                    chunk["methods"][method] = {"boxes": kept if kept is not None else empty}
+            table_boxes, segments = project_boxes(
+                chunk_windows(chunks), meta["num_frames"], [c["grid"][0] for c in chunks], boxes
+            )
+            relative = f"{dataset}/{video_id}.json"
+            body = {
+                "video": {k: meta[k] for k in ("video_id", "num_frames", "fps", "width", "height")},
+                "dataset": dataset,
+                "boxes": table_boxes,
+                "segments": segments,
+            }
+            write_text_atomic(target / relative, json.dumps(body, separators=(",", ":")) + "\n")
+            videos[video_id] = relative
+            for method in rows:
+                rows[method].extend(evaluate_video(truth, complete, chunks, method))
+            frames, _ = evaluated_frames(truth, float(meta["fps"]), temporal[folder][video_id])
+            for event in event_images(
+                truth, complete, chunks, [choice["configuration"]], "offline", frames
+            ):
+                sizes[event["event_id"]] = (truth["width"], truth["height"])
+                events.append(event)
+        if expected is not None and (compared == 0 or mismatches):
+            raise ValueError(
+                f"The chunk flags of {stage.name} on {folder} disagree with {run.name} on "
+                f"{mismatches} of {compared} windows: the stage belongs to another detector"
+            )
+        checks[dataset] = {"compared_windows": compared, "flag_mismatches": mismatches}
+        axes, stored = _stored_ap(offline, folder, choice)
+        stored_events = axes["event"]
+        order = {e["event_id"]: i for i, e in enumerate(events)}
+        if set(order) != {e["event_id"] for e in stored_events}:
+            raise ValueError(f"The events of {stage.name} on {folder} are not the evaluation's")
+        classes = sorted(meta_snapshot["class_event_support"][dataset])
+        recomputed = evaluate_configuration(
+            {
+                "name": choice["configuration"],
+                "flagged": [],
+                "grid": "fine",
+                "variants": [choice["variant"]],
+                "gt_modes": [OFFICIAL_GT],
+                "ap_only": True,
+                "classes": classes,
+                "sizes": sizes,
+                "events": [
+                    {
+                        "event_id": e["event_id"],
+                        "class": e["class"],
+                        "images": [
+                            {
+                                "boxes": i["boxes"],
+                                "material": i["material"][choice["configuration"]],
+                            }
+                            for i in events[order[e["event_id"]]]["images"]
+                        ],
+                    }
+                    for e in stored_events
+                ],
+                "negatives": [],
+                "empty_negatives": 0,
+            }
+        )["arrays"]["ap"][0, :, 0]
+        gap = float(np.nanmax(np.abs(recomputed - stored)))
+        if gap > AP_TOLERANCE:
+            raise ValueError(
+                f"The AP recomputed from {stage.name} on {folder} differs from {offline} by "
+                f"{gap:.3g}: these boxes are not the evaluated ones"
+            )
+        checks[dataset]["recomputed_ap_gap"] = gap
+        rule = stored[axes["score"].index(choice["score"])]
+        main = range_mean(rule, axes["iou_threshold"], low, high)
+        official = official_values(
+            table, choice["index"], [d["key"] for d in table["datasets"]].index(folder)
+        )
+        for cls, value in official["classes"].items():
+            mine = [v for e, v in zip(stored_events, main, strict=True) if e["class"] == cls]
+            if mine and abs(float(np.mean(mine)) - value) > TABLE_TOLERANCE:
+                raise ValueError(f"{cls} on {folder}: {offline} is not the table's value")
+        ap_blocks[dataset] = {
+            **official,
+            "theta_tpr90": theta,
+            "theta_f1max": theta_f1,
+            "f1": {
+                "at_theta_f1max": float(f1_curves[folder][F1_CONFIDENCES.searchsorted(theta_f1)]),
+                "at_theta_tpr90": f1_at_tpr[folder],
+                "best": float(f1_curves[folder].max()),
+                "theta_of_best": float(F1_CONFIDENCES[int(np.argmax(f1_curves[folder]))]),
+            },
+            "events": {e["event_id"]: float(v) for e, v in zip(stored_events, main, strict=True)},
+        }
+        for method, method_rows in rows.items():
+            result = aggregate_localization(method_rows, classes)
+            result.update(
+                experiment=method,
+                dataset=dataset,
+                prediction_seal_sha256=seals[f"{stage.name}/{folder}"],
+                gt_snapshot_sha256=digest,
+            )
+            write_json(report / "results" / folder / f"{method}.json", result)
+    _, methods = read_evaluation(report, labels)
+    for method in methods:
+        method["family"], method["family_label"] = OFFICIAL_FAMILY
+        method["ap"] = ap_blocks
+    addition = {
+        "schema": 1,
+        "run_id": run.name,
+        "campaign": campaign,
+        "metric": index["metric"],
+        "selection": index["selection"],
+        "default": above_theta,
+        "classes": index["classes"],
+        "coordinate_space": index["coordinate_space"],
+        "projection": index["projection"],
+        "methods": [{**m, "stage": stage.name, "campaign": campaign} for m in methods],
+        "videos": videos,
+        "detector_check": checks,
+        "sources": {
+            "predictions": str(stage.resolve()),
+            "report": str(report.resolve()),
+            "table_sha256": file_sha256(table_path),
+            "seal_sha256": seals,
+        },
+    }
+    write_json(target / "index.json", addition)
+    index = append_export(output, target)
+    shutil.rmtree(target)
+    first = [m for m in index["methods"] if m["id"] in labels]
+    first.sort(key=lambda m: list(labels).index(m["id"]))
+    index["methods"] = first + [m for m in index["methods"] if m["id"] not in labels]
+    index["official_best"] = {
+        "method": above_theta,
+        "above_f1": above_f1,
+        "most_confident": most_confident,
+        "all_boxes": all_boxes,
+        "theta_f1_source": F1_SOURCE,
+        "previous_default": previous_default,
+        "table_row": choice["id"],
+        "table_sha256": file_sha256(table_path),
+        "step": step,
+        "node_set": OFFICIAL_SET,
+        "gt": OFFICIAL_GT,
+        "criterion": table["ladder"]["criterion"],
+    }
+    index["default"] = above_theta
+    index["selection"] = (
+        f"the official table's best rule for this detector, {table['ladder']['criterion']}; "
+        f"drawn above the confidence of TPR {OFFICIAL_TPR}% (exploratory: both are chosen on "
+        "the test sets)"
+    )
+    write_json(output / "index.json", index)
+    return index
+
+
 def main() -> None:
     """Parse the arguments and export one detector, its ground truth, or both."""
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
@@ -771,8 +1268,46 @@ def main() -> None:
     )
     parser.add_argument("--ground-truth", type=Path, help="evaluator GT snapshot folder")
     parser.add_argument("--output", type=Path, help="default: <run>/localization")
+    parser.add_argument(
+        "--official-table",
+        type=Path,
+        help="tabella_localizzazione.json: export the best rule of a step and make it the default",
+    )
+    parser.add_argument("--official-step", default="ours-best", help="step of the table")
+    parser.add_argument("--official-stage", type=Path, help="sealed AP stage of the rule")
+    parser.add_argument("--official-name", help="readable name of the rule")
+    parser.add_argument("--intervals", type=Path, help="temporal events of the test videos")
     args = parser.parse_args()
     output = args.output or args.run / OUTPUT_FOLDER
+    if args.official_table:
+        needed = (
+            args.official_stage,
+            args.official_name,
+            args.intervals,
+            args.ground_truth,
+            args.campaign,
+        )
+        if not all(needed):
+            parser.error(
+                "--official-table needs --official-stage, --official-name, --intervals, "
+                "--ground-truth and --campaign"
+            )
+        index = export_official(
+            args.run,
+            args.official_table,
+            args.official_step,
+            args.official_stage,
+            args.intervals,
+            args.ground_truth,
+            args.official_name,
+            args.campaign,
+            output,
+        )
+        print(
+            f"{index['run_id']}: {len(index['methods'])} methods, default {index['default']}; "
+            f"check {index['appended'][-1]['detector_check']}"
+        )
+        return
     routing = (args.evaluation, args.passes, args.method)
     if any(routing) and not all(routing):
         parser.error("--evaluation, --passes and --method go together")

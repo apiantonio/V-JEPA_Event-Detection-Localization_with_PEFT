@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demonstrator recordings</title>
+<style>
+/* Catalogue of the screen recordings of the demonstrator (scripts/record_demonstrator.py).
+   The palette is the one of apps/demo/assets/viewer.html. */
+:root{
+  --ink:#101419; --ink-2:#181E26; --ink-3:#1D252E; --rule:#2C3541; --haze:#A5B3C1; --paper:#E8EEF2;
+  --calm:#72DFBC; --alarm:#FF5B49; --truth:#C9A227; --missed:#C369CD; --box:#3D9DFF;
+  --ui:"Segoe UI",system-ui,sans-serif; --mono:Consolas,ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--ink);color:var(--paper);font:13px/1.45 var(--ui);display:grid;
+  grid-template-columns:minmax(300px,420px) minmax(0,1fr);height:100dvh;overflow:hidden}
+@media (max-width:800px){body{grid-template-columns:1fr;grid-template-rows:45dvh 55dvh}}
+aside{display:flex;flex-direction:column;min-height:0;border-right:1px solid var(--rule)}
+header{padding:12px 14px 8px;border-bottom:1px solid var(--rule)}
+h1{font-size:15px;margin:0 0 2px}
+.sub{color:var(--haze);font-size:11.5px}
+.filters{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}
+.filters input,.filters select,button{background:#182029;border:1px solid #455360;border-radius:5px;
+  color:var(--paper);padding:5px 7px;font:12px var(--ui)}
+.filters input{grid-column:1/-1}
+button{cursor:pointer}button:hover{border-color:var(--calm)}
+.count{color:var(--haze);font-size:11px;margin-top:6px}
+ol{list-style:none;margin:0;padding:6px;overflow-y:auto;flex:1;min-height:0}
+li{padding:8px 10px;border:1px solid transparent;border-radius:8px;cursor:pointer;margin-bottom:4px;background:var(--ink-2)}
+li:hover{border-color:var(--rule)}li.on{border-color:var(--calm)}
+li .t{display:flex;gap:8px;align-items:baseline}li .id{font-weight:600;flex:1;overflow-wrap:anywhere}
+li .d{color:var(--haze);font-size:11px;white-space:nowrap}
+li .m{display:flex;flex-wrap:wrap;gap:4px 10px;margin-top:4px;font:11px var(--mono);color:var(--haze)}
+.chip{display:inline-flex;gap:3px;align-items:center}.chip i{width:8px;height:8px;display:block}
+.tag{font:10px var(--ui);border:1px solid var(--rule);border-radius:4px;padding:0 5px;color:var(--haze)}
+.tag.box{border-color:var(--box);color:var(--box)}
+main{display:grid;grid-template-rows:auto minmax(0,1fr) auto;min-height:0}
+.now{display:flex;align-items:baseline;gap:10px;padding:10px 14px;border-bottom:1px solid var(--rule)}
+.now h2{font-size:14px;margin:0}.now .sub{flex:1}
+video{width:100%;height:100%;background:#000;display:block;min-height:0}
+.panel{border-top:1px solid var(--rule);padding:8px 14px 10px;display:grid;gap:8px;max-height:38dvh;overflow:auto}
+.row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.row .lbl{color:var(--haze);font-size:11px;min-width:64px}
+.ev{font:11.5px var(--mono)}.ev.hit{border-color:var(--calm)}.ev.miss{border-color:var(--missed)}
+table{border-collapse:collapse;font:11.5px var(--mono);width:100%}
+td,th{padding:3px 6px;border-bottom:1px solid var(--rule);text-align:left}
+th{color:var(--haze);font-weight:500}
+.mono{font-family:var(--mono)}
+.empty{color:var(--haze);padding:20px}
+kbd{font:11px var(--mono);border:1px solid var(--rule);padding:0 4px;border-radius:3px}
+</style>
+</head>
+<body>
+<aside>
+  <header>
+    <h1 id="title">Demonstrator recordings</h1>
+    <div class="sub" id="model">—</div>
+    <div class="filters">
+      <input id="q" type="search" placeholder="Search a video or a class">
+      <select id="dataset"><option value="">All datasets</option></select>
+      <select id="kind"><option value="">Anomalous and normal</option><option value="anomalous">Anomalous</option><option value="normal">Normal</option><option value="boxes">With boxes</option><option value="fp">With false alarms</option><option value="missed">With missed events</option></select>
+      <select id="sort">
+        <option value="id">Name</option><option value="duration_s">Duration</option>
+        <option value="m.auc">Chunk AUC</option><option value="m.ap">Chunk AP</option>
+        <option value="m.f1">Chunk F1</option><option value="m.tp">TP chunks</option>
+        <option value="m.fp">FP chunks</option><option value="m.fn">FN chunks</option>
+        <option value="m.event_recall">Event recall</option><option value="m.false_alarms">False alarms</option>
+        <option value="m.latency_s">Detection latency</option><option value="m.peak_score">Peak score</option>
+        <option value="m.loc_ap">Localization AP (events)</option><option value="m.loc_iou">Localization IoU (events)</option>
+      </select>
+      <button id="dir" title="Reverse the order">ascending</button>
+    </div>
+    <div class="count" id="count"></div>
+  </header>
+  <ol id="list"></ol>
+</aside>
+<main>
+  <div class="now"><h2 id="now-id">Choose a video</h2><div class="sub" id="now-sub"></div></div>
+  <video id="v" controls preload="metadata"></video>
+  <div class="panel">
+    <div class="row"><span class="lbl">Events</span><span id="events" class="row"></span></div>
+    <div class="row"><span class="lbl">Clip</span>
+      <button id="mark-in" title="Key I">Mark in</button><button id="mark-out" title="Key O">Mark out</button>
+      <span class="mono" id="mark"></span><button id="add">Add clip</button>
+      <span class="sub">Speed</span><select id="speed"><option>0.5</option><option selected>1</option><option>2</option><option>4</option></select>
+      <span class="sub"><kbd>space</kbd> play · <kbd>,</kbd><kbd>.</kbd> ±1 frame · <kbd>←</kbd><kbd>→</kbd> ±2 s</span></div>
+    <div><div class="row"><span class="lbl">Selected clips</span><button id="export">Download CSV</button><button id="clear">Clear</button><span class="sub">kept in this browser</span></div>
+      <table><thead><tr><th>video</th><th>dataset</th><th>in</th><th>out</th><th>length</th><th>note</th><th></th></tr></thead><tbody id="clips"></tbody></table></div>
+  </div>
+</main>
+<script>
+"use strict";
+const $ = (id) => document.getElementById(id);
+const v = $("v");
+const fmt = (x, d = 3) => x == null ? "n/a" : Number(x).toFixed(d);
+const mmss = (s) => { s = Math.max(0, s || 0); const m = Math.floor(s / 60); return m + ":" + (s - m * 60).toFixed(2).padStart(5, "0"); };
+const esc = (x) => String(x).replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let C = null, current = null, desc = false, markIn = null, markOut = null;
+const store = { get() { try { return JSON.parse(localStorage.getItem("evd-clips") || "[]"); } catch { return []; } },
+  set(x) { try { localStorage.setItem("evd-clips", JSON.stringify(x)); } catch {} } };
+const value = (r, key) => key.startsWith("m.") ? r.metrics[key.slice(2)] : r[key];
+const classes = (r) => [...new Set(r.events.map((e) => e.class))].join(", ") || (r.normal ? "Normal" : "");
+
+function render() {
+  const q = $("q").value.trim().toLowerCase(), ds = $("dataset").value, kind = $("kind").value, key = $("sort").value;
+  let rows = C.videos.filter((r) => (!ds || r.dataset === ds) &&
+    (!q || (r.id + " " + classes(r)).toLowerCase().includes(q)) &&
+    (!kind || (kind === "normal" ? r.normal : kind === "anomalous" ? !r.normal : kind === "boxes" ? r.boxes :
+      kind === "fp" ? (r.metrics.false_alarms || r.metrics.fp) > 0 : (r.metrics.events_missed || 0) > 0)));
+  rows.sort((a, b) => {
+    const x = value(a, key), y = value(b, key);
+    if (x == null && y == null) return a.id.localeCompare(b.id);
+    if (x == null) return 1; if (y == null) return -1;
+    const c = typeof x === "string" ? x.localeCompare(y) : x - y;
+    return (desc ? -c : c) || a.id.localeCompare(b.id);
+  });
+  $("count").textContent = rows.length + " of " + C.videos.length + " recordings" + (C.videos.length < C.planned ? " (" + C.planned + " planned, the others are still being recorded)" : "");
+  $("list").innerHTML = rows.map((r) => {
+    const m = r.metrics, chip = (c, n, x) => '<span class="chip"><i style="background:var(--' + c + ')"></i>' + n + " " + (x ?? "–") + "</span>";
+    return '<li data-id="' + esc(r.id) + '" class="' + (current && current.id === r.id ? "on" : "") + '"><div class="t"><span class="id">' + esc(r.id) + '</span>' +
+      (r.boxes ? '<span class="tag box">boxes</span>' : "") + '<span class="tag">' + esc(r.dataset === "ucf_crime" ? "UCF" : "MIVIA") + '</span><span class="d">' + mmss(r.duration_s).replace(/\.\d+$/, "") + "</span></div>" +
+      '<div class="m"><span>' + esc(classes(r)) + "</span>" + chip("calm", "TP", m.tp) + chip("alarm", "FP", m.fp) + chip("missed", "FN", m.fn) + chip("rule", "TN", m.tn) +
+      "<span>AUC " + fmt(m.auc) + "</span><span>AP " + fmt(m.ap) + "</span>" +
+      (m.events ? "<span>events " + (m.events - (m.events_missed || 0)) + "/" + m.events + "</span>" : "") +
+      (m.alarms != null ? "<span>alarms " + m.alarms + " (" + (m.false_alarms || 0) + " false)</span>" : "") +
+      (m.loc_ap != null ? "<span>loc AP " + fmt(m.loc_ap) + "</span>" : "") + "</div></li>";
+  }).join("");
+}
+function open(id, at) {
+  current = C.videos.find((r) => r.id === id); if (!current) return;
+  v.src = current.file; v.playbackRate = Number($("speed").value);
+  if (at != null) v.addEventListener("loadedmetadata", () => { v.currentTime = at; }, {once: true});
+  $("now-id").textContent = current.id;
+  $("now-sub").textContent = current.dataset_label + " · " + mmss(current.duration_s) + " · " + current.out_fps + " fps · " + (current.bytes / 1e6).toFixed(0) + " MB" + (current.method ? " · boxes: " + current.method : "");
+  $("events").innerHTML = current.events.length ? current.events.map((e, i) =>
+    '<button class="ev ' + (e.detected ? "hit" : "miss") + '" data-t="' + e.start_s + '" title="' + (e.detected ? "detected" : "missed") +
+    (e.latency_s != null ? ", latency " + fmt(e.latency_s, 2) + " s" : "") + (e.loc_ap != null ? ", loc AP " + fmt(e.loc_ap) : "") + (e.loc_iou != null ? ", IoU " + fmt(e.loc_iou) : "") + '">' +
+    esc(e.class) + " " + mmss(e.start_s).replace(/\.\d+$/, "") + "–" + mmss(e.end_s).replace(/\.\d+$/, "") + (e.detected ? " ✓" : " ✗") + "</button>").join("") : '<span class="sub">no annotated event</span>';
+  markIn = markOut = null; showMark(); render();
+  try { history.replaceState(null, "", "#" + encodeURIComponent(id)); } catch {}
+}
+function showMark() { $("mark").textContent = (markIn == null ? "–" : mmss(markIn)) + " → " + (markOut == null ? "–" : mmss(markOut)); }
+function renderClips() {
+  const clips = store.get();
+  $("clips").innerHTML = clips.map((c, i) => "<tr><td><a href=\"#\" data-open=\"" + i + "\">" + esc(c.video) + "</a></td><td>" + esc(c.dataset) + "</td><td>" + mmss(c.in) + "</td><td>" + mmss(c.out) +
+    "</td><td>" + (c.out - c.in).toFixed(1) + " s</td><td><input data-note=\"" + i + "\" value=\"" + esc(c.note || "") + "\"></td><td><button data-del=\"" + i + "\">×</button></td></tr>").join("");
+}
+$("clips").addEventListener("click", (e) => {
+  const clips = store.get();
+  if (e.target.dataset.del != null) { clips.splice(+e.target.dataset.del, 1); store.set(clips); renderClips(); }
+  if (e.target.dataset.open != null) { e.preventDefault(); const c = clips[+e.target.dataset.open]; open(c.video, c.in); }
+});
+$("clips").addEventListener("change", (e) => { if (e.target.dataset.note != null) { const clips = store.get(); clips[+e.target.dataset.note].note = e.target.value; store.set(clips); } });
+$("mark-in").onclick = () => { markIn = v.currentTime; showMark(); };
+$("mark-out").onclick = () => { markOut = v.currentTime; showMark(); };
+$("add").onclick = () => {
+  if (!current || markIn == null || markOut == null || markOut <= markIn) return;
+  const clips = store.get(); clips.push({video: current.id, dataset: current.dataset, file: current.file, in: +markIn.toFixed(3), out: +markOut.toFixed(3), note: ""});
+  store.set(clips); renderClips();
+};
+$("export").onclick = () => {
+  const rows = [["video","dataset","file","in_s","out_s","note"], ...store.get().map((c) => [c.video, c.dataset, c.file, c.in, c.out, c.note || ""])];
+  const csv = rows.map((r) => r.map((x) => '"' + String(x).replace(/"/g, '""') + '"').join(",")).join("\n");
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([csv], {type: "text/csv"})); a.download = "demo_clips.csv"; a.click();
+};
+$("clear").onclick = () => { if (confirm("Remove every selected clip?")) { store.set([]); renderClips(); } };
+$("list").addEventListener("click", (e) => { const li = e.target.closest("li"); if (li) open(li.dataset.id); });
+$("events").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) { v.currentTime = +b.dataset.t; v.play(); } });
+for (const id of ["q", "dataset", "kind", "sort"]) $(id).addEventListener("input", render);
+$("dir").onclick = () => { desc = !desc; $("dir").textContent = desc ? "descending" : "ascending"; render(); };
+$("speed").onchange = () => { v.playbackRate = Number($("speed").value); };
+addEventListener("keydown", (e) => {
+  if (["INPUT", "SELECT", "TEXTAREA"].includes(e.target.tagName)) return;
+  const step = current ? 1 / current.out_fps : 1 / 30;
+  if (e.key === " ") { e.preventDefault(); v.paused ? v.play() : v.pause(); }
+  else if (e.key === ",") { v.pause(); v.currentTime = Math.max(0, v.currentTime - step); }
+  else if (e.key === ".") { v.pause(); v.currentTime += step; }
+  else if (e.key === "ArrowLeft") { e.preventDefault(); v.currentTime = Math.max(0, v.currentTime - 2); }
+  else if (e.key === "ArrowRight") { e.preventDefault(); v.currentTime += 2; }
+  else if (e.key === "i" || e.key === "I") $("mark-in").click();
+  else if (e.key === "o" || e.key === "O") $("mark-out").click();
+});
+fetch("catalog.json", {cache: "no-store"}).then((r) => r.json()).then((data) => {
+  C = data;
+  $("title").textContent = "Demonstrator recordings";
+  if (data.variant) $("title").textContent = "Demonstrator recordings · " + data.variant.split(" · ")[0];
+  $("model").textContent = data.model + " · τ " + fmt(data.threshold, 4) + " · " + data.settings.width + "×" + data.settings.height;
+  // Other collections of the same model (another box rule), relative to this page.
+  for (const [label, href] of Object.entries(data.links || {}))
+    $("model").insertAdjacentHTML("beforeend", ' · <a style="color:var(--calm)" href="' + esc(href) + '">' + esc(label) + "</a>");
+  for (const d of [...new Set(data.videos.map((r) => r.dataset))]) $("dataset").insertAdjacentHTML("beforeend", '<option value="' + d + '">' + esc(data.videos.find((r) => r.dataset === d).dataset_label) + "</option>");
+  render(); renderClips();
+  const wanted = decodeURIComponent(location.hash.slice(1)); if (wanted) open(wanted);
+}).catch((e) => { $("list").innerHTML = '<li class="empty">catalog.json not readable: ' + esc(e) + "</li>"; });
+</script>
+</body>
+</html>

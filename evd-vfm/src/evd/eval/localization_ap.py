@@ -24,7 +24,7 @@ they count in the frames of RBDC (``frames``) and in the false positives of the 
 
 from __future__ import annotations
 
-from collections.abc import Sequence
+from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 
 import numpy as np
@@ -212,6 +212,47 @@ def box_event_precision(
     matches = box_matches(prepared, iou_thresholds) if matches is None else matches
     scores = [scores for scores, _ in prepared]
     return accumulate(scores, matches, sum(len(i.truths) for i in images))
+
+
+def confidence_f1(
+    images: Mapping[str, Sequence[Image]],
+    confidences: Sequence[float],
+    iou_thresholds: Sequence[float],
+) -> np.ndarray:
+    """Macro F1 of the box detections at every confidence threshold.
+
+    The AP ranks every box by confidence and needs no threshold; this is what choosing one
+    costs. The matches are the AP's, and they hold for any threshold: the greedy matching goes
+    by decreasing score, so dropping the last detections leaves the first ones matched as they
+    were. Per class the images are pooled; F1 is averaged over ``iou_thresholds``, then over the
+    classes.
+
+    :param images: per class, its images with ``detections``; each has ground truth.
+    :param confidences: the ``C`` thresholds; a detection is kept when its score reaches one.
+    :param iou_thresholds: the ``T`` IoU thresholds.
+    :return: ``C`` macro F1, zero where nothing is kept.
+    :raises ValueError: without images.
+    """
+    if not images:
+        raise ValueError("The F1 of a confidence needs images")
+    grid = np.asarray(confidences, dtype=np.float64)
+    curves = []
+    for group in images.values():
+        prepared = prepare_boxes(group)
+        kept = np.zeros(len(grid))
+        found = np.zeros((len(iou_thresholds), len(grid)))
+        for (scores, _), matched in zip(
+            prepared, box_matches(prepared, iou_thresholds), strict=True
+        ):
+            above = scores[None, :] >= grid[:, None]
+            kept += above.sum(axis=1)
+            found += matched.astype(np.float64) @ above.T
+        precision = np.divide(found, kept, out=np.zeros_like(found), where=kept > 0)
+        recall = found / sum(len(image.truths) for image in group)
+        total = precision + recall
+        f1 = np.divide(2 * precision * recall, total, out=np.zeros_like(found), where=total > 0)
+        curves.append(f1.mean(axis=0))
+    return np.mean(curves, axis=0)
 
 
 def box_rbdc(

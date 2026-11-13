@@ -73,8 +73,9 @@ def for_video(
     :param intervals: annotated intervals, inclusive native frames; boxes outside them are
         dropped.
     :return: methods with their IoU (and, when exported, the readable ``label``, the
-        ``campaign`` and the IoU of this video's events), the default method, a table of box
-        lists in native inclusive ``[x0, y0, x1, y1]`` pixels, per method the
+        ``campaign``, the IoU of this video's events and the ``ap`` of the official table), the
+        default method, a table of box lists in native inclusive ``[x0, y0, x1, y1]`` pixels,
+        per method the
         ``[start, end, index]`` segments inside the intervals and, under ``truth``, the
         spatial ground truth the IoU was computed on (``None`` without one); ``None`` if the
         run has no export or the video has no localized chunk.
@@ -130,9 +131,71 @@ def _method_entry(method: dict[str, Any], video_id: str) -> dict[str, Any]:
         block = {k: v for k, v in method[dataset].items() if k in ("rank", "mean", "classes")}
         events = method[dataset].get("events")
         if events is not None:
-            block["events"] = {k: v for k, v in events.items() if k.split("/")[-2] == video_id}
+            block["events"] = _video_events(events, video_id)
         entry[dataset] = block
+    if "ap" in method:
+        entry["ap"] = {
+            dataset: {**block, "events": _video_events(block["events"], video_id)}
+            for dataset, block in method["ap"].items()
+        }
     return entry
+
+
+def _video_events(events: dict[str, float], video_id: str) -> dict[str, float]:
+    """:return: the values of the events of one video, ids being ``<dataset>/<video>/eventNNN``."""
+    return {k: v for k, v in events.items() if k.split("/")[-2] == video_id}
+
+
+def match_event(
+    start: int, end: int, label: str | None, placed: Sequence[dict[str, Any]]
+) -> dict[str, Any] | None:
+    """Find the evaluated event lying on an annotated interval.
+
+    :param start: first frame of the interval, inclusive.
+    :param end: last frame of the interval, inclusive.
+    :param label: annotated class.
+    :param placed: evaluated events (``class``, ``start``, ``end``).
+    :return: the event of the same class that overlaps the interval most, ``None`` if none does.
+    """
+    best, overlap = None, 0
+    for event in placed:
+        if event["class"] != label:
+            continue
+        common = min(end, event["end"]) - max(start, event["start"]) + 1
+        if common > overlap:
+            best, overlap = event, common
+    return best
+
+
+def default_method_events(
+    run_dir: str | Path, metrics: dict[str, Any]
+) -> dict[str, list[dict[str, Any]]]:
+    """Return the evaluated events of every exported video, valued by the default method.
+
+    :param run_dir: the opened run (an external evaluation finds the export of its source).
+    :param metrics: its ``metrics.json``.
+    :return: ``video_id`` to its events: ``class``, ``start``, ``end``, and ``iou`` and ``ap``
+        of the default method, ``None`` where it was not evaluated event by event. Empty without
+        an export, or on an export without the placed events of the ground truth.
+    """
+    base = export_dir(run_dir, metrics)
+    if base is None:
+        return {}
+    root = base / FOLDER
+    index = json.loads((root / "index.json").read_text(encoding="utf-8"))
+    method = next(m for m in index["methods"] if m["id"] == index["default"])
+    videos = (index.get("ground_truth") or {}).get("videos", {})
+    found: dict[str, list[dict[str, Any]]] = {}
+    for video_id, relative in videos.items():
+        data = json.loads((root / relative).read_text(encoding="utf-8"))
+        dataset = Path(relative).parts[-2]
+        iou = method[dataset].get("events") or {}
+        ap = (method.get("ap") or {}).get(dataset, {}).get("events") or {}
+        found[video_id] = [
+            {**event, "iou": iou.get(event["id"]), "ap": ap.get(event["id"])}
+            for event in data.get("events", [])
+        ]
+    return found
 
 
 def _truth(

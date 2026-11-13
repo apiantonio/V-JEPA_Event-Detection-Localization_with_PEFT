@@ -38,6 +38,7 @@ from apps.demo.explanation import (
     strip,
     strip_background,
 )
+from apps.demo.localization import match_event
 from apps.demo.overlay import VIDEO_H, VIDEO_W
 from apps.demo.payload import DemoPayload
 from evd.eval.localization import union_box_iou
@@ -172,12 +173,7 @@ def build_movie(
     scores = np.asarray([s for _, _, s in payload.finestre], dtype=float)
     assignment = offline_assignment(list(windows), n, politica="fine")
     intervals = tuple((seg.start, seg.end) for seg in payload.annotati)
-    # The protocol rule: a window is positive if it intersects an annotated interval.
-    positive = (
-        tuple(int(any(a <= e and s <= b for s, e in intervals)) for a, b in spans)
-        if payload.ha_verita
-        else tuple(None for _ in spans)
-    )
+    positive = payload.window_labels()
     if labels is not None and tuple(labels) != positive:
         raise ValueError(f"{payload.video_id}: window labels disagree with the run's")
     projected = np.where(assignment >= 0, scores[np.clip(assignment, 0, None)], 0.0)
@@ -220,16 +216,12 @@ def _event_rows(
     An evaluated event is placed on its annotation-project interval; it matches the
     annotated interval of the same class that overlaps it most.
     """
+    known = [event for event in placed if event["id"] in evaluated]
     rows = []
     for seg in payload.annotati:
-        best, overlap = None, 0
-        for event in placed:
-            if event["class"] != seg.label or event["id"] not in evaluated:
-                continue
-            common = min(seg.end, event["end"]) - max(seg.start, event["start"]) + 1
-            if common > overlap:
-                best, overlap = evaluated[event["id"]], common
-        rows.append(EventRow(seg.start, seg.end, seg.label or "event", best))
+        best = match_event(seg.start, seg.end, seg.label, known)
+        iou = None if best is None else evaluated[best["id"]]
+        rows.append(EventRow(seg.start, seg.end, seg.label or "event", iou))
     return tuple(rows)
 
 

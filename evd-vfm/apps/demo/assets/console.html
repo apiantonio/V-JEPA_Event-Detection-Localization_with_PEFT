@@ -245,16 +245,21 @@
 
         .filters {
             display: grid;
-            grid-template-columns: 1fr 170px;
-            gap: 12px;
-            margin: 24px 0 18px
+            grid-template-columns: minmax(180px, 2fr) repeat(2, minmax(120px, 1fr));
+            gap: 10px;
+            margin: 18px 0 12px
+        }
+
+        .filters.sorting {
+            grid-template-columns: minmax(110px, 1fr) minmax(170px, 2fr) minmax(110px, 1fr);
+            margin-top: 0
         }
 
         .library {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
             gap: 12px;
-            max-height: calc(100vh - 305px);
+            max-height: calc(100vh - 365px);
             overflow: auto;
             padding: 3px
         }
@@ -283,6 +288,28 @@
         .card small {
             color: var(--muted);
             font-size: 12px
+        }
+
+        .card .value {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid var(--line);
+            font-size: 12px;
+            color: var(--muted)
+        }
+
+        .card .value b {
+            color: var(--text);
+            font-weight: 650;
+            font-variant-numeric: tabular-nums;
+            white-space: nowrap
+        }
+
+        .tag.missed {
+            color: var(--danger)
         }
 
         .tags {
@@ -1073,6 +1100,11 @@
                         <option value="anomalous">Anomalous</option>
                         <option value="boxes">With localization boxes</option>
                     </select></div>
+                <div class="filters sorting"><select id="unit" aria-label="List">
+                        <option value="videos">List videos</option>
+                        <option value="events">List events</option>
+                    </select><select id="order" aria-label="Sort by"></select><button id="direction"
+                        type="button" title="Reverse the order"></button></div>
                 <div class="library" id="library" aria-label="Available videos"></div>
                 <div class="steps">
                     <div class="step"><b>01 · Select</b>The library shows the dataset videos available on this PC.
@@ -1164,8 +1196,11 @@
             <h2 id="guide-title">How to use</h2><button id="help-close" autofocus>Close</button>
         </div>
         <p><b>1.</b> Choose the model from the menu.</p>
-        <p><b>2.</b> Select a library video and press Open.</p>
-        <p><b>3.</b> Press Play. Click the timeline or an alarm to reach it.</p>
+        <p><b>2.</b> Select a library video and press Open. <b>List events</b> shows the annotated events
+            one by one and opens the video at the chosen event; <b>Sort by</b> orders either list by a
+            metric of that video or event, with the same numbers the player shows.</p>
+        <p><b>3.</b> Press Play. Click the timeline or an alarm to reach it. <b>Chunk outcome</b> colours
+            the chunks of the timeline as TP, FP, FN or TN.</p>
         <p>The score measures the anomaly. The threshold comes from the model validation. Classes, when present, are
             dataset annotations.</p>
         <p>«New analysis» runs the model on a file from the PC and needs the trained weights. On CPU it can take a long
@@ -1184,6 +1219,12 @@
             <dd>Previous / next alarm</dd>
             <dt><kbd>0</kbd></dt>
             <dd>Back to the start</dd>
+            <dt><kbd>V</kbd></dt>
+            <dd>Chunk outcome on the timeline (TP, FP, FN, TN)</dd>
+            <dt><kbd>B</kbd> / <kbd>G</kbd></dt>
+            <dd>Method boxes / GT boxes</dd>
+            <dt><kbd>Y</kbd> / <kbd>I</kbd></dt>
+            <dd>YOLO-style boxes / interpolate between planes</dd>
             <dt><kbd>Esc</kbd></dt>
             <dd>Close the popup or exit full screen</dd>
             <dt><kbd>Tab</kbd> and <kbd>Enter</kbd></dt>
@@ -1196,26 +1237,55 @@
     <script src="/assets/metrics.js"></script>
     <script src="/assets/realtime.js"></script>
     <script>
-        const $ = id => document.getElementById(id); let mode = 'replay', videos = [], partitionLabels = {}, selected = null, upload = null, ready = false, job = null, version = 0, uploading = false, launching = false, realtimeJob = false, progressOffset = 0, configurableWindow = true;
+        const $ = id => document.getElementById(id); let mode = 'replay', videos = [], partitionLabels = {}, selected = null, selectedEvent = null, upload = null, ready = false, job = null, version = 0, uploading = false, launching = false, realtimeJob = false, progressOffset = 0, configurableWindow = true;
+        /* What the library sorts by: key, label, which side is better ('high', 'low', or none) and format. */
+        const ORDERS = {
+            videos: [
+                ['', [['name', 'Name', null]]],
+                ['This video · chunks', [['auc', 'Chunk AUC', 'high'], ['ap', 'Chunk AP', 'high'], ['f1', 'Chunk F1', 'high'], ['precision', 'Chunk precision', 'high'], ['recall', 'Chunk recall', 'high'], ['accuracy', 'Chunk accuracy', 'high'], ['fpr', 'False-alarm rate', 'low'], ['tp', 'True positives', 'high'], ['fp', 'False positives', 'low'], ['fn', 'False negatives', 'low'], ['tn', 'True negatives', 'high'], ['above_threshold', 'Chunks above threshold', null], ['peak_score', 'Peak score', null], ['duration_s', 'Duration', null, 's']]],
+                ['This video · events', [['event_f1', 'Event F1', 'high'], ['event_recall', 'Event recall', 'high'], ['event_precision', 'Event precision', 'high'], ['events_missed', 'Missed events', 'low'], ['false_alarms', 'False alarms', 'low'], ['alarms', 'Alarms', null], ['latency_s', 'Detection latency, median', 'low', 's']]],
+                ['This video · localization', [['loc_ap', 'Mean AP of its events', 'high'], ['loc_iou', 'Mean IoU of its events', 'high']]]
+            ],
+            events: [
+                ['', [['name', 'Video and time', null]]],
+                ['This event · detection', [['detected', 'Detected', 'high', 'yes'], ['latency_s', 'Detection latency', 'low', 's'], ['chunk_recall', 'Share of its chunks above threshold', 'high'], ['peak_score', 'Peak score', 'high'], ['mean_score', 'Mean score', 'high'], ['duration_s', 'Duration', null, 's']]],
+                ['This event · localization', [['loc_ap', 'Event AP', 'high'], ['loc_iou', 'Event IoU', 'high']]]
+            ]
+        };
+        const view = { unit: 'videos', flip: false, order: { videos: 'name', events: 'loc_ap' } };
+        const orderOf = (unit, key) => { for (const [, rows] of ORDERS[unit]) for (const [k, text, better, format] of rows) if (k === key) return { key: k, text, better, format }; return null };
+        function itemValue(item, key) { const source = item.event || item.video.metrics || {}; const value = key === 'duration_s' && !item.event ? item.video.duration_s : source[key]; return value === true ? 1 : value === false ? 0 : value ?? null }
+        /* Pure, so it can be checked outside a browser: values without a number always go last, ties keep the list order. */
+        function sortItems(items, order, flip) { if (order.key === 'name') return flip ? [...items].reverse() : items; const sign = (order.better === 'low' ? 1 : -1) * (flip ? -1 : 1); return items.map((item, i) => ({ item, i, value: itemValue(item, order.key) })).sort((a, b) => (a.value === null) - (b.value === null) || (a.value === null ? 0 : sign * (a.value - b.value)) || a.i - b.i).map(row => row.item) }
+        function directionText(order, flip) { if (order.key === 'name') return flip ? 'Z to A' : 'A to Z'; if (order.better) return flip ? 'Worst first' : 'Best first'; return flip ? 'Low to high' : 'High to low' }
+        function clock(seconds) { const t = Math.max(0, Math.floor(seconds || 0)); return Math.floor(t / 60) + ':' + String(t % 60).padStart(2, '0') }
+        function metricText(order, value) { if (value === null) return 'n/a'; if (order.format === 'yes') return value ? 'yes' : 'no'; if (order.format === 's') return value.toFixed(2) + ' s'; return Number.isInteger(value) ? String(value) : value.toFixed(3) }
+        function setOrders() { const select = $('order'); select.replaceChildren(); for (const [title, rows] of ORDERS[view.unit]) { let parent = select; if (title) { parent = document.createElement('optgroup'); parent.label = title; select.append(parent) } for (const [key, text] of rows) { const o = document.createElement('option'); o.value = key; o.textContent = text; parent.append(o) } } select.value = view.order[view.unit]; directionButton() }
+        function directionButton() { $('direction').textContent = directionText(orderOf(view.unit, view.order[view.unit]), view.flip) }
         function show(message, error = false) { $('status').hidden = !message; $('status').textContent = message; $('status').classList.toggle('error', error) }
         async function api(url, data) { const response = await fetch(url, data === undefined ? {} : { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-EVD-Console': '1' }, body: JSON.stringify(data) }); const result = await response.json(); if (!response.ok) throw new Error(result.message); return result }
-        function label(id) { const heads = { s: 'summed losses', g: 'GradNorm' }, b3 = id.match(/^lcb3([sg])_/); const suffix = b3 ? ' + multiclass head, ' + heads[b3[1]] : ''; return id.replace(/^(e[23][a-z]?|lcb3[sg])_ucf_vjepa21l_/, '').replace(/_s(\d+)$/, suffix + ' · seed $1') }
+        function label(id) { const heads = { s: 'summed losses', g: 'GradNorm' }, b3 = id.match(/^lcb3([sg])_/); const suffix = b3 ? ' + multiclass head, ' + heads[b3[1]] : '', family = { lora: 'LoRA', dora: 'DoRA' }; return id.replace(/^(e[23][a-z]?|lcb3[sg])_ucf_vjepa21l_/, '').replace(/^vpt(shallow|deep)-n(\d+)-su-(lora|dora)-r(\d+)/, (_, depth, n, reparam, r) => family[reparam] + ' r' + r + '→VPT-' + depth + ' n' + n).replace(/_s(\d+)$/, suffix + ' · seed $1') }
         function needsLive() { return $('realtime').checked || mode === 'live' || $('recompute').checked || !!(selected && !videos.find(v => v.id === selected)?.replay) }
         function videoDetails(v) { const t = Math.round(v.duration_s || 0); return 'Duration: ' + (t ? Math.floor(t / 60) + ':' + String(t % 60).padStart(2, '0') : 'n/a') + ' | Saved chunks: ' + (v.saved_windows ?? 'not available'); }
-        function enable() { const opened = !$('result').hidden, liveOpened = !$('realtime-panel').hidden; $('analyze').hidden = opened || liveOpened; $('back').hidden = !opened; $('rt-back').hidden = !liveOpened; const busy = !!job || uploading || launching; $('analyze').disabled = busy || !$('run').value || (mode === 'replay' ? !selected : !upload) || (needsLive() && !ready); $('live-options').hidden = !needsLive(); $('requirements').hidden = !needsLive() || ready; $('recompute-label').hidden = mode !== 'replay'; $('recompute').disabled = busy; $('realtime').disabled = busy; for (const id of ['split', 'category', 'search']) $(id).disabled = busy; $('hop').disabled = busy; $('window').disabled = busy || !configurableWindow; $('device').disabled = busy; $('backbone').disabled = busy; $('run').disabled = busy; $('file').disabled = busy; $('cancel').hidden = !job; for (const id of ['live-tab', 'replay-tab']) $(id).disabled = busy; $('selection').textContent = mode === 'replay' ? (selected ? selected + ' - ' + videoDetails(videos.find(v => v.id === selected) || {}) : 'No video selected.') : (upload ? upload.name : 'No file selected.'); $('analyze').textContent = $('realtime').checked ? 'Prepare live' : needsLive() ? 'Analyse the video' : 'Open the selected video'; }
+        function enable() { const opened = !$('result').hidden, liveOpened = !$('realtime-panel').hidden; $('analyze').hidden = opened || liveOpened; $('back').hidden = !opened; $('rt-back').hidden = !liveOpened; const busy = !!job || uploading || launching; $('analyze').disabled = busy || !$('run').value || (mode === 'replay' ? !selected : !upload) || (needsLive() && !ready); $('live-options').hidden = !needsLive(); $('requirements').hidden = !needsLive() || ready; $('recompute-label').hidden = mode !== 'replay'; $('recompute').disabled = busy; $('realtime').disabled = busy; for (const id of ['split', 'category', 'search', 'unit', 'order', 'direction']) $(id).disabled = busy; $('hop').disabled = busy; $('window').disabled = busy || !configurableWindow; $('device').disabled = busy; $('backbone').disabled = busy; $('run').disabled = busy; $('file').disabled = busy; $('cancel').hidden = !job; for (const id of ['live-tab', 'replay-tab']) $(id).disabled = busy; $('selection').textContent = mode === 'replay' ? (selected ? selected + (selectedEvent ? ' · ' + selectedEvent.class + ' at ' + clock(selectedEvent.start_s) : '') + ' - ' + videoDetails(videos.find(v => v.id === selected) || {}) : 'No video selected.') : (upload ? upload.name : 'No file selected.'); $('analyze').textContent = $('realtime').checked ? 'Prepare live' : needsLive() ? 'Analyse the video' : 'Open the selected ' + (selectedEvent ? 'event' : 'video'); }
         function browse() { EVDLive.stop(); $('realtime-panel').hidden = true; $('result').hidden = true; $('viewer').src = 'about:blank'; $('browse').hidden = mode !== 'replay'; $('upload-panel').hidden = mode !== 'live'; enable(); }
         function setMode(next) { if (job || uploading || launching) return; mode = next; browse(); $('replay-tab').setAttribute('aria-selected', mode === 'replay'); $('live-tab').setAttribute('aria-selected', mode === 'live'); $('live-options').hidden = mode !== 'live'; $('requirements').hidden = mode !== 'live' || ready; $('mode-hint').textContent = mode === 'replay' ? 'Shows the scores already computed by the model. Works without a GPU and without loading the weights.' : 'Computes new scores with the trained model. The file is copied into the local demonstrator folder.'; enable(); }
-        function render() { const search = $('search').value.toLowerCase(), split = $('split').value; const available = videos.filter(v => v.available); const rows = available.filter(v => v.id.toLowerCase().includes(search) && (split === 'all' || v.split === split) && ($('category').value === 'all' || ($('category').value === 'boxes' ? v.boxes : $('category').value === 'normal' ? v.normal : !v.normal))); $('count').textContent = rows.length + ' videos'; $('library').replaceChildren(); for (const v of rows) { const b = document.createElement('button'); b.className = 'card'; b.setAttribute('aria-pressed', v.id === selected); const top = document.createElement('div'); top.className = 'card-top'; const icon = document.createElement('span'); icon.className = 'video-icon'; icon.textContent = '▶'; const tag = document.createElement('span'); tag.className = 'tag'; tag.textContent = v.split === 'val' ? 'Validation' : partitionLabels[v.split] || v.split; const tags = document.createElement('span'); tags.className = 'tags'; tags.append(tag); if (v.boxes) { const boxTag = document.createElement('span'); boxTag.className = 'tag'; boxTag.textContent = 'boxes'; boxTag.title = 'Saved localization boxes'; tags.append(boxTag) } top.append(icon, tags); const name = document.createElement('strong'); name.textContent = v.id; const sub = document.createElement('small'); sub.textContent = videoDetails(v); b.append(top, name, sub); b.onclick = () => { if (job || launching) return; selected = v.id; render(); enable() }; $('library').append(b) } if (!rows.length) { const empty = document.createElement('div'); empty.className = 'empty'; empty.textContent = available.length ? 'No video matches the filters. Try another name or select all partitions.' : 'No video with scores is present in the local folders. See the guide to add a video folder.'; $('library').append(empty) } }
+        /* The items of the current list, one per video or one per annotated event, filtered. */
+        function listedItems() { const search = $('search').value.toLowerCase(), split = $('split').value, category = $('category').value; const rows = videos.filter(v => v.available && (split === 'all' || v.split === split) && (category === 'all' || (category === 'boxes' ? v.boxes : category === 'normal' ? v.normal : !v.normal))); if (view.unit === 'videos') return rows.filter(v => v.id.toLowerCase().includes(search)).map(video => ({ video })); return rows.flatMap(video => (video.events || []).map(event => ({ video, event }))).filter(item => item.video.id.toLowerCase().includes(search) || item.event.class.toLowerCase().includes(search)) }
+        function tagOf(text, title) { const tag = document.createElement('span'); tag.className = 'tag'; tag.textContent = text; if (title) tag.title = title; return tag }
+        function card(item, order) { const v = item.video, e = item.event, b = document.createElement('button'); b.className = 'card'; b.setAttribute('aria-pressed', v.id === selected && (e ? selectedEvent === e : !selectedEvent)); const top = document.createElement('div'); top.className = 'card-top'; const icon = document.createElement('span'); icon.className = 'video-icon'; icon.textContent = '▶'; const tags = document.createElement('span'); tags.className = 'tags'; tags.append(tagOf(v.split === 'val' ? 'Validation' : partitionLabels[v.split] || v.split)); if (v.boxes) tags.append(tagOf('boxes', 'Saved localization boxes')); if (e) { const state = tagOf(e.detected ? 'detected' : 'missed', 'Whether a chunk above threshold intersects the event'); if (!e.detected) state.classList.add('missed'); tags.append(state) } top.append(icon, tags); const name = document.createElement('strong'), sub = document.createElement('small'); name.textContent = e ? e.class + ' · ' + clock(e.start_s) + '–' + clock(e.end_s) : v.id; sub.textContent = e ? v.id : videoDetails(v); b.append(top, name, sub); if (order.key !== 'name') { const line = document.createElement('div'), value = document.createElement('b'); line.className = 'value'; line.textContent = order.text; value.textContent = metricText(order, itemValue(item, order.key)); line.append(value); b.append(line) } b.onclick = () => { if (job || launching) return; selected = v.id; selectedEvent = e || null; render(); enable() }; return b }
+        function render() { const available = videos.filter(v => v.available), order = orderOf(view.unit, view.order[view.unit]), items = sortItems(listedItems(), order, view.flip); $('count').textContent = items.length + (view.unit === 'videos' ? ' videos' : ' events'); $('library').replaceChildren(); for (const item of items) $('library').append(card(item, order)); if (!items.length) { const empty = document.createElement('div'); empty.className = 'empty'; empty.textContent = available.length ? 'Nothing matches the filters. Try another name or select all partitions.' : 'No video with scores is present in the local folders. See the guide to add a video folder.'; $('library').append(empty) } }
         function setPartitions(list) { partitionLabels = Object.fromEntries(list.map(p => [p.id, p.label])); const select = $('split'), keep = select.value; select.querySelectorAll('option[data-external]').forEach(o => o.remove()); for (const p of list) { const o = document.createElement('option'); o.value = p.id; o.textContent = p.label; o.dataset.external = '1'; select.insertBefore(o, select.querySelector('option[value=all]')) } select.value = [...select.options].some(o => o.value === keep) ? keep : 'test' }
-        async function loadVideos() { const current = ++version; selected = null; videos = []; ready = false; render(); enable(); show('Reading the model results…'); try { const data = await api('/api/videos?run=' + encodeURIComponent($('run').value)); if (current !== version) return; videos = data.videos; ready = data.live; setPartitions(data.partitions || []); $('backbone').value = data.backbone || ''; $('hop').value = data.hop_s; $('window').value = data.window_s ?? 8; configurableWindow = data.window_configurable !== false; $('requirements').textContent = 'To analyse new videos, copy the trained checkpoint from the cluster to: ' + data.checkpoint; $('requirements').hidden = mode !== 'live' || ready; render(); enable(); show('') } catch (e) { if (current === version) show(e.message, true) } }
+        async function loadVideos() { const current = ++version; selected = null; selectedEvent = null; videos = []; ready = false; render(); enable(); show('Reading the model results…'); try { const data = await api('/api/videos?run=' + encodeURIComponent($('run').value)); if (current !== version) return; videos = data.videos; ready = data.live; setPartitions(data.partitions || []); $('backbone').value = data.backbone || ''; $('hop').value = data.hop_s; $('window').value = data.window_s ?? 8; configurableWindow = data.window_configurable !== false; $('requirements').textContent = 'To analyse new videos, copy the trained checkpoint from the cluster to: ' + data.checkpoint; $('requirements').hidden = mode !== 'live' || ready; render(); enable(); show('') } catch (e) { if (current === version) show(e.message, true) } }
         $('recompute').onchange = enable; $('realtime').onchange = enable;
-        $('show-sidebar').onclick = () => $('toggle-sidebar').click(); $('run').onchange = () => { browse(); loadVideos() }; $('search').oninput = render; $('split').onchange = () => { selected = null; render(); enable() }; $('category').onchange = () => { selected = null; render(); enable() }; $('replay-tab').onclick = () => setMode('replay'); $('live-tab').onclick = () => setMode('live'); $('back').onclick = browse; $('rt-back').onclick = browse; $('rt-stop').onclick = () => { $('cancel').click() }; $('toggle-sidebar').onclick = () => { const hidden = $('layout').classList.toggle('collapsed'); $('toggle-sidebar').setAttribute('aria-expanded', String(!hidden)); $('toggle-sidebar').textContent = hidden ? 'Show panel' : 'Hide panel' }; EVDMetrics.bindPopup($('guide'), $('help'), $('help-close'));
+        $('show-sidebar').onclick = () => $('toggle-sidebar').click(); $('run').onchange = () => { browse(); loadVideos() }; $('search').oninput = render; $('split').onchange = () => { selected = null; selectedEvent = null; render(); enable() }; $('category').onchange = () => { selected = null; selectedEvent = null; render(); enable() }; $('unit').onchange = () => { view.unit = $('unit').value; view.flip = false; selectedEvent = null; setOrders(); render(); enable() }; $('order').onchange = () => { view.order[view.unit] = $('order').value; view.flip = false; directionButton(); render() }; $('direction').onclick = () => { view.flip = !view.flip; directionButton(); render() }; $('replay-tab').onclick = () => setMode('replay'); $('live-tab').onclick = () => setMode('live'); $('back').onclick = browse; $('rt-back').onclick = browse; $('rt-stop').onclick = () => { $('cancel').click() }; $('toggle-sidebar').onclick = () => { const hidden = $('layout').classList.toggle('collapsed'); $('toggle-sidebar').setAttribute('aria-expanded', String(!hidden)); $('toggle-sidebar').textContent = hidden ? 'Show panel' : 'Hide panel' }; EVDMetrics.bindPopup($('guide'), $('help'), $('help-close'));
         $('file').onchange = async () => { const file = $('file').files[0]; upload = null; enable(); $('preview').hidden = true; if (!file) return; if (file.size > 2 * 1024 ** 3) { show('The file exceeds the 2 GB limit.', true); return } uploading = true; enable(); show('Copying the video into the local workspace…'); try { const response = await fetch('/api/upload', { method: 'POST', headers: { 'X-EVD-Console': '1', 'X-Filename': encodeURIComponent(file.name) }, body: file }); const data = await response.json(); if (!response.ok) throw new Error(data.message); upload = data; $('preview').src = data.url; $('preview').hidden = false; show(ready ? 'Video ready. Press Analyse.' : 'Video opened. Computing the scores needs the weights shown on the left.'); enable() } catch (e) { show(e.message, true) } finally { uploading = false; enable() } };
         $('preview').onerror = () => show('The browser cannot play this codec. Try an MP4 copy with H.264 video. The original file is kept.', true);
         $('analyze').onclick = async () => { if (needsLive() && (!$('hop').reportValidity() || !$('window').reportValidity())) return; show(mode === 'replay' ? 'Preparing the video and the timeline…' : 'Analysis in progress. On CPU the computation can take several minutes per window.'); launching = true; enable(); try { const result = await api('/api/analyze', { run: $('run').value, realtime: $('realtime').checked, mode: needsLive() ? 'live' : 'replay', hop_s: needsLive() ? Number($('hop').value) : undefined, window_s: needsLive() && configurableWindow ? Number($('window').value) : undefined, video: selected, upload: mode === 'live' ? upload?.token : undefined, device: $('device').value, backbone: $('backbone').value.trim() }); job = result.id; realtimeJob = result.realtime; progressOffset = 0; if (realtimeJob) { $('preview').pause(); $('browse').hidden = true; $('upload-panel').hidden = true; $('result').hidden = true; EVDLive.start(result, api); show('') } poll(job) } catch (e) { show(e.message, true) } finally { launching = false; enable() } };
-        async function poll(id) { try { const data = await api('/api/job?id=' + id + (realtimeJob ? '&after=' + progressOffset : '')); if (job !== id) return; if (realtimeJob) { EVDLive.update(data.events); progressOffset = data.next ?? progressOffset; } if (data.more) { setTimeout(() => poll(id), 0); return; } if (data.state === 'running') { setTimeout(() => poll(id), realtimeJob ? 250 : 1000); return } job = null; enable(); if (realtimeJob) { EVDLive.finish(data); if (data.state === 'error') show(data.message, true); return; } if (data.state === 'done') { $('preview').pause(); $('browse').hidden = true; $('upload-panel').hidden = true; $('result').hidden = false; $('result-title').textContent = mode === 'replay' ? selected : upload.name; $('result-mode').textContent = label($('run').value) + ' · ' + (needsLive() ? 'New local inference' : 'Saved results'); $('viewer').src = data.url; enable(); show('') } else show(data.state === 'cancelled' ? 'Analysis cancelled. You can choose another video.' : data.message, data.state === 'error') } catch (e) { if (realtimeJob) { EVDLive.finish({ state: 'error' }); api('/api/cancel', { id }).catch(() => { }); } job = null; enable(); show('Connection to the local service lost. Reopen the demonstrator. ' + e.message, true) } }
+        async function poll(id) { try { const data = await api('/api/job?id=' + id + (realtimeJob ? '&after=' + progressOffset : '')); if (job !== id) return; if (realtimeJob) { EVDLive.update(data.events); progressOffset = data.next ?? progressOffset; } if (data.more) { setTimeout(() => poll(id), 0); return; } if (data.state === 'running') { setTimeout(() => poll(id), realtimeJob ? 250 : 1000); return } job = null; enable(); if (realtimeJob) { EVDLive.finish(data); if (data.state === 'error') show(data.message, true); return; } if (data.state === 'done') { $('preview').pause(); $('browse').hidden = true; $('upload-panel').hidden = true; $('result').hidden = false; $('result-title').textContent = mode === 'replay' ? selected : upload.name; $('result-mode').textContent = label($('run').value) + ' · ' + (needsLive() ? 'New local inference' : 'Saved results'); $('viewer').src = data.url + (mode === 'replay' && selectedEvent ? '#t=' + selectedEvent.start_s : ''); enable(); show('') } else show(data.state === 'cancelled' ? 'Analysis cancelled. You can choose another video.' : data.message, data.state === 'error') } catch (e) { if (realtimeJob) { EVDLive.finish({ state: 'error' }); api('/api/cancel', { id }).catch(() => { }); } job = null; enable(); show('Connection to the local service lost. Reopen the demonstrator. ' + e.message, true) } }
         $('cancel').onclick = async () => { try { await api('/api/cancel', { id: job }) } catch (e) { show(e.message, true) } };
-        (async () => { try { const data = await api('/api/catalog'); $('run').replaceChildren(); for (const run of data.runs) { const option = document.createElement('option'); option.value = run.id; option.textContent = label(run.id); $('run').append(option) } if (!data.runs.length) { show('There are no models with results. Copy a run folder with config.yaml, metrics.json and scores.jsonl into evd-vfm/runs.', true); return } const preferred = data.runs.find(r => r.id === 'e3r_ucf_vjepa21l_dora-r32-qkvomlp_s42'); if (preferred) $('run').value = preferred.id; await loadVideos() } catch (e) { show('Cannot open the library: ' + e.message, true) } })();
+        setOrders();
+        (async () => { try { const data = await api('/api/catalog'); $('run').replaceChildren(); for (const run of data.runs) { const option = document.createElement('option'); option.value = run.id; option.textContent = label(run.id); $('run').append(option) } if (!data.runs.length) { show('There are no models with results. Copy a run folder with config.yaml, metrics.json and scores.jsonl into evd-vfm/runs.', true); return } if (data.default) $('run').value = data.default; await loadVideos() } catch (e) { show('Cannot open the library: ' + e.message, true) } })();
     </script>
 </body>
 

@@ -9,7 +9,7 @@ from pathlib import Path
 import numpy as np
 from sklearn.metrics import average_precision_score, roc_auc_score
 
-from evd.annotations.schema import window_label
+from evd.annotations.schema import TemporalAnnotation, window_label
 from evd.eval.metrics import detection_latency, event_prf
 
 
@@ -127,3 +127,57 @@ def metriche_video(
             rule="intersezione",
         ).as_dict()
     return _finite(output)
+
+
+def event_rows(scores, annotation, threshold, fps):
+    """Measure the detector on each annotated event of a video.
+
+    The rules are those of the video metrics: a window belongs to an event if it intersects it,
+    the event is detected if one of those windows reaches the threshold, and the latency is
+    :func:`detection_latency` under the ``intersezione`` rule, computed on the event alone.
+
+    :param scores: window scores of the video (``anomaly``, ``window.frame_span``).
+    :param annotation: the ``TemporalAnnotation`` of the video.
+    :param threshold: the operating threshold.
+    :param fps: native frames per second.
+    :return: per annotated interval, in annotation order, ``start``/``end`` (inclusive frames),
+        ``class_idx``, ``start_s``, ``end_s``, ``duration_s``, ``detected``, ``latency_s``
+        (``None`` if missed), ``chunks``, ``chunks_above``, ``chunk_recall``, ``peak_score`` and
+        ``mean_score`` (the last three ``None`` if no window intersects the event).
+    """
+    rows = []
+    for start, end, class_idx in annotation.intervals:
+        values = [
+            float(s.anomaly)
+            for s in scores
+            if s.window.frame_span[0] <= end and start <= s.window.frame_span[1]
+        ]
+        above = sum(value >= threshold for value in values)
+        latency = None
+        if above:
+            alone = TemporalAnnotation(annotation.video_id, ((start, end, class_idx),))
+            latency = detection_latency(
+                {annotation.video_id: scores},
+                {annotation.video_id: alone},
+                {annotation.video_id: fps},
+                threshold=threshold,
+                rule="intersezione",
+            ).mediana_s
+        rows.append(
+            {
+                "start": int(start),
+                "end": int(end),
+                "class_idx": int(class_idx),
+                "start_s": start / fps,
+                "end_s": (end + 1) / fps,
+                "duration_s": (end - start + 1) / fps,
+                "detected": above > 0,
+                "latency_s": latency,
+                "chunks": len(values),
+                "chunks_above": above,
+                "chunk_recall": above / len(values) if values else None,
+                "peak_score": max(values) if values else None,
+                "mean_score": sum(values) / len(values) if values else None,
+            }
+        )
+    return rows

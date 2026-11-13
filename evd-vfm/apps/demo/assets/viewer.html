@@ -17,6 +17,8 @@
   --calm:#72DFBC;          /* normal state and accent */
   --alarm:#FF5B49;         /* semantic: above threshold */
   --truth:#C9A227;         /* ochre: the annotation, never a prediction */
+  --missed:#C369CD;        /* a false negative chunk, as in the rendered movies */
+  --box:#3D9DFF;           /* every method box: red is the alarm border of the same frame */
   --ui:"Archivo","Segoe UI Variable Text","Segoe UI",system-ui,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,"Cascadia Mono",Consolas,"Liberation Mono",monospace;
   --gutter:20px;
@@ -149,13 +151,23 @@ body.alarm .state{color:var(--alarm)}
 
 /* ----------------------------------------------------------------- deck */
 .deck{grid-area:deck; border:1px solid var(--rule); background:var(--ink-2)}
-.deckhead{display:flex; align-items:center; gap:18px; padding:10px 16px 8px; flex-wrap:wrap}
+.deckhead{display:flex; align-items:center; gap:18px; padding:10px 16px 8px}
 .deckhead h2{font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--haze);
-  font-family:var(--mono); font-weight:500}
+  font-family:var(--mono); font-weight:500; white-space:nowrap}
+/* One row only: the deck has a fixed height, so on a narrow page the legend gives way, not the
+   timeline. */
 .deckhead .key{display:flex; gap:14px; margin-left:auto; font-size:10.5px; color:var(--haze);
-  letter-spacing:.04em; flex-wrap:wrap}
+  letter-spacing:.04em; min-width:0; overflow:hidden; white-space:nowrap}
+.deckhead .key [hidden]{display:none}
 .deckhead .key span{display:flex; align-items:center; gap:6px}
 .deckhead .key i{width:11px; height:3px; display:block}
+.outcome-toggle{display:flex; flex:none; align-items:center; gap:8px; padding:3px 9px; font:11px var(--ui);
+  border:1px solid color-mix(in srgb,var(--calm) 55%,transparent); border-radius:6px}
+.outcome-toggle span{display:flex; align-items:center; gap:4px}
+.outcome-toggle i{width:9px; height:9px; display:block}
+.outcome-toggle[aria-pressed=true]{border-color:var(--calm);
+  background:color-mix(in srgb,var(--calm) 22%,transparent)}
+.outcome-toggle:disabled{opacity:.45; border-color:var(--rule); cursor:default}
 .lanes{position:relative; padding:0 16px 14px}
 .lane{position:relative}
 .lane .name{position:absolute; left:0; top:50%; transform:translateY(-50%);
@@ -203,7 +215,10 @@ button{font-family:var(--ui)}.bar{align-items:center}.bar #tag-video{display:blo
 .loc dl{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;margin:6px 0 0;font:11.5px var(--ui)}
 .loc dt{color:var(--haze)}.loc dd{margin:0;text-align:right;white-space:nowrap}
 .loc .loc-state{margin-top:4px;font:11px var(--ui);color:var(--haze)}
-.bar .sw{display:inline-block;width:12px;height:0;border-top:2px solid var(--alarm);vertical-align:middle;margin-right:5px}.bar .sw.truth{border-top:2px dashed var(--truth)}
+.loc .loc-options{display:flex;flex-wrap:wrap;gap:0 12px}
+.loc .loc-option{display:flex;align-items:center;gap:6px;margin-top:6px;font:11.5px var(--ui);color:var(--haze);cursor:pointer}
+.loc .loc-option input{margin:0;accent-color:var(--calm)}
+.bar .sw{display:inline-block;width:12px;height:0;border-top:2px solid var(--box);vertical-align:middle;margin-right:5px}.bar .sw.truth{border-top:2px dashed var(--truth)}
 .loc-metrics h3{font:600 14px var(--ui);margin:14px 0 8px}.loc-metrics p{font:12px var(--ui);color:var(--haze);margin:4px 0}
 .loc-metrics table{border-collapse:collapse;font:12px var(--ui);width:100%}.loc-metrics th,.loc-metrics td{padding:3px 8px;text-align:right;border-bottom:1px solid var(--rule)}
 .loc-metrics th:first-child,.loc-metrics td:first-child{text-align:left}.loc-metrics tr.now td{color:var(--truth)}.loc-metrics tfoot td{font-weight:600}
@@ -257,6 +272,10 @@ button{font-family:var(--ui)}.bar{align-items:center}.bar #tag-video{display:blo
     <div class="readout loc" id="loc" hidden>
       <div class="lbl">Localization</div>
       <select id="loc-method" aria-label="Localization method"></select>
+      <div class="loc-options">
+        <label class="loc-option" title="Display only: every number stays on the evaluated boxes. Key I"><input type="checkbox" id="loc-interpolate">Interpolate planes</label>
+        <label class="loc-option" title="Thick boxes without a label. Off: thin numbered boxes. Key Y"><input type="checkbox" id="loc-yolo" checked>YOLO style</label>
+      </div>
       <dl id="loc-values"></dl>
       <div class="loc-state" id="loc-state"></div>
     </div>
@@ -273,11 +292,13 @@ button{font-family:var(--ui)}.bar{align-items:center}.bar #tag-video{display:blo
   <section class="deck">
     <div class="deckhead">
       <h2>Scores over time</h2>
+      <button id="toggle-outcomes" class="outcome-toggle" aria-pressed="false" title="Colour the chunks as TP, FP, FN, TN, key V">Chunk outcome<span><i style="background:var(--calm)"></i>TP</span><span><i style="background:var(--alarm)"></i>FP</span><span><i style="background:var(--missed)"></i>FN</span><span><i style="background:var(--rule)"></i>TN</span></button>
       <div class="key">
         <span><i style="background:var(--calm)"></i>score</span>
         <span><i style="background:var(--alarm)"></i>alarms</span>
         <span><i style="background:var(--truth)"></i>annotations</span>
-        <span><i style="background:var(--haze)"></i>in progress (Streaming)</span><span id="key-window">chunk —</span>
+        <span id="key-stream" hidden><i style="background:var(--haze)"></i>in progress</span>
+        <span id="key-window">chunk —</span>
       </div>
     </div>
     <div class="lanes">
@@ -288,7 +309,7 @@ button{font-family:var(--ui)}.bar{align-items:center}.bar #tag-video{display:blo
       </div>
     </div>
     <p class="hint">Click the timeline or an alarm to move in the video.<br><kbd>space</kbd> play/pause · <kbd>←</kbd><kbd>→</kbd> ±1 s ·
-      <kbd>[</kbd><kbd>]</kbd> previous/next alarm · <kbd>0</kbd> start · <kbd>G</kbd> GT boxes · <kbd>B</kbd> method boxes.<br>
+      <kbd>[</kbd><kbd>]</kbd> previous/next alarm · <kbd>0</kbd> start · <kbd>G</kbd> GT boxes · <kbd>B</kbd> method boxes · <kbd>I</kbd> interpolate · <kbd>Y</kbd> YOLO style · <kbd>V</kbd> chunk outcome.<br>
       The classes shown are dataset annotations. The model detects the anomaly without assigning a class.</p>
   </section>
 
@@ -313,7 +334,13 @@ const scores = D.frame_scores;
 
 const $ = (id) => document.getElementById(id);
 const v = $("v"), body = document.body;
-let streaming=false, annotationsVisible=true, logVersion=null;
+let streaming=false, annotationsVisible=true, logVersion=null, outcomesOn=false;
+/* The verdict of a chunk, as in the rendered movies (apps/demo/explanation.chunk_verdict): an
+   unlabelled chunk has none, and hiding the annotations hides what it would reveal. */
+const OUTCOME_COLORS = {TP: "calm", FP: "alarm", FN: "missed", TN: "rule"};
+const outcomeOf = (w) => w.label == null ? "" : w.above === !!w.label
+  ? (w.above ? "TP" : "TN") : (w.above ? "FP" : "FN");
+const outcomeShown = (w) => outcomesOn && annotationsVisible ? outcomeOf(w) : "";
 const revealed=()=>D.windows.filter(w=>(w.end+1)/FPS<=v.currentTime);
 const mmss = (s) => {
   if (!isFinite(s)) return "00:00";
@@ -375,6 +402,7 @@ const css = getComputedStyle(document.documentElement);
 const C = {
   calm: css.getPropertyValue("--calm").trim(), alarm: css.getPropertyValue("--alarm").trim(),
   truth: css.getPropertyValue("--truth").trim(), rule: css.getPropertyValue("--rule").trim(),
+  missed: css.getPropertyValue("--missed").trim(), box: css.getPropertyValue("--box").trim(),
   haze: css.getPropertyValue("--haze").trim(), ink3: css.getPropertyValue("--ink-3").trim(),
   paper: css.getPropertyValue("--paper").trim(),
 };
@@ -419,9 +447,9 @@ function draw() {
       ctx.globalAlpha = 1;
       return;
     }
-    const hot = w.score >= TAU;
-    ctx.fillStyle = hot ? C.alarm : C.calm;
-    ctx.globalAlpha = 0.20 + 0.70 * Math.min(1, w.score);
+    const hot = w.score >= TAU, outcome = outcomeShown(w);
+    ctx.fillStyle = outcome ? C[OUTCOME_COLORS[outcome]] : hot ? C.alarm : C.calm;
+    ctx.globalAlpha = outcome ? 1 : 0.20 + 0.70 * Math.min(1, w.score);
     ctx.fillRect(x0, y, Math.max(1, x1 - x0 - 1), H_CELLS / 2 - 2);
     ctx.globalAlpha = 1;
   });
@@ -494,20 +522,70 @@ function draw() {
 const L = D.localization || null;
 const T = L && L.truth ? L.truth : null;
 const LOC_DATASET = {ucf_crime: "UCF", mivia_crime: "MIVIA"};
-/* Method boxes: apps/demo/explanation.BOX_PALETTE without its ochre, kept for the annotation. */
-const BOX_COLORS = [C.alarm, C.calm, C.haze, C.paper];
+/* The YOLO look of the method boxes, the same blue as the thin one: a line that grows with the
+   picture, and no label. */
+const YOLO_MIN_LINE = 3, YOLO_LINE_RATIO = 0.003;
 const boxCanvas = $("boxes"), bctx = boxCanvas.getContext("2d");
 /* Two independent layers, each with its own bar button: neither depends on the other
    nor on the Annotations button, which governs the temporal annotation only. */
-let showMethod = !!L, showTruth = !!T, locMethod = null, boxTick = null;
+let showMethod = !!L, showTruth = !!T, locMethod = null, boxTick = null, interpolate = false, yoloStyle = true;
 
-function segmentAt(segments, f) {
+function segmentIndexAt(segments, f) {
   let lo = 0, hi = segments.length - 1;
   while (lo <= hi) {
     const mid = (lo + hi) >> 1, s = segments[mid];
-    if (f < s[0]) hi = mid - 1; else if (f > s[1]) lo = mid + 1; else return s;
+    if (f < s[0]) hi = mid - 1; else if (f > s[1]) lo = mid + 1; else return mid;
   }
-  return null;
+  return -1;
+}
+function segmentAt(segments, f) {
+  const i = segmentIndexAt(segments, f);
+  return i < 0 ? null : segments[i];
+}
+/* The interpolated view, display only: every number keeps reading locBoxesAt. Between two
+   consecutive planes a box moves linearly on its corners, over half of the shorter plane on each
+   side of their boundary, so it sits on its evaluated position at the middle of a plane. Boxes pair
+   by decreasing IoU; one without a partner stays as evaluated and appears or disappears at the
+   boundary, because crossing the frame would show a motion the maps do not measure. */
+const INTERPOLATION_MIN_IOU = 0.1;
+function boxIoU(a, b) {
+  const w = Math.min(a[2], b[2]) - Math.max(a[0], b[0]) + 1, h = Math.min(a[3], b[3]) - Math.max(a[1], b[1]) + 1;
+  if (w <= 0 || h <= 0) return 0;
+  const area = (x) => (x[2] - x[0] + 1) * (x[3] - x[1] + 1), inter = w * h;
+  return inter / (area(a) + area(b) - inter);
+}
+function pairBoxes(from, to) {
+  const pairs = [];
+  from.forEach((a, i) => to.forEach((b, j) => {
+    const iou = boxIoU(a, b);
+    if (iou >= INTERPOLATION_MIN_IOU) pairs.push([iou, i, j]);
+  }));
+  pairs.sort((x, y) => y[0] - x[0]);
+  const forward = new Map(), taken = new Set();
+  for (const [, i, j] of pairs) if (!forward.has(i) && !taken.has(j)) { forward.set(i, j); taken.add(j); }
+  return forward;
+}
+const lerpBox = (a, b, t) => a.map((x, i) => x + (b[i] - x) * t);
+function interpolatedBoxes(rows, table, f) {
+  const i = segmentIndexAt(rows, f);
+  if (i < 0) return null;
+  const here = rows[i], next = rows[i + 1], last = rows[i - 1], x = f + 0.5;
+  const halfOf = (a, b) => Math.min(a[1] - a[0], b[1] - b[0]) / 2 + 0.5;
+  if (next && next[0] === here[1] + 1) {
+    const half = halfOf(here, next), t = (x - next[0] + half) / (2 * half);
+    if (t > 0) {
+      const pairs = pairBoxes(table[here[2]], table[next[2]]);
+      return table[here[2]].map((b, k) => pairs.has(k) ? lerpBox(b, table[next[2]][pairs.get(k)], t) : b);
+    }
+  }
+  if (last && last[1] === here[0] - 1) {
+    const half = halfOf(last, here), t = (x - here[0] + half) / (2 * half);
+    if (t < 1) {
+      const back = new Map([...pairBoxes(table[last[2]], table[here[2]])].map(([a, b]) => [b, a]));
+      return table[here[2]].map((b, k) => back.has(k) ? lerpBox(table[last[2]][back.get(k)], b, t) : b);
+    }
+  }
+  return table[here[2]];
 }
 function contentRect(boxW, boxH, videoW, videoH) {
   // object-fit: contain, as the <video> element is drawn.
@@ -542,14 +620,18 @@ function truthBoxesAt(f) {
   const s = segmentAt(T.segments, f);
   return s ? T.boxes[s[2]] : null;
 }
-function strokeBox(b, rect, kx, ky, color, dashed, label) {
+function strokeBox(b, rect, kx, ky, color, dashed, label, lineWidth = 2) {
   const x = rect.x + b[0] * kx, y = rect.y + b[1] * ky;
   const bw = (b[2] - b[0] + 1) * kx, bh = (b[3] - b[1] + 1) * ky;
-  bctx.strokeStyle = bctx.fillStyle = color; bctx.lineWidth = 2;
+  bctx.strokeStyle = bctx.fillStyle = color; bctx.lineWidth = lineWidth;
   bctx.setLineDash(dashed ? [6, 4] : []);
-  bctx.strokeRect(x + 1, y + 1, Math.max(0, bw - 2), Math.max(0, bh - 2));
+  bctx.strokeRect(x + lineWidth / 2, y + lineWidth / 2, Math.max(0, bw - lineWidth), Math.max(0, bh - lineWidth));
   bctx.setLineDash([]);
-  bctx.fillText(label, x + 3, y >= rect.y + 14 ? y - 2 : y + 14);
+  if (label) bctx.fillText(label, x + 3, y >= rect.y + 14 ? y - 2 : y + 14);
+}
+function yoloBox(b, rect, kx, ky) {
+  const lineWidth = Math.max(YOLO_MIN_LINE, Math.round((rect.w + rect.h) / 2 * YOLO_LINE_RATIO));
+  strokeBox(b, rect, kx, ky, C.box, false, null, lineWidth);
 }
 function drawBoxes(time) {
   const w = boxCanvas.clientWidth, h = boxCanvas.clientHeight, r = Math.min(window.devicePixelRatio || 1, 2);
@@ -563,8 +645,11 @@ function drawBoxes(time) {
   const kx = rect.w / D.video.width, ky = rect.h / D.video.height;
   bctx.font = '600 11px "Segoe UI", system-ui, sans-serif'; bctx.textBaseline = "bottom";
   if (showTruth) (truthBoxesAt(f) || []).forEach((b) => strokeBox(b, rect, kx, ky, C.truth, true, "GT"));
-  if (showMethod) (locBoxesAt(f) || []).forEach((b, i) =>
-    strokeBox(b, rect, kx, ky, BOX_COLORS[i % BOX_COLORS.length], false, String(i + 1)));
+  const shown = interpolate ? interpolatedBoxes(L.segments[locMethod] || [], L.boxes, f) : locBoxesAt(f);
+  if (showMethod) (shown || []).forEach((b, i) => {
+    if (yoloStyle) yoloBox(b, rect, kx, ky);
+    else strokeBox(b, rect, kx, ky, C.box, false, String(i + 1));
+  });
 }
 function boxLoop(now, meta) {
   boxTick = null; drawBoxes(meta && meta.mediaTime);
@@ -579,17 +664,30 @@ const countBoxes = (n) => n + (n === 1 ? " box" : " boxes");
 function locCurrent() { return L ? L.methods.find((m) => m.id === locMethod) : null; }
 /* The readable name when the export gives one: campaign acronyms say nothing to a viewer. */
 const locName = (m) => m.label || m.id;
+/* The official table ranks a rule by AP, the older campaigns by IoU: each shows its own metric. */
+const locFigure = (m, dataset) => m.ap ? m.ap[dataset].main : m[dataset].mean;
+const locMetric = (m) => m.ap ? "AP" : "IoU";
+function locEventValue(m, truth, f) {
+  /* The evaluated event on this frame, whose value the library sorts by. */
+  if (!truth || !T) return null;
+  const event = (T.events || []).find((e) => e.class === truth.label && f >= e.start && f <= e.end);
+  if (!event) return null;
+  const values = m.ap ? m.ap[L.dataset].events : m[L.dataset].events;
+  return values ? values[event.id] ?? null : null;
+}
 function locInfo(truth) {
   if (!L) return;
-  const m = locCurrent(), own = m[L.dataset], label = truth && truth.label;
+  const m = locCurrent(), own = m.ap ? m.ap[L.dataset] : m[L.dataset], label = truth && truth.label;
   const firstLabel = (D.ground_truth.find((g) => g.label) || {}).label;
-  const cls = label || firstLabel;
-  const rows = [
-    ["mean IoU " + LOC_DATASET.ucf_crime, fmtIoU(m.ucf_crime.mean)],
-    ["mean IoU " + LOC_DATASET.mivia_crime, fmtIoU(m.mivia_crime.mean)],
-  ];
+  const cls = label || firstLabel, metric = locMetric(m);
+  const both = LOC_DATASET.ucf_crime + " · " + LOC_DATASET.mivia_crime;
+  const rows = [["mean " + metric + " " + both, fmtIoU(locFigure(m, "ucf_crime")) + " · " + fmtIoU(locFigure(m, "mivia_crime"))]];
+  /* The AP is of the rule: what tells its menu entries apart is the IoU of the boxes each draws. */
+  if (m.ap) rows.push(["mean IoU " + both, fmtIoU(m.ucf_crime.mean) + " · " + fmtIoU(m.mivia_crime.mean)]);
   if (cls && own.classes[cls] != null) rows.push([cls + " (" + LOC_DATASET[L.dataset] + ")", fmtIoU(own.classes[cls])]);
   const f = frameAt(v.currentTime), boxes = locBoxesAt(f), gt = truthBoxesAt(f);
+  const eventValue = locEventValue(m, truth, f);
+  if (!streaming && eventValue != null) rows.push(["this event " + metric, fmtIoU(eventValue)]);
   // The IoU of this frame, where the evaluator measures one: a reviewed annotation box.
   if (!streaming && truth && gt && gt.length) rows.push(["frame IoU", fmtIoU(unionIoU(boxes || [], gt))]);
   $("loc-values").innerHTML = rows.map(([k, x]) => "<dt>" + escapeHTML(k) + "</dt><dd>" + escapeHTML(x) + "</dd>").join("");
@@ -597,21 +695,32 @@ function locInfo(truth) {
   $("loc-state").textContent = streaming ? "boxes hidden while Streaming (offline boxes)"
     : !truth ? "outside annotated intervals: no box"
     : "method: " + shown(showMethod, boxes === null ? "not computed for this window" : countBoxes(boxes.length)) +
-      (T ? " · GT: " + shown(showTruth, gt ? countBoxes(gt.length) : "no reviewed box on this frame") : "");
+      (T ? " · GT: " + shown(showTruth, gt ? countBoxes(gt.length) : "no reviewed box on this frame") : "") +
+      (interpolate ? " · interpolated view" : "");
 }
 function renderLocMetrics() {
   if (!L) return;
   const m = locCurrent(), now = new Set(D.ground_truth.map((g) => g.label));
+  const cells = (read) => ["ucf_crime", "mivia_crime"].map((d) => "<td>" + fmtIoU(read(d)) + "</td>").join("");
+  const apCells = (read) => m.ap ? ["ucf_crime", "mivia_crime"].map((d) => "<td>" + fmtIoU(read(m.ap[d])) + "</td>").join("") : "";
   const body = L.classes.map((c) => '<tr class="' + (now.has(c) ? "now" : "") + '"><td>' + escapeHTML(c) +
-    "</td><td>" + fmtIoU(m.ucf_crime.classes[c]) + "</td><td>" + fmtIoU(m.mivia_crime.classes[c]) + "</td></tr>").join("");
+    "</td>" + apCells((a) => a.classes[c]) + cells((d) => m[d].classes[c]) + "</tr>").join("");
   const fallback = L.methods.find((x) => x.id === L.default);
+  const official = m.ap ? "<p>Offline AP@[0.3:0.05:0.7] " + fmtIoU(m.ap.ucf_crime.main) + " UCF · " + fmtIoU(m.ap.mivia_crime.main) +
+    " MIVIA; AP@[0.5:0.05:0.95] " + fmtIoU(m.ap.ucf_crime.coco) + " · " + fmtIoU(m.ap.mivia_crime.coco) +
+    "; online " + fmtIoU(m.ap.ucf_crime.online_main) + " · " + fmtIoU(m.ap.mivia_crime.online_main) +
+    "; FPR@TPR90 " + fmtIoU(m.ap.ucf_crime.fpr_tpr90) + " · " + fmtIoU(m.ap.mivia_crime.fpr_tpr90) +
+    ". Evaluated at 1 fps on all the boxes by confidence, so the AP does not change between the menu entries of the rule; the IoU does, on the boxes each one draws. θ@TPR90 " + fmtIoU(m.ap.ucf_crime.theta_tpr90) + " UCF · " +
+    fmtIoU(m.ap.mivia_crime.theta_tpr90) + " MIVIA keeps a box on 90% of the annotated frames of the true positive rows. θ@F1max " + fmtIoU(m.ap.ucf_crime.theta_f1max) +
+    " has the highest macro F1@[0.3:0.05:0.7] on UCF and moves to MIVIA: F1 " + fmtIoU(m.ap.ucf_crime.f1.at_theta_f1max) + " UCF · " + fmtIoU(m.ap.mivia_crime.f1.at_theta_f1max) +
+    " MIVIA, against " + fmtIoU(m.ap.ucf_crime.f1.at_theta_tpr90) + " · " + fmtIoU(m.ap.mivia_crime.f1.at_theta_tpr90) + " at θ@TPR90. Both are chosen on the test sets.</p>" : "";
   $("loc-metrics").innerHTML = "<h3>Localization · " + escapeHTML(locName(m)) + "</h3>" +
-    "<p>" + escapeHTML(m.family_label) + (m.label ? " · " + escapeHTML(m.id) : "") + " · rank " + m.ucf_crime.rank +
+    "<p>" + escapeHTML(m.family_label) + (m.label ? " · " + escapeHTML(m.id) : "") + " · IoU rank " + m.ucf_crime.rank +
     " of " + L.methods.length + " on UCF-Crime · " + escapeHTML(m.campaign || L.campaign) + ", detector " +
-    escapeHTML(L.run_id) + "</p>" +
-    "<table><thead><tr><th>class</th><th>IoU UCF</th><th>IoU MIVIA</th></tr></thead><tbody>" + body +
-    "</tbody><tfoot><tr><td>mean of " + L.classes.length + " classes</td><td>" + fmtIoU(m.ucf_crime.mean) +
-    "</td><td>" + fmtIoU(m.mivia_crime.mean) + "</td></tr></tfoot></table>" +
+    escapeHTML(L.run_id) + "</p>" + official +
+    "<table><thead><tr><th>class</th>" + (m.ap ? "<th>AP UCF</th><th>AP MIVIA</th>" : "") + "<th>IoU UCF</th><th>IoU MIVIA</th></tr></thead><tbody>" + body +
+    "</tbody><tfoot><tr><td>mean of " + L.classes.length + " classes</td>" + apCells((a) => a.main) + cells((d) => m[d].mean) +
+    "</tr></tfoot></table>" +
     "<p>" + escapeHTML(L.metric) + ". Default: " + escapeHTML(fallback ? locName(fallback) : L.default) + ", " + escapeHTML(L.selection) +
     ". Boxes in native pixels, '" + escapeHTML(L.projection) + "' projection, drawn only inside annotated intervals." +
     (T ? " Annotation boxes (dashed): " + escapeHTML(T.frames) + ", from the frozen snapshot the IoU was computed on (" +
@@ -619,7 +728,7 @@ function renderLocMetrics() {
 }
 function setLocMethod(id) {
   locMethod = id;
-  try { localStorage.setItem("evd.localization." + L.run_id, id); } catch (e) {}
+  $("loc-method").title = locName(locCurrent());
   renderLocMetrics(); paint();
 }
 if (L) {
@@ -628,12 +737,14 @@ if (L) {
   for (const m of L.methods) if (!families.includes(m.family_label)) families.push(m.family_label);
   $("loc-method").innerHTML = families.map((fam) => '<optgroup label="' + escapeHTML(fam) + '">' +
     L.methods.filter((m) => m.family_label === fam).map((m) => '<option value="' + escapeHTML(m.id) + '">' +
-      escapeHTML(locName(m)) + " · " + fmtIoU(m.ucf_crime.mean) + "</option>").join("") + "</optgroup>").join("");
-  let stored = null;
-  try { stored = localStorage.getItem("evd.localization." + L.run_id); } catch (e) {}
-  locMethod = L.methods.some((m) => m.id === stored) ? stored : L.default;
+      escapeHTML(locName(m)) + " · " + (m.ap ? "AP " : "") + fmtIoU(locFigure(m, "ucf_crime")) + "</option>").join("") + "</optgroup>").join("");
+  /* Every video opens on the best method of the detector; a choice lasts for this video. */
+  locMethod = L.default;
   $("loc-method").value = locMethod;
+  $("loc-method").title = locName(locCurrent());
   $("loc-method").addEventListener("change", (e) => setLocMethod(e.target.value));
+  $("loc-interpolate").addEventListener("change", (e) => { interpolate = e.target.checked; paint(); });
+  $("loc-yolo").addEventListener("change", (e) => { yoloStyle = e.target.checked; paint(); });
   $("loc").hidden = false;
   renderLocMetrics();
   v.addEventListener("play", scheduleBoxes);
@@ -726,11 +837,16 @@ v.addEventListener("pause", () => {cancelAnimationFrame(animationFrame); animati
 v.addEventListener("timeupdate", paint);
 v.addEventListener("seeked", paint);
 v.addEventListener("loadedmetadata", () => {paint();});
+/* The library opens a video on the chosen event with #t=<seconds>, the time its first frame
+   starts: half a frame later, or the rounding of currentTime lands on the frame before. */
+const openAt = parseFloat((location.hash.match(/^#t=([\d.]+)$/) || [])[1]);
+if (isFinite(openAt)) v.addEventListener("loadedmetadata", () => { v.currentTime = openAt + 0.5 / FPS; }, {once: true});
 
 const originalLog=log.innerHTML;
 $("stream-mode").onclick=()=>{
   streaming=!streaming;logVersion=null;
   $("stream-mode").setAttribute("aria-pressed",String(streaming));
+  $("key-stream").hidden=!streaming;
   $("metrics-open").disabled=streaming;tip.classList.remove('on');
   if(!streaming){log.innerHTML=originalLog;$("log-empty").hidden=!!D.predicted.length;}
   else if(!v.paused && animationFrame===null) animationFrame=requestAnimationFrame(animateStreaming);
@@ -740,6 +856,12 @@ $("toggle-annotations").disabled=!D.has_ground_truth;
 $("toggle-annotations").onclick=()=>{
   annotationsVisible=!annotationsVisible;
   $("toggle-annotations").setAttribute("aria-pressed",String(annotationsVisible));
+  draw();paint();
+};
+$("toggle-outcomes").disabled=!D.has_ground_truth;
+$("toggle-outcomes").onclick=()=>{
+  outcomesOn=!outcomesOn;
+  $("toggle-outcomes").setAttribute("aria-pressed",String(outcomesOn));
   draw();paint();
 };
 const seekFromEvent = (el, e) => {
@@ -763,8 +885,9 @@ wrap.addEventListener("mousemove", (e) => {
   tip.classList.toggle("hot", !!w && w.score >= TAU);
   tip.style.left = xOf(f) + "px";
   tip.style.top = "24px";
+  const outcome = w ? outcomeShown(w) : "";
   tip.innerHTML = mmss(f / FPS) + (w
-    ? " · chunk " + mmss(w.start_s) + "–" + mmss(w.end_s) + " · <b>" + w.score.toFixed(3) + "</b>"
+    ? " · chunk " + mmss(w.start_s) + "–" + mmss(w.end_s) + " · <b>" + w.score.toFixed(3) + "</b>" + (outcome ? " · " + outcome : "")
     : " · <b>no chunk</b>");
 });
 wrap.addEventListener("mouseleave", () => tip.classList.remove("on"));
@@ -788,6 +911,9 @@ addEventListener("keydown", (e) => {
   else if (k === "0") v.currentTime = 0;
   else if (k === "b" || k === "B") $("toggle-method-boxes").click();
   else if (k === "g" || k === "G") $("toggle-truth-boxes").click();
+  else if ((k === "i" || k === "I") && L) $("loc-interpolate").click();
+  else if ((k === "y" || k === "Y") && L) $("loc-yolo").click();
+  else if ((k === "v" || k === "V") && D.has_ground_truth) $("toggle-outcomes").click();
 });
 
 for (const [button, cls] of [["toggle-rail","no-rail"],["toggle-deck","no-deck"]]) {
